@@ -1,0 +1,39 @@
+<html><body><center>
+<img src=L2Font-e.mini_logo-e width=245 height=80>
+<img src=L2UI_CH3.herotower_deco width=256 height=32>
+<br>
+You can put a hit on someone here:
+<table>
+	<tr>
+		<td>
+			Target Name: <edit var="name" width=120 height=15>
+		</td>
+		<td>
+			Bounty:<edit var="bounty" width=120 height=15>
+		</td>
+	</tr>
+</table><br>
+<button value="Add" action="bypass -h npc_%objectId%_addList $name $bounty" back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df" width=95 height=21>
+<br>
+If you wish to cancel a hit:<br1>
+<table width=240>
+	<tr>
+		<td>
+			Name:
+		</td>
+		<td>
+			<edit var="remname" width=120 height=15>
+		</td>
+		<td>
+			<button value="Rem" action="bypass -h npc_%objectId%_removeList $remname" back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df" width=45 height=21>
+		</td>
+	</tr>
+</table>
+<br>
+<button value="Back" action="bypass -h npc_%objectId%_Chat 0" back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df" width=80 height=21>
+<font color="cc9900"><img src="L2UI_CH3.herotower_deco" width=256 height=32></font><br1>
+<img src=l2ui.bbs_lineage2 height=16 width=80>
+</center>
+</body>
+</head>
+</html>

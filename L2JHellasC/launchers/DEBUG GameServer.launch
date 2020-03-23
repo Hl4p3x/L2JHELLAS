@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/L2JHellasC/java/com/l2jhellas/gameserver/GameServer.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.debug.core.appendEnvironmentVariables" value="true"/>
+<mapAttribute key="org.eclipse.debug.core.preferred_launchers">
+<mapEntry key="[debug]" value="org.eclipse.visualvm.launch.java"/>
+<mapEntry key="[run]" value="org.eclipse.jdt.launching.localJavaApplication"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_ENCODING" value="UTF-8"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.debug.ui.target_debug_perspective" value="perspective_default"/>
+<stringAttribute key="org.eclipse.debug.ui.target_run_perspective" value="perspective_default"/>
+<booleanAttribute key="org.eclipse.jdt.debug.ui.CONSIDER_INHERITED_MAIN" value="true"/>
+<booleanAttribute key="org.eclipse.jdt.debug.ui.INCLUDE_EXTERNAL_JARS" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.l2jhellas.gameserver.GameServer"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="L2JHellasC"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx512m"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\L2JHellas\gameserver\"/>
+<booleanAttribute key="yk-capture-cpu-on-exit" value="false"/>
+<booleanAttribute key="yk-capture-memory-on-exit" value="false"/>
+<booleanAttribute key="yk-disable-alloc" value="false"/>
+<booleanAttribute key="yk-disable-counts" value="false"/>
+<booleanAttribute key="yk-launch-ui" value="true"/>
+<intAttribute key="yk-mem-threshold" value="0"/>
+<booleanAttribute key="yk-startup-with-object-allocations" value="false"/>
+</launchConfiguration>

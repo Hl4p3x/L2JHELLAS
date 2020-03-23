@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="door" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="name" type="xs:string" use="required" />
+						<xs:attribute name="id" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="x" type="xs:int" use="required" />
+						<xs:attribute name="y" type="xs:int" use="required" />
+						<xs:attribute name="z" type="xs:int" use="required" />
+						<xs:attribute name="XMin" type="xs:int" use="required" />
+						<xs:attribute name="YMin" type="xs:int" use="required" />
+						<xs:attribute name="ZMin" type="xs:int" use="required" />
+						<xs:attribute name="XMax" type="xs:int" use="required" />
+						<xs:attribute name="YMax" type="xs:int" use="required" />
+						<xs:attribute name="ZMax" type="xs:int" use="required" />
+						<xs:attribute name="hp" type="xs:int" use="required" />
+						<xs:attribute name="pdef" type="xs:string" use="required" />
+						<xs:attribute name="mdef" type="xs:int" use="required" />
+						<xs:attribute name="unlockable" type="xs:boolean" use="required" />
+						<xs:attribute name="autoOpen" type="xs:boolean" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

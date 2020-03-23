@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localization lang="Ελληνικά (Ελλάδα)" translator="Nightwolf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="accountmanager.xsd">
+	<message id="toolName" text="Diaxeiristis Logariasmwn SQL" />
+
+	<message id="yesChar" text="Nai" />
+	<message id="noChar" text="Oxi" />
+	<message id="trueString" text="Swsto" />
+	<message id="falseString" text="La8os" />
+
+	<message id="functChooser" text="Parakalw epilekste mia epilogh." />
+	<message id="functCreateAccount" text="1 - Dimiourgia neoy logariasmou i enimerwsh iparxontos (alagi kwdikou kai epipedou ADMIN/GM)" />
+	<message id="functAccessLevel" text="2 - Alagi epipedou Admin/GM" />
+	<message id="functDeleteAccount" text="3 - Diagrafi uparxontos Logariasmou" />
+	<message id="functListAccount" text="4 - Lista logariasmwn kai epipedou ADMIN/GM" />
+	<message id="functExit" text="5 - Eksodos" />
+
+	<message id="inputChoice" text="H Epilogi sas" />
+	<message id="inputUsername" text="Onoma Xristi" />
+	<message id="inputPassword" text="Kwdikos" />
+	<message id="inputAccessLevel" text="Epipedo Admin/GM (1-8 8=Master) " />
+
+	<message id="functListAccountChooser" text="Parakalw epilekste mia epilogi listas." />
+	<message id="functListAccountBanned" text="1 - Apokleismenoi logariasmoi mono (epipedo prosvasis &lt; 0)." />
+	<message id="functListAccountPrivileged" text="2 - GM/Diaxeiristes logariasmoi mono (Epipedo prosvasis &gt; 0)." />
+	<message id="functListAccountRegular" text="3 - Kanonikoi logariasmoi mono (Epipedo prosvasis = 0)." />
+	<message id="functListAccountAll" text="4 - Deikse olous tous logariasmous." />
+	<message id="functListAccountDisplayed" text="Emfanismenoi logariasmoi: %d ." />
+
+	<message id="functAccessLevelUpdated" text="O logariasmos %s exei enimerwthei." />
+	<message id="functAccessLevelNotExist" text="O logariasmos %s den uparxei." />
+
+	<message id="functDeleteAccountConfirm" text="Thelete pragmatika na diagrapsete auton ton logariasmo? Nai/Oxi." />
+	<message id="functDeleteAccountAbort" text="H diagrafi akyrwthike." />
+	<message id="functDeleteAccountCancel" text="H diagrafi akyrwthike." />
+	<message id="functDeleteAccountChar" text="Diagrafi tou xaraktira %s ." />
+	<message id="functDeleteAccountClan" text="Diagrafi tis omadas %s ." />
+	<message id="functDeleteAccountComplete" text="O logariasmos %s exei diagrafei." />
+	<message id="functDeleteAccountNotExist" text="O logariasmos %s den uparxei." />
+</localization>

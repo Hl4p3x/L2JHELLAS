@@ -1,0 +1,320 @@
+Author:
+	Masterio
+	
+Last update:
+	01.05.2013 (patch 3.6.4)
+
+Describe:
+	Rank PvP System description in Description.txt file.
+	
+	For show Player PvP Status use command on targeted player (in chat window): .pvpinfo or /pvpinfo (if enabled).
+	
+	Special thanks for valanths1990 who shared Image Converter on MxC.
+
+Added/Fixed:
+
+	v3.8.7 [28.12.2013]:
+		+ Fixed null exception when back from Death Status window.
+		+ Reworked last target variables.
+		+ Added option into configuration file for load rank and exp images from client side.
+		+ Added Client Side Texture File (if you don't want use the server side images).
+		+ Reworked some config loggers.
+		+ Code is formated for JDK 1.7 in all packs.
+		
+	v3.8.6 [21.12.2013]:
+		+ Added GMIgnoreEnabled option into configuration file.
+		+ Fixed nick and title color problem with GM characters.
+		+ Reworked body.htm for Freya [thanks ČυяŞŀŅğ].
+		+ Optimized TopTable and PvpTable [Shutdown.java and EnterWorld.java is edited].
+		+ Fixed too many SQL updates problem.
+		+ Added for PvpTable more detailed logs.
+		+ Reworked some methods in system core.
+		+ Removed SQLRPS class, added CHAR_ID_COLUMN_NAME field into RankPvpSystemConfig class.
+		+ Cleaned a little code.
+		+ Formated body.htm.
+
+	v3.8.5 [27.11.2013]:
+		+ Fixed rank calculator [Hot Fix].
+		+ Fixed percent belt [Hot Fix].
+		+ Reworked SQL tables (rank_pvp_system table is not changed).
+		+ Reworked config file.
+		+ Reworked body.htm file.
+		+ Added new rewarding methods with many options (all rewards systems are turn on in config).
+		+ GM's are ignored by RPS now [thanks DeathSpank287].
+		+ Checked and reduced code.
+		+ Reworked TopTable updater (now possible updates in defined hours).
+		+ Reworked PvP Status window.
+		* Special thanks to L2Gang for reports.
+
+	v3.8.1 [21.11.2013]:
+		+ Null exception fixes.
+
+	v3.8.0 [11.11.2013]:
+		+ Reworked log messages.
+
+	v3.7.8 [05.11.2013]:
+		+ Reworked top table updater.
+		+ Reworked log messages.
+		+ Reworked some config descriptions.
+		+ Added all java files from l2jServer moded by RPS in fixes folder.
+		+ Cleaned BBS bypass checks (thanks valanths1990).
+		+ Cleaned code.
+		
+	v3.7.6 [24.10.2013]:
+		+ Fixed some things.
+
+	v3.7.5 [22.10.2013]:
+		+ Moved checking methods into one class.
+		+ Added confirm page option for RPC reward Get button.
+		+ Fixed some things (thanks unAfraid).
+		+ Fixed new window on click (thanks unAfraid).
+		+ Added one option into config file (RpcExchangeConfirmBoxEnabled).
+		+ Changed some method and class names.
+		+ Cleaned code.
+		
+	v3.7.4 [26.09.2013]:
+		+ Fixed clan checker (thanks O_o).
+
+	v3.7.3 [26.09.2013]:
+		+ Reworked ImageConverter classes. Now is faster and cleaner [probably no more problems with import to all chronicles].
+		+ Fixed index.htm example for community board (thanks snacks).
+		+ Reworked RankPvpSystemConfig, changed L2Properties to Properties (thanks O_o).
+		
+	v3.7.2 [25.09.2013]:
+		+ HOTFIX for Image Converter Packet (I miss something).
+		
+	v3.7.1 [25.09.2013]:
+		+ Reworked Image Converter Packets, RequestPlegeCrest and PledgeCrest must be restored from repository (no more ingerates in this classes).
+		+ L2j Beta (rev. 6229) have java diff files in Fixes folder.
+		+ Added cosmetic changes.
+
+	v3.7.0 [24.09.2013]:
+		+ Reworked reward system, changed for RPC Exchange.
+		+ Reworked SQL tables.
+		+ Reworked bypass commands (top table bypass commands untouched).
+		+ Reworked Config file.
+		+ Reworked body.htm (version info).
+		+ Reworked RPS core, too hard for explain here (every class is reworked).
+		+ Improved system speed.
+		+ Added constant hour for update top list.
+		+ Reduced rank_pvp_system empty rows.
+		+ Fixed some bugs.
+		
+		* INSTALLATION: 
+			SQL: only rank_pvp_system table not changed, you should remove and install rest again.
+			JAVA: all classes are reworked, you should install all RPS 3.7.0 diff's again.
+			CONFIG: Config file is changed.
+
+	v3.6.6 [01.07.2013]:
+		+ Moved some code in L2PcInstance, you should restore L2PcInstance class from svn and after that apply my diff patch.
+		+ Cleaned and formated code.
+
+	v3.6.5 [27.05.2013]:
+		+ Fixed DeathManager killer inventory items informations. (Inventory class restored to original)
+		+ Added option's with button images and size.
+		+ Cleaned code.
+
+	v3.6.4 [01.05.2013]:
+		+ Added method into Inventory java class: getPaperdollItems(): FastList<L2ItemInstance> (required for Death Manager).
+		+ Added missing exp_95.png image (thx for PoRnosJH).
+		+ Reworked and optimized death manager.
+		+ Reworked and optimized Community Board Top 10 List (added new modern style).
+		+ Reworked htm files structure for Community Board (now more flexible for custom reworks).
+		+ Created new diff patches for new stable l2jServer rev. 5937, all patches name's starts from 3.6.4.
+		+ Change RPS distribution for all chronicles, now 1 patch.rar for 1 chronicle, pages for IL and H5 RPS on mxc will be united to 1 page for all chronicles.
+
+	v3.6.3 [01.04.2013]:
+		+ Added image refresh on client side option.
+		+ Reworked refresh Top Table time information.
+		+ Moved DDSConverter.java into imageconverter package.
+		
+	v3.6.2 [30.03.2013]:
+		+ Added 6 new options for Combo Kill system.
+		+ Added alternate combo messages (must be enabled in options).
+		+ Added defeat message when killer dies and his combo level is > 0 or defined value.
+		+ Reworked PvP Status window (little changes).
+		
+	v3.6.1 [29.03.2013]:
+		+ Optimized Combo Kill System (java code).
+		+ Reworked some system messages (cosmetic changes).
+		+ Added more describes for config options.
+		+ Removed temporary options from java config class.
+		
+	v3.6.0 [20.03.2013]:
+		+ Added Combo Kill System - now if killer kill few victims, the combo will rise up. It can shout message on global chat defined in config.
+		+ Added Combo Kill Ratio for Rank Points - higher combo level gives more rank points defined in config.
+		+ Added few more options to Combo Kill System.
+		+ Added option with detailed information about bonus rank points (war, area, combo) showed for killer [default: enabled, in config].
+		+ Reworked Config properties names. It's mean many of config options names are changed.
+		+ Reworked Java classes, and packages.
+		+ Reworked images folder names.
+		+ Reworked CommunityBoard htm file.
+		+ Reworked database table names.
+		+ Reworked some system messages (removed rank information on chat, now is more readable).
+		+ Fixed some little bugs.
+
+	v3.5.6f [17.03.2013]:
+		+ Added support for Freya l2j server (rev. 4944). All diff java files in 'Fixes' folder.
+		
+	v3.5.6 [01.03.2013]:
+		+ Added Ignore Time Limits for Top Table (unactive players can be ignored when counting, if new options are activated [details in config]).
+		+ Added PvpTable cleaner from unactive players (cleaner must be activated in config, default is off).
+		+ Added option for cut off RP to killer RP Reward, if Victim RPR > Killer RPR. Killer can't earn more points for kill than his RP Reward.
+		+ Added nick and title colors options for ranks. 
+		+ Reworked config file and changed some default values.
+		+ Important: now some time config values are in DAYS or MINUTES (before in MS), so check all options and compare it with new file.
+		+ Reworked some system messages.
+		+ Reworked Rank images (fixed white border on right).
+
+	v3.5.2 [31.01.2013]:
+		+ Reworked config file (options with X time protection reduced to 2 options).
+		+ Reworked some messages.
+		
+	v3.5.1 [31.01.2013]:
+		+ Added 2 options for setup limit for Legal Kills (total/daily).
+		+ Updated ImageConverter classes.
+
+	v3.5.0 [29.01.2013]:
+		+ Added 3 options with show Total Kills or Total Legal Kills in shout and pvpinfo panel.
+		+ Reworked some shouts after kill.
+		+ Reworked CPS code in L2PcInstance.
+		+ Fixed pvp counting for summon and pet masters.
+		+ Reduced top table to 500 rows (before no limit).
+		+ Reworked Config file.
+		+ Changed default update time for PvpTable (from 1 to 5 minutes).
+		
+	v3.4.9 [25.01.2013]:
+		+ Fixed zone checkers.
+		+ Cleaned a little config file (only comments).
+
+	v3.4.8 [22.01.2013]:
+		+ Reworked methods for giving rank rewards (now more safe).
+		+ Reworked Config File.
+		+ Reworked ALL classes (changed package name from custom to masteriopack, couse: i have too much customs, and I like order).
+		+ Added new folder: Fixes, folder contains solutions for special situations.
+
+	v3.4.7 [28.12.2012]:
+		+ Added daily protection options, now is possible to set X kill times for day (reset every day 00:00) or total in game.
+		+ Added Allowed Areas option.
+		+ Added option for /pvpinfo command [it's option because require Client modifications].
+		+ Fixed protection options.
+		+ Reworked anti-farm checkers.
+		+ Cleaned code.
+		+ Reworked Config file. (check carefully all options on manual update).
+
+	v3.4.4 [15.12.2012]:
+		+ Added support for unstable server versions (reworked zone checkers).
+		+ Added showing Killers clan when Victim die (it was removed in previous revision).
+		
+	v3.4.3 [12.12.2012]:
+		+ Removed all sql procedures.
+		+ Changed CB Top List some colors.
+		+ Added small fixes.
+		
+	v3.4.2 [09.12.2012]:
+		+ Reworked rank points calculating method.
+		+ Added bonus rank points ratio areas.
+		+ Added small fixes.
+		
+	v3.4.1 [08.12.2012]:
+		+ Added Community Board optimizations.
+		+ Reworked top list htm file.
+		+ Reworked config file.
+		+ Removed some sql procedures.
+		+ Removed Daily kills statistics from Top List, now it works faster for 1k online.
+		+ Added small fixes.
+		
+	v3.4.0 [07.12.2012]:
+		+ Reworked core classes, now are faster, cleaner and stability is improved.
+		+ Added Daily Kills field, now counter for daily kills work correct (in community board too).
+		+ Reworked Config file.
+		+ Reworked Community Board.
+		+ Reworked Database.
+		+ Removed some sql procedures.
+		+ Added Time Protection for rank/reward gather (independent from daily kills etc.).
+		- Some config options can not work correctly if you find errors or bugs report me.
+		- It's BETA version until I add all fixes.
+		
+	v3.0.6 [04.12.2012]:
+		+ Possible fix for interrupt connection.
+		
+	v3.0.3 [20.11.2012]:
+		+ Fixed ALT+T counter (counts only legal kills from all pvp's).
+		+ Fixed double items in Death Manager.
+		+ Fixed Community TOP List view.
+		
+	v3.0.2 [17.11.2012]:
+		+ Possible fix for connection problem.
+		+ Changed properties folder.
+
+	v3.0.1 [03.11.2012]:
+		+ Removed pk counter lock if ALT+T enabled (only L2PcInstance edited).
+		
+	v3.0.0 [31.10.2012]:
+		+ Reworked Community Board Top List.
+		+ Removed MySql Procedure: CPS_BBS_top_user_info.
+		+ Fixed character class names.
+
+	v2.9.9 [30.10.2012]:
+		+ Added War Kill Counter and RP ratio for kill war.
+		+ Modiffied some procedures (update all).
+		+ Fixed CB problem.
+		- isInsideZone(ZoneId zoneId) still not done for unstable l2j (they modified zone code and not all is synchronized yet).
+		
+	v2.9.8 [28.10.2012]:
+		+ Fixed tables column types, and some procedures parameter types. (Update all tables and procedures)
+		+ Added missing MySql function into pack.
+
+	v2.9.6 [26.10.2012]:
+		+ Added Alt+T menu pvp as legal kills, now pvp is counted for CPS rulez [It can be turn off in config].
+		+ Added SERVER-SIDE images, it's mean you not need client modifications anymore [All images in PNG format, easy to edit now].
+		+ Added PK MODE option for reward system.
+		+ Reworked Exp Bar.
+		+ Changed some mysql procedures, update all pls.
+		+ Possible fix for hit task null exception.
+		- Some images can show gray artifacts. Don't worry, it will be fixed.
+
+	v2.9.5 [18.10.2012]:
+		+ Community Board TOP LIST fully implemented.
+		+ Possible fix for null exception.
+		+ Changed CPSBBSManager class structure.
+
+	v2.9.2 [15.10.2012]:
+		- Community Board Top Pvp/Rank Points list implemented, but not added!
+		+ Changed CustomConfig.properties into CustomPvpSystemConfig.properties.
+		+ Reworked some sql procedures.
+		+ Reworked all classes, now code is more clear.
+		+ Fixed/Added other small things.
+
+	v2.9 [14.10.2012]:
+		+ Added Rank Points Reward Button. Allow obtain reward for each rank points level. 
+		  Rewards list, amount and minimum rank points required in database. There is loaded example adena rewards.
+		+ Fixed command execution when no target selected.
+		+ Change location of Config->CustomConfig.load() for GameServer->CustomConfig.load().
+		+ Updated CustomConfig.properties.
+		
+	v2.8 [13.10.2012]:
+		+ Added Anti-Farm options.
+		+ Finally done details table view.
+		+ Fixed few things.
+		+ Updated CustomConfig.properties.
+		
+	v2.7 [12.10.2012]:
+		+ Ported system from l2j IL to H5 Chronicle.
+		+ Added death manager (still need visual fixes).
+		
+	...
+		
+IMPORTANT: 
+	1. If you are using l2jserver unstable and have zone problems look into Fixes folder.
+	2. If you have big online, or rank_pvp_system table have 100k+ rows you should rise up java memory limit:
+		- open StartGameServer.bat.
+		- change -Xms1024m -Xmx1024m for higher value like double size of already.
+		- Settings was tested for 1kk rows.
+		- Live servers have this value on 8000-16000, but I wrote this info for test servers.
+			
+		
+Contact:
+	www.maxcheaters.com
+	
+	nick: matthewmaster04

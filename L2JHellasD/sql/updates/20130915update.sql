@@ -1,0 +1,2 @@
+SET FOREIGN_KEY_CHECKS=0;
+UPDATE custom_npc SET type = 'L2Npc' WHERE ID = 70004;

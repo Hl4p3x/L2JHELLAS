@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="item" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:sequence maxOccurs="1" minOccurs="1">
+							<xs:choice maxOccurs="unbounded" minOccurs="1">
+								<xs:element name="recipe" maxOccurs="1" minOccurs="0">
+									<xs:complexType>
+										<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+										<xs:attribute name="level" type="xs:positiveInteger" use="required" />
+										<xs:attribute name="type" type="xs:string" use="required" />
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="mpCost" maxOccurs="1" minOccurs="0" />
+								<xs:element name="successRate" minOccurs="1" maxOccurs="1" />
+								<xs:element name="production" minOccurs="1" maxOccurs="1">
+									<xs:complexType>
+										<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+										<xs:attribute name="count" type="xs:positiveInteger" use="required" />
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="ingredient" minOccurs="1" maxOccurs="1">
+									<xs:complexType>
+										<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+										<xs:attribute name="count" type="xs:positiveInteger" use="required" />
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+						<xs:attribute name="name" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../templates/skills.xsd">
+	<!-- Checked By L2JHellas -->
+	<skill id="1400" levels="10" name="Turn Undead">
+		<table name="#mpConsume"> 52 54 55 58 60 62 64 65 67 69 </table>
+		<table name="#power"> 230.0 250.0 270.0 290.0 310.0 330.0 350.0 370.0
+			390.0 411.0
+		</table>
+		<table name="#itemConsumeCount"> 3 3 4 4 4 4 5 5 5 5 </table>
+		<set name="power" val="#power" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<table name="#lethal2"> 15 17 18 19 20 11 22 23 24 25</table>
+		<set name="save" val="6" />
+		<set name="reuseDelay" val="9000" />
+		<set name="hitTime" val="4000" />
+		<set name="target" val="TARGET_AREA_UNDEAD" />
+		<set name="skillRadius" val="200" />
+		<set name="skillType" val="FEAR" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="900" />
+		<set name="effectRange" val="1400" />
+		<set name="lethal2" val="#lethal2" />
+		<set name="isMagic" val="true" />
+		<for>
+			<effect count="5" name="Fear" time="6" val="0" />
+		</for>
+	</skill>
+	<skill id="1401" levels="11" name="Major Heal" enchantLevels1="30" enchantLevels2="30">
+		<table name="#ench1Power"> 947 949 951 954 956 958 960 963 965 967 969 972 974
+			976 979 981 983 985 988 990 992 994 997 999 1001 1003 1006 1008 1010
+			1013
+		</table>
+		<table name="#ench2MpConsume"> 78 77 76 75 73 72 72 71 70 68 67 66 65 65 63 62 61
+			60 58 57 57 56 55 53 52 51 50 50 48 47
+		</table>
+		<table name="#mpConsume"> 60 64 65 67 69 72 74 77 78 80 80 </table>
+		<table name="#power"> 690 722 753 783 812 840 867 892 915 936 946 </table>
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="power" val="#power" />
+		<!-- reuse is meant to be "almost instant" -->
+		<set name="reuseDelay" val="6000" />
+		<set name="hitTime" val="5000" />
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="HEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="isMagic" val="true" />
+		<enchant1 name="power" val="#ench1Power" />
+		<enchant2 name="mpConsume" val="#ench2MpConsume" />
+	</skill>
+	<skill id="1402" levels="5" name="Major Group Heal" enchantLevels1="30" enchantLevels2="30">
+		<table name="#ench1Power"> 1173 1176 1179 1182 1186 1189 1192 1195 1199 1202
+			1205 1208 1212 1215 1218 1221 1224 1228 1231 123 1237 1241 1244 1247
+			1250 1254 1257 1260 1263 1267
+		</table>
+		<table name="#ench2MpConsume"> 233 231 227 225 221 218 215 212 208 206 202 198 196
+			192 190 186 183 180 177 173 171 167 165 161 157 155 151 148 145 142
+		</table>
+		<table name="#mpConsume"> 189 199 214 228 239 </table>
+		<table name="#power"> 902 979 1050 1115 1170 </table>
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="4" />
+		<set name="power" val="#power" />
+		<set name="reuseDelay" val="6000" />
+		<set name="hitTime" val="7000" />
+		<set name="skillRadius" val="1000" />
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillType" val="HEAL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<set name="isMagic" val="true" />
+		<enchant1 name="power" val="#ench1Power" />
+		<enchant2 name="mpConsume" val="#ench2MpConsume" />
+	</skill>
+	<skill id="1403" levels="1" name="Summon Friend">
+		<set name="target" val="TARGET_PARTY_MEMBER" />
+		<set name="skillType" val="SUMMON_FRIEND" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="mpConsume" val="180" />
+		<set name="hitTime" val="15000" />
+		<set name="reuseDelay" val="20000" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="1404" levels="1" name="Word of Invitation">
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillRadius" val="-1" />
+		<set name="skillType" val="SUMMON_FRIEND" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="3" />
+		<set name="mpConsume" val="320" />
+		<set name="hitTime" val="15000" />
+		<set name="reuseDelay" val="60000" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="1405" levels="4" name="Divine Inspiration">
+		<!-- Needs to be finished -->
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="1406" levels="1" name="Summon Feline King">
+		<table name="#mpConsume_Init"> 30 </table> <!-- Guessing -->
+		<table name="#mpConsume"> 114 </table> <!-- Guessing -->
+		<table name="#itemConsumeCount"> 2 </table>
+		<table name="#itemConsumeCountOT"> 1 </table>
+		<set name="mpInitialConsume" val="#mpConsume_Init" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="itemConsumeId" val="1461" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="itemConsumeIdOT" val="1461" />
+		<set name="itemConsumeCountOT" val="#itemConsumeCountOT" />
+		<set name="itemConsumeSteps" val="14" />
+		<set name="summonTotalLifeTime" val="3600000" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="reuseDelay" val="20000" /> <!-- Guessing -->
+		<set name="hitTime" val="15000" />
+		<set name="skillType" val="SUMMON" />
+		<set name="isMagic" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<!-- Summon-specific -->
+		<table name="#npcIds"> 14836 </table>
+		<set name="npcId" val="#npcIds" />
+		<set name="expPenalty" val="0.1" />
+		<set name="isCubic" val="false" />
+		<for>
+		</for>
+	</skill>
+	<skill id="1407" levels="1" name="Summon Magnus the Unicorn">
+		<table name="#mpConsume_Init"> 30 </table> <!-- Guessing -->
+		<table name="#mpConsume"> 114 </table> <!-- Guessing -->
+		<table name="#itemConsumeCount"> 2 </table>
+		<table name="#itemConsumeCountOT"> 1 </table>
+		<set name="mpInitialConsume" val="#mpConsume_Init" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="itemConsumeId" val="1461" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="itemConsumeIdOT" val="1461" />
+		<set name="itemConsumeCountOT" val="#itemConsumeCountOT" />
+		<set name="itemConsumeSteps" val="14" />
+		<set name="summonTotalLifeTime" val="3600000" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="reuseDelay" val="20000" /> <!-- Guessing -->
+		<set name="hitTime" val="15000" />
+		<set name="skillType" val="SUMMON" />
+		<set name="isMagic" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<!-- Summon-specific -->
+		<table name="#npcIds"> 14837 </table>
+		<set name="npcId" val="#npcIds" />
+		<set name="expPenalty" val="0.1" />
+		<set name="isCubic" val="false" />
+		<for>
+		</for>
+	</skill>
+	<skill id="1408" levels="1" name="Summon Spectral Lord">
+		<table name="#mpConsume_Init"> 30 </table> <!-- Guessing -->
+		<table name="#mpConsume"> 114 </table> <!-- Guessing -->
+		<table name="#itemConsumeCount"> 2 </table>
+		<table name="#itemConsumeCountOT"> 1 </table>
+		<set name="mpInitialConsume" val="#mpConsume_Init" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="itemConsumeId" val="1461" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="itemConsumeIdOT" val="1461" />
+		<set name="itemConsumeCountOT" val="#itemConsumeCountOT" />
+		<set name="itemConsumeSteps" val="14" />
+		<set name="summonTotalLifeTime" val="3600000" />
+		<set name="summonTimeLostIdle" val="500" />
+		<set name="summonTimeLostActive" val="1000" />
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="reuseDelay" val="20000" /> <!-- Guessing -->
+		<set name="hitTime" val="15000" />
+		<set name="skillType" val="SUMMON" />
+		<set name="isMagic" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<!-- Summon-specific -->
+		<table name="#npcIds"> 14838 </table>
+		<set name="npcId" val="#npcIds" />
+		<set name="expPenalty" val="0.1" />
+		<set name="isCubic" val="false" />
+		<for>
+		</for>
+	</skill>
+	<skill id="1409" levels="1" name="Cleanse">
+		<set name="itemConsumeId" val="8874" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpInitialConsume" val="21" /> <!-- Guessing -->
+		<set name="mpConsume" val="58" />
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_ONE" />
+		<set name="reuseDelay" val="15000" /> <!-- Guessing -->
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="NEGATE" />
+		<set name="isMagic" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="600" />
+		<set name="effectRange" val="1100" />
+		<set name="negateStats" val="BLEED CONFUSION DEBUFF FEAR MUTE PARALYZE ROOT SLEEP STUN POISON WEAKNESS" />
+		<set name="negatePower" val="9.0" /> <!-- Guessing -->
+		<for>
+		</for>
+	</skill>
+	<skill id="1410" levels="1" name="Salvation">
+		<set name="magicLvl" val="79" />
+		<set name="mpConsume" val="87" />
+		<set name="itemConsumeId" val="8874" />
+		<set name="itemConsumeCount" val="2" />
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_ONE" />
+		<set name="skillType" val="BUFF" />
+		<set name="reuseDelay" val="3600000" />
+		<set name="staticReuse" val="true" />
+		<set name="isMagic" val="true" />
+		<set name="hitTime" val="4000" /> <!--guessing -->
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="buffDuration" val="3600000" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<for>
+			<effect count="1" name="PhoenixBless" time="3600" val="0" />
+		</for>
+	</skill>
+	<skill id="1411" levels="1" name="Mystic Immunity">
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="900" />
+		<set name="hitTime" val="4000" />
+		<set name="isMagic" val="true" />
+		<set name="magicLvl" val="79" />
+		<set name="mpConsume" val="73" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="reuseDelay" val="1800000" /> <!-- Guessing -->
+		<set name="skillType" val="BUFF" />
+		<set name="target" val="TARGET_PARTY_MEMBER" />
+		<for>
+			<effect count="1" name="Buff" time="30" val="0">
+				<!-- mul order="0x30" stat="buffVuln" val="0" Needs Core Support -->
+				<mul order="0x30" stat="debuffVuln" val="0" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="1412" levels="1" name="Spell Turning">
+		<set name="mpConsume" val="25" />
+		<set name="target" val="TARGET_ONE" />
+		<set name="reuseDelay" val="120000" />
+		<set name="hitTime" val="500" />
+		<set name="skillType" val="CANCEL" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
+		<set name="castRange" val="150" />
+		<set name="effectRange" val="150" />
+		<for>
+			<effect count="1" name="Mute" time="1" val="0" />
+			<effect count="1" name="RemoveTarget" time="1" val="0" noicon="1" />
+		</for>
+	</skill>
+	<skill id="1413" levels="1" name="Magnus' Chant">
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="40" />
+		<set name="mpInitialConsume" val="59" /> <!-- Guessing -->
+		<set name="mpConsume" val="287" />
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillRadius" val="1000" />
+		<set name="reuseDelay" val="1200000" /> <!-- Guessing -->
+		<set name="hitTime" val="2500" />
+		<set name="skillType" val="BUFF" />
+		<set name="isMagic" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect count="1" name="Buff" time="300" val="0" stackOrder="1" stackType="CoV"> <!-- Does it stacks with CoV ? -->
+				<mul order="0x30" stat="regMp" val="1.5" />
+				<mul order="0x30" stat="mAtkSpd" val="1.20" />
+				<mul order="0x30" stat="mDef" val="1.20" />
+				<mul order="0x30" stat="mAtk" val="1.30" />
+				<mul order="0x30" stat="maxMp" val="1.20" />
+				<mul order="0x30" stat="MpConsumeRate" val="0.80" />
+				<mul order="0x30" stat="mCritRate" val="1.2" /> <!-- Guessing -->
+			</effect>
+		</for>
+	</skill>
+	<skill id="1414" levels="1" name="Victories of Pa'agrio">
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="40" />
+		<set name="mpInitialConsume" val="57" />
+		<set name="mpConsume" val="284" />
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_ALLY" />
+		<set name="skillRadius" val="1000" />
+		<set name="reuseDelay" val="1200000" />
+		<set name="hitTime" val="2500" />
+		<set name="skillType" val="BUFF" />
+		<set name="isMagic" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect count="1" name="Buff" time="300" val="0" stackOrder="1" stackType="CoV">
+				<!-- This skills seems to be exacly same as CoV but it applies on ally -->
+				<mul order="0x30" stat="pAtk" val="1.1" />
+				<mul order="0x30" stat="pDef" val="1.2" />
+				<mul order="0x30" stat="rCrit" val="1.2" />
+				<add order="0x40" stat="accCombat" val="4" />
+				<mul order="0x30" stat="pAtkSpd" val="1.2" />
+				<mul order="0x30" stat="mAtkSpd" val="1.2" />
+				<mul order="0x30" stat="cAtk" val="1.2" />
+				<mul order="0x30" stat="mAtk" val="1.20" />
+				<mul order="0x30" stat="mDef" val="1.20" />
+				<mul order="0x30" stat="runSpd" val="0.8" />
+				<mul order="0x30" stat="maxHp" val="1.20" />
+				<mul order="0x30" stat="debuffVuln" val="0.8" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="1415" levels="1" name="Pa'agrio's Emblem">
+		<!-- All the values here are guessed (taken from Chant of Spirit and other clan buffs) -->
+		<set name="mpInitialConsume" val="56" />
+		<set name="mpConsume" val="172" />
+		<set name="target" val="TARGET_CLAN" />
+		<set name="skillRadius" val="900" />
+		<set name="reuseDelay" val="20000" />
+		<set name="hitTime" val="2500" />
+		<set name="skillType" val="BUFF" />
+		<set name="isMagic" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<set name="aggroPoints" val="666" />
+		<for>
+			<effect count="1" name="Buff" time="1200" val="0" stackOrder="1" stackType="resist_debuff_dispel">
+				<mul order="0x30" stat="cancelVuln" val="0.7" />
+				<mul order="0x30" stat="debuffVuln" val="0.8" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="1416" levels="1" name="Pa'agrio's Fist">
+		<set name="mpInitialConsume" val="57" /> <!-- Guessing -->
+		<set name="mpConsume" val="284" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="20" />
+		<set name="power" val="800.0" />
+		<set name="target" val="TARGET_ALLY" />
+		<set name="skillRadius" val="1000" />
+		<set name="reuseDelay" val="200000" /> <!-- Guessing -->
+		<set name="hitTime" val="2500" />
+		<set name="skillType" val="BUFF" /> <!-- Needs core support for CP Heal & Buff at once -->
+		<set name="isMagic" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect count="1" name="Buff" time="1200" val="0">
+				<add order="0x40" stat="maxCp" val="800" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="1417" levels="5" name="Aura Flash">
+		<table name="#itemConsumeCount"> 2 2 3 3 4 </table>
+		<table name="#magicLvl"> 58 62 66 70 74 </table>
+		<table name="#mpConsume"> 54 58 62 65 69 </table>
+		<table name="#power"> 49 53 58 61 65 </table>
+		<set name="hitTime" val="1000" />
+		<set name="isMagic" val="true" />
+		<set name="isDebuff" val="true" />
+		<set name="itemConsumeId" val="3031" />
+		<set name="itemConsumeCount" val="#itemConsumeCount" />
+		<set name="magicLvl" val="#magicLvl" />
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="power" val="#power" />
+		<set name="reuseDelay" val="10000" />
+		<set name="skillRadius" val="200" />
+		<set name="skillType" val="MDAM" />
+		<set name="target" val="TARGET_AURA" />
+		<set name="effectPower" val="100" />
+		<for>
+			<effect count="1" name="RemoveTarget" time="1" val="0" effectType="DEBUFF" />
+		</for>
+	</skill>
+	<skill id="1418" levels="1" name="Celestial Shield">
+		<set name="mpConsume" val="60" />
+		<set name="target" val="TARGET_ONE" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="600000" />
+		<set name="skillType" val="BUFF" />
+		<set name="staticReuse" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="isMagic" val="true" />
+		<for>
+			<effect count="1" name="Invincible" time="10" val="0" stackOrder="1" stackType="Instant_Shield" />
+		</for>
+	</skill>
+	<skill id="1419" levels="1" name="Volcano">
+		<set name="target" val="TARGET_SIGNET_GROUND" />
+		<set name="skillType" val="MOG" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="16000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="400" />
+		<set name="skillRadius" val="200" />
+		<set name="magicLvl" val="80" />
+		<set name="effectNpcId" val="13025" />
+		<!-- castTime = hitTime + initialEffectDelay -->
+		<set name="initialEffectDelay" val="3000" />
+		<set name="offensive" val="True" />
+		<set name="triggerEffectId" val="5130" />
+		<set name="element" val="2" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="200" />
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpInitialConsume" val="36" />
+		<set name="mpConsume" val="36" />
+		<cond msg="Proper SpellForces required.">
+			<player spell_force="3" />
+		</cond>
+		<for>
+			<effect self="1" count="0x7fffffff" name="SignetMDam" time="1" val="0">
+			</effect>
+		</for>
+	</skill>
+	<skill id="1420" levels="1" name="Cyclone">
+		<set name="target" val="TARGET_SIGNET_GROUND" />
+		<set name="skillType" val="MOG" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="16000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="400" />
+		<set name="skillRadius" val="200" />
+		<set name="magicLvl" val="80" />
+		<!-- castTime = hitTime + initialEffectDelay -->
+		<set name="initialEffectDelay" val="3000" />
+		<set name="offensive" val="True" />
+		<set name="element" val="1" />
+		<set name="effectNpcId" val="13025" />
+		<set name="triggerEffectId" val="5132" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="200" />
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpInitialConsume" val="36" />
+		<set name="mpConsume" val="36" />
+		<cond msg="Proper SpellForces required.">
+			<player spell_force="3" />
+		</cond>
+		<for>
+			<effect self="1" count="0x7fffffff" name="SignetMDam" time="1" val="0">
+			</effect>
+		</for>
+	</skill>
+	<skill id="1421" levels="1" name="Raging Waves">
+		<set name="target" val="TARGET_SIGNET_GROUND" />
+		<set name="skillType" val="MOG" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="16000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="400" />
+		<set name="skillRadius" val="200" />
+		<set name="magicLvl" val="80" />
+		<set name="effectNpcId" val="13025" />
+		<!-- castTime = hitTime + initialEffectDelay -->
+		<set name="initialEffectDelay" val="3000" />
+		<set name="offensive" val="True" />
+		<set name="triggerEffectId" val="5131" />
+		<set name="element" val="3" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="200" />
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpInitialConsume" val="36" />
+		<set name="mpConsume" val="36" />
+		<cond msg="Proper SpellForces required.">
+			<player spell_force="3" />
+		</cond>
+		<for>
+			<effect self="1" count="0x7fffffff" name="SignetMDam" time="1" val="0">
+			</effect>
+		</for>
+	</skill>
+	<skill id="1422" levels="1" name="Day of Doom">
+		<set name="target" val="TARGET_GROUND" />
+		<set name="skillType" val="SIGNET" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="1800000" />
+		<set name="castRange" val="900" />
+		<set name="skillRadius" val="200" />
+		<set name="staticReuse" val="true" />
+		<set name="magicLvl" val="80" />
+		<set name="effectNpcId" val="13028" />
+		<set name="effectId" val="5145" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="200" />
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpInitialConsume" val="36" />
+		<set name="mpConsume" val="89" />
+		<cond msg="Proper SpellForces required.">
+			<player spell_force="3" />
+		</cond>
+		<for>
+			<effect count="24" name="Signet" time="5" val="0" />
+		</for>
+	</skill>
+	<skill id="1423" levels="1" name="Gehenna">
+		<set name="target" val="TARGET_SIGNET_GROUND" />
+		<set name="skillType" val="MOG" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="16000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="400" />
+		<set name="skillRadius" val="200" />
+		<set name="magicLvl" val="80" />
+		<set name="effectNpcId" val="13025" />
+		<!-- castTime = hitTime + initialEffectDelay -->
+		<set name="initialEffectDelay" val="3000" />
+		<set name="offensive" val="True" />
+		<set name="triggerEffectId" val="5133" />
+		<set name="element" val="6" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="200" />
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpInitialConsume" val="36" />
+		<set name="mpConsume" val="36" />
+		<cond msg="Proper SpellForces required.">
+			<player spell_force="3" />
+		</cond>
+		<for>
+			<effect self="1" count="0x7fffffff" name="SignetMDam" time="1" val="0">
+			</effect>
+		</for>
+	</skill>
+	<skill id="1424" levels="1" name="Anti-Summoning Field">
+		<set name="target" val="TARGET_SIGNET_GROUND" />
+		<set name="skillType" val="MOG" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="16000" />
+		<set name="reuseDelay" val="300000" />
+		<set name="castRange" val="400" />
+		<set name="skillRadius" val="200" />
+		<set name="magicLvl" val="80" />
+		<set name="effectNpcId" val="13020" />
+		<!-- castTime = hitTime + initialEffectDelay -->
+		<set name="initialEffectDelay" val="3000" />
+		<set name="triggerEffectId" val="5134" />
+		<set name="offensive" val="True" />
+		<set name="isMagic" val="true" />
+		<set name="power" val="200" />
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpInitialConsume" val="36" />
+		<set name="mpConsume" val="36" />
+		<cond msg="Proper SpellForces required.">
+			<player spell_force="2" />
+		</cond>
+		<for>
+			<effect self="1" count="0x7fffffff" name="SignetAntiSummon" time="1" val="0">
+			</effect>
+		</for>
+	</skill>
+	<skill id="1425" levels="1" name="Purification Field">
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpConsume" val="70" />
+		<set name="target" val="TARGET_CLAN" />
+		<set name="skillRadius" val="900" />
+		<set name="skillType" val="NEGATE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="5000" />
+		<set name="reuseDelay" val="1800000" />
+		<set name="isMagic" val="false" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<set name="negateStats" val="ROOT PARALYZE POISON BLEED STUN DEBUFF CONFUSION FEAR MUTE SLEEP WEAKNESS" />
+		<set name="negatePower" val="80.0" />
+		<cond msg="Proper force required.">
+			<player spell_force="2" />
+		</cond>
+	</skill>
+	<skill id="1426" levels="1" name="Miracle">
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpConsume" val="72" />
+		<set name="magicLvl" val="80" />
+		<set name="power" val="100" />
+		<set name="target" val="TARGET_ALLY" />
+		<set name="skillRadius" val="900" />
+		<set name="skillType" val="HEAL_PERCENT" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="3600000" /> <!-- reuse 60 minutes -->
+		<set name="isMagic" val="false" /> <!-- skill won't be affected by Casting speed -->
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<cond msg="Proper force required.">
+			<player spell_force="2" />
+		</cond>
+		<for>
+		</for>
+	</skill>
+	<skill id="1427" levels="1" name="Flames of Invincibility">
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpInitialConsume" val="36" />
+		<set name="mpConsume" val="37" />
+		<set name="target" val="TARGET_CLAN" />
+		<set name="skillRadius" val="900" />
+		<set name="staticReuse" val="true" />
+		<set name="reuseDelay" val="2700000" />
+		<set name="hitTime" val="5000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<set name="isMagic" val="true" />
+		<cond msg="Proper SpellForces required.">
+			<player spell_force="2" />
+		</cond>
+		<for>
+			<effect count="1" name="Invincible" time="30" val="0" stackOrder="1" stackType="Instant_Shield" />
+		</for>
+	</skill>
+	<skill id="1428" levels="1" name="Mass Recharge">
+		<set name="itemConsumeId" val="8876" />
+		<set name="itemConsumeCount" val="1" />
+		<set name="mpConsume" val="73" />
+		<set name="magicLvl" val="80" />
+		<set name="target" val="TARGET_PARTY" />
+		<set name="power" val="1500" />
+		<set name="skillRadius" val="900" />
+		<set name="skillType" val="MANARECHARGE" />
+		<set name="hitTime" val="4000" />
+		<set name="reuseDelay" val="3600000" /> <!-- reuse 60 minutes -->
+		<set name="isMagic" val="false" /> <!-- skill won't be affected by Casting speed -->
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<cond msg="Proper force required.">
+			<player spell_force="3" />
+		</cond>
+		<for>
+		</for>
+	</skill>
+	<skill id="1429" levels="1" name="Gate Chant">
+		<set name="target" val="TARGET_PARTY" />
+		<set name="skillRadius" val="-1" />
+		<set name="skillType" val="SUMMON_FRIEND" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="itemConsumeId" val="8615" />
+		<set name="itemConsumeCount" val="4" />
+		<set name="mpConsume" val="284" />
+		<set name="hitTime" val="15000" />
+		<set name="skillTime" val="15000" />
+		<set name="reuseDelay" val="600000" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="1430" levels="5" name="Invocation">
+		<table name="#pDef"> 0.8 0.8 0.8 0.8 0.8 </table>
+		<table name="#mpConsume"> 27 28 30 33 34 </table>
+		<table name="#Tab-regMp"> 90 100 115 125 140 </table>
+		<set name="mpConsume" val="#mpConsume" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="2000" />
+		<set name="reuseDelay" val="900000" />
+		<set name="skillType" val="BUFF" />
+		<set name="staticReuse" val="true" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<set name="negateId" val="1430" />
+		<for>
+			<effect count="1" name="ImmobileUntilAttacked" time="30" val="0">
+				<mul order="0x30" stat="pDef" val="#pDef" />
+				<add order="0x40" stat="regMp" val="#Tab-regMp" />
+			</effect>
+		</for>
+	</skill>
+</list>

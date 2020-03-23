@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="achievement" maxOccurs="60" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="id">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="1" />
+									<xs:maxInclusive value="60" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="name" type="xs:normalizedString" use="required" />
+						<xs:attribute name="description" type="xs:normalizedString" use="required" />
+						<xs:attribute name="reward" type="xs:token" />
+						<xs:attribute name="repeatable" type="xs:token" />
+						<xs:attribute name="minLevel">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="0" />
+									<xs:maxInclusive value="81" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="minPvPCount" type="xs:nonNegativeInteger" />
+						<xs:attribute name="minPkCount" type="xs:nonNegativeInteger" />
+						<xs:attribute name="minClanLevel">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="0" />
+									<xs:maxInclusive value="10" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="mustBeHero" type="xs:boolean" />
+						<xs:attribute name="mustBeNoble" type="xs:boolean" />
+						<xs:attribute name="minWeaponEnchant">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="0" />
+									<xs:maxInclusive value="65535" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="minKarmaCount" type="xs:nonNegativeInteger" />
+						<xs:attribute name="minAdenaCount" type="xs:nonNegativeInteger" />
+						<xs:attribute name="minClanMembersCount" type="xs:nonNegativeInteger" />
+						<xs:attribute name="mustBeClanLeader" type="xs:boolean" />
+						<xs:attribute name="mustBeMarried" type="xs:boolean" />
+						<xs:attribute name="itemAmmount" type="xs:token" />
+						<xs:attribute name="crpAmmount" type="xs:nonNegativeInteger" />
+						<xs:attribute name="lordOfCastle" type="xs:boolean" />
+						<xs:attribute name="mustBeMageClass" type="xs:boolean" />
+						<xs:attribute name="minSubclassCount" type="xs:nonNegativeInteger" />
+						<xs:attribute name="CompleteAchievements" type="xs:nonNegativeInteger" />
+						<xs:attribute name="minSkillEnchant" type="xs:nonNegativeInteger" />
+						<xs:attribute name="minOnlineTime" type="xs:long" />
+						<xs:attribute name="minHeroCount" type="xs:nonNegativeInteger" />
+						<xs:attribute name="raidToKill" type="xs:nonNegativeInteger" />
+						<xs:attribute name="raidToKill1" type="xs:nonNegativeInteger" />
+						<xs:attribute name="raidToKill2" type="xs:nonNegativeInteger" />
+						<xs:attribute name="minRaidPoints" type="xs:nonNegativeInteger" />
+						<xs:attribute name="eventKills" type="xs:nonNegativeInteger" />
+						<xs:attribute name="events" type="xs:nonNegativeInteger" />
+						<xs:attribute name="eventWins" type="xs:nonNegativeInteger" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

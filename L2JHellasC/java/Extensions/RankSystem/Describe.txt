@@ -1,0 +1,34 @@
+1. PvP System:
+	- Added new method for PvP counting. It's secured by time limiter, and basic protections like same IP, clan etc.
+	  If time protection is working then legal kills not rising. If killer kill victim and time is OK, so then I call it "Legal Kill",
+	  if killer kill victim again, PvP counter rise but not Legal Kill (Time Protection sorks). All informations are stored in DB.
+	  This "Time Protection" should reduce farming. (More: if we set min pvp lvl on 76+ so then it will be hard to farm on bots.
+	  Protection should reduce farm on low rate servers. If we set max player kills on: 1, it lock Legal Kills counter after 1 kill,
+	  it's mean killer can kill victim only once in game, option can be useful on servers with big online).
+	- System works in every place, but is possible to deactivate it in specific areas like: PEACEFUL ZONE.
+
+2. Rank System:
+	- Based on PvP System, it's mean, killer can earn exp for kill player, then he rise his rank too if earn 100%. (exp is based on current Rank Points [RP]).
+	- Default 42 ranks.
+	- Reward for rise up the Rank can be awarded for each level of Rank Points. (List of rewards and minimum rank points for obtain reward in database).
+	- Included images for ranks and exp bar (loaded from server side).
+
+3. Reward System:
+	- There is 2 reward types: for Legal Kill player, and for Legal Kill player with Rank.
+	- Each kill gives special currency called RPC, the RPC can be exchanged for items.
+	- Based on PvP System, killer can be rewarded for Legal Kill or not.
+	- Standard PvP Rewards, Rank Level Rewards and Rank PvP Rewards are configurable and can be on/off in config.
+
+4. Death Manager:
+	- Is allowed to enable Death Manager, it's mean additional buttons in Death PvP Status Window showing details of killer like (CP, HP, MP, equipment (enchant) only for kill moment).
+
+5. War Counter:
+	- Count kills if target is in War Clan. Legal kills rules are used.
+
+6. Combo Kill System:
+	- Shout messages (local/global) about the killer who doing a combo, all these messages are configurable.
+	- Combo system allows multiply Rank Points by special ratio defined in configuration file.
+
+7. Configurability:
+	- There is over 60 options. Possible is enable/disable system components like: Rewarding system, war counter, combo system, death manager and more.
+	- Each Rank, Protections, Times, Messages can be edited by You without programming knowledge.

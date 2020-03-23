@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../templates/teleports.xsd">
+	<!-- Gludin Arena - 1 Noble Gate Pass -->
+	<teleport id="9900" X="-87328" Y="142266" Z="-3640" price="57,1;" isNoble="true" />
+	<!-- Coliseum - 1 Noble Gate Pass -->
+	<teleport id="9901" X="146440" Y="46723" Z="-3432" price="57,1;" isNoble="true" />
+	<!-- Giran Arena - 1 Noble Gate Pass -->
+	<teleport id="9902" X="73579" Y="142709" Z="-3768" price="57,1;" isNoble="true" />
+	<!-- Forgotten Temple - 1 Noble Gate Pass -->
+	<teleport id="9910" X="-54026" Y="179504" Z="-4640" price="57,1;" isNoble="true" />
+	<!-- Wasteland  - 1 Noble Gate Pass -->
+	<teleport id="9911" X="-47506" Y="179572" Z="-3632" price="57,1;" isNoble="true" />
+	<!-- Silent Valley - 1 Noble Gate Pass -->
+	<teleport id="9920" X="181737" Y="46469" Z="-4352" price="57,1;" isNoble="true" />
+	<!-- Plains of Glory - 1 Noble Gate Pass -->
+	<teleport id="9921" X="135756" Y="19557" Z="-3424" price="57,1;" isNoble="true" />
+	<!-- War-Torn Plains - 1 Noble Gate Pass -->
+	<teleport id="9922" X="156898" Y="11217" Z="-4032" price="57,1;" isNoble="true" />
+	<!-- Tower of Insolence, 3rd Floor - 1 Noble Gate Pass -->
+	<teleport id="9923" X="110848" Y="16154" Z="-2120" price="57,1;" isNoble="true" />
+	<!-- Tower of Insolence, 5th Floor - 1 Noble Gate Pass -->
+	<teleport id="9924" X="118404" Y="15988" Z="832" price="57,1;" isNoble="true" />
+	<!-- Tower of Insolence, 7th Floor - 1 Noble Gate Pass -->
+	<teleport id="9925" X="115064" Y="12181" Z="2960" price="57,1;" isNoble="true" />
+	<!-- Tower of Insolence, 10th Floor - 1 Noble Gate Pass -->
+	<teleport id="9926" X="118525" Y="16455" Z="5984" price="57,1;" isNoble="true" />
+	<!-- Tower of Insolence, 13th Floor - 1 Noble Gate Pass -->
+	<teleport id="9927" X="115384" Y="16820" Z="9000" price="57,1;" isNoble="true" />
+	<!-- Hunters Valley - 1 Noble Gate Pass -->
+	<teleport id="9928" X="114306" Y="86573" Z="-3112" price="57,1;" isNoble="true" />
+	<!-- Angel Waterfall - 1 Noble Gate Pass -->
+	<teleport id="9929" X="166182" Y="91560" Z="-3168" price="57,1;" isNoble="true" />
+	<!-- Forest of Mirrors - 1 Noble Gate Pass -->
+	<teleport id="9930" X="166080" Y="75574" Z="-2992" price="57,1;" isNoble="true" />
+	<!-- Enchanted Valley - 1 Noble Gate Pass -->
+	<teleport id="9931" X="114674" Y="44150" Z="-3376" price="57,1;" isNoble="true" />
+	<!-- Hunters Valley - 1 Noble Gate Pass -->
+	<teleport id="9932" X="114306" Y="86573" Z="-3112" price="57,1;" isNoble="true" />
+	<!-- Gorgon Flower Garden - 1 Noble Gate Pass -->
+	<teleport id="9940" X="113553" Y="134813" Z="-3640" price="57,1;" isNoble="true" />
+	<!-- Antharas Lair 1 - 1 Noble Gate Pass -->
+	<teleport id="9941" X="147071" Y="120156" Z="-4520" price="57,1;" isNoble="true" />
+	<!-- Antharas Lair 2 - 1 Noble Gate Pass -->
+	<teleport id="9942" X="151689" Y="112615" Z="-5520" price="57,1;" isNoble="true" />
+	<!-- Dragon Valley - 1 Noble Gate Pass -->
+	<teleport id="9943" X="116425" Y="109898" Z="-3424" price="57,1;" isNoble="true" />
+	<!-- Antharas Lair, Heart of Warding - 1 Noble Gate Pass -->
+	<teleport id="9944" X="154396" Y="121235" Z="-3808" price="57,1;" isNoble="true" />
+	<!-- Dragon Valley, Traders Post - 1 Noble Gate Pass -->
+	<teleport id="9945" X="122824" Y="110836" Z="-3720" price="57,1;" isNoble="true" />
+	<!-- Private Hardin&apos;s Academy - 1 Noble Gate Pass -->
+	<teleport id="9946" X="105918" Y="109759" Z="-3192" price="57,1;" isNoble="true" />
+	<!-- Forest of the Dead - 1 Noble Gate Pass -->
+	<teleport id="9950" X="54425" Y="-41692" Z="-3072" price="57,1;" isNoble="true" />
+	<!-- Valley of Saints - 1 Noble Gate Pass -->
+	<teleport id="9951" X="84092" Y="-80084" Z="-3504" price="57,1;" isNoble="true" />
+	<!-- Cursed Village - 1 Noble Gate Pass -->
+	<teleport id="9952" X="57670" Y="-41672" Z="-3144" price="57,1;" isNoble="true" />
+	<!-- Stakato Nest - 1 Noble Gate Pass -->
+	<teleport id="9953" X="88969" Y="-45307" Z="-2104" price="57,1;" isNoble="true" />
+	<!-- Monastery of Silence - 1 Noble Gate Pass -->
+	<teleport id="9954" X="106414" Y="-87799" Z="-2920" price="57,1;" isNoble="true" />
+	<!-- Varka Silenos Village - 1 Noble Gate Pass -->
+	<teleport id="9960" X="107929" Y="-52248" Z="-2408" price="57,1;" isNoble="true" />
+	<!-- Ketra Orc Village - 1 Noble Gate Pass -->
+	<teleport id="9961" X="149817" Y="-80053" Z="-5576" price="57,1;" isNoble="true" />
+	<!-- Devil&apos;s Pass - 1 Noble Gate Pass -->
+	<teleport id="9962" X="106349" Y="-61870" Z="-2904" price="57,1;" isNoble="true" />
+	<!-- Garden of Beasts - 1 Noble Gate Pass -->
+	<teleport id="9963" X="132997" Y="-60608" Z="-2960" price="57,1;" isNoble="true" />
+	<!-- Hot Springs - 1 Noble Gate Pass -->
+	<teleport id="9964" X="144625" Y="-101291" Z="-3384" price="57,1;" isNoble="true" />
+	<!-- Wall of Argos - 1 Noble Gate Pass -->
+	<teleport id="9965" X="183140" Y="-53307" Z="-1896" price="57,1;" isNoble="true" />
+	<!-- Four Sepulchers - 1 Noble Gate Pass -->
+	<teleport id="9967" X="178127" Y="-84435" Z="-7216" price="57,1;" isNoble="true" />
+	<!-- Imperial Tomb - 1 Noble Gate Pass -->
+	<teleport id="9968" X="186699" Y="-75915" Z="-2824" price="57,1;" isNoble="true" />
+	<!-- Forge of the Gods, entrance - 1 Noble Gate Pass -->
+	<teleport id="9970" X="169018" Y="-116303" Z="-2432" price="57,1;" isNoble="true" />
+	<!-- Forge of the Gods, lower level - 1 Noble Gate Pass -->
+	<teleport id="9971" X="179887" Y="-111241" Z="-5824" price="57,1;" isNoble="true" />
+	<!-- Execution Grounds - 1 Noble Gate Pass -->
+	<teleport id="9980" X="50568" Y="152408" Z="-2656" price="57,1;" isNoble="true" />
+	<!-- Floran Agricultural Area - 1 Noble Gate Pass -->
+	<teleport id="9981" X="26810" Y="172787" Z="-3376" price="57,1;" isNoble="true" />
+	<!-- Cruma Marshlands - 1 Noble Gate Pass -->
+	<teleport id="9982" X="5941" Y="125455" Z="-3640" price="57,1;" isNoble="true" />
+	<!-- Cruma Tower, 1st Floor - 1 Noble Gate Pass -->
+	<teleport id="9983" X="17718" Y="117315" Z="-12064" price="57,1;" isNoble="true" />
+	<!-- Cruma Tower, 2nd Floor - 1 Noble Gate Pass -->
+	<teleport id="9984" X="17728" Y="110325" Z="-9312" price="57,1;" isNoble="true" />
+	<!-- Frost Lake - 1 Noble Gate Pass -->
+	<teleport id="9990" X="107577" Y="-122392" Z="-3632" price="57,1;" isNoble="true" />
+	<!-- Crypts of Disgrace - 1 Noble Gate Pass -->
+	<teleport id="9991" X="44221" Y="-114232" Z="-2784" price="57,1;" isNoble="true" />
+	<!-- Sky Wagon Relic - 1 Noble Gate Pass -->
+	<teleport id="9992" X="121618" Y="-141554" Z="-1496" price="57,1;" isNoble="true" />
+	<!-- Evil Hunting Grounds - 1 Noble Gate Pass -->
+	<teleport id="10000" X="-6989" Y="109503" Z="-3040" price="57,1;" isNoble="true" />
+	<!-- Neutral Zone - 1 Noble Gate Pass -->
+	<teleport id="10001" X="-18415" Y="85624" Z="-3680" price="57,1;" isNoble="true" />
+	<!-- Dark Forest - 1 Noble Gate Pass -->
+	<teleport id="10002" X="-14129" Y="27094" Z="-3680" price="57,1;" isNoble="true" />
+	<!-- School of Dark Arts - 1 Noble Gate Pass -->
+	<teleport id="10003" X="-49185" Y="49441" Z="-5912" price="57,1;" isNoble="true" />
+	<!-- Elven Ruins - 1 Noble Gate Pass -->
+	<teleport id="10004" X="49315" Y="248452" Z="-5960" price="57,1;" isNoble="true" />
+	<!-- Immortal Plateau - 1 Noble Gate Pass -->
+	<teleport id="10005" X="-25309" Y="-131569" Z="-680" price="57,1;" isNoble="true" />
+	<!-- Mithril Mines - 1 Noble Gate Pass -->
+	<teleport id="10006" X="175499" Y="-181586" Z="-904" price="57,1;" isNoble="true" />
+	<!-- Abandoned Coal Mines - 1 Noble Gate Pass -->
+	<teleport id="10007" X="144706" Y="-173223" Z="-1520" price="57,1;" isNoble="true" />
+	<!-- Forest of Evil - 1 Noble Gate Pass -->
+	<teleport id="10010" X="93218" Y="16969" Z="-3904" price="57,1;" isNoble="true" />
+	<!-- Timak Outpost - 1 Noble Gate Pass -->
+	<teleport id="10011" X="67097" Y="68815" Z="-3648" price="57,1;" isNoble="true" />
+	<!-- Altar of Rites - 1 Noble Gate Pass -->
+	<teleport id="10012" X="-44566" Y="77508" Z="-3736" price="57,1;" isNoble="true" />
+	<!-- Field of Silence - 1 Noble Gate Pass -->
+	<teleport id="10020" X="69748" Y="186111" Z="-2872" price="57,1;" isNoble="true" />
+	<!-- Field of Whispers - 1 Noble Gate Pass -->
+	<teleport id="10021" X="97786" Y="209303" Z="-3040" price="57,1;" isNoble="true" />
+	<!-- Alligator Island - 1 Noble Gate Pass -->
+	<teleport id="10022" X="113708" Y="178387" Z="-3232" price="57,1;" isNoble="true" />
+	<!-- Garden of Eva, entrance - 1 Noble Gate Pass -->
+	<teleport id="10023" X="82693" Y="242220" Z="-6712" price="57,1;" isNoble="true" />
+	<!-- Garden of Eva, 2nd ring - 1 Noble Gate Pass -->
+	<teleport id="10024" X="79248" Y="247390" Z="-8816" price="57,1;" isNoble="true" />
+	<!-- Garden of Eva, 3rd ring - 1 Noble Gate Pass -->
+	<teleport id="10025" X="77868" Y="250400" Z="-9328" price="57,1;" isNoble="true" />
+	<!-- Garden of Eva, 4th ring - 1 Noble Gate Pass -->
+	<teleport id="10026" X="78721" Y="253309" Z="-9840" price="57,1;" isNoble="true" />
+	<!-- Garden of Eva, 5th level - 1 Noble Gate Pass -->
+	<teleport id="10027" X="82951" Y="252354" Z="-10592" price="57,1;" isNoble="true" />
+</list>

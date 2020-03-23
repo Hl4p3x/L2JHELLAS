@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="pet" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="type" type="xs:normalizedString" use="required" />
+						<xs:attribute name="typeID" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="level" use="required" >
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="0" />
+									<xs:maxInclusive value="81" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="expMax" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="hpMax" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="mpMax" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="patk" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="pdef" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="matk" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="mdef" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="acc" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="evasion" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="crit" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="speed" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="atk_speed" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="cast_speed" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="feedMax" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="feedbattle" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="feednormal" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="loadMax" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="hpregen" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="mpregen" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="owner_exp_taken" type="xs:decimal" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

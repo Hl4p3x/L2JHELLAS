@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="armorset" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="id" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="chest" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="legs" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="head" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="gloves" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="feet" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="skill_id" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="shield" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="shield_skill_id" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="enchant6skill" type="xs:nonNegativeInteger" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

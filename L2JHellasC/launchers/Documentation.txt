@@ -1,0 +1,23 @@
+To use Debug mode in eclipse and run your server you must
+Tested for Windows (ALL Versions) and Ubuntu (ALL Versions)
+
+4 Steps:
+1: Compile
+2: Edit in eclipse "launchers/DEBUG GameServer.launch" and "launchers/DEBUG LoginServer.launch" files and change this lines:
+
+FROM
+(gameserver)
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\L2JHellas\gameserver\"/>
+(loginserver)
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\L2JHellas\login\"/>
+
+TO
+(gameserver)
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\MY_FOLDER_EXAMPLE\L2JHellas\gameserver\"/>
+(loginserver)
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="C:\MY_FOLDER_EXAMPLE\L2JHellas\login\"/>
+
+
+Or wherever you have your Datapack this is the default location.
+
+4: L2JHellasC -> launchers -> right click on "DEBUG" you want -> Run as

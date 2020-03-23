@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="item" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:sequence maxOccurs="1" minOccurs="1">
+							<xs:element name="for" maxOccurs="1" minOccurs="0">
+								<xs:complexType>
+									<xs:choice maxOccurs="unbounded" minOccurs="1">
+										<xs:element name="add" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence minOccurs="0" maxOccurs="1">
+													<xs:element name="and" maxOccurs="unbounded" minOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="using" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="slotitem" type="xs:token" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="player" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="behind" type="xs:boolean" />
+																		<xs:attribute name="hp" type="xs:integer" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="order" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:token">
+															<xs:enumeration value="0x08" />
+															<xs:enumeration value="0x10" />
+															<xs:enumeration value="0x20" />
+															<xs:enumeration value="0x30" />
+															<xs:enumeration value="0x40" />
+															<xs:enumeration value="0x50" />
+															<xs:enumeration value="0x60" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="stat" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:token">
+															<xs:enumeration value="mAtk" />
+															<xs:enumeration value="pAtk" />
+															<xs:enumeration value="pAtkAngle" />
+															<xs:enumeration value="pAtkRange" />
+															<xs:enumeration value="pAtkSpd" />
+															<xs:enumeration value="rCrit" />
+															<xs:enumeration value="rShld" />
+															<xs:enumeration value="sDef" />
+															<xs:enumeration value="soulShotCount" />
+															<xs:enumeration value="MpConsume" />
+															<xs:enumeration value="sDef" />
+															<xs:enumeration value="cAtk" />
+															<xs:enumeration value="cAtkAdd" />
+															<xs:enumeration value="regHp" />
+															<xs:enumeration value="regMp" />
+															<xs:enumeration value="accCombat" />
+															<xs:enumeration value="absorbDam" />
+															<xs:enumeration value="rEvas" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="val" type="xs:decimal" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="enchant" maxOccurs="2" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="order" type="xs:token" use="required" fixed="0x0C" />
+												<xs:attribute name="stat" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:token">
+															
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="val" type="xs:integer" fixed="0" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="mul" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence minOccurs="0" maxOccurs="1">
+													<xs:element name="and" maxOccurs="unbounded" minOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="using" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="slotitem" type="xs:token" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="player" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="behind" type="xs:boolean" />
+																		<xs:attribute name="hp" type="xs:integer" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="order">
+													<xs:simpleType>
+														<xs:restriction base="xs:token">
+															<xs:enumeration value="0x08" />
+															<xs:enumeration value="0x10" />
+															<xs:enumeration value="0x20" />
+															<xs:enumeration value="0x30" />
+															<xs:enumeration value="0x40" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="stat">
+													<xs:simpleType>
+														<xs:restriction base="xs:token">
+															
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="val" type="xs:decimal" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="set" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence minOccurs="0" maxOccurs="1">
+													<xs:element name="and" maxOccurs="unbounded" minOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="using" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="slotitem" type="xs:token" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="player" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="behind" type="xs:boolean" />
+																		<xs:attribute name="hp" type="xs:integer" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="game" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="skill" type="xs:boolean" />
+																		<xs:attribute name="chance" type="xs:integer" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="order" type="xs:token" fixed="0x08"/>
+												<xs:attribute name="stat" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:token">
+															<xs:enumeration value="mAtk" />
+															<xs:enumeration value="pAtk" />
+															<xs:enumeration value="pAtkAngle" />
+															<xs:enumeration value="pAtkRange" />
+															<xs:enumeration value="pAtkSpd" />
+															<xs:enumeration value="rCrit" />
+															<xs:enumeration value="rShld" />
+															<xs:enumeration value="sDef" />
+															<xs:enumeration value="soulShotCount" />
+															<xs:enumeration value="MpConsume" />
+															<xs:enumeration value="sDef" />
+															<xs:enumeration value="cAtk" />
+															<xs:enumeration value="cAtkAdd" />
+															<xs:enumeration value="regHp" />
+															<xs:enumeration value="regMp" />
+															<xs:enumeration value="accCombat" />
+															<xs:enumeration value="absorbDam" />
+															<xs:enumeration value="rEvas" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="val" type="xs:integer" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="skill" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="onCast" type="xs:integer" />
+												<xs:attribute name="onCrit" type="xs:integer" />
+												<xs:attribute name="id" type="xs:integer" use="required" />
+												<xs:attribute name="lvl" type="xs:integer" use="required" />
+												<xs:attribute name="chance" type="xs:integer" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="sub" maxOccurs="unbounded" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence minOccurs="0" maxOccurs="1">
+													<xs:element name="and" maxOccurs="unbounded" minOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="0" maxOccurs="unbounded">
+																<xs:element name="using" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="slotitem" type="xs:token" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="player" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="behind" type="xs:boolean" />
+																		<xs:attribute name="hp" type="xs:integer" />
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="game" maxOccurs="unbounded" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="skill" type="xs:boolean" />
+																		<xs:attribute name="chance" type="xs:integer" />
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="order">
+													<xs:simpleType>
+														<xs:restriction base="xs:token">
+															<xs:enumeration value="0x08" />
+															<xs:enumeration value="0x10" />
+															<xs:enumeration value="0x20" />
+															<xs:enumeration value="0x30" />
+															<xs:enumeration value="0x40" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="stat" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:token">
+															<xs:enumeration value="mAtk" />
+															<xs:enumeration value="pAtk" />
+															<xs:enumeration value="pAtkAngle" />
+															<xs:enumeration value="pAtkRange" />
+															<xs:enumeration value="pAtkSpd" />
+															<xs:enumeration value="rCrit" />
+															<xs:enumeration value="rShld" />
+															<xs:enumeration value="sDef" />
+															<xs:enumeration value="soulShotCount" />
+															<xs:enumeration value="MpConsume" />
+															<xs:enumeration value="sDef" />
+															<xs:enumeration value="cAtk" />
+															<xs:enumeration value="cAtkAdd" />
+															<xs:enumeration value="regHp" />
+															<xs:enumeration value="regMp" />
+															<xs:enumeration value="accCombat" />
+															<xs:enumeration value="absorbDam" />
+															<xs:enumeration value="rEvas" />
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="val" type="xs:integer" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:positiveInteger">
+									<xs:minInclusive value="1" />
+									<xs:maxInclusive value="65535" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="name" type="xs:normalizedString" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

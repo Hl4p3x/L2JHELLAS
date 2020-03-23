@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS fish;
+DROP TABLE IF EXISTS helper_buff_list;
+DROP TABLE IF EXISTS henna;
+DROP TABLE IF EXISTS pets_stats;
+DROP TABLE IF EXISTS skill_spellbooks;
+DROP TABLE IF EXISTS enchant_skill_trees;
+DROP TABLE IF EXISTS fishing_skill_trees;
+DROP TABLE IF EXISTS pledge_skill_trees;
+DROP TABLE IF EXISTS skill_trees;
+DROP TABLE IF EXISTS minions;
+DROP TABLE IF EXISTS skill_learn;
+DROP TABLE IF EXISTS custom_teleport;
+DROP TABLE IF EXISTS teleport;

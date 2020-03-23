@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="1">
+				<xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="dropRate" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="val" type="xs:integer" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="duration" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="val" type="xs:integer" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="durationLost" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="val" type="xs:integer" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="disapearChance" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="val" type="xs:integer" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="stageKills" maxOccurs="unbounded" minOccurs="0">
+								<xs:complexType>
+									<xs:attribute name="val" type="xs:integer" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:int" use="required" />
+						<xs:attribute name="skillId" type="xs:int" use="required" />
+						<xs:attribute name="name" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

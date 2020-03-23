@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="teleport" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="id" type="xs:integer" use="required" />
+						<xs:attribute name="X" type="xs:integer" use="required" />
+						<xs:attribute name="Y" type="xs:integer" use="required" />
+						<xs:attribute name="Z" type="xs:integer" use="required" />
+						<xs:attribute name="price" type="xs:token" />
+						<xs:attribute name="minMaxLevel" type="xs:token" />
+						<xs:attribute name="isGM" type="xs:boolean" />
+						<xs:attribute name="isClanHallTp" type="xs:boolean" />
+						<xs:attribute name="isCastleTp" type="xs:boolean" />
+						<xs:attribute name="isNoble" type="xs:boolean" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

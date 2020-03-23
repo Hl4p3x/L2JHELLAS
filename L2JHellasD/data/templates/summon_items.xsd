@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="summon_item" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="itemID" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="npcID" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="summonType" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

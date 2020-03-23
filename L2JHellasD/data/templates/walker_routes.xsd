@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="walker_route" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="route_id" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="npc_id" type="xs:int" use="required" />
+						<xs:attribute name="move_point" type="xs:int" use="required" />
+						<xs:attribute name="chatText" type="xs:string" use="required" />
+						<xs:attribute name="move_x" type="xs:int" use="required" />
+						<xs:attribute name="move_y" type="xs:int" use="required" />
+						<xs:attribute name="move_z" type="xs:int" use="required" />
+						<xs:attribute name="delay" type="xs:int" use="required" />
+						<xs:attribute name="running" type="xs:boolean" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

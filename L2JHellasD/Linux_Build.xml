@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="L2JHellasD" default="Build" basedir=".">
+	<description>
+		This program is free software: you can redistribute it and/or modify it under
+		the terms of the GNU General Public License as published by the Free Software
+		Foundation, either version 3 of the License, or (at your option) any later
+		version.
+		
+		This program is distributed in the hope that it will be useful, but WITHOUT
+		ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+		FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+		details.
+		
+		You should have received a copy of the GNU General Public License along with
+		this program. If not, see http://www.gnu.org/licenses.
+	</description>
+
+	<property name="build" location="../build/DataPack" />
+	<property name="build.dist" location="${build}/dist" />
+	<property name="build.dist.game" location="${build.dist}/gameserver" />
+	<property name="build.dist.tools" location="${build.dist}/tools" />
+	<property name="build.dist.languages.accountmanager" location="${build.dist}/languages/accountmanager" />
+	<property name="build.dist.doc" location="${build.dist}/doc" />
+	<property name="build.dist.sql" location="${build.dist}/sql" />
+	<property name="build.dist.sql.updates" location="${build.dist}/sql/updates" />
+	<property name="build.dist.sql.maintenance" location="${build.dist}/sql/maintenance" />
+
+	<target name="init" depends="clean" description="Create the output directories. Do nothing if dirs were already created">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.dist}" />
+		<mkdir dir="${build.dist.game}" />
+		<mkdir dir="${build.dist.doc}" />
+		<mkdir dir="${build.dist.sql}" />
+		<mkdir dir="${build.dist.sql.updates}" />
+		<mkdir dir="${build.dist.sql.maintenance}" />
+	</target>
+	<echo>Creating L2J Hellas DataPack please wait..</echo>
+	<target name="export" depends="init" description="Syncronizes build space contents with project.">
+		<sync todir="${build.dist.doc}">
+			<fileset dir="${basedir}">
+				<include name="gpl.txt" />
+				<include name="readme-dp.txt" />
+			</fileset>
+		</sync>
+		<sync todir="${build.dist.game}/data">
+			<fileset dir="${basedir}/data">
+				<exclude name=".project" />
+				<exclude name="log/**" />
+				<exclude name="cachedir/**" />
+				<exclude name="clans/**" />
+				<exclude name="crests/**" />
+				<exclude name="**.svn**" />
+				<exclude name="**/*.class" />
+				<exclude name="**/*.jar" />
+				<exclude name="geodata/**" />
+				<exclude name="pathnode/**" />
+				<include name="**/*.*" />
+			</fileset>
+		</sync>
+		<sync todir="${build.dist.sql}">
+			<fileset dir="${basedir}/sql">
+				<include name="*.*" />
+			</fileset>
+		</sync>
+		<sync todir="${build.dist.sql.updates}">
+			<fileset dir="${basedir}/sql/updates">
+				<include name="*.*" />
+			</fileset>
+		</sync>
+		<sync todir="${build.dist.sql.maintenance}">
+			<fileset dir="${basedir}/sql/maintenance">
+				<include name="*.*" />
+			</fileset>
+		</sync>
+		<sync todir="${build.dist.tools}">
+			<fileset dir="${basedir}/tools">
+				<include name="*.*" />
+			</fileset>
+		</sync>
+		<sync todir="${build.dist.languages.accountmanager}">
+			<fileset dir="${basedir}/languages/accountmanager">
+				<include name="*.*" />
+			</fileset>
+		</sync>
+	</target>
+
+	<target name="Build" depends="export,clean" description="Creates a ZIP file. Suitable for distribution but building takes longer. See dist-deflate for faster builds.">
+		<zip destfile="${build}/L2J_Hellas_DataPack.zip" basedir="${build.dist}" level="9" />
+		<mkdir dir="../../L2JHellas" />
+		<mkdir dir="../../L2JHellas/Backup" />
+		<echo>Store L2jhellas.</echo>
+		<unzip src="${build}/L2J_Hellas_DataPack.zip" dest="../../L2JHellas" />
+		<echo>Backup L2jhellas.</echo>
+		<copy file="${build}/L2J_Hellas_DataPack.zip" todir="../../L2JHellas/Backup">
+		</copy>
+		<echo>L2J Hellas DataPack stored in C:/L2JHellas.</echo>
+		<echo>Please visit our forum http://l2jhellas.info/</echo>
+	</target>
+
+	<target name="clean" description="Deletes the whole build space and existing packages.">
+		<delete dir="${build}" />
+	</target>
+</project>

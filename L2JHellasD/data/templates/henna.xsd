@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="henna" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="symbol_id" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="symbol_name" type="xs:string" use="required" />
+						<xs:attribute name="dye_id" type="xs:string" use="required" />
+						<xs:attribute name="dye_amount" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="price" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="stat_INT" type="xs:int" use="required" />
+						<xs:attribute name="stat_STR" type="xs:int" use="required" />
+						<xs:attribute name="stat_CON" type="xs:int" use="required" />
+						<xs:attribute name="stat_MEM" type="xs:int" use="required" />
+						<xs:attribute name="stat_DEX" type="xs:int" use="required" />
+						<xs:attribute name="stat_WIT" type="xs:int" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

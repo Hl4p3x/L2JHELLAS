@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="SkillTree" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="skill_id" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="level" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="name" type="xs:string" use="required" />
+						<xs:attribute name="sp" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="min_level" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="costid" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="cost" type="xs:nonNegativeInteger" use="required" />
+						<xs:attribute name="isfordwarf" type="xs:nonNegativeInteger" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

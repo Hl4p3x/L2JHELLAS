@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<xs:element name="class" minOccurs="6" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="1">
+							<xs:element name="stats" maxOccurs="2" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="1">
+										<xs:element name="lvlup" maxOccurs="unbounded" minOccurs="1">
+											<xs:complexType>
+												<xs:sequence minOccurs="1" maxOccurs="1">
+													<xs:element name="item" maxOccurs="unbounded" minOccurs="1">
+														<xs:complexType>
+															<xs:attribute name="item1" type="xs:integer" use="required" />
+															<xs:attribute name="item2" type="xs:integer" use="required" />
+															<xs:attribute name="item3" type="xs:integer" use="required" />
+															<xs:attribute name="item4" type="xs:integer" use="required" />
+															<xs:attribute name="item5" type="xs:integer" use="required" />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="hpbase" type="xs:token" use="required" />
+												<xs:attribute name="hpadd" type="xs:token" use="required" />
+												<xs:attribute name="hpmod" type="xs:token" use="required" />
+												<xs:attribute name="cpbase" type="xs:token" use="required" />
+												<xs:attribute name="cpadd" type="xs:token" use="required" />
+												<xs:attribute name="cpmod" type="xs:token" use="required" />
+												<xs:attribute name="mpbase" type="xs:token" use="required" />
+												<xs:attribute name="mpadd" type="xs:token" use="required" />
+												<xs:attribute name="mpmod" type="xs:token" use="required" />
+												<xs:attribute name="class_lvl" type="xs:integer" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="str" type="xs:integer" use="required" />
+									<xs:attribute name="con" type="xs:integer" use="required" />
+									<xs:attribute name="dex" type="xs:integer" use="required" />
+									<xs:attribute name="_int" type="xs:integer" use="required" />
+									<xs:attribute name="wit" type="xs:integer" use="required" />
+									<xs:attribute name="men" type="xs:integer" use="required" />
+									<xs:attribute name="p_atk" type="xs:integer" use="required" />
+									<xs:attribute name="p_def" type="xs:integer" use="required" />
+									<xs:attribute name="m_atk" type="xs:integer" use="required" />
+									<xs:attribute name="m_def" type="xs:integer" use="required" />
+									<xs:attribute name="p_spd" type="xs:integer" use="required" />
+									<xs:attribute name="m_spd" type="xs:integer" use="required" />
+									<xs:attribute name="acc" type="xs:integer" use="required" />
+									<xs:attribute name="critical" type="xs:integer" use="required" />
+									<xs:attribute name="evasion" type="xs:integer" use="required" />
+									<xs:attribute name="move_spd" type="xs:integer" use="required" />
+									<xs:attribute name="_load" type="xs:integer" use="required" />
+									<xs:attribute name="x" type="xs:integer" use="required" />
+									<xs:attribute name="y" type="xs:integer" use="required" />
+									<xs:attribute name="z" type="xs:integer" use="required" />
+									<xs:attribute name="canCraft" type="xs:integer" use="required" />
+									<xs:attribute name="m_unk1" type="xs:token" use="required" />
+									<xs:attribute name="m_unk2" type="xs:token" use="required" />
+									<xs:attribute name="m_col_r" type="xs:token" use="required" />
+									<xs:attribute name="m_col_h" type="xs:token" use="required" />
+									<xs:attribute name="f_unk1" type="xs:token" use="required" />
+									<xs:attribute name="f_unk2" type="xs:token" use="required" />
+									<xs:attribute name="f_col_r" type="xs:token" use="required" />
+									<xs:attribute name="f_col_h" type="xs:token" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="Id" type="xs:int" use="required" />
+						<xs:attribute name="name" type="xs:string" use="required" />
+						<xs:attribute name="RaceId" type="xs:int" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

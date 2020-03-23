@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="L2JHellasC" default="Build" basedir=".">
+	<description>
+    	This program is free software: you can redistribute it and/or modify it under
+    	the terms of the GNU General Public License as published by the Free Software
+    	Foundation, either version 3 of the License, or (at your option) any later
+    	version.
+    	
+    	This program is distributed in the hope that it will be useful, but WITHOUT
+    	ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+    	FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+    	details.
+    	
+    	You should have received a copy of the GNU General Public License along with
+    	this program. If not, see http://www.gnu.org/licenses.
+    </description>
+
+	<property name="src" location="java" />
+	<property name="libs" location="libs" />
+	<property name="build" location="../build/Core" />
+	<property name="build.classes" location="${build}/classes" />
+	<property name="build.dist" location="${build}/dist" />
+	<property name="build.dist.doc" location="${build.dist}/doc" />
+	<property name="build.dist.doc.3rdPartyLicenses" location="${build.dist}/doc/3rdPartyLicenses" />
+	<property name="build.dist.login" location="${build.dist}/login" />
+	<property name="build.dist.game" location="${build.dist}/gameserver" />
+	<property name="build.dist.libs" location="${build.dist}/libs" />
+
+	<property name="build.dist.login.log.java" location="${build.dist}/login/log/java" />
+	<property name="build.dist.login.log.stdout" location="${build.dist}/login/log/stdout" />
+	<property name="build.dist.game.log.java" location="${build.dist}/gameserver/log/java" />
+	<property name="build.dist.game.log.stdout" location="${build.dist}/gameserver/log/stdout" />
+
+	<path id="classpath">
+		<fileset dir="${libs}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<echo>Building L2j Hellas.</echo>
+	<target name="Building Dirs" depends="Clean" description="Create the output directories.">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.dist}" />
+		<mkdir dir="${build.dist.doc}" />
+		<mkdir dir="${build.dist.doc.3rdPartyLicenses}" />
+		<mkdir dir="${build.dist.login}" />
+		<mkdir dir="${build.dist.game}" />
+		<mkdir dir="${build.dist.libs}" />
+		<mkdir dir="${build.dist.login.log.java}" />
+		<mkdir dir="${build.dist.login.log.stdout}" />
+		<mkdir dir="${build.dist.game.log.java}" />
+		<mkdir dir="${build.dist.game.log.stdout}" />
+	</target>
+
+	<target name="Compile" depends="Requirements,Version" description="Compile the source.">
+		<echo>Compiling L2J Hellas.</echo>
+		<javac compiler="javac1.8" destdir="${build.classes}" optimize="on" encoding="utf-8" debug="true" debuglevel="lines,vars,source" source="1.8" target="1.8" nowarn="off" includeantruntime="true">
+			<src path="${src}" />
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="Jar" depends="Compile" description="Create the jar file">
+		<jar destfile="${build}/l2jhellas.jar" level="9">
+			<fileset dir="${build.classes}" />
+			<manifest>
+				<attribute name="Built-By" value="L2JHellas" />
+				<attribute name="Built-Date" value="${build.tstamp}" />
+				<attribute name="Implementation-URL" value="http://www.l2jhellas.info/" />
+				<attribute name="Implementation-Version" value="${revision}" />
+				<attribute name="Main-Class" value="com.l2jhellas.Server" />
+				<attribute name="Class-Path" value=". c3p0-0.9.5-pre5.jar jna-3.5.1.jar mail.jar mysql-connector-java-8.0.15 Subnet-1.0.jar mchange-commons-java-0.2.6.2.jar" />
+			</manifest>
+		</jar>
+		<copy todir="${build.dist.libs}">
+			<fileset dir="${build}">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile.gcj" depends="Jar" description="Build machine executable binary">
+		<exec dir="." executable="gcj" failifexecutionfails="false" os="linux:Linux:freebsd:FreeBSD">
+			<arg line="-O3 ${build.dist}/l2jhellas.jar  -o ${build.dist}/l2jhellas --main=com.l2jhellas.Server" />
+		</exec>
+	</target>
+
+	<!-- Basic Build -->
+	<target name="Build" depends="Jar">
+		<echo>Creating L2J Hellas Server:</echo>
+		<copy todir="${build.dist.login}">
+			<fileset dir="config">
+				<include name="log.cfg" />
+				<include name="BannedIPs.cfg" />
+				<include name="console.cfg" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}">
+			<fileset dir="config">
+				<include name="log.cfg" />
+				<include name="console.cfg" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.libs}">
+			<fileset dir="${src}/../libs">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.login}">
+			<fileset dir="dist">
+				<include name="startAccountManager.sh" />
+				<include name="startSQLAccountManager.sh" />
+				<include name="LoginServer_loop.sh" />
+				<include name="startLoginServer.sh" />
+				<include name="RegisterGameServer.sh" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}">
+			<fileset dir="dist">
+				<include name="GameServer_loop.sh" />
+				<include name="startGameServer.sh" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.doc}">
+			<fileset dir="doc">
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.doc.3rdPartyLicenses}">
+			<fileset dir="doc/3rdPartyLicenses">
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+
+		<!-- Game Server -->
+		<copy todir="${build.dist.game}/config/Admin">
+			<fileset dir="config/Admin">
+				<include name="*.ini" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}/config/Events">
+			<fileset dir="config/Events">
+				<include name="*.ini" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}/config/Main">
+			<fileset dir="config/Main">
+				<include name="*.ini" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}/config/Mods">
+			<fileset dir="config/Mods">
+				<include name="*.ini" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}/config/Network">
+			<fileset dir="config/Network">
+				<include name="*.ini" />
+				<include name="*.xml" />
+				<exclude name="LoginServer.ini" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}/config/Network/IPConfig">
+			<fileset dir="config/Network/IPConfig">
+				<include name="IPGameServer.ini" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}/config/Olympiad">
+			<fileset dir="config/Olympiad">
+				<include name="*.ini" />
+			</fileset>
+		</copy>
+		<!-- Login server -->
+		<copy todir="${build.dist.login}/config/Network">
+			<fileset dir="config/Network">
+				<include name="*.ini" />
+				<include name="*.xml" />
+				<exclude name="GameServer.ini" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.login}/config/Network/IPConfig">
+			<fileset dir="config/Network/IPConfig">
+				<include name="IPLoginServer.ini" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.game}/config/Others">
+			<fileset dir="config/Others">
+				<include name="*.*" />
+			</fileset>
+		</copy>
+		<copy todir="${build.dist.login}/config/Others">
+			<fileset dir="config/Others">
+				<include name="*.cfg" />
+				<include name="*.ini" />
+			</fileset>
+		</copy>
+
+		<!-- Finalizing -->
+		<zip destfile="${build}/L2J_Hellas_Core_${revision}.zip" basedir="${build.dist}" level="9" />
+		<mkdir dir="../../L2JHellas" />
+		<mkdir dir="../../L2JHellas/Backup" />
+		<echo>Store L2jhellas.</echo>
+		<unzip src="${build}/L2J_Hellas_Core_${revision}.zip" dest="../../L2JHellas" />
+		<echo>Backup L2jhellas.</echo>
+		<copy file="${build}/L2J_Hellas_Core_${revision}.zip" todir="../../L2JHellas/Backup">
+		</copy>
+		<delete dir="${build}" />
+		<echo>L2J Hellas Server version:${revision}.</echo>
+		<echo>Please visit our forum http://l2jhellas.info/</echo>
+		<echo>Owner Boorinio.</echo>
+	</target>
+
+	<!-- Version -->
+	<target name="Version" depends="Building Dirs" description="Create L2J Hellas version file">
+		<tstamp>
+			<format property="build.tstamp" pattern="dd/MM/yyyy HH:mm" />
+		</tstamp>
+		<exec dir="." executable="svnversion" outputproperty="revision" failifexecutionfails="false">
+			<arg value="-c" />
+			<redirector>
+				<outputfilterchain>
+					<tokenfilter>
+						<replaceregex pattern="[0-9]+\:" replace="" />
+					</tokenfilter>
+				</outputfilterchain>
+			</redirector>
+		</exec>
+		<concat destfile="${build.dist.game}/config/Version/L2J Hellas Version.ini">
+L2jHellas Project details:
+			${line.separator}
+			version = ${revision}
+			${line.separator}
+			builddate = ${build.tstamp}
+			${line.separator}
+			Forum = http://l2jhellas.info/
+			${line.separator}
+			Svn = https://subversion.assembla.com/svn/l2hellas/trunk/
+			${line.separator}
+			Timeline = https://www.assembla.com/code/l2hellas/subversion/changesets
+		</concat>
+		<concat destfile="${build.dist.login}/config/Version/L2J Hellas Version.ini">
+L2jHellas Project details:
+			${line.separator}
+			version = ${revision}
+			${line.separator}
+			builddate = ${build.tstamp}
+			${line.separator}
+			Forum = http://l2jhellas.info/
+			${line.separator}
+			Svn = https://subversion.assembla.com/svn/l2hellas/trunk/
+			${line.separator}
+			Timeline = https://www.assembla.com/code/l2hellas/subversion/changesets
+		</concat>
+		<echo>version = ${revision}</echo>
+	</target>
+
+	<!-- Requirements -->
+	<target name="Requirements" description="Check Requirements.">
+		<fail message="Ant 1.9.1 is required But your version is ${ant.version} and if you are using Eclipse probably is outdated.">
+			<condition>
+				<not>
+					<antversion atleast="1.9.1" />
+				</not>
+			</condition>
+		</fail>
+		<available classname="java.util.stream.Stream" property="JDK8.present" />
+		<fail unless="JDK8.present" message="Java 1.8 is required. But your version is Java ${ant.java.version} and probably JDK is not installed." />
+	</target>
+
+	<!-- Clean UP -->
+	<target name="Clean" description="Remove the build directories before the compile.">
+		<delete dir="${build}" />
+	</target>
+</project>

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../templates/skills.xsd">
+	<skill id="2300" levels="1" name="Hair Style Change Potion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2301" levels="1" name="Hair Style Change Potion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2302" levels="1" name="Hair Style Change Potion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2303" levels="1" name="Hair Style Change Potion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2304" levels="1" name="Hair Style Change Potion">
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2305" levels="1" name="Primeval Potion">
+		<!-- Needs to be finished. Target is set to TARGET_NONE, skillType to NOTDONE for server compatability. Description(s): Improves resistance to various poisons and anesthetics that originate on the Primeval 
+			Isle. -->
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2306" levels="3" name="Primeval Crystals">
+		<!-- Fix by ElectroMyStyle -->
+		<table name="#power"> 50000 100000 200000 </table>
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<set name="hitTime" val="200" />
+		<set name="magicLvl" val="1" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="power" val="#power" />
+		<set name="reuseDelay" val="3000" />
+		<set name="skillType" val="GIVE_SP" />
+		<set name="target" val="TARGET_SELF" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2307" levels="1" name="Remove Petrification Scroll">
+		<!-- Needs to be finished. Target is set to TARGET_NONE, skillType to NOTDONE for server compatability. Description(s): none -->
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2308" levels="36" name="Event Item">
+		<table name="#extractableItems">
+			8980,1,17,1000,100
+			8989,1,1341,1000,100
+			8997,1,1342,1000,100
+			9008,1,1343,1000,100
+			9016,1,1344,1000,100
+			9027,1,1344,1000,100
+			9030,1,9031,1,9038,1,9039,1,9037,1,9036,1,100
+			9040,1,9041,1,9042,1,9043,1,9044,1,9053,1,100
+			9054,1,9055,1,9056,1,9057,1,9128,1,100
+			9067,1,9068,1,9069,1,9070,1,9071,1,9072,1,100
+			9081,1,9082,1,9083,1,9084,1,9085,1,9086,1,100
+			9094,1,9095,1,9096,1,9097,1,9129,1,100
+			9032,1,9033,1,9037,1,9038,1,9039,1,100
+			9045,1,9046,1,9047,1,9048,1,9053,1,100
+			9058,1,9059,1,9060,1,9061,1,9066,1,100
+			9073,1,9074,1,9075,1,9076,1,9069,1,100
+			9087,1,9088,1,9089,1,9090,1,9083,1,100
+			9098,1,9099,1,9100,1,9095,1,100
+			9034,1,9035,1,9037,1,9038,1,9036,1,9039,1,100
+			9049,1,9050,1,9051,1,9052,1,9053,1,9044,1,100
+			9062,1,9063,1,9064,1,9065,1,9066,1,9056,1,100
+			9077,1,9078,1,9079,1,9080,1,9069,1,9070,1,100
+			9091,1,9092,1,9093,1,9084,1,9083,1,100
+			9101,1,9102,1,9103,1,9095,1,9129,1,100
+			1835,1000,8622,10,100
+			1463,1000,8623,10,100
+			1464,1000,8624,10,100
+			1465,500,8625,7,100
+			1466,300,8626,7,100
+			1466,300,8627,5,100
+			2509,1000,8622,10,100
+			2510,1000,8623,10,100
+			2511,1000,8624,10,100
+			2512,500,8625,7,100
+			2513,300,8626,7,100
+			2513,300,8627,5,100
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="skillType" val="EXTRACTABLE" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+	</skill>
+	<skill id="2309" levels="1" name="Pig Chest">
+		<table name="#extractableItems">
+			2513,300,8627,5,100
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="skillType" val="EXTRACTABLE" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+	</skill>
+	<skill id="2310" levels="1" name="Scroll of Guidance - Event Use">
+		<!-- Description(s): Lvl 1 - Increases Accuracy. Effect 3. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect count="1" name="Buff" time="3600" val="0" stackOrder="5" stackType="accuracyUp">
+				<add order="0x40" stat="accCombat" val="4" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2311" levels="1" name="Scroll of Death Whisper - Event Use">
+		<!-- Description(s): Lvl 1 - Increases critical attack power. Effect 3. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect count="1" name="Buff" time="3600" val="0" stackOrder="1.5" stackType="cAtk">
+				<mul order="0x30" stat="cAtk" val="1.5" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2312" levels="1" name="Scroll of Focus - Event Use">
+		<!-- Description(s): Lvl 1 - Increases critical attack rate. Effect 3. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect name="Buff" time="3600" count="1" val="0" stackOrder="1.3" stackType="rCrit">
+				<mul order="0x30" stat="rCrit" val="1.3" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2313" levels="1" name="Scroll of Acumen - Event Use">
+		<!-- Description(s): Lvl 1 - Increases Casting Spd. Effect 3. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect name="Buff" time="3600" count="1" val="0" stackOrder="1.3" stackType="mAtkSpeedUp">
+				<mul order="0x30" stat="mAtkSpd" val="1.3" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2314" levels="1" name="Scroll of Haste - Event Use">
+		<!-- Description(s): Lvl 1 - Increases Atk. Spd. Effect 2. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect name="Buff" time="3600" count="1" val="0" stackOrder="1.33" stackType="pAtkSpeedUp">
+				<mul order="0x30" stat="pAtkSpd" val="1.33" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2315" levels="1" name="Scroll of Agility - Event Use">
+		<!-- Description(s): Lvl 1 - Increases Evasion. Effect 3. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect name="Buff" time="3600" count="1" val="0" stackOrder="8" stackType="rEvas">
+				<add order="0x40" stat="rEvas" val="4" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2316" levels="1" name="Scroll of Empower - Event Use">
+		<!-- Description(s): Lvl 1 - Increases M. Atk. Effect 3. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect name="Buff" time="3600" count="1" val="0" stackOrder="1.75" stackType="mAtk">
+				<mul order="0x30" stat="mAtk" val="1.75" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2317" levels="1" name="Scroll of Might - Event Use">
+		<!-- Description(s): Lvl 1 - Increases P. Atk. Effect 3. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect name="Buff" time="3600" count="1" val="0" stackOrder="1.15" stackType="pAtk">
+				<mul order="0x30" stat="pAtk" val="1.15" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2318" levels="1" name="Scroll of Wind Walk - Event Use">
+		<!-- Description(s): Lvl 1 - Increases Speed. Effect 2. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect name="Buff" time="3600" count="1" val="0" stackOrder="33" stackType="SpeedUp">
+				<add order="0x40" stat="runSpd" val="33" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2319" levels="1" name="Scroll of Shield - Event Use">
+		<!-- Description(s): Lvl 1 - Increases P. Def. Effect 3. -->
+		<set name="power" val="0.0" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="hitTime" val="4000" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="-1" />
+		<set name="effectRange" val="-1" />
+		<for>
+			<effect name="Buff" time="3600" count="1" val="0" stackOrder="1.15" stackType="pDef">
+				<mul order="0x30" stat="pDef" val="1.15" />
+			</effect>
+		</for>
+	</skill>
+	<skill id="2320" levels="1" name="Blessed Scroll of Escape - Event Use">
+		<!-- Needs to be finished. Target is set to TARGET_NONE, skillType to NOTDONE for server compatability. Description(s): Lvl 1 - none -->
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2321" levels="1" name="Blessed Scroll of Resurrection - Event Use">
+		<!-- Description(s): Lvl 1 - none -->
+		<set name="power" val="100.0" />
+		<set name="target" val="TARGET_CORPSE_PLAYER" />
+		<set name="hitTime" val="15000" />
+		<set name="skillType" val="RESURRECT" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="castRange" val="400" />
+		<set name="effectRange" val="600" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2322" levels="1" name="Chest Key - For Events Only">
+		<!-- Needs to be finished. Target is set to TARGET_NONE, skillType to NOTDONE for server compatability. Description(s): Lvl 1 - none -->
+		<set name="target" val="TARGET_NONE" />
+		<set name="skillType" val="NOTDONE" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<set name="castRange" val="-1" />
+		<for>
+		</for>
+	</skill>
+	<skill id="2323" levels="1" name="Red Sage's Stone">
+		<table name="#extractableItems">
+			9177,1,2.5;9184,1,2.5;9191,1,2.5;9198,1,2.5;9153,3,6.6;9146,3,6.6;9150,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8678,1,0.0015;8682,1,0.0015
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="skillType" val="EXTRACTABLE" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+	</skill>
+	<skill id="2324" levels="1" name="Blue Sage's Stone">
+		<!-- skillType is set to BUFF -->
+		<table name="#extractableItems">
+			9178,1,2.5;9185,1,2.5;9192,1,2.5;9199,1,2.5;9147,3,6.6;9151,3,6.6;9149,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8685,1,0.0015;8679,1,0.0015
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="skillType" val="EXTRACTABLE" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+	</skill>
+	<skill id="2325" levels="1" name="Orange Sage's Stone">
+		<!-- skillType is set to BUFF -->
+		<table name="#extractableItems">
+			9180,1,2.5;9187,1,2.5;9194,1,2.5;9201,1,2.5;9149,3,6.6;9155,3,6.6;9150,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8688,1,0.0015;8680,1,0.0015
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="skillType" val="EXTRACTABLE" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+	</skill>
+	<skill id="2326" levels="1" name="Black Sage's Stone">
+		<table name="#extractableItems">
+			9182,1,2.5;9189,1,2.5;9196,1,2.5;9203,1,2.5;9148,3,6.6;9146,3,6.6;9154,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8681,1,0.0015;8687,1,0.0015
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="skillType" val="EXTRACTABLE" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+	</skill>
+	<skill id="2327" levels="1" name="White Sage's Stone">
+		<table name="#extractableItems">
+			9183,1,2.5;9190,1,2.5;9197,1,2.5;9204,1,2.5;9152,3,6.6;9155,3,6.6;9147,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8685,1,0.0015;8683,1,0.0015
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="skillType" val="EXTRACTABLE" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+	</skill>
+	<skill id="2328" levels="1" name="Green Sage's Stone">
+		<table name="#extractableItems">
+			9179,1,2.5;9186,1,2.5;9193,1,2.5;9200,1,2.5;9148,3,6.6;9152,3,6.6;9154,3,6.8;9156,1,7.0;9157,1,2.0;9206,10,45.997;9207,5,15.0;8686,1,0.0015;8684,1,0.0015
+		</table>
+		<set name="capsuled_items_skill" val="#extractableItems" />
+		<set name="operateType" val="OP_ACTIVE" />
+		<set name="skillType" val="EXTRACTABLE" />
+		<set name="target" val="TARGET_SELF" />
+		<cond msgId="129">
+			<and>
+				<player invSize="10" />
+				<player weight="80" />
+			</and>
+		</cond>
+	</skill>
+</list>

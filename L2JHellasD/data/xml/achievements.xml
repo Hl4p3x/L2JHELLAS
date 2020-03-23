@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Achievements ID, NAME, DESCRIPTION, REWARD, CONDITION/CONDITIONS. -->
+<!-- Possible achievements 62 [NO MORE OR CLIENT WILL CRASH], conditions are -->
+<!-- minLevel -->
+<!-- minPvPCount -->
+<!-- minPkCount -->
+<!-- minClanLevel -->
+<!-- mustBeHero -->
+<!-- mustBeNoble -->
+<!-- minWeaponEnchant -->
+<!-- minKarmaCount -->
+<!-- minAdenaCount -->
+<!-- minClanMembersCount -->
+<!-- mustBeClanLeader -->
+<!-- mustBeMarried -->
+<!-- itemAmmount -->
+<!-- crpAmmount -->
+<!-- lordOfCastle -->
+<!-- mustBeMageClass -->
+<!-- minSubclassCount -->
+<!-- CompleteAchievements -->
+<!-- minSkillEnchant -->
+<!-- minOnlineTime -->
+<!-- minHeroCount -->
+<!-- raidToKill -->
+<!-- raidToKill1 -->
+<!-- raidToKill2 -->
+<!-- minRaidPoints -->
+<!-- eventKills -->
+<!-- events -->
+<!-- eventWins -->
+<!-- Example Achievement -->
+<!--              id     name                  description        rewards           repeat?           conditions conditions conditions.... -->
+<!-- <achievement id="1" name="my achievement" description="test" reward="57,10000" repeatable="False" minLevel="80" minSubclassCount="3"/> -->
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../templates/achievements.xsd">
+	<achievement id="1" name="Champion" description="Gain level 80" reward="9142,5" repeatable="false" minLevel="80" />
+	<achievement id="2" name="Hero" description="Gain hero status" reward="9142,10" repeatable="false" mustBeHero="true" />
+	<achievement id="3" name="Noble" description="Gain noblesse status" reward="9142,10" repeatable="false" mustBeNoble="true" />
+	<achievement id="4" name="Zaishen" description="Gain a +16 weapon" reward="9142,15" repeatable="false" minWeaponEnchant="16" />
+	<achievement id="5" name="Norn" description="Gain 4,000 PvPs" reward="9142,15" repeatable="false" minPvPCount="4000" />
+	<achievement id="6" name="Commander" description="Be a clan leader of a level 8 clan" reward="9142,10" repeatable="false" mustBeClanLeader="true" minClanLevel="8" />
+	<achievement id="7" name="Darkbringer" description="Gain 1,500 PKs" reward="9142,15" repeatable="false" minPkCount="1500" />
+	<achievement id="8" name="Bravery" description="Have 3 subclasses" reward="9142,5" repeatable="false" minSubclassCount="3" />
+	<achievement id="9" name="Dealer" description="Bring 200 Sprignant fruits" reward="9142,15" repeatable="false" itemAmmount="8787,200" />
+	<achievement id="10" name="Gamer" description="Be online for 100 days" reward="9142,10" repeatable="false" minOnlineTime="100" />
+	<achievement id="11" name="Conqueror" description="Be clan leader of a clan level 8 that owns a castle" reward="9142,10" repeatable="false" lordOfCastle="true" minClanLevel="8" mustBeClanLeader="true" />
+	<achievement id="12" name="Codex" description="Have a +15 skill" reward="9142,15" repeatable="false" minSkillEnchant="15" />
+	<achievement id="13" name="Famous" description="Be clean leader of a level 8 clan with 100,000 clan reputation points" reward="9142,15" repeatable="false" minClanLevel="8" crpAmmount="100000" mustBeClanLeader="true" />
+	<achievement id="14" name="Myth" description="Have hero status for 15 periods" reward="9142,15" repeatable="false" minHeroCount="15" />
+	<achievement id="15" name="Wisdom" description="Kill Hallate, Kernon and Golkonda within 24hours" reward="9142,5" repeatable="false" raidToKill="25220" raidToKill1="25054" raidToKill2="25126" />
+	<achievement id="16" name="Slayer" description="Kill Baium and be level 80" reward="9142,5" repeatable="false" raidToKill="29020" minLevel="80" />
+	<achievement id="17" name="Joker" description="Kill Antharas and be level 80" reward="9142,5" repeatable="false" raidToKill="29019" minLevel="80" />
+	<achievement id="18" name="Legend" description="Kill Valakas and be level 80" reward="9142,10" repeatable="false" raidToKill="29028" minLevel="80" />
+	<achievement id="19" name="Lightbringer" description="Claim 1,200 Raid points and be lvl 78" reward="9142,10" repeatable="false" minRaidPoints="1200" minLevel="78" />
+	<achievement id="20" name="Dominator" description="get 1,500 event kills" reward="9142,15" repeatable="false" eventKills="1500" />
+	<achievement id="21" name="Winner" description="get 250 event wins" reward="9142,15" repeatable="false" eventWins="250" />
+	<achievement id="22" name="Eventor" description="play in 250 events" reward="9142,10" repeatable="false" events="250" />
+	<achievement id="23" name="Vanquisher" description="Complete all personal achievements" reward="9142,40" repeatable="false" CompleteAchievements="8" />
+	<achievement id="24" name="Tycoon" description="Complete all achievements" reward="9142,60" repeatable="false" CompleteAchievements="10" />
+</list>

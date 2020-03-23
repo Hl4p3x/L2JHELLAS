@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence maxOccurs="1" minOccurs="1">
+				<xs:element name="lvlup" maxOccurs="118" minOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="classid" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="0" />
+									<xs:maxInclusive value="118" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="hpbase" use="required" />
+						<xs:attribute name="hpadd" use="required" />
+						<xs:attribute name="hpmod" use="required" />
+						<xs:attribute name="cpbase" use="required" />
+						<xs:attribute name="cpadd" use="required" />
+						<xs:attribute name="cpmod" use="required" />
+						<xs:attribute name="mpbase" use="required" />
+						<xs:attribute name="mpadd" use="required" />
+						<xs:attribute name="mpmod" use="required" />
+						<xs:attribute name="class_lvl" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="1" />
+									<xs:maxInclusive value="76" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
