@@ -1037,7 +1037,7 @@ public abstract class L2Skill
 		}
 		return true;
 	}
-	
+
 	@SuppressWarnings("cast")
 	public final L2Object[] getTargetList(L2Character activeChar, boolean onlyFirst)
 	{
@@ -1048,8 +1048,7 @@ public abstract class L2Skill
 		L2SkillTargetType targetType = getTargetType();
 		
 		target = null;
-		
-		// Get the L2Objcet targeted by the user of the skill at this moment
+
 		L2Object objTarget = activeChar.getTarget();
 		
 		// Get the type of the skill

@@ -8,9 +8,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.communitybbs.BB.Forum;
@@ -462,6 +464,16 @@ public class L2Clan
 		}
 		
 		return result.toArray(new L2PcInstance[result.size()]);
+	}
+	
+	public List<L2PcInstance> getOnlineMembers(int exclude)
+	{
+		return _members.values().stream()
+			.filter(member -> member.getObjectId() != exclude)
+			.filter(L2ClanMember::isOnline)
+			.map(L2ClanMember::getPlayerInstance)
+			.filter(Objects::nonNull)
+			.collect(Collectors.toList());		
 	}
 	
 	public Integer[] getOfflineMembersIds()

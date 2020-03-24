@@ -359,7 +359,10 @@ public class CharStat
 	
 	public final int getPhysicalAttackRange()
 	{
-		return getActiveChar().getAttackType().equals(L2WeaponType.BOW)? (int) calcStat(Stats.POWER_ATTACK_RANGE, _activeChar.getTemplate().baseAtkRange, null, null) : getActiveChar().getAttackType().getRange();
+		if(getActiveChar().isNpc())
+			return (int) calcStat(Stats.POWER_ATTACK_RANGE, getActiveChar().getTemplate().baseAtkRange, null, null);
+		
+		return getActiveChar().getAttackType().equals(L2WeaponType.BOW) ? (int) calcStat(Stats.POWER_ATTACK_RANGE, getActiveChar().getTemplate().baseAtkRange, null, null) : getActiveChar().getAttackType().getRange();
 	}
 	
 	public final double getWeaponReuseModifier(L2Character target)

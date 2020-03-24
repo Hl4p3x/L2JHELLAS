@@ -16,6 +16,7 @@ import com.l2jhellas.gameserver.datatables.xml.PetData;
 import com.l2jhellas.gameserver.engines.Item;
 import com.l2jhellas.gameserver.enums.items.ItemLocation;
 import com.l2jhellas.gameserver.enums.items.L2ArmorType;
+import com.l2jhellas.gameserver.enums.items.L2CrystalType;
 import com.l2jhellas.gameserver.enums.items.L2EtcItemType;
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
@@ -39,7 +40,7 @@ public class ItemTable
 	private static Logger _log = Logger.getLogger(ItemTable.class.getName());
 	
 	private static final Map<String, Integer> _materials = new HashMap<>();
-	private static final Map<String, Integer> _crystalTypes = new HashMap<>();
+	private static final Map<String, L2CrystalType> _crystalTypes = new HashMap<>();
 	private static final Map<String, L2WeaponType> _weaponTypes = new HashMap<>();
 	private static final Map<String, L2ArmorType> _armorTypes = new HashMap<>();
 	private static final Map<String, Integer> _slots = new HashMap<>();
@@ -79,12 +80,12 @@ public class ItemTable
 		_materials.put("cobweb", L2Item.MATERIAL_COBWEB);
 		_materials.put("seed", L2Item.MATERIAL_SEED);
 		
-		_crystalTypes.put("s", L2Item.CRYSTAL_S);
-		_crystalTypes.put("a", L2Item.CRYSTAL_A);
-		_crystalTypes.put("b", L2Item.CRYSTAL_B);
-		_crystalTypes.put("c", L2Item.CRYSTAL_C);
-		_crystalTypes.put("d", L2Item.CRYSTAL_D);
-		_crystalTypes.put("none", L2Item.CRYSTAL_NONE);
+		_crystalTypes.put("s", L2CrystalType.S);
+		_crystalTypes.put("a", L2CrystalType.A);
+		_crystalTypes.put("b", L2CrystalType.B);
+		_crystalTypes.put("c", L2CrystalType.C);
+		_crystalTypes.put("d", L2CrystalType.D);
+		_crystalTypes.put("none", L2CrystalType.NONE);
 		
 		_weaponTypes.put("blunt", L2WeaponType.BLUNT);
 		_weaponTypes.put("bow", L2WeaponType.BOW);
@@ -535,7 +536,7 @@ public class ItemTable
 		int material = _materials.get(rset.getString("material"));
 		item.set.set("material", material);
 		
-		int crystal = _crystalTypes.get(rset.getString("crystal_type"));
+		Enum<?> crystal = _crystalTypes.get(rset.getString("crystal_type"));
 		item.set.set("crystal_type", crystal);
 		
 		int weight = rset.getInt("weight");

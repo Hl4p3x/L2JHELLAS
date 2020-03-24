@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
@@ -49,7 +50,7 @@ public abstract class ItemContainer
 
 	public Collection<L2ItemInstance> getItems()
 	{
-		return getItems(i -> true);
+		return getItems(Objects::nonNull);
 	}
 
 	@SafeVarargs
@@ -89,9 +90,7 @@ public abstract class ItemContainer
 		
 		return count;
 	}
-	
-	
-	
+			
 	public L2ItemInstance addItem(String process, L2ItemInstance item, L2PcInstance actor, L2Object reference)
 	{
 		L2ItemInstance olditem = getItemByItemId(item.getItemId());

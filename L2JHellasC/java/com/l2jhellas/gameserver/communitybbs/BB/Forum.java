@@ -225,8 +225,7 @@ public class Forum
 	
 	public void rmTopicByID(int id)
 	{
-		_topic.remove(id);
-		
+		_topic.remove(id);		
 	}
 	
 	public void insertindb()

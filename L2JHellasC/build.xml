@@ -120,13 +120,6 @@
 				<include name="*.txt" />
 			</fileset>
 		</copy>
-
-		<!-- Game Server -->
-		<copy todir="${build.dist.game}/config/Admin">
-			<fileset dir="config/Admin">
-				<include name="*.ini" />
-			</fileset>
-		</copy>
 		<copy todir="${build.dist.game}/config/Events">
 			<fileset dir="config/Events">
 				<include name="*.ini" />

@@ -20,6 +20,7 @@ import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable.TeleportWhereType;
 import com.l2jhellas.gameserver.enums.ZoneId;
+import com.l2jhellas.gameserver.enums.items.L2CrystalType;
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
 import com.l2jhellas.gameserver.enums.player.DuelState;
 import com.l2jhellas.gameserver.enums.player.Position;
@@ -580,13 +581,13 @@ public abstract class L2Character extends L2Object
 		_attackEndTime += (timeAtk / GameTimeController.MILLIS_IN_TICK);
 		_attackEndTime -= 1;
 		
-		int ssGrade = 0;
+		L2CrystalType ssGrade = L2CrystalType.NONE;
 		
 		if (weaponItem != null)
 			ssGrade = weaponItem.getCrystalType();
 		
 		// Create a Server->Client packet Attack
-		Attack attack = new Attack(this, target, wasSSCharged, ssGrade);
+		Attack attack = new Attack(this, target, wasSSCharged, ssGrade.getId());
 		
 		boolean hitted;
 		

@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.l2jhellas.gameserver.enums.items.ItemLocation;
+import com.l2jhellas.gameserver.enums.items.L2CrystalType;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.templates.L2Weapon;
@@ -129,7 +129,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		if (gemStones.getLocation() != ItemLocation.INVENTORY)
 			return false;
 		
-		final int grade = item.getItem().getCrystalType();
+		final L2CrystalType grade = item.getItem().getCrystalType();
 		
 		// Check for item id
 		if (getGemStoneId(grade) != gemStones.getItemId())
@@ -179,7 +179,7 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 			return false;
 		if (item.isShadowItem())
 			return false;
-		if (item.getItem().getCrystalType() < L2Item.CRYSTAL_C)
+		if (item.getItem().getCrystalType().isLesser(L2CrystalType.C))
 			return false;
 		
 		// Source item can be equipped or in inventory
@@ -250,33 +250,34 @@ public abstract class AbstractRefinePacket extends L2GameClientPacket
 		return true;
 	}
 	
-	protected static final int getGemStoneId(int itemGrade)
+
+	protected static final int getGemStoneId(L2CrystalType itemGrade)
 	{
 		switch (itemGrade)
 		{
-			case L2Item.CRYSTAL_C:
-			case L2Item.CRYSTAL_B:
-				return GEMSTONE_D;
-			case L2Item.CRYSTAL_A:
-			case L2Item.CRYSTAL_S:
-				return GEMSTONE_C;
+			case C:
+			case B:
+				return GEMSTONE_D;			
+			case A:
+			case S:
+				return GEMSTONE_C;		
 			default:
 				return 0;
 		}
 	}
-	
-	protected static final int getGemStoneCount(int itemGrade)
+
+	protected static final int getGemStoneCount(L2CrystalType itemGrade)
 	{
 		switch (itemGrade)
 		{
-			case L2Item.CRYSTAL_C:
-				return 20;
-			case L2Item.CRYSTAL_B:
-				return 30;
-			case L2Item.CRYSTAL_A:
-				return 20;
-			case L2Item.CRYSTAL_S:
-				return 25;
+			case C:
+				return 20;			
+			case B:
+				return 30;			
+			case A:
+				return 20;			
+			case S:
+				return 25;			
 			default:
 				return 0;
 		}

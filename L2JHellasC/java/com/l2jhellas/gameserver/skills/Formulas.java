@@ -957,18 +957,20 @@ public final class Formulas
 			value = skill.getEffectPower();
 			type = skill.getEffectType();
 		}
+		
 		// TODO: Temporary fix for skills with EffectPower = 0 or EffectType not set
 		if (value == 0 || type == null)
 		{
 			if (skill.getSkillType() == L2SkillType.PDAM)
 			{
-				value = 40;
+				value = skill.getEffectPower() > 0 ? skill.getEffectPower() : 40;
 				type = L2SkillType.STUN;
 			}
+			
 			if (skill.getSkillType() == L2SkillType.MDAM)
 			{
-				value = 20;
-				type = L2SkillType.PARALYZE;
+				value = skill.getEffectPower() > 0 ? skill.getEffectPower() : 20;
+				type = skill.getSkillType() != null ? L2SkillType.MDAM : L2SkillType.PARALYZE;
 			}
 		}
 		

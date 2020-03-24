@@ -9,6 +9,7 @@ import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
 import com.l2jhellas.gameserver.instancemanager.AuctionManager;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.ClanHallManager;
+import com.l2jhellas.gameserver.instancemanager.SiegeGuardManager;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.entity.Castle;
@@ -144,7 +145,7 @@ public class AdminSiege implements IAdminCommandHandler
 							val = st.nextToken();
 							if (Util.isDigit(val))
 							{
-								castle.getSiege().getSiegeGuardManager().addSiegeGuard(activeChar, Integer.parseInt(val));
+								SiegeGuardManager.getInstance().addSiegeGuard(castle,activeChar, Integer.parseInt(val));
 								break;
 							}
 						}

@@ -405,15 +405,16 @@ public class Quest
 		return null;
 	}
 	
+	public void startQuestTimer(String name, L2Npc npc, L2PcInstance player,long time)
+	{
+		startQuestTimer(name,time,npc,player,false);
+	}
+	
 	public void startQuestTimer(String name, L2Npc npc, L2PcInstance player,long time,boolean repeating)
 	{
 		startQuestTimer(name,time,npc,player,repeating);
 	}
 	
-	public void startQuestTimer(String name, L2Npc npc, L2PcInstance player,long time)
-	{
-		startQuestTimer(name,time,npc,player,false);
-	}
 	public void startQuestTimer(String name, long time, L2Npc npc, L2PcInstance player, boolean repeating)
 	{
 		// Get quest timers for this timer type.
@@ -549,7 +550,6 @@ public class Quest
 				spawn.setLocz(z + 20);
 				spawn.stopRespawn();
 				result = spawn.doSpawn();
-				spawn.getLastSpawn().broadcastInfo();
 				
 				if (despawnDelay > 0)
 					result.scheduleDespawn(despawnDelay);

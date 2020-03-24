@@ -76,7 +76,7 @@ public class Antharas extends AbstractNpcAI
 				
 				checkAntharas();	
 				final L2Npc antharas = addSpawn(_antharasId, loc_x, loc_y, loc_z, heading, false, 0, false);
-				GrandBossManager.addBoss((L2GrandBossInstance) antharas);			
+				GrandBossManager.addBoss(ANTHARAS, (L2GrandBossInstance) antharas);			
 				antharas.setCurrentHpMp(hp, mp);
 				antharas.setRunning();		
 				_action = System.currentTimeMillis();
@@ -96,7 +96,7 @@ public class Antharas extends AbstractNpcAI
 			checkAntharas();
 			
 			final L2Npc antharas = addSpawn(_antharasId, 181323, 114850, -7623, 32542, false, 0, false);
-			GrandBossManager.addBoss((L2GrandBossInstance) antharas);
+			GrandBossManager.addBoss(ANTHARAS, (L2GrandBossInstance) antharas);
 			antharas.setIsInvul(true);
 			
 			startQuestTimer("spawn_1", antharas, null, 16);

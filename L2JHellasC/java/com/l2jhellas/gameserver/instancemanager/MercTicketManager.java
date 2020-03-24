@@ -773,8 +773,7 @@ public class MercTicketManager
 				spawnMercenary(NPC_IDS[i], x, y, z, 3000, messages, 0);
 				
 				// Hire merc for this caslte. NpcId is at the same index as the item used.
-				castle.getSiege().getSiegeGuardManager().hireMerc(x, y, z, heading, NPC_IDS[i]);
-				
+				SiegeGuardManager.getInstance().hireMerc(castle,x, y, z, heading, NPC_IDS[i]);
 				// create the ticket in the gameworld
 				L2ItemInstance dropticket = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
 				dropticket.setLocation(ItemLocation.INVENTORY);
@@ -852,9 +851,7 @@ public class MercTicketManager
 		Castle castle = CastleManager.getInstance().getCastleById(getTicketCastleId(itemId));
 		
 		if (npcId > 0 && castle != null)
-		{
-			(new SiegeGuardManager(castle)).removeMerc(npcId, item.getX(), item.getY(), item.getZ());
-		}
+			SiegeGuardManager.getInstance().removeMerc(npcId, item.getX(), item.getY(), item.getZ());
 		
 		getDroppedTickets().remove(item);
 	}

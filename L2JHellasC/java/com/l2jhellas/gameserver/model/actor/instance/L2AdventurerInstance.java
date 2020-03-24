@@ -35,7 +35,6 @@ public class L2AdventurerInstance extends L2NpcInstance
 			}
 			catch (NumberFormatException e)
 			{
-				_log.warning(L2AdventurerInstance.class.getName() + ": Invalid Bypass to Server command parameter.");
 			}
 		}
 		
@@ -46,20 +45,14 @@ public class L2AdventurerInstance extends L2NpcInstance
 			String filename = "data/html/adventurer_guildsman/raid_info/info.htm";
 			
 			if (bossLevel != 0)
-			{
 				filename = "data/html/adventurer_guildsman/raid_info/level" + bossLevel + ".htm";
-			}
 			
 			showChatWindow(player, filename);
 		}
 		else if (command.equalsIgnoreCase("questlist"))
-		{
 			player.sendPacket(new ExQuestInfo());
-		}
 		else
-		{
 			super.onBypassFeedback(player, command);
-		}
 	}
 	
 	@Override

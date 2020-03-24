@@ -147,6 +147,22 @@ public final class L2TeleporterInstance extends L2NpcInstance
 			doTeleport(player, Integer.parseInt(st.nextToken()));
 			player.setIsIn7sDungeon(false);
 		}
+		else if (command.startsWith("Chat") || actualCommand.startsWith("Chat"))
+		{
+			int val = 0;
+			try
+			{
+				val = Integer.parseInt(command.substring(5));
+			}
+			catch (IndexOutOfBoundsException ioobe)
+			{
+			}
+			catch (NumberFormatException nfe)
+			{
+			}
+			
+			showChatWindow(player, val);
+		}
 		else		
 		    super.onBypassFeedback(player, command);
 		

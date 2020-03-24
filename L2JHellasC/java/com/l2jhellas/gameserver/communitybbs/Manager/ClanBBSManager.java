@@ -29,25 +29,17 @@ public class ClanBBSManager extends BaseBBSManager
 			if (activeChar.getClan() != null)
 			{
 				if (activeChar.getClan().getLevel() >= 2)
-				{
 					clanhome(activeChar);
-				}
 				else
-				{
 					clanlist(activeChar, 1);
-				}
 			}
 			else
-			{
 				clanlist(activeChar, 1);
-			}
 		}
 		else if (command.startsWith("_bbsclan_clanlist"))
 		{
 			if (command.equals("_bbsclan_clanlist"))
-			{
 				clanlist(activeChar, 1);
-			}
 			else if (command.startsWith("_bbsclan_clanlist;"))
 			{
 				StringTokenizer st = new StringTokenizer(command, ";");
@@ -59,9 +51,7 @@ public class ClanBBSManager extends BaseBBSManager
 		else if (command.startsWith("_bbsclan_clanhome"))
 		{
 			if (command.equals("_bbsclan_clanhome"))
-			{
 				clanhome(activeChar);
-			}
 			else if (command.startsWith("_bbsclan_clanhome;"))
 			{
 				StringTokenizer st = new StringTokenizer(command, ";");

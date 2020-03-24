@@ -8,8 +8,7 @@ import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ChooseInventoryItem;
 
 public class EnchantScrolls implements IItemHandler
-{
-	
+{	
 	private static final int[] ITEM_IDS =
 	{
 		729,

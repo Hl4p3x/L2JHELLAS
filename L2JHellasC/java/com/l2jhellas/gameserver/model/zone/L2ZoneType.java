@@ -154,6 +154,18 @@ public abstract class L2ZoneType
 		return _characterList.values();
 	}
 	
+	public List<L2PcInstance> getPlayersInside()
+	{
+		List<L2PcInstance> players = new ArrayList<>();
+		for (L2Character ch : _characterList.values())
+		{
+			if ((ch != null) && ch.isPlayer())
+				players.add(ch.getActingPlayer());
+		}
+		
+		return players;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public final <A> List<A> getKnownTypeInside(Class<A> type)
 	{

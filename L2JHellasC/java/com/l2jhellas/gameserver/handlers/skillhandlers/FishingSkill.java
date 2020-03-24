@@ -45,7 +45,7 @@ public class FishingSkill implements ISkillHandler
 			return;
 		
 		final int ssBonus = (fishingRod.getChargedFishshot()) ? 2 : 1;
-		final double gradeBonus = 1 + fishingRod.getItem().getCrystalType() * 0.1;
+		final double gradeBonus = 1 + fishingRod.getItem().getCrystalType().getId() * 0.1;
 		int damage = (int) (skill.getPower() * gradeBonus * ssBonus);
 		int penalty = 0;
 		

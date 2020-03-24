@@ -187,7 +187,7 @@ public class GrandBossManager
 	
 	public int getBossStatus(int bossId)
 	{
-		return _bossStatus != null &&_bossStatus.containsKey(bossId) ? _bossStatus.get(bossId) : -1;
+		return _bossStatus != null && _bossStatus.containsKey(bossId)  ? _bossStatus.get(bossId) : -1;
 	}
 	
 	public static void setBossStatus(int bossId, int status)
@@ -199,6 +199,12 @@ public class GrandBossManager
 	{
 		if (boss != null)
 			_bosses.put(boss.getNpcId(), boss);
+	}
+	
+	public static void addBoss(int npcId , L2GrandBossInstance boss)
+	{
+		if (boss != null)
+			_bosses.put(npcId, boss);
 	}
 	
 	public L2GrandBossInstance getBoss(int bossId)

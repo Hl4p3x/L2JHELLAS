@@ -5,8 +5,8 @@ import java.util.StringTokenizer;
 
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.xml.AugmentationData;
+import com.l2jhellas.gameserver.enums.items.L2CrystalType;
 import com.l2jhellas.gameserver.model.L2Augmentation;
-import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
@@ -243,7 +243,7 @@ public final class L2FastAugByAbsoInstance extends L2NpcInstance
 			return false;
 		if (item.isShadowItem())
 			return false;
-		if (item.getItem().getCrystalType() < L2Item.CRYSTAL_C)
+		if (item.getItem().getCrystalType().isLesser(L2CrystalType.C))
 			return false;
 		if (item.isQuestItem())
 			return false;

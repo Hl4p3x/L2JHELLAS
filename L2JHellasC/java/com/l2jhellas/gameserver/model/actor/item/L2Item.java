@@ -6,6 +6,7 @@ import java.util.List;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.IconData;
 import com.l2jhellas.gameserver.enums.items.L2ArmorType;
+import com.l2jhellas.gameserver.enums.items.L2CrystalType;
 import com.l2jhellas.gameserver.enums.items.L2EtcItemType;
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
 import com.l2jhellas.gameserver.model.L2Effect;
@@ -89,41 +90,6 @@ public abstract class L2Item
 	public static final int MATERIAL_COBWEB = 0x15; // ??
 	public static final int MATERIAL_SEED = 0x15; // ??
 	
-	public static final int CRYSTAL_NONE = 0x00; // ??
-	public static final int CRYSTAL_D = 0x01; // ??
-	public static final int CRYSTAL_C = 0x02; // ??
-	public static final int CRYSTAL_B = 0x03; // ??
-	public static final int CRYSTAL_A = 0x04; // ??
-	public static final int CRYSTAL_S = 0x05; // ??
-	
-	private static final int[] crystalItemId =
-	{
-		0,
-		1458,
-		1459,
-		1460,
-		1461,
-		1462
-	};
-	private static final int[] crystalEnchantBonusArmor =
-	{
-		0,
-		11,
-		6,
-		11,
-		19,
-		25
-	};
-	private static final int[] crystalEnchantBonusWeapon =
-	{
-		0,
-		90,
-		45,
-		67,
-		144,
-		250
-	};
-	
 	private final int _itemId;
 	private final String _name;
 	private final int _type1;// needed for item list (inventory)
@@ -132,7 +98,8 @@ public abstract class L2Item
 	private final boolean _crystallizable;
 	private final boolean _stackable;
 	private final int _materialType;
-	private final int _crystalType;// default to none-grade
+	private final L2CrystalType _crystalType;
+
 	private final int _duration;
 	private final int _bodyPart;
 	private final int _referencePrice;
@@ -163,7 +130,7 @@ public abstract class L2Item
 		_crystallizable = set.getBool("crystallizable");
 		_stackable = set.getBool("stackable", false);
 		_materialType = set.getInteger("material");
-		_crystalType = set.getInteger("crystal_type", CRYSTAL_NONE); // default to none-grade
+		_crystalType = set.getEnum("crystal_type", L2CrystalType.class, L2CrystalType.NONE);
 		_duration = set.getInteger("duration");
 		_bodyPart = set.getInteger("bodypart");
 		_referencePrice = set.getInteger("price");
@@ -218,21 +185,16 @@ public abstract class L2Item
 		return _crystallizable;
 	}
 	
-	public final int getCrystalType()
+	public final L2CrystalType getCrystalType()
 	{
 		return _crystalType;
 	}
-	
+
 	public final int getCrystalItemId()
 	{
-		return crystalItemId[_crystalType];
+		return _crystalType.getCrystalId();
 	}
-	
-	public final int getItemGrade()
-	{
-		return getCrystalType();
-	}
-	
+
 	public final int getCrystalCount()
 	{
 		return _crystalCount;
@@ -245,9 +207,9 @@ public abstract class L2Item
 			{
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
-					return _crystalCount + crystalEnchantBonusArmor[getCrystalType()] * (3 * enchantLevel - 6);
+					return _crystalCount + getCrystalType().getCrystalEnchantBonusArmor() * (3 * enchantLevel - 6);
 				case TYPE2_WEAPON:
-					return _crystalCount + crystalEnchantBonusWeapon[getCrystalType()] * (2 * enchantLevel - 3);
+					return _crystalCount + getCrystalType().getCrystalEnchantBonusWeapon() * (2 * enchantLevel - 3);
 				default:
 					return _crystalCount;
 			}
@@ -256,9 +218,9 @@ public abstract class L2Item
 			{
 				case TYPE2_SHIELD_ARMOR:
 				case TYPE2_ACCESSORY:
-					return _crystalCount + crystalEnchantBonusArmor[getCrystalType()] * enchantLevel;
+					return _crystalCount + getCrystalType().getCrystalEnchantBonusArmor() * enchantLevel;
 				case TYPE2_WEAPON:
-					return _crystalCount + crystalEnchantBonusWeapon[getCrystalType()] * enchantLevel;
+					return _crystalCount + getCrystalType().getCrystalEnchantBonusWeapon() * enchantLevel;
 				default:
 					return _crystalCount;
 			}

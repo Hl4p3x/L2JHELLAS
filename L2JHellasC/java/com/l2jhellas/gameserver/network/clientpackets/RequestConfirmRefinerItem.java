@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
+import com.l2jhellas.gameserver.enums.items.L2CrystalType;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
@@ -45,7 +46,7 @@ public class RequestConfirmRefinerItem extends AbstractRefinePacket
 		}
 		
 		final int refinerItemId = refinerItem.getItem().getItemId();
-		final int grade = targetItem.getItem().getCrystalType();
+		final L2CrystalType grade = targetItem.getItem().getCrystalType();
 		final int gemStoneId = getGemStoneId(grade);
 		final int gemStoneCount = getGemStoneCount(grade);
 		

@@ -181,32 +181,29 @@ public class CommunityBoard
 	
 	public void handleWriteCommands(L2GameClient client, String url, String arg1, String arg2, String arg3, String arg4, String arg5)
 	{
-		L2PcInstance activeChar = client.getActiveChar();
+		final L2PcInstance activeChar = client.getActiveChar();
 		if (activeChar == null)
 			return;
 		
 		if (Config.COMMUNITY_TYPE.equals("Full"))
 		{
-			if (url.equals("Topic"))
+			switch (url)
 			{
-				TopicBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-			}
-			else if (url.equals("Post"))
-			{
-				PostBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-			}
-			else if (url.equals("Region"))
-			{
-				RegionBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-			}
-			else if (url.equals("Notice"))
-			{
-				ClanBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+				case "Topic":
+					TopicBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+                    break;
+				case "Post":
+					PostBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+					break;
+				case "Region":
+					RegionBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+                    break;
+				case "Notice":
+					ClanBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
+                    break;              
 			}
 		}
 		else if (Config.COMMUNITY_TYPE.equals("old"))
-		{
 			RegionBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-		}
 	}
 }

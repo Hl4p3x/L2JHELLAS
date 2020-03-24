@@ -1,9 +1,9 @@
 package com.l2jhellas.gameserver.handlers.itemhandlers;
 
+import com.l2jhellas.gameserver.enums.items.L2CrystalType;
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
@@ -64,8 +64,8 @@ public class SoulShots implements IItemHandler
 		}
 		
 		// Check for correct grade
-		int weaponGrade = weaponItem.getCrystalType();
-		if ((weaponGrade == L2Item.CRYSTAL_NONE && itemId != 5789 && itemId != 1835) || (weaponGrade == L2Item.CRYSTAL_D && itemId != 1463) || (weaponGrade == L2Item.CRYSTAL_C && itemId != 1464) || (weaponGrade == L2Item.CRYSTAL_B && itemId != 1465) || (weaponGrade == L2Item.CRYSTAL_A && itemId != 1466) || (weaponGrade == L2Item.CRYSTAL_S && itemId != 1467))
+		L2CrystalType weaponGrade = weaponItem.getCrystalType();
+		if ((weaponGrade == L2CrystalType.NONE && itemId != 5789 && itemId != 1835) || (weaponGrade == L2CrystalType.D && itemId != 1463) || (weaponGrade == L2CrystalType.C && itemId != 1464) || (weaponGrade == L2CrystalType.B && itemId != 1465) || (weaponGrade == L2CrystalType.A && itemId != 1466) || (weaponGrade == L2CrystalType.S && itemId != 1467))
 		{
 			if (!activeChar.getAutoSoulShot().containsKey(itemId))
 				activeChar.sendPacket(SystemMessageId.SOULSHOTS_GRADE_MISMATCH);
@@ -109,7 +109,7 @@ public class SoulShots implements IItemHandler
 		
 		// Send message to client
 		activeChar.sendPacket(SystemMessageId.ENABLED_SOULSHOT);
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, SKILL_IDS[weaponGrade], 1, 0, 0), 600);
+		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, SKILL_IDS[weaponGrade.getId()], 1, 0, 0), 600);
 	}
 	
 	@Override

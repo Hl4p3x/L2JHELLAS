@@ -7,6 +7,7 @@ import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadGameManager;
 import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadGameTask;
 import com.l2jhellas.gameserver.model.zone.L2SpawnZone;
 import com.l2jhellas.gameserver.network.SystemMessageId;
@@ -17,19 +18,13 @@ import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 
 public class L2OlympiadStadiumZone extends L2SpawnZone
 {
-	OlympiadGameTask _task = null;
 	private int _stadiumId;
-	
+		
 	public L2OlympiadStadiumZone(int id)
 	{
 		super(id);
 	}
-	
-	public final void registerTask(OlympiadGameTask task)
-	{
-		_task = task;
-	}
-	
+
 	public final void broadcastStatusUpdate(L2PcInstance player)
 	{
 		final ExOlympiadUserInfo packet = new ExOlympiadUserInfo(player, 2);
@@ -55,17 +50,17 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 		character.setInsideZone(ZoneId.NO_SUMMON_FRIEND, true);
 		character.setInsideZone(ZoneId.NO_RESTART, true);
 		
-		if (_task != null)
+
+		if (character.isPlayer())
 		{
-			if (_task.isBattleStarted())
-			{
-				character.setInsideZone(ZoneId.PVP, true);
-				if (character instanceof L2PcInstance)
-				{
-					character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
-					_task.getGame().sendOlympiadInfo(character);
-				}
-			}
+			final OlympiadGameTask OlyTask = OlympiadGameManager.getInstance().getOlympiadTask(character.getActingPlayer().getOlympiadGameId());
+			
+			if (OlyTask == null)
+				return;
+			
+			character.setInsideZone(ZoneId.PVP, true);
+			character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE));
+			OlyTask.getGame().sendOlympiadInfo(character);
 		}
 		
 		if (character instanceof L2Playable)
@@ -86,37 +81,30 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 		character.setInsideZone(ZoneId.NO_SUMMON_FRIEND, false);
 		character.setInsideZone(ZoneId.NO_RESTART, false);
 		
-		if (_task != null)
+		if (character.isPlayer())
 		{
-			if (_task.isBattleStarted())
-			{
-				character.setInsideZone(ZoneId.PVP, false);
-				if (character instanceof L2PcInstance)
-				{
-					character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
-					character.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);
-				}
-			}
+			character.setInsideZone(ZoneId.PVP, false);
+			character.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE));
+			character.sendPacket(ExOlympiadMatchEnd.STATIC_PACKET);
 		}
+		
 	}
 	
 	public final void updateZoneStatusForCharactersInside()
 	{
-		if (_task == null)
-			return;
-		
-		final boolean battleStarted = _task.isBattleStarted();
-		final SystemMessage sm;
-		if (battleStarted)
-			sm = SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE);
-		else
-			sm = SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE);
-		
 		for (L2Character character : _characterList.values())
 		{
-			if (character == null)
+			if (character == null || !character.isPlayer())
 				continue;
 			
+			final OlympiadGameTask OlyTask = OlympiadGameManager.getInstance().getOlympiadTask(character.getActingPlayer().getOlympiadGameId());
+
+			if (OlyTask == null)
+				return;
+			
+			final boolean battleStarted = OlyTask.isBattleStarted();
+			final SystemMessage	sm = battleStarted ? SystemMessage.getSystemMessage(SystemMessageId.ENTERED_COMBAT_ZONE) : SystemMessage.getSystemMessage(SystemMessageId.LEFT_COMBAT_ZONE);
+				
 			if (battleStarted)
 			{
 				character.setInsideZone(ZoneId.PVP, true);

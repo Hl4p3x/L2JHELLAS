@@ -137,14 +137,14 @@ public class ItemsOnGroundManager
 	
 	public void save(L2ItemInstance item)
 	{
-		if (!Config.SAVE_DROPPED_ITEM)
-			return;
-		_items.add(item);
+		if (Config.SAVE_DROPPED_ITEM)
+		    _items.add(item);
 	}
 	
 	public void removeObject(L2Object item)
 	{
-		_items.remove(item);
+		if (Config.SAVE_DROPPED_ITEM)
+		   _items.remove(item);
 	}
 	
 	public void saveInDb()

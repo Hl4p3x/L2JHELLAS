@@ -9,9 +9,9 @@ import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.ai.L2CharacterAI;
 import com.l2jhellas.gameserver.ai.L2DoorAI;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
+import com.l2jhellas.gameserver.instancemanager.ZoneManager;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
@@ -20,6 +20,7 @@ import com.l2jhellas.gameserver.model.actor.stat.DoorStat;
 import com.l2jhellas.gameserver.model.actor.status.DoorStatus;
 import com.l2jhellas.gameserver.model.entity.Castle;
 import com.l2jhellas.gameserver.model.entity.ClanHall;
+import com.l2jhellas.gameserver.model.zone.type.L2TownZone;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.ConfirmDlg;
 import com.l2jhellas.gameserver.network.serverpackets.DoorInfo;
@@ -33,7 +34,6 @@ public class L2DoorInstance extends L2Character
 {
 	protected static final Logger _log = Logger.getLogger(L2DoorInstance.class.getName());
 	
-	private int _castleIndex = -2;
 	private int _mapRegion = -1;
 	
 	// when door is closed, the dimensions are
@@ -254,16 +254,10 @@ public class L2DoorInstance extends L2Character
 	
 	public final Castle getCastle()
 	{
-		if (_castleIndex < 0)
-		{
-			_castleIndex = CastleManager.getInstance().getCastleIndex(this);
-		}
-		if (_castleIndex < 0)
-			return null;
-		
-		return CastleManager.getInstance().getCastles().get(_castleIndex);
+		L2TownZone town = ZoneManager.getInstance().getClosestZone(this, L2TownZone.class);
+		return town != null ? CastleManager.getInstance().getCastleById(town.getTaxById()) : null;
 	}
-	
+
 	public void setClanHall(ClanHall clanhall)
 	{
 		_clanHall = clanhall;
@@ -344,58 +338,30 @@ public class L2DoorInstance extends L2Character
 		if (player == null)
 			return;
 		
-		// Check if the L2PcInstance already target the L2NpcInstance
-		if (this != player.getTarget())
+		if (player.getTarget() != this)
 		{
-			// Set the target of the L2PcInstance player
 			player.setTarget(this);
-			
-			// Send a Server->Client packet MyTargetSelected to the L2PcInstance player
-			MyTargetSelected my = new MyTargetSelected(getObjectId(), 0);
-			player.sendPacket(my);
-			
-			// if (isAutoAttackable(player))
-			// {
-			DoorStatusUpdate su = new DoorStatusUpdate(this);
-			player.sendPacket(su);
-			// }
-			
+			player.sendPacket(new DoorStatusUpdate(this));
 		}
 		else
 		{
-			// MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel());
-			// player.sendPacket(my);
 			if (isAutoAttackable(player))
 			{
-				if (Math.abs(player.getZ() - getZ()) < 400) // this max heigth difference might need some tweaking
-				{
+				if (Math.abs(player.getZ() - getZ()) < 400) 
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
-				}
 			}
-			else if (player.getClan() != null && getClanHall() != null && player.getClanId() == getClanHall().getOwnerId())
+			else if (!isInsideRadius(player, L2Npc.INTERACTION_DISTANCE, false, false))
+				player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
+			else if (player.getClan() != null && _clanHall != null && player.getClanId() == _clanHall.getOwnerId())
 			{
-				if (!isInsideRadius(player, L2Npc.INTERACTION_DISTANCE, false, false))
-				{
-					player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
-					player.sendPacket(ActionFailed.STATIC_PACKET);
-				}
-				else
-				{
-					// Like L2OFF Clanhall's doors get request to be closed/opened
-					player.gatesRequest(this);
-					if (!getOpen())
-					{
-						player.sendPacket(new ConfirmDlg(1140));
-					}
-					else
-					{
-						player.sendPacket(new ConfirmDlg(1141));
-					}
-				}
+				player.gatesRequest(this);
+				player.sendPacket(new ConfirmDlg((!getOpen()) ? 1140 : 1141));
+				player.sendPacket(ActionFailed.STATIC_PACKET);
 			}
+			else
+				player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
-		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
-		player.sendPacket(ActionFailed.STATIC_PACKET);
+		player.sendPacket(ActionFailed.STATIC_PACKET);		
 	}
 	
 	@Override
@@ -456,14 +422,7 @@ public class L2DoorInstance extends L2Character
 	@Override
 	public void broadcastStatusUpdate()
 	{
-		DoorStatusUpdate su = new DoorStatusUpdate(this);
-		for (L2PcInstance player : L2World.getInstance().getVisibleObjects(this, L2PcInstance.class))
-		{
-			if (player == null)
-				continue;
-			
-			player.sendPacket(su);
-		}
+		broadcastPacket(new DoorStatusUpdate(this));
 	}
 	
 	public void onOpen()

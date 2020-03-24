@@ -2,7 +2,6 @@ package com.l2jhellas.gameserver.network.clientpackets;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ExVariationCancelResult;
@@ -54,7 +53,7 @@ public final class RequestRefineCancel extends L2GameClientPacket
 		int price = 0;
 		switch (targetItem.getItem().getCrystalType())
 		{
-			case L2Item.CRYSTAL_C:
+			case C:
 				if (targetItem.getCrystalCount() < 1720)
 					price = 95000;
 				else if (targetItem.getCrystalCount() < 2452)
@@ -63,14 +62,14 @@ public final class RequestRefineCancel extends L2GameClientPacket
 					price = 210000;
 				break;
 			
-			case L2Item.CRYSTAL_B:
+			case B:
 				if (targetItem.getCrystalCount() < 1746)
 					price = 240000;
 				else
 					price = 270000;
 				break;
 			
-			case L2Item.CRYSTAL_A:
+			case A:
 				if (targetItem.getCrystalCount() < 2160)
 					price = 330000;
 				else if (targetItem.getCrystalCount() < 2824)
@@ -79,7 +78,7 @@ public final class RequestRefineCancel extends L2GameClientPacket
 					price = 420000;
 				break;
 			
-			case L2Item.CRYSTAL_S:
+			case S:
 				price = 480000;
 				break;
 			

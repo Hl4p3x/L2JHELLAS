@@ -122,7 +122,7 @@ public abstract class L2Object
 			int itemId = ((L2ItemInstance) this).getItemId();
 			if (MercTicketManager.getInstance().getTicketCastleId(itemId) > 0)
 			{
-				MercTicketManager.getInstance().removeTicket((L2ItemInstance) this);
+				MercTicketManager.getInstance().removeTicket((L2ItemInstance) this);	
 				ItemsOnGroundManager.getInstance().removeObject(this);
 			}
 			if (itemId == 57 || itemId == 6353)

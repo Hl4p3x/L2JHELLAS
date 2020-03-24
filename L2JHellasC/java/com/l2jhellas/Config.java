@@ -31,10 +31,10 @@ public final class Config
 	protected static final Logger _log = Logger.getLogger(Config.class.getName());
 	
 	// Admin Folder
-	private static final String ADMIN_CONFIG_FILE = "./config/Admin/Admin.ini";
+	private static final String ADMIN_CONFIG_FILE = "./config/Main/Admin.ini";
 	// Main Folder
 	private static final String ALT_SETTINGS_FILE = "./config/Main/Altsettings.ini";
-	private static final String CLANHALL_CONFIG_FILE = "./config/Main/Clanhall.ini";
+	private static final String CLAN_CONFIG_FILE = "./config/Main/Clan.ini";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Main/Siege.ini";
 	private static final String GEO_FILE = "./config/Main/Geodata.ini";
 	private static final String OPTIONS_FILE = "./config/Main/Options.ini";
@@ -174,22 +174,7 @@ public final class Config
 	public static boolean DISABLE_GRADE_PENALTY;
 	public static boolean RESTORE_EFFECTS_ON_SUBCLASS_CHANGE;
 	public static boolean DISABLE_WEIGHT_PENALTY;
-	public static boolean CASTLE_SHIELD;
-	public static boolean CLANHALL_SHIELD;
-	public static boolean APELLA_ARMORS;
-	public static boolean OATH_ARMORS;
-	public static boolean CASTLE_CROWN;
-	public static boolean CASTLE_CIRCLETS;
-	public static int ALT_CLAN_JOIN_DAYS;
-	public static int ALT_CLAN_CREATE_DAYS;
-	public static int ALT_CLAN_DISSOLVE_DAYS;
-	public static int ALT_ALLY_JOIN_DAYS_WHEN_LEAVED;
-	public static int ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED;
-	public static int ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED;
-	public static int ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED;
-	public static int ALT_MAX_NUM_OF_CLANS_IN_ALLY;
-	public static int ALT_CLAN_MEMBERS_FOR_WAR;
-	public static int ALT_REPUTATION_SCORE_PER_KILL;
+	
 	public static boolean ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE;
 	public static boolean ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH;
 	public static boolean REMOVE_CASTLE_CIRCLETS;
@@ -236,6 +221,22 @@ public final class Config
 	public static boolean ALT_GAME_VIEWNPC;
 	public static boolean PLAYER_ALT_GAME_VIEWNPC;
 	
+	public static int ALT_CLAN_JOIN_DAYS;
+	public static int ALT_CLAN_CREATE_DAYS;
+	public static int ALT_CLAN_DISSOLVE_DAYS;
+	public static int ALT_ALLY_JOIN_DAYS_WHEN_LEAVED;
+	public static int ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED;
+	public static int ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED;
+	public static int ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED;
+	public static int ALT_MAX_NUM_OF_CLANS_IN_ALLY;
+	public static int ALT_CLAN_MEMBERS_FOR_WAR;
+	public static int ALT_REPUTATION_SCORE_PER_KILL;
+	public static boolean CASTLE_SHIELD;
+	public static boolean CLANHALL_SHIELD;
+	public static boolean APELLA_ARMORS;
+	public static boolean OATH_ARMORS;
+	public static boolean CASTLE_CROWN;
+	public static boolean CASTLE_CIRCLETS;
 	public static long CH_TELE_FEE_RATIO;
 	public static int CH_TELE1_FEE;
 	public static int CH_TELE2_FEE;
@@ -363,7 +364,6 @@ public final class Config
 	public static boolean ALLOW_USE_HERO_ITEM_ON_SUBCLASS;
 	public static int SOUL_CRYSTAL_BREAK_CHANCE;
 	public static int SOUL_CRYSTAL_LEVEL_CHANCE;
-	public static int ALTERNATIVE_ENCHANT_VALUE;
 	public static boolean MAX_LVL_AFTER_SUB;
 	
 	public static Map<Integer, Integer> CLAN_SKILLS;
@@ -662,9 +662,7 @@ public final class Config
 	public static int WAREHOUSE_SLOTS_DWARF;
 	public static int WAREHOUSE_SLOTS_CLAN;
 	public static int FREIGHT_SLOTS;
-	public static boolean ENABLE_DWARF_ENCHANT_BONUS;
-	public static int DWARF_ENCHANT_MIN_LEVEL;
-	public static int DWARF_ENCHANT_BONUS;
+
 	// Augment chance
 	public static int AUGMENTATION_NG_SKILL_CHANCE;
 	public static int AUGMENTATION_MID_SKILL_CHANCE;
@@ -690,9 +688,6 @@ public final class Config
 	public static boolean RB_IMMEDIATE_INFORM;
 	public static int PLAYER_SPAWN_PROTECTION;
 	public static int UNSTUCK_INTERVAL;
-	public static String PARTY_XP_CUTOFF_METHOD;
-	public static double PARTY_XP_CUTOFF_PERCENT;
-	public static int PARTY_XP_CUTOFF_LEVEL;
 	public static double RESPAWN_RESTORE_CP;
 	public static double RESPAWN_RESTORE_HP;
 	public static double RESPAWN_RESTORE_MP;
@@ -822,6 +817,9 @@ public final class Config
 	public static float RATE_DROP_ITEMS;
 	public static float RATE_DROP_SPOIL;
 	public static int RATE_DROP_MANOR;
+	public static String PARTY_XP_CUTOFF_METHOD;
+	public static double PARTY_XP_CUTOFF_PERCENT;
+	public static int PARTY_XP_CUTOFF_LEVEL;
 	public static float RATE_DROP_QUEST;
 	public static float RATE_QUESTS_REWARD;
 	public static float RATE_KARMA_EXP_LOST;
@@ -845,18 +843,10 @@ public final class Config
 	public static float RATE_DROP_SUPERIOR_HERBS;
 	public static float RATE_DROP_SPECIAL_HERBS;
 	public static float RATE_DROP_ITEMS_BY_RAID;
-	public static Map<Integer, Integer> ENCHANT_CHANCE_WEAPON_LIST;
-	public static Map<Integer, Integer> ENCHANT_CHANCE_ARMOR_LIST;
-	public static Map<Integer, Integer> ENCHANT_CHANCE_JEWELRY_LIST;
-	public static Map<Integer, Integer> BLESSED_ENCHANT_CHANCE_WEAPON_LIST;
-	public static Map<Integer, Integer> BLESSED_ENCHANT_CHANCE_ARMOR_LIST;
-	public static Map<Integer, Integer> BLESSED_ENCHANT_CHANCE_JEWELRY_LIST;
+
 	public static int ENCHANT_CHANCE_WEAPON;
 	public static int ENCHANT_CHANCE_ARMOR;
 	public static int ENCHANT_CHANCE_JEWELRY;
-	public static int ENCHANT_CHANCE_WEAPON_CRYSTAL;
-	public static int ENCHANT_CHANCE_ARMOR_CRYSTAL;
-	public static int ENCHANT_CHANCE_JEWELRY_CRYSTAL;
 	public static int ENCHANT_CHANCE_WEAPON_BLESSED;
 	public static int ENCHANT_CHANCE_ARMOR_BLESSED;
 	public static int ENCHANT_CHANCE_JEWELRY_BLESSED;
@@ -919,7 +909,6 @@ public final class Config
 	public static String PET_NAME_TEMPLATE;
 	public static int MAX_CHARACTERS_NUMBER_PER_ACCOUNT;
 	public static int MAXIMUM_ONLINE_USERS;
-	public static int FLOODPROTECTOR_INITIALSIZE;
 	public static boolean ALLOW_DUALBOX;
 	public static boolean ENABLE_PACKET_PROTECTION;
 	public static int MAX_UNKNOWN_PACKETS;
@@ -978,7 +967,8 @@ public final class Config
 	public static int CLIENT_PACKET_QUEUE_MAX_OVERFLOWS_PER_MIN = 1; // default 1
 	public static int CLIENT_PACKET_QUEUE_MAX_UNDERFLOWS_PER_MIN = 1; // default 1
 	public static int CLIENT_PACKET_QUEUE_MAX_UNKNOWN_PER_MIN = 5; // default 5
-
+	
+	/** Flood Protectors */
 	public static int ROLL_DICE;
 	public static int HERO_VOICE;
 	public static int SUBCLASS;
@@ -1084,27 +1074,6 @@ public final class Config
 			RESTORE_EFFECTS_ON_SUBCLASS_CHANGE = Boolean.parseBoolean(altSettings.getProperty("RestoreEffectsOnSub", "False"));
 			DISABLE_GRADE_PENALTY = Boolean.parseBoolean(altSettings.getProperty("DisableGradePenalty", "False"));
 			DISABLE_WEIGHT_PENALTY = Boolean.parseBoolean(altSettings.getProperty("DisableWeightPenalty", "False"));
-			// Equipment Restriction
-			CASTLE_SHIELD = Boolean.parseBoolean(altSettings.getProperty("CastleShieldRestriction", "True"));
-			CLANHALL_SHIELD = Boolean.parseBoolean(altSettings.getProperty("ClanHallShieldRestriction", "True"));
-			APELLA_ARMORS = Boolean.parseBoolean(altSettings.getProperty("ApellaArmorsRestriction", "True"));
-			OATH_ARMORS = Boolean.parseBoolean(altSettings.getProperty("OathArmorsRestriction", "True"));
-			CASTLE_CROWN = Boolean.parseBoolean(altSettings.getProperty("CastleLordsCrownRestriction", "True"));
-			CASTLE_CIRCLETS = Boolean.parseBoolean(altSettings.getProperty("CastleCircletsRestriction", "True"));
-			// clan
-			ALT_CLAN_JOIN_DAYS = Integer.parseInt(altSettings.getProperty("DaysBeforeJoinAClan", "5"));
-			ALT_CLAN_CREATE_DAYS = Integer.parseInt(altSettings.getProperty("DaysBeforeCreateAClan", "10"));
-			ALT_CLAN_DISSOLVE_DAYS = Integer.parseInt(altSettings.getProperty("DaysToPassToDissolveAClan", "7"));
-			ALT_ALLY_JOIN_DAYS_WHEN_LEAVED = Integer.parseInt(altSettings.getProperty("DaysBeforeJoinAllyWhenLeaved", "1"));
-			ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED = Integer.parseInt(altSettings.getProperty("DaysBeforeJoinAllyWhenDismissed", "1"));
-			ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED = Integer.parseInt(altSettings.getProperty("DaysBeforeAcceptNewClanWhenDismissed", "1"));
-			ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED = Integer.parseInt(altSettings.getProperty("DaysBeforeCreateNewAllyWhenDissolved", "10"));
-			ALT_MAX_NUM_OF_CLANS_IN_ALLY = Integer.parseInt(altSettings.getProperty("AltMaxNumOfClansInAlly", "3"));
-			ALT_CLAN_MEMBERS_FOR_WAR = Integer.parseInt(altSettings.getProperty("AltClanMembersForWar", "15"));
-			ALT_REPUTATION_SCORE_PER_KILL = Integer.parseInt(altSettings.getProperty("ReputationScorePerKill", "5"));
-			ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE = Boolean.parseBoolean(altSettings.getProperty("AltNewCharAlwaysIsNewbie", "False"));
-			ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH = Boolean.parseBoolean(altSettings.getProperty("AltMembersCanWithdrawFromClanWH", "False"));
-			REMOVE_CASTLE_CIRCLETS = Boolean.parseBoolean(altSettings.getProperty("RemoveCastleCirclets", "True"));
 			// manor
 			ALT_MANOR_REFRESH_TIME = Integer.parseInt(altSettings.getProperty("AltManorRefreshTime", "20"));
 			ALT_MANOR_REFRESH_MIN = Integer.parseInt(altSettings.getProperty("AltManorRefreshMin", "00"));
@@ -1174,69 +1143,93 @@ public final class Config
 			// other
 			ALT_GAME_VIEWNPC = Boolean.parseBoolean(altSettings.getProperty("AltGameViewNpc", "False"));
 			PLAYER_ALT_GAME_VIEWNPC = Boolean.parseBoolean(altSettings.getProperty("PlayerAltGameViewNpc", "False"));
-			
-			Properties clanhallSettings = new Properties();
-			try (InputStream is = new FileInputStream(new File(CLANHALL_CONFIG_FILE)))
+
+			Properties clanSettings = new Properties();
+			try (InputStream is = new FileInputStream(new File(CLAN_CONFIG_FILE)))
 			{
-				clanhallSettings.load(is);
+				clanSettings.load(is);
 			}
 			catch (Exception e)
 			{
-				_log.severe(Config.class.getName() + ": Error while loading " + CLANHALL_CONFIG_FILE + " settings!");
+				_log.severe(Config.class.getName() + ": Error while loading " + CLAN_CONFIG_FILE + " settings!");
 			}
-			CH_TELE_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallTeleportFunctionFeeRation", "86400000"));
-			CH_TELE1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallTeleportFunctionFeeLvl1", "86400000"));
-			CH_TELE2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallTeleportFunctionFeeLvl2", "86400000"));
-			CH_TELE3_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallTeleportFunctionFeeLvl3", "86400000"));
-			CH_TELE4_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallTeleportFunctionFeeLvl4", "86400000"));
-			CH_SUPPORT_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallSupportFunctionFeeRation", "86400000"));
-			CH_SUPPORT1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl1", "86400000"));
-			CH_SUPPORT2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl2", "86400000"));
-			CH_SUPPORT3_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl3", "86400000"));
-			CH_SUPPORT4_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl4", "86400000"));
-			CH_SUPPORT5_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl5", "86400000"));
-			CH_SUPPORT6_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl6", "86400000"));
-			CH_SUPPORT7_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl7", "86400000"));
-			CH_SUPPORT8_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl8", "86400000"));
-			CH_SUPPORT9_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallSupportFeeLvl9", "86400000"));
-			CH_MPREG_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallMpRegenerationFunctionFeeRation", "86400000"));
-			CH_MPREG1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallMpRegenerationFeeLvl1", "86400000"));
-			CH_MPREG2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallMpRegenerationFeeLvl2", "86400000"));
-			CH_MPREG3_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallMpRegenerationFeeLvl3", "86400000"));
-			CH_MPREG4_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallMpRegenerationFeeLvl4", "86400000"));
-			CH_MPREG5_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallMpRegenerationFeeLvl5", "86400000"));
-			CH_HPREG_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFunctionFeeRation", "86400000"));
-			CH_HPREG1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl1", "86400000"));
-			CH_HPREG2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl2", "86400000"));
-			CH_HPREG3_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl3", "86400000"));
-			CH_HPREG4_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl4", "86400000"));
-			CH_HPREG5_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl5", "86400000"));
-			CH_HPREG6_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl6", "86400000"));
-			CH_HPREG7_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl7", "86400000"));
-			CH_HPREG8_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl8", "86400000"));
-			CH_HPREG9_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl9", "86400000"));
-			CH_HPREG10_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl10", "86400000"));
-			CH_HPREG11_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl11", "86400000"));
-			CH_HPREG12_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl12", "86400000"));
-			CH_HPREG13_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallHpRegenerationFeeLvl13", "86400000"));
-			CH_EXPREG_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallExpRegenerationFunctionFeeRation", "86400000"));
-			CH_EXPREG1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallExpRegenerationFeeLvl1", "86400000"));
-			CH_EXPREG2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallExpRegenerationFeeLvl2", "86400000"));
-			CH_EXPREG3_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallExpRegenerationFeeLvl3", "86400000"));
-			CH_EXPREG4_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallExpRegenerationFeeLvl4", "86400000"));
-			CH_EXPREG5_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallExpRegenerationFeeLvl5", "86400000"));
-			CH_EXPREG6_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallExpRegenerationFeeLvl6", "86400000"));
-			CH_EXPREG7_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallExpRegenerationFeeLvl7", "86400000"));
-			CH_ITEM_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallItemCreationFunctionFeeRation", "86400000"));
-			CH_ITEM1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallItemCreationFunctionFeeLvl1", "86400000"));
-			CH_ITEM2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallItemCreationFunctionFeeLvl2", "86400000"));
-			CH_ITEM3_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallItemCreationFunctionFeeLvl3", "86400000"));
-			CH_CURTAIN_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallCurtainFunctionFeeRation", "86400000"));
-			CH_CURTAIN1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallCurtainFunctionFeeLvl1", "86400000"));
-			CH_CURTAIN2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallCurtainFunctionFeeLvl2", "86400000"));
-			CH_FRONT_FEE_RATIO = Long.valueOf(clanhallSettings.getProperty("ClanHallFrontPlatformFunctionFeeRation", "86400000"));
-			CH_FRONT1_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallFrontPlatformFunctionFeeLvl1", "86400000"));
-			CH_FRONT2_FEE = Integer.valueOf(clanhallSettings.getProperty("ClanHallFrontPlatformFunctionFeeLvl2", "86400000"));
+			
+			// clan
+			ALT_CLAN_JOIN_DAYS = Integer.parseInt(clanSettings.getProperty("DaysBeforeJoinAClan", "5"));
+			ALT_CLAN_CREATE_DAYS = Integer.parseInt(clanSettings.getProperty("DaysBeforeCreateAClan", "10"));
+			ALT_CLAN_DISSOLVE_DAYS = Integer.parseInt(clanSettings.getProperty("DaysToPassToDissolveAClan", "7"));
+			ALT_ALLY_JOIN_DAYS_WHEN_LEAVED = Integer.parseInt(clanSettings.getProperty("DaysBeforeJoinAllyWhenLeaved", "1"));
+			ALT_ALLY_JOIN_DAYS_WHEN_DISMISSED = Integer.parseInt(clanSettings.getProperty("DaysBeforeJoinAllyWhenDismissed", "1"));
+			ALT_ACCEPT_CLAN_DAYS_WHEN_DISMISSED = Integer.parseInt(clanSettings.getProperty("DaysBeforeAcceptNewClanWhenDismissed", "1"));
+			ALT_CREATE_ALLY_DAYS_WHEN_DISSOLVED = Integer.parseInt(clanSettings.getProperty("DaysBeforeCreateNewAllyWhenDissolved", "10"));
+			ALT_MAX_NUM_OF_CLANS_IN_ALLY = Integer.parseInt(clanSettings.getProperty("AltMaxNumOfClansInAlly", "3"));
+			ALT_CLAN_MEMBERS_FOR_WAR = Integer.parseInt(clanSettings.getProperty("AltClanMembersForWar", "15"));
+			ALT_REPUTATION_SCORE_PER_KILL = Integer.parseInt(clanSettings.getProperty("ReputationScorePerKill", "5"));
+			ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE = Boolean.parseBoolean(clanSettings.getProperty("AltNewCharAlwaysIsNewbie", "False"));
+			ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH = Boolean.parseBoolean(clanSettings.getProperty("AltMembersCanWithdrawFromClanWH", "False"));
+			REMOVE_CASTLE_CIRCLETS = Boolean.parseBoolean(clanSettings.getProperty("RemoveCastleCirclets", "True"));
+
+			// Equipment Restriction
+			CASTLE_SHIELD = Boolean.parseBoolean(clanSettings.getProperty("CastleShieldRestriction", "True"));
+			CLANHALL_SHIELD = Boolean.parseBoolean(clanSettings.getProperty("ClanHallShieldRestriction", "True"));
+			APELLA_ARMORS = Boolean.parseBoolean(clanSettings.getProperty("ApellaArmorsRestriction", "True"));
+			OATH_ARMORS = Boolean.parseBoolean(clanSettings.getProperty("OathArmorsRestriction", "True"));
+			CASTLE_CROWN = Boolean.parseBoolean(clanSettings.getProperty("CastleLordsCrownRestriction", "True"));
+			CASTLE_CIRCLETS = Boolean.parseBoolean(clanSettings.getProperty("CastleCircletsRestriction", "True"));
+
+			CH_TELE_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallTeleportFunctionFeeRation", "86400000"));
+			CH_TELE1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallTeleportFunctionFeeLvl1", "86400000"));
+			CH_TELE2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallTeleportFunctionFeeLvl2", "86400000"));
+			CH_TELE3_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallTeleportFunctionFeeLvl3", "86400000"));
+			CH_TELE4_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallTeleportFunctionFeeLvl4", "86400000"));
+			CH_SUPPORT_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallSupportFunctionFeeRation", "86400000"));
+			CH_SUPPORT1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl1", "86400000"));
+			CH_SUPPORT2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl2", "86400000"));
+			CH_SUPPORT3_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl3", "86400000"));
+			CH_SUPPORT4_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl4", "86400000"));
+			CH_SUPPORT5_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl5", "86400000"));
+			CH_SUPPORT6_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl6", "86400000"));
+			CH_SUPPORT7_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl7", "86400000"));
+			CH_SUPPORT8_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl8", "86400000"));
+			CH_SUPPORT9_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallSupportFeeLvl9", "86400000"));
+			CH_MPREG_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallMpRegenerationFunctionFeeRation", "86400000"));
+			CH_MPREG1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallMpRegenerationFeeLvl1", "86400000"));
+			CH_MPREG2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallMpRegenerationFeeLvl2", "86400000"));
+			CH_MPREG3_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallMpRegenerationFeeLvl3", "86400000"));
+			CH_MPREG4_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallMpRegenerationFeeLvl4", "86400000"));
+			CH_MPREG5_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallMpRegenerationFeeLvl5", "86400000"));
+			CH_HPREG_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFunctionFeeRation", "86400000"));
+			CH_HPREG1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl1", "86400000"));
+			CH_HPREG2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl2", "86400000"));
+			CH_HPREG3_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl3", "86400000"));
+			CH_HPREG4_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl4", "86400000"));
+			CH_HPREG5_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl5", "86400000"));
+			CH_HPREG6_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl6", "86400000"));
+			CH_HPREG7_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl7", "86400000"));
+			CH_HPREG8_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl8", "86400000"));
+			CH_HPREG9_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl9", "86400000"));
+			CH_HPREG10_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl10", "86400000"));
+			CH_HPREG11_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl11", "86400000"));
+			CH_HPREG12_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl12", "86400000"));
+			CH_HPREG13_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallHpRegenerationFeeLvl13", "86400000"));
+			CH_EXPREG_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallExpRegenerationFunctionFeeRation", "86400000"));
+			CH_EXPREG1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallExpRegenerationFeeLvl1", "86400000"));
+			CH_EXPREG2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallExpRegenerationFeeLvl2", "86400000"));
+			CH_EXPREG3_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallExpRegenerationFeeLvl3", "86400000"));
+			CH_EXPREG4_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallExpRegenerationFeeLvl4", "86400000"));
+			CH_EXPREG5_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallExpRegenerationFeeLvl5", "86400000"));
+			CH_EXPREG6_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallExpRegenerationFeeLvl6", "86400000"));
+			CH_EXPREG7_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallExpRegenerationFeeLvl7", "86400000"));
+			CH_ITEM_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallItemCreationFunctionFeeRation", "86400000"));
+			CH_ITEM1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallItemCreationFunctionFeeLvl1", "86400000"));
+			CH_ITEM2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallItemCreationFunctionFeeLvl2", "86400000"));
+			CH_ITEM3_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallItemCreationFunctionFeeLvl3", "86400000"));
+			CH_CURTAIN_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallCurtainFunctionFeeRation", "86400000"));
+			CH_CURTAIN1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallCurtainFunctionFeeLvl1", "86400000"));
+			CH_CURTAIN2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallCurtainFunctionFeeLvl2", "86400000"));
+			CH_FRONT_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallFrontPlatformFunctionFeeRation", "86400000"));
+			CH_FRONT1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallFrontPlatformFunctionFeeLvl1", "86400000"));
+			CH_FRONT2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallFrontPlatformFunctionFeeLvl2", "86400000"));
 			
 			Properties versionSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(SERVER_VERSION_FILE)))
@@ -1324,7 +1317,6 @@ public final class Config
 			SOUL_CRYSTAL_BREAK_CHANCE = Integer.parseInt(L2JHellasSettings.getProperty("SoulCrystalBreakChance", "10"));
 			SOUL_CRYSTAL_LEVEL_CHANCE = Integer.parseInt(L2JHellasSettings.getProperty("SoulCrystalLevelChance", "32"));
 			ONLINE_VOICE_ALLOW = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowOnlineCommand", "False"));
-			ALTERNATIVE_ENCHANT_VALUE = Integer.parseInt(L2JHellasSettings.getProperty("AlternativeEnchantValue", "1"));
 			ALT_GAME_FLAGGED_PLAYER_CAN_USE_GK = Boolean.parseBoolean(L2JHellasSettings.getProperty("AltFlaggedPlayerCanUseGK", "False"));
 			ALLOW_PLAYERS_REFUSAL = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowPlayersRefusal", "False"));
 			ALLOW_INFO_COMMAND = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowVoiceInfoCommand", "False"));
@@ -2147,6 +2139,7 @@ public final class Config
 			GRIDS_ALWAYS_ON = Boolean.parseBoolean(optionsSettings.getProperty("GridsAlwaysOn", "False"));
 			GRID_NEIGHBOR_TURNON_TIME = Integer.parseInt(optionsSettings.getProperty("GridNeighborTurnOnTime", "30"));
 			GRID_NEIGHBOR_TURNOFF_TIME = Integer.parseInt(optionsSettings.getProperty("GridNeighborTurnOffTime", "300"));
+			
 			ROLL_DICE = Integer.valueOf(optionsSettings.getProperty("FloodRollDice", "100"));
 			HERO_VOICE = Integer.valueOf(optionsSettings.getProperty("FloodHeroVoice", "100"));
 			SUBCLASS = Integer.valueOf(optionsSettings.getProperty("FloodSubclass", "100"));
@@ -2186,9 +2179,6 @@ public final class Config
 			WAREHOUSE_SLOTS_DWARF = Integer.parseInt(otherSettings.getProperty("MaximumWarehouseSlotsForDwarf", "120"));
 			WAREHOUSE_SLOTS_CLAN = Integer.parseInt(otherSettings.getProperty("MaximumWarehouseSlotsForClan", "150"));
 			FREIGHT_SLOTS = Integer.parseInt(otherSettings.getProperty("MaximumFreightSlots", "20"));
-			ENABLE_DWARF_ENCHANT_BONUS = Boolean.parseBoolean(otherSettings.getProperty("EnableDwarfEnchantBonus", "False"));
-			DWARF_ENCHANT_MIN_LEVEL = Integer.parseInt(otherSettings.getProperty("DwarfEnchantMinLevel", "80"));
-			DWARF_ENCHANT_BONUS = Integer.parseInt(otherSettings.getProperty("DwarfEncahntBonus", "15"));
 			
 			AUGMENTATION_NG_SKILL_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationNGSkillChance", "15"));
 			AUGMENTATION_MID_SKILL_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationMidSkillChance", "30"));
@@ -2214,9 +2204,6 @@ public final class Config
 			RB_IMMEDIATE_INFORM = Boolean.parseBoolean(otherSettings.getProperty("RaidImmediateDBupdate", "True"));
 			PLAYER_SPAWN_PROTECTION = Integer.parseInt(otherSettings.getProperty("PlayerSpawnProtection", "0"));
 			UNSTUCK_INTERVAL = Integer.parseInt(otherSettings.getProperty("UnstuckInterval", "300"));
-			PARTY_XP_CUTOFF_METHOD = otherSettings.getProperty("PartyXpCutoffMethod", "percentage");
-			PARTY_XP_CUTOFF_PERCENT = Double.parseDouble(otherSettings.getProperty("PartyXpCutoffPercent", "3."));
-			PARTY_XP_CUTOFF_LEVEL = Integer.parseInt(otherSettings.getProperty("PartyXpCutoffLevel", "30"));
 			RESPAWN_RESTORE_CP = Double.parseDouble(otherSettings.getProperty("RespawnRestoreCP", "0")) / 100;
 			RESPAWN_RESTORE_HP = Double.parseDouble(otherSettings.getProperty("RespawnRestoreHP", "70")) / 100;
 			RESPAWN_RESTORE_MP = Double.parseDouble(otherSettings.getProperty("RespawnRestoreMP", "70")) / 100;
@@ -2407,6 +2394,9 @@ public final class Config
 			RATE_DROP_ITEMS = Float.parseFloat(ratesSettings.getProperty("RateDropItems", "1"));
 			RATE_DROP_SPOIL = Float.parseFloat(ratesSettings.getProperty("RateDropSpoil", "1"));
 			RATE_DROP_MANOR = Integer.parseInt(ratesSettings.getProperty("RateDropManor", "1"));
+			PARTY_XP_CUTOFF_METHOD = ratesSettings.getProperty("PartyXpCutoffMethod", "percentage");
+			PARTY_XP_CUTOFF_PERCENT = Double.parseDouble(ratesSettings.getProperty("PartyXpCutoffPercent", "3."));
+			PARTY_XP_CUTOFF_LEVEL = Integer.parseInt(ratesSettings.getProperty("PartyXpCutoffLevel", "30"));
 			RATE_DROP_QUEST = Float.parseFloat(ratesSettings.getProperty("RateDropQuest", "1"));
 			RATE_QUESTS_REWARD = Float.parseFloat(ratesSettings.getProperty("RateQuestsReward", "1"));
 			RATE_KARMA_EXP_LOST = Float.parseFloat(ratesSettings.getProperty("RateKarmaExpLost", "1"));
@@ -2433,9 +2423,6 @@ public final class Config
 			ENCHANT_CHANCE_WEAPON = Integer.parseInt(ratesSettings.getProperty("EnchantChanceWeapon", "60"));
 			ENCHANT_CHANCE_ARMOR = Integer.parseInt(ratesSettings.getProperty("EnchantChanceArmor", "60"));
 			ENCHANT_CHANCE_JEWELRY = Integer.parseInt(ratesSettings.getProperty("EnchantChanceJewelry", "60"));
-			ENCHANT_CHANCE_WEAPON_CRYSTAL = Integer.parseInt(ratesSettings.getProperty("EnchantChanceWeaponCrystal", "70"));
-			ENCHANT_CHANCE_ARMOR_CRYSTAL = Integer.parseInt(ratesSettings.getProperty("EnchantChanceArmorCrystal", "70"));
-			ENCHANT_CHANCE_JEWELRY_CRYSTAL = Integer.parseInt(ratesSettings.getProperty("EnchantChanceJewelryCrystal", "70"));
 			ENCHANT_CHANCE_WEAPON_BLESSED = Integer.parseInt(ratesSettings.getProperty("EnchantChanceWeaponBlessed", "80"));
 			ENCHANT_CHANCE_ARMOR_BLESSED = Integer.parseInt(ratesSettings.getProperty("EnchantChanceArmorBlessed", "80"));
 			ENCHANT_CHANCE_JEWELRY_BLESSED = Integer.parseInt(ratesSettings.getProperty("EnchantChanceJewelryBlessed", "80"));
@@ -2447,169 +2434,6 @@ public final class Config
 			ENCHANT_MAX_JEWELRY = Integer.parseInt(ratesSettings.getProperty("EnchantMaxJewelry", "25"));
 			ENCHANT_SAFE_MAX = Integer.parseInt(ratesSettings.getProperty("EnchantSafeMax", "3"));
 			ENCHANT_SAFE_MAX_FULL = Integer.parseInt(ratesSettings.getProperty("EnchantSafeMaxFull", "4"));
-			
-			String[] propertySplitWeapon = ratesSettings.getProperty("EnchantChanceWeaponList", "").split(";");
-			String[] propertySplitArmor = ratesSettings.getProperty("EnchantChanceArmorList", "").split(";");
-			String[] propertySplitJewelry = ratesSettings.getProperty("EnchantChanceJewelryList", "").split(";");
-			String[] propertySplitBlessedWeapon = ratesSettings.getProperty("BlessedEnchantChanceWeaponList", "").split(";");
-			String[] propertySplitBlessedArmor = ratesSettings.getProperty("BlessedEnchantChanceArmorList", "").split(";");
-			String[] propertySplitBlessedJewelry = ratesSettings.getProperty("BlessedEnchantChanceJewelryList", "").split(";");
-			ENCHANT_CHANCE_WEAPON_LIST = new HashMap<>(propertySplitWeapon.length);
-			ENCHANT_CHANCE_ARMOR_LIST = new HashMap<>(propertySplitArmor.length);
-			ENCHANT_CHANCE_JEWELRY_LIST = new HashMap<>(propertySplitJewelry.length);
-			BLESSED_ENCHANT_CHANCE_WEAPON_LIST = new HashMap<>(propertySplitBlessedWeapon.length);
-			BLESSED_ENCHANT_CHANCE_ARMOR_LIST = new HashMap<>(propertySplitBlessedArmor.length);
-			BLESSED_ENCHANT_CHANCE_JEWELRY_LIST = new HashMap<>(propertySplitBlessedJewelry.length);
-			if (propertySplitWeapon.length > 1)
-			{
-				for (String enchant : propertySplitWeapon)
-				{
-					String[] enchantSplit = enchant.split(",");
-					if (enchantSplit.length != 2)
-					{
-						_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchant, "\""));
-					}
-					else
-					{
-						try
-						{
-							ENCHANT_CHANCE_WEAPON_LIST.put(Integer.valueOf(enchantSplit[0]), Integer.valueOf(enchantSplit[1]));
-						}
-						catch (NumberFormatException nfe)
-						{
-							if (!enchant.isEmpty())
-							{
-								_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchantSplit[0], "\"", enchantSplit[1]));
-							}
-						}
-					}
-				}
-			}
-			if (propertySplitArmor.length > 1)
-			{
-				for (String enchant : propertySplitArmor)
-				{
-					String[] enchantSplit = enchant.split(",");
-					if (enchantSplit.length != 2)
-					{
-						_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchant, "\""));
-					}
-					else
-					{
-						try
-						{
-							ENCHANT_CHANCE_ARMOR_LIST.put(Integer.valueOf(enchantSplit[0]), Integer.valueOf(enchantSplit[1]));
-						}
-						catch (NumberFormatException nfe)
-						{
-							if (!enchant.isEmpty())
-							{
-								_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchantSplit[0], "\"", enchantSplit[1]));
-							}
-						}
-					}
-				}
-			}
-			if (propertySplitJewelry.length > 1)
-			{
-				for (String enchant : propertySplitJewelry)
-				{
-					String[] enchantSplit = enchant.split(",");
-					if (enchantSplit.length != 2)
-					{
-						_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchant, "\""));
-					}
-					else
-					{
-						try
-						{
-							ENCHANT_CHANCE_JEWELRY_LIST.put(Integer.valueOf(enchantSplit[0]), Integer.valueOf(enchantSplit[1]));
-						}
-						catch (NumberFormatException nfe)
-						{
-							if (!enchant.isEmpty())
-							{
-								_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchantSplit[0], "\"", enchantSplit[1]));
-							}
-						}
-					}
-				}
-			}
-			if (propertySplitBlessedWeapon.length > 1)
-			{
-				for (String enchant : propertySplitBlessedWeapon)
-				{
-					String[] enchantSplit = enchant.split(",");
-					if (enchantSplit.length != 2)
-					{
-						_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchant, "\""));
-					}
-					else
-					{
-						try
-						{
-							BLESSED_ENCHANT_CHANCE_WEAPON_LIST.put(Integer.valueOf(enchantSplit[0]), Integer.valueOf(enchantSplit[1]));
-						}
-						catch (NumberFormatException nfe)
-						{
-							if (!enchant.isEmpty())
-							{
-								_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchantSplit[0], "\"", enchantSplit[1]));
-							}
-						}
-					}
-				}
-			}
-			if (propertySplitBlessedArmor.length > 1)
-			{
-				for (String enchant : propertySplitBlessedArmor)
-				{
-					String[] enchantSplit = enchant.split(",");
-					if (enchantSplit.length != 2)
-					{
-						_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchant, "\""));
-					}
-					else
-					{
-						try
-						{
-							BLESSED_ENCHANT_CHANCE_ARMOR_LIST.put(Integer.valueOf(enchantSplit[0]), Integer.valueOf(enchantSplit[1]));
-						}
-						catch (NumberFormatException nfe)
-						{
-							if (!enchant.isEmpty())
-							{
-								_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchantSplit[0], "\"", enchantSplit[1]));
-							}
-						}
-					}
-				}
-			}
-			if (propertySplitBlessedJewelry.length > 1)
-			{
-				for (String enchant : propertySplitBlessedJewelry)
-				{
-					String[] enchantSplit = enchant.split(",");
-					if (enchantSplit.length != 2)
-					{
-						_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchant, "\""));
-					}
-					else
-					{
-						try
-						{
-							BLESSED_ENCHANT_CHANCE_JEWELRY_LIST.put(Integer.valueOf(enchantSplit[0]), Integer.valueOf(enchantSplit[1]));
-						}
-						catch (NumberFormatException nfe)
-						{
-							if (!enchant.isEmpty())
-							{
-								_log.warning(Config.class.getName() + StringUtil.concat("[CustomEnchantSystem]: invalid config property -> EnchantList \"", enchantSplit[0], "\"", enchantSplit[1]));
-							}
-						}
-					}
-				}
-			}
 			
 			Properties grandbossSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(GRANDBOSS_CONFIG_FILE)))
@@ -2755,7 +2579,6 @@ public final class Config
 			PET_NAME_TEMPLATE = serverSettings.getProperty("PetNameTemplate", ".*");
 			MAX_CHARACTERS_NUMBER_PER_ACCOUNT = Integer.parseInt(serverSettings.getProperty("CharMaxNumber", "0"));
 			MAXIMUM_ONLINE_USERS = Integer.parseInt(serverSettings.getProperty("MaximumOnlineUsers", "100"));
-			FLOODPROTECTOR_INITIALSIZE = Integer.parseInt(serverSettings.getProperty("FloodProtectorInitialSize", "50"));
 			ALLOW_DUALBOX = Boolean.parseBoolean(serverSettings.getProperty("AllowDualBox", "True"));
 			ENABLE_PACKET_PROTECTION = Boolean.parseBoolean(serverSettings.getProperty("PacketProtection", "False"));
 			MAX_UNKNOWN_PACKETS = Integer.parseInt(serverSettings.getProperty("UnknownPacketsBeforeBan", "5"));
@@ -3531,6 +3354,7 @@ public final class Config
 		}
 		return true;
 	}
+
 	public static void saveHexid(int serverId, String string)
 	{
 		Config.saveHexid(serverId, string, HEXID_FILE);

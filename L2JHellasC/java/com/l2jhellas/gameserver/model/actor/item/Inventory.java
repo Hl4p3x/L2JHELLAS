@@ -1108,13 +1108,12 @@ public abstract class Inventory extends ItemContainer
 	{
 		try
 		{
-			_totalWeight = Math.toIntExact(_items.values().stream().filter(Objects::nonNull).mapToLong(L2ItemInstance::getTotalWeight).reduce(Math::addExact).orElse(0L));
+			_totalWeight = !Config.DISABLE_WEIGHT_PENALTY ? Math.toIntExact(_items.values().stream().filter(Objects::nonNull).mapToLong(L2ItemInstance::getTotalWeight).reduce(Math::addExact).orElse(0L)) : 0;
 		}
 		catch (ArithmeticException ae)
 		{
 			_totalWeight = Integer.MAX_VALUE;
 		}
-
 	}
 	
 	public int getTotalWeight()
@@ -1129,22 +1128,22 @@ public abstract class Inventory extends ItemContainer
 		switch (bow.getCrystalType())
 		{
 			default: // broken weapon.csv ??
-			case L2Item.CRYSTAL_NONE:
+			case NONE:
 				arrowsId = 17;
 				break; // Wooden arrow
-			case L2Item.CRYSTAL_D:
+			case D:
 				arrowsId = 1341;
 				break; // Bone arrow
-			case L2Item.CRYSTAL_C:
+			case C:
 				arrowsId = 1342;
 				break; // Fine steel arrow
-			case L2Item.CRYSTAL_B:
+			case B:
 				arrowsId = 1343;
 				break; // Silver arrow
-			case L2Item.CRYSTAL_A:
+			case A:
 				arrowsId = 1344;
 				break; // Mithril arrow
-			case L2Item.CRYSTAL_S:
+			case S:
 				arrowsId = 1345;
 				break; // Shining arrow
 		}
@@ -1221,23 +1220,19 @@ public abstract class Inventory extends ItemContainer
 	}
 	
 	public void reloadEquippedItems()
-	{
-		L2ItemInstance item;
-		int slot;
-		
+	{	
 		for (L2ItemInstance element : _paperdoll)
 		{
-			item = element;
-			if (item == null)
+			if (element == null)
 				continue;
-			slot = item.getEquipSlot();
+			int slot = element.getEquipSlot();
 			
 			for (PaperdollListener listener : _paperdollListeners)
 			{
 				if (listener == null)
 					continue;
-				listener.notifyUnequiped(slot, item);
-				listener.notifyEquiped(slot, item);
+				listener.notifyUnequiped(slot, element);
+				listener.notifyEquiped(slot, element);
 			}
 		}
 	}

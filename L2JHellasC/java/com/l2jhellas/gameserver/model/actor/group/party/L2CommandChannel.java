@@ -2,6 +2,7 @@ package com.l2jhellas.gameserver.model.actor.group.party;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2Object;
@@ -18,7 +19,8 @@ import com.l2jhellas.gameserver.network.serverpackets.L2GameServerPacket;
 
 public class L2CommandChannel
 {
-	private List<L2Party> _partys = new ArrayList<>();
+	private final List<L2Party> _partys = new CopyOnWriteArrayList<>();
+
 	private L2PcInstance _commandLeader = null;
 	private int _channelLvl;
 	
@@ -48,7 +50,7 @@ public class L2CommandChannel
 	
 	public boolean removeParty(L2Party party)
 	{
-		if (party == null || !_partys.contains(party))
+		if (party == null || _partys.isEmpty() || !_partys.contains(party))
 			return false;
 		
 		if (_partys.size() == 2)
@@ -84,7 +86,7 @@ public class L2CommandChannel
 			if (party != null)
 				removeParty(party);
 		}
-		_partys = null;
+		_partys.clear();
 	}
 	
 	public int getMemberCount()

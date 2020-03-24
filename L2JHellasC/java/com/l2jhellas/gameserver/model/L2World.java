@@ -68,8 +68,7 @@ public final class L2World
 	private final L2WorldRegion[][][] _worldRegions = new L2WorldRegion[REGIONS_X + 1][REGIONS_Y + 1][REGIONS_Z + 1];
 	
 	protected L2World()
-	{
-		
+	{	
 		initRegions();
 	}
 	
