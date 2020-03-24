@@ -14,8 +14,7 @@ public final class ProtocolVersion extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
-		if (readD() > 0 && readD() <= 747)
-			_version = readD();
+		_version = readD();
 	}
 	
 	@Override
