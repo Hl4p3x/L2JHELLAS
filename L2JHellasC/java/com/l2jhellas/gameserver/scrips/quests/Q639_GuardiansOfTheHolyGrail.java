@@ -172,11 +172,11 @@ public class Q639_GuardiansOfTheHolyGrail extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (st == null)
 			return null;
 		
-		partyMember.getQuestState(qn).dropItems(SCRIPTURE, 1, 0, CHANCES.get(npc.getNpcId()));
+		st.dropItems(SCRIPTURE, 1, 0, CHANCES.get(npc.getNpcId()));
 		
 		return null;
 	}

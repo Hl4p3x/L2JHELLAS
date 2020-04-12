@@ -4,10 +4,7 @@ import java.nio.BufferUnderflowException;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.TaskPriority;
-import com.l2jhellas.gameserver.ThreadPoolManager;
-import com.l2jhellas.gameserver.ai.CtrlEvent;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
-import com.l2jhellas.gameserver.datatables.xml.DoorData;
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
@@ -52,26 +49,20 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		_originX = readD();
 		_originY = readD();
 		_originZ = readD();
-		
-		if (_buf.remaining() < 4)
-			return;
-		
-		if (_buf.hasRemaining())
+
+		try
 		{
-			try
+			_moveMovement = readD(); 
+		}
+		catch (BufferUnderflowException e)
+		{
+			final L2PcInstance activeChar = getClient().getActiveChar();
+			if (activeChar != null)
 			{
-				_moveMovement = readD(); // is 0 if cursor keys are used 1 if mouse is used
-			}
-			catch (BufferUnderflowException e)
-			{
-				final L2PcInstance activeChar = getClient().getActiveChar();
-				if(activeChar != null)
-				{
-				  activeChar.sendPacket(SystemMessageId.HACKING_TOOL);
-				  activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				  Util.handleIllegalPlayerAction(activeChar, "Player " + activeChar.getName() + " trying to use L2Walker!", IllegalPlayerAction.PUNISH_KICK);
-				  activeChar.closeNetConnection(false);
-				}
+				activeChar.sendPacket(SystemMessageId.HACKING_TOOL);
+				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+				Util.handleIllegalPlayerAction(activeChar,"Player " + activeChar.getName() + " trying to use L2Walker!", IllegalPlayerAction.PUNISH_KICK);
+				activeChar.closeNetConnection(false);
 			}
 		}
 	}
@@ -86,7 +77,6 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		
 		activeChar.onActionRequest();
 		
-		// Like L2OFF movements prohibited when char is sitting
 		if (activeChar.isSitting())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -99,7 +89,6 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			return;
 		}
 		
-		// Like L2OFF movements prohibited when char is teleporting
 		if (activeChar.isTeleporting())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -109,17 +98,9 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
 		{
 			activeChar.sendPacket(new StopMove(activeChar));
-			ThreadPoolManager.getInstance().executeAi(() -> activeChar.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED));
 			return;
 		}
-		
-		if (DoorData.getInstance().checkIfDoorsBetween(activeChar.getX(), activeChar.getY(), activeChar.getZ(), _targetX, _targetY, _targetZ) >0)
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			ThreadPoolManager.getInstance().executeAi(() -> activeChar.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED));
-			return;
-		}
-		
+
 		_curX = activeChar.getX();
 		_curY = activeChar.getY();
 		_curZ = activeChar.getZ();
@@ -139,45 +120,46 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		if (_moveMovement == 0 && !Config.GEODATA) // cursor movement without geodata is disabled
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
 		}
-		else if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null && (activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW))
+		
+		if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null && (activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
+		double dx = _targetX - _curX;
+		double dy = _targetY - _curY;
+		// Can't move if character is confused, or trying to move a huge
+		// distance
+		if (((dx * dx + dy * dy) > 98010000)) // 9900*9900
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+
+		// This is to avoid exploit with Hit + Fast movement
+		if ((activeChar.isMoving() && activeChar.isAttackingNow()))
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+
+		if (activeChar.isInBoat())
+		{
+			activeChar.setHeading(MathUtil.calculateHeadingFrom(_originX, _originY, _targetX, _targetY));
+			activeChar.broadcastPacket(new MoveToLocation(activeChar, new Location(_targetX, _targetY, _targetZ)));
 		}
 		else
-		{
-			double dx = _targetX - _curX;
-			double dy = _targetY - _curY;
-			// Can't move if character is confused, or trying to move a huge distance
-			if (((dx * dx + dy * dy) > 98010000)) // 9900*9900
-			{
-				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				return;
-			}
-			
-			// This is to avoid exploit with Hit + Fast movement
-			if ((activeChar.isMoving() && activeChar.isAttackingNow()))
-			{
-				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-				return;
-			}
-	
-			if (activeChar.isInBoat())
-			{
-				activeChar.setHeading(MathUtil.calculateHeadingFrom(_originX, _originY, _targetX, _targetY));				
-			    activeChar.broadcastPacket(new MoveToLocation(activeChar, new Location(_targetX, _targetY, _targetZ)));
-			}
-			else
-				activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(_targetX, _targetY, _targetZ));
-			
-			if(activeChar.getPet() != null)
-			{
-			    double distance = Math.hypot(_targetX - activeChar.getX(), _targetY - activeChar.getY());
-			    activeChar.SummonRotate(activeChar.getPet(), distance);
-			}	
+			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,new Location(_targetX, _targetY, _targetZ));
 
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-		}
+		if (activeChar.getPet() != null)
+		{
+			double distance = Math.hypot(_targetX - activeChar.getX(), _targetY - activeChar.getY());
+			activeChar.SummonRotate(activeChar.getPet(), distance);
+		}	
+
 	}
 
 	@Override

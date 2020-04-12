@@ -44,13 +44,9 @@ public final class Config
 	private static final String OTHER_CONFIG_FILE = "./config/Main/Other.ini";
 	private static final String PVP_CONFIG_FILE = "./config/Main/PvP.ini";
 	private static final String GRANDBOSS_CONFIG_FILE = "./config/Main/GrandBoss.ini";
-	// Events Folder
-	private static final String EVENT_ZODIAC_CONFIG_FILE = "./config/Events/Zodiac.ini";
-	private static final String EVENT_TVT_CONFIG_FILE = "./config/Events/TVT.ini";
-	private static final String EVENT_DM_CONFIG_FILE = "./config/Events/DM.ini";
-	private static final String EVENT_CTF_CONFIG_FILE = "./config/Events/CTF.ini";
-	private static final String EVENT_WEDDING_CONFIG_FILE = "./config/Events/Wedding.ini";
+
 	// Mods Folder
+	private static final String EVENT_WEDDING_CONFIG_FILE = "./config/Mods/Wedding.ini";
 	private static final String MOD_L2JHellas_CONFIG_FILE = "./config/Mods/L2JHellas.ini";
 	private static final String MOD_RANK_CONFIG_FILE = "./config/Mods/Rank PvP System.ini";
 	private static final String MOD_AUTOMATION_CONFIG_FILE = "./config/Mods/Automatation.ini";
@@ -61,8 +57,6 @@ public final class Config
 	// Others
 	private static final String CHAT_FILTER_FILE = "./config/Others/ChatFilter.txt";
 	
-	private static final String SERVER_VERSION_FILE = "./config/Version/L2J Hellas Version.ini";
-
 	// Network Folder
 	private static final String CONFIGURATION_FILE = "./config/Network/GameServer.ini";
 	private static final String HEXID_FILE = "./config/Network/HexId/hexid.txt";
@@ -291,9 +285,6 @@ public final class Config
 	public static int CH_FRONT1_FEE;
 	public static int CH_FRONT2_FEE;
 	
-	public static String SERVER_VERSION;
-	public static String SERVER_BUILD_DATE;
-	
 	public static boolean GM_HERO_AURA;
 	public static boolean GM_STARTUP_INVULNERABLE;
 	public static boolean GM_STARTUP_INVISIBLE;
@@ -392,7 +383,6 @@ public final class Config
 	public static long LOGIN_SERVER_SCHEDULE_RESTART_TIME;
 	public static boolean ALLOW_PRIVATE_ANTI_BOT;
 	public static boolean ALLOW_SEQURITY_QUE;
-	public static int ENCHANT_BOT_CHANCE;
 	public static int SECURITY_QUE_TIME;
 	public static boolean ALLOW_HOPZONE_VOTE_REWARD;
 	public static String HOPZONE_SERVER_LINK;
@@ -549,6 +539,10 @@ public final class Config
 	public static int PROTECTOR_SKILLTIME;
 	public static boolean SEND_MESSAGE;
 	public static String PROTECTOR_MESSAGE;
+	public static int BUFFER_MAX_SCHEMES;
+	public static int BUFFER_STATIC_BUFF_COST;
+	public static List<Integer> AUTO_FIGHTER_SKILL_LIST;
+	public static List<Integer> AUTO_MAGE_SKILL_LIST;
 	public static boolean NPCBUFFER_FEATURE_ENABLED;
 	public static int NPCBUFFER_STATIC_BUFF_COST;
 	public static boolean NPC_NOBLES_ENABLE;
@@ -704,69 +698,6 @@ public final class Config
 	
 	// Variable doesn't found in any .ini file.
 	public static int MAX_ITEM_IN_PACKET;
-	
-	// Zodiac Settings
-	public static boolean ZODIAC_ENABLE;
-	public static int ZODIAC_REWARD;
-	public static int ZODIAC_REWARD_COUN;
-	public static int ZODIAC_VOTE_MINUTES;
-	public static boolean SAME_IP_ZODIAC;
-	public static int TIME_TO_REGISTER;
-	public static int INITIAL_START;
-	public static int BETWEEN_EVENTS;
-	// TvT Settings
-	public static boolean TVT_ALLOW_AUTOEVENT;
-	public static String TVT_EVENT_TIMES;
-	public static boolean TVT_ALLOW_INTERFERENCE;
-	public static boolean TVT_ALLOW_POTIONS;
-	public static boolean TVT_ALLOW_SUMMON;
-	public static boolean TVT_ON_START_REMOVE_ALL_EFFECTS;
-	public static boolean TVT_ON_START_UNSUMMON_PET;
-	public static boolean TVT_REVIVE_RECOVERY;
-	public static boolean TVT_ANNOUNCE_TEAM_STATS;
-	public static boolean TVT_CLOSE_COLISEUM_DOORS;
-	public static boolean TVT_ALLOW_ENEMY_HEALING;
-	public static boolean TVT_ALLOW_TEAM_CASTING;
-	public static boolean TVT_ALLOW_TEAM_ATTACKING;
-	public static boolean TVT_ANNOUNCE_REGISTRATION_LOC_NPC;
-	public static boolean TVT_ANNOUNCE_SIGNUPS;
-	public static boolean TVT_JOIN_CURSED;
-	public static boolean TVT_PRICE_NO_KILLS;
-	public static boolean TVT_AURA;
-	public static String TVT_EVEN_TEAMS;
-	public static boolean TVT_ANNOUNCE_REWARD;
-	public static int FIRST_TVT_DELAY;
-	public static long TVT_REVIVE_DELAY;
-
-	// DM Settings
-	public static boolean DM_ALLOW_INTERFERENCE;
-	public static boolean DM_ALLOW_POTIONS;
-	public static boolean DM_ALLOW_SUMMON;
-	public static boolean DM_ON_START_REMOVE_ALL_EFFECTS;
-	public static boolean DM_ON_START_UNSUMMON_PET;
-	public static boolean ARENA_ENABLED;
-	public static int ARENA_INTERVAL;
-	public static int ARENA_REWARD_ID;
-	public static int ARENA_REWARD_COUNT;
-	public static boolean FISHERMAN_ENABLED;
-	public static int FISHERMAN_INTERVAL;
-	public static int FISHERMAN_REWARD_ID;
-	public static int FISHERMAN_REWARD_COUNT;
-	public static long DM_REVIVE_DELAY;
-	// CTF Settings
-	public static boolean ALLOW_CTF_AUTOEVENT;
-	public static String CTF_EVENT_TIMES;
-	public static String CTF_EVEN_TEAMS;
-	public static boolean CTF_ALLOW_INTERFERENCE;
-	public static boolean CTF_ALLOW_POTIONS;
-	public static boolean CTF_ALLOW_SUMMON;
-	public static boolean CTF_ON_START_REMOVE_ALL_EFFECTS;
-	public static boolean CTF_ON_START_UNSUMMON_PET;
-	public static boolean CTF_ANNOUNCE_TEAM_STATS;
-	public static boolean CTF_ANNOUNCE_REWARD;
-	public static boolean CTF_JOIN_CURSED;
-	public static boolean CTF_REVIVE_RECOVERY;
-	public static long CTF_REVIVE_DELAY;
 	
 	// Wedding Settings
 	public static boolean MOD_ALLOW_WEDDING;
@@ -983,6 +914,7 @@ public final class Config
 	public static int TRADE_CHAT;
 	public static int USE_ITEM;
 	public static int SOCIAL;
+	public static int HANDLER;
 	
 	public static enum ObjectMapType
 	{
@@ -1230,18 +1162,6 @@ public final class Config
 			CH_FRONT_FEE_RATIO = Long.valueOf(clanSettings.getProperty("ClanHallFrontPlatformFunctionFeeRation", "86400000"));
 			CH_FRONT1_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallFrontPlatformFunctionFeeLvl1", "86400000"));
 			CH_FRONT2_FEE = Integer.valueOf(clanSettings.getProperty("ClanHallFrontPlatformFunctionFeeLvl2", "86400000"));
-			
-			Properties versionSettings = new Properties();
-			try (InputStream is = new FileInputStream(new File(SERVER_VERSION_FILE)))
-			{
-				versionSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.severe(Config.class.getName() + ": Error while loading " + SERVER_VERSION_FILE + " settings!");
-			}
-			SERVER_VERSION = versionSettings.getProperty("version", "Unsupported Custom Version.");
-			SERVER_BUILD_DATE = versionSettings.getProperty("builddate", "Undefined Date.");
 			
 			Properties AdminSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(ADMIN_CONFIG_FILE)))
@@ -1893,6 +1813,27 @@ public final class Config
 			CLAN_LEVEL = Byte.parseByte(L2JHellasSettings.getProperty("ClanSetLevel", "8"));
 			REPUTATION_QUANTITY = Integer.parseInt(L2JHellasSettings.getProperty("ReputationScore", "10000"));
 			
+			Properties EventWEDDINGSettings = new Properties();
+			try (InputStream is = new FileInputStream(new File(EVENT_WEDDING_CONFIG_FILE)))
+			{
+				EventWEDDINGSettings.load(is);
+			}
+			catch (Exception e)
+			{
+				_log.severe(Config.class.getName() + ": Error while loading " + EVENT_WEDDING_CONFIG_FILE + " settings!");
+			}
+			MOD_ALLOW_WEDDING = Boolean.valueOf(EventWEDDINGSettings.getProperty("AllowWedding", "False"));
+			MOD_WEDDING_PRICE = Integer.parseInt(EventWEDDINGSettings.getProperty("WeddingPrice", "250000000"));
+			MOD_WEDDING_PUNISH_INFIDELITY = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("WeddingPunishInfidelity", "True"));
+			MOD_WEDDING_TELEPORT = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("WeddingTeleport", "True"));
+			MOD_WEDDING_TELEPORT_PRICE = Integer.parseInt(EventWEDDINGSettings.getProperty("WeddingTeleportPrice", "50000"));
+			MOD_WEDDING_TELEPORT_DURATION = Integer.parseInt(EventWEDDINGSettings.getProperty("WeddingTeleportDuration", "60"));
+			MOD_WEDDING_SAMESEX = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("WeddingAllowSameSex", "False"));
+			MOD_WEDDING_FORMALWEAR = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("WeddingFormalWear", "True"));
+			CUPID_TO_PLAYERS = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("CupidToPlayers", "True"));
+			MOD_WEDDING_DIVORCE_COSTS = Integer.parseInt(EventWEDDINGSettings.getProperty("WeddingDivorceCosts", "20"));
+			MOD_WEDDING_ANNOUNCE = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("AnnounceWeddings", "True"));
+			
 			Properties autoSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(MOD_AUTOMATION_CONFIG_FILE)))
 			{
@@ -1925,7 +1866,6 @@ public final class Config
 			TOPZONE_REWARD = parseItemsList(autoSettings.getProperty("TopzoneReward", "57,100000000"));
 			TOPZONE_BOXES_ALLOWED = Integer.parseInt(autoSettings.getProperty("TopzoneDualboxesAllowed", "1"));
 			ALLOW_PRIVATE_ANTI_BOT = Boolean.valueOf(autoSettings.getProperty("AllowPrivateAntiBot", "False"));
-			ENCHANT_BOT_CHANCE = Integer.parseInt(autoSettings.getProperty("PrivateBotChance", "15"));
 			
 			Properties smartCBSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(MOD_SMART_CB_CONFIG_FILE)))
@@ -1977,6 +1917,17 @@ public final class Config
 			PROTECTOR_SKILLTIME = Integer.parseInt(CustomNpcSettings.getProperty("ProtectorSkillTime", "800"));
 			SEND_MESSAGE = Boolean.parseBoolean(CustomNpcSettings.getProperty("SendMessage", "false"));
 			PROTECTOR_MESSAGE = CustomNpcSettings.getProperty("ProtectorMessage", "Protector, not spawnkilling here, go read the rules !!!");
+			BUFFER_MAX_SCHEMES = Integer.parseInt(CustomNpcSettings.getProperty("BufferMaxSchemesPerChar", "4"));
+			BUFFER_STATIC_BUFF_COST = Integer.parseInt(CustomNpcSettings.getProperty("BufferStaticCostPerBuff", "-1"));			
+			
+			AUTO_FIGHTER_SKILL_LIST = new ArrayList<>();
+				for (String skill_id : CustomNpcSettings.getProperty("FighterSkillList", "0").split(";"))
+					AUTO_FIGHTER_SKILL_LIST.add(Integer.parseInt(skill_id));
+					
+			AUTO_MAGE_SKILL_LIST = new ArrayList<>();
+				for (String skill_id : CustomNpcSettings.getProperty("MageSkillList", "0").split(";"))
+					AUTO_MAGE_SKILL_LIST.add(Integer.parseInt(skill_id));
+						
 			NPCBUFFER_FEATURE_ENABLED = Boolean.valueOf(CustomNpcSettings.getProperty("NPCBufferEnabled", "False"));
 			NPCBUFFER_STATIC_BUFF_COST = Integer.parseInt(CustomNpcSettings.getProperty("NPCBufferStaticCostPerBuff", "-1"));
 			ALLOW_CLASS_MASTER = Boolean.valueOf(CustomNpcSettings.getProperty("AllowClassMaster", "False"));
@@ -2153,7 +2104,9 @@ public final class Config
 			GLOBAL_CHAT = Integer.valueOf(optionsSettings.getProperty("FloodGlobalChat", "100"));
 			TRADE_CHAT = Integer.valueOf(optionsSettings.getProperty("FloodTradeChat", "100"));
 			USE_ITEM = Integer.valueOf(optionsSettings.getProperty("FloodUseItem", "100"));
-			SOCIAL = Integer.valueOf(optionsSettings.getProperty("FloodSocial", "100"));
+			SOCIAL = Integer.valueOf(optionsSettings.getProperty("FloodSocial", "100"));		
+			HANDLER = Integer.valueOf(optionsSettings.getProperty("FloodItemHanderl", "100"));
+
 			
 			Properties otherSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(OTHER_CONFIG_FILE)))
@@ -2225,132 +2178,7 @@ public final class Config
 			// Configuration values not found in config files
 			MAX_ITEM_IN_PACKET = Math.max(INVENTORY_MAXIMUM_NO_DWARF, Math.max(INVENTORY_MAXIMUM_DWARF, INVENTORY_MAXIMUM_GM));
 			
-			Properties EventZodiacSettings = new Properties();
-			try (InputStream is = new FileInputStream(new File(EVENT_ZODIAC_CONFIG_FILE)))
-			{
-				EventZodiacSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.severe(Config.class.getName() + ": Error while loading " + EVENT_ZODIAC_CONFIG_FILE + " settings!");
-			}
-			ZODIAC_ENABLE = Boolean.parseBoolean(EventZodiacSettings.getProperty("Zodiac", "true"));
-			ZODIAC_REWARD = Integer.parseInt(EventZodiacSettings.getProperty("ZodiadReward", "3470"));
-			ZODIAC_REWARD_COUN = Integer.parseInt(EventZodiacSettings.getProperty("ZodiacdRewardc", "1"));
-			ZODIAC_VOTE_MINUTES = Integer.parseInt(EventZodiacSettings.getProperty("VotingMin", "5"));
-			SAME_IP_ZODIAC = Boolean.parseBoolean(EventZodiacSettings.getProperty("SameIpProtection", "true"));
-			INITIAL_START = Integer.parseInt(EventZodiacSettings.getProperty("MinutesInitial", "10"));
-			TIME_TO_REGISTER = Integer.parseInt(EventZodiacSettings.getProperty("RegisterTime", "10"));
-			BETWEEN_EVENTS = Integer.parseInt(EventZodiacSettings.getProperty("MinutesAfterEvent", "60"));
-			
-			Properties EventTVTSettings = new Properties();
-			try (InputStream is = new FileInputStream(new File(EVENT_TVT_CONFIG_FILE)))
-			{
-				EventTVTSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.severe(Config.class.getName() + ": Error while loading " + EVENT_TVT_CONFIG_FILE + " settings!");
-			}
-			TVT_ALLOW_AUTOEVENT = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAutomatedEvent", "true"));
-			TVT_EVENT_TIMES = EventTVTSettings.getProperty("TvTStartUpTimes", "17:00,18:00,19:00");
-			FIRST_TVT_DELAY = Integer.parseInt(EventTVTSettings.getProperty("FirstEventDelay", "10"));
-			TVT_AURA = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAura", "true"));
-			TVT_JOIN_CURSED = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTJoinWithCursedWeapon", "true"));
-			TVT_PRICE_NO_KILLS = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTPriceNoKills", "false"));
-			TVT_ALLOW_ENEMY_HEALING = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAllowEnemyHealing", "false"));
-			TVT_ALLOW_TEAM_CASTING = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAllowTeamCasting", "false"));
-			TVT_ALLOW_TEAM_ATTACKING = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAllowTeamAttacking", "false"));
-			TVT_CLOSE_COLISEUM_DOORS = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTCloseColiseumDoors", "false"));
-			TVT_ALLOW_INTERFERENCE = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAllowInterference", "false"));
-			TVT_ALLOW_POTIONS = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAllowPotions", "false"));
-			TVT_ALLOW_SUMMON = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAllowSummon", "false"));
-			TVT_ON_START_REMOVE_ALL_EFFECTS = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTOnStartRemoveAllEffects", "true"));
-			TVT_ON_START_UNSUMMON_PET = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTOnStartUnsummonPet", "true"));
-			TVT_REVIVE_RECOVERY = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTReviveRecovery", "false"));
-			TVT_ANNOUNCE_TEAM_STATS = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAnnounceTeamStats", "false"));
-			TVT_EVEN_TEAMS = EventTVTSettings.getProperty("TvTEvenTeams", "BALANCE");
-			TVT_ANNOUNCE_SIGNUPS = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAnnounceSignUp", "false"));
-			TVT_ANNOUNCE_REGISTRATION_LOC_NPC = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAnnounceLocNpc", "true"));
-			TVT_ANNOUNCE_TEAM_STATS = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAnnounceTeamStats", "false"));
-			TVT_ANNOUNCE_REWARD = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTAnnounceReward", "false"));
-			TVT_PRICE_NO_KILLS = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTPriceNoKills", "false"));
-			TVT_JOIN_CURSED = Boolean.parseBoolean(EventTVTSettings.getProperty("TvTJoinWithCursedWeapon", "true"));
-			TVT_REVIVE_DELAY = Long.parseLong(EventTVTSettings.getProperty("TVTReviveDelay", "20000"));
-			if (TVT_REVIVE_DELAY < 1000)
-			{
-				TVT_REVIVE_DELAY = 1000; // can't be set less then 1 second
-			}
-			
-			Properties EventDMSettings = new Properties();
-			try (InputStream is = new FileInputStream(new File(EVENT_DM_CONFIG_FILE)))
-			{
-				EventDMSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.severe(Config.class.getName() + ": Error while loading " + EVENT_DM_CONFIG_FILE + " settings!");
-			}
-			DM_ALLOW_INTERFERENCE = Boolean.parseBoolean(EventDMSettings.getProperty("DMAllowInterference", "false"));
-			DM_ALLOW_POTIONS = Boolean.parseBoolean(EventDMSettings.getProperty("DMAllowPotions", "false"));
-			DM_ALLOW_SUMMON = Boolean.parseBoolean(EventDMSettings.getProperty("DMAllowSummon", "false"));
-			DM_ON_START_REMOVE_ALL_EFFECTS = Boolean.parseBoolean(EventDMSettings.getProperty("DMOnStartRemoveAllEffects", "true"));
-			DM_ON_START_UNSUMMON_PET = Boolean.parseBoolean(EventDMSettings.getProperty("DMOnStartUnsummonPet", "true"));
-			DM_REVIVE_DELAY = Long.parseLong(EventDMSettings.getProperty("DMReviveDelay", "20000"));
-			if (DM_REVIVE_DELAY < 1000)
-			{
-				DM_REVIVE_DELAY = 1000; // can't be set less then 1 second
-			}
-			
-			Properties EventCTFSettings = new Properties();
-			try (InputStream is = new FileInputStream(new File(EVENT_CTF_CONFIG_FILE)))
-			{
-				EventCTFSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.severe(Config.class.getName() + ": Error while loading " + EVENT_CTF_CONFIG_FILE + " settings!");
-			}
-			ALLOW_CTF_AUTOEVENT = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFAutomatedEvent", "true"));
-			CTF_EVENT_TIMES = EventCTFSettings.getProperty("CTFStartUpTimes", "17:00,18:00,19:00");
-			CTF_EVEN_TEAMS = EventCTFSettings.getProperty("CTFEvenTeams", "BALANCE");
-			CTF_ALLOW_INTERFERENCE = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFAllowInterference", "false"));
-			CTF_ALLOW_POTIONS = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFAllowPotions", "false"));
-			CTF_ALLOW_SUMMON = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFAllowSummon", "false"));
-			CTF_ON_START_REMOVE_ALL_EFFECTS = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFOnStartRemoveAllEffects", "true"));
-			CTF_ON_START_UNSUMMON_PET = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFOnStartUnsummonPet", "true"));
-			CTF_ANNOUNCE_TEAM_STATS = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFAnnounceTeamStats", "false"));
-			CTF_ANNOUNCE_REWARD = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFAnnounceReward", "false"));
-			CTF_JOIN_CURSED = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFJoinWithCursedWeapon", "true"));
-			CTF_REVIVE_RECOVERY = Boolean.parseBoolean(EventCTFSettings.getProperty("CTFReviveRecovery", "false"));
-			CTF_REVIVE_DELAY = Long.parseLong(EventCTFSettings.getProperty("CTFReviveDelay", "20000"));
-			if (CTF_REVIVE_DELAY < 1000)
-			{
-				CTF_REVIVE_DELAY = 1000; // can't be set less then 1 second
-			}
-
-			Properties EventWEDDINGSettings = new Properties();
-			try (InputStream is = new FileInputStream(new File(EVENT_WEDDING_CONFIG_FILE)))
-			{
-				EventWEDDINGSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.severe(Config.class.getName() + ": Error while loading " + EVENT_WEDDING_CONFIG_FILE + " settings!");
-			}
-			MOD_ALLOW_WEDDING = Boolean.valueOf(EventWEDDINGSettings.getProperty("AllowWedding", "False"));
-			MOD_WEDDING_PRICE = Integer.parseInt(EventWEDDINGSettings.getProperty("WeddingPrice", "250000000"));
-			MOD_WEDDING_PUNISH_INFIDELITY = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("WeddingPunishInfidelity", "True"));
-			MOD_WEDDING_TELEPORT = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("WeddingTeleport", "True"));
-			MOD_WEDDING_TELEPORT_PRICE = Integer.parseInt(EventWEDDINGSettings.getProperty("WeddingTeleportPrice", "50000"));
-			MOD_WEDDING_TELEPORT_DURATION = Integer.parseInt(EventWEDDINGSettings.getProperty("WeddingTeleportDuration", "60"));
-			MOD_WEDDING_SAMESEX = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("WeddingAllowSameSex", "False"));
-			MOD_WEDDING_FORMALWEAR = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("WeddingFormalWear", "True"));
-			CUPID_TO_PLAYERS = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("CupidToPlayers", "True"));
-			MOD_WEDDING_DIVORCE_COSTS = Integer.parseInt(EventWEDDINGSettings.getProperty("WeddingDivorceCosts", "20"));
-			MOD_WEDDING_ANNOUNCE = Boolean.parseBoolean(EventWEDDINGSettings.getProperty("AnnounceWeddings", "True"));
-			
-			Properties ratesSettings = new Properties();
+    		Properties ratesSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(RATES_CONFIG_FILE)))
 			{
 				ratesSettings.load(is);
@@ -2672,18 +2500,7 @@ public final class Config
 			PORT_LOGIN = Integer.parseInt(lsIpSettings.getProperty("LoginserverPort", "2106"));
 			INTERNAL_HOSTNAME = lsIpSettings.getProperty("InternalHostname", "localhost");
 			EXTERNAL_HOSTNAME = lsIpSettings.getProperty("ExternalHostname", "localhost");
-			
-			Properties versionSettings = new Properties();
-			try (InputStream is = new FileInputStream(new File(SERVER_VERSION_FILE)))
-			{
-				versionSettings.load(is);
-			}
-			catch (Exception e)
-			{
-				_log.severe(Config.class.getName() + ": Error while loading " + SERVER_VERSION_FILE + " settings!");
-			}
-			SERVER_VERSION = versionSettings.getProperty("version", "Unsupported Custom Version.");
-			SERVER_BUILD_DATE = versionSettings.getProperty("builddate", "Undefined Date.");
+
 			_log.info(Config.class.getName() + "Configuration Files Loaded.");
 		}
 		else
@@ -3195,60 +3012,6 @@ public final class Config
 				break;
 			case "AbortRestart":
 				ABORT_RR = (pValue);
-				break;
-			case "CTFEvenTeams":
-				CTF_EVEN_TEAMS = pValue;
-				break;
-			case "CTFAllowInterference":
-				CTF_ALLOW_INTERFERENCE = Boolean.parseBoolean(pValue);
-				break;
-			case "CTFAllowPotions":
-				CTF_ALLOW_POTIONS = Boolean.parseBoolean(pValue);
-				break;
-			case "CTFAllowSummon":
-				CTF_ALLOW_SUMMON = Boolean.parseBoolean(pValue);
-				break;
-			case "CTFOnStartRemoveAllEffects":
-				CTF_ON_START_REMOVE_ALL_EFFECTS = Boolean.parseBoolean(pValue);
-				break;
-			case "CTFOnStartUnsummonPet":
-				CTF_ON_START_UNSUMMON_PET = Boolean.parseBoolean(pValue);
-				break;
-			case "CTFReviveDelay":
-				CTF_REVIVE_DELAY = Long.parseLong(pValue);
-				break;
-			case "TvTAllowInterference":
-				TVT_ALLOW_INTERFERENCE = Boolean.parseBoolean(pValue);
-				break;
-			case "TvTAllowPotions":
-				TVT_ALLOW_POTIONS = Boolean.parseBoolean(pValue);
-				break;
-			case "TvTAllowSummon":
-				TVT_ALLOW_SUMMON = Boolean.parseBoolean(pValue);
-				break;
-			case "TvTOnStartRemoveAllEffects":
-				TVT_ON_START_REMOVE_ALL_EFFECTS = Boolean.parseBoolean(pValue);
-				break;
-			case "TvTOnStartUnsummonPet":
-				TVT_ON_START_UNSUMMON_PET = Boolean.parseBoolean(pValue);
-				break;
-			case "TvTEvenTeams":
-				TVT_EVEN_TEAMS = pValue;
-				break;
-			case "DMAllowInterference":
-				DM_ALLOW_INTERFERENCE = Boolean.parseBoolean(pValue);
-				break;
-			case "DMAllowPotions":
-				DM_ALLOW_POTIONS = Boolean.parseBoolean(pValue);
-				break;
-			case "DMAllowSummon":
-				DM_ALLOW_SUMMON = Boolean.parseBoolean(pValue);
-				break;
-			case "DMOnStartRemoveAllEffects":
-				DM_ON_START_REMOVE_ALL_EFFECTS = Boolean.parseBoolean(pValue);
-				break;
-			case "DMOnStartUnsummonPet":
-				DM_ON_START_UNSUMMON_PET = Boolean.parseBoolean(pValue);
 				break;
 			case "EnchantChanceWeapon":
 				ENCHANT_CHANCE_WEAPON = Integer.parseInt(pValue);

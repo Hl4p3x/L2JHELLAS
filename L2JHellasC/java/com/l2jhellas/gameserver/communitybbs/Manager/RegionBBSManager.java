@@ -5,7 +5,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.GameServer;
@@ -245,7 +247,7 @@ public class RegionBBSManager extends BaseBBSManager
 	
 	public synchronized void changeCommunityBoard()
 	{
-		Collection<L2PcInstance> players = L2World.getInstance().getAllPlayers().values();
+		Collection<L2PcInstance> players = L2World.getInstance().getAllPlayers().values().stream().filter(Objects::nonNull).collect(Collectors.toList());
 		ArrayList<L2PcInstance> sortedPlayers = new ArrayList<>();
 		sortedPlayers.addAll(players);
 		players = null;

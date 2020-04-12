@@ -67,7 +67,8 @@ public class RecipeController
 	
 	public synchronized void requestMakeItemAbort(L2PcInstance player)
 	{
-		_activeMakers.remove(player);
+		if(_activeMakers.get(player) != null)
+		   _activeMakers.remove(player);
 	}
 	
 	public synchronized void requestManufactureItem(L2PcInstance manufacturer, int recipeListId, L2PcInstance player)

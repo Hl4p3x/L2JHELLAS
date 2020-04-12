@@ -75,6 +75,8 @@ public class FuncEnchant extends Func
 				case D:
 					env.value += 2 * enchant + 4 * overenchant;
 					break;
+				default :
+					break;
 			}
 			return;
 		}
@@ -119,6 +121,8 @@ public class FuncEnchant extends Func
 					env.value += 4 * enchant + 12 * overenchant;
 				else
 					env.value += 4 * enchant + 10 * overenchant;
+				break;
+			default :
 				break;
 		}
 		return;

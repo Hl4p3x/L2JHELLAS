@@ -3,6 +3,8 @@ package com.l2jhellas.gameserver.network.serverpackets;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.l2jhellas.gameserver.holder.IntIntHolder;
+
 public class StatusUpdate extends L2GameServerPacket
 {
 	private static final String _S__1A_STATUSUPDATE = "[S] 0e StatusUpdate";
@@ -40,20 +42,7 @@ public class StatusUpdate extends L2GameServerPacket
 	public static final int MAX_CP = 0x22;
 	
 	private final int _objectId;
-	private final List<Attribute> _attributes;
-	
-	class Attribute
-	{
-		
-		public int id;
-		public int value;
-		
-		Attribute(int pId, int pValue)
-		{
-			id = pId;
-			value = pValue;
-		}
-	}
+	private final List<IntIntHolder> _attributes;
 	
 	public StatusUpdate(int objectId)
 	{
@@ -63,7 +52,7 @@ public class StatusUpdate extends L2GameServerPacket
 	
 	public void addAttribute(int id, int level)
 	{
-		_attributes.add(new Attribute(id, level));
+		_attributes.add(new IntIntHolder(id, level));
 	}
 	
 	@Override
@@ -73,10 +62,10 @@ public class StatusUpdate extends L2GameServerPacket
 		writeD(_objectId);
 		writeD(_attributes.size());
 		
-		for (Attribute temp : _attributes)
+		for (IntIntHolder temp : _attributes)
 		{
-			writeD(temp.id);
-			writeD(temp.value);
+			writeD(temp.getId());
+			writeD(temp.getValue());
 		}
 	}
 	

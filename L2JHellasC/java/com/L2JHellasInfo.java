@@ -2,7 +2,6 @@ package com;
 
 import java.util.logging.Logger;
 
-import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.GameServer;
 
 public class L2JHellasInfo
@@ -14,8 +13,8 @@ public class L2JHellasInfo
 	{
 		_log.info("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
 		_log.info("                              Interlude Project                                 ");
-		_log.info("                                     Owner                                      ");
-		_log.info("                            Boorinio,AbsolutePower                              ");
+		_log.info("                                    Owner                                       ");
+		_log.info("                                 AbsolutePower                                  ");
 		_log.info("                                                                                ");
 		_log.info("                 ##    ##            ##   ##            ######                  ");
 		_log.info("                 ##    ##            ##   ##           ##    ##                 ");
@@ -30,7 +29,6 @@ public class L2JHellasInfo
 		_log.info("                           Contact: nikos.nikosnikos1                           ");
 		_log.info("                          Forum: http://l2jhellas.com/                          ");
 		_log.info(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-		_log.info("             Server Version: " + Config.SERVER_VERSION + " Builded: " + Config.SERVER_BUILD_DATE);
 		_log.info("");
 	}
 }

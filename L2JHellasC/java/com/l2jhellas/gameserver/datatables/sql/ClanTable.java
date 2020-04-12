@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
@@ -367,6 +370,14 @@ public class ClanTable
 			clan2.deleteEnemyClan(clan1);
 			deleteclanswars(clan1.getClanId(), clan2.getClanId());
 		}
+	}
+	
+	public List<L2Clan> getClanAllies(int allianceId)
+	{
+		if (allianceId == 0)
+			return Collections.emptyList();
+		
+		return _clans.values().stream().filter(c -> c.getAllyId() == allianceId).collect(Collectors.toList());
 	}
 	
 	private void restorewars()

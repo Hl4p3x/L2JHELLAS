@@ -110,11 +110,11 @@ public class Q643_RiseAndFallOfTheElrokiTribe extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (st == null)
 			return null;
 		
-		partyMember.getQuestState(qn).dropItems(BONES, 1, -1, 750000);
+		st.dropItems(BONES, 1, -1, 750000);
 		
 		return null;
 	}

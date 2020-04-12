@@ -87,7 +87,7 @@ public class L2EffectZone extends L2ZoneType
 	protected boolean isAffected(L2Character character)
 	{
 		// Check lvl
-		if (character.getLevel() < _minLvl)
+		if (character.getLevel() <= _minLvl)
 			return false;
 		
 		// check obj class

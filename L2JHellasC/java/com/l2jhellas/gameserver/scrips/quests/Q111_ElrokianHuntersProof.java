@@ -187,11 +187,11 @@ public class Q111_ElrokianHuntersProof extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		QuestState partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
 		if (partyMember == null)
 			return null;
 		
-		QuestState st = partyMember.getQuestState(qn);
+		QuestState st = partyMember.getPlayer().getQuestState(qn);
 		
 		switch (npc.getNpcId())
 		{

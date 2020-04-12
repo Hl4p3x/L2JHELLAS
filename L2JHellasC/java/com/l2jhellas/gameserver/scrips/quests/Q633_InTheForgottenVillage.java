@@ -145,20 +145,18 @@ public class Q633_InTheForgottenVillage extends Quest
 		
 		if (UNDEADS.containsKey(npcId))
 		{
-			L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-			if (partyMember == null)
+			QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+			if (st == null)
 				return null;
 			
-			partyMember.getQuestState(qn).dropItems(ZOMBIE_LIVER, 1, 0, UNDEADS.get(npcId));
+			st.dropItems(ZOMBIE_LIVER, 1, 0, UNDEADS.get(npcId));
 		}
 		else if (MOBS.containsKey(npcId))
 		{
-			L2PcInstance partyMember = getRandomPartyMember(player, npc, "1");
-			if (partyMember == null)
+			QuestState st = getRandomPartyMember(player, npc, "1");
+			if (st == null)
 				return null;
-			
-			QuestState st = partyMember.getQuestState(qn);
-			
+						
 			if (st.dropItems(RIB_BONE, 1, 200, MOBS.get(npcId)))
 				st.set("cond", "2");
 		}

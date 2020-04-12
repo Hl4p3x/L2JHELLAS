@@ -100,12 +100,10 @@ public class Q431_WeddingMarch extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMember(player, npc, "1");
-		if (partyMember == null)
+		QuestState st = getRandomPartyMember(player, npc, "1");
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
-		
+				
 		if (st.dropItemsAlways(SILVER_CRYSTAL, 1, 50))
 			st.set("cond", "2");
 		

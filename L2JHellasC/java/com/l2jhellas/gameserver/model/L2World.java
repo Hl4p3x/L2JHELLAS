@@ -260,9 +260,10 @@ public final class L2World
 		
 		forEachVisibleObject(object, L2Object.class, 1, wo ->
 		{
-			if (object instanceof L2PcInstance && wo.isVisible())
+			if (object.isPlayer() && wo.isVisible())
 			{
-				wo.sendInfo((L2PcInstance) object);
+				final L2PcInstance player = object.getActingPlayer();
+				wo.sendInfo(player);
 				
 				if (wo instanceof L2Character)
 				{
@@ -270,7 +271,7 @@ public final class L2World
 					
 					if (ai != null)
 					{
-						ai.describeStateToPlayer((L2PcInstance) object);
+						ai.describeStateToPlayer(player);
 						
 						if (wo instanceof L2MonsterInstance)
 						{
@@ -281,9 +282,11 @@ public final class L2World
 				}
 			}
 			
-			if (wo instanceof L2PcInstance && object.isVisible())
+			if (wo.isPlayer() && object.isVisible())
 			{
-				object.sendInfo((L2PcInstance) wo);
+				final L2PcInstance player = wo.getActingPlayer();
+
+				object.sendInfo(player);
 				
 				if (object instanceof L2Character)
 				{
@@ -291,7 +294,7 @@ public final class L2World
 					
 					if (ai != null)
 					{
-						ai.describeStateToPlayer((L2PcInstance) wo);
+						ai.describeStateToPlayer(player);
 						
 						if (object instanceof L2MonsterInstance)
 						{
@@ -306,9 +309,6 @@ public final class L2World
 	
 	public static void removeVisibleObject(L2Object object, L2WorldRegion oldRegion)
 	{
-		if (object == null)
-			return;
-		
 		if (oldRegion != null)
 		{
 			oldRegion.removeVisibleObject(object);
@@ -332,7 +332,7 @@ public final class L2World
 						if (objectCreature.getTarget() == wo)
 							objectCreature.setTarget(null);
 						
-						if (object instanceof L2PcInstance)
+						if (object.isPlayer())
 							((L2PcInstance) object).sendPacket(new DeleteObject(wo,(wo instanceof L2PcInstance) && ((L2PcInstance) wo).isSeated()));
 					}
 					
@@ -347,7 +347,7 @@ public final class L2World
 						if (woCreature.getTarget() == object)
 							woCreature.setTarget(null);
 						
-						if (wo instanceof L2PcInstance)
+						if (wo.isPlayer())
 							((L2PcInstance) wo).sendPacket(new DeleteObject(object,(object instanceof L2PcInstance) && ((L2PcInstance) object).isSeated()));
 					}
 				}
@@ -415,9 +415,10 @@ public final class L2World
 					if ((wo == object) || (wo.getInstanceId() != object.getInstanceId()))
 						continue;
 					
-					if (object instanceof L2PcInstance && wo.isVisible())
+					if (object.isPlayer() && wo.isVisible())
 					{
-						wo.sendInfo((L2PcInstance) object);
+						final L2PcInstance player = object.getActingPlayer();
+						wo.sendInfo(player);
 						
 						if (wo instanceof L2Character)
 						{
@@ -425,7 +426,7 @@ public final class L2World
 							
 							if (ai != null)
 							{
-								ai.describeStateToPlayer((L2PcInstance) object);
+								ai.describeStateToPlayer(player);
 								
 								if (wo instanceof L2MonsterInstance)
 								{
@@ -436,16 +437,18 @@ public final class L2World
 						}
 					}
 					
-					if (wo instanceof L2PcInstance && object.isVisible())
+					if (wo.isPlayer() && object.isVisible())
 					{
-						object.sendInfo((L2PcInstance) wo);
+						final L2PcInstance player = wo.getActingPlayer();
+
+						object.sendInfo(player);
 						
 						if (object instanceof L2Character)
 						{
 							final L2CharacterAI ai = ((L2Character) object).getAI();
 							if (ai != null)
 							{
-								ai.describeStateToPlayer((L2PcInstance) wo);
+								ai.describeStateToPlayer(player);
 								
 								if (object instanceof L2MonsterInstance)
 								{

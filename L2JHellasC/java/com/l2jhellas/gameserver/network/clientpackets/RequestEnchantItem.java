@@ -15,7 +15,6 @@ import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
-import com.l2jhellas.shield.antibot.PrivateAntiBot;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
 import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
 import com.l2jhellas.util.Rnd;
@@ -192,14 +191,14 @@ public final class RequestEnchantItem extends AbstractEnchantPacket
 					activeChar.sendPacket(item.getEnchantLevel() > 0 ? SystemMessage.getSystemMessage(SystemMessageId.ENCHANTMENT_FAILED_S1_S2_EVAPORATED).addNumber(item.getEnchantLevel()).addItemName(item.getItemId())
 					: SystemMessage.getSystemMessage(SystemMessageId.ENCHANTMENT_FAILED_S1_EVAPORATED).addItemName(item.getItemId()));
 					
-					activeChar.sendPacket(crystalId == 0 ? EnchantResult.UNK_RESULT_4 : EnchantResult.UNK_RESULT_1);	
+					activeChar.sendPacket(crystalId == 0 ? EnchantResult.FAILED_NO_CRYSTALS : EnchantResult.FAILED_CRYSTALS);	
 				}
 				else
 				{
 					item.setEnchantLevel(0);
 					item.updateDatabase();
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BLESSED_ENCHANT_FAILED));
-					activeChar.sendPacket(EnchantResult.UNSUCCESS);
+					activeChar.sendPacket(EnchantResult.BLESSED_FAILED);
 				}
 			}
 			
@@ -210,10 +209,7 @@ public final class RequestEnchantItem extends AbstractEnchantPacket
 			activeChar.sendPacket(new ItemList(activeChar, false));
 			activeChar.broadcastUserInfo();
 			activeChar.setActiveEnchantItem(null);
-			
-			if (Rnd.get(100) <= Config.ENCHANT_BOT_CHANCE && Config.ALLOW_PRIVATE_ANTI_BOT)
-				PrivateAntiBot.privateantibot(activeChar);
-			
+
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}

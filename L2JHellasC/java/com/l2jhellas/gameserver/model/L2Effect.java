@@ -5,7 +5,6 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
-import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.model.actor.L2Character;
@@ -132,9 +131,7 @@ public abstract class L2Effect
 			}
 			catch (Throwable e)
 			{
-				_log.severe(EffectTask.class.getName() + ": Could run effect task.");
-				if (Config.DEVELOPER)
-					e.printStackTrace();
+				_log.severe(EffectTask.class.getName() + ": Could run effect task." +e);
 			}
 		}
 	}

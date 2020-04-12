@@ -29,7 +29,7 @@ public class GameServerRegister
 		LineNumberReader _in = new LineNumberReader(new InputStreamReader(System.in));
 		try
 		{
-			GameServerTable.load();
+			GameServerTable.loadGS();
 		}
 		catch (Exception e)
 		{

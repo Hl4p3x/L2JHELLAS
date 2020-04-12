@@ -29,8 +29,8 @@ public final class L2ObservationInstance extends L2NpcInstance
 				player.sendMessage("You already participated in Olympiad!");
 				return;
 			}
-			
-			if (player._inEventTvT || player._inEventDM || player._inEventCTF || player.isinZodiac)
+						
+			if (player.isRegisteredInFunEvent() || player.isInFunEvent())
 			{
 				player.sendMessage("You already participated in Event!");
 				return;
@@ -58,7 +58,7 @@ public final class L2ObservationInstance extends L2NpcInstance
 				return;
 			}
 			
-			if (player._inEventTvT || player._inEventDM || player._inEventCTF)
+			if (player.isRegisteredInFunEvent() || player.isInFunEvent())
 			{
 				player.sendMessage("You already participated in Event!");
 				return;

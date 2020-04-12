@@ -177,20 +177,16 @@ public class Q376_ExplorationOfTheGiantsCave_Part1 extends Quest
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		// Drop parchment to anyone
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
 		
 		st.dropItems(PARCHMENT, 1, 0, PARCHMENT_RATE);
 		
 		// Drop mysterious book to person who still need it
-		partyMember = getRandomPartyMember(player, npc, "condBook", "1");
-		if (partyMember == null)
+		st = getRandomPartyMember(player, npc, "condBook", "1");
+		if (st == null)
 			return null;
-		
-		st = partyMember.getQuestState(qn);
 		
 		if (st.dropItems(MYSTERIOUS_BOOK, 1, 1, MYSTERIOUS_BOOK_RATE))
 			st.unset("condBook");

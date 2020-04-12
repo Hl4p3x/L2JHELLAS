@@ -93,7 +93,7 @@ public class CommunityBoard
 			player.sendMessage("CommunityBoard use is prohibited in StoreMode!");
 			return false;
 		}
-		if (player.isInFunEvent() || player._inEventCTF || player._inEventDM || player._inEventTvT || player._inEventVIP)
+		if (player.isInFunEvent())
 		{
 			player.sendMessage("CommunityBoard use is prohibited while you are in an event!");
 			return false;

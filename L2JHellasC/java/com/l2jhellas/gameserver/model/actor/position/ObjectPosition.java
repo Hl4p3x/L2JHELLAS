@@ -21,18 +21,20 @@ public class ObjectPosition
 	public final void setXYZ(int x, int y, int z)
 	{
 		setWorldPosition(x, y, z);
-		
+
 		final L2WorldRegion oldRegion = getWorldRegion();
 		final L2WorldRegion newRegion = L2World.getInstance().getRegion(getWorldPosition());
-		
+
 		if (newRegion != oldRegion)
 		{
 			if (oldRegion != null)
 				oldRegion.removeVisibleObject(getActiveObject());
 
-			newRegion.addVisibleObject(getActiveObject());
-			L2World.switchRegion(getActiveObject(), newRegion);
-			setWorldRegion(newRegion);
+			if (getActiveObject().isVisible())			
+			    newRegion.addVisibleObject(getActiveObject());
+			
+			   L2World.switchRegion(getActiveObject(), newRegion);
+			   setWorldRegion(newRegion);
 		}
 	}
 	
@@ -50,7 +52,7 @@ public class ObjectPosition
 		if (y < L2World.WORLD_Y_MIN)
 			y = L2World.WORLD_Y_MIN + 5000;
 		
-		setWorldPosition(x, y, z);
+		getActiveObject().setXYZ(x, y, z);
 		getActiveObject().setIsVisible(false);
 	}
 	

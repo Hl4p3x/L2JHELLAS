@@ -49,11 +49,6 @@ public abstract class L2Object
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	public boolean _inEventTvT = false;
-	public boolean _inEventCTF = false;
-	public boolean _inEventVIP = false;
-	public boolean _inEventDM = false;
-	
 	public void onSpawn()
 	{
 	}
@@ -91,8 +86,7 @@ public abstract class L2Object
 		
 		synchronized (this)
 		{
-			_isVisible = false;
-			getPosition().setWorldRegion(null);
+			setIsVisible(false);
 		}
 		
 		L2World.removeVisibleObject(this, reg);
@@ -254,8 +248,7 @@ public abstract class L2Object
 			L2World.getInstance().forEachVisibleObject(this, L2PcInstance.class, player ->
 			{
 				player.sendPacket(deletePacket);
-			});
-			
+			});		
 		}
 		
 		broadcastInfo();
@@ -304,7 +297,7 @@ public abstract class L2Object
 	{
 		_instanceId = instanceId;
 		
-		if (_isVisible && !(this instanceof L2PcInstance))
+		if (_isVisible && !(this.isPlayer()))
 		{
 			decayMe();
 			spawnMe();

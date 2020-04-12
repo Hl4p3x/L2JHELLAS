@@ -604,6 +604,8 @@ public class Duel
 			case TIMEOUT:
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_DUEL_HAS_ENDED_IN_A_TIE);
 				break;
+			default :
+				break;
 		}
 		
 		broadcastToTeam1(sm);

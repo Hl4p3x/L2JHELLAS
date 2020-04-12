@@ -36,7 +36,7 @@ public class ItemsOnGroundManager
 	{
 		if (_instance == null)
 		{
-			_instance = new ItemsOnGroundManager();
+			_instance = new ItemsOnGroundManager();			
 			_instance.load();
 		}
 		return _instance;
@@ -184,11 +184,7 @@ public class ItemsOnGroundManager
 			emptyTable();
 			
 			if (_items.isEmpty())
-			{
-				if (Config.DEBUG)
-					_log.config(ItemsOnGroundManager.class.getName() + ": nothing to save...");
 				return;
-			}
 			
 			for (L2ItemInstance item : _items)
 			{

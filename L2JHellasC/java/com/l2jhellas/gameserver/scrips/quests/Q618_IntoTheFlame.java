@@ -130,12 +130,10 @@ public class Q618_IntoTheFlame extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMember(player, npc, "2");
-		if (partyMember == null)
+		QuestState st = getRandomPartyMember(player, npc, "2");
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
-		
+				
 		if (st.dropItems(VACUALITE_ORE, 1, 50, 500000))
 			st.set("cond", "3");
 		

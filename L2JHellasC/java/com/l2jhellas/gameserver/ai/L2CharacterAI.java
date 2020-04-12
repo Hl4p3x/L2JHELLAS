@@ -62,7 +62,7 @@ public class L2CharacterAI extends AbstractAI
 		changeIntention(AI_INTENTION_IDLE, null, null);
 		
 		// Init cast and attack target
-		setCastTarget(null);
+		setTarget(null);
 		setAttackTarget(null);
 		
 		// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
@@ -83,7 +83,7 @@ public class L2CharacterAI extends AbstractAI
 			changeIntention(AI_INTENTION_ACTIVE, null, null);
 			
 			// Init cast and attack target
-			setCastTarget(null);
+			setTarget(null);
 			setAttackTarget(null);
 			
 			// Stop the actor movement server side AND client side by sending Server->Client packet StopMove/StopRotation (broadcast)
@@ -193,7 +193,7 @@ public class L2CharacterAI extends AbstractAI
 		}
 		
 		// Set the AI cast target
-		setCastTarget((L2Character) target);
+		setTarget((L2Character) target);
 		
 		// Set the AI skill used by INTENTION_CAST
 		_skill = skill;
@@ -482,14 +482,7 @@ public class L2CharacterAI extends AbstractAI
 	protected void onEvtForgetObject(L2Object object)
 	{
 		final L2Object target = getTarget();
-		
-		if (getCastTarget() == object)
-		{
-			setCastTarget(null);
-			getActor().abortCast();
-			setIntention(AI_INTENTION_IDLE);
-		}
-		
+
 		if (target == object)
 		{
 			setTarget(null);
@@ -553,7 +546,6 @@ public class L2CharacterAI extends AbstractAI
 		// Init AI
 		_intention = AI_INTENTION_IDLE;
 		setTarget(null);
-		setCastTarget(null);
 		setAttackTarget(null);
 	}
 	

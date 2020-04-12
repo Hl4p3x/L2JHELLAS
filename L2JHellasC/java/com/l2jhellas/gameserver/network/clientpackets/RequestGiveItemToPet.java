@@ -40,7 +40,10 @@ public final class RequestGiveItemToPet extends L2GameClientPacket
 			return;
 		
 		if (!FloodProtectors.performAction(player.getClient(), Action.USE_ITEM))
+		{
+		    player.sendMessage("You are using this action too fast!");
 			return;
+		}
 		
 		if (_amount <= 0)
 			return;

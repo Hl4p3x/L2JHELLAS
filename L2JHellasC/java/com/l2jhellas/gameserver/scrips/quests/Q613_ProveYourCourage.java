@@ -105,17 +105,16 @@ public class Q613_ProveYourCourage extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		for (L2PcInstance partyMember : getPartyMembers(player, npc, "cond", "1"))
+		for (QuestState st : getPartyMembers(player, npc, "cond", "1"))
 		{
-			if (partyMember.getAllianceWithVarkaKetra() <= -3)
+			if(st == null)
+				continue;
+			
+			if (st.getPlayer().getAllianceWithVarkaKetra() <= -3 && st.hasQuestItems(Varka_Alliance_Three))
 			{
-				QuestState st = partyMember.getQuestState(qn);
-				if (st.hasQuestItems(Varka_Alliance_Three))
-				{
-					st.set("cond", "2");
-					st.giveItems(Hekaton_Head, 1);
-					st.playSound(QuestState.SOUND_MIDDLE);
-				}
+				st.set("cond", "2");
+				st.giveItems(Hekaton_Head, 1);
+				st.playSound(QuestState.SOUND_MIDDLE);
 			}
 		}
 		

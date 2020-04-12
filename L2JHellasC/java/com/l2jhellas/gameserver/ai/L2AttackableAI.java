@@ -288,26 +288,26 @@ public class L2AttackableAI extends L2CharacterAI
 		{
 			if (!npc.isCastingNow() && !npc.isAttackingNow() && npc.isAggressive() || (npc instanceof L2GuardInstance))
 			{
-			    final int range = npc instanceof L2GuardInstance ? 600 : npc.getAggroRange();
-			    L2World.getInstance().forEachVisibleObjectInRange(npc, L2Character.class, range, t ->
-			    {
-				     if ((npc instanceof L2FestivalMonsterInstance) && t instanceof L2PcInstance)
-				     {
-					     L2PcInstance targetPlayer = (L2PcInstance) t;						
-					     if (!(targetPlayer.isFestivalParticipant()))
-						       return;
-				     }
-					
-				     if (autoAttackCondition(t)) 
-				     {
-					    int hating = npc.getHating(t);
-						
-					     if (hating == 0)
-						     npc.addDamageHate(t, 0, 1);
-				     }
-			 });
-		  }
-					
+				final int range = npc instanceof L2GuardInstance ? 600 : npc.getAggroRange();
+				L2World.getInstance().forEachVisibleObjectInRange(npc, L2Character.class, range, t ->
+				{
+					if ((npc instanceof L2FestivalMonsterInstance) && t instanceof L2PcInstance)
+					{
+						L2PcInstance targetPlayer = (L2PcInstance) t;
+						if (!(targetPlayer.isFestivalParticipant()))
+							return;
+					}
+
+					if (autoAttackCondition(t))
+					{
+						int hating = npc.getHating(t);
+
+						if (hating == 0)
+							npc.addDamageHate(t, 0, 1);
+					}
+				});
+			}
+		  				
 			L2Character hated;
 			
 			if (npc.isConfused() && (target != null) && target instanceof L2Character)
@@ -524,8 +524,7 @@ public class L2AttackableAI extends L2CharacterAI
 			catch (NullPointerException e)
 			{
 				_log.info("L2AttackableAI: thinkAttack() faction call failed.");
-				if (Config.DEBUG)
-					e.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 		
@@ -755,7 +754,8 @@ public class L2AttackableAI extends L2CharacterAI
 			if (range < 5)
 				range = 5;
 			
-			moveToPawn(target, range);
+			moveToPawn(target, range);	
+			
 			return;
 		}
 		
@@ -786,7 +786,10 @@ public class L2AttackableAI extends L2CharacterAI
 		
 		if(!getActiveChar().isInsideRadius(target.getX(), target.getY(), target.getZ(), skill.getCastRange(), true, false))
 			return false;
-
+		
+		if(target.getFirstEffect(skill.getId()) != null)
+			return false;
+		
 		if (skill.getSkillType()==L2SkillType.BUFF && target.isAutoAttackable(getActiveChar()))
 			return false;
 		
@@ -917,6 +920,8 @@ public class L2AttackableAI extends L2CharacterAI
 					thinkAttack();
 					break;
 				}
+				default :
+					break;
 			}
 		}
 		catch (Exception e)

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -27,6 +29,7 @@ import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
+import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
@@ -244,50 +247,40 @@ public class Quest
 		return st;
 	}
 	
-	public List<L2PcInstance> getPartyMembers(L2PcInstance player, L2Npc npc, String var, String value)
+	public List<QuestState> getPartyMembers(L2PcInstance player, L2Npc npc, String var, String value)
 	{
-		// Output list.
-		List<L2PcInstance> candidates = new ArrayList<>();
+		if (player == null)
+			return Collections.emptyList();
 		
-		// Valid player instance is passed and player is in a party? Check party.
-		if (player != null && player.isInParty())
+		final L2Party party = player.getParty();
+		if (party == null)
 		{
-			// Filter candidates from player's party.
-			for (L2PcInstance partyMember : player.getParty().getPartyMembers())
-			{
-				if (partyMember == null)
-					continue;
-				
-				// Check party members' quest condition.
-				if (checkPlayerCondition(partyMember, npc, var, value) != null)
-					candidates.add(partyMember);
-			}
+			final QuestState st = checkPlayerCondition(player, npc, var, value);
+			return (st != null) ? Arrays.asList(st) : Collections.emptyList();
 		}
-		// Player is solo, check the player
-		else if (checkPlayerCondition(player, npc, var, value) != null)
-			candidates.add(player);
 		
-		return candidates;
+		final List<QuestState> list = new ArrayList<>();
+		for (L2PcInstance member : party.getPartyMembers())
+		{
+			final QuestState st = checkPlayerCondition(member, npc, var, value);
+			if (st != null)
+				list.add(st);
+		}
+		return list;
 	}
-	
-	public L2PcInstance getRandomPartyMember(L2PcInstance player, L2Npc npc, String var, String value)
+
+	public QuestState getRandomPartyMember(L2PcInstance player, L2Npc npc, String var, String value)
 	{
 		// No valid player instance is passed, there is nothing to check.
 		if (player == null)
 			return null;
 		
-		// Get all candidates fulfilling the condition.
-		final List<L2PcInstance> candidates = getPartyMembers(player, npc, var, value);
-		
-		// No candidate, return.
-		if (candidates.isEmpty())
-			return null;
-		
 		// Return random candidate.
-		return candidates.get(Rnd.get(candidates.size()));
+		return Rnd.get(getPartyMembers(player, npc, var, value));
 	}
+
 	
-	public L2PcInstance getRandomPartyMember(L2PcInstance player, L2Npc npc, String value)
+	public QuestState getRandomPartyMember(L2PcInstance player, L2Npc npc, String value)
 	{
 		return getRandomPartyMember(player, npc, "cond", value);
 	}
@@ -339,49 +332,37 @@ public class Quest
 		return null;
 	}
 	
-	public List<L2PcInstance> getPartyMembersState(L2PcInstance player, L2Npc npc, byte state)
+	public List<QuestState> getPartyMembersState(L2PcInstance player, L2Npc npc, byte state)
 	{
-		// Output list.
-		List<L2PcInstance> candidates = new ArrayList<>();
+		if (player == null)
+			return Collections.emptyList();
 		
-		// Valid player instance is passed and player is in a party? Check party.
-		if (player != null && player.isInParty())
+		final L2Party party = player.getParty();
+		if (party == null)
 		{
-			// Filter candidates from player's party.
-			for (L2PcInstance partyMember : player.getParty().getPartyMembers())
-			{
-				if (partyMember == null)
-					continue;
-				
-				// Check party members' quest state.
-				if (checkPlayerState(partyMember, npc, state) != null)
-					candidates.add(partyMember);
-			}
+			final QuestState st = checkPlayerState(player, npc, state);
+			return (st != null) ? Arrays.asList(st) : Collections.emptyList();
+		}		
+		final List<QuestState> list = new ArrayList<>();
+		for (L2PcInstance member : party.getPartyMembers())
+		{
+			final QuestState st = checkPlayerState(member, npc, state);
+			if (st != null)
+				list.add(st);
 		}
-		// Player is solo, check the player
-		else if (checkPlayerState(player, npc, state) != null)
-			candidates.add(player);
-		
-		return candidates;
+		return list;
 	}
 	
-	public L2PcInstance getRandomPartyMemberState(L2PcInstance player, L2Npc npc, byte state)
+	public QuestState getRandomPartyMemberState(L2PcInstance player, L2Npc npc, byte state)
 	{
 		// No valid player instance is passed, there is nothing to check.
 		if (player == null)
 			return null;
 		
-		// Get all candidates fulfilling the condition.
-		final List<L2PcInstance> candidates = getPartyMembersState(player, npc, state);
-		
-		// No candidate, return.
-		if (candidates.isEmpty())
-			return null;
-		
 		// Return random candidate.
-		return candidates.get(Rnd.get(candidates.size()));
+		return Rnd.get(getPartyMembersState(player, npc, state));
 	}
-	
+
 	public QuestState getClanLeaderQuestState(L2PcInstance player, L2Npc npc)
 	{
 		// If player is the leader, retrieves directly the qS and bypass others checks

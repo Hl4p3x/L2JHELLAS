@@ -3,8 +3,6 @@ package com.l2jhellas.gameserver.network.clientpackets;
 import java.nio.BufferUnderflowException;
 import java.util.logging.Logger;
 
-import com.l2jhellas.Config;
-import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.L2GameClient;
 import com.l2jhellas.gameserver.network.serverpackets.L2GameServerPacket;
 import com.l2jhellas.mmocore.network.ReceivablePacket;
@@ -20,8 +18,9 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 	@Override
 	protected boolean read()
 	{
-		if (Config.DEBUG)
-			_log.config(L2GameClientPacket.class.getName() + ": packet: " + getType());
+        if(getClient() == null)
+        	return false;
+        
 		try
 		{
 			readImpl();
@@ -29,13 +28,13 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 		}
 		catch (Exception t)
 		{
-			_log.warning(L2GameClientPacket.class.getName() + ": Client: " + getClient().toString() + " - Failed reading: " + getType() + " packet - l2jhellas Server Version: " + Config.SERVER_VERSION);
+			_log.warning(L2GameClientPacket.class.getName() + ": Client: " + getClient().toString() + " - Failed reading: " + getType() );
+			t.printStackTrace();
 			
 			if (t instanceof BufferUnderflowException)
 				getClient().onBufferUnderflow();
 			
-			if (Config.DEVELOPER)
-				t.printStackTrace();
+				
 		}
 		return false;
 	}
@@ -48,18 +47,11 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 		try
 		{
 			runImpl();
-			if (this instanceof MoveBackwardToLocation || this instanceof AttackRequest || this instanceof RequestMagicSkillUse)
-			{
-				final L2PcInstance player = getClient().getActiveChar();
-				if (player != null && player.isSpawnProtected())
-					player.onActionRequest();
-			}
 		}
 		catch (Throwable t)
 		{
-			_log.warning(L2GameClientPacket.class.getName() + ": Client: " + getClient().toString() + " - Failed running: " + getType() + " - l2jhellas Server Version: " + Config.SERVER_VERSION);
-			if (Config.DEVELOPER)
-				t.printStackTrace();
+			_log.warning(L2GameClientPacket.class.getName() + ": Client: " + getClient().toString() + " - Failed running: " + getType());
+			t.printStackTrace();
 			
 			if (this instanceof EnterWorld)
 				getClient().closeNow();

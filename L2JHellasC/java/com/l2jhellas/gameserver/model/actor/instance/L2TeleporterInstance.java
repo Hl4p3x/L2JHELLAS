@@ -212,14 +212,16 @@ public final class L2TeleporterInstance extends L2NpcInstance
 			int payType = 0;
 			if (player.getLevel() < 41)
 				payType = 1;
+							
+			if (player.isAlikeDead() || player.isDead())
+				return;
 			
-			if (player.isinZodiac)
+			if (player.isInFunEvent())
 			{
-				player.sendMessage("You cannot teleport while in Zodiac Event.");
+				player.sendMessage("You cannot teleport while in Event.");
 				return;
 			}
-			else if (player.isAlikeDead() || player.isDead())
-				return;
+				
 			// you cannot teleport to village that is in siege
 			if (SiegeManager.getSiege(list.getLocX(), list.getLocY(), list.getLocZ()) != null)
 			{

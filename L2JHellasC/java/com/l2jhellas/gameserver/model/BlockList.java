@@ -28,9 +28,7 @@ public class BlockList
 		_owner = owner;
 		_blockList = _offlineList.get(owner.getObjectId());
 		if (_blockList == null)
-		{
 			_blockList = loadList(_owner.getObjectId());
-		}
 	}
 	
 	private void addToBlockList(int target)

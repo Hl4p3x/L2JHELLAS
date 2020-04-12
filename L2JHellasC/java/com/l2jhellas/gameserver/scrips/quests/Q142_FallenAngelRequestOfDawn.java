@@ -148,6 +148,8 @@ public class Q142_FallenAngelRequestOfDawn extends Quest
 			if (member != null)
 			{
 				qs =  member.getQuestState(qn);
+				if(qs == null)
+					return null;
 				if (Rnd.get(1000) < MOBS.get(npc.getNpcId()))
 				{
 					qs.giveItems(PROPHECY_FRAGMENT, 1);

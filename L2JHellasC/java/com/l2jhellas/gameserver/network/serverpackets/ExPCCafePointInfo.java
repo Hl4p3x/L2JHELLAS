@@ -1,18 +1,20 @@
 package com.l2jhellas.gameserver.network.serverpackets;
 
+import com.l2jhellas.gameserver.enums.player.CafePointType;
+
 public class ExPCCafePointInfo extends L2GameServerPacket
 {
 	private static final String _S__FE_31_EXPCCAFEPOINTINFO = "[S] FE:31 ExPCCafePointInfo";
-	private final int _unk1, _unk2, _unk3, _unk4;
-	private int _unk5 = 0;
+	private final int _score, _modify, _periodType, _remainingTime;
+	private CafePointType _pointType;
 	
-	public ExPCCafePointInfo(int val1, int val2, int val3, int val4, int val5)
+	public ExPCCafePointInfo(int score, int modify, CafePointType type)
 	{
-		_unk1 = val1;
-		_unk2 = val2;
-		_unk3 = val3;
-		_unk4 = val4;
-		_unk5 = val5;
+		_score = score;
+		_modify = modify;
+		_remainingTime = 0;
+		_pointType = type;
+		_periodType = 1; // get point time
 	}
 	
 	@Override
@@ -20,11 +22,11 @@ public class ExPCCafePointInfo extends L2GameServerPacket
 	{
 		writeC(0xFE);
 		writeH(0x31);
-		writeD(_unk1);
-		writeD(_unk2);
-		writeC(_unk3);
-		writeD(_unk4);
-		writeC(_unk5);
+		writeD(_score);
+		writeD(_modify);
+		writeC(_periodType);
+		writeD(_remainingTime);
+		writeC(_pointType.ordinal());
 	}
 	
 	@Override

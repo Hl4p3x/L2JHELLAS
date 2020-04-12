@@ -193,10 +193,9 @@ public class Q039_RedEyedInvaders extends Quest
 	{
 		final int npcId = npc.getNpcId();
 		
-		L2PcInstance partyMember = getRandomPartyMember(player, npc, "2");
-		if (partyMember != null && npcId != ARANEID)
+		QuestState st = getRandomPartyMember(player, npc, "2");
+		if (st != null && npcId != ARANEID)
 		{
-			final QuestState st = partyMember.getQuestState(qn);
 			final int[] list = FIRST_DP.get(npcId);
 			
 			if (st.dropItems(list[0], 1, list[1], list[4]) && st.getQuestItemsCount(list[2]) == list[1])
@@ -204,10 +203,9 @@ public class Q039_RedEyedInvaders extends Quest
 		}
 		else
 		{
-			partyMember = getRandomPartyMember(player, npc, "4");
-			if (partyMember != null && npcId != M_LIZARDMAN)
+			st = getRandomPartyMember(player, npc, "4");
+			if (st != null && npcId != M_LIZARDMAN)
 			{
-				final QuestState st = partyMember.getQuestState(qn);
 				final int[] list = SECOND_DP.get(npcId);
 				
 				if (st.dropItems(list[0], 1, list[1], list[4]) && st.getQuestItemsCount(list[2]) == list[1])

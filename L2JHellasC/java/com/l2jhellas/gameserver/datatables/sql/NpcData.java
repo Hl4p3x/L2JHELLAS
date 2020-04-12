@@ -325,7 +325,6 @@ public class NpcData
 			}
 			try
 			{
-				@SuppressWarnings("resource")
 				InputSource in = new InputSource(new InputStreamReader(new FileInputStream(f), "UTF-8"));
 				in.setEncoding("UTF-8");
 				Document doc = factory.newDocumentBuilder().parse(in);
@@ -382,7 +381,6 @@ public class NpcData
 			}
 			try
 			{
-				@SuppressWarnings("resource")
 				InputSource in1 = new InputSource(new InputStreamReader(new FileInputStream(f1), "UTF-8"));
 				in1.setEncoding("UTF-8");
 				Document doc1 = factory1.newDocumentBuilder().parse(in1);

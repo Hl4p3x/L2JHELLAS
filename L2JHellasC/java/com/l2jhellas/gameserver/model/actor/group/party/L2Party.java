@@ -131,6 +131,8 @@ public class L2Party
 			case BY_TURN_INCLUDING_SPOIL:
 				looter = getNextLooter(ItemId, target);
 				break;
+			default :
+				break;
 		}	
 		return looter != null ? looter : player;
 	}

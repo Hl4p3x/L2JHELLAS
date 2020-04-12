@@ -32,7 +32,6 @@ public abstract class FloodProtectedListener extends Thread
 		}
 	}
 	
-	@SuppressWarnings("resource")
 	@Override
 	public void run()
 	{

@@ -204,11 +204,11 @@ public class Q354_ConquestOfAlligatorIsland extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		QuestState partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
 		if (partyMember == null)
 			return null;
 		
-		partyMember.getQuestState(qn).dropMultipleItems(DROPLIST.get(npc.getNpcId()));
+		partyMember.getPlayer().getQuestState(qn).dropMultipleItems(DROPLIST.get(npc.getNpcId()));
 		
 		return null;
 	}

@@ -28,9 +28,6 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SummonInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
-import com.l2jhellas.gameserver.model.entity.events.CTF;
-import com.l2jhellas.gameserver.model.entity.events.DM;
-import com.l2jhellas.gameserver.model.entity.events.TvT;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.EtcStatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -1541,18 +1538,7 @@ public abstract class L2Skill
 								continue;
 							if (player.isInDuel() && (player.getDuelId() != ((L2PcInstance) newTarget).getDuelId() || (player.getParty() != null && !player.getParty().getPartyMembers().contains(newTarget))))
 								continue;
-							
-							// check if allow interference is allowed if player is not on event but target is on event
-							if (((TvT._started && !Config.TVT_ALLOW_INTERFERENCE) || (CTF._started && !Config.CTF_ALLOW_INTERFERENCE) || (DM._started && !Config.DM_ALLOW_INTERFERENCE)) && !player.isGM())
-							{
-								if ((newTarget._inEventTvT && !player._inEventTvT) || (!newTarget._inEventTvT && player._inEventTvT))
-									continue;
-								if ((newTarget._inEventCTF && !player._inEventCTF) || (!newTarget._inEventCTF && player._inEventCTF))
-									continue;
-								else if ((newTarget._inEventDM && !player._inEventDM) || (!newTarget._inEventDM && player._inEventDM))
-									continue;
-							}
-							
+
 							if (targetType == L2SkillTargetType.TARGET_CORPSE_ALLY)
 							{
 								if (!((L2PcInstance) newTarget).isDead())

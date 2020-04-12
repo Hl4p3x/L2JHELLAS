@@ -19,7 +19,6 @@ import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.AutoAttackStart;
 import com.l2jhellas.gameserver.network.serverpackets.AutoAttackStop;
-import com.l2jhellas.gameserver.network.serverpackets.CharMoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.Die;
 import com.l2jhellas.gameserver.network.serverpackets.MoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.MoveToLocationInVehicle;
@@ -46,7 +45,6 @@ public abstract class AbstractAI implements Ctrl
 	protected int _clientMovingToPawnOffset;
 	
 	private L2Object _target;
-	private L2Character _castTarget;
 	protected L2Character _attackTarget;
 	protected L2Character _followTarget;
 	
@@ -75,16 +73,6 @@ public abstract class AbstractAI implements Ctrl
 	public CtrlIntention getIntention()
 	{
 		return _intention;
-	}
-	
-	protected synchronized void setCastTarget(L2Character target)
-	{
-		_castTarget = target;
-	}
-	
-	public L2Character getCastTarget()
-	{
-		return _castTarget;
 	}
 	
 	protected synchronized void setAttackTarget(L2Character target)
@@ -318,7 +306,7 @@ public abstract class AbstractAI implements Ctrl
 	}
 	
 	public void moveToPawn(L2Object pawn, int offset)
-	{
+	{		
 		if (!_actor.isMovementDisabled())
 		{
 			if (offset < 10)
@@ -342,8 +330,8 @@ public abstract class AbstractAI implements Ctrl
 			_clientMovingToPawnOffset = offset;
 			_target = pawn;
 			_moveToPawnTimeout = GameTimeController.getInstance().getGameTicks();
-			_moveToPawnTimeout += 1000 / GameTimeController.MILLIS_IN_TICK;
-			
+			_moveToPawnTimeout += 1000 / GameTimeController.MILLIS_IN_TICK;		
+
 			if (pawn == null)
 				return;
 			
@@ -352,14 +340,7 @@ public abstract class AbstractAI implements Ctrl
 			if(_actor.isMoving() && !_actor.getAI().isFollowing() && _tempMovePos.equals(destPos))
 				return;
 			
-			if (_actor.isInsideRadius(pawn, offset, true, false))
-			{
-				ThreadPoolManager.getInstance().executeAi(() -> _actor.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED));
-				return;
-			}		
-			
 			_actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
-			_tempMovePos.set(destPos);
 
 			if (!_actor.isMoving())
 			{
@@ -367,6 +348,8 @@ public abstract class AbstractAI implements Ctrl
 				return;
 			}
 			
+			_tempMovePos.set(destPos);
+
 			if (pawn instanceof L2Character)
 			{
 				if (_actor.isOnGeodataPath())
@@ -399,12 +382,10 @@ public abstract class AbstractAI implements Ctrl
 			_actor.moveToLocation(x, y, z, 0);
 			
 			// Send a Server->Client packet CharMoveToLocation to the actor and all L2PcInstance in its _knownPlayers
-			_actor.broadcastPacket(new CharMoveToLocation(_actor));
+			_actor.broadcastPacket(new MoveToLocation(_actor));
 		}
 		else
-		{
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
-		}
 	}
 	
 	protected void moveToInABoat(Location destination, Location origin)
@@ -415,13 +396,10 @@ public abstract class AbstractAI implements Ctrl
 			{
 				MoveToLocationInVehicle msg = new MoveToLocationInVehicle(_actor, destination, origin);
 				_actor.broadcastPacket(msg);
-			}
-			
+			}		
 		}
 		else
-		{
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
-		}
 	}
 	
 	protected void clientStopMoving(Location pos)
@@ -483,7 +461,6 @@ public abstract class AbstractAI implements Ctrl
 		// Init AI
 		_intention = AI_INTENTION_IDLE;
 		_target = null;
-		_castTarget = null;
 		_attackTarget = null;
 		
 		// Cancel the follow task if necessary

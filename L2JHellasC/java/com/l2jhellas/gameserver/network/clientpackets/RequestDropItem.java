@@ -1,7 +1,5 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
-import java.util.logging.Logger;
-
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.enums.items.L2EtcItemType;
 import com.l2jhellas.gameserver.enums.player.StoreType;
@@ -15,12 +13,9 @@ import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
 import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
-import com.l2jhellas.util.IllegalPlayerAction;
-import com.l2jhellas.util.Util;
 
 public final class RequestDropItem extends L2GameClientPacket
 {
-	private static Logger _log = Logger.getLogger(RequestDropItem.class.getName());
 	private static final String _C__12_REQUESTDROPITEM = "[C] 12 RequestDropItem";
 	
 	private int _objectId;
@@ -88,16 +83,10 @@ public final class RequestDropItem extends L2GameClientPacket
 		}
 		
 		if (_count <= 0)
-		{
-			Util.handleIllegalPlayerAction(activeChar, "[RequestDropItem] count <= 0! ban! oid: " + _objectId + " owner: " + activeChar.getName(), IllegalPlayerAction.PUNISH_KICK);
 			return;
-		}
 		
 		if (!item.isStackable() && (_count > 1))
-		{
-			Util.handleIllegalPlayerAction(activeChar, "[RequestDropItem] count > 1 but item is not stackable! ban! oid: " + _objectId + " owner: " + activeChar.getName(), IllegalPlayerAction.PUNISH_KICK);
 			return;
-		}
 		
 		if (!activeChar.getAccessLevel().allowTransaction())
 		{
@@ -133,10 +122,6 @@ public final class RequestDropItem extends L2GameClientPacket
 		
 		if ((L2Item.TYPE2_QUEST == item.getItem().getType2()) && !activeChar.isGM())
 		{
-			if (Config.DEBUG)
-			{
-				_log.finest(activeChar.getObjectId() + ":player tried to drop quest item");
-			}
 			activeChar.sendPacket(SystemMessageId.CANNOT_DISCARD_EXCHANGE_ITEM);
 			return;
 		}

@@ -22,13 +22,14 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
+import com.PackRoot;
 import com.l2jhellas.Config;
+import com.l2jhellas.gameserver.engines.DocumentParser;
 import com.l2jhellas.loginserver.gameserverpackets.ServerStatus;
 import com.l2jhellas.util.Rnd;
-import com.l2jhellas.util.XMLDocumentFactory;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
-public class GameServerTable
+public class GameServerTable implements DocumentParser
 {
 	private static Logger _log = Logger.getLogger(GameServerTable.class.getName());
 	
@@ -47,7 +48,7 @@ public class GameServerTable
 	private static final int KEYS_SIZE = 10;
 	private KeyPair[] _keyPairs;
 	
-	public static void load() throws GeneralSecurityException
+	public static void loadGS() throws GeneralSecurityException
 	{
 		if (_instance == null)
 		{
@@ -66,14 +67,36 @@ public class GameServerTable
 	
 	public GameServerTable() throws NoSuchAlgorithmException, InvalidAlgorithmParameterException
 	{
-		loadServerNames();
-		_log.info(GameServerTable.class.getSimpleName() + " Loaded " + _serverNames.size() + " Server Names.");
-		
+		load();
+		_log.info(GameServerTable.class.getSimpleName() + " Loaded " + _serverNames.size() + " Server Names.");	
+
 		loadRegisteredGameServers();
 		_log.info(GameServerTable.class.getSimpleName() + " Loaded " + _gameServerTable.size() + " registered Game Servers.");
 		
 		loadRSAKeys();
 		_log.info(GameServerTable.class.getSimpleName() + " Cached " + _keyPairs.length + " RSA keys for Game Server communication.");
+	}
+	
+	@Override
+	public void load()
+	{
+		parseFile(new File(PackRoot.DATAPACK_ROOT, "config/Network/ServerName.xml"));
+	}
+	
+	@Override
+	public void parseDocument(Document doc)
+	{
+		Node n = doc.getFirstChild();
+		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		{
+			if (d.getNodeName().equalsIgnoreCase("server"))
+			{
+				NamedNodeMap attrs = d.getAttributes();
+				int id = Integer.parseInt(attrs.getNamedItem("id").getNodeValue());
+				String name = attrs.getNamedItem("name").getNodeValue();
+				_serverNames.put(id, name);
+			}
+		}
 	}
 	
 	private void loadRSAKeys() throws NoSuchAlgorithmException, InvalidAlgorithmParameterException
@@ -90,35 +113,6 @@ public class GameServerTable
 		
 		keyGen = null;
 		spec = null;
-	}
-	
-	private static void loadServerNames()
-	{
-		try
-		{
-			final File f = new File("./config/Network/ServerName.xml");
-			final Document doc = XMLDocumentFactory.getInstance().loadDocument(f);
-			
-			Node n = doc.getFirstChild();
-			for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-			{
-				if (d.getNodeName().equalsIgnoreCase("server"))
-				{
-					NamedNodeMap attrs = d.getAttributes();
-					
-					int id = Integer.parseInt(attrs.getNamedItem("id").getNodeValue());
-					String name = attrs.getNamedItem("name").getNodeValue();
-					
-					_serverNames.put(id, name);
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			_log.warning(GameServerTable.class.getName() + " ServerName.xml could not be loaded.");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
-		}
 	}
 	
 	private void loadRegisteredGameServers()

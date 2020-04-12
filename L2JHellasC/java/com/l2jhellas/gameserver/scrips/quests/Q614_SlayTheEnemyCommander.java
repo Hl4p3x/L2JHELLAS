@@ -105,17 +105,16 @@ public class Q614_SlayTheEnemyCommander extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		for (L2PcInstance partyMember : getPartyMembers(player, npc, "cond", "1"))
+		for (QuestState st : getPartyMembers(player, npc, "cond", "1"))
 		{
-			if (partyMember.getAllianceWithVarkaKetra() <= -4)
+			if(st == null)
+				continue;
+			
+			if (st.getPlayer().getAllianceWithVarkaKetra() <= -4 && st.hasQuestItems(Varka_Alliance_Four))
 			{
-				QuestState st = partyMember.getQuestState(qn);
-				if (st.hasQuestItems(Varka_Alliance_Four))
-				{
-					st.set("cond", "2");
-					st.giveItems(Tayr_Head, 1);
-					st.playSound(QuestState.SOUND_MIDDLE);
-				}
+				st.set("cond", "2");
+				st.giveItems(Tayr_Head, 1);
+				st.playSound(QuestState.SOUND_MIDDLE);
 			}
 		}
 		

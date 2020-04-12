@@ -23,13 +23,11 @@ import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminAutoAnnouncem
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminBBS;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminBan;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminBanChat;
-import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminCTFEngine;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminCache;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminChangeAccessLevel;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminClanFull;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminCreateItem;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminCursedWeapons;
-import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminDMEngine;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminDelete;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminDeport;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminDonator;
@@ -38,7 +36,6 @@ import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminEditChar;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminEditNpc;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminEffects;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminEnchant;
-import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminEventEngine;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminExpSp;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminFence;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminFightCalculator;
@@ -77,7 +74,6 @@ import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminSpawn;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminTarget;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminTeleport;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminTest;
-import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminTvTEngine;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminUnblockIp;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminWho;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminZone;
@@ -92,6 +88,7 @@ import com.l2jhellas.gameserver.handlers.chathandlers.ChatPetition;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatShout;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatTell;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatTrade;
+import com.l2jhellas.gameserver.handlers.itemhandlers.AdventurerBox;
 import com.l2jhellas.gameserver.handlers.itemhandlers.BeastSoulShot;
 import com.l2jhellas.gameserver.handlers.itemhandlers.BeastSpice;
 import com.l2jhellas.gameserver.handlers.itemhandlers.BeastSpiritShot;
@@ -183,6 +180,7 @@ import com.l2jhellas.gameserver.handlers.usercommandhandlers.SiegeStatus;
 import com.l2jhellas.gameserver.handlers.usercommandhandlers.Time;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.BankingCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.CastleCmd;
+import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.EventRegistration;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.OnlinePlayersCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.PMonoffCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.PremiumCmd;
@@ -192,7 +190,6 @@ import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.TradeonoffCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.VipTeleportCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.VoiceInfoCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.WeddingCmd;
-import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.ZodiacRegistrationCmd;
 import com.l2jhellas.util.Util;
 
 public class MasterHandler
@@ -276,18 +273,15 @@ public class MasterHandler
 			AdminChangeAccessLevel.class,
 			AdminClanFull.class,
 			AdminCreateItem.class,
-			AdminCTFEngine.class,
 			AdminCursedWeapons.class,
 			AdminDelete.class,
 			AdminDeport.class,
-			AdminDMEngine.class,
 			AdminDonator.class,
 			AdminDoorControl.class,
 			AdminEditChar.class,
 			AdminEditNpc.class,
 			AdminEffects.class,
 			AdminEnchant.class,
-			AdminEventEngine.class,
 			AdminExpSp.class,
 			AdminFightCalculator.class,
 			AdminGeodata.class,
@@ -325,7 +319,6 @@ public class MasterHandler
 			AdminTarget.class,
 			AdminTeleport.class,
 			AdminTest.class,
-			AdminTvTEngine.class,
 			AdminUnblockIp.class,
 			AdminZone.class,
 			AdminWho.class,
@@ -350,6 +343,7 @@ public class MasterHandler
 		},
 		{
 			// Item Handlers
+			AdventurerBox.class,
 			BeastSoulShot.class,
 			BeastSpice.class,
 			BeastSpiritShot.class,
@@ -453,13 +447,13 @@ public class MasterHandler
 			(Config.ONLINE_VOICE_ALLOW ? OnlinePlayersCmd.class : null),
 			(Config.ALLOW_PLAYERS_REFUSAL ? PMonoffCmd.class : null),
 			PremiumCmd.class,
+			EventRegistration.class,
 			(Config.RANK_PVP_SYSTEM_ENABLED && Config.PVP_INFO_COMMAND_ENABLED && Config.RANK_PVP_SYSTEM_ENABLED && !Config.PVP_INFO_USER_COMMAND_ENABLED ? PvpInfoCmd.class : null),
 			(Config.ALLOW_SERVER_RESTART_COMMAND ? ServerRestartVoteCmd.class : null),
 			(Config.ALLOW_TRADEOFF_COMMAND ? TradeonoffCmd.class : null),
 			(Config.ALLOW_VIPTELEPORT_COMMAND ? VipTeleportCmd.class : null),
 			(Config.ALLOW_INFO_COMMAND ? VoiceInfoCmd.class : null),
 			(Config.MOD_ALLOW_WEDDING ? WeddingCmd.class : null),
-			(Config.ZODIAC_ENABLE ? ZodiacRegistrationCmd.class : null),
 		},
 	};
 	

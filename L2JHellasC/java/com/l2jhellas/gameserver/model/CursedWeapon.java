@@ -14,8 +14,6 @@ import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
-import com.l2jhellas.gameserver.model.entity.events.CTF;
-import com.l2jhellas.gameserver.model.entity.events.TvT;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.Earthquake;
 import com.l2jhellas.gameserver.network.serverpackets.ExRedSky;
@@ -337,12 +335,10 @@ public class CursedWeapon
 			}
 		}
 		
-		if ((player._inEventTvT && !Config.TVT_JOIN_CURSED) || (player._inEventCTF && !Config.CTF_JOIN_CURSED))
+		if (player.isRegisteredInFunEvent() || player.isInFunEvent())
 		{
-			if (player._inEventTvT)
-				TvT.removePlayer(player);
-			if (player._inEventCTF)
-				CTF.removePlayer(player);
+			player.sendMessage("You may not pick up this item right now,unregister or wait for the event to finish.");
+			return;
 		}
 		
 		_isActivated = true;

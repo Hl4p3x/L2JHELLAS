@@ -96,7 +96,7 @@
 		<delete dir="${build}" />
 		<echo>L2J Hellas DataPack stored in D:/L2JHellas.</echo>
 		<echo>forum http://l2jhellas.com/</echo>
-		<echo>Owner Boorinio-AbsolutePower.</echo>
+		<echo>Owner: AbsolutePower</echo>
 	</target>
 	
 	<target name="clean" description="Deletes the whole build space and existing packages.">

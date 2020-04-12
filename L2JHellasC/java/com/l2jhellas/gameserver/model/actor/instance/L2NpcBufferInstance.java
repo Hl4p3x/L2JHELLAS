@@ -59,6 +59,8 @@ public class L2NpcBufferInstance extends L2Npc
 			{
 			}
 		}
+		if (command.startsWith("npc_buffer_noble"))
+		    blessMe(playerInstance);
 		if (command.startsWith("npc_buffer_heal"))
 		{
 			if (playerInstance.getCurrentHp() == 0 || playerInstance.getPvpFlag() > 0)
@@ -120,6 +122,12 @@ public class L2NpcBufferInstance extends L2Npc
 			    skill.getEffects(playerInstance, playerInstance);
 		}
 		showChatWindow(playerInstance, val);
+	}
+	
+	private void blessMe(L2PcInstance player) 
+	{
+		if(player != null)
+		   SkillTable.getInstance().getInfo(1323,1).getEffects(player, player);
 	}
 	
 	protected void removeAllBuffs(L2PcInstance player)

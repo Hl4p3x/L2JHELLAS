@@ -10,12 +10,13 @@ import java.util.logging.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
+import com.PackRoot;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.sql.ItemTable;
+import com.l2jhellas.gameserver.engines.DocumentParser;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
-import com.l2jhellas.util.XMLDocumentFactory;
 
-public class L2Manor
+public class L2Manor implements DocumentParser
 {
 	private static final Logger _log = Logger.getLogger(L2Manor.class.getName());
 	
@@ -24,7 +25,41 @@ public class L2Manor
 	public L2Manor()
 	{
 		_seeds = new ConcurrentHashMap<>();
-		parseData();
+		load();
+	}
+
+	@Override
+	public void load()
+	{
+		parseFile(new File(PackRoot.DATAPACK_ROOT, "data/xml/seeds.xml"));	
+		_log.info("ManorManager: Loaded " + _seeds.size() + " seeds.");
+	}
+	
+	@Override
+	public void parseDocument(Document doc)
+	{
+		
+		Node n = doc.getFirstChild();
+		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
+		{
+			if (d.getNodeName().equalsIgnoreCase("seed"))
+			{
+				int seedId = Integer.valueOf(d.getAttributes().getNamedItem("id").getNodeValue()); // seed id
+				int level = Integer.valueOf(d.getAttributes().getNamedItem("level").getNodeValue()); // seed level
+				int cropId = Integer.valueOf(d.getAttributes().getNamedItem("cropId").getNodeValue()); // crop id
+				int matureId = Integer.valueOf(d.getAttributes().getNamedItem("matureId").getNodeValue()); // mature crop id
+				int type1R = Integer.valueOf(d.getAttributes().getNamedItem("r1").getNodeValue()); // type I reward
+				int type2R = Integer.valueOf(d.getAttributes().getNamedItem("r2").getNodeValue()); // type II reward
+				int manorId = Integer.valueOf(d.getAttributes().getNamedItem("manor").getNodeValue()); // id of manor, where seed can be farmed
+				int isAlt = Integer.valueOf(d.getAttributes().getNamedItem("isAlternative").getNodeValue()); // alternative seed
+				int limitSeeds = Integer.valueOf(d.getAttributes().getNamedItem("seedsLimit").getNodeValue()); // limit for seeds
+				int limitCrops = Integer.valueOf(d.getAttributes().getNamedItem("cropsLimit").getNodeValue()); // limit for crops
+				
+				SeedData seed = new SeedData(level, cropId, matureId);
+				seed.setData(seedId, type1R, type2R, manorId, isAlt, limitSeeds, limitCrops);
+				_seeds.put(seed.getId(), seed);
+			}
+		}
 	}
 	
 	public static L2Manor getInstance()
@@ -264,42 +299,6 @@ public class L2Manor
 		{
 			return _limitCrops * Config.RATE_DROP_MANOR;
 		}
-	}
-	
-	private void parseData()
-	{
-		try
-		{
-			File f = new File("./data/xml/seeds.xml");
-			Document doc = XMLDocumentFactory.getInstance().loadDocument(f);
-			
-			Node n = doc.getFirstChild();
-			for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-			{
-				if (d.getNodeName().equalsIgnoreCase("seed"))
-				{
-					int seedId = Integer.valueOf(d.getAttributes().getNamedItem("id").getNodeValue()); // seed id
-					int level = Integer.valueOf(d.getAttributes().getNamedItem("level").getNodeValue()); // seed level
-					int cropId = Integer.valueOf(d.getAttributes().getNamedItem("cropId").getNodeValue()); // crop id
-					int matureId = Integer.valueOf(d.getAttributes().getNamedItem("matureId").getNodeValue()); // mature crop id
-					int type1R = Integer.valueOf(d.getAttributes().getNamedItem("r1").getNodeValue()); // type I reward
-					int type2R = Integer.valueOf(d.getAttributes().getNamedItem("r2").getNodeValue()); // type II reward
-					int manorId = Integer.valueOf(d.getAttributes().getNamedItem("manor").getNodeValue()); // id of manor, where seed can be farmed
-					int isAlt = Integer.valueOf(d.getAttributes().getNamedItem("isAlternative").getNodeValue()); // alternative seed
-					int limitSeeds = Integer.valueOf(d.getAttributes().getNamedItem("seedsLimit").getNodeValue()); // limit for seeds
-					int limitCrops = Integer.valueOf(d.getAttributes().getNamedItem("cropsLimit").getNodeValue()); // limit for crops
-					
-					SeedData seed = new SeedData(level, cropId, matureId);
-					seed.setData(seedId, type1R, type2R, manorId, isAlt, limitSeeds, limitCrops);
-					_seeds.put(seed.getId(), seed);
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			_log.warning("ManorManager: Error while creating table: " + e);
-		}
-		_log.info("ManorManager: Loaded " + _seeds.size() + " seeds.");
 	}
 	
 	private static class SingletonHolder

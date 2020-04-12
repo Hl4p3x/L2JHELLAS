@@ -672,7 +672,6 @@ abstract class DocumentBase
 			set.set(name, value);
 	}
 	
-	@SuppressWarnings("null")
 	protected Lambda getLambda(Node n, Object template)
 	{
 		Node nval = n.getAttributes().getNamedItem("val");

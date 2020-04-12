@@ -99,16 +99,18 @@ public class AdminPremium implements IAdminCommandHandler
 		}
 		return true;
 	}
-	
-	private static void addPremiumServices(int Hours, String AccName)
+
+	private static void addPremiumServices(int month, String AccName)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(UPDATE_PREMIUMSERVICE))
 		{
-			Calendar finishtime = Calendar.getInstance();
-			finishtime.setTimeInMillis(System.currentTimeMillis());
-			finishtime.set(Calendar.SECOND, 0);
-			finishtime.add(Calendar.HOUR, Hours);
+	        Calendar finishtime = Calendar.getInstance();
+	        finishtime.set(Calendar.DAY_OF_MONTH, 1);
+	        finishtime.set(Calendar.HOUR_OF_DAY, 13);
+	        finishtime.set(Calendar.MINUTE, 0);
+	        finishtime.add(Calendar.MONTH, month);  
+
 			statement.setInt(1, 1);
 			statement.setLong(2, finishtime.getTimeInMillis());
 			statement.setString(3, AccName);

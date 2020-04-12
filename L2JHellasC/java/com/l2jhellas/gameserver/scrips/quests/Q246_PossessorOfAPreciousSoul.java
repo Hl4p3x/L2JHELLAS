@@ -172,12 +172,11 @@ public class Q246_PossessorOfAPreciousSoul extends Quest
 		final int npcId = npc.getNpcId();
 		if (npcId == BARAKIEL)
 		{
-			for (L2PcInstance plr : getPartyMembers(player, npc, "cond", "4"))
+			for (QuestState st : getPartyMembers(player, npc, "cond", "4"))
 			{
-				if (!plr.isSubClassActive())
+				if (st == null || !st.getPlayer().isSubClassActive())
 					continue;
 				
-				QuestState st = plr.getQuestState(qn);
 				if (!st.hasQuestItems(RAIN_SONG))
 				{
 					st.set("cond", "5");

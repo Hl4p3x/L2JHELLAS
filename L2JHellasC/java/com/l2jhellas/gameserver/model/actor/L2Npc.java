@@ -48,11 +48,7 @@ import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.actor.stat.NpcStat;
 import com.l2jhellas.gameserver.model.actor.status.NpcStatus;
 import com.l2jhellas.gameserver.model.entity.Castle;
-import com.l2jhellas.gameserver.model.entity.events.CTF;
-import com.l2jhellas.gameserver.model.entity.events.DM;
-import com.l2jhellas.gameserver.model.entity.events.TvT;
-import com.l2jhellas.gameserver.model.entity.events.engines.L2Event;
-import com.l2jhellas.gameserver.model.entity.events.engines.ZodiacMain;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.model.entity.olympiad.Olympiad;
 import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
@@ -458,30 +454,18 @@ public class L2Npc extends L2Character
 					if (hasRandomAnimation() && !isWalker())
 						onRandomAnimation();
 					
-					if (isEventMob)
-						L2Event.showEventHtml(player, String.valueOf(getObjectId()));
-					else if (_isEventMobTvT)
-						TvT.showEventHtml(player, String.valueOf(getObjectId()));
-					else if (_isEventMobDM)
-						DM.showEventHtml(player, String.valueOf(getObjectId()));
-					else if (_isEventMobCTF)
-						CTF.showEventHtml(player, String.valueOf(getObjectId()));
-					else if (_isCTF_Flag && player._inEventCTF)
-						CTF.showFlagHtml(player, String.valueOf(getObjectId()), _CTF_FlagTeamName);
-					else if (_isCTF_throneSpawn)
-						CTF.CheckRestoreFlags();
+					if (player.isInFunEvent() && EventManager.getInstance().getCurrentEvent().onTalkNpc(this, player))
+						return;
+
+					List<Quest> scripts = getTemplate().getEventQuests(QuestEventType.QUEST_START);
+					if (scripts != null && !scripts.isEmpty())
+						player.setLastQuestNpcObject(getObjectId());
+
+					scripts = getTemplate().getEventQuests(QuestEventType.ON_FIRST_TALK);
+					if (scripts != null && scripts.size() == 1)
+						scripts.get(0).notifyFirstTalk(this, player);
 					else
-					{						
-					   List<Quest> scripts = getTemplate().getEventQuests(QuestEventType.QUEST_START);
-					   if (scripts != null && !scripts.isEmpty())
-						   player.setLastQuestNpcObject(getObjectId());
-					
-					   scripts = getTemplate().getEventQuests(QuestEventType.ON_FIRST_TALK);
-					   if (scripts != null && scripts.size() == 1)
-						   scripts.get(0).notifyFirstTalk(this, player);
-					   else
-					   	   showChatWindow(player);
-					}
+						showChatWindow(player);					
 				}
 			}
 		}
@@ -529,7 +513,7 @@ public class L2Npc extends L2Character
 			
 			html1.append("<table border=\"0\" width=\"100%\">");
 			html1.append("<tr><td>Object ID</td><td>" + getObjectId() + "</td><td>NPC ID</td><td>" + getTemplate().npcId + "</td></tr>");
-			html1.append("<tr><td>Castle</td><td>" + getCastle().getCastleId() + "</td><td>Coords</td><td>" + getX() + "," + getY() + "," + getZ() + "</td></tr>");
+			html1.append("<tr><td>Coords</td><td>" + getX() + "," + getY() + "," + getZ() + "</td></tr>");			
 			html1.append("<tr><td>Level</td><td>" + getLevel() + "</td><td>Aggro</td><td>" + ((this instanceof L2Attackable) ? ((L2Attackable) this).getAggroRange() : 0) + "</td></tr>");
 			html1.append("</table><br>");
 			
@@ -1863,7 +1847,6 @@ public class L2Npc extends L2Character
 	{
 		if (!super.doDie(killer))
 			return false;
-		ZodiacMain.OnKillNpc(this, killer);
 		// normally this wouldn't really be needed, but for those few exceptions,
 		// we do need to reset the weapons back to the initial templated weapon.
 		_currentLHandId = getTemplate().lhand;

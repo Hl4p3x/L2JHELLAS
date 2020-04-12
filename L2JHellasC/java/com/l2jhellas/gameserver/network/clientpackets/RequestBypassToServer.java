@@ -14,6 +14,7 @@ import com.l2jhellas.gameserver.communitybbs.CommunityBoard;
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
 import com.l2jhellas.gameserver.handler.AdminCommandHandler;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
+import com.l2jhellas.gameserver.instancemanager.BotsPreventionManager;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
@@ -22,17 +23,15 @@ import com.l2jhellas.gameserver.model.actor.instance.L2OlympiadManagerInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.entity.Hero;
-import com.l2jhellas.gameserver.model.entity.events.CTF;
-import com.l2jhellas.gameserver.model.entity.events.DM;
-import com.l2jhellas.gameserver.model.entity.events.TvT;
-import com.l2jhellas.gameserver.model.entity.events.engines.L2Event;
-import com.l2jhellas.gameserver.model.entity.events.engines.ZodiacMain;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventBuffer;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadGameManager;
 import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadGameTask;
 import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadManager;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
+import com.l2jhellas.shield.antibot.AntiBot;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
 import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
 
@@ -100,67 +99,8 @@ public final class RequestBypassToServer extends L2GameClientPacket
 		}
 		else if (_command.equals("come_here") && activeChar.isGM())
 			comeHere(activeChar);
-		else if (_command.startsWith("SecondAnswer"))
-		{
-			activeChar.sendMessage("You passed our vertification system");
-			activeChar.PassedProt = true;
-		}
-		else if (_command.startsWith("FirstAnswer"))
-		{
-			activeChar.sendMessage("You didn't pass our vertification system you will be kicked within 2 minutes!");
-			activeChar.PassedProt = false;
-		}
 		else if (_command.startsWith("player_help "))
 			playerHelp(activeChar, _command.substring(12));
-		else if (ZodiacMain.voting && _command.startsWith("PeloponnesianWar") && !ZodiacMain.HasVoted(activeChar))
-		{
-			activeChar.sendMessage("You have voted for PeloponnesianWar!");
-			ZodiacMain.count[0]++;
-			ZodiacMain.showFinalWindow(activeChar);
-			ZodiacMain.AddVotedPlayer(activeChar);
-		}
-		else if (ZodiacMain.voting && _command.startsWith("CaptureThem") && !ZodiacMain.HasVoted(activeChar))
-		{
-			activeChar.sendMessage("You have voted for CaptureThem!");
-			ZodiacMain.count[1]++;
-			ZodiacMain.showFinalWindow(activeChar);
-			ZodiacMain.AddVotedPlayer(activeChar);
-		}
-		else if (ZodiacMain.voting && _command.startsWith("CastleWars") && !ZodiacMain.HasVoted(activeChar))
-		{
-			activeChar.sendMessage("You have voted for CastleWars!");
-			ZodiacMain.count[2]++;
-			ZodiacMain.showFinalWindow(activeChar);
-			ZodiacMain.AddVotedPlayer(activeChar);
-		}
-		else if (ZodiacMain.voting && _command.startsWith("ProtectTheLdr") && !ZodiacMain.HasVoted(activeChar))
-		{
-			activeChar.sendMessage("You have voted for ProtectTheLeader!");
-			ZodiacMain.count[3]++;
-			ZodiacMain.showFinalWindow(activeChar);
-			ZodiacMain.AddVotedPlayer(activeChar);
-		}
-		else if (ZodiacMain.voting && _command.startsWith("TreasureChest") && !ZodiacMain.HasVoted(activeChar))
-		{
-			activeChar.sendMessage("You have voted for TreasureChest!");
-			ZodiacMain.count[4]++;
-			ZodiacMain.showFinalWindow(activeChar);
-			ZodiacMain.AddVotedPlayer(activeChar);
-		}
-		else if (ZodiacMain.voting && _command.startsWith("ChaosEvent") && !ZodiacMain.HasVoted(activeChar))
-		{
-			activeChar.sendMessage("You have voted for Chaos Event!");
-			ZodiacMain.count[5]++;
-			ZodiacMain.showFinalWindow(activeChar);
-			ZodiacMain.AddVotedPlayer(activeChar);
-		}
-		else if (ZodiacMain.voting && _command.startsWith("Challenge") && !ZodiacMain.HasVoted(activeChar))
-		{
-			activeChar.sendMessage("You have voted for Challenge Event!");
-			ZodiacMain.count[6]++;
-			ZodiacMain.showFinalWindow(activeChar);
-			ZodiacMain.AddVotedPlayer(activeChar);
-		}
 		else if (_command.startsWith("npc_"))
 		{
 			if (!activeChar.validateBypass(_command))
@@ -172,8 +112,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				id = _command.substring(4, endOfId);
 			else
 				id = _command.substring(4);
-			
-			
+					
 			try
 			{
 				if (id.matches("[0-9]+"))
@@ -192,55 +131,6 @@ public final class RequestBypassToServer extends L2GameClientPacket
 
 				if (object != null && object instanceof L2Npc && endOfId > 0 && activeChar.isInsideRadius(object, L2Npc.INTERACTION_DISTANCE, false, false) || ((Config.ALLOW_REMOTE_CLASS_MASTER) && (object instanceof L2ClassMasterInstance)))
 					((L2Npc) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
-				
-				if (_command.substring(endOfId + 1).startsWith("event_participate"))
-					L2Event.inscribePlayer(activeChar);
-				else if (_command.substring(endOfId + 1).startsWith("tvt_player_join "))
-				{
-					String teamName = _command.substring(endOfId + 1).substring(16);
-					
-					if (TvT._joining)
-						TvT.addPlayer(activeChar, teamName);
-					else
-						activeChar.sendMessage("The event is already started. You can not join now!");
-				}
-				else if (_command.substring(endOfId + 1).startsWith("tvt_player_leave"))
-				{
-					if (TvT._joining)
-						TvT.removePlayer(activeChar);
-					else
-						activeChar.sendMessage("The event is already started. You can not leave now!");
-				}
-				else if (_command.substring(endOfId + 1).startsWith("dmevent_player_join"))
-				{
-					if (DM._joining)
-						DM.addPlayer(activeChar);
-					else
-						activeChar.sendMessage("The event is already started. You can not join now!");
-				}
-				else if (_command.substring(endOfId + 1).startsWith("dmevent_player_leave"))
-				{
-					if (DM._joining)
-						DM.removePlayer(activeChar);
-					else
-						activeChar.sendMessage("The event is already started. You can not leave now!");
-				}
-				else if (_command.substring(endOfId + 1).startsWith("ctf_player_join "))
-				{
-					String teamName = _command.substring(endOfId + 1).substring(16);
-					
-					if (CTF._joining)
-						CTF.addPlayer(activeChar, teamName);
-					else
-						activeChar.sendMessage("The event is already started. You can not join now!");
-				}
-				else if (_command.substring(endOfId + 1).startsWith("ctf_player_leave"))
-				{
-					if (CTF._joining)
-						CTF.removePlayer(activeChar);
-					else
-						activeChar.sendMessage("The event is already started. You can not leave now!");
-				}
 				
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			}
@@ -329,10 +219,8 @@ public final class RequestBypassToServer extends L2GameClientPacket
 			
 			Balancer.sendBalanceWindow(classId, activeChar);
 		}
-		// Rank PvP System by Masterio --------------------------------------------
 		else if (_command.startsWith("RPS."))
 			RPSBypass.executeCommand(activeChar, _command);
-		// ------------------------------------------------------------------------
 		else if (_command.startsWith("_match"))
 		{
 			String params = _command.substring(_command.indexOf("?") + 1);
@@ -377,6 +265,37 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				nextArena.getZone().addSpectator(arenaId, activeChar);
 				return;
 			}
+		}
+		else if (_command.startsWith("report"))
+			BotsPreventionManager.getInstance().CheckBypass(_command,activeChar);
+		else if(_command.startsWith("event_vote"))
+			EventManager.getInstance().addVote(activeChar, Integer.parseInt(_command.substring(11)));
+	    else if(_command.equals("event_register"))
+	    	EventManager.getInstance().registerPlayer(activeChar);
+		else if(_command.equals("event_unregister"))
+			EventManager.getInstance().unregisterPlayer(activeChar);
+		else if (_command.startsWith("eventvote")) 
+			EventManager.getInstance().addVote(activeChar, Integer.parseInt(_command.substring(10)));  
+		else if (_command.equals("eventbuffershow"))  
+			EventBuffer.getInstance().showHtml(activeChar); 
+		else if (_command.startsWith("eventbuffer")) 
+		{ 
+			EventBuffer.getInstance().changeList(activeChar, Integer.parseInt(_command.substring(12,_command.length()-2)), (Integer.parseInt(_command.substring(_command.length()-1)) == 0 ? false : true)); 
+			EventBuffer.getInstance().showHtml(activeChar); 
+		} 
+		else if (_command.startsWith("eventinfo"))
+		{
+				int eventId = Integer.valueOf(_command.substring(10));
+				NpcHtmlMessage html = new NpcHtmlMessage(0);
+				html.setFile("data/html/eventinfo/"+eventId+".htm");
+				activeChar.sendPacket(html);
+				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+		}
+		else if(_command.startsWith("captcha"));
+		{
+			String answer = _command.substring("answer ".length());
+			answer = answer.replace(" ", "");			
+			AntiBot.CheckBypass(activeChar,answer.trim());
 		}
 	}
 	

@@ -17,6 +17,7 @@ import com.l2jhellas.gameserver.ai.L2CharacterAI;
 import com.l2jhellas.gameserver.ai.L2SiegeGuardAI;
 import com.l2jhellas.gameserver.datatables.sql.ItemTable;
 import com.l2jhellas.gameserver.enums.player.ChatType;
+import com.l2jhellas.gameserver.instancemanager.BotsPreventionManager;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jhellas.gameserver.model.L2DropCategory;
 import com.l2jhellas.gameserver.model.L2DropData;
@@ -43,7 +44,6 @@ import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.skills.Stats;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
-import com.l2jhellas.shield.antibot.PrivateAntiBot;
 import com.l2jhellas.util.Rnd;
 import com.l2jhellas.util.Util;
 
@@ -521,15 +521,14 @@ public class L2Attackable extends L2Npc
 		{
 			synchronized (this)
 			{
-				if (_ai == null)
-					_ai = new L2AttackableAI(this);
-				
-				return _ai;
+				ai = _ai;
+				if (ai == null)
+					_ai = ai = new L2AttackableAI(this);
 			}
 		}
 		return ai;
 	}
-	
+
 	@Override
 	public void useMagic(L2Skill skill)
 	{
@@ -1533,11 +1532,8 @@ public class L2Attackable extends L2Npc
 			}
 		}
 		
-		if (Rnd.get(100) <= Config.ENCHANT_BOT_CHANCE && Config.ALLOW_PRIVATE_ANTI_BOT)
-		{
-			PrivateAntiBot.privateantibot(player);// Anti bot security question
-		}
-		
+		if (Config.ALLOW_PRIVATE_ANTI_BOT && Rnd.get(1000) < 60)
+		    BotsPreventionManager.getInstance().StartCheck(player);	
 	}
 	
 	public L2ItemInstance dropItem(L2PcInstance mainDamageDealer, RewardItem item)
@@ -1941,8 +1937,7 @@ public class L2Attackable extends L2Npc
 	}
 	
 	public boolean returnHome()
-	{
-		
+	{		
 		if (hasAI() && !isDead() && !isInCombat() && getMoveSpeed() > 0 && getSpawn() != null && !isInsideRadius(getSpawn().getLocx(), getSpawn().getLocy(), Config.MAX_DRIFT_RANGE, false))
 		{
 			clearAggroList();

@@ -6,6 +6,7 @@ import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.model.L2Effect.EffectType;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.network.L2GameClient;
 import com.l2jhellas.gameserver.network.L2GameClient.GameClientState;
 import com.l2jhellas.gameserver.network.SystemMessageId;
@@ -54,11 +55,6 @@ public final class RequestRestart extends L2GameClientPacket
 			player.sendMessage("You can't logout in olympiad mode.");
 			return;
 		}
-		if (player.isinZodiac)
-		{
-			player.sendMessage("You can't logout while in zodiac.");
-			return;
-		}
 		if (player.isTeleporting())
 		{
 			player.abortCast();
@@ -83,16 +79,11 @@ public final class RequestRestart extends L2GameClientPacket
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
-		if (player._inEventTvT)
-		{
-			player.sendMessage("You may not use an escape skill in a Event.");
-			return;
-		}
-		
+
 		if (player.getClan() != null && player.getFirstEffect(EffectType.CLAN_GATE) != null)
 		{
 			player.sendMessage("You can't logout while Clan Gate is active.");
+			return;
 		}
 		// Prevent player from restarting if they are a festival participant
 		// and it is in progress, otherwise notify party members that the player
@@ -117,25 +108,26 @@ public final class RequestRestart extends L2GameClientPacket
 			player.removeSkill(SkillTable.getInstance().getInfo(4289, 1));
 		}
 		
-		player.endDuel();
+		if (player.isRegisteredInFunEvent())
+		{
+			if(player.isInFunEvent())
+			   EventManager.getInstance().getCurrentEvent().onLogout(player);
+			else
+			   EventManager.getInstance().onLogout(player);
+		}
 		
+		player.endDuel();
+				
 		L2GameClient client = getClient();
 		
 		// Remove From Boss
 		player.removeFromBossZone();
-		
-		player.sendPacket(ActionFailed.STATIC_PACKET);
-		
-		// detach the client from the char so that the connection isnt closed in the deleteMe
-		player.setClient(null);
-		
-		player.deleteMe();
-		
-		player.store();
-		
-		getClient().setActiveChar(null);
-		
-		// return the client to the authed status
+				
+		player.setClient(null);	
+
+		player.deleteMe();			
+
+		client.setActiveChar(null);	
 		client.setState(GameClientState.AUTHED);
 		
 		sendPacket(RestartResponse.valueOf(true));

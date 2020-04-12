@@ -140,28 +140,27 @@ public class Q369_CollectorOfJewels extends Quest
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		int npcId = npc.getNpcId();
-		L2PcInstance partymember = null;
+		QuestState st = null;
 		int item = 0, chance = 0;
 		
 		if (DROPLIST_FREEZE.containsKey(npcId))
 		{
-			partymember = getRandomPartyMember(player, npc, "awaitsFreezing", "1");
+			st = getRandomPartyMember(player, npc, "awaitsFreezing", "1");
 			
 			item = FREEZING_SHARD;
 			chance = DROPLIST_FREEZE.get(npcId);
 		}
 		else if (DROPLIST_FLARE.containsKey(npcId))
 		{
-			partymember = getRandomPartyMember(player, npc, "awaitsFlare", "1");
+			st = getRandomPartyMember(player, npc, "awaitsFlare", "1");
 			
 			item = FLARE_SHARD;
 			chance = DROPLIST_FLARE.get(npcId);
 		}
 		
-		if (partymember == null)
+		if (st == null)
 			return null;
 		
-		QuestState st = partymember.getQuestState(qn);
 		int cond = st.getInt("cond");
 		
 		if (cond >= 1 && cond <= 3)

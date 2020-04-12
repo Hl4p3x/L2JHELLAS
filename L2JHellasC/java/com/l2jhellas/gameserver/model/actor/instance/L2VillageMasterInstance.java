@@ -335,7 +335,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 						allowAddition = false;
 					}
 					
-					if (player._inEventCTF || player._inEventDM || player._inEventTvT || player._inEventVIP)
+					if (player.isRegisteredInFunEvent() || player.isInFunEvent())
 					{
 						player.sendMessage("You may not add a new sub class while being registered on event.");
 						return;
@@ -410,7 +410,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					if (!FloodProtectors.performAction(player.getClient(), Action.SUBCLASS))
 						return;
 					
-					if (player._inEventCTF || player._inEventDM || player._inEventTvT || player._inEventVIP)
+					if (player.isRegisteredInFunEvent() || player.isInFunEvent())
 					{
 						player.sendMessage("You may not add a new sub class while being registered on event.");
 						return;

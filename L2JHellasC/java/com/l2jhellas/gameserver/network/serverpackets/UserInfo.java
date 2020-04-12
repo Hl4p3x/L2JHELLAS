@@ -22,31 +22,10 @@ public class UserInfo extends L2GameServerPacket
 	
 	private int getRelation(L2PcInstance activeChar)
 	{
-		// 0x40 leader rights
-		// siege flags: attacker - 0x180 sword over name, defender - 0x80 shield
-		// 0xC0 crown (|leader), 0x1C0 flag (|leader) 
+		int relation = activeChar.isClanLeader() ? 0x40 : 0;
 		
-		int relation = 0;
-			
-		if (activeChar.getParty() != null)
-		{
-			relation |= 0x08;
-			
-			if (activeChar.getParty().isLeader(_activeChar))
-				relation |= 0x10;
-		}
-		
-		if (activeChar.getClan() != null)
-		{
-			relation |= 0x20; 
-			
-			if (activeChar.isClanLeader())
-				relation |= 0x40; 
-		}
-
 		if (activeChar.getSiegeState() == 1)
 			relation |= 0x180;
-
 		if (activeChar.getSiegeState() == 2)
 			relation |= 0x80;
 		
@@ -85,9 +64,9 @@ public class UserInfo extends L2GameServerPacket
 		writeD(_activeChar.getWIT());
 		writeD(_activeChar.getMEN());
 		writeD(_activeChar.getMaxHp());
-		writeD((int)Math.round(_activeChar.getCurrentHp()));
+		writeD((int)_activeChar.getCurrentHp());
 		writeD(_activeChar.getMaxMp());
-		writeD((int)Math.round(_activeChar.getCurrentMp()));
+		writeD((int)_activeChar.getCurrentMp());
 		writeD(_activeChar.getSp());
 		writeD(_activeChar.getCurrentLoad());
 		writeD(_activeChar.getMaxLoad());
@@ -248,7 +227,7 @@ public class UserInfo extends L2GameServerPacket
 		writeD(_activeChar.getClassId().getId());
 		writeD(0x00); // special effects? circles around player...
 		writeD(_activeChar.getMaxCp());
-		writeD((int) Math.round(_activeChar.getCurrentCp()));
+		writeD((int) _activeChar.getCurrentCp());
 		writeC(_activeChar.isMounted() ? 0 : _activeChar.getEnchantEffect());
 		
 		writeC(_activeChar.getTeam().getId());

@@ -14,7 +14,6 @@ public class CharInfo extends L2GameServerPacket
 	private final Inventory _inv;
 	private int _x, _y, _z;
 	private final int _mAtkSpd, _pAtkSpd;
-	private final int _maxCp;
 	private int _vehicleId = 0;
 	
 	public CharInfo(L2PcInstance cha)
@@ -38,7 +37,6 @@ public class CharInfo extends L2GameServerPacket
 		
 		_mAtkSpd = _activeChar.getMAtkSpd();
 		_pAtkSpd = _activeChar.getPAtkSpd();
-		_maxCp = _activeChar.getMaxCp();
 	}
 
 	@Override
@@ -156,7 +154,7 @@ public class CharInfo extends L2GameServerPacket
 		writeC(_activeChar.isInCombat() ? 1 : 0);
 		writeC(_activeChar.isAlikeDead() ? 1 : 0);
 		
-		writeC(canSeeInvis ? 0 : _activeChar.getAppearance().getInvisible() ? 1 : 0);
+		writeC(canSeeInvis ? 0 : !_activeChar.isVisible() || _activeChar.getAppearance().getInvisible() ? 1 : 0);
 		
 		writeC(_activeChar.getMountType()); // 1 on strider 2 on wyvern 0 no mount
 		writeC(_activeChar.getPrivateStoreType().getId()); // 1 - sellshop
@@ -172,8 +170,8 @@ public class CharInfo extends L2GameServerPacket
 		writeH(_activeChar.getRecomHave()); // Blue value for name (0 = white, 255 = pure blue)
 		writeD(_activeChar.getClassId().getId());
 		
-		writeD(_maxCp);
-		writeD((int) Math.round(_activeChar.getCurrentCp()));
+		writeD(_activeChar.getMaxCp());
+		writeD((int) _activeChar.getCurrentCp());
 		writeC(_activeChar.isMounted() ? 0 : _activeChar.getEnchantEffect());
 		
 		writeC(_activeChar.getTeam().getId());

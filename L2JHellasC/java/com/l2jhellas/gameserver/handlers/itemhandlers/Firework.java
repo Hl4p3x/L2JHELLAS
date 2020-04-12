@@ -28,9 +28,12 @@ public class Firework implements IItemHandler
 			return; // prevent Class cast exception
 			
 		L2PcInstance activeChar = (L2PcInstance) playable;
-		
-		if (!FloodProtectors.performAction(activeChar.getClient(), Action.USE_ITEM))
+
+		if (!FloodProtectors.performAction(activeChar.getClient(), Action.ITEM_HANDLER))
+		{
+			activeChar.sendMessage("You are using this action too fast!");
 			return;
+		}
 		
 		int itemId = item.getItemId();
 		

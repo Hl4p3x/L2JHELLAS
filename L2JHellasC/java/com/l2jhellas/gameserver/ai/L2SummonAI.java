@@ -183,6 +183,8 @@ public class L2SummonAI extends L2CharacterAI
 				case AI_INTENTION_INTERACT:
 					thinkInteract();
 					break;
+				default :
+					break;
 			}
 		}
 		finally

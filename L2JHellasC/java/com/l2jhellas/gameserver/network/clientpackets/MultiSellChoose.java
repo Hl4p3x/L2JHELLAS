@@ -81,7 +81,6 @@ public class MultiSellChoose extends L2GameClientPacket
 		}
 	}
 	
-	@SuppressWarnings("null")
 	private void doExchange(L2PcInstance player, MultiSellEntry templateEntry, boolean applyTaxes, boolean maintainEnchantment, int enchantment)
 	{
 		

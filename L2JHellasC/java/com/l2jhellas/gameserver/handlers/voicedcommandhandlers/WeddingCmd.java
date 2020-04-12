@@ -247,7 +247,7 @@ public class WeddingCmd implements IVoicedCommandHandler
 			activeChar.sendMessage("Your partner is in the Olympiad now.");
 			return false;
 		}
-		else if (partner.atEvent)
+		else if (partner.isInFunEvent())
 		{
 			activeChar.sendMessage("Your partner is in an event.");
 			return false;
@@ -288,7 +288,7 @@ public class WeddingCmd implements IVoicedCommandHandler
 			activeChar.sendMessage("You are in the Olympiad now.");
 			return false;
 		}
-		else if (activeChar.atEvent)
+		else if (activeChar.isInFunEvent())
 		{
 			activeChar.sendMessage("You are in an event.");
 			return false;
@@ -324,7 +324,7 @@ public class WeddingCmd implements IVoicedCommandHandler
 			return false;
 		}
 		// Thanks nbd
-		if (activeChar._inEventTvT)
+		if (activeChar.isInFunEvent())
 		{
 			activeChar.sendMessage("You may not use an escape skill in a Event.");
 			return false;

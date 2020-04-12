@@ -65,6 +65,15 @@ public class DDSConverter
 		}
 	}
 	
+	public static ByteBuffer convertToDDS(BufferedImage bufferedimage)
+	{
+		if (bufferedimage == null)
+			return null;
+		if (bufferedimage.getColorModel().hasAlpha())
+			return convertToDxt3(bufferedimage);
+		return convertToDxt1NoTransparency(bufferedimage);
+	}
+	
 	public static ByteBuffer convertToDDS(File file) throws IOException
 	{
 		if (file == null)

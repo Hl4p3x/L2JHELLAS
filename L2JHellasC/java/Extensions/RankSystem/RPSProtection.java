@@ -5,9 +5,6 @@ import java.util.Map;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.entity.events.CTF;
-import com.l2jhellas.gameserver.model.entity.events.DM;
-import com.l2jhellas.gameserver.model.entity.events.TvT;
 
 public class RPSProtection
 {
@@ -50,7 +47,7 @@ public class RPSProtection
 		if (player.isInOlympiadMode() || player.isOlympiadStart())
 			return true;
 		
-		if ((TvT._started && player._inEventTvT) || player.isinZodiac || (DM._started && player._inEventDM) || (CTF._started && player._inEventCTF))
+		if (player.isInFunEvent())
 			return true;
 		
 		return false;

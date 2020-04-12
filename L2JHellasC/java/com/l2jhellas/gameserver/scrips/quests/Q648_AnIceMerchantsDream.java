@@ -319,7 +319,7 @@ public class Q648_AnIceMerchantsDream extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{		
-		final QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED).getQuestState(getName());
+		final QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
 		if (st == null)
 			return null;
 		

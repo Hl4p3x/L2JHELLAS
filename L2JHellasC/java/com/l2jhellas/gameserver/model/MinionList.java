@@ -3,7 +3,6 @@ package com.l2jhellas.gameserver.model;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
@@ -15,12 +14,10 @@ import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.util.Rnd;
 
 public class MinionList
-{
-	private static Logger _log = Logger.getLogger(MinionList.class.getName());
-	
+{	
 	protected final L2MonsterInstance _master;
 	private final Set<L2MonsterInstance> _minionReferences = ConcurrentHashMap.newKeySet();
-	
+
 	public MinionList(L2MonsterInstance master)
 	{
 		_master = master;
@@ -70,9 +67,7 @@ public class MinionList
 			_minionReferences.clear();
 		}
 	}
-	
-	// hooks
-	
+
 	public void onMinionSpawn(L2MonsterInstance minion)
 	{
 		_minionReferences.add(minion);
@@ -204,10 +199,7 @@ public class MinionList
 			newY = master.getY() - newY + minRadius;
 		
 		minion.spawnMe(newX, newY, master.getZ());
-		
-		if (Config.DEBUG)
-			_log.fine("Spawned minion template " + minion.getNpcId() + " with objid: " + minion.getObjectId() + " to boss " + master.getObjectId() + " ,at: " + minion.getX() + " x, " + minion.getY() + " y, " + minion.getZ() + " z");
-		
+
 		return minion;
 	}
 	

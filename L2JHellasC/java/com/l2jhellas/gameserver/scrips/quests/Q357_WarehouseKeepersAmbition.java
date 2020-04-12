@@ -94,26 +94,26 @@ public class Q357_WarehouseKeepersAmbition extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState qs = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (qs == null)
 			return null;
 		
 		switch (npc.getNpcId())
 		{
 			case FOREST_RUNNER:
-				partyMember.getQuestState(qn).dropItems(JADE_CRYSTAL, 1, -1, 577000);
+				qs.getPlayer().getQuestState(qn).dropItems(JADE_CRYSTAL, 1, -1, 577000);
 				break;
 			
 			case FLINE_ELDER:
-				partyMember.getQuestState(qn).dropItems(JADE_CRYSTAL, 1, -1, 600000);
+				qs.getPlayer().getQuestState(qn).dropItems(JADE_CRYSTAL, 1, -1, 600000);
 				break;
 			
 			case LIELE_ELDER:
-				partyMember.getQuestState(qn).dropItems(JADE_CRYSTAL, 1, -1, 638000);
+				qs.getPlayer().getQuestState(qn).dropItems(JADE_CRYSTAL, 1, -1, 638000);
 				break;
 			
 			case VALLEY_TREANT_ELDER:
-				partyMember.getQuestState(qn).dropItemsAlways(JADE_CRYSTAL, (Rnd.get(1000) < 62) ? 2 : 1, -1);
+				qs.getPlayer().getQuestState(qn).dropItemsAlways(JADE_CRYSTAL, (Rnd.get(1000) < 62) ? 2 : 1, -1);
 				break;
 		}
 		

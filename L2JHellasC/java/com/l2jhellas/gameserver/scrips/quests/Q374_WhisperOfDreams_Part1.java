@@ -182,30 +182,15 @@ public class Q374_WhisperOfDreams_Part1 extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		// Drop tooth or light to anyone.
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (st == null)
 			return null;
 		
-		QuestState st = partyMember.getQuestState(qn);
+		st.dropItems((npc.getNpcId() == CAVE_BEAST) ? CAVE_BEAST_TOOTH : DEATH_WAVE_LIGHT, 1, 65, 500000);
 		
-		switch (npc.getNpcId())
-		{
-			case CAVE_BEAST:
-				st.dropItems(CAVE_BEAST_TOOTH, 1, 65, 500000);
-				break;
-			
-			case DEATH_WAVE:
-				st.dropItems(DEATH_WAVE_LIGHT, 1, 65, 500000);
-				break;
-		}
-		
-		// Drop sealed mysterious stone to party member who still need it.
-		partyMember = getRandomPartyMember(player, npc, condition, "1");
-		if (partyMember == null)
+		st = getRandomPartyMember(player, npc, condition, "1");
+		if (st == null)
 			return null;
-		
-		st = partyMember.getQuestState(qn);
 		
 		if (st.dropItems(SEALED_MYSTERIOUS_STONE, 1, 1, 1000))
 			st.unset(condition);

@@ -195,9 +195,11 @@ public class Q625_TheFinestIngredients_Part2 extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		for (L2PcInstance partyMember : getPartyMembers(player, npc, "cond", "2"))
+		for (QuestState st : getPartyMembers(player, npc, "cond", "2"))
 		{
-			QuestState st = partyMember.getQuestState(qn);
+			if(st == null)
+			    continue;
+			
 			st.giveItems(SPECIAL_YETI_MEAT, 1);
 			st.set("cond", "3");
 			st.playSound(QuestState.SOUND_MIDDLE);

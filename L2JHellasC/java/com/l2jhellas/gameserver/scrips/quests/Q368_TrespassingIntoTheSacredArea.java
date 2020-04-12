@@ -89,11 +89,11 @@ public class Q368_TrespassingIntoTheSacredArea extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState qs = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (qs == null)
 			return null;
 		
-		QuestState st = partyMember.getQuestState(qn);
+		QuestState st = qs.getPlayer().getQuestState(qn);
 		
 		st.dropItems(FANG, 1, -1, 330000);
 		

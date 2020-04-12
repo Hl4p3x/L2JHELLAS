@@ -213,7 +213,7 @@ public class L2BossZone extends L2ZoneType
 		
 		for (L2PcInstance player : getKnownTypeInside(L2PcInstance.class))
 		{
-			if (player.isOnline() == 1)
+			if (player != null && player.isOnline() == 1)
 				player.teleToLocation(x, y, z, false);
 		}
 	}

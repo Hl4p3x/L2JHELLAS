@@ -155,8 +155,8 @@ public class L2PlayerAI extends L2CharacterAI
 		
 	private void thinkCast()
 	{
-		L2Character target = getCastTarget();
-
+		L2Character target = (L2Character) getTarget();
+		
 		if (_skill.getTargetType() == L2SkillTargetType.TARGET_SIGNET_GROUND && _actor instanceof L2PcInstance)
 		{
 			if (maybeMoveToPosition(((L2PcInstance) _actor).getCurrentSkillWorldPosition(), _actor.getMagicalAttackRange(_skill)))
@@ -169,7 +169,7 @@ public class L2PlayerAI extends L2CharacterAI
 				boolean isBad = _skill.isOffensive() || _skill.isDebuff();
 				
 				if (isBad && target != null)
-					setCastTarget(null);
+					setTarget(null);
 				return;
 			}
 
@@ -180,22 +180,7 @@ public class L2PlayerAI extends L2CharacterAI
 		if (_skill.getHitTime() > 50)
 			clientStopMoving(null);
 
-		L2Object oldTarget = _actor.getTarget();
-		if (oldTarget != null)
-		{
-			// Replace the current target by the cast target
-			if (target != null && oldTarget != target)
-				_actor.setTarget(getCastTarget());
-
-			// Launch the Cast of the skill
-			_actor.doCast(_skill);
-
-			// Restore the initial target
-			if (target != null && oldTarget != target)
-				_actor.setTarget(oldTarget);
-		}
-		else
-			_actor.doCast(_skill);
+		_actor.doCast(_skill);
 
 		return;
 	}
@@ -215,6 +200,7 @@ public class L2PlayerAI extends L2CharacterAI
 			_actor.getActingPlayer().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_MOVE_FROZEN));
 			return;
 		}
+		
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
 		{
 			clientActionFailed();

@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
+import java.util.HashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Logger;
 
@@ -8,14 +9,15 @@ import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.ai.L2CharacterAI;
 import com.l2jhellas.gameserver.ai.L2DoorAI;
+import com.l2jhellas.gameserver.geodata.GeoControl;
+import com.l2jhellas.gameserver.geodata.GeoEngine;
+import com.l2jhellas.gameserver.geometry.Polygon;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
 import com.l2jhellas.gameserver.model.L2Object;
-import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
-import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.actor.stat.DoorStat;
 import com.l2jhellas.gameserver.model.actor.status.DoorStatus;
 import com.l2jhellas.gameserver.model.entity.Castle;
@@ -30,7 +32,7 @@ import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.templates.L2CharTemplate;
 import com.l2jhellas.gameserver.templates.L2Weapon;
 
-public class L2DoorInstance extends L2Character
+public class L2DoorInstance extends L2Character implements GeoControl
 {
 	protected static final Logger _log = Logger.getLogger(L2DoorInstance.class.getName());
 	
@@ -56,57 +58,26 @@ public class L2DoorInstance extends L2Character
 	
 	private boolean _open = false;
 	private final boolean _unlockable;	
-	
+	public boolean geoOpen;
+	private boolean _geodata = true;
 	private ClanHall _clanHall;
 	
 	protected int _autoActionDelay = -1;
 	private ScheduledFuture<?> _autoActionTask;
-
-		@Override
-		public L2DoorInstance getActor()
-		{
-			return L2DoorInstance.this;
-		}
-		
-		@Override
-		public void moveTo(int x, int y, int z, int offset)
-		{
-		}
-		
-		@Override
-		public void moveTo(int x, int y, int z)
-		{
-		}
-		
-		@Override
-		public void stopMove(Location pos)
-		{
-		}
-		
-		@Override
-		public void doAttack(L2Character target)
-		{
-		}
-		
-		@Override
-		public void doCast(L2Skill skill)
-		{
-		}
 	
-	@Override
 	public L2CharacterAI getAI()
 	{
-		if (_ai == null)
+		L2CharacterAI ai = _ai;
+		if (ai == null)
 		{
 			synchronized (this)
 			{
-				if (_ai == null)
-				{
-					_ai = new L2DoorAI(this);
-				}
+				ai = _ai;
+				if (ai == null)
+					_ai = ai = new L2DoorAI(this);
 			}
 		}
-		return _ai;
+		return ai;
 	}
 	
 	@Override
@@ -173,6 +144,13 @@ public class L2DoorInstance extends L2Character
 		_doorId = doorId;
 		_name = name;
 		_unlockable = unlockable;
+		geoOpen = true;
+		
+		if (getOpen() && getGeodata())
+		{
+			GeoEngine.applyControl(this);
+			this.geoOpen = false;
+		}
 	}
 	
 	@Override
@@ -437,14 +415,43 @@ public class L2DoorInstance extends L2Character
 	
 	public final void closeMe()
 	{
+		if(!getOpen() || isDead())
+			return;
+
 		setOpen(false);
+
+		setGeoOpen(false);
 		broadcastStatusUpdate();
 	}
 	
 	public final void openMe()
 	{
+		if(getOpen() || isDead())
+			return;
+
 		setOpen(true);
+
+		setGeoOpen(true);
 		broadcastStatusUpdate();
+	}
+	
+	private void setGeoOpen(boolean val)
+	{
+		if(!Config.ALLOW_DOORS)
+			return;
+		
+		if(geoOpen == val)
+			return;
+
+		geoOpen = val;
+
+		if(getGeodata())
+		{
+			if(val)
+				GeoEngine.returnGeoAtControl(this);
+			else
+				GeoEngine.applyControl(this);
+		}
 	}
 	
 	@Override
@@ -547,28 +554,42 @@ public class L2DoorInstance extends L2Character
 		activeChar.sendPacket(new DoorStatusUpdate(this));
 	}
 	
-	// protected boolean setGeoOpen(boolean open)
-	// {
-	// if(_geoOpen == open)
-	// {
-	// return false;
-	// }
+	private Polygon geoPos;
+	private HashMap<Long, Byte> geoAround;
+
+	public Polygon getGeoPos()
+	{
+		return geoPos;
+	}
+
+	public void setGeoPos(Polygon value)
+	{
+		geoPos = value;
+	}
+
+	public HashMap<Long, Byte> getGeoAround()
+	{
+		return geoAround;
+	}
+
+	public void setGeoAround(HashMap<Long, Byte> value)
+	{
+		geoAround = value;
+	}
 	
-	// _geoOpen = open;
-	
-	// if(Config.GEODATA)
-	// {
-	// if(open)
-	// {
-	// GeoEngine.returnGeoAtControl(this);
-	// }
-	// else
-	// {
-	// GeoEngine.applyControl(this);
-	// }
-	// }
-	
-	// return true;
-	// }
-	
+	public void setGeodata(boolean value)
+	{
+		_geodata = value;
+	}
+
+	public boolean getGeodata()
+	{
+		return _geodata;
+	}
+
+	@Override
+	public boolean isGeoCloser()
+	{
+		return true;
+	}
 }

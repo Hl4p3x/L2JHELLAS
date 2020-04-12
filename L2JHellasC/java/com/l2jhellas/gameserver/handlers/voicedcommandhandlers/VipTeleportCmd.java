@@ -16,7 +16,7 @@ public class VipTeleportCmd implements IVoicedCommandHandler
 	{
 		if (command.equalsIgnoreCase(VOICED_COMMANDS[0]))
 		{
-			if (activeChar.atEvent)
+			if (activeChar.isInFunEvent())
 			{
 				activeChar.sendMessage("You cant teleport right now.");
 				return false;

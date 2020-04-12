@@ -49,7 +49,7 @@ public class L2NpcInstance extends L2Npc
 			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 			StringBuilder sb = new StringBuilder();
 			sb.append("<html><body>");
-			sb.append("I cannot teach you. My class list is empty.<br> Ask admin to fix it. Need add my npcid and classes to skill_learn.sql.<br>NpcId:" + npcId + ", Your classId:" + player.getClassId().getId() + "<br>");
+			sb.append("I cannot teach you. My class list is empty.<br> Ask admin to fix it. Need add my npcid and classes to skill_learn.xml<br>NpcId:" + npcId + ", Your classId:" + player.getClassId().getId() + "<br>");
 			sb.append("</body></html>");
 			html.setHtml(sb.toString());
 			player.sendPacket(html);

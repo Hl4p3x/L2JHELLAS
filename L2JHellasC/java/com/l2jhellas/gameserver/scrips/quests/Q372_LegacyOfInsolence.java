@@ -376,8 +376,8 @@ public class Q372_LegacyOfInsolence extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (st == null)
 			return null;
 		
 		final int npcId = npc.getNpcId();
@@ -386,9 +386,7 @@ public class Q372_LegacyOfInsolence extends Quest
 			if (MONSTERS_DROPS[0][index] == npcId)
 			{
 				if (Rnd.get(100) < MONSTERS_DROPS[2][index])
-				{
-					QuestState st = partyMember.getQuestState(qn);
-					
+				{					
 					st.rewardItems(MONSTERS_DROPS[1][index], 1);
 					st.playSound(QuestState.SOUND_ITEMGET);
 				}

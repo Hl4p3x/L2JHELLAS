@@ -193,12 +193,10 @@ public class Q603_DaimonTheWhiteEyed_Part1 extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMember(player, npc, "7");
-		if (partyMember == null)
+		QuestState st = getRandomPartyMember(player, npc, "7");
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
-		
+				
 		if (st.dropItemsAlways(EVIL_SPIRIT_BEADS, 1, 200))
 			st.set("cond", "8");
 		

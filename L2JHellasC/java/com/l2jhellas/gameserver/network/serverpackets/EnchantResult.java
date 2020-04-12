@@ -2,24 +2,26 @@ package com.l2jhellas.gameserver.network.serverpackets;
 
 public class EnchantResult extends L2GameServerPacket
 {
-	public static final EnchantResult SUCCESS = new EnchantResult(0);
-	public static final EnchantResult UNK_RESULT_1 = new EnchantResult(1);
-	public static final EnchantResult CANCELLED = new EnchantResult(2);
-	public static final EnchantResult UNSUCCESS = new EnchantResult(3);
-	public static final EnchantResult UNK_RESULT_4 = new EnchantResult(4);
 	private static final String _S__81_ENCHANTRESULT = "[S] 81 EnchantResult";
-	private final int _unknown;
 	
-	public EnchantResult(int unknown)
+    public static final EnchantResult SUCCESS = new EnchantResult(0);
+    public static final EnchantResult CANCELLED = new EnchantResult(2);
+    public static final EnchantResult BLESSED_FAILED = new EnchantResult(3);
+    public static final EnchantResult FAILED_NO_CRYSTALS = new EnchantResult(4);
+    public static final EnchantResult FAILED_CRYSTALS = new EnchantResult(1);
+
+    private final int _resultId;
+	
+	public EnchantResult(final int resultId)
 	{
-		_unknown = unknown;
+        _resultId = resultId;
 	}
 	
 	@Override
 	protected final void writeImpl()
 	{
-		writeC(0x81);
-		writeD(_unknown);
+        writeC(0x81);
+        writeD(_resultId);
 	}
 	
 	@Override

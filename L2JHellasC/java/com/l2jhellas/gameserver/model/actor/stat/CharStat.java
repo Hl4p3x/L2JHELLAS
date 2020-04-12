@@ -4,7 +4,6 @@ import Extensions.Balancer.BalanceLoad;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.enums.ZoneId;
-import com.l2jhellas.gameserver.enums.items.L2WeaponType;
 import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -63,52 +62,34 @@ public class CharStat
 		return env.value;
 	}
 	
-	public final int getSTR()
+	public int getSTR()
 	{
-		int str = (int) calcStat(Stats.STAT_STR, _activeChar.getTemplate().baseSTR, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			str += BalanceLoad.STR[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return str;
+		return _activeChar.getTemplate().baseSTR;
 	}
 	
-	public final int getDEX()
+	public int getDEX()
 	{
-		int DEX = (int) calcStat(Stats.STAT_DEX, _activeChar.getTemplate().baseDEX, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			DEX += BalanceLoad.DEX[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return DEX;
+		return _activeChar.getTemplate().baseDEX;
 	}
 	
-	public final int getCON()
+	public int getCON()
 	{
-		int CON = (int) calcStat(Stats.STAT_CON, _activeChar.getTemplate().baseCON, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			CON += BalanceLoad.CON[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return CON;
+		return _activeChar.getTemplate().baseCON;
 	}
 	
 	public int getINT()
 	{
-		int INT = (int) calcStat(Stats.STAT_INT, _activeChar.getTemplate().baseINT, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			INT += BalanceLoad.INT[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return INT;
+		return _activeChar.getTemplate().baseINT;
 	}
 	
-	public final int getMEN()
+	public int getMEN()
 	{
-		int MEN = (int) calcStat(Stats.STAT_MEN, _activeChar.getTemplate().baseMEN, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			MEN += BalanceLoad.MEN[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return MEN;
+		return  _activeChar.getTemplate().baseMEN;
 	}
 	
-	public final int getWIT()
+	public int getWIT()
 	{
-		int WIT = (int) calcStat(Stats.STAT_WIT, _activeChar.getTemplate().baseWIT, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			WIT += BalanceLoad.WIT[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return WIT;
+		return _activeChar.getTemplate().baseWIT;
 	}
 	
 	public int getCriticalHit(L2Character target, L2Skill skill)
@@ -357,14 +338,11 @@ public class CharStat
 		return calcStat(Stats.PDEF_UNDEAD, 1, target, null);
 	}
 	
-	public final int getPhysicalAttackRange()
+	public int getPhysicalAttackRange()
 	{
-		if(getActiveChar().isNpc())
-			return (int) calcStat(Stats.POWER_ATTACK_RANGE, getActiveChar().getTemplate().baseAtkRange, null, null);
-		
-		return getActiveChar().getAttackType().equals(L2WeaponType.BOW) ? (int) calcStat(Stats.POWER_ATTACK_RANGE, getActiveChar().getTemplate().baseAtkRange, null, null) : getActiveChar().getAttackType().getRange();
+		return getActiveChar().getAttackType().getRange();
 	}
-	
+
 	public final double getWeaponReuseModifier(L2Character target)
 	{
 		return calcStat(Stats.ATK_REUSE, 1, target, null);

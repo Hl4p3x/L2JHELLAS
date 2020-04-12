@@ -120,11 +120,11 @@ public class Q377_ExplorationOfTheGiantsCave_Part2 extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (st == null)
 			return null;
 		
-		partyMember.getQuestState(qn).dropItems(ANCIENT_BOOK, 1, 0, ANCIENT_BOOK_RATE);
+		st.dropItems(ANCIENT_BOOK, 1, 0, ANCIENT_BOOK_RATE);
 		return null;
 	}
 	

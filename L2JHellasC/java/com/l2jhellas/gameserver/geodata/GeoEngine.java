@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
-import com.l2jhellas.gameserver.datatables.xml.DoorData;
 import com.l2jhellas.gameserver.geodata.GeoOptimizer.BlockLink;
 import com.l2jhellas.gameserver.geodata.loader.GeoFileInfo;
 import com.l2jhellas.gameserver.geodata.loader.GeoLoader;
@@ -24,6 +23,7 @@ import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.taskmanager.MemoryWatchOptimize;
 import com.l2jhellas.util.GArray;
+import com.l2jhellas.util.MathUtil;
 import com.l2jhellas.util.ParallelExecutor;
 import com.l2jhellas.util.Rnd;
 import com.l2jhellas.util.Util;
@@ -67,6 +67,16 @@ public class GeoEngine
 	public static short getType(int x, int y)
 	{
 		return NgetType(x - L2World.WORLD_X_MIN >> 4, y - L2World.WORLD_Y_MIN >> 4);
+	}
+	
+	public static final int getGeoX(int worldX)
+	{
+		return (MathUtil.limit(worldX, L2World.WORLD_X_MIN, L2World.WORLD_X_MAX) - L2World.WORLD_X_MIN) >> 4;
+	}
+
+	public static final int getGeoY(int worldY)
+	{
+		return (MathUtil.limit(worldY, L2World.WORLD_Y_MIN, L2World.WORLD_Y_MAX) - L2World.WORLD_Y_MIN) >> 4;
 	}
 	
 	public static int getHeight(Location loc)
@@ -167,10 +177,7 @@ public class GeoEngine
 	{
 		if (target == null)
 			return false;
-		
-		if (DoorData.getInstance().checkIfDoorsBetween(actor.getX(), actor.getY(), actor.getZ(), target.getX(), target.getY(), target.getZ()) > 0)
-			return false;
-		
+
 		if (FenceManager.getInstance().checkIfFenceBetween(actor.getX(), actor.getY(), actor.getZ(), target.getX(), target.getY(), target.getZ()))
 			return false;
 		
@@ -1468,14 +1475,6 @@ public class GeoEngine
 		log.info(GeoEngine.class.getSimpleName() + " Geodata Loaded!");
 		if (Config.COMPACT_GEO)
 			compact(true);
-		
-		// not ready yet if(Config.ALLOW_DOORS)
-		// for(L2DoorInstance door : DoorData.getInstance().getDoors())
-		// if(door.getOpen() && door.getGeodata())
-		// {
-		// applyControl(door);
-		// door.geoOpen = false;
-		// }
 	}
 	
 	public static void DumpGeodata(String dir)
@@ -1558,7 +1557,6 @@ public class GeoEngine
 			synchronized (geodata)
 			{
 				// Create a read-only memory-mapped file
-				@SuppressWarnings("resource")
 				FileChannel roChannel = new RandomAccessFile(Geo, "r").getChannel();
 				size = (int) roChannel.size();
 				ByteBuffer buffer = roChannel.map(FileChannel.MapMode.READ_ONLY, 0, size);
@@ -1832,11 +1830,12 @@ public class GeoEngine
 		if (around == null)
 		{
 			around = new HashMap<>();
-			GArray<Long> around_blocks = new GArray<>();
-			int minX = pos.getXmin() - L2World.WORLD_X_MIN >> 4;
-			int maxX = pos.getXmax() - L2World.WORLD_X_MIN >> 4;
-			int minY = pos.getYmin() - L2World.WORLD_Y_MIN >> 4;
-			int maxY = pos.getYmax() - L2World.WORLD_Y_MIN >> 4;
+			GArray<Long> around_blocks = new GArray<>();	
+			final int minX = GeoEngine.getGeoX(pos.getXmin());
+			final int maxX = GeoEngine.getGeoY(pos.getXmax());			
+			final int minY = GeoEngine.getGeoX(pos.getYmin());
+			final int maxY = GeoEngine.getGeoY(pos.getYmax());
+							
 			for (int geoX = minX; geoX <= maxX; geoX++)
 				for (int geoY = minY; geoY <= maxY; geoY++)
 					if (check_cell_in_door(geoX, geoY, pos))

@@ -114,12 +114,10 @@ public class Q375_WhisperOfDreams_Part2 extends Quest
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		// Drop horn or skull to anyone.
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
-		
+				
 		switch (npc.getNpcId())
 		{
 			case KARIK:

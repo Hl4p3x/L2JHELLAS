@@ -122,7 +122,7 @@ public class LoginServer
 		
 		try
 		{
-			GameServerTable.load();
+			GameServerTable.loadGS();
 		}
 		catch (GeneralSecurityException e)
 		{

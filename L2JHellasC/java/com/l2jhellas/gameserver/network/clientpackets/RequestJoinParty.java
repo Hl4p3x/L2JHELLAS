@@ -8,9 +8,6 @@ import com.l2jhellas.gameserver.model.BlockList;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.entity.events.CTF;
-import com.l2jhellas.gameserver.model.entity.events.DM;
-import com.l2jhellas.gameserver.model.entity.events.TvT;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.AskJoinParty;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -55,30 +52,7 @@ public final class RequestJoinParty extends L2GameClientPacket
 			requestor.sendPacket(SystemMessageId.YOU_HAVE_INVITED_THE_WRONG_TARGET);
 			return;
 		}
-		if (((TvT._started && !Config.TVT_ALLOW_INTERFERENCE) || (CTF._started && !Config.CTF_ALLOW_INTERFERENCE) || (DM._started && !Config.DM_ALLOW_INTERFERENCE) && !requestor.isGM()))
-		{
-			if ((target._inEventTvT && !requestor._inEventTvT) || (!target._inEventTvT && requestor._inEventTvT))
-			{
-				requestor.sendPacket(SystemMessageId.INCORRECT_TARGET);
-				return;
-			}
-			if ((target._inEventCTF && !requestor._inEventCTF) || (!target._inEventCTF && requestor._inEventCTF))
-			{
-				requestor.sendPacket(SystemMessageId.INCORRECT_TARGET);
-				return;
-			}
-			if ((target._inEventDM && !requestor._inEventDM) || (!target._inEventDM && requestor._inEventDM))
-			{
-				requestor.sendPacket(SystemMessageId.INCORRECT_TARGET);
-				return;
-			}
-			else if ((target._inEventVIP && !requestor._inEventVIP) || (!target._inEventVIP && requestor._inEventVIP))
-			{
-				requestor.sendPacket(SystemMessageId.INCORRECT_TARGET);
-				return;
-			}
-		}
-		
+
 		if (target.isInParty())
 		{
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_IS_ALREADY_IN_PARTY).addPcName(target));

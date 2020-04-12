@@ -122,12 +122,10 @@ public class Q623_TheFinestFood extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMember(player, npc, "1");
-		if (partyMember == null)
+		QuestState st = getRandomPartyMember(player, npc, "1");
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
-		
+				
 		if (Rnd.get(100) < 66)
 		{
 			switch (npc.getNpcId())

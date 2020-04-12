@@ -11,6 +11,7 @@ import com.l2jhellas.gameserver.communitybbs.Manager.RegionBBSManager;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.FriendList;
@@ -52,21 +53,13 @@ public final class Logout extends L2GameClientPacket
 			return;
 		}
 		
-		if (player.atEvent)
-		{
-			player.sendPacket(SystemMessage.sendString("A superior power doesn't allow you to leave the event."));
-			return;
-		}
-		
+
 		if ((player.getOlympiadGameId() > 0) || player.isInOlympiadMode())
 		{
 			player.sendMessage("You can't logout while you are in olympiad.");
 			return;
 		}
-		
-		// Prevent player from logging out if they are a festival participant
-		// and it is in progress, otherwise notify party members that the player
-		// is not longer a participant.
+
 		if (player.isFestivalParticipant())
 		{
 			if (SevenSignsFestival.getInstance().isFestivalInitialized())
@@ -77,13 +70,7 @@ public final class Logout extends L2GameClientPacket
 			L2Party playerParty = player.getParty();
 			
 			if (playerParty != null)
-			{
 				player.getParty().broadcastToPartyMembers(SystemMessage.sendString(player.getName() + " has been removed from the upcoming festival."));
-			}
-		}
-		if (player.isFlying())
-		{
-			player.removeSkill(SkillTable.getInstance().getInfo(4289, 1));
 		}
 		
 		if ((player.isInStoreMode() || (player.isInCraftMode())))
@@ -93,15 +80,24 @@ public final class Logout extends L2GameClientPacket
 			return;
 		}
 		
-		player.endDuel();
+		if (player.isRegisteredInFunEvent())
+		{
+			if(player.isInFunEvent())
+			   EventManager.getInstance().getCurrentEvent().onLogout(player);
+			else
+			   EventManager.getInstance().onLogout(player);
+		}
 		
-		player.sendPacket(ActionFailed.STATIC_PACKET);
+		if (player.isFlying())
+			player.removeSkill(SkillTable.getInstance().getInfo(4289, 1));
+		
+		player.endDuel();
 		
 		// Remove From Boss
 		player.removeFromBossZone();
 		
-		notifyFriends(player);
-		
+		notifyFriends(player);	
+	
 		player.deleteMe();
 		
 		player.closeNetConnection(true);
@@ -118,19 +114,18 @@ public final class Logout extends L2GameClientPacket
 			statement.setInt(1, cha.getObjectId());
 			ResultSet rset = statement.executeQuery();
 			
-			L2PcInstance friend;
+			L2PcInstance friend = null;
 			String friendName;
 			
 			while (rset.next())
 			{
 				friendName = rset.getString("friend_name");
 				
-				friend = L2World.getInstance().getPlayer(friendName);
+				if(!friendName.isEmpty())
+				   friend = L2World.getInstance().getPlayer(friendName);
 				
 				if (friend != null) // friend logged in.
-				{
 					friend.sendPacket(new FriendList(friend));
-				}
 			}
 			
 			rset.close();

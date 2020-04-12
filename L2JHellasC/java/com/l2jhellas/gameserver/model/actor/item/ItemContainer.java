@@ -380,8 +380,7 @@ public abstract class ItemContainer
 	}
 	
 	public void deleteMe()
-	{
-		
+	{		
 		if (getOwner() != null)
 		{
 			for (L2ItemInstance item : _items.values())

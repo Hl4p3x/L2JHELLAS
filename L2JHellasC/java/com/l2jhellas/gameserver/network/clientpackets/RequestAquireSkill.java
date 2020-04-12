@@ -48,7 +48,6 @@ public class RequestAquireSkill extends L2GameClientPacket
 		}
 	}
 	
-	@SuppressWarnings("null")
 	@Override
 	protected void runImpl()
 	{

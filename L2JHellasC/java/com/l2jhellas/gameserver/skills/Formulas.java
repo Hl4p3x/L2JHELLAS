@@ -488,6 +488,8 @@ public final class Formulas
 				case BIGSWORD:
 					stat = Stats.BIGSWORD_WPN_VULN;
 					break;
+				default :
+					break;
 			}
 		}
 		
@@ -1132,7 +1134,7 @@ public final class Formulas
 		if (fallHeight < 0)
 			return 0;
 		
-		return cha.calcStat(Stats.FALL, fallHeight * cha.getMaxHp() / 1000, null, null);
+		return cha.calcStat(Stats.FALL, fallHeight * cha.getMaxHp() / 1000.0, null, null);
 	}
 	
 	private static final double[] karma =
@@ -1270,6 +1272,8 @@ public final class Formulas
 				final double venganceChance = target.getStat().calcStat((skill.isMagic()) ? Stats.REFLECT_SKILL_MAGIC : Stats.REFLECT_SKILL_PHYSIC, 0, target, skill);
 				if (venganceChance > Rnd.get(100))
 					reflect |= 2;
+				break;
+			default :
 				break;
 		}
 		

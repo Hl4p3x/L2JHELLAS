@@ -169,7 +169,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		
 		newChar.getAppearance().setInvisible();
 		newChar.getPosition().setXYZ(template.spawnX, template.spawnY, template.spawnZ);
-		
+
 		if (Config.ALLOW_CREATE_LVL)
 		{
 			long tXp = Experience.LEVEL[Config.CUSTOM_START_LVL];

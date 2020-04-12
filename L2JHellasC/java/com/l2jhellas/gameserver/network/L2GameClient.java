@@ -22,8 +22,7 @@ import com.l2jhellas.gameserver.model.CharSelectInfoPackage;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.entity.events.engines.EventData;
-import com.l2jhellas.gameserver.model.entity.events.engines.L2Event;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.L2GameServerPacket;
 import com.l2jhellas.gameserver.network.serverpackets.ServerClose;
@@ -590,11 +589,12 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 				
 				if (getActiveChar() != null)
 				{
-					// we store all data from players who are disconnected while in an event in order to restore it in the next login
-					if (getActiveChar().atEvent)
+					if (getActiveChar().isRegisteredInFunEvent())
 					{
-						EventData data = new EventData(getActiveChar().eventX, getActiveChar().eventY, getActiveChar().eventZ, getActiveChar().eventkarma, getActiveChar().eventpvpkills, getActiveChar().eventpkkills, getActiveChar().eventTitle, getActiveChar().kills, getActiveChar().eventSitForced);
-						L2Event.connectionLossData.put(getActiveChar().getName(), data);
+						if(getActiveChar().isInFunEvent())
+						   EventManager.getInstance().getCurrentEvent().onLogout(getActiveChar());
+						else
+						   EventManager.getInstance().onLogout(getActiveChar());
 					}
 					
 					if (getActiveChar().isFlying())

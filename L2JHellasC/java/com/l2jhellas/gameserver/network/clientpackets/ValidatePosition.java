@@ -8,8 +8,8 @@ import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.network.serverpackets.CharMoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.GetOnVehicle;
+import com.l2jhellas.gameserver.network.serverpackets.MoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.PartyMemberPosition;
 import com.l2jhellas.gameserver.network.serverpackets.ValidateLocation;
 
@@ -115,7 +115,7 @@ public class ValidatePosition extends L2GameClientPacket
 						return;
 					}
 					
-					activeChar.broadcastPacket(new CharMoveToLocation(activeChar));
+					activeChar.broadcastPacket(new MoveToLocation(activeChar));
 				}
 			}
 			activeChar.setLastClientPosition(_x, _y, _z);
@@ -164,7 +164,7 @@ public class ValidatePosition extends L2GameClientPacket
 					return;
 				}
 				
-				activeChar.broadcastPacket(new CharMoveToLocation(activeChar));
+				activeChar.broadcastPacket(new MoveToLocation(activeChar));
 				
 			}
 		}

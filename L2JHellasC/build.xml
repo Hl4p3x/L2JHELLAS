@@ -44,7 +44,7 @@
 		<mkdir dir="${build.dist.libs}" />
 	</target>
 
-	<target name="Compile" depends="Requirements,Version" description="Compile the source.">
+	<target name="Compile" depends="Requirements,Building Dirs" description="Compile the source.">
 		<echo>Compiling L2J Hellas.</echo>
 		<javac compiler="javac1.8" destdir="${build.classes}" optimize="on" encoding="utf-8" debug="true" debuglevel="lines,vars,source" source="1.8" target="1.8" nowarn="off" includeantruntime="true">
 			<src path="${src}" />
@@ -59,7 +59,6 @@
 				<attribute name="Built-By" value="L2JHellas" />
 				<attribute name="Built-Date" value="${build.tstamp}" />
 				<attribute name="Implementation-URL" value="http://l2jhellas.com/" />
-				<attribute name="Implementation-Version" value="${revision}" />
 				<attribute name="Main-Class" value="com.l2jhellas.Server" />
 				<attribute name="Class-Path" value=". c3p0-0.9.5-pre5.jar jna-3.5.1.jar mail.jar mysql-connector-java-8.0.15 Subnet-1.0.jar mchange-commons-java-0.2.6.2.jar" />
 			</manifest>
@@ -71,12 +70,8 @@
 		</copy>
 	</target>
 
-	<target name="dist" depends="Jar">
-		<concat destfile="${build.dist}/L2JHellas_CHANGELOG.txt">${l2jhellas.changelog}</concat>
-	</target>
-
 	<!-- Basic Build -->
-	<target name="Build" depends="dist">
+	<target name="Build" depends="Jar">
 		<echo>Creating L2J Hellas Server:</echo>
 		<copy todir="${build.dist.login}">
 			<fileset dir="config">
@@ -118,11 +113,6 @@
 		<copy todir="${build.dist.doc.3rdPartyLicenses}">
 			<fileset dir="doc/3rdPartyLicenses">
 				<include name="*.txt" />
-			</fileset>
-		</copy>
-		<copy todir="${build.dist.game}/config/Events">
-			<fileset dir="config/Events">
-				<include name="*.ini" />
 			</fileset>
 		</copy>
 		<copy todir="${build.dist.game}/config/Main">
@@ -178,67 +168,18 @@
 		</copy>
 
 		<!-- Finalizing -->
-		<zip destfile="${build}/L2J_Hellas_Core_${revision}.zip" basedir="${build.dist}" level="9" />
+		<zip destfile="${build}/L2J_Hellas_Core.zip" basedir="${build.dist}" level="9" />
 		<mkdir dir="D:/L2JHellas" />
 		<mkdir dir="D:/L2JHellas/Backup" />
 		<echo>Store L2jhellas.</echo>
-		<unzip src="${build}/L2J_Hellas_Core_${revision}.zip" dest="D:/L2JHellas" />
+		<unzip src="${build}/L2J_Hellas_Core.zip" dest="D:/L2JHellas" />
 		<echo>Backup L2jhellas.</echo>
-		<copy file="${build}/L2J_Hellas_Core_${revision}.zip" todir="D:/L2JHellas/Backup">
+		<copy file="${build}/L2J_Hellas_Core.zip" todir="D:/L2JHellas/Backup">
 		</copy>
 		<delete dir="${build}" />
-		<echo>L2J Hellas Server version:${revision} stored in D:/L2JHellas.</echo>
+		<echo>L2J Hellas Server stored in D:/L2JHellas.</echo>
 		<echo>Please visit our forum http://l2jhellas.com/</echo>
-		<echo>Owner Boorinio-AbsolutePower.</echo>
-	</target>
-
-	<!-- Version -->
-	<target name="Version" depends="Building Dirs" description="Get Changelog, Date, Version">
-	       <exec dir="${basedir}" executable="svn" outputproperty="l2jhellas.changelog">
-           <arg value="log" />
-           <arg value="--stop-on-copy" />
-       </exec>
-       <tstamp>
-           <format property="build.tstamp" pattern="dd/MM/yyyy HH:mm" />
-       </tstamp>
-       <exec dir="." executable="svnversion" outputproperty="revision" failifexecutionfails="false">
-           <arg value="-c" />
-           <redirector>
-               <outputfilterchain>
-                   <tokenfilter>
-                       <replaceregex pattern="[0-9]+\:" replace="" />
-                   </tokenfilter>
-               </outputfilterchain>
-           </redirector>
-       </exec>  
-		
-		<concat destfile="${build.dist.game}/config/Version/L2J Hellas Version.ini">
-L2jHellas Project details:
-			${line.separator}
-			version = ${revision}
-			${line.separator}
-			builddate = ${build.tstamp}
-			${line.separator}
-			Forum = http://l2jhellas.com/
-			${line.separator}
-			Svn = https://subversion.assembla.com/svn/l2hellas/trunk/
-			${line.separator}
-			Timeline = https://www.assembla.com/code/l2hellas/subversion/changesets
-		</concat>
-		<concat destfile="${build.dist.login}/config/Version/L2J Hellas Version.ini">
-L2jHellas Project details:
-			${line.separator}
-			version = ${revision}
-			${line.separator}
-			builddate = ${build.tstamp}
-			${line.separator}
-			Forum = http://l2jhellas.com/
-			${line.separator}
-			Svn = https://subversion.assembla.com/svn/l2hellas/trunk/
-			${line.separator}
-			Timeline = https://www.assembla.com/code/l2hellas/subversion/changesets
-		</concat>
-		<echo>version = ${revision}</echo>
+		<echo>Owner: AbsolutePower</echo>
 	</target>
 
 	<!-- Requirements -->

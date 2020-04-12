@@ -132,12 +132,10 @@ public class Q601_WatchingEyes extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMember(player, npc, "cond", "1");
-		if (partyMember == null)
+		QuestState st = getRandomPartyMember(player, npc, "cond", "1");
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
-		
+				
 		if (st.dropItems(ProofOfAvenger, 1, 100, 500000))
 			st.set("cond", "2");
 		

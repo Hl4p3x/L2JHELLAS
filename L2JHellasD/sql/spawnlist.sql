@@ -39082,7 +39082,7 @@ INSERT INTO spawnlist VALUES
 (NULL,'Schuttgart',1,'32072',84429,-144065,-1542,0,0,15666,60,0,0),
 (NULL,'ValleyOfLords',1,'32090',35652,-117571,-1272,0,0,0,60,0,0);
 INSERT INTO spawnlist VALUES
-(83837,'Server Spammor',1,'70016',82725,147884,-3464,0,0,19399,10,0,0);
+(83837,'Server Spammer',1,'70016',82725,147884,-3464,0,0,19399,10,0,0);
 
 -- Set first location as actual spawn locs on spawtable to avoid visual bugs on first cycle run
 UPDATE `spawnlist` SET `locx` = '-81681', `locy` = '241109', `locz` = '-3712' WHERE `id` = '57697' AND `npc_templateid` = '31356';

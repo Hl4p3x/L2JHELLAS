@@ -393,6 +393,11 @@ public class L2Clan
 		return _members.size();
 	}
 	
+	public int getOnlineMembersCount()
+	{
+		return (int) _members.values().stream().filter(m -> m.isOnline()).count();
+	}
+	
 	public int getSubPledgeMembersCount(int subpl)
 	{
 		int result = 0;
@@ -493,12 +498,7 @@ public class L2Clan
 	{
 		return _allyId;
 	}
-	
-	public String getAllyName()
-	{
-		return _allyName;
-	}
-	
+		
 	public void setAllyCrestId(int allyCrestId)
 	{
 		_allyCrestId = allyCrestId;
@@ -553,7 +553,11 @@ public class L2Clan
 	{
 		_allyName = allyName;
 	}
-	
+	public String getAllyName()
+	{
+		return _allyName;
+	}
+
 	public void setHasCastle(int hasCastle)
 	{
 		_hasCastle = hasCastle;
@@ -641,8 +645,7 @@ public class L2Clan
 		catch (SQLException e)
 		{
 			_log.warning(L2Clan.class.getName() + ": error while saving new clan to db ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 	

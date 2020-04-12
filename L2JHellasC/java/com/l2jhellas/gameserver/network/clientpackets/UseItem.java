@@ -19,6 +19,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.actor.item.Inventory;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.ItemList;
@@ -86,6 +87,9 @@ public final class UseItem extends L2GameClientPacket
 			activeChar.sendMessage(item.getItemName() + " cannot be used right now!");
 			return;
 		}
+		
+		if(activeChar.isInFunEvent() && !EventManager.getInstance().getCurrentEvent().onUseItem(activeChar,item)) 
+			return;
 		
 		if (item.getItem().getType2() == L2Item.TYPE2_QUEST)
 		{
@@ -303,11 +307,6 @@ public final class UseItem extends L2GameClientPacket
 		
 		if (item.isEquipable())
 		{
-			if (activeChar._haveFlagCTF)
-			{
-				activeChar.sendMessage("You can't equip an item while holding the flag");
-				return;
-			}
 			if (!activeChar.isGM() && (item.getEnchantLevel() > Config.ENCHANT_MAX_ALLOWED_WEAPON) || (item.getEnchantLevel() > Config.ENCHANT_MAX_ALLOWED_ARMOR) || (item.getEnchantLevel() > Config.ENCHANT_MAX_ALLOWED_JEWELRY))
 			{
 				activeChar.sendMessage("You have been kicked for using an item overenchanted!");

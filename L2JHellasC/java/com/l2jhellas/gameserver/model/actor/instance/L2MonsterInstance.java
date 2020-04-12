@@ -20,7 +20,6 @@ public class L2MonsterInstance extends L2Attackable
 	public L2MonsterInstance(int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);
-		_minionList = new MinionList(this);
 	}
 	
 	@Override
@@ -40,20 +39,21 @@ public class L2MonsterInstance extends L2Attackable
 	
 	@Override
 	public void onSpawn()
-	{
-		
+	{		
 		if (!isTeleporting())
 		{
-			if (_master != null)
+			if(getLeader() != null)
 			{
-				setIsRaidMinion(_master.isRaid());
-				_master.getMinionList().onMinionSpawn(this);
+				setIsRaidMinion(getLeader().isRaid());
+				getLeader().getMinionList().onMinionSpawn(this);
 			}
-			// delete spawned minions before dynamic minions spawned by script
-			else if (_minionList != null)
+			
+			if (hasMinions())
 				getMinionList().deleteSpawnedMinions();
 			
-			manageMinions();
+			if(getTemplate().getMinionData() != null)
+			  manageMinions();
+
 		}
 		
 		// dynamic script-based minions spawned here, after all preparations.
@@ -73,7 +73,7 @@ public class L2MonsterInstance extends L2Attackable
 			@Override
 			public void run()
 			{
-				_minionList.spawnMinions();
+				getMinionList().spawnMinions();
 			}
 		}, getMaintenanceInterval());
 	}
@@ -100,7 +100,7 @@ public class L2MonsterInstance extends L2Attackable
 	{
 		abortAllAttacks();
 		
-		if (_minionList != null)
+		if (hasMinions())
 			getMinionList().onMasterDie(true);
 		else if (_master != null)
 			_master.getMinionList().onMinionDie(this, 0);
@@ -123,7 +123,7 @@ public class L2MonsterInstance extends L2Attackable
 	{
 		return _minionList != null;
 	}
-	
+
 	public MinionList getMinionList()
 	{
 		if (_minionList == null)

@@ -33,34 +33,28 @@ public class QueenAnt extends AbstractNpcAI
 
 	private static List<L2Attackable> _Minions = new ArrayList<>();
 	
+	int[] mobs ={QUEEN,LARVA,NURSE,GUARD,ROYAL};
+	
 	public QueenAnt()
 	{
 		super("Queen Ant", "ai/individual");
-		int[] mobs =
-		{
-			QUEEN,
-			LARVA,
-			NURSE,
-			GUARD,
-			ROYAL
-		};
-		registerMobs(mobs);
+
+		addSpawnId(mobs);
+		addKillId(mobs);
+		addAggroRangeEnterId(mobs);
+		addFactionCallId(NURSE);
 		
 		StatsSet info = GrandBossManager.getStatsSet(QUEEN);
 		int status = GrandBossManager.getInstance().getBossStatus(QUEEN);
 		if (status == DEAD)
 		{
-			// load the unlock date and time for queen ant from DB
 			long temp = info.getLong("respawn_time") - System.currentTimeMillis();
-			// if queen ant is locked until a certain time, mark it so and start the unlock timer
-			// the unlock time has not yet expired.
 			if (temp > 0)
 				startQuestTimer("queen_unlock", temp, null, null, false);
 			else
 			{
-				// the time has already expired while the server was offline. Immediately spawn queen ant.
-				L2GrandBossInstance queen = (L2GrandBossInstance) addSpawn(QUEEN, -21610, 181594, -5734, 0, false, 0, false);
 				GrandBossManager.setBossStatus(QUEEN, ALIVE);
+				L2GrandBossInstance queen = (L2GrandBossInstance) addSpawn(QUEEN, -21610, 181594, -5734, 0, false, 0, false);
 				spawnBoss(queen);
 			}
 		}
@@ -72,6 +66,12 @@ public class QueenAnt extends AbstractNpcAI
 			int heading = info.getInteger("heading");
 			int hp = info.getInteger("currentHP");
 			int mp = info.getInteger("currentMP");
+			if (!_Zone.isInsideZone(loc_x, loc_y, loc_z))
+			{
+				loc_x = -21610;
+				loc_y = 181594;
+				loc_z = -5734;
+			}
 			L2GrandBossInstance queen = (L2GrandBossInstance) addSpawn(QUEEN, loc_x, loc_y, loc_z, heading, false, 0, false);
 			queen.setCurrentHpMp(hp, mp);
 			spawnBoss(queen);
@@ -80,14 +80,15 @@ public class QueenAnt extends AbstractNpcAI
 	
 	public void spawnBoss(L2GrandBossInstance npc)
 	{
-		GrandBossManager.addBoss(npc);
 		if (Rnd.get(100) < 33)
 			_Zone.movePlayersTo(-19480, 187344, -5600);
 		else if (Rnd.get(100) < 50)
 			_Zone.movePlayersTo(-17928, 180912, -5520);
 		else
 			_Zone.movePlayersTo(-23808, 182368, -5600);
+		
 		GrandBossManager.addBoss(npc);
+		
 		startQuestTimer("action", 10000, npc, null, true);
 		// Spawn minions
 		addSpawn(LARVA, -21600, 179482, -5846, Rnd.get(360), false, 0, false).setIsRaidMinion(true);

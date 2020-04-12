@@ -193,7 +193,8 @@ public class AdminData implements DocumentParser
 	
 	public void deleteGm(L2PcInstance player)
 	{
-		_gmList.remove(player);
+		if (_gmList.containsKey(player))
+		    _gmList.remove(player);
 	}
 	
 	public void showGm(L2PcInstance player)

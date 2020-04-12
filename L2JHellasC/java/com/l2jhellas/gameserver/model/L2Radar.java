@@ -112,7 +112,7 @@ public final class L2Radar
 					return;
 				
 				_me.sendPacket(new RadarControl(1, 1, _me.getX(), _me.getY(), _me.getZ()));
-				if (_myTarget == null || _myTarget.isOnline() == 0 || !_myTarget._haveFlagCTF)
+				if (_myTarget == null || _myTarget.isOnline() == 0)
 					return;
 				
 				_me.sendPacket(new RadarControl(0, 1, _myTarget.getX(), _myTarget.getY(), _myTarget.getZ()));

@@ -279,6 +279,8 @@ public enum ClassId
 				// remove restricted classes for wizards
 				_subclasses.removeAll(EnumSet.of(SORCERER, SPELLSINGER, SPELLHOWLER));
 				break;
+			default :
+				break;
 		}
 	}
 	

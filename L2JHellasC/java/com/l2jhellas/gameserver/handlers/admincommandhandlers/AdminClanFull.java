@@ -27,7 +27,10 @@ public class AdminClanFull implements IAdminCommandHandler
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_TARGET));
 				return false;
 			}
-					
+				
+			if(player.getClan() == null)
+				return false;
+			
 			if (!player.isClanLeader())
 			{
 				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_IS_NOT_A_CLAN_LEADER).addCharName(player));

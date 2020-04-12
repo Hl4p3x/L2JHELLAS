@@ -8,6 +8,7 @@ import Extensions.RankSystem.PvpTable;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.controllers.TradeController;
+import com.l2jhellas.gameserver.instancemanager.BufferManager;
 import com.l2jhellas.gameserver.instancemanager.CastleManorManager;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jhellas.gameserver.instancemanager.FourSepulchersManager;
@@ -113,6 +114,9 @@ public class Shutdown extends Thread
 			{
 			}
 			
+			BufferManager.getInstance().saveSchemes();
+			_log.info(Shutdown.class.getSimpleName() + ": Scheme data have been saved.");
+
 			// Seven Signs data is now saved along with Festival data.
 			if (!SevenSigns.getInstance().isSealValidationPeriod())
 				SevenSignsFestival.getInstance().saveFestivalData(false);

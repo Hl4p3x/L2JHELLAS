@@ -72,7 +72,13 @@ public enum Sound implements IAudio
 	// Ships
 	ITEMSOUND_SHIP_ARRIVAL_DEPARTURE("itemsound.ship_arrival_departure"),
 	ITEMSOUND_SHIP_5MIN("itemsound.ship_5min"),
+	
+	SIEGE_SOUND_START("systemmsg_e.17"),
+	SIEGE_SOUND_END("systemmsg_e.18"),
+	
 	ITEMSOUND_SHIP_1MIN("itemsound.ship_1min");
+	
+
 	
 	private final PlaySound _playSound;
 	

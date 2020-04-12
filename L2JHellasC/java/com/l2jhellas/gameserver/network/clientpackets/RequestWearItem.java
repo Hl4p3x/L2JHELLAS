@@ -97,7 +97,10 @@ public final class RequestWearItem extends L2GameClientPacket
 			return;
 		
 		if (!FloodProtectors.performAction(getClient(), Action.USE_ITEM))
+		{
+			player.sendMessage("You are using this action too fast!");
 			return;
+		}
 		
 		// If Alternate rule Karma punishment is set to true, forbid Wear to player with Karma
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_SHOP && player.getKarma() > 0)

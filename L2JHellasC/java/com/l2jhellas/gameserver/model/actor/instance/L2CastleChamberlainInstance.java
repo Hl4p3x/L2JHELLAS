@@ -288,7 +288,7 @@ public class L2CastleChamberlainInstance extends L2NpcInstance
 					player.sendMessage("Your Leader is not online.");
 				}
 				
-				else if (leader.atEvent || leader.isinZodiac || leader.isInFunEvent())
+				else if (leader.isInFunEvent())
 				{
 					player.sendMessage("Your leader is in an event.");
 					return;

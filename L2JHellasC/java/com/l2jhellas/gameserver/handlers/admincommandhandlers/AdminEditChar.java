@@ -258,8 +258,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				}
 								
 				if ((ClassId.getClassId(classidval) != null) && (player.getClassId().getId() != classidval))
-				{
-			
+				{		
 					player.setClassId(classidval);
 					
 					if (player.isSubClassActive())

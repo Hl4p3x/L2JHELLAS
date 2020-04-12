@@ -38,9 +38,9 @@ public class RequestGiveNickName extends L2GameClientPacket
 			return;
 		}
 		
-		if (activeChar.isinZodiac)
+		if (activeChar.isRegisteredInFunEvent() || activeChar.isInFunEvent())
 		{
-			activeChar.sendMessage("Can't change your title while in a Zodiac Event");
+			activeChar.sendMessage("you are not allowed to do that,unregister from event or wait to finish!");
 			return;
 		}
 		

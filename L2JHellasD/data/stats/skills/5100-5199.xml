@@ -45,24 +45,30 @@
 		</for>
 	</skill>
 	<skill id="5104" levels="3" name="Battle Force">
+	    <set name="magicLvl" val="70" />
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="CONT" />
 		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
 		<set name="castRange" val="1000" />
+		<set name="effectRange" val="1100" />
 		<for>
-			<effect count="0x7fffffff" name="Force" time="600" val="15" stackOrder="0" stackType="BattleForce">
-				<mul order="0x30" stat="pAtk" val="1.10" />
+		    <effect count="1" name="Fusion" time="15" val="15" stackOrder="0" stackType="BattleForce">
+				<mul order="0x30" stat="pAtk" val="1.13" />
 			</effect>
 		</for>
 	</skill>
 	<skill id="5105" levels="3" name="Spell Force">
+	    <set name="magicLvl" val="70" />
 		<set name="target" val="TARGET_ONE" />
 		<set name="skillType" val="CONT" />
 		<set name="operateType" val="OP_ACTIVE" />
+		<set name="isMagic" val="true" />
 		<set name="castRange" val="1000" />
+		<set name="effectRange" val="1100" />
 		<for>
-			<effect count="0x7fffffff" name="Force" time="600" val="15" stackOrder="0" stackType="SpellForce">
-				<mul order="0x30" stat="mAtk" val="1.10" />
+		    <effect count="1" name="Fusion" time="15" val="15" stackOrder="0" stackType="SpellForce">
+				<mul order="0x30" stat="mAtk" val="1.13" />
 			</effect>
 		</for>
 	</skill>

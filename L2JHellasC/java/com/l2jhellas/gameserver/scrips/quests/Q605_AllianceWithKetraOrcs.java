@@ -318,26 +318,20 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMemberState(player, npc, STATE_STARTED);
-		if (partyMember == null)
+		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+		if (st == null)
 			return null;
 		
 		final int npcId = npc.getNpcId();
 		
 		// Support for Q606.
-		QuestState st = partyMember.getQuestState(qn2);
-		if (st != null && Rnd.get(1) == 0)
+		final QuestState st2 = st.getPlayer().getQuestState(qn2);
+		if (st2 != null && Rnd.nextBoolean() && ChanceMane.containsKey(npcId))
 		{
-			int chance = ChanceMane.get(npcId);
-			if (chance != 0)
-			{
-				st.dropItems(Mane, 1, -1, chance);
-				return null;
-			}
+			st2.dropItems(Mane, 1, 0, ChanceMane.get(npcId));
+			return null;
 		}
-		
-		st = partyMember.getQuestState(qn);
-		
+				
 		int cond = st.getInt("cond");
 		if (cond == 6)
 			return null;

@@ -143,14 +143,14 @@ public class Q350_EnhanceYourWeapon extends Quest
 				final L2Attackable mob = (L2Attackable) npc;
 				final int chance = Rnd.get(100);
 				
-				for (L2PcInstance player : getPartyMembersState(killer, npc, Quest.STATE_STARTED))
-					tryToStageCrystal(player, mob, npcInfo, chance);
+				for (QuestState qs : getPartyMembersState(killer, npc, Quest.STATE_STARTED))
+					tryToStageCrystal(qs.getPlayer(), mob, npcInfo, chance);
 				break;
 			
 			case PARTY_ONE_RANDOM:
-				final L2PcInstance player = getRandomPartyMemberState(killer, npc, Quest.STATE_STARTED);
-				if (player != null)
-					tryToStageCrystal(player, (L2Attackable) npc, npcInfo, Rnd.get(100));
+				final QuestState qs = getRandomPartyMemberState(killer, npc, Quest.STATE_STARTED);
+				if (qs != null)
+					tryToStageCrystal(qs.getPlayer(), (L2Attackable) npc, npcInfo, Rnd.get(100));
 				break;
 			
 			case LAST_HIT:

@@ -112,12 +112,10 @@ public class Q624_TheFinestIngredients_Part1 extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMember(player, npc, "1");
-		if (partyMember == null)
+		QuestState st = getRandomPartyMember(player, npc, "1");
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
-		
+				
 		switch (npc.getNpcId())
 		{
 			case NEPENTHES:

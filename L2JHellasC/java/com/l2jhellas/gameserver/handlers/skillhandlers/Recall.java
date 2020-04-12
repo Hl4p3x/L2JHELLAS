@@ -53,7 +53,7 @@ public class Recall implements ISkillHandler
 					
 					// Check to see if the current player target is in TvT , CTF
 					// or ViP events.
-					if (targetChar._inEventCTF || targetChar._inEventTvT || targetChar._inEventVIP)
+					if (targetChar.isInFunEvent())
 					{
 						targetChar.sendMessage("You may not use an escape skill in a Event.");
 						continue;

@@ -87,12 +87,10 @@ public class Q300_HuntingLetoLizardman extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		L2PcInstance partyMember = getRandomPartyMember(player, npc, "1");
-		if (partyMember == null)
+		QuestState st = getRandomPartyMember(player, npc, "1");
+		if (st == null)
 			return null;
-		
-		QuestState st = partyMember.getQuestState(qn);
-		
+				
 		if (st.dropItems(BRACELET, 1, 60, 330000))
 			st.set("cond", "2");
 		

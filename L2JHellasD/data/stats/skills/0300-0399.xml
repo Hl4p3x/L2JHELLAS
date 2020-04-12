@@ -1272,6 +1272,7 @@
 		<set name="isDebuff" val="true" />
 		<set name="reuseDelay" val="30000" />
 		<set name="hitTime" val="1800" />
+		<set name="coolTime" val="730" />
 		<set name="baseCritRate" val="15" />
 		<for>
 			<effect count="1" name="RemoveTarget" time="1" val="0">

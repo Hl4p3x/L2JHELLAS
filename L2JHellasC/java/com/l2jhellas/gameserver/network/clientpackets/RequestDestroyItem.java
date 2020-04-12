@@ -2,7 +2,6 @@ package com.l2jhellas.gameserver.network.clientpackets;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.PetData;
@@ -17,12 +16,10 @@ import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
 import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
-import com.l2jhellas.util.Util;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public final class RequestDestroyItem extends L2GameClientPacket
 {
-	private static Logger _log = Logger.getLogger(RequestDestroyItem.class.getName());
 	private static final String _C__59_REQUESTDESTROYITEM = "[C] 59 RequestDestroyItem";
 	
 	private int _objectId;
@@ -45,14 +42,13 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		
 		if (!FloodProtectors.performAction(getClient(), Action.USE_ITEM))
 		{
-			activeChar.sendMessage("You destroying items too fast.");
+			activeChar.sendMessage("You are using this action too fast!");
 			return;
 		}
 		
 		if (_count <= 0)
 		{
-			if (_count < 0)
-				Util.handleIllegalPlayerAction(activeChar, "[RequestDestroyItem] count < 0! ban! oId: " + _objectId + " owner: " + activeChar.getName(), Config.DEFAULT_PUNISH);
+			activeChar.sendPacket(SystemMessageId.CANNOT_DESTROY_NUMBER_INCORRECT);
 			return;
 		}
 		
@@ -93,10 +89,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		}
 		
 		if (!itemToRemove.isStackable() && count > 1)
-		{
-			Util.handleIllegalPlayerAction(activeChar, "[RequestDestroyItem] count > 1 but item is not stackable! oid: " + _objectId + " owner: " + activeChar.getName(), Config.DEFAULT_PUNISH);
 			return;
-		}
 		
 		if (_count > itemToRemove.getCount())
 			count = itemToRemove.getCount();

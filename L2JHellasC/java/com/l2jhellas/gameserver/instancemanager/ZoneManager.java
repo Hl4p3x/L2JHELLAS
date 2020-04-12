@@ -1,6 +1,5 @@
 package com.l2jhellas.gameserver.instancemanager;
 
-import java.io.File;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,7 +12,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-import com.l2jhellas.Config;
+import com.l2jhellas.gameserver.engines.DocumentParser;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
@@ -27,9 +26,8 @@ import com.l2jhellas.gameserver.model.zone.form.ZoneNPoly;
 import com.l2jhellas.gameserver.model.zone.type.L2ArenaZone;
 import com.l2jhellas.gameserver.model.zone.type.L2BossZone;
 import com.l2jhellas.gameserver.model.zone.type.L2OlympiadStadiumZone;
-import com.l2jhellas.util.XMLDocumentFactory;
 
-public class ZoneManager
+public class ZoneManager implements DocumentParser
 {
 	private static final Logger _log = Logger.getLogger(ZoneManager.class.getName());
 	
@@ -94,46 +92,20 @@ public class ZoneManager
 		
 	}
 	
-	private final void load()
+	@Override
+	public void load()
 	{
-		_log.info("Loading zones...");
 		_classZones.clear();
-		
-		// Load the zone xml
-		try
-		{
-			final File mainDir = new File("./data/xml/zones");
-			if (!mainDir.isDirectory())
-			{
-				_log.severe(ZoneManager.class.getName() + ": Main dir " + mainDir.getAbsolutePath() + " hasn't been found.");
-				return;
-			}
-			
-			int fileCounter = 0;
-			for (final File file : mainDir.listFiles())
-			{
-				if (file.isFile() && file.getName().endsWith(".xml"))
-				{
-					// Set dynamically the ID range of next XML loading file.
-					_lastDynamicId = fileCounter++ * 1000;
-					loadFileZone(file);
-				}
-			}
-		}
-		catch (Exception e)
-		{
-			_log.severe(ZoneManager.class.getName() + ": Error while loading zones.");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
-			return;
-		}
-		
-		_log.info("ZoneManager: loaded " + _classZones.size() + " zones classes and " + getSize() + " zones.");
+		_log.info("Loading zones...");
+		parseDatapackDirectory("data/xml/zones", false);
+		_log.info("ZoneManager: loaded " + _classZones.size() + " zones classes and " + getSize() + " zones.");		
 	}
 	
-	private void loadFileZone(final File f) throws Exception
+	@Override
+	public void parseDocument(Document doc)
 	{
-		final Document doc = XMLDocumentFactory.getInstance().loadDocument(f);
+		_lastDynamicId = (_lastDynamicId / 1000) * 1000 + 1000;
+
 		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
 		{
 			if ("list".equalsIgnoreCase(n.getNodeName()))
@@ -149,14 +121,9 @@ public class ZoneManager
 					{
 						final NamedNodeMap nnmd = d.getAttributes();
 						
-						// Generate dynamically zone's ID.
-						int zoneId = _lastDynamicId++;
-						
-						// Dynamic id is replaced by handwritten id if existing.
 						attribute = nnmd.getNamedItem("id");
-						if (attribute != null)
-							zoneId = Integer.parseInt(attribute.getNodeValue());
-						
+						final int zoneId = attribute == null ? _lastDynamicId++ : Integer.parseInt(attribute.getNodeValue());
+
 						final String zoneType = nnmd.getNamedItem("type").getNodeValue();
 						final String zoneShape = nnmd.getNamedItem("shape").getNodeValue();
 						final int minZ = Integer.parseInt(nnmd.getNamedItem("minZ").getNodeValue());
@@ -164,21 +131,22 @@ public class ZoneManager
 						
 						// Create the zone
 						Class<?> newZone;
+						Constructor<?> zoneConstructor;
+						L2ZoneType temp;
 						try
 						{
 							newZone = Class.forName("com.l2jhellas.gameserver.model.zone.type.L2" + zoneType);
+							zoneConstructor = newZone.getConstructor(int.class);
+							temp = (L2ZoneType) zoneConstructor.newInstance(zoneId);
 						}
-						catch (ClassNotFoundException e)
+						catch (Exception e)
 						{
-							_log.warning(ZoneManager.class.getName() + ": No such zone type: " + zoneType + " in file: " + f.getName());
+							_log.warning(ZoneManager.class.getName() + ": No such zone type: " + zoneType + " in file: " + doc.getClass().getSimpleName());
 							continue;
 						}
-						
-						Constructor<?> zoneConstructor = newZone.getConstructor(int.class);
-						L2ZoneType temp = (L2ZoneType) zoneConstructor.newInstance(zoneId);
-						
+											
 						try
-						{
+						{						
 							List<int[]> rs = new ArrayList<>();
 							
 							// loading from XML first
@@ -198,7 +166,7 @@ public class ZoneManager
 							
 							if (coords == null || coords.length == 0)
 							{
-								_log.warning(ZoneManager.class.getName() + ": missing data for zone: " + zoneId + " on file: " + f.getName());
+								_log.warning(ZoneManager.class.getName() + ": missing data for zone: " + zoneId + " on file: " + doc.getClass().getSimpleName());
 								continue;
 							}
 							
@@ -213,7 +181,7 @@ public class ZoneManager
 									temp.setZone(new ZoneCuboid(coords[0][0], coords[1][0], coords[0][1], coords[1][1], minZ, maxZ));
 								else
 								{
-									_log.warning(ZoneManager.class.getName() + ": Missing cuboid vertex in sql data for zone: " + zoneId + " in file: " + f.getName());
+									_log.warning(ZoneManager.class.getName() + ": Missing cuboid vertex in sql data for zone: " + zoneId + " in file: " + doc.getClass().getSimpleName());
 									continue;
 								}
 							}
@@ -233,7 +201,7 @@ public class ZoneManager
 								}
 								else
 								{
-									_log.warning(ZoneManager.class.getName() + ": Bad data for zone: " + zoneId + " in file: " + f.getName());
+									_log.warning(ZoneManager.class.getName() + ": Bad data for zone: " + zoneId + " in file: " + doc.getClass().getSimpleName());
 									continue;
 								}
 							}
@@ -247,13 +215,13 @@ public class ZoneManager
 									temp.setZone(new ZoneCylinder(coords[0][0], coords[0][1], minZ, maxZ, zoneRad));
 								else
 								{
-									_log.warning(ZoneManager.class.getName() + ": Bad data for zone: " + zoneId + " in file: " + f.getName());
+									_log.warning(ZoneManager.class.getName() + ": Bad data for zone: " + zoneId + " in file: " + doc.getClass().getSimpleName());
 									continue;
 								}
 							}
 							else
 							{
-								_log.warning(ZoneManager.class.getName() + ": Unknown shape: " + zoneShape + " in file: " + f.getName());
+								_log.warning(ZoneManager.class.getName() + ": Unknown shape: " + zoneShape + " in file: " + doc.getClass().getSimpleName());
 								continue;
 							}
 						}
@@ -291,9 +259,7 @@ public class ZoneManager
 									((L2SpawnZone) temp).addSpawn(spawnX, spawnY, spawnZ);
 							}
 						}
-						if (checkId(zoneId))
-							_log.config("Caution: Zone (" + zoneId + ") from file: " + f.getName() + " overrides previos definition.");
-						
+
 						addZone(zoneId, temp);
 						
 						// Register the zone into any world region it intersects with...
@@ -315,7 +281,7 @@ public class ZoneManager
 			}
 		}
 	}
-	
+
 	public int getSize()
 	{
 		int i = 0;
@@ -324,16 +290,6 @@ public class ZoneManager
 			i += map.size();
 		}
 		return i;
-	}
-	
-	public boolean checkId(int id)
-	{
-		for (Map<Integer, ? extends L2ZoneType> map : _classZones.values())
-		{
-			if (map.containsKey(id))
-				return true;
-		}
-		return false;
 	}
 	
 	@SuppressWarnings("unchecked")

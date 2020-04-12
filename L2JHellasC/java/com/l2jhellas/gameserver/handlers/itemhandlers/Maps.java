@@ -6,8 +6,6 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.serverpackets.RadarControl;
 import com.l2jhellas.gameserver.network.serverpackets.ShowMiniMap;
-import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
 
 public class Maps implements IItemHandler
 {
@@ -20,9 +18,6 @@ public class Maps implements IItemHandler
 			return;
 			
 		final L2PcInstance activeChar = (L2PcInstance) playable;
-		
-		if (!FloodProtectors.performAction(activeChar.getClient(), Action.USE_ITEM))
-			return;
 		
 		final int itemId = item.getItemId();
 		

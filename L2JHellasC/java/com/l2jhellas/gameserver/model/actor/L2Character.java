@@ -63,7 +63,7 @@ import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.actor.stat.CharStat;
 import com.l2jhellas.gameserver.model.actor.status.CharStatus;
 import com.l2jhellas.gameserver.model.entity.Castle;
-import com.l2jhellas.gameserver.model.entity.events.engines.ZodiacMain;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadGameManager;
 import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadGameTask;
 import com.l2jhellas.gameserver.model.quest.Quest;
@@ -75,11 +75,11 @@ import com.l2jhellas.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.Attack;
 import com.l2jhellas.gameserver.network.serverpackets.ChangeMoveType;
-import com.l2jhellas.gameserver.network.serverpackets.CharMoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.L2GameServerPacket;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillCanceld;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillLaunched;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillUse;
+import com.l2jhellas.gameserver.network.serverpackets.MoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.Revive;
 import com.l2jhellas.gameserver.network.serverpackets.ServerObjectInfo;
 import com.l2jhellas.gameserver.network.serverpackets.SetupGauge;
@@ -385,7 +385,7 @@ public abstract class L2Character extends L2Object
 	}
 	
 	public void doAttack(L2Character target,boolean stopMov)
-	{
+	{			
 		if (isAlikeDead() || target == null || !target.isVisible() || (this instanceof L2Npc && target.isAlikeDead()) || !isInSurroundingRegion(target) || (this instanceof L2PcInstance && target.isDead() && !target.isFakeDeath()) || (this instanceof L2PcInstance && isDead()) || (target instanceof L2PcInstance && ((L2PcInstance) target).getDuelState() == DuelState.DEAD))
 		{
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -407,7 +407,7 @@ public abstract class L2Character extends L2Object
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
+
 		if (this instanceof L2Summon && target.getObjectId() == ((L2Summon) this).getOwner().getObjectId())
 		{
 			((L2Summon) this).getOwner().sendPacket(SystemMessageId.INCORRECT_TARGET);
@@ -416,50 +416,60 @@ public abstract class L2Character extends L2Object
 		
 		if (isAttackingDisabled())
 			return;
-		
+
 		if (target instanceof L2DoorInstance && !((L2DoorInstance) target).isAttackable(this))
 			return;
 		
-		if (this instanceof L2PcInstance)
-		{
-			if (((L2PcInstance) this).inObserverMode())
+		final L2PcInstance player = getActingPlayer();
+		
+		if (player != null)
+		{		
+			if (player.inObserverMode())
 			{
-				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.OBSERVERS_CANNOT_PARTICIPATE));
-				sendPacket(ActionFailed.STATIC_PACKET);
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.OBSERVERS_CANNOT_PARTICIPATE));
+				player.sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
-			if (target instanceof L2PcInstance)
+			final L2PcInstance TargetPlayer = target.getActingPlayer();
+
+			if (TargetPlayer != null)
 			{
-				final OlympiadGameTask OlyTask = OlympiadGameManager.getInstance().getOlympiadTask(((L2PcInstance) this).getOlympiadGameId());
-				if (((L2PcInstance) this).isInOlympiadMode() && ((L2PcInstance) this).isOlympiadStart() && OlyTask != null && !OlyTask.isGameStarted())
+				if(player.isInFunEvent() && TargetPlayer.isInFunEvent() && !EventManager.getInstance().canAttack(player,TargetPlayer))
+				{
+					player.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+				
+				final OlympiadGameTask OlyTask = OlympiadGameManager.getInstance().getOlympiadTask(player.getOlympiadGameId());
+				if (player.isInOlympiadMode() && player.isOlympiadStart() && OlyTask != null && !OlyTask.isGameStarted())
 				{
 					sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
 
-				if (((L2PcInstance) target).isCursedWeaponEquiped() && ((L2PcInstance) this).getLevel() <= 20)
+				if (TargetPlayer.isCursedWeaponEquiped() && player.getLevel() <= 20)
 				{
-					((L2PcInstance) this).sendMessage("Can't attack a cursed player when under level 21.");
-					sendPacket(ActionFailed.STATIC_PACKET);
+					player.sendMessage("Can't attack a cursed player when under level 21.");
+					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
 				
-				if (((L2PcInstance) this).isCursedWeaponEquiped() && ((L2PcInstance) target).getLevel() <= 20)
+				if (player.isCursedWeaponEquiped() && TargetPlayer.getLevel() <= 20)
 				{
-					((L2PcInstance) this).sendMessage("Can't attack a newbie player using a cursed weapon.");
-					sendPacket(ActionFailed.STATIC_PACKET);
+					player.sendMessage("Can't attack a newbie player using a cursed weapon.");
+					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
-				if (getObjectId() == target.getObjectId())
+				if (player.getObjectId() == TargetPlayer.getObjectId())
 				{
-					sendPacket(ActionFailed.STATIC_PACKET);
+					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
 			}
 		}
 		
-		if(isPlayer() && stopMov)
+		if(player != null && stopMov)
 		   stopMove(null);
 		
 		// Get the active weapon instance (always equipped in the right hand)
@@ -473,8 +483,7 @@ public abstract class L2Character extends L2Object
 		{
 			// You can't make an attack with a fishing pole.
 			((L2PcInstance) this).sendPacket(SystemMessageId.CANNOT_ATTACK_WITH_FISHING_POLE);
-			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			
+			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);			
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -494,14 +503,14 @@ public abstract class L2Character extends L2Object
 		if ((weaponType == L2WeaponType.BOW))
 		{
 			// Check for arrows and MP
-			if (this instanceof L2PcInstance)
+			if (player != null)
 			{
 				// Checking if target has moved to peace zone - only for player-bow attacks at the moment
 				// Other melee is checked in movement code and for offensive spells a check is done every time
-				if (isInsidePeaceZone(this, target))
+				if (player.isInsidePeaceZone(player, target))
 				{
-					getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-					sendPacket(ActionFailed.STATIC_PACKET);
+					player.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
 				
@@ -509,22 +518,18 @@ public abstract class L2Character extends L2Object
 				if (_disableBowAttackEndTime <= GameTimeController.getInstance().getGameTicks())
 				{
 					// Verify if L2PcInstance owns enough MP
-					int saMpConsume = (int) getStat().calcStat(Stats.MP_CONSUME, 0, null, null);
+					int saMpConsume = (int) player.getStat().calcStat(Stats.MP_CONSUME, 0, null, null);
 					int mpConsume = saMpConsume == 0 ? weaponItem.getMpConsume() : saMpConsume;
 					
-					if (getCurrentMp() < mpConsume)
+					if (player.getCurrentMp() < mpConsume)
 					{
-						// If L2PcInstance doesn't have enough MP, stop the
-						// attack
-						
-						ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(CtrlEvent.EVT_READY_TO_ACT), 1000);
-						
-						sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_MP));
-						sendPacket(ActionFailed.STATIC_PACKET);
+						ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(CtrlEvent.EVT_READY_TO_ACT), 1000);						
+						player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_MP));
+						player.sendPacket(ActionFailed.STATIC_PACKET);
 						return;
 					}
 					// If L2PcInstance have enough MP, the bow consumes it
-					getStatus().reduceMp(mpConsume);
+					player.getStatus().reduceMp(mpConsume);
 					
 					// Set the period of bow non re-use
 					_disableBowAttackEndTime = 5 * GameTimeController.TICKS_PER_SECOND + GameTimeController.getInstance().getGameTicks();
@@ -535,18 +540,17 @@ public abstract class L2Character extends L2Object
 					// moment
 					ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(CtrlEvent.EVT_READY_TO_ACT), 1000);
 					
-					sendPacket(ActionFailed.STATIC_PACKET);
+					player.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
 				}
 				
 				// Equip arrows needed in left hand and send a Server->Client packet ItemList to the L2PcINstance then return True
-				if (!checkAndEquipArrows())
+				if (!player.checkAndEquipArrows())
 				{
 					// Cancel the action because the L2PcInstance have no arrow
-					getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-					
-					sendPacket(ActionFailed.STATIC_PACKET);
-					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ARROWS));
+					player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);					
+					player.sendPacket(ActionFailed.STATIC_PACKET);
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_ARROWS));
 					return;
 				}
 			}
@@ -562,8 +566,8 @@ public abstract class L2Character extends L2Object
 			setCurrentCp(getCurrentCp() - 10);
 		
 		// Recharge any active auto soulshot tasks for player (or player's summon if one exists).
-		if (this instanceof L2PcInstance)
-			((L2PcInstance) this).rechargeAutoSoulShot(true, false, false);
+		if (player != null)
+			player.rechargeAutoSoulShot(true, false, false);
 		else if (this instanceof L2Summon)
 			((L2Summon) this).getOwner().rechargeAutoSoulShot(true, false, true);
 		
@@ -631,10 +635,7 @@ public abstract class L2Character extends L2Object
 			{
 				hitted = doAttackHitSimple(attack, target,timeAtk/2);
 			}
-		}
-		
-		// Flag the attacker if it's a L2PcInstance outside a PvP area
-		L2PcInstance player = getActingPlayer();		
+		}		
 
 		getAI().clientStartAutoAttack();
 
@@ -659,7 +660,7 @@ public abstract class L2Character extends L2Object
 				}
 				else if (player.isHero())
 				{
-					if (target instanceof L2PcInstance && ((L2PcInstance) target).isCursedWeaponEquiped())
+					if (target.isPlayer() && ((L2PcInstance) target).isCursedWeaponEquiped())
 						target.setCurrentCp(0);
 				}
 
@@ -1236,7 +1237,7 @@ public abstract class L2Character extends L2Object
 			stopAllEffects();
 		
 		calculateRewards(killer);
-		
+				
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
 		broadcastStatusUpdate();
 		
@@ -1278,25 +1279,14 @@ public abstract class L2Character extends L2Object
 			setIsKilledAlready(false);
 			
 			if (this instanceof L2Playable && ((L2Playable) this).isPhoenixBlessed())
-			{
 				((L2Playable) this).stopPhoenixBlessing(null);
-			}
 			
-			_status.setCurrentCp(getMaxCp() * Config.RESPAWN_RESTORE_CP);
-			_status.setCurrentHp(getMaxHp() * Config.RESPAWN_RESTORE_HP);
-			// _status.setCurrentMp(getMaxMp() * Config.RESPAWN_RESTORE_MP);
+			_status.setCurrentHp(getMaxHp() * Config.RESPAWN_RESTORE_HP);		
 			
 			// Start broadcast status
 			broadcastPacket(new Revive(this));
 			
-			ZoneManager.getInstance().getRegion(this).onRevive(this);
-			
-			final L2PcInstance player = getActingPlayer();
-			
-			if (player != null && player.isinZodiac)
-			{
-				ZodiacMain.OnRevive(player);
-			}
+			ZoneManager.getInstance().getRegion(this).onRevive(this);			
 		}
 		else
 			setIsPendingRevive(true);
@@ -1409,6 +1399,11 @@ public abstract class L2Character extends L2Object
 	{
 		_isAfraid = value;
 	}
+		
+	public final boolean isDead()
+	{
+		return !(isFakeDeath()) && !(getCurrentHp() > 0.5);
+	}
 	
 	public final boolean isAlikeDead()
 	{
@@ -1439,11 +1434,7 @@ public abstract class L2Character extends L2Object
 	{
 		_isConfused = value;
 	}
-	
-	public final boolean isDead()
-	{
-		return !(isFakeDeath()) && !(getCurrentHp() > 0.5);
-	}
+
 	
 	public final boolean isFakeDeath()
 	{
@@ -2795,9 +2786,7 @@ public abstract class L2Character extends L2Object
 	{
 		return _target;
 	}
-	
-	private final Location _tempMovePos = new Location();
-	
+
 	public void moveToLocation(int x, int y, int z, int offset)
 	{
 		final float speed = getStat().getMoveSpeed();
@@ -2811,14 +2800,6 @@ public abstract class L2Character extends L2Object
 		final int curZ = super.getZ();
 		
 		if (curX == x && curY == y && curZ == z)
-		{
-			ThreadPoolManager.getInstance().executeAi(() -> getAI().notifyEvent(CtrlEvent.EVT_ARRIVED));
-			return;
-		}
-
-		Location destPos = new Location(x, y, z);
-			
-		if(isMoving() && !getAI().isFollowing() && _tempMovePos.equals(destPos))
 			return;
 		
 		double dx = (x - curX);
@@ -2878,99 +2859,99 @@ public abstract class L2Character extends L2Object
 		m.onGeodataPathIndex = -1;
 		m.disregardingGeodata = false;
 
-		synchronized (m.geoPath)
+		if (Config.GEODATA && !isFloating)
 		{
-			if (Config.GEODATA && !isFloating)
+			double originalDistance = distance;
+			int originalX = x;
+			int originalY = y;
+			int originalZ = z;
+			int gtx = (originalX - L2World.WORLD_X_MIN) >> 4;
+			int gty = (originalY - L2World.WORLD_Y_MIN) >> 4;
+
+			if (this instanceof L2Attackable || this instanceof L2PcInstance
+			|| (this instanceof L2Summon && !(getAI().getIntention() == AI_INTENTION_FOLLOW)) // assuming intention_follow only when following owner																																																																														 																										 
+			|| isAfraid() || this instanceof L2RiftInvaderInstance)
 			{
-				double originalDistance = distance;
-				int originalX = x;
-				int originalY = y;
-				int originalZ = z;
-				int gtx = (originalX - L2World.WORLD_X_MIN) >> 4;
-				int gty = (originalY - L2World.WORLD_Y_MIN) >> 4;
-				
-				if (this instanceof L2Attackable || this instanceof L2PcInstance || (this instanceof L2Summon && !(getAI().getIntention() == AI_INTENTION_FOLLOW)) // assuming intention_follow only when following owner
-					|| isAfraid() || this instanceof L2RiftInvaderInstance)
+				if (isOnGeodataPath())
 				{
-					if (isOnGeodataPath())
+					try
 					{
-						try
-						{
-							if (gtx == _move.geoPathGtx && gty == _move.geoPathGty)
-								return;
-							
-							_move.onGeodataPathIndex = -1;
-							
-						}
-						catch (NullPointerException e)
-						{
-						}
-					}
-					
-					if (curX < L2World.WORLD_X_MIN || curX > L2World.WORLD_X_MAX || curY < L2World.WORLD_Y_MIN || curY > L2World.WORLD_Y_MAX)
-					{
-						getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-						
-						if (this instanceof L2PcInstance)
-							((L2PcInstance) this).deleteMe();
-						else if (this instanceof L2Summon)
+						if (gtx == _move.geoPathGtx && gty == _move.geoPathGty)
 							return;
-						else
-							onDecay();
-						return;
+
+						_move.onGeodataPathIndex = -1;
+
 					}
-					
-					m.geoPath.clear();
-					List<Location> path = findPath(curX, curY, curZ, originalX, originalY, originalZ, offset);
-					
-					if (path.size() > 0)
-						m.geoPath.addAll(path);
-					if (m.geoPath.size() < 1)
+					catch (NullPointerException e)
 					{
-						if (this instanceof L2PcInstance || (!(this instanceof L2Playable) && !(this instanceof L2MinionInstance) && Math.abs(z - curZ) > 140) || (this instanceof L2Summon && !((L2Summon) this).getFollowStatus()))
-						{
-							getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-							sendPacket(ActionFailed.STATIC_PACKET);
-							return;
-						}
-						m.disregardingGeodata = true;
-						x = originalX;
-						y = originalY;
-						z = originalZ;
-						distance = originalDistance;
-					}
-					else
-					{
-						m.onGeodataPathIndex = 0;
-						m.geoPathGtx = gtx;
-						m.geoPathGty = gty;
-						m.geoPathAccurateTx = originalX;
-						m.geoPathAccurateTy = originalY;
-						
-						x = m.geoPath.get(m.onGeodataPathIndex).getX();
-						y = m.geoPath.get(m.onGeodataPathIndex).getY();
-						z = m.geoPath.get(m.onGeodataPathIndex).getZ();
-						
-						dx = (x - curX);
-						dy = (y - curY);
-						
-						distance = verticalMovementOnly ? Math.pow(dz, 2) : Math.hypot(dx, dy);
-						
-						sin = dy / distance;
-						cos = dx / distance;
 					}
 				}
-				
-				if (distance < 1 && (Config.GEODATA || this instanceof L2Playable || isAfraid() || this instanceof L2RiftInvaderInstance))
+
+				if (curX < L2World.WORLD_X_MIN || curX > L2World.WORLD_X_MAX || curY < L2World.WORLD_Y_MIN || curY > L2World.WORLD_Y_MAX)
 				{
-					if (this instanceof L2Summon)
-						((L2Summon) this).setFollowStatus(false);
-					getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+					getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+
+					if (this instanceof L2PcInstance)
+					{
+						((L2PcInstance) this).sendMessage("Something happen with your coordinates,server teleporting you to nearest village");
+						((L2PcInstance) this).teleToLocation(TeleportWhereType.TOWN);
+					}
+					else if (this instanceof L2Summon)
+						return;
+					else
+						onDecay();
 					return;
 				}
+
+				m.geoPath.clear();
+				List<Location> path = findPath(curX, curY, curZ, originalX, originalY, originalZ, offset);
+
+				if (path.size() > 0)
+					m.geoPath.addAll(path);
+				if ((m.geoPath == null) || (m.geoPath.size() <= 0))
+				{
+					if (isPlayer()|| (!(isPlayable()) && !(this instanceof L2MinionInstance) && Math.abs(z - curZ) > 140)
+					|| (this instanceof L2Summon && !((L2Summon) this).getFollowStatus()))
+					{
+						getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+						return;
+					}
+					m.disregardingGeodata = true;
+					x = originalX;
+					y = originalY;
+					z = originalZ;
+					distance = originalDistance;
+				}
+				else
+				{
+					m.onGeodataPathIndex = 0;
+					m.geoPathGtx = gtx;
+					m.geoPathGty = gty;
+					m.geoPathAccurateTx = originalX;
+					m.geoPathAccurateTy = originalY;
+
+					x = m.geoPath.get(m.onGeodataPathIndex).getX();
+					y = m.geoPath.get(m.onGeodataPathIndex).getY();
+					z = m.geoPath.get(m.onGeodataPathIndex).getZ();
+
+					dx = (x - curX);
+					dy = (y - curY);
+
+					distance = verticalMovementOnly ? Math.pow(dz, 2) : Math.hypot(dx, dy);
+
+					sin = dy / distance;
+					cos = dx / distance;
+				}
+			}
+
+			if (distance < 1 && (this instanceof L2Playable || isAfraid() || this instanceof L2RiftInvaderInstance))
+			{
+				if (this instanceof L2Summon)
+					((L2Summon) this).setFollowStatus(false);
+				getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+				return;
 			}
 		}
-		_tempMovePos.set(destPos);
 		
 		if (isFloating && !verticalMovementOnly) 
 			distance = Math.hypot(distance, dz);
@@ -3116,7 +3097,7 @@ public abstract class L2Character extends L2Object
 		
 		if (this instanceof L2Vehicle)
 			((L2Vehicle) this).updatePeopleInTheBoat(x,y,z);
-		
+
 		revalidateZone(false);
 		
 		m._moveTimestamp = gameTicks;
@@ -3196,7 +3177,7 @@ public abstract class L2Character extends L2Object
 		if ((ticksToMove * GameTimeController.MILLIS_IN_TICK) > 3000)
 			ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(CtrlEvent.EVT_ARRIVED_REVALIDATE), 2000);
 
-		broadcastPacket(new CharMoveToLocation(this));
+		broadcastPacket(new MoveToLocation(this));
 		return true;
 	}
 	
@@ -4578,17 +4559,13 @@ public abstract class L2Character extends L2Object
 			
 			if (skill.getAggroPoints() > 0)
 			{
-				for (L2Object spMob : L2World.getInstance().getVisibleObjects(player, L2Object.class, 1000))
-					if (spMob instanceof L2Npc)
+				for (L2Npc npcMob : L2World.getInstance().getVisibleObjects(player, L2Npc.class, 1000))
+					if (npcMob.hasAI() && npcMob.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 					{
-						L2Npc npcMob = (L2Npc) spMob;
-						if (npcMob.hasAI() && npcMob.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
-						{
-							L2Object npcTarget = npcMob.getTarget();
-							for (L2Object target : targets)
-								if (npcTarget == target || npcMob == target)
-									npcMob.seeSpell(player, target, skill);
-						}
+						L2Object npcTarget = npcMob.getTarget();
+						for (L2Object target : targets)
+							if (npcTarget == target || npcMob == target)
+								npcMob.seeSpell(player, target, skill);
 					}
 			}
 		}
@@ -4700,16 +4677,6 @@ public abstract class L2Character extends L2Object
 		return getStat().getAttackSpeedMultiplier();
 	}
 	
-	public int getCON()
-	{
-		return getStat().getCON();
-	}
-	
-	public int getDEX()
-	{
-		return getStat().getDEX();
-	}
-	
 	public final double getCriticalDmg(L2Character target, double init)
 	{
 		return getStat().getCriticalDmg(target, init);
@@ -4724,12 +4691,7 @@ public abstract class L2Character extends L2Object
 	{
 		return getStat().getEvasionRate(target);
 	}
-	
-	public int getINT()
-	{
-		return getStat().getINT();
-	}
-	
+
 	public final int getMagicalAttackRange(L2Skill skill)
 	{
 		return getStat().getMagicalAttackRange(skill);
@@ -4769,12 +4731,7 @@ public abstract class L2Character extends L2Object
 	{
 		return getStat().getMDef(target, skill);
 	}
-	
-	public int getMEN()
-	{
-		return getStat().getMEN();
-	}
-	
+
 	public double getMReuseRate(L2Skill skill)
 	{
 		return getStat().getMReuseRate(skill);
@@ -4850,9 +4807,35 @@ public abstract class L2Character extends L2Object
 		return getStat().getShldDef();
 	}
 	
+	
+	public int getINT()
+	{
+		return getStat().getINT();
+	}
+	
 	public int getSTR()
 	{
 		return getStat().getSTR();
+	}
+	
+	public int getMEN()
+	{
+		return getStat().getMEN();
+	}
+	
+	public int getCON()
+	{
+		return getStat().getCON();
+	}	
+	
+	public int getWIT()
+	{
+		return getStat().getWIT();
+	}
+		
+	public int getDEX()
+	{
+		return getStat().getDEX();
 	}
 	
 	public int getRunSpeed()
@@ -4865,10 +4848,7 @@ public abstract class L2Character extends L2Object
 		return getStat().getWalkSpeed();
 	}
 	
-	public int getWIT()
-	{
-		return getStat().getWIT();
-	}
+
 	
 	// =========================================================
 	// Status - NEED TO REMOVE ONCE L2CHARTATUS IS COMPLETE
@@ -5043,7 +5023,7 @@ public abstract class L2Character extends L2Object
 		_isRaid = val;
 		_isMinion = val;
 	}
-	
+
 	public void setPremiumService(int PS)
 	{
 		_PremiumService = PS;

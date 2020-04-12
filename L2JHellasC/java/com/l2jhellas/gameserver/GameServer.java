@@ -62,6 +62,7 @@ import com.l2jhellas.gameserver.handler.AutoAnnouncementHandler;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
 import com.l2jhellas.gameserver.instancemanager.AuctionManager;
 import com.l2jhellas.gameserver.instancemanager.BoatManager;
+import com.l2jhellas.gameserver.instancemanager.BufferManager;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.CastleManorManager;
 import com.l2jhellas.gameserver.instancemanager.ClanHallManager;
@@ -88,9 +89,8 @@ import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.group.party.PartyMatchRoomList;
 import com.l2jhellas.gameserver.model.actor.group.party.PartyMatchWaitingList;
 import com.l2jhellas.gameserver.model.entity.Hero;
-import com.l2jhellas.gameserver.model.entity.events.engines.EventHandlerCtf;
-import com.l2jhellas.gameserver.model.entity.events.engines.EventHandlerTvT;
-import com.l2jhellas.gameserver.model.entity.events.engines.ZodiacMain;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventBuffer;
+import com.l2jhellas.gameserver.model.entity.events.engines.EventConfig;
 import com.l2jhellas.gameserver.model.entity.olympiad.Olympiad;
 import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadGameManager;
 import com.l2jhellas.gameserver.network.L2GameClient;
@@ -178,6 +178,7 @@ public class GameServer
 		
 		Util.printSection("Npc");
 		NpcData.getInstance();
+		BufferManager.getInstance();
 		
 		Util.printSection("Announcements-AutoSpawn-Chat");
 		Announcements.getInstance();
@@ -367,15 +368,6 @@ public class GameServer
 		else
 			_log.log(Level.INFO, "Rank PvP System: Disabled");
 		
-		if (Config.ZODIAC_ENABLE)
-			ZodiacMain.ZodiacIn();
-		
-		if (Config.ALLOW_CTF_AUTOEVENT)
-			new EventHandlerCtf().startHandler();
-
-		if (Config.TVT_ALLOW_AUTOEVENT)
-			new EventHandlerTvT().startHandler();
-		
 		BalanceLoad.LoadEm();
 		
 		if (Config.ALLOW_SEQURITY_QUE)
@@ -397,7 +389,10 @@ public class GameServer
 		if (Config.ALLOW_FAKE_PLAYERS)
 		   FakePlayerManager.initialise();
 		else
-			_log.log(Level.INFO, "FakePlayer System: Disabled");
+			_log.log(Level.INFO, "FakePlayer System: Disabled");	
+		
+		EventConfig.getInstance();
+		EventBuffer.getInstance();
 	}
 	
 	public static void main(String[] args) throws Exception

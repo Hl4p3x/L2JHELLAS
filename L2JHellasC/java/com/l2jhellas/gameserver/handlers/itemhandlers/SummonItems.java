@@ -12,9 +12,6 @@ import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
-import com.l2jhellas.gameserver.model.entity.events.CTF;
-import com.l2jhellas.gameserver.model.entity.events.DM;
-import com.l2jhellas.gameserver.model.entity.events.TvT;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillLaunched;
@@ -34,15 +31,12 @@ public class SummonItems implements IItemHandler
 		if (!(playable instanceof L2PcInstance))
 			return;
 		
-		if (!FloodProtectors.performAction(activeChar.getClient(), Action.USE_ITEM))
-			return;
-		
-		if ((activeChar._inEventTvT && TvT._started && !Config.TVT_ALLOW_SUMMON) || (activeChar._inEventCTF && CTF._started && !Config.CTF_ALLOW_SUMMON) || (activeChar._inEventDM && DM._started && !Config.DM_ALLOW_SUMMON))
+		if (!FloodProtectors.performAction(activeChar.getClient(), Action.ITEM_HANDLER))
 		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			activeChar.sendMessage("You are using this action too fast!");
 			return;
 		}
-		
+
 		if (activeChar.isSitting())
 		{
 			activeChar.sendPacket(SystemMessageId.CANT_MOVE_SITTING);

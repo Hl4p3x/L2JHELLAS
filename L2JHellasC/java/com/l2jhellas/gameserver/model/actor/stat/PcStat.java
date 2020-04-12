@@ -3,20 +3,21 @@ package com.l2jhellas.gameserver.model.actor.stat;
 import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
+import com.l2jhellas.gameserver.enums.items.L2WeaponType;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2ClassMasterInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.base.Experience;
-import com.l2jhellas.gameserver.model.entity.events.CTF;
-import com.l2jhellas.gameserver.model.entity.events.DM;
-import com.l2jhellas.gameserver.model.entity.events.TvT;
 import com.l2jhellas.gameserver.model.quest.QuestState;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.network.serverpackets.UserInfo;
+import com.l2jhellas.gameserver.skills.Stats;
+
+import Extensions.Balancer.BalanceLoad;
 
 public class PcStat extends PlayableStat
 {
@@ -163,23 +164,6 @@ public class PcStat extends PlayableStat
 			getActiveChar().setCurrentCp(getMaxCp());
 			getActiveChar().broadcastSocialActionInRadius(15);
 			getActiveChar().sendPacket(SystemMessageId.YOU_INCREASED_YOUR_LEVEL);
-			
-			if (getActiveChar().isInFunEvent())
-			{
-				if (getActiveChar()._inEventTvT && TvT._maxlvl == getLevel() && !TvT._started)
-				{
-					TvT.removePlayer(getActiveChar());
-				}
-				if (getActiveChar()._inEventCTF && CTF._maxlvl == getLevel() && !CTF._started)
-				{
-					TvT.removePlayer(getActiveChar());
-				}
-				if (getActiveChar()._inEventDM && CTF._maxlvl == getLevel() && !DM._started)
-				{
-					DM.removePlayer(getActiveChar());
-				}
-				getActiveChar().sendMessage("Your event sign up was canceled.");
-			}
 		}
 		
 		// Give AutoGet skills and all normal skills if Auto-Learn is activated.
@@ -260,13 +244,9 @@ public class PcStat extends PlayableStat
 	public final void setExp(long value)
 	{
 		if (getActiveChar().isSubClassActive())
-		{
 			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setExp(value);
-		}
 		else
-		{
 			super.setExp(value);
-		}
 	}
 	
 	@Override
@@ -356,16 +336,71 @@ public class PcStat extends PlayableStat
 	}
 	
 	@Override
+	public final int getSTR()
+	{
+		int str = (int) calcStat(Stats.STAT_STR, getActiveChar().getTemplate().baseSTR, null, null);
+		if (getActiveChar().getClassId().getId() >= 88)
+			str += BalanceLoad.STR[(getActiveChar()).getClassId().getId() - 88];
+		return str;
+	}
+	
+	@Override
+	public final int getDEX()
+	{
+		int DEX = (int) calcStat(Stats.STAT_DEX, getActiveChar().getTemplate().baseDEX, null, null);
+		if (getActiveChar().getClassId().getId() >= 88)
+			DEX += BalanceLoad.DEX[(getActiveChar()).getClassId().getId() - 88];
+		return DEX;
+	}
+	
+	public final int getCON()
+	{
+		int CON = (int) calcStat(Stats.STAT_CON, getActiveChar().getTemplate().baseCON, null, null);
+		if (getActiveChar().getClassId().getId() >= 88)
+			CON += BalanceLoad.CON[(getActiveChar()).getClassId().getId() - 88];
+		return CON;
+	}
+	
+	@Override
+	public int getINT()
+	{
+		int INT = (int) calcStat(Stats.STAT_INT, getActiveChar().getTemplate().baseINT, null, null);
+		if (getActiveChar().getClassId().getId() >= 88)
+			INT += BalanceLoad.INT[(getActiveChar()).getClassId().getId() - 88];
+		return INT;
+	}
+	
+	@Override
+	public final int getMEN()
+	{
+		int MEN = (int) calcStat(Stats.STAT_MEN,getActiveChar().getTemplate().baseMEN, null, null);
+		if (getActiveChar().getClassId().getId() >= 88)
+			MEN += BalanceLoad.MEN[(getActiveChar()).getClassId().getId() - 88];
+		return MEN;
+	}
+	
+	@Override
+	public final int getWIT()
+	{
+		int WIT = (int) calcStat(Stats.STAT_WIT, getActiveChar().getTemplate().baseWIT, null, null);
+		if (getActiveChar().getClassId().getId() >= 88)
+			WIT += BalanceLoad.WIT[(getActiveChar()).getClassId().getId() - 88];
+		return WIT;
+	}
+	
+	@Override
+	public int getPhysicalAttackRange()
+	{
+		return getActiveChar().getAttackType().equals(L2WeaponType.BOW) ? (int) calcStat(Stats.POWER_ATTACK_RANGE, getActiveChar().getTemplate().baseAtkRange, null, null) : getActiveChar().getAttackType().getRange();
+	}
+	
+	@Override
 	public final void setSp(int value)
 	{
 		if (getActiveChar().isSubClassActive())
-		{
 			getActiveChar().getSubClasses().get(getActiveChar().getClassIndex()).setSp(value);
-		}
 		else
-		{
 			super.setSp(value);
-		}
 		
 		StatusUpdate su = new StatusUpdate(getActiveChar().getObjectId());
 		su.addAttribute(StatusUpdate.SP, getSp());

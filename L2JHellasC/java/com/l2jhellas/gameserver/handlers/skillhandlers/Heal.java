@@ -121,6 +121,9 @@ public class Heal implements ISkillHandler
 				}
 			}
 			
+			if(target.isDead())
+				continue;
+			
 			// int cLev = activeChar.getLevel();
 			// hp += skill.getPower();
 			if (skill.getSkillType() == L2SkillType.HEAL_STATIC)

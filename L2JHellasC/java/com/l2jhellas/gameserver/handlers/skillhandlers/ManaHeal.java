@@ -30,7 +30,7 @@ public class ManaHeal implements ISkillHandler
 		{
 			target = (L2Character) target2;
 			
-			if(target == null)
+			if(target == null || target.isDead())
 				continue;
 			
 			double mp = skill.getPower();

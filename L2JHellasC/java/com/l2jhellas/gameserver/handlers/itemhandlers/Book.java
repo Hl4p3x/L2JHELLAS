@@ -8,8 +8,6 @@ import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.RadarControl;
 import com.l2jhellas.gameserver.network.serverpackets.ShowMiniMap;
-import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
 
 public class Book implements IItemHandler
 {
@@ -58,11 +56,8 @@ public class Book implements IItemHandler
 		if (!(playable instanceof L2PcInstance))
 			return;
 		
-		L2PcInstance activeChar = (L2PcInstance) playable;
-		
-		if (!FloodProtectors.performAction(activeChar.getClient(), Action.USE_ITEM))
-			return;
-		
+		final L2PcInstance activeChar = (L2PcInstance) playable;
+
 		final int itemId = item.getItemId();
 		
 		// Quest item: Lidia's diary

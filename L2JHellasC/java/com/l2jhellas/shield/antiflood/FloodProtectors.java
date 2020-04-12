@@ -21,7 +21,8 @@ public final class FloodProtectors
 		GLOBAL_CHAT(Config.GLOBAL_CHAT),
 		TRADE_CHAT(Config.TRADE_CHAT),
 		USE_ITEM(Config.USE_ITEM),
-		SOCIAL_ACTION(Config.SOCIAL);
+		SOCIAL_ACTION(Config.SOCIAL),
+		ITEM_HANDLER(Config.HANDLER);
 		
 		private final int _Reuse;
 		

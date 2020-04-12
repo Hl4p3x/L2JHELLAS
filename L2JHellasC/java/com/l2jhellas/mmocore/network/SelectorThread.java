@@ -87,7 +87,6 @@ public final class SelectorThread<T extends MMOClient<?>> extends Thread
 		_selector = Selector.open();
 	}
 	
-	@SuppressWarnings("resource")
 	public final void openServerSocket(InetAddress address, int tcpPort) throws IOException
 	{
 		ServerSocketChannel selectable = ServerSocketChannel.open();
@@ -229,7 +228,6 @@ public final class SelectorThread<T extends MMOClient<?>> extends Thread
 		}
 	}
 	
-	@SuppressWarnings("resource")
 	private final void acceptConnection(final SelectionKey key, MMOConnection<T> con)
 	{
 		ServerSocketChannel ssc = (ServerSocketChannel) key.channel();

@@ -22,6 +22,7 @@ import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.datatables.sql.ClanTable;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
+import com.l2jhellas.gameserver.enums.sound.Sound;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
 import com.l2jhellas.gameserver.instancemanager.MercTicketManager;
 import com.l2jhellas.gameserver.instancemanager.SiegeGuardManager;
@@ -44,6 +45,7 @@ import com.l2jhellas.gameserver.network.serverpackets.SiegeInfo;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.network.serverpackets.UserInfo;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
+import com.l2jhellas.util.Broadcast;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public class Siege
@@ -59,7 +61,7 @@ public class Siege
 		Owner,
 		Spectator
 	}
-	
+		
 	public class ScheduleEndSiegeTask implements Runnable
 	{
 		private final Castle _castleInst;
@@ -204,6 +206,7 @@ public class Siege
 	{
 		if (getIsInProgress())
 		{
+            Broadcast.toAllOnlinePlayers(Sound.SIEGE_SOUND_END.getPacket());
 			announceToPlayer("The siege of " + getCastle().getName() + " has finished!", false);
 			_log.info("[SIEGE] The siege of " + getCastle().getName() + " has finished! " + fmt.format(new Date(System.currentTimeMillis())));
 			
@@ -242,7 +245,7 @@ public class Siege
 			teleportPlayer(Siege.TeleportWhoType.Spectator, MapRegionTable.TeleportWhereType.TOWN); // Teleport to the second closest town
 			_isInProgress = false; // Flag so that siege instance can be started
 			updatePlayerSiegeStateFlags(true);
-			saveCastleSiege(); // Save castle specific data
+			saveCastleSiege(true); // Save castle specific data
 			clearSiegeClan(); // Clear siege clan from db
 			removeArtifact(); // Remove artifact from this castle
 			removeControlTower(); // Remove all control tower from this castle
@@ -389,13 +392,10 @@ public class Siege
 		{
 			if (getAttackerClans().size() <= 0)
 			{
-				SystemMessage sm;
-				if (getCastle().getOwnerId() <= 0)
-					sm = SystemMessage.getSystemMessage(SystemMessageId.SIEGE_OF_S1_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_INTEREST);
-				else
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_SIEGE_WAS_CANCELED_BECAUSE_NO_CLANS_PARTICIPATED);
-				sm.addString(getCastle().getName());
+				final SystemMessage sm = SystemMessage.getSystemMessage((getCastle().getOwnerId() <= 0) ? SystemMessageId.SIEGE_OF_S1_HAS_BEEN_CANCELED_DUE_TO_LACK_OF_INTEREST : SystemMessageId.S1_SIEGE_WAS_CANCELED_BECAUSE_NO_CLANS_PARTICIPATED);
+				sm.addString(_castle.getName());			
 				Announcements.getInstance().announceToAll(sm);
+				saveCastleSiege(true);
 				return;
 			}
 			
@@ -420,6 +420,8 @@ public class Siege
 			_siegeEndDate.add(Calendar.MINUTE, SiegeManager.getInstance().getSiegeLength());
 			ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndSiegeTask(getCastle()), 1000); // Prepare auto end task
 			
+            Broadcast.toAllOnlinePlayers(Sound.SIEGE_SOUND_START.getPacket());
+
 			announceToPlayer("The siege of " + getCastle().getName() + " has started!", false);
 			_log.info("[SIEGE] The siege of " + getCastle().getName() + " has started! " + fmt.format(new Date(System.currentTimeMillis())));
 		}
@@ -436,7 +438,8 @@ public class Siege
 		// Get all players
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			player.sendMessage(message);
+			if(player != null)
+			   player.sendMessage(message);
 		}
 	}
 	
@@ -701,19 +704,22 @@ public class Siege
 	
 	public void startAutoTask()
 	{
-		correctSiegeDateTime();
-		
-		_log.info(Siege.class.getSimpleName() + ": Siege of " + getCastle().getName() + ": " + getCastle().getSiegeDate().getTime());
-		
-		loadSiegeClan();
-		
-		// Schedule registration end
-		_siegeRegistrationEndDate = Calendar.getInstance();
-		_siegeRegistrationEndDate.setTimeInMillis(getCastle().getSiegeDate().getTimeInMillis());
-		_siegeRegistrationEndDate.add(Calendar.DAY_OF_MONTH, -1);
-		
-		// Schedule siege auto start
-		ThreadPoolManager.getInstance().scheduleGeneral(new Siege.ScheduleStartSiegeTask(getCastle()), 1000);
+		if (getCastle().getSiegeDate().getTimeInMillis() < Calendar.getInstance().getTimeInMillis())
+			saveCastleSiege(false);
+		else
+		{
+			loadSiegeClan();
+
+			// Schedule registration end
+			_siegeRegistrationEndDate = Calendar.getInstance();
+			_siegeRegistrationEndDate.setTimeInMillis(getCastle().getSiegeDate().getTimeInMillis());
+			_siegeRegistrationEndDate.add(Calendar.DAY_OF_MONTH, -1);
+
+			_log.info(Siege.class.getSimpleName() + ": Siege of " + getCastle().getName() + ": " + getCastle().getSiegeDate().getTime());
+
+			// Schedule siege auto start
+			ThreadPoolManager.getInstance().scheduleGeneral(new Siege.ScheduleStartSiegeTask(getCastle()), 1000);
+		}
 	}
 	
 	public void teleportPlayer(TeleportWhoType teleportWho, MapRegionTable.TeleportWhereType teleportWhere)
@@ -791,37 +797,7 @@ public class Siege
 		
 		return false;
 	}
-	
-	private void correctSiegeDateTime()
-	{
-		boolean corrected = false;
-		
-		if (getCastle().getSiegeDate().getTimeInMillis() < Calendar.getInstance().getTimeInMillis())
-		{
-			// Since siege has past reschedule it to the next one (14 days)
-			// This is usually caused by server being down
-			corrected = true;
-			setNextSiegeDate();
-		}
-		
-		if (getCastle().getSiegeDate().get(Calendar.DAY_OF_WEEK) != getCastle().getSiegeDayOfWeek())
-		{
-			corrected = true;
-			getCastle().getSiegeDate().set(Calendar.DAY_OF_WEEK, getCastle().getSiegeDayOfWeek());
-		}
-		
-		if (getCastle().getSiegeDate().get(Calendar.HOUR_OF_DAY) != getCastle().getSiegeHourOfDay())
-		{
-			corrected = true;
-			getCastle().getSiegeDate().set(Calendar.HOUR_OF_DAY, getCastle().getSiegeHourOfDay());
-		}
-		
-		getCastle().getSiegeDate().set(Calendar.MINUTE, 0);
-		
-		if (corrected)
-			saveSiegeDate();
-	}
-	
+
 	private void loadSiegeClan()
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
@@ -916,11 +892,13 @@ public class Siege
 		}
 	}
 	
-	private void saveCastleSiege()
+	private void saveCastleSiege(boolean launch)
 	{
 		setNextSiegeDate(); // Set the next set date for 2 weeks from now
 		saveSiegeDate(); // Save the new date
-		startAutoTask(); // Prepare auto start siege and end registration
+		
+		if (launch)
+		    startAutoTask(); // Prepare auto start siege and end registration
 	}
 	
 	public void saveSiegeDate()
@@ -1071,7 +1049,7 @@ public class Siege
 			
 			ct.setCurrentHpMp(ct.getMaxHp(), ct.getMaxMp());
 			ct.spawnMe(_sp.getLocation().getX(), _sp.getLocation().getY(), _sp.getLocation().getZ() + 20);
-			
+			ct.broadcastInfo();
 			_controlTowers.add(ct);
 		}
 	}
@@ -1079,7 +1057,6 @@ public class Siege
 	private void spawnSiegeGuard()
 	{
 		SiegeGuardManager.getInstance().spawnSiegeGuard(getCastle());
-
 
 		final Set<L2Spawn> spawned = SiegeGuardManager.getInstance().getSpawnedGuards(getCastle().getCastleId());
 		if (!spawned.isEmpty() && _controlTowers.size() > 0)

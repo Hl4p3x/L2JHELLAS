@@ -2,6 +2,8 @@ package com.l2jhellas.gameserver.engines;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -10,6 +12,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
@@ -326,6 +329,44 @@ public interface DocumentParser
 	default FileFilter getCurrentFileFilter()
 	{
 		return XML_FILTER;
+	}
+	
+	default void forEach(Node node, Consumer<Node> action)
+	{
+		forEach(node, a -> true, action);
+	}
+	
+	default void forEach(Node node, String nodeName, Consumer<Node> action)
+	{
+		forEach(node, innerNode ->
+		{
+			if (nodeName.contains("|"))
+			{
+				final String[] nodeNames = nodeName.split("\\|");
+				for (String name : nodeNames)
+				{
+					if (!name.isEmpty() && name.equals(innerNode.getNodeName()))
+					{
+						return true;
+					}
+				}
+				return false;
+			}
+			return nodeName.equals(innerNode.getNodeName());
+		}, action);
+	}
+	
+	default void forEach(Node node, Predicate<Node> filter, Consumer<Node> action)
+	{
+		final NodeList list = node.getChildNodes();
+		for (int i = 0; i < list.getLength(); i++)
+		{
+			final Node targetNode = list.item(i);
+			if (filter.test(targetNode))
+			{
+				action.accept(targetNode);
+			}
+		}
 	}
 	
 	static class XMLErrorHandler implements ErrorHandler
