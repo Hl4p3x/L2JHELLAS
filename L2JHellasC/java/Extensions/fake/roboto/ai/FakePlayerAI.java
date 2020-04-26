@@ -12,6 +12,7 @@ import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable.TeleportWhereType;
+import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
 import com.l2jhellas.gameserver.geometry.Point3D;
@@ -179,7 +180,7 @@ public abstract class FakePlayerAI
 		}
 	}
 	
-	protected void tryTargetRandomCreatureByTypeInRadius(Class<? extends L2Character> L2CharacterClass, int radius)
+	public void tryTargetRandomCreatureByTypeInRadius(Class<? extends L2Character> L2CharacterClass, int radius)
 	{
 		if (_fakePlayer.getTarget() == null)
 		{
@@ -187,8 +188,10 @@ public abstract class FakePlayerAI
 			
 			L2World.getInstance().forEachVisibleObjectInRange(_fakePlayer, L2CharacterClass, radius, target ->
 			{
-				if (!target.isDead())
-					targets.add(target);
+				if (target.isDead() || target.isInsideZone(ZoneId.PEACE) || target.isPlayer() && target.getActingPlayer().getAppearance().getInvisible() || !target.isVisible())
+					return;
+								
+				targets.add(target);
 			});
 			
 			if (!targets.isEmpty())
@@ -327,6 +330,12 @@ public abstract class FakePlayerAI
 			{
 				victim.stopFakeDeath(null);
 				return false;
+			}
+			
+			if(victim.getAppearance().getInvisible() || !victim.isVisible())
+			{
+			    _fakePlayer.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+				return true;
 			}
 		}
 		

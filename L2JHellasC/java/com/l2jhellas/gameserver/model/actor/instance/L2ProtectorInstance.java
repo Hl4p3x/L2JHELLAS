@@ -50,7 +50,8 @@ public class L2ProtectorInstance extends L2NpcInstance
 		{
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
-		}
+		}		
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override

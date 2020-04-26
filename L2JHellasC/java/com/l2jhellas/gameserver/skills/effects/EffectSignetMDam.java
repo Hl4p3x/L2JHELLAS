@@ -76,7 +76,7 @@ final class EffectSignetMDam extends EffectSignet
 		}
 		
 		if (!bss && !ss)
-			caster.rechargeAutoSoulShot(false, true, false);
+			caster.rechargeShots(false, true, false);
 		
 		ArrayList<L2Character> targets = new ArrayList<>();
 		

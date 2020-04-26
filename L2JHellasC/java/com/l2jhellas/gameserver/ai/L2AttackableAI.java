@@ -221,6 +221,13 @@ public class L2AttackableAI extends L2CharacterAI
 	}
 
 	@Override
+	protected void onEvtDead()
+	{
+		stopAITask();
+		super.onEvtDead();
+	}
+	
+	@Override
 	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
 	{				
 		if (intention == AI_INTENTION_IDLE)
@@ -249,6 +256,8 @@ public class L2AttackableAI extends L2CharacterAI
 		
 		if (getActiveChar().getTemplate().hasBuffSkill() && (lastBuffTick + 30) < GameTimeController.getInstance().getGameTicks())
 		{
+			lastBuffTick = GameTimeController.getInstance().getGameTicks();
+
 			for (L2Skill buff : getActiveChar().getTemplate()._buffskills)
 			{
 				if(buff==null || getActiveChar().getFirstEffect(buff) != null)
@@ -258,8 +267,7 @@ public class L2AttackableAI extends L2CharacterAI
 				getActiveChar().doCast(buff);
 				getActiveChar().setTarget(target);
 				break;				
-			}
-			lastBuffTick = GameTimeController.getInstance().getGameTicks();
+			}			
 		}
 		
 		super.onIntentionAttack(target);
@@ -269,7 +277,7 @@ public class L2AttackableAI extends L2CharacterAI
 	{
 		if (getActiveChar() == null)
 			return;
-		
+			
 		final L2Attackable npc = getActiveChar();
 		L2Object target = getTarget();
 
@@ -421,9 +429,6 @@ public class L2AttackableAI extends L2CharacterAI
 				y1 = (deltaY + y1) - range;
 				z1 = npc.getZ();
 			}
-			
-			if (npc.getNpcId() == 29014 && npc instanceof L2GrandBossInstance && ((L2GrandBossInstance) npc).getTeleported())
-				return;
 			
 			final Location moveLoc = ((Config.GEODATA) ? GeoEngine.moveCheck(npc.getX(), npc.getY(), npc.getZ(),(int) x1, (int) y1, npc.isFlying()) : new Location((int) x1, (int) y1, (int) z1));
 			
@@ -647,7 +652,8 @@ public class L2AttackableAI extends L2CharacterAI
 						double healChance = (100 - healTarget.getCurrentHpPercent()) * 1.5; 
 						if ((Rnd.get(100) < healChance) && checkSkillTarget(healSkill, healTarget))
 						{
-							npc.setTarget(healTarget);
+							npc.stopMove(null);
+							npc.setTarget(healTarget);							
 							npc.doCast(healSkill);
 							npc.setTarget(target);
 							return;
@@ -664,6 +670,7 @@ public class L2AttackableAI extends L2CharacterAI
 					if(buffSkill==null || npc.getFirstEffect(buffSkill) != null)
 						 return;
 
+					npc.stopMove(null);
 					npc.setTarget(npc);
 					npc.doCast(buffSkill);
 					npc.setTarget(target);
@@ -676,6 +683,7 @@ public class L2AttackableAI extends L2CharacterAI
 				final L2Skill immobolizeSkill = npc.getTemplate()._immobiliseskills.get(Rnd.get(npc.getTemplate()._immobiliseskills.size()));
 				if (checkUseConditions(npc, immobolizeSkill) && checkSkillTarget(immobolizeSkill, target))
 				{
+					npc.stopMove(null);
 					npc.setTarget(target);
 					npc.doCast(immobolizeSkill);
 					return;
@@ -687,6 +695,7 @@ public class L2AttackableAI extends L2CharacterAI
 				final L2Skill muteSkill = npc.getTemplate()._cotskills.get(Rnd.get(npc.getTemplate()._cotskills.size()));
 				if (checkUseConditions(npc, muteSkill) && checkSkillTarget(muteSkill, target))
 				{
+					npc.stopMove(null);
 					npc.setTarget(target);
 					npc.doCast(muteSkill);
 					return;
@@ -698,6 +707,7 @@ public class L2AttackableAI extends L2CharacterAI
 				final L2Skill shortRangeSkill = npc.getTemplate()._Srangeskills.get(Rnd.get(npc.getTemplate()._Srangeskills.size()));
 				if (checkUseConditions(npc, shortRangeSkill) && checkSkillTarget(shortRangeSkill, target))
 				{
+					npc.stopMove(null);
 					npc.setTarget(target);
 					npc.doCast(shortRangeSkill);
 					return;
@@ -709,6 +719,7 @@ public class L2AttackableAI extends L2CharacterAI
 				final L2Skill longRangeSkill = npc.getTemplate()._Lrangeskills.get(Rnd.get(npc.getTemplate()._Lrangeskills.size()));
 				if (checkUseConditions(npc, longRangeSkill) && checkSkillTarget(longRangeSkill, target))
 				{
+					npc.stopMove(null);
 					npc.setTarget(target);
 					npc.doCast(longRangeSkill);
 					return;
@@ -721,6 +732,7 @@ public class L2AttackableAI extends L2CharacterAI
 
 				if (checkUseConditions(npc, generalSkill) && checkSkillTarget(generalSkill, target))
 				{
+					npc.stopMove(null);
 					npc.setTarget(target);
 					npc.doCast(generalSkill);
 					return;
@@ -756,8 +768,20 @@ public class L2AttackableAI extends L2CharacterAI
 			
 			moveToPawn(target, range);	
 			
+			if (npc.getNpcId() == 25325)
+			{
+				final int BARAKIELx1 = 89800;
+				final int BARAKIELx2 = 93200;
+				final int BARAKIELy1 = -87038;
+				if ((npc.getX() < BARAKIELx1) || (npc.getX() > BARAKIELx2) || (npc.getY() < BARAKIELy1))
+				{
+					final int[] BARAKIELLOC ={91008,-85904,-2736};
+					npc.teleToLocation(BARAKIELLOC[0], BARAKIELLOC[1], BARAKIELLOC[2]);
+				}
+			}
+			
 			return;
-		}
+		}	
 		
 		npc.doAttack(target,true);
 	}
@@ -950,6 +974,7 @@ public class L2AttackableAI extends L2CharacterAI
 		{
 			if (!me.isRunning())
 				me.setRunning();
+			
 			me.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, attacker);		
 		}
 		

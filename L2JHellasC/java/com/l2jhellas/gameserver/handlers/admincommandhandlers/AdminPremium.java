@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Calendar;
+import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.util.database.L2DatabaseFactory;
@@ -15,99 +15,45 @@ public class AdminPremium implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminPremium.class.getName());
 	
+	private static final String UPDATE_PREMIUMSERVICE = "REPLACE INTO account_premium (premium_service,enddate,account_name) values(?,?,?)";
+
 	private static final String[] ADMIN_COMMANDS =
 	{
 		"admin_premium_menu",
-		"admin_premium_add1",
-		"admin_premium_add2",
-		"admin_premium_add3",
-		"admin_premium_add4",
-		"admin_premium_add5"
+		"admin_premium_add"
 	};
-	
-	private static final String UPDATE_PREMIUMSERVICE = "UPDATE account_premium SET premium_service=?,enddate=? WHERE account_name=?";
 	
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{
 		if (command.equals("admin_premium_menu"))
 			AdminHelpPage.showHelpPage(activeChar, "premium_menu.htm");
-		else if (command.startsWith("admin_premium_add1"))
+		else if (command.startsWith("admin_premium_add"))
 		{
-			try
-			{
-				String val = command.substring(19);
-				addPremiumServices(1, val);
-				AdminHelpPage.showHelpPage(activeChar, "premium_menu.htm");
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
-				activeChar.sendMessage("Premium: problem adding premium.");
-			}
+			final StringTokenizer st = new StringTokenizer(command);
+			st.nextToken();
+			final String accname = st.nextToken();
+			final int month = Integer.parseInt(st.nextToken());
+			final int DayOfmonth = Integer.parseInt(st.nextToken());
+			final int HourOfDay = Integer.parseInt(st.nextToken());
+
+			if (accname.isEmpty() || accname.length() < 2)
+				activeChar.sendMessage("Invalid account!");
+			else
+				addPremiumServices(activeChar, month, DayOfmonth, HourOfDay, accname);
 		}
-		else if (command.startsWith("admin_premium_add2"))
-		{
-			try
-			{
-				String val = command.substring(19);
-				addPremiumServices(2, val);
-				AdminHelpPage.showHelpPage(activeChar, "premium_menu.htm");
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
-				activeChar.sendMessage("Premium: problem adding premium.");
-			}
-		}
-		else if (command.startsWith("admin_premium_add3"))
-		{
-			try
-			{
-				String val = command.substring(19);
-				addPremiumServices(3, val);
-				AdminHelpPage.showHelpPage(activeChar, "premium_menu.htm");
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
-				activeChar.sendMessage("Premium: problem adding premium.");
-			}
-		}
-		else if (command.startsWith("admin_premium_add4"))
-		{
-			try
-			{
-				String val = command.substring(19);
-				addPremiumServices(4, val);
-				AdminHelpPage.showHelpPage(activeChar, "premium_menu.htm");
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
-				activeChar.sendMessage("Premium: problem adding premium.");
-			}
-		}
-		else if (command.startsWith("admin_premium_add5"))
-		{
-			try
-			{
-				String val = command.substring(19);
-				addPremiumServices(5, val);
-				AdminHelpPage.showHelpPage(activeChar, "premium_menu.htm");
-			}
-			catch (StringIndexOutOfBoundsException e)
-			{
-				activeChar.sendMessage("Premium: problem adding premium.");
-			}
-		}
+		
 		return true;
 	}
 
-	private static void addPremiumServices(int month, String AccName)
+	private static void addPremiumServices(L2PcInstance activeChar ,int month,int dayofmonth,int HourOfDay, String AccName)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement = con.prepareStatement(UPDATE_PREMIUMSERVICE))
 		{
 	        Calendar finishtime = Calendar.getInstance();
-	        finishtime.set(Calendar.DAY_OF_MONTH, 1);
-	        finishtime.set(Calendar.HOUR_OF_DAY, 13);
+	        finishtime.set(Calendar.DAY_OF_MONTH, dayofmonth);
+	        finishtime.set(Calendar.HOUR_OF_DAY, HourOfDay);
 	        finishtime.set(Calendar.MINUTE, 0);
 	        finishtime.add(Calendar.MONTH, month);  
 
@@ -115,12 +61,12 @@ public class AdminPremium implements IAdminCommandHandler
 			statement.setLong(2, finishtime.getTimeInMillis());
 			statement.setString(3, AccName);
 			statement.execute();
+			
+	        activeChar.sendMessage("The premium has been set until: " + finishtime.getTime() + " for account: " + AccName);
 		}
 		catch (SQLException e)
 		{
-			_log.warning(AdminPremium.class.getName() + " Could not increase data.");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			_log.warning(AdminPremium.class.getName() + " Could not add premium services:" + e);
 		}
 	}
 	

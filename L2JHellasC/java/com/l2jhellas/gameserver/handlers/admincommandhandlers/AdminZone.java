@@ -22,8 +22,7 @@ public class AdminZone implements IAdminCommandHandler
 	
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
-	{
-		
+	{		
 		if (activeChar == null)
 			return false;
 		
@@ -59,8 +58,7 @@ public class AdminZone implements IAdminCommandHandler
 			{
 				activeChar.sendMessage("Invalid parameter for //zone_visual.");
 			}
-		}
-		
+		}		
 		return true;
 	}
 	

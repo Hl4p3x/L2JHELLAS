@@ -183,6 +183,9 @@ public class L2Vehicle extends L2Character
 	
 	public void oustPlayers()
 	{
+		if(_passengers.isEmpty())
+			return;
+		
 		final Iterator<L2PcInstance> iter = _passengers.iterator();
 		while (iter.hasNext())
 		{
@@ -250,6 +253,9 @@ public class L2Vehicle extends L2Character
 	
 	public void broadcastToPassengers(L2GameServerPacket sm)
 	{
+		if(_passengers.isEmpty())
+			return;
+		
 		for (L2PcInstance player : _passengers)
 		{
 			if (player != null)
@@ -403,6 +409,9 @@ public class L2Vehicle extends L2Character
 
 	protected void updatePeopleInTheBoat(int x, int y, int z)
 	{
+		if(_passengers.isEmpty())
+			return;
+		
 		for(L2PcInstance player : _passengers)
 		{
 			if (player != null && player.getVehicle() == this)

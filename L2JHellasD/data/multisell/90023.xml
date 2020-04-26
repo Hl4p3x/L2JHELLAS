@@ -126,102 +126,102 @@
 		<production id="728" count="100"/>
 	</item>
 	<!-- Spirit Ore -->
-	<item id="45">
+	<item id="26">
 		<ingredient id="57" count="2000000"/>
 		<production id="3031" count="1000"/>
 	</item>
 	<!-- Soul Ore -->
-	<item id="46">
+	<item id="27">
 		<ingredient id="57" count="2000000"/>
 		<production id="1785" count="1000"/>
 	</item>
 	<!-- Energy Stone -->
-	<item id="47">
+	<item id="28">
 		<ingredient id="57" count="1000000"/>
 		<production id="5589" count="1000"/>
 	</item>
 	<!-- Battle Symbol -->
-	<item id="48">
+	<item id="29">
 		<ingredient id="57" count="2000000"/>
 		<production id="8875" count="100"/>
 	</item>
 	<!-- Magic Symbol -->
-	<item id="49">
+	<item id="30">
 		<ingredient id="57" count="2000000"/>
 		<production id="8876" count="100"/>
 	</item>
 	<!-- Phoenix Blood -->
-	<item id="50">
+	<item id="31">
 		<ingredient id="57" count="2000000"/>
 		<production id="8873" count="100"/>
 	</item>
 	<!-- Einhasad's Holy Water -->
-	<item id="51">
+	<item id="32">
 		<ingredient id="57" count="2000000"/>
 		<production id="8874" count="100"/>
 	</item>
 	<!-- Cursed Bone -->
-	<item id="52">
+	<item id="33">
 		<ingredient id="57" count="2000000"/>
 		<production id="2508" count="1000"/>
 	</item>
 	<!-- Summon crystal -->
-	<item id="53">
+	<item id="34">
 		<ingredient id="57" count="1000000"/>
 		<production id="8615" count="10"/>
 	</item>
 	<!-- Bone Arrow -->
-	<item id="54">
+	<item id="35">
 		<ingredient id="57" count="200000"/>
 		<production id="1341" count="1000"/>
 	</item>
 	<!-- Iron Arrow -->
-	<item id="55">
+	<item id="36">
 		<ingredient id="57" count="2000000"/>
 		<production id="1342" count="1000"/>
 	</item>
 	<!-- Silver Arrow -->
-	<item id="56">
+	<item id="37">
 		<ingredient id="57" count="2000000"/>
 		<production id="1343" count="1000"/>
 	</item>
 	<!-- Mithril Arrow -->
-	<item id="57">
+	<item id="38">
 		<ingredient id="57" count="2000000"/>
 		<production id="1344" count="1000"/>
 	</item>
 	<!-- Shining Arrow -->
-	<item id="58">
+	<item id="39">
 		<ingredient id="57" count="2000000"/>
 		<production id="1345" count="1000"/>
 	</item>
 	<!-- Scroll: Recovery (Grade S) -->
-	<item id="59">
+	<item id="40">
 		<ingredient id="57" count="200000"/>
 		<production id="8599" count="1"/>
 	</item>
 	<!-- Crystal: S Grade -->
-	<item id="61">
+	<item id="41">
 		<ingredient id="57" count="10000000"/>
 		<production id="1462" count="100"/>
 	</item>
 	<!-- Crystal: A-Grade -->
-	<item id="62">
+	<item id="42">
 		<ingredient id="57" count="5000000"/>
 		<production id="1461" count="100"/>
 	</item>
 	<!-- Crystal: B-Grade -->
-	<item id="63">
+	<item id="43">
 		<ingredient id="57" count="2000000"/>
 		<production id="1460" count="100"/>
 	</item>
 	<!-- Crystal: C-Grade -->
-	<item id="64">
+	<item id="44">
 		<ingredient id="57" count="1000000"/>
 		<production id="1459" count="100"/>
 	</item>
 	<!-- Crystal: D-Grade -->
-	<item id="65">
+	<item id="45">
 		<ingredient id="57" count="500000"/>
 		<production id="1458" count="100"/>
 	</item>

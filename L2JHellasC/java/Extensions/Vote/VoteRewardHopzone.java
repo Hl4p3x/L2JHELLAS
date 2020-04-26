@@ -152,7 +152,6 @@ public class VoteRewardHopzone
 			
 			URLConnection con = new URL(Config.HOPZONE_SERVER_LINK).openConnection();
 			con.addRequestProperty("User-Agent", "Mozilla/5.0");
-			// con.addRequestProperty("User-L2Hopzone", "Mozilla/4.76");
 			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
 			String line;
 			while ((line = br.readLine()) != null)

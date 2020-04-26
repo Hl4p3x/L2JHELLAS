@@ -14,6 +14,11 @@ public final class ProtocolVersion extends L2GameClientPacket
 	@Override
 	protected void readImpl()
 	{
+        if (_buf.remaining() < 4)
+        {
+            getClient().closeNow();
+            return;
+        }
 		_version = readD();
 	}
 	

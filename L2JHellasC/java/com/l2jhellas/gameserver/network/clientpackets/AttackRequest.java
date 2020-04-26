@@ -35,16 +35,14 @@ public final class AttackRequest extends L2GameClientPacket
 		
 		if (activeChar == null)
 			return;
-		
-		activeChar.onActionRequest();
-		
+				
 		if (activeChar.inObserverMode())
 		{
 			activeChar.sendPacket(SystemMessageId.OBSERVERS_CANNOT_PARTICIPATE);
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
+				
 		L2Object target;
 		
 		if (activeChar.getTargetId() == _objectId)
@@ -80,6 +78,9 @@ public final class AttackRequest extends L2GameClientPacket
 			return;
 		}
 		
+		if(activeChar.isSpawnProtected())
+		   activeChar.onActionRequest();
+
 		if (activeChar.getTarget() != target)
 			target.onAction(activeChar);
 		else

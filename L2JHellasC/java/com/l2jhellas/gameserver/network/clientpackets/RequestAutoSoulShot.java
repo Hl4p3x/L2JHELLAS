@@ -1,9 +1,7 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
-import java.util.logging.Logger;
-
-import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.enums.player.StoreType;
+import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
@@ -12,7 +10,6 @@ import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 
 public final class RequestAutoSoulShot extends L2GameClientPacket
 {
-	private static Logger _log = Logger.getLogger(RequestAutoSoulShot.class.getName());
 	private static final String _C__CF_REQUESTAUTOSOULSHOT = "[C] CF RequestAutoSoulShot";
 	
 	// format cd
@@ -36,17 +33,12 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 		
 		if (activeChar.isSitting())
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_AUTO_USE_LACK_OF_S1);
-			sm.addItemName(_itemId);
-			activeChar.sendPacket(sm);
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_AUTO_USE_LACK_OF_S1).addItemName(_itemId));
 			return;
 		}
 		
 		if (activeChar.getPrivateStoreType() == StoreType.NONE && activeChar.getActiveRequester() == null && !activeChar.isDead())
 		{
-			if (Config.DEBUG)
-				_log.fine("AutoSoulShot:" + _itemId);
-			
 			final L2ItemInstance item = activeChar.getInventory().getItemByItemId(_itemId);
 			
 			if (item != null)
@@ -60,41 +52,30 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 						if (_itemId == 6645 || _itemId == 6646 || _itemId == 6647)
 						{
 							activeChar.addAutoSoulShot(_itemId);
-							ExAutoSoulShot atk = new ExAutoSoulShot(_itemId, _type);
-							activeChar.sendPacket(atk);
+							activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
 							
 							// start the auto soulshot use
-							SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
-							sm.addString(item.getItemName());
-							activeChar.sendPacket(sm);
-							sm = null;
+							activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO).addString(item.getItemName()));
 							
-							activeChar.rechargeAutoSoulShot(true, true, true);
+							final L2Summon pet = activeChar.getPet();
+							
+							if(pet != null)
+								pet.rechargeShots(true, true, true);
 						}
 						else
 						{
 							if (activeChar.getActiveWeaponItem() != activeChar.getFistsWeaponItem() && item.getItem().getCrystalType() == activeChar.getActiveWeaponItem().getCrystalType())
 							{
 								if (_itemId >= 3947 && _itemId <= 3952 && activeChar.isInOlympiadMode())
-								{
-									SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
-									sm.addString(item.getItemName());
-									activeChar.sendPacket(sm);
-									sm = null;
-								}
+									activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT).addString(item.getItemName()));
 								else
 								{
 									activeChar.addAutoSoulShot(_itemId);
-									ExAutoSoulShot atk = new ExAutoSoulShot(_itemId, _type);
-									activeChar.sendPacket(atk);
+									activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));
 									
 									// start the auto soulshot use
-									SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO);
-									sm.addString(item.getItemName());
-									activeChar.sendPacket(sm);
-									sm = null;
-									
-									activeChar.rechargeAutoSoulShot(true, true, false);
+									activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO).addString(item.getItemName()));								
+									activeChar.rechargeShots(true, true, false);
 								}
 							}
 							else
@@ -109,15 +90,10 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 				}
 				else if (_type == 0)
 				{
-					activeChar.removeAutoSoulShot(_itemId);
-					ExAutoSoulShot atk = new ExAutoSoulShot(_itemId, _type);
-					activeChar.sendPacket(atk);
-					
 					// cancel the auto soulshot use
-					SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.AUTO_USE_OF_S1_CANCELLED);
-					sm.addString(item.getItemName());
-					activeChar.sendPacket(sm);
-					sm = null;
+					activeChar.removeAutoSoulShot(_itemId);
+					activeChar.sendPacket(new ExAutoSoulShot(_itemId, _type));					
+					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.AUTO_USE_OF_S1_CANCELLED).addString(item.getItemName()));
 				}
 			}
 		}

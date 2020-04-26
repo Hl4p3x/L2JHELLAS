@@ -3,6 +3,7 @@ package com.l2jhellas.gameserver.model.actor.instance;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.MyTargetSelected;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 
@@ -42,5 +43,7 @@ public final class L2DecoInstance extends L2Npc
 			MyTargetSelected my = new MyTargetSelected(getObjectId(), 0);
 			player.sendPacket(my);
 		}
+		
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 }

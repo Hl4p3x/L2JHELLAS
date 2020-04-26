@@ -46,4 +46,14 @@ public enum AbnormalEffect
 	{
 		return _name;
 	}
+	
+	public static AbnormalEffect FindById(int mask)
+	{
+		for (AbnormalEffect eff : AbnormalEffect.values())
+		{
+			if (eff.getMask() == mask)
+				return eff;
+		}
+		return null;
+	}
 }

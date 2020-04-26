@@ -50,7 +50,7 @@ public class PremiumCmd implements IVoicedCommandHandler
 			else
 			{
 				long _end_prem_date = 0L;
-				_end_prem_date = Extensions.PremiumService.Prem.getInstance().getPremServiceData(activeChar.getAccountName());
+				_end_prem_date = activeChar.getPremServiceData();
 				NpcHtmlMessage preReply = new NpcHtmlMessage(5);
 				
 				StringBuilder html3 = new StringBuilder("<html><body><title>Premium Account Details</title><center>");

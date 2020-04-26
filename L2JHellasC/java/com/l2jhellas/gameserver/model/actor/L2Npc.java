@@ -379,7 +379,10 @@ public class L2Npc extends L2Character
 		}
 		
 		if(this instanceof L2MonsterInstance && isDead())
+		{
+			player.sendPacket(ActionFailed.STATIC_PACKET);
 		    return false;
+		}
 		
 		return true;
 	}
@@ -413,7 +416,10 @@ public class L2Npc extends L2Character
 	public void onAction(L2PcInstance player)
 	{
 		if (!canTarget(player))
+		{
+			player.sendPacket(new ActionFailed());
 			return;
+		}
 		
 		if (player.getTarget() != this)
 		{
@@ -1865,7 +1871,9 @@ public class L2Npc extends L2Character
 	@Override
 	public void onSpawn()
 	{
-		SevenSignsFestival.getInstance().npcSpawned(this);
+		if (getNpcId() == 31127 || getNpcId() == 31137)
+		    SevenSignsFestival.getInstance().npcSpawned(this);
+		
 		AutoChatHandler.getInstance().npcSpawned(this);
 		super.onSpawn();	
 	}
@@ -1894,8 +1902,6 @@ public class L2Npc extends L2Character
 	{
 		ZoneManager.getInstance().getRegion(this).removeFromZones(this);
 		decayMe();
-		// Remove L2Object object from _allObjects of L2World
-		L2World.getInstance().removeObject(this);
 		super.deleteMe();
 	}
 	

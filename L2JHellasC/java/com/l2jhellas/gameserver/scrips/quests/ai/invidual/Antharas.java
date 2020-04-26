@@ -258,7 +258,7 @@ public class Antharas extends AbstractNpcAI
 			
 			GrandBossManager.setBossStatus(ANTHARAS, DEAD);
 			
-			long respawnTime = (Config.Interval_Of_Antharas_Spawn + Rnd.get(Config.Random_Of_Antharas_Spawn) * 3600000);
+			long respawnTime = (Config.Interval_Of_Antharas_Spawn + Rnd.get(Config.Random_Of_Antharas_Spawn));
 			startQuestTimer("antharas_unlock", null, null, respawnTime);
 			
 			StatsSet info = GrandBossManager.getStatsSet(ANTHARAS);

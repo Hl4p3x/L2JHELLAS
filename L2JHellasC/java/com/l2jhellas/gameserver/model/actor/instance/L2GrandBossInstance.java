@@ -1,8 +1,6 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
-import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.instancemanager.RaidBossPointsManager;
-import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.entity.Hero;
@@ -13,36 +11,12 @@ import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.util.Rnd;
 
 public final class L2GrandBossInstance extends L2MonsterInstance
-{
-	private boolean _teleportedToNest;
-	
-	protected boolean _isInSocialAction = false;
-	
-	public boolean IsInSocialAction()
-	{
-		return _isInSocialAction;
-	}
-	
-	public void setIsInSocialAction(boolean value)
-	{
-		_isInSocialAction = value;
-	}
-	
+{	
 	public L2GrandBossInstance(int objectId, L2NpcTemplate template)
 	{
 		super(objectId, template);
 	}
-	
-	public void setTeleported(boolean flag)
-	{
-		_teleportedToNest = flag;
-	}
-	
-	public boolean getTeleported()
-	{
-		return _teleportedToNest;
-	}
-	
+		
 	@Override
 	public void onSpawn()
 	{
@@ -54,22 +28,9 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	@Override
 	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake)
 	{
-		switch (getTemplate().npcId)
-		{
-			case 29014: // Orfen
-				if ((getCurrentHp() - damage) < getMaxHp() / 2 && !getTeleported())
-				{
-					clearAggroList();
-					getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-					teleToLocation(43577, 15985, -4396, false);
-					setTeleported(true);
-					setCanReturnToSpawnPoint(false);
-				}
-				break;
-			default:
-		}
-		if (IsInSocialAction() || isInvul())
+		if (isInvul())
 			return;
+
 		super.reduceCurrentHp(damage, attacker, awake);
 	}
 	
@@ -108,25 +69,7 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 		}
 		return true;
 	}
-	
-	@Override
-	public void doAttack(L2Character target,boolean stopMove)
-	{
-		if (_isInSocialAction)
-			return;
-		
-		super.doAttack(target,true);
-	}
-	
-	@Override
-	public void doCast(L2Skill skill)
-	{
-		if (_isInSocialAction)
-			return;
-		
-		super.doCast(skill);
-	}
-	
+
 	@Override
 	public boolean hasRandomAnimation()
 	{

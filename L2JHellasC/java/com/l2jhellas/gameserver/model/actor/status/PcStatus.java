@@ -9,8 +9,10 @@ import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SiegeGuardInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SummonInstance;
+import com.l2jhellas.gameserver.model.actor.stat.PcStat;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
+import com.l2jhellas.gameserver.skills.Formulas;
 import com.l2jhellas.gameserver.skills.Stats;
 import com.l2jhellas.util.Util;
 
@@ -26,11 +28,11 @@ public class PcStatus extends PlayableStatus
 	{
 		reduceHp(value, attacker, true);
 	}
-	
+
 	@Override
 	public final void reduceHp(double value, L2Character attacker, boolean awake)
 	{
-		if (getActiveChar().isInvul())
+		if (getActiveChar().isInvul() || getActiveChar().isDead())
 			return;
 		
 		if (attacker instanceof L2PcInstance)
@@ -136,6 +138,23 @@ public class PcStatus extends PlayableStatus
 			smsg.addNumber(fullValue);
 			getActiveChar().sendPacket(smsg);
 		}
+	}
+	
+	@Override
+	protected void startRegen()
+	{
+		final PcStat pcStat = getActiveChar().getStat();
+		
+		if (getCurrentCp() < pcStat.getMaxCp())
+			setCurrentCp(getCurrentCp() + Formulas.calcCpRegen(getActiveChar()), false);
+		
+		if (getCurrentHp() < pcStat.getMaxHp())
+			setCurrentHp(getCurrentHp() + Formulas.calcHpRegen(getActiveChar()), false);
+		
+		if (getCurrentMp() < pcStat.getMaxMp())
+			setCurrentMp(getCurrentMp() + Formulas.calcMpRegen(getActiveChar()), false);
+		
+		getActiveChar().broadcastStatusUpdate();
 	}
 	
 	@Override

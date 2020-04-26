@@ -319,15 +319,10 @@ public class L2Spawn
 		if (((mob instanceof L2MonsterInstance && !(mob instanceof L2RaidBossInstance)) || (mob instanceof L2RaidBossInstance && Config.CHAMPION_BOSS)) && Config.CHAMPION_FREQUENCY > 0 && !mob.getTemplate().isQuestMonster() && mob.getLevel() >= Config.CHAMPION_MIN_LEVEL && mob.getLevel() <= Config.CHAMPION_MAX_LEVEL)
 		{
 			if (Rnd.get(100000) <= Config.CHAMPION_FREQUENCY)
-			{
 				mob.setChampion(true);
-				
-			}
 		}
 		else
-		{
 			mob.setChampion(false);
-		}
 		
 		// Link the L2NpcInstance to this L2Spawn
 		mob.setSpawn(this);
@@ -344,9 +339,6 @@ public class L2Spawn
 	
 	public void setRespawnDelay(int i)
 	{
-		if (i < 0)
-			_log.warning(L2Spawn.class.getName() + ": respawn delay is negative for spawnId:" + _id);
-		
 		if (i < 10)
 			i = 10;
 		

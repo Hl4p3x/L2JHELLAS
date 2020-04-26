@@ -8,6 +8,7 @@ import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.GetOnVehicle;
 import com.l2jhellas.gameserver.network.serverpackets.MoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.PartyMemberPosition;
@@ -64,7 +65,10 @@ public class ValidatePosition extends L2GameClientPacket
 		}
 			
 		if (activeChar.isFalling(_z))
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
+		}
 
 		if (Config.COORD_SYNCHRONIZE > 0)
 		{
@@ -146,10 +150,14 @@ public class ValidatePosition extends L2GameClientPacket
 					activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					activeChar.setTarget(activeChar);
 					tsekarepos(activeChar,false);
+					return;
 				}
 				
 				if (activeChar.isFalling(_z))
+				{
+					activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 					return;
+				}
 			}
 			
 			if (diffSq < 250000)
@@ -171,6 +179,8 @@ public class ValidatePosition extends L2GameClientPacket
 		
 		if (activeChar.getParty() != null)
 			activeChar.getParty().broadcastToPartyMembers(activeChar, new PartyMemberPosition(activeChar.getParty()));
+		
+		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override
@@ -222,5 +232,6 @@ public class ValidatePosition extends L2GameClientPacket
 			else
 				activeChar.teleToLocation(MapRegionTable.TeleportWhereType.TOWN);
 		}
+		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 }

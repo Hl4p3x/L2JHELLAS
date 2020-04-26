@@ -134,14 +134,12 @@ public final class L2World
 		_allObjects.remove(object.getObjectId());
 		
 		if (object instanceof L2PcInstance)
-		{
-			final L2PcInstance player = (L2PcInstance) object;
-			if (player.isTeleporting()) // TODO: drop when we stop removing player from the world while teleportingq.
-			{
-				return;
-			}
 			_allPlayers.remove(object.getObjectId());
-		}
+	}
+
+	public void removeTeleObject(L2Object object)
+	{
+		_allObjects.remove(object.getObjectId());
 	}
 	
 	public L2Object findObject(int objectId)

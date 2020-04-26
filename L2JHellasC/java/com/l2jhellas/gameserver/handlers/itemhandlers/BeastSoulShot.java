@@ -28,13 +28,7 @@ public class BeastSoulShot implements IItemHandler
 		final L2PcInstance activeOwner = playable.getActingPlayer();
 		if (activeOwner == null)
 			return;
-		
-		if (playable instanceof L2Summon)
-		{
-			activeOwner.sendPacket(SystemMessageId.PET_CANNOT_USE_ITEM);
-			return;
-		}
-		
+
 		final L2Summon activePet = activeOwner.getPet();
 		if (activePet == null)
 		{
@@ -89,7 +83,7 @@ public class BeastSoulShot implements IItemHandler
 		}
 		
 		activeOwner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_USES_S1).addItemName(itemId));
-		Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activePet, activePet, 2033, 1, 0, 0), 600);
+		Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activePet, activePet, 2033, 1, 0, 0), 800);
 	}
 	
 	@Override

@@ -5,7 +5,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 import java.util.logging.Logger;
 
-import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.enums.ZoneId;
@@ -66,7 +65,7 @@ public class CharStatus
 	
 	public void reduceHp(double value, L2Character attacker, boolean awake)
 	{
-		if (getActiveChar().isInvul())
+		if (getActiveChar().isInvul() || getActiveChar().isDead())
 			return;
 		
 		if (getActiveChar() instanceof L2PcInstance)
@@ -220,7 +219,7 @@ public class CharStatus
 			int period = Formulas.getRegeneratePeriod(getActiveChar());
 			
 			// Create the HP/MP/CP Regeneration task
-			_regTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(new RegenTask(), period, period);
+			_regTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(() -> startRegen(), period, period);
 		}
 	}
 	
@@ -388,43 +387,22 @@ public class CharStatus
 		return _StatusListener;
 	}
 	
-	class RegenTask implements Runnable
+	protected void startRegen()
 	{
-		@Override
-		public void run()
+		final CharStat charstat = getActiveChar().getStat();
+		
+		if (getCurrentHp() < charstat.getMaxHp())
+			setCurrentHp(getCurrentHp() + Formulas.calcHpRegen(getActiveChar()), false);
+		
+		if (getCurrentMp() < charstat.getMaxMp())
+			setCurrentMp(getCurrentMp() + Formulas.calcMpRegen(getActiveChar()), false);
+		
+		if (!getActiveChar().isInActiveRegion())
 		{
-			try
-			{
-				CharStat charstat = getActiveChar().getStat();
-				
-				// Modify the current CP of the L2Character and broadcast Server->Client packet StatusUpdate
-				if (getCurrentCp() < charstat.getMaxCp())
-					setCurrentCp(getCurrentCp() + Formulas.calcCpRegen((L2PcInstance) getActiveChar()), false);
-				
-				// Modify the current HP of the L2Character and broadcast Server->Client packet StatusUpdate
-				if (getCurrentHp() < charstat.getMaxHp())
-					setCurrentHp(getCurrentHp() + Formulas.calcHpRegen(getActiveChar()), false);
-				
-				// Modify the current MP of the L2Character and broadcast Server->Client packet StatusUpdate
-				if (getCurrentMp() < charstat.getMaxMp())
-					setCurrentMp(getCurrentMp() + Formulas.calcMpRegen(getActiveChar()), false);
-				
-				if (!getActiveChar().isInActiveRegion())
-				{
-					// no broadcast necessary for characters that are in inactive regions.
-					// stop regeneration for characters who are filled up and in an inactive region.
-					if ((getCurrentCp() == charstat.getMaxCp()) && (getCurrentHp() == charstat.getMaxHp()) && (getCurrentMp() == charstat.getMaxMp()))
-						stopHpMpRegeneration();
-				}
-				else
-					getActiveChar().broadcastStatusUpdate(); // send the StatusUpdate packet
-			}
-			catch (Throwable e)
-			{
-				_log.severe(RegenTask.class.getName() + ": Throwable: run");
-				if (Config.DEVELOPER)
-					e.printStackTrace();
-			}
+			if ((getCurrentHp() == charstat.getMaxHp()) && (getCurrentMp() == charstat.getMaxMp()))
+				stopHpMpRegeneration();
 		}
+		else
+			getActiveChar().broadcastStatusUpdate(); 
 	}
 }

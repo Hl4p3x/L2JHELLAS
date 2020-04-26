@@ -13,6 +13,8 @@ import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.xml.PetData;
 import com.l2jhellas.gameserver.enums.items.ItemLocation;
+import com.l2jhellas.gameserver.handler.IItemHandler;
+import com.l2jhellas.gameserver.handler.ItemHandler;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jhellas.gameserver.instancemanager.ItemsOnGroundManager;
@@ -234,6 +236,7 @@ public class L2PetInstance extends L2Summon
 			MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel() - getLevel());
 			player.sendPacket(my);
 		}
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override
@@ -1027,6 +1030,44 @@ public class L2PetInstance extends L2Summon
 	public int getInventoryLimit()
 	{
 		return 12;
+	}
+	
+	@Override
+	public void rechargeShots(boolean physical, boolean magic, boolean summon)
+	{
+		if (getOwner().getAutoSoulShot() == null || getOwner().getAutoSoulShot().isEmpty())
+			return;
+		
+		for (int itemId : getOwner().getAutoSoulShot().values())
+		{
+			L2ItemInstance item = getOwner().getInventory().getItemByItemId(itemId);
+			if (item != null)
+			{
+				if (magic && itemId == 6646 || itemId == 6647)
+				{
+					final IItemHandler handler = ItemHandler.getInstance().getHandler(itemId);
+					
+					if (handler != null)
+						handler.useItem(getOwner(), item);
+				}
+				
+				if (physical && itemId == 6645)
+				{
+					final IItemHandler handler = ItemHandler.getInstance().getHandler(itemId);
+					
+					if (handler != null)
+						handler.useItem(this, item);
+				}
+			}
+			else
+				getOwner().removeAutoSoulShot(itemId);
+		}
+	}
+	
+	@Override
+	public void onSpawn()
+	{
+		super.onSpawn();
 	}
 	
 	@Override

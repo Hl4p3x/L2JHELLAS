@@ -74,9 +74,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		
 		if (activeChar == null || activeChar.isDead() || activeChar.isFakeDeath())
 			return;
-		
-		activeChar.onActionRequest();
-		
+				
 		if (activeChar.isSitting())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -159,7 +157,9 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			double distance = Math.hypot(_targetX - activeChar.getX(), _targetY - activeChar.getY());
 			activeChar.SummonRotate(activeChar.getPet(), distance);
 		}	
-
+		
+		if(activeChar.isSpawnProtected())
+		   activeChar.onActionRequest();
 	}
 
 	@Override

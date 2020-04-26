@@ -67,7 +67,6 @@ public final class Config
 	
 	public static boolean GEODATA;
 	public static int GEO_X_FIRST, GEO_Y_FIRST, GEO_X_LAST, GEO_Y_LAST;
-	public static boolean CONTROL_HEIGHT_DAMAGE;
 	public static boolean PATH_CLEAN;
 	public static boolean ALLOW_DOORS;
 	public static boolean SIMPLE_PATHFIND_FOR_MOBS;
@@ -134,15 +133,9 @@ public final class Config
 	public static boolean ALT_GAME_CANCEL_CAST;
 	public static boolean ALT_GAME_SHIELD_BLOCKS;
 	public static int ALT_PERFECT_SHLD_BLOCK;
-	public static boolean ALT_GAME_MOB_ATTACK_AI;
 	public static boolean ALT_MOB_AGRO_IN_PEACEZONE;
 	public static boolean ALT_GAME_FREIGHTS;
 	public static int ALT_GAME_FREIGHT_PRICE;
-	public static float ALT_GAME_EXPONENT_XP;
-	public static float ALT_GAME_EXPONENT_SP;
-	public static boolean ALLOW_SATURDAY_RATE_XP_SP;
-	public static float SATURDAY_RATE_XP;
-	public static float SATURDAY_RATE_SP;
 	public static boolean ALT_GAME_TIREDNESS;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE;
 	public static boolean ALT_GAME_KARMA_PLAYER_CAN_SHOP;
@@ -170,8 +163,6 @@ public final class Config
 	public static boolean DISABLE_WEIGHT_PENALTY;
 	
 	public static boolean ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE;
-	public static boolean ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH;
-	public static boolean REMOVE_CASTLE_CIRCLETS;
 	public static int ALT_MANOR_REFRESH_TIME;
 	public static int ALT_MANOR_REFRESH_MIN;
 	public static int ALT_MANOR_APPROVE_TIME;
@@ -202,7 +193,6 @@ public final class Config
 	public static int RIFT_ENTER_COST_CAPTAIN;
 	public static int RIFT_ENTER_COST_COMMANDER;
 	public static int RIFT_ENTER_COST_HERO;
-	public static int CRUMA_TOWER_LEVEL_RESTRICT;
 	public static boolean ALT_RESPAWN_POINT;
 	public static int ALT_RESPAWN_POINT_X;
 	public static int ALT_RESPAWN_POINT_Y;
@@ -225,6 +215,8 @@ public final class Config
 	public static int ALT_MAX_NUM_OF_CLANS_IN_ALLY;
 	public static int ALT_CLAN_MEMBERS_FOR_WAR;
 	public static int ALT_REPUTATION_SCORE_PER_KILL;
+	public static boolean ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH;
+	public static boolean REMOVE_CASTLE_CIRCLETS;
 	public static boolean CASTLE_SHIELD;
 	public static boolean CLANHALL_SHIELD;
 	public static boolean APELLA_ARMORS;
@@ -338,8 +330,6 @@ public final class Config
 	public static int VIP_X;
 	public static int VIP_Y;
 	public static int VIP_Z;
-	public static int ADD_EXP;
-	public static int ADD_SP;
 	public static String ABORT_RR;
 	public static boolean SPAWN_CHAR;
 	public static int SPAWN_X;
@@ -352,7 +342,6 @@ public final class Config
 	public static boolean ALLOW_ARCHERS_WEAR_HEAVY;
 	public static boolean CLASS_AUTO_EQUIP_AW;
 	
-	public static boolean ALLOW_USE_HERO_ITEM_ON_SUBCLASS;
 	public static int SOUL_CRYSTAL_BREAK_CHANCE;
 	public static int SOUL_CRYSTAL_LEVEL_CHANCE;
 	public static boolean MAX_LVL_AFTER_SUB;
@@ -657,18 +646,6 @@ public final class Config
 	public static int WAREHOUSE_SLOTS_CLAN;
 	public static int FREIGHT_SLOTS;
 
-	// Augment chance
-	public static int AUGMENTATION_NG_SKILL_CHANCE;
-	public static int AUGMENTATION_MID_SKILL_CHANCE;
-	public static int AUGMENTATION_HIGH_SKILL_CHANCE;
-	public static int AUGMENTATION_TOP_SKILL_CHANCE;
-	public static int AUGMENTATION_BASESTAT_CHANCE;
-	// Augment glow
-	public static int AUGMENTATION_NG_GLOW_CHANCE;
-	public static int AUGMENTATION_MID_GLOW_CHANCE;
-	public static int AUGMENTATION_HIGH_GLOW_CHANCE;
-	public static int AUGMENTATION_TOP_GLOW_CHANCE;
-	
 	public static double HP_REGEN_MULTIPLIER;
 	public static double MP_REGEN_MULTIPLIER;
 	public static double CP_REGEN_MULTIPLIER;
@@ -748,9 +725,14 @@ public final class Config
 	public static float RATE_DROP_ITEMS;
 	public static float RATE_DROP_SPOIL;
 	public static int RATE_DROP_MANOR;
+	public static float ALT_GAME_EXPONENT_XP;
+	public static float ALT_GAME_EXPONENT_SP;
 	public static String PARTY_XP_CUTOFF_METHOD;
 	public static double PARTY_XP_CUTOFF_PERCENT;
 	public static int PARTY_XP_CUTOFF_LEVEL;
+	public static boolean ALLOW_SATURDAY_RATE_XP_SP;
+	public static float SATURDAY_RATE_XP;
+	public static float SATURDAY_RATE_SP;
 	public static float RATE_DROP_QUEST;
 	public static float RATE_QUESTS_REWARD;
 	public static float RATE_KARMA_EXP_LOST;
@@ -789,6 +771,18 @@ public final class Config
 	public static int ENCHANT_MAX_JEWELRY;
 	public static int ENCHANT_SAFE_MAX;
 	public static int ENCHANT_SAFE_MAX_FULL;
+	
+	// Augment chance
+	public static int AUGMENTATION_NG_SKILL_CHANCE;
+	public static int AUGMENTATION_MID_SKILL_CHANCE;
+	public static int AUGMENTATION_HIGH_SKILL_CHANCE;
+	public static int AUGMENTATION_TOP_SKILL_CHANCE;
+	public static int AUGMENTATION_BASESTAT_CHANCE;
+	// Augment glow
+	public static int AUGMENTATION_NG_GLOW_CHANCE;
+	public static int AUGMENTATION_MID_GLOW_CHANCE;
+	public static int AUGMENTATION_HIGH_GLOW_CHANCE;
+	public static int AUGMENTATION_TOP_GLOW_CHANCE;
 	
 	public static int Antharas_Wait_Time;
 	public static int Valakas_Wait_Time;
@@ -969,12 +963,9 @@ public final class Config
 			ALT_GAME_CANCEL_CAST = altSettings.getProperty("AltGameCancelByHit", "Cast").equalsIgnoreCase("cast") || altSettings.getProperty("AltGameCancelByHit", "Cast").equalsIgnoreCase("all");
 			ALT_GAME_SHIELD_BLOCKS = Boolean.parseBoolean(altSettings.getProperty("AltShieldBlocks", "False"));
 			ALT_PERFECT_SHLD_BLOCK = Integer.parseInt(altSettings.getProperty("AltPerfectShieldBlockRate", "10"));
-			ALT_GAME_MOB_ATTACK_AI = Boolean.parseBoolean(altSettings.getProperty("AltGameMobAttackAI", "False"));
 			ALT_MOB_AGRO_IN_PEACEZONE = Boolean.parseBoolean(altSettings.getProperty("AltMobAgroInPeaceZone", "True"));
 			ALT_GAME_FREIGHTS = Boolean.parseBoolean(altSettings.getProperty("AltGameFreights", "False"));
 			ALT_GAME_FREIGHT_PRICE = Integer.parseInt(altSettings.getProperty("AltGameFreightPrice", "1000"));
-			ALT_GAME_EXPONENT_XP = Float.parseFloat(altSettings.getProperty("AltGameExponentXp", "0."));
-			ALT_GAME_EXPONENT_SP = Float.parseFloat(altSettings.getProperty("AltGameExponentSp", "0."));
 			ALT_GAME_TIREDNESS = Boolean.parseBoolean(altSettings.getProperty("AltGameTiredness", "False"));
 			// altkarma
 			ALT_GAME_KARMA_PLAYER_CAN_BE_KILLED_IN_PEACEZONE = Boolean.valueOf(altSettings.getProperty("AltKarmaPlayerCanBeKilledInPeaceZone", "False"));
@@ -993,9 +984,6 @@ public final class Config
 			ALT_GAME_CREATION_SPEED = Double.parseDouble(altSettings.getProperty("AltGameCreationSpeed", "1"));
 			ALT_GAME_CREATION_XP_RATE = Double.parseDouble(altSettings.getProperty("AltGameCreationRateXp", "1"));
 			ALT_GAME_CREATION_SP_RATE = Double.parseDouble(altSettings.getProperty("AltGameCreationRateSp", "1"));
-			ALLOW_SATURDAY_RATE_XP_SP = Boolean.parseBoolean(altSettings.getProperty("AllowSaturDayXpSp", "False"));
-			SATURDAY_RATE_XP = Float.parseFloat(altSettings.getProperty("SaturDayXp", "2."));
-			SATURDAY_RATE_SP = Float.parseFloat(altSettings.getProperty("SaturDaySp", "2."));
 			ALT_BLACKSMITH_USE_RECIPES = Boolean.parseBoolean(altSettings.getProperty("AltBlacksmithUseRecipes", "True"));
 			ALT_GAME_SUBCLASS_WITHOUT_QUESTS = Boolean.parseBoolean(altSettings.getProperty("AltSubClassWithoutQuests", "True"));
 			MAX_SUBCLASS = Byte.parseByte(altSettings.getProperty("MaxSubclass", "3"));
@@ -1006,6 +994,8 @@ public final class Config
 			RESTORE_EFFECTS_ON_SUBCLASS_CHANGE = Boolean.parseBoolean(altSettings.getProperty("RestoreEffectsOnSub", "False"));
 			DISABLE_GRADE_PENALTY = Boolean.parseBoolean(altSettings.getProperty("DisableGradePenalty", "False"));
 			DISABLE_WEIGHT_PENALTY = Boolean.parseBoolean(altSettings.getProperty("DisableWeightPenalty", "False"));
+			ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE = Boolean.parseBoolean(altSettings.getProperty("AltNewCharAlwaysIsNewbie", "False"));
+
 			// manor
 			ALT_MANOR_REFRESH_TIME = Integer.parseInt(altSettings.getProperty("AltManorRefreshTime", "20"));
 			ALT_MANOR_REFRESH_MIN = Integer.parseInt(altSettings.getProperty("AltManorRefreshMin", "00"));
@@ -1060,7 +1050,6 @@ public final class Config
 			RIFT_ENTER_COST_CAPTAIN = Integer.parseInt(altSettings.getProperty("CaptainCost", "27"));
 			RIFT_ENTER_COST_COMMANDER = Integer.parseInt(altSettings.getProperty("CommanderCost", "30"));
 			RIFT_ENTER_COST_HERO = Integer.parseInt(altSettings.getProperty("HeroCost", "33"));
-			CRUMA_TOWER_LEVEL_RESTRICT = Integer.parseInt(altSettings.getProperty("CrumaTowerLevelRestrict", "56"));
 			// spawns
 			ALT_RESPAWN_POINT = Boolean.parseBoolean(altSettings.getProperty("AllowCustomRespawnPoint", "False"));
 			ALT_RESPAWN_POINT_X = Integer.parseInt(altSettings.getProperty("CustomRespawnPointX", "0"));
@@ -1097,7 +1086,6 @@ public final class Config
 			ALT_MAX_NUM_OF_CLANS_IN_ALLY = Integer.parseInt(clanSettings.getProperty("AltMaxNumOfClansInAlly", "3"));
 			ALT_CLAN_MEMBERS_FOR_WAR = Integer.parseInt(clanSettings.getProperty("AltClanMembersForWar", "15"));
 			ALT_REPUTATION_SCORE_PER_KILL = Integer.parseInt(clanSettings.getProperty("ReputationScorePerKill", "5"));
-			ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE = Boolean.parseBoolean(clanSettings.getProperty("AltNewCharAlwaysIsNewbie", "False"));
 			ALT_MEMBERS_CAN_WITHDRAW_FROM_CLANWH = Boolean.parseBoolean(clanSettings.getProperty("AltMembersCanWithdrawFromClanWH", "False"));
 			REMOVE_CASTLE_CIRCLETS = Boolean.parseBoolean(clanSettings.getProperty("RemoveCastleCirclets", "True"));
 
@@ -1250,8 +1238,6 @@ public final class Config
 			VIP_X = Integer.parseInt(L2JHellasSettings.getProperty("LocationX", "0"));
 			VIP_Y = Integer.parseInt(L2JHellasSettings.getProperty("LocationY", "0"));
 			VIP_Z = Integer.parseInt(L2JHellasSettings.getProperty("LocationZ", "0"));
-			ADD_EXP = Integer.parseInt(L2JHellasSettings.getProperty("AddExpAtPvp", "0"));
-			ADD_SP = Integer.parseInt(L2JHellasSettings.getProperty("AddSpAtPvp", "0"));
 			ABORT_RR = L2JHellasSettings.getProperty("AbortRestart", "L2JHellas");
 			SPAWN_CHAR = Boolean.parseBoolean(L2JHellasSettings.getProperty("CustomSpawn", "False"));
 			SPAWN_X = Integer.parseInt(L2JHellasSettings.getProperty("SpawnX", "0"));
@@ -1269,7 +1255,7 @@ public final class Config
 			}
 			catch (Exception e)
 			{
-				_log.severe(Config.class.getName() + ": Error while loading " + MOD_L2JHellas_CONFIG_FILE + " settings!");
+				_log.severe(Config.class.getName() + ": Error while loading " + MOD_RANK_CONFIG_FILE + " settings!");
 			}
 			RANK_PVP_SYSTEM_ENABLED = Boolean.parseBoolean(RankSettings.getProperty("RankPvpSystemEnabled", "false"));
 			
@@ -1780,7 +1766,6 @@ public final class Config
 					}
 				}
 			}
-			ALLOW_USE_HERO_ITEM_ON_SUBCLASS = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowUseHeroItemOnSub", "False"));
 			MAX_LVL_AFTER_SUB = Boolean.parseBoolean(L2JHellasSettings.getProperty("MaxLvLAfterSub", "False"));
 			
 			String AioSkillsSplit[] = L2JHellasSettings.getProperty("ClanSkills", "").split(";");
@@ -1863,7 +1848,7 @@ public final class Config
 			TOPZONE_SERVER_LINK = autoSettings.getProperty("TopzoneServerLink", "null");
 			TOPZONE_VOTES_DIFFERENCE = Integer.parseInt(autoSettings.getProperty("TopzoneVotesDifference", "5"));
 			TOPZONE_REWARD_CHECK_TIME = Integer.parseInt(autoSettings.getProperty("TopzoneRewardCheckTime", "5"));
-			TOPZONE_REWARD = parseItemsList(autoSettings.getProperty("TopzoneReward", "57,100000000"));
+			TOPZONE_REWARD = parseItemsList(autoSettings.getProperty("TopzoneReward", "57,100000000"));		                                                                   
 			TOPZONE_BOXES_ALLOWED = Integer.parseInt(autoSettings.getProperty("TopzoneDualboxesAllowed", "1"));
 			ALLOW_PRIVATE_ANTI_BOT = Boolean.valueOf(autoSettings.getProperty("AllowPrivateAntiBot", "False"));
 			
@@ -2003,7 +1988,6 @@ public final class Config
 			GEO_X_LAST = Integer.parseInt(geoSettings.getProperty("GeoLastX", "26"));
 			GEO_Y_LAST = Integer.parseInt(geoSettings.getProperty("GeoLastY", "26"));
 			
-			CONTROL_HEIGHT_DAMAGE = Boolean.parseBoolean(geoSettings.getProperty("ControlHeightDamage", "true"));
 			PATH_CLEAN = Boolean.parseBoolean(geoSettings.getProperty("PathClean", "true"));
 			ALLOW_DOORS = Boolean.parseBoolean(geoSettings.getProperty("AllowDoors", "false"));
 			SIMPLE_PATHFIND_FOR_MOBS = Boolean.parseBoolean(geoSettings.getProperty("SimplePathFindForMobs", "true"));
@@ -2105,9 +2089,8 @@ public final class Config
 			TRADE_CHAT = Integer.valueOf(optionsSettings.getProperty("FloodTradeChat", "100"));
 			USE_ITEM = Integer.valueOf(optionsSettings.getProperty("FloodUseItem", "100"));
 			SOCIAL = Integer.valueOf(optionsSettings.getProperty("FloodSocial", "100"));		
-			HANDLER = Integer.valueOf(optionsSettings.getProperty("FloodItemHanderl", "100"));
-
-			
+			HANDLER = Integer.valueOf(optionsSettings.getProperty("FloodItemHandler", "100"));
+		
 			Properties otherSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(OTHER_CONFIG_FILE)))
 			{
@@ -2132,17 +2115,6 @@ public final class Config
 			WAREHOUSE_SLOTS_DWARF = Integer.parseInt(otherSettings.getProperty("MaximumWarehouseSlotsForDwarf", "120"));
 			WAREHOUSE_SLOTS_CLAN = Integer.parseInt(otherSettings.getProperty("MaximumWarehouseSlotsForClan", "150"));
 			FREIGHT_SLOTS = Integer.parseInt(otherSettings.getProperty("MaximumFreightSlots", "20"));
-			
-			AUGMENTATION_NG_SKILL_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationNGSkillChance", "15"));
-			AUGMENTATION_MID_SKILL_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationMidSkillChance", "30"));
-			AUGMENTATION_HIGH_SKILL_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationHighSkillChance", "45"));
-			AUGMENTATION_TOP_SKILL_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationTopSkillChance", "60"));
-			AUGMENTATION_BASESTAT_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationBaseStatChance", "1"));
-			
-			AUGMENTATION_NG_GLOW_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationNGGlowChance", "0"));
-			AUGMENTATION_MID_GLOW_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationMidGlowChance", "40"));
-			AUGMENTATION_HIGH_GLOW_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationHighGlowChance", "70"));
-			AUGMENTATION_TOP_GLOW_CHANCE = Integer.parseInt(otherSettings.getProperty("AugmentationTopGlowChance", "100"));
 			
 			HP_REGEN_MULTIPLIER = Double.parseDouble(otherSettings.getProperty("HpRegenMultiplier", "100")) / 100;
 			MP_REGEN_MULTIPLIER = Double.parseDouble(otherSettings.getProperty("MpRegenMultiplier", "100")) / 100;
@@ -2222,9 +2194,18 @@ public final class Config
 			RATE_DROP_ITEMS = Float.parseFloat(ratesSettings.getProperty("RateDropItems", "1"));
 			RATE_DROP_SPOIL = Float.parseFloat(ratesSettings.getProperty("RateDropSpoil", "1"));
 			RATE_DROP_MANOR = Integer.parseInt(ratesSettings.getProperty("RateDropManor", "1"));
+			
+			ALT_GAME_EXPONENT_XP = Float.parseFloat(ratesSettings.getProperty("AltGameExponentXp", "0."));
+			ALT_GAME_EXPONENT_SP = Float.parseFloat(ratesSettings.getProperty("AltGameExponentSp", "0."));
+						
 			PARTY_XP_CUTOFF_METHOD = ratesSettings.getProperty("PartyXpCutoffMethod", "percentage");
 			PARTY_XP_CUTOFF_PERCENT = Double.parseDouble(ratesSettings.getProperty("PartyXpCutoffPercent", "3."));
 			PARTY_XP_CUTOFF_LEVEL = Integer.parseInt(ratesSettings.getProperty("PartyXpCutoffLevel", "30"));
+			
+			ALLOW_SATURDAY_RATE_XP_SP = Boolean.parseBoolean(ratesSettings.getProperty("AllowSaturDayXpSp", "False"));
+			SATURDAY_RATE_XP = Float.parseFloat(ratesSettings.getProperty("SaturDayXp", "2."));
+			SATURDAY_RATE_SP = Float.parseFloat(ratesSettings.getProperty("SaturDaySp", "2."));
+
 			RATE_DROP_QUEST = Float.parseFloat(ratesSettings.getProperty("RateDropQuest", "1"));
 			RATE_QUESTS_REWARD = Float.parseFloat(ratesSettings.getProperty("RateQuestsReward", "1"));
 			RATE_KARMA_EXP_LOST = Float.parseFloat(ratesSettings.getProperty("RateKarmaExpLost", "1"));
@@ -2262,6 +2243,17 @@ public final class Config
 			ENCHANT_MAX_JEWELRY = Integer.parseInt(ratesSettings.getProperty("EnchantMaxJewelry", "25"));
 			ENCHANT_SAFE_MAX = Integer.parseInt(ratesSettings.getProperty("EnchantSafeMax", "3"));
 			ENCHANT_SAFE_MAX_FULL = Integer.parseInt(ratesSettings.getProperty("EnchantSafeMaxFull", "4"));
+			
+			AUGMENTATION_NG_SKILL_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationNGSkillChance", "15"));
+			AUGMENTATION_MID_SKILL_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationMidSkillChance", "30"));
+			AUGMENTATION_HIGH_SKILL_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationHighSkillChance", "45"));
+			AUGMENTATION_TOP_SKILL_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationTopSkillChance", "60"));
+			AUGMENTATION_BASESTAT_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationBaseStatChance", "1"));
+			
+			AUGMENTATION_NG_GLOW_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationNGGlowChance", "0"));
+			AUGMENTATION_MID_GLOW_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationMidGlowChance", "40"));
+			AUGMENTATION_HIGH_GLOW_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationHighGlowChance", "70"));
+			AUGMENTATION_TOP_GLOW_CHANCE = Integer.parseInt(ratesSettings.getProperty("AugmentationTopGlowChance", "100"));
 			
 			Properties grandbossSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(GRANDBOSS_CONFIG_FILE)))
@@ -2851,9 +2843,6 @@ public final class Config
 			case "MagicFailures":
 				ALT_GAME_MAGICFAILURES = Boolean.valueOf(pValue);
 				break;
-			case "AltGameMobAttackAI":
-				ALT_GAME_MOB_ATTACK_AI = Boolean.valueOf(pValue);
-				break;
 			case "AltMobAgroInPeaceZone":
 				ALT_MOB_AGRO_IN_PEACEZONE = Boolean.valueOf(pValue);
 				break;
@@ -3003,12 +2992,6 @@ public final class Config
 				break;
 			case "WeddingDivorceCosts":
 				MOD_WEDDING_DIVORCE_COSTS = Integer.parseInt(pValue);
-				break;
-			case "AddExpAtPvp":
-				ADD_EXP = Integer.parseInt(pValue);
-				break;
-			case "AddSpAtPvp":
-				ADD_SP = Integer.parseInt(pValue);
 				break;
 			case "AbortRestart":
 				ABORT_RR = (pValue);

@@ -118,9 +118,9 @@ public class CrestCache
 				file.renameTo(new File(CRESTS_DIR + "Crest_" + newId + ".bmp"));
 				_log.info("Renamed Clan crest to new format: Crest_" + newId + ".bmp");
 				
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				  PreparedStatement statement = con.prepareStatement("UPDATE clan_data SET crest_id = ? WHERE clan_id = ?"))
 				{
-					PreparedStatement statement = con.prepareStatement("UPDATE clan_data SET crest_id = ? WHERE clan_id = ?");
 					statement.setInt(1, newId);
 					statement.setInt(2, clan.getClanId());
 					statement.executeUpdate();

@@ -145,13 +145,13 @@ public final class L2ClassMasterInstance extends L2NpcInstance
 				html.setHtml(sb.toString());
 				player.sendPacket(html);
 			}
-			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 		else
 		{
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
-			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
+		
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override

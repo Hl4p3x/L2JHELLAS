@@ -1,7 +1,5 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
-import java.util.logging.Logger;
-
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
@@ -12,7 +10,6 @@ import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 
 public final class Action extends L2GameClientPacket
 {
-	private static Logger _log = Logger.getLogger(Action.class.getName());
 	private static final String ACTION__C__04 = "[C] 04 Action";
 	
 	// cddddc
@@ -34,9 +31,6 @@ public final class Action extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (Config.DEBUG)
-			_log.fine("Action: " + _actionId + ", objectId: " + _objectId);
-		
 		// Get the current L2PcInstance of the player
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		
@@ -70,18 +64,16 @@ public final class Action extends L2GameClientPacket
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
-		activeChar.onActionRequest();
-		
-		if (_actionId == 0)
-			obj.onAction(activeChar);
-		else if (_actionId == 1)
+
+		if (_actionId == 1)
 		{
 			if (!activeChar.isGM() && !(obj instanceof L2Npc && Config.ALT_GAME_VIEWNPC))
 				obj.onAction(activeChar);
 			else
 				obj.onActionShift(activeChar);
 		}
+		else
+			obj.onAction(activeChar);
 	}
 	
 	@Override

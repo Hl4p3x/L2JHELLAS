@@ -140,7 +140,8 @@ public class L2CharacterAI extends AbstractAI
 			{
 				// Set the AI attack target (change target)
 				setAttackTarget(target);
-				
+				setTarget(target);
+
 				stopFollow();
 				
 				// Launch the Think Event
@@ -148,21 +149,22 @@ public class L2CharacterAI extends AbstractAI
 				
 			}
 			else
-				clientActionFailed(); // else client freezes until cancel target
+				clientActionFailed(); // else client freezes until cancel target			
 		}
 		else
 		{
-			// Set the Intention of this AbstractAI to AI_INTENTION_ATTACK
-			changeIntention(AI_INTENTION_ATTACK, target, null);
-			
+			setTarget(target);
 			// Set the AI attack target
 			setAttackTarget(target);
 			
 			stopFollow();
-			
+
+			// Set the Intention of this AbstractAI to AI_INTENTION_ATTACK
+			changeIntention(AI_INTENTION_ATTACK, target, null);		
+				
 			// Launch the Think Event
 			notifyEvent(CtrlEvent.EVT_THINK, null);
-		}
+		}		
 	}
 	
 	@Override
@@ -620,7 +622,7 @@ public class L2CharacterAI extends AbstractAI
 					return true;
 				
 				stopFollow();
-
+				
 				return false;
 			}
 
@@ -638,16 +640,25 @@ public class L2CharacterAI extends AbstractAI
 			stopFollow();
 			
 			if (target instanceof L2Character && !(target instanceof L2DoorInstance))
-			{
+			{			
 				if (isFollowing() || ((L2Character) target).isMoving())
 					offset -= 100;
-				
+								
 				if (offset < 5)
-					offset = 5;				
+					offset = 5;	
+
+				if (_actor.getStat().getMoveSpeed() <= 174 && _actor.isInsideRadius(target,_actor.getPhysicalAttackRange()+40, false, true))
+				{
+					if (isFollowing())
+						stopFollow();
+					
+					return false;
+				}
+						
 			    startFollow((L2Character) target, offset);
 			}
 			else
-				moveToPawn(target, offset);	
+				moveToPawn(target, offset);				
 			
 			return true;
 		}		

@@ -99,12 +99,11 @@ public final class L2SiegeGuardInstance extends L2Attackable
 						player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					
 					if(!player.isSitting() && !player.isDead())
-					    player.sendPacket(new MoveToPawn(player, this, L2Npc.INTERACTION_DISTANCE));
-					
-					player.sendPacket(ActionFailed.STATIC_PACKET);
+					    player.sendPacket(new MoveToPawn(player, this, L2Npc.INTERACTION_DISTANCE));					
 				}
 			}
 		}
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override

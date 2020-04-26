@@ -111,10 +111,9 @@ public class L2StaticObjectInstance extends L2Object
 				}
 				else if (_type == 0)
 					player.sendPacket(new ShowTownMap(_texture, getMapX(), getMapY()));
-				// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
-				player.sendPacket(ActionFailed.STATIC_PACKET);
 			}
 		}
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override

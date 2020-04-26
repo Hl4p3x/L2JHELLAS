@@ -84,7 +84,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	private static final String DELETE_CHAR_PETS = "DELETE FROM pets WHERE item_obj_id IN (SELECT object_id FROM items WHERE items.owner_id=?)";
 	private static final String DELETE_CHAR_AUGMENTS = "DELETE FROM augmentations WHERE item_id IN (SELECT object_id FROM items WHERE items.owner_id=?)";
 	private static final String DELETE_CHAR_ITEMS = "DELETE FROM items WHERE owner_id=?";
-	private static final String DELETE_CHAR_RBP = "DELETE FROM character_raid_points WHERE char_id=?";
+	private static final String DELETE_CHAR_RBP = "DELETE FROM character_raid_points WHERE charId=?";
 	private static final String DELETE_CHAR = "DELETE FROM characters WHERE obj_Id=?";
 
 	public L2GameClient(MMOConnection<L2GameClient> con)
@@ -408,9 +408,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		
 		L2PcInstance player = L2World.getInstance().getPlayer(objectId);
 		if (player != null)
-		{
-			_log.severe("Attempt of double login: " + player.getName() + "(" + objectId + ") " + getAccountName());
-			
+		{			
 			if (player.getClient() != null)
 				player.getClient().closeNow();
 			else
@@ -664,8 +662,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		}
 		
 		if (_state == GameClientState.CONNECTED)
-			closeNow();
-		
+			closeNow();		
 	}
 	
 	public void onUnknownPacket()

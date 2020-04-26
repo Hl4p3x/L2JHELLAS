@@ -28,18 +28,13 @@ public class L2CharNoblesInstance extends L2Npc
 	{
 		StringTokenizer st = new StringTokenizer(command, " ");
 		String curCommand = st.nextToken();
+		
 		if (curCommand.startsWith("showwindow"))
-		{
 			showWindow(player, Integer.parseInt(st.nextToken()));
-		}
 		else if (curCommand.startsWith("setstatus"))
-		{
 			setStatus(player, Integer.parseInt(st.nextToken()));
-		}
 		else if (curCommand.startsWith("info"))
-		{
 			showInfoWindow(player, "info.htm");
-		}
 	}
 	
 	@Override
@@ -62,6 +57,7 @@ public class L2CharNoblesInstance extends L2Npc
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	private void sendHtmlMessage(L2PcInstance player, NpcHtmlMessage html)

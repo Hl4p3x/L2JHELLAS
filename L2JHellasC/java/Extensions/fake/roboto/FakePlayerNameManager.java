@@ -18,20 +18,20 @@ public enum FakePlayerNameManager
 	
 	public static final Logger _log = Logger.getLogger(FakePlayerNameManager.class.getName());
 	private List<String> _fakePlayerNames = new ArrayList<>();
+	int id = 1;
 	
 	public void initialise()
 	{
 		loadWordlist();
 	}
-	
+
 	public String getRandomAvailableName()
 	{
+		id ++;	
 		String name = getRandomNameFromWordlist();
 		
-		while (nameAlreadyExists(name))
-		{
-			name = getRandomNameFromWordlist();
-		}
+		if(nameAlreadyExists(name))
+		   return name+id;
 		
 		return name;
 	}

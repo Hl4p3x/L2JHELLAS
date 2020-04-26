@@ -151,9 +151,8 @@ public class L2SepulcherNpcInstance extends L2Npc
 					doAction(player);
 				}
 			}
-			// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-		}
+		}		
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	private void doAction(L2PcInstance player)

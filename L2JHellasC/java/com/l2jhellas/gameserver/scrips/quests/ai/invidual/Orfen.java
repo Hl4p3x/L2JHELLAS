@@ -87,7 +87,7 @@ public class Orfen extends AbstractNpcAI
 			if (temp > 0)
 			{
 				// The time has not yet expired. Mark Orfen as currently locked (dead).
-				startQuestTimer("orfen_unlock", temp, null, null, false);
+				startQuestTimer("orfen_unlock", null, null, temp);
 			}
 			else
 			{
@@ -235,9 +235,7 @@ public class Orfen extends AbstractNpcAI
 		npc.broadcastPacket(Music.BS02_D_7000.getPacket());
 		GrandBossManager.setBossStatus(ORFEN, DEAD);
 		
-		long respawnTime = (long) Config.Interval_Of_Orfen_Spawn + Rnd.get(-Config.Random_Of_Orfen_Spawn, Config.Random_Of_Orfen_Spawn);
-		respawnTime *= 3600000;
-		
+		long respawnTime = Config.Interval_Of_Orfen_Spawn + Rnd.get(Config.Random_Of_Orfen_Spawn);
 		startQuestTimer("orfen_unlock", respawnTime, null, null, false);
 		
 		// also save the respawn time so that the info is maintained past reboots

@@ -12,15 +12,43 @@
 </table>
 <br>
 <br>
-Enter Account Name:<br>
-<edit var="acc_name" width=200>
+<center>
+<table><tr><td><center><font color="FFFF00">Description<br></font></center></td></tr>
+<tr><td>Account name: player account name.</td></tr>
+<tr><td>Add month: Current month + add month</td></tr>
+<tr><td>Day of month: 1 = the first day of month</td></tr>
+<tr><td>Hour of day: 12 = 12:00 PM</td></tr>
+</table>
 <br>
 <br>
-<button value="Add 1 month Premium Services" action="bypass -h admin_premium_add1 $acc_name" width=200 height=25 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df"><br>
-<button value="Add 2 month Premium Services" action="bypass -h admin_premium_add2 $acc_name" width=200 height=25 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df"><br>
-<button value="Add 3 month Premium Services" action="bypass -h admin_premium_add3 $acc_name" width=200 height=25 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df"><br>
-<button value="Add 4 month Premium Services" action="bypass -h admin_premium_add4 $acc_name" width=200 height=25 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df"><br>
-<button value="Add 5 month Premium Services" action="bypass -h admin_premium_add5 $acc_name" width=200 height=25 back="L2UI_ct1.button_df" fore="L2UI_ct1.button_df"><br>
+<table width=270 bgcolor=000000>
+	<tr>
+		<td>Account Name:</td>
+		<td width=150><edit var="acc_name" width=150></td>
+	</tr>
+</table>
+<table width=270 bgcolor=000000>
+	<tr>
+	    <td>Add Month     :</td>
+		<td width=150><combobox width=150 height=18 var="premmonth" list=1;2;3;4;5;6;><br1></td>
+	</tr>
+</table>
+<table width=270 bgcolor=000000>
+	<tr>
+	    <td>Day of Month :</td>
+		<td width=150><combobox width=150 height=18 var="daymonth" list=1;5;10;15;25;28;><br1></td>
+	</tr>
+</table>
+<table width=270 bgcolor=000000>
+	<tr>
+	    <td>Hour of Day   :</td>
+		<td width=150><combobox width=150 height=18 var="hourofday" list=12;13;14;15;16;17;18;><br1></td>
+	</tr>
+</table>
+<br>
+<br>
+<button value="Give premium" action="bypass -h admin_premium_add $acc_name $premmonth $daymonth $hourofday" width=80 height=15 back="sek.cbui94" fore="sek.cbui92">
+</center>
 <br>
 </center>
 </body></html>

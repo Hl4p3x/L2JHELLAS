@@ -365,12 +365,15 @@ public class AdminEditChar implements IAdminCommandHandler
 						temp.removeClanMember(player.getName(), 0);
 					}
 					L2World.getInstance().removeObject(player);
+					CharNameTable.getInstance().removeName(player.getObjectId());
+					
 					player.setName(_newName);
 					L2World.getInstance().storeObject(player);
 					player.store();
+					CharNameTable.getInstance().addName(player);
 					player.broadcastUserInfo();
 					player.sendMessage("Your name has been changed by a GM.");
-					
+
 					if (player.isInParty())
 					{
 						player.getParty().broadcastToPartyMembers(player, new PartySmallWindowDeleteAll());

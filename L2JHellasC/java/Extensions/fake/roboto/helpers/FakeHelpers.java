@@ -27,6 +27,7 @@ import Extensions.fake.roboto.ai.StormScreamerAI;
 import Extensions.fake.roboto.ai.TitanAI;
 import Extensions.fake.roboto.ai.WindRiderAI;
 
+import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.CharTemplateData;
 import com.l2jhellas.gameserver.enums.Sex;
 import com.l2jhellas.gameserver.enums.player.ClassId;
@@ -375,7 +376,7 @@ public class FakeHelpers
 			player.getInventory().addItem("Weapon", id, 1, player, null);
 			L2ItemInstance item = player.getInventory().getItemByItemId(id);
 			if (randomlyEnchant)
-				item.setEnchantLevel(Rnd.get(7, 20));
+				item.setEnchantLevel(Rnd.get(0,Config.ENCHANT_MAX_WEAPON));
 			player.getInventory().equipItemAndRecord(item);
 			player.getInventory().reloadEquippedItems();
 		}

@@ -118,7 +118,7 @@ public class L2DonateInstance extends L2NpcInstance
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
-		
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	private void showHtmlWindow(L2PcInstance activeChar)

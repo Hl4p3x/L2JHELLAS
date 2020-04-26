@@ -59,20 +59,24 @@ public class SummonMinions extends AbstractNpcAI
 		if (npc.isScriptValue(0))
 		{
 			int npcId = npc.getNpcId();
-			if (npcId != 20767)
+			
+			if (MINIONS.get(npcId) != null)
 			{
-				for (int val : MINIONS.get(npcId))
+				if (npcId != 20767)
 				{
-					L2Attackable newNpc = (L2Attackable) addSpawn(val, npc.getX() + Rnd.get(-150, 150), npc.getY() + Rnd.get(-150, 150), npc.getZ(), 0, false, 0, false);
-					attack(newNpc, attacker);
+					for (int val : MINIONS.get(npcId))
+					{
+						L2Attackable newNpc = (L2Attackable) addSpawn(val,npc.getX() + Rnd.get(-150, 150),npc.getY() + Rnd.get(-150, 150), npc.getZ(), 0,false, 0, false);
+						attack(newNpc, attacker);
+					}
 				}
-			}
-			else
-			{
-				for (int val : MINIONS.get(npcId))
-					addSpawn(val, (npc.getX() + Rnd.get(-100, 100)), (npc.getY() + Rnd.get(-100, 100)), npc.getZ(), 0, false, 0, false);
-				
-				npc.broadcastNpcSay(ORCS_WORDS[Rnd.get(ORCS_WORDS.length)]);
+				else
+				{
+					for (int val : MINIONS.get(npcId))
+						addSpawn(val, (npc.getX() + Rnd.get(-100, 100)),(npc.getY() + Rnd.get(-100, 100)), npc.getZ(),0, false, 0, false);
+					
+					npc.broadcastNpcSay(ORCS_WORDS[Rnd.get(ORCS_WORDS.length)]);
+				}
 			}
 			npc.setScriptValue(1);
 		}

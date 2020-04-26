@@ -51,7 +51,6 @@ import com.l2jhellas.gameserver.scrips.quests.ai.group.VarkaKetraAlly;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Anays;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Antharas;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Baium;
-import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Barakiel;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Core;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.DrChaos;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.FleeNpc;
@@ -484,7 +483,6 @@ public class ScriptLoader
 		Anays.class,
 		Antharas.class,
 		Baium.class,
-		Barakiel.class,
 		Core.class,
 		DrChaos.class,
 		FleeNpc.class,

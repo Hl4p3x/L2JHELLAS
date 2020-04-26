@@ -99,5 +99,6 @@ public class L2SiegeFlagInstance extends L2Npc
 				player.sendPacket(ActionFailed.STATIC_PACKET);
 			}
 		}
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 }

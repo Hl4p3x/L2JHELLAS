@@ -335,13 +335,13 @@ public abstract class L2Character extends L2Object
 		
 		z += 5;
 		
-		if (Config.DEBUG)
-			_log.fine("Teleporting to: " + x + ", " + y + ", " + z);
-		
 		// Send a Server->Client packet TeleportToLocationt to the L2Character AND to all L2PcInstance in the _KnownPlayers of the L2Character
-		broadcastPacket(new TeleportToLocation(this, x, y, z, getHeading()));
+		broadcastPacket(new TeleportToLocation(this, x, y, z, getHeading()));	
 		
-		decayMe();
+		final L2WorldRegion reg = getWorldRegion();
+		setIsVisible(false);	
+		L2World.removeVisibleObject(this, reg);
+		L2World.getInstance().removeTeleObject(this);
 		
 		// Set the x,y,z position of the L2Object and if necessary modify its _worldRegion
 		setXYZ(x, y, z);
@@ -567,9 +567,9 @@ public abstract class L2Character extends L2Object
 		
 		// Recharge any active auto soulshot tasks for player (or player's summon if one exists).
 		if (player != null)
-			player.rechargeAutoSoulShot(true, false, false);
-		else if (this instanceof L2Summon)
-			((L2Summon) this).getOwner().rechargeAutoSoulShot(true, false, true);
+			player.rechargeShots(true, false, false);
+		if (this instanceof L2Summon)
+			((L2Summon) this).rechargeShots(true, false, true);
 		
 		// Verify if soulshots are charged.
 		boolean wasSSCharged;
@@ -961,16 +961,16 @@ public abstract class L2Character extends L2Object
 		if (skill.useSoulShot())
 		{
 			if (this instanceof L2PcInstance)
-				((L2PcInstance) this).rechargeAutoSoulShot(true, false, false);
-			else if (this instanceof L2Summon)
-				((L2Summon) this).getOwner().rechargeAutoSoulShot(true, false, true);
+				((L2PcInstance) this).rechargeShots(true, false, false);
+			if (this instanceof L2Summon)
+				((L2Summon) this).rechargeShots(true, false, true);
 		}
 		else if (skill.useSpiritShot())
 		{
 			if (this instanceof L2PcInstance)
-				((L2PcInstance) this).rechargeAutoSoulShot(false, true, false);
-			else if (this instanceof L2Summon)
-				((L2Summon) this).getOwner().rechargeAutoSoulShot(false, true, true);
+				((L2PcInstance) this).rechargeShots(false, true, false);
+			if (this instanceof L2Summon)
+				((L2Summon) this).rechargeShots(false, true, true);
 		}
 
 		// Get all possible targets of the skill in a table in function of the skill target type
@@ -1726,9 +1726,7 @@ public abstract class L2Character extends L2Object
 			}
 			catch (Throwable e)
 			{
-				_log.severe(EnableSkill.class.getName() + ": Throwable: EnableSkill");
-				if (Config.DEVELOPER)
-					e.printStackTrace();
+				_log.severe(EnableSkill.class.getName() + ": Throwable: EnableSkill " +e);
 			}
 		}
 	}
@@ -1833,6 +1831,7 @@ public abstract class L2Character extends L2Object
 		}
 	}
 	
+	
 	public class NotifyAITask implements Runnable
 	{
 		private final CtrlEvent _evt;
@@ -1847,11 +1846,11 @@ public abstract class L2Character extends L2Object
 		{
 			try
 			{
-				getAI().notifyEvent(_evt, null);
+				if(getAI() != null)
+				   getAI().notifyEvent(_evt, null);
 			}
 			catch (Throwable t)
 			{
-				_log.warning(L2Character.class.getSimpleName() + ": ");
 			}
 		}
 	}
@@ -2631,6 +2630,8 @@ public abstract class L2Character extends L2Object
 			return false;
 		if (m.onGeodataPathIndex == -1)
 			return false;
+		if ((m.geoPath.isEmpty()))
+			return false;
 		if (m.onGeodataPathIndex == (m.geoPath.size() - 1))
 			return false;
 		
@@ -2793,7 +2794,12 @@ public abstract class L2Character extends L2Object
 		final boolean isFloating = isFlying() || isInsideZone(ZoneId.WATER);
 
 		if (isDead() || speed <= 0 || isMovementDisabled())
+		{
+			if(isPlayer())
+				sendPacket(new ActionFailed());
+			
 			return;
+		}
 		
 		final int curX = super.getX();
 		final int curY = super.getY();
@@ -2891,7 +2897,7 @@ public abstract class L2Character extends L2Object
 				{
 					getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 
-					if (this instanceof L2PcInstance)
+					if (isPlayer())
 					{
 						((L2PcInstance) this).sendMessage("Something happen with your coordinates,server teleporting you to nearest village");
 						((L2PcInstance) this).teleToLocation(TeleportWhereType.TOWN);
@@ -2908,12 +2914,16 @@ public abstract class L2Character extends L2Object
 
 				if (path.size() > 0)
 					m.geoPath.addAll(path);
-				if ((m.geoPath == null) || (m.geoPath.size() <= 0))
+				if ((m.geoPath == null) || (m.geoPath.isEmpty()))
 				{
 					if (isPlayer()|| (!(isPlayable()) && !(this instanceof L2MinionInstance) && Math.abs(z - curZ) > 140)
 					|| (this instanceof L2Summon && !((L2Summon) this).getFollowStatus()))
-					{
+					{			
 						getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+						
+						if(isPlayer())
+							sendPacket(new ActionFailed());
+						
 						return;
 					}
 					m.disregardingGeodata = true;
@@ -2949,6 +2959,10 @@ public abstract class L2Character extends L2Object
 				if (this instanceof L2Summon)
 					((L2Summon) this).setFollowStatus(false);
 				getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+				
+				if(isPlayer())
+					sendPacket(new ActionFailed());
+				
 				return;
 			}
 		}
@@ -3011,6 +3025,10 @@ public abstract class L2Character extends L2Object
 		if (!isVisible())
 		{
 			_move = null;
+			
+			if(isPlayer())
+				sendPacket(new ActionFailed());
+			
 			return true;
 		}
 		
@@ -3292,86 +3310,7 @@ public abstract class L2Character extends L2Object
 	{
 		return Math.sqrt(Math.pow(getX() - x, 2) + Math.pow(getY() - y, 2));
 	}
-	//
-	// public void onTargetReached()
-	// {
-	// L2Character pawn = getPawnTarget();
-	//
-	// if (pawn != null)
-	// {
-	// int x = pawn.getX(), y=pawn.getY(),z = pawn.getZ();
-	//
-	// double distance = getDistance(x,y);
-	// if (getCurrentState() == STATE_FOLLOW)
-	// {
-	// calculateMovement(x,y,z,distance);
-	// return;
-	// }
-	//
-	// // takes care of moving away but distance is 0 so i won't follow problem
-	//
-	//
-	// if (((distance > getAttackRange()) && (getCurrentState() ==
-	// STATE_ATTACKING)) || (pawn.isMoving() && getCurrentState() !=
-	// STATE_ATTACKING))
-	// {
-	// calculateMovement(x,y,z,distance);
-	// return;
-	// }
-	//
-	// }
-	// // update x,y,z with the current calculated position
-	// stopMove();
-	//
-	// if (Config.DEBUG)
-	// _log.fine(this.getName() +":: target reached at: x "+getX()+" y "+getY()+
-	// " z:" + getZ());
-	//
-	// if (getPawnTarget() != null)
-	// {
-	//
-	// setPawnTarget(null);
-	// setMovingToPawn(false);
-	// }
-	// }
-	//
-	// public void setTo(int x, int y, int z, int heading)
-	// {
-	// setX(x);
-	// setY(y);
-	// setZ(z);
-	// setHeading(heading);
-	// updateCurrentWorldRegion();
-	// if (isMoving())
-	// {
-	// setCurrentState(STATE_IDLE);
-	// StopMove setto = new StopMove(this);
-	// broadcastPacket(setto);
-	// }
-	// else
-	// {
-	// ValidateLocation setto = new ValidateLocation(this);
-	// broadcastPacket(setto);
-	// }
-	//
-	// FinishRotation fr = new FinishRotation(this);
-	// broadcastPacket(fr);
-	// }
-	
-	// protected void startCombat()
-	// {
-	// if (_currentAttackTask == null )//&& !isInCombat())
-	// {
-	// _currentAttackTask = ThreadPoolManager.getInstance().scheduleMed(new
-	// AttackTask(), 0);
-	// }
-	// else
-	// {
-	// _log.info("multiple attacks want to start in parallel. prevented.");
-	// }
-	// }
-	//
-	
+
 	public float getWeaponExpertisePenalty()
 	{
 		return 1.f;
@@ -3724,15 +3663,10 @@ public abstract class L2Character extends L2Object
 				_log.warning(L2Character.class.getName() + ":Player " + getName() + " at bad coords: (x: " + getX() + ", y: " + getY() + ", z: " + getZ() + ").");
 				((L2PcInstance) this).sendMessage("Error with your coordinates! Please reboot your game fully!");
 				((L2PcInstance) this).teleToLocation(80753, 145481, -3532, false); // Near
-				// Giran
-				// luxury
-				// shop
 			}
 			else
-			{
-				_log.warning(L2Character.class.getName() + ":Object " + getName() + " at bad coords: (x: " + getX() + ", y: " + getY() + ", z: " + getZ() + ").");
 				decayMe();
-			}
+			
 			return false;
 		}
 	}
@@ -4056,8 +3990,6 @@ public abstract class L2Character extends L2Object
 					
 					targetList.add((L2Character) targets[i]);
 				}
-				if (Config.DEBUG)
-					_log.config(L2Character.class.getName() + ": Class cast bad: " + targets[i].getClass().toString());
 			}
 			if (targetList.isEmpty())
 			{
@@ -4351,15 +4283,11 @@ public abstract class L2Character extends L2Object
 	
 	public void disableAllSkills()
 	{
-		if (Config.DEBUG)
-			_log.fine("all skills disabled");
 		_allSkillsDisabled = true;
 	}
 	
 	public void enableAllSkills()
 	{
-		if (Config.DEBUG)
-			_log.fine("all skills enabled");
 		_allSkillsDisabled = false;
 	}
 	
@@ -4457,6 +4385,9 @@ public abstract class L2Character extends L2Object
 					{
 						if (skill.isOffensive())
 						{
+							if(((L2Character) target).isDead())
+								continue;
+							
 							if (target instanceof L2Playable)
 							{
 								// Signets are a special case, casted on target_self but don't harm self
@@ -4528,11 +4459,15 @@ public abstract class L2Character extends L2Object
 				// Mobs in range 1000 see spell
 				L2World.getInstance().forEachVisibleObjectInRange(player, L2Attackable.class, 1000, npcMob ->
 				{
-					final List<Quest> scripts = npcMob.getTemplate().getEventQuests(QuestEventType.ON_SKILL_SEE);
-					if (scripts != null)
-						for (Quest quest : scripts)
-							quest.notifySkillSee(npcMob, player, skill, targets, this instanceof L2Summon);
-					
+					if (npcMob != null)
+					{
+
+						final List<Quest> scripts = npcMob.getTemplate().getEventQuests(QuestEventType.ON_SKILL_SEE);
+							if (scripts != null)
+								for (Quest quest : scripts)
+									quest.notifySkillSee(npcMob, player,skill, targets,this instanceof L2Summon);
+					}
+
 				});
 			}
 			
@@ -4549,6 +4484,8 @@ public abstract class L2Character extends L2Object
 					default:
 						for (L2Object target : targets)
 						{
+							if(((L2Character) target).isDead())
+								continue;
 							// notify target AI about the attack
 							if (target instanceof L2Character && ((L2Character) target).hasAI())
 								((L2Character) target).getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, this);
@@ -4560,7 +4497,7 @@ public abstract class L2Character extends L2Object
 			if (skill.getAggroPoints() > 0)
 			{
 				for (L2Npc npcMob : L2World.getInstance().getVisibleObjects(player, L2Npc.class, 1000))
-					if (npcMob.hasAI() && npcMob.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
+					if (npcMob != null && npcMob.hasAI() && !npcMob.isDead() && npcMob.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 					{
 						L2Object npcTarget = npcMob.getTarget();
 						for (L2Object target : targets)
@@ -4571,7 +4508,7 @@ public abstract class L2Character extends L2Object
 		}
 		catch (Exception e)
 		{
-			_log.warning(L2Character.class.getSimpleName() + " callSkill() failed on skill id: " + skill.getId() + e);
+			_log.warning(L2Character.class.getSimpleName() + " callSkill() failed on skill id: " + skill.getId() +" , " + e);
 		}
 	}
 	
@@ -4847,9 +4784,7 @@ public abstract class L2Character extends L2Object
 	{
 		return getStat().getWalkSpeed();
 	}
-	
-
-	
+		
 	// =========================================================
 	// Status - NEED TO REMOVE ONCE L2CHARTATUS IS COMPLETE
 	public void addStatusListener(L2Character object)

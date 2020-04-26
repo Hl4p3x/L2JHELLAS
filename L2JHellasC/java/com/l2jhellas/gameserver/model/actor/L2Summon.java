@@ -163,6 +163,7 @@ public abstract class L2Summon extends L2Playable
 			party.broadcastToPartyMembers(getOwner(), new PetStatusUpdate(this));
 		
 		setShowSummonAnimation(false); 
+		rechargeShots(true, true, false);
 	}
 	
 	@Override

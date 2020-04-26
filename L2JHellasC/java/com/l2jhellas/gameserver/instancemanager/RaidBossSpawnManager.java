@@ -121,13 +121,9 @@ public class RaidBossSpawnManager
 			L2RaidBossInstance raidboss = null;
 			
 			if (bossId == 25328)
-			{
 				raidboss = DayNightSpawnManager.getInstance().handleBoss(_spawns.get(bossId));
-			}
 			else
-			{
 				raidboss = (L2RaidBossInstance) _spawns.get(bossId).doSpawn();
-			}
 			
 			if (raidboss != null)
 			{
@@ -209,18 +205,15 @@ public class RaidBossSpawnManager
 			L2RaidBossInstance raidboss = null;
 			
 			if (bossId == 25328)
-			{
 				raidboss = DayNightSpawnManager.getInstance().handleBoss(spawnDat);
-			}
 			else
-			{
 				raidboss = (L2RaidBossInstance) spawnDat.doSpawn();
-			}
 			
 			if (raidboss != null)
 			{
-				raidboss.setCurrentHp(currentHP == 0 ? raidboss.getMaxHp() : currentHP);
-				raidboss.setCurrentMp(currentMP == 0 ? raidboss.getMaxMp() : currentMP);						
+				currentHP = (currentHP == 0) ? raidboss.getMaxHp() : currentHP;
+				currentMP = (currentMP == 0) ? raidboss.getMaxMp() : currentMP;		
+				raidboss.setCurrentHpMp(currentHP, currentMP);					
 				raidboss.setRaidStatus(StatusEnum.ALIVE);
 				
 				_bosses.put(bossId, raidboss);
@@ -285,10 +278,8 @@ public class RaidBossSpawnManager
 		_spawns.remove(bossId);
 		
 		if (_bosses.containsKey(bossId))
-		{
 			_bosses.remove(bossId);
-		}
-		
+
 		if (_schedules.containsKey(bossId))
 		{
 			ScheduledFuture<?> f = _schedules.get(bossId);
@@ -297,9 +288,7 @@ public class RaidBossSpawnManager
 		}
 		
 		if (_storedInfo.containsKey(bossId))
-		{
 			_storedInfo.remove(bossId);
-		}
 		
 		if (updateDb)
 		{

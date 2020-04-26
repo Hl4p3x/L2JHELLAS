@@ -11,8 +11,6 @@ import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jhellas.gameserver.network.serverpackets.PlaySound;
 import com.l2jhellas.gameserver.network.serverpackets.SetupGauge;
-import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
-import com.l2jhellas.util.Broadcast;
 
 public class Escape implements IUserCommandHandler
 {
@@ -29,9 +27,7 @@ public class Escape implements IUserCommandHandler
 			activeChar.sendPacket(SystemMessageId.NO_UNSTUCK_PLEASE_SEND_PETITION);
 		    return false;
 		}
-		
-		int unstuckTimer = (activeChar.isGM() ? 5000 : Config.UNSTUCK_INTERVAL * 1000);
-		
+				
 		// Check to see if the current player is in TvT , CTF or ViP events.
 		if (activeChar.isInFunEvent())
 		{
@@ -55,20 +51,23 @@ public class Escape implements IUserCommandHandler
 
 		activeChar.sendPacket(PlaySound.createSound("systemmsg_e.809"));
 
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2);
-		sm.addString("After " + unstuckTimer / 60000 + " min. you be returned to near village.");
-		
+		if(!activeChar.isGM())
+			activeChar.sendPacket(SystemMessageId.STUCK_TRANSPORT_IN_FIVE_MINUTES);
+		else
+            activeChar.sendMessage("You are stuck. You will be transported to the nearest village.");
+
+
 		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		// SoE Animation section
 		activeChar.setTarget(activeChar);
 		activeChar.disableAllSkills();
 		
-		MagicSkillUse msk = new MagicSkillUse(activeChar, 1050, 1, unstuckTimer, 0);
-		Broadcast.toSelfAndKnownPlayersInRadius(activeChar, msk, 810000);
-		SetupGauge sg = new SetupGauge(0, unstuckTimer);
-		activeChar.sendPacket(sg);
-		// End SoE Animation section
+		int unstuckTimer = (activeChar.isGM() ? 5000 : Config.UNSTUCK_INTERVAL * 1000);
 		
+        activeChar.broadcastPacket(new MagicSkillUse(activeChar, 1050, 1, unstuckTimer, 0));
+		activeChar.sendPacket(new SetupGauge(0, unstuckTimer));
+		
+		// End SoE Animation section	
 		EscapeFinalizer ef = new EscapeFinalizer(activeChar);
 		
 		// continue execution later

@@ -26,6 +26,7 @@ import com.l2jhellas.gameserver.model.entity.events.VIPTvT;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.util.Broadcast;
+import com.l2jhellas.util.Rnd;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public final class EventManager
@@ -159,7 +160,20 @@ public final class EventManager
 					}
 					break;
 					
-				case RUNNING:				
+				case RUNNING:
+					if (getCurrentEvent() instanceof Korean)
+					{
+						if (players.size() < 15)
+						{
+							if (players.size() % 2 != 0)
+								players.remove(Rnd.get(players.size()));
+						}
+						else
+						{
+							while (players.size() % 3 != 0)
+								players.remove(Rnd.get(players.size()));
+						}
+					}
 					getCurrentEvent().start();
 					
 					for (L2PcInstance player : players)
@@ -467,7 +481,10 @@ public final class EventManager
 		{
 			players.remove(player);
 			colors.remove(player);
-			titles.remove(player);
+			
+			if(titles.containsKey(player))
+			   titles.remove(player);
+			
 			positions.remove(player);
 		}
 	}
@@ -492,7 +509,10 @@ public final class EventManager
 		{
 			player.sendMessage("You have succesfully registered to the event!");
 			players.add(player);
-			titles.put(player, player.getTitle());
+			
+			if(player.getTitle() != null)
+			   titles.put(player, player.getTitle());
+			
 			colors.put(player, player.getAppearance().getNameColor());
 			positions.put(player, new int[] { player.getX(), player.getY(), player.getZ() });
 			return true;
@@ -572,7 +592,10 @@ public final class EventManager
 					player.doRevive();
 				
 				player.getAppearance().setNameColor(colors.get(player));
-				player.setTitle(titles.get(player));
+				
+				String title = titles.get(player);
+				
+				player.setTitle(title == null || title.isEmpty() ? "" : title);
 				
 				if (player.getParty() != null)
 					player.leaveParty();

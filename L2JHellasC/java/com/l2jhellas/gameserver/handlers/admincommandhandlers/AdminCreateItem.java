@@ -1,9 +1,14 @@
 package com.l2jhellas.gameserver.handlers.admincommandhandlers;
 
+import java.util.Collection;
+import java.util.Objects;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
+import com.l2jhellas.gameserver.Announcements;
 import com.l2jhellas.gameserver.datatables.sql.ItemTable;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
+import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.network.SystemMessageId;
@@ -37,19 +42,27 @@ public class AdminCreateItem implements IAdminCommandHandler
 					return false;
 				}
 				
-				if (st.countTokens() == 2)
+				if (st.countTokens() == 3)
 				{
 					String id = st.nextToken();
 					int idval = Integer.parseInt(id);
 					String num = st.nextToken();
 					int numval = Integer.parseInt(num);
-					createItem(player, idval, numval);
+					createItem(player, idval, numval,true);
+				}
+				else if (st.countTokens() == 2)
+				{
+					String id = st.nextToken();
+					int idval = Integer.parseInt(id);
+					String num = st.nextToken();
+					int numval = Integer.parseInt(num);
+					createItem(player, idval, numval,false);
 				}
 				else if (st.countTokens() == 1)
 				{
 					String id = st.nextToken();
 					int idval = Integer.parseInt(id);
-					createItem(player, idval, 1);
+					createItem(player, idval, 1,false);
 				}
 			}
 			catch (StringIndexOutOfBoundsException e)
@@ -71,7 +84,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 		return ADMIN_COMMANDS;
 	}
 	
-	private static void createItem(L2PcInstance activeChar, int id, int num)
+	private static void createItem(L2PcInstance activeChar, int id, int num,boolean all)
 	{
 		if (num > 20)
 		{
@@ -83,11 +96,20 @@ public class AdminCreateItem implements IAdminCommandHandler
 			}
 		}
 		
-		activeChar.getInventory().addItem("Admin", id, num, activeChar, null);
-		
-		ItemList il = new ItemList(activeChar, true);
-		activeChar.sendPacket(il);
-		
-		activeChar.sendMessage("You have spawned " + num + " item(s) number " + id + " in your inventory.");
+		if (all)
+		{
+			final Collection<L2PcInstance> players = L2World.getInstance().getAllPlayers().values().stream()
+			.filter(Objects::nonNull).collect(Collectors.toList());
+			for (L2PcInstance player : players)
+			    player.getInventory().addItem("Admin", id, num, player,null);
+			
+			Announcements.getInstance().announceToAll("Server has been rewarded all online players.");
+		}
+		else
+		{
+			activeChar.getInventory().addItem("Admin", id, num, activeChar,null);
+			activeChar.sendPacket(new ItemList(activeChar, true));
+			activeChar.sendMessage("You have spawned " + num+ " item(s) number " + id + " in your inventory.");
+		}
 	}
 }

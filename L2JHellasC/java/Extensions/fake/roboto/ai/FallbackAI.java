@@ -1,6 +1,5 @@
 package Extensions.fake.roboto.ai;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,7 +11,6 @@ import Extensions.fake.roboto.model.SupportSpell;
 import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
-import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.util.Rnd;
 
@@ -31,7 +29,7 @@ public class FallbackAI extends CombatAI
 		setBusyThinking(true);
 		applyDefaultBuffs();
 		handleShots();
-		getCloserTarget(L2PcInstance.class, 70);
+		getCloserTarget(L2Character.class, 70);
 		avoid((L2Character) _fakePlayer.getTarget());
 		setBusyThinking(false);
 	}
@@ -48,7 +46,7 @@ public class FallbackAI extends CombatAI
 					return;
 				}
 				else if (Rnd.get(600) < 50)
-					_fakePlayer.broadcastPacket(new CreatureSay(_fakePlayer.getObjectId(), 0, _fakePlayer.getName(), Rnd.get(getDeadComments())));
+					_fakePlayer.broadcastPacket(new CreatureSay(_fakePlayer.getObjectId(), 0, _fakePlayer.getName(), getDeadComments[Rnd.get(6)][0]));
 				
 			});
 		}
@@ -57,7 +55,7 @@ public class FallbackAI extends CombatAI
 			if (((L2Character) _fakePlayer.getTarget()).isDead())
 			{
 				if (Rnd.get(600) < 50)
-					_fakePlayer.broadcastPacket(new CreatureSay(_fakePlayer.getObjectId(), 0, _fakePlayer.getName(), Rnd.get(getDeadComments())));
+					_fakePlayer.broadcastPacket(new CreatureSay(_fakePlayer.getObjectId(), 0, _fakePlayer.getName(), getDeadComments[Rnd.get(6)][0]));
 				
 				L2World.getInstance().forEachVisibleObjectInRange(_fakePlayer, L2CharacterClass, radius, target ->
 				{
@@ -92,32 +90,15 @@ public class FallbackAI extends CombatAI
 			moveTo(targetX, targetY, avoid.getZ());
 			
 			_fakePlayer.setTarget(null);
-			
-			if (Rnd.get(400) < 50)
-				_fakePlayer.broadcastPacket(new CreatureSay(_fakePlayer.getObjectId(), 0, _fakePlayer.getName(), Rnd.get(getAvoidComments())));
 		}
 	}
-	
-	public List<String> getAvoidComments()
+
+	private static final String[][] getDeadComments =
 	{
-		List<String> worlds = new ArrayList<>();
-		worlds.add("....");
-		worlds.add("...");
-		worlds.add("wtf");
-		worlds.add("pff");
-		return worlds;
-	}
-	
-	public List<String> getDeadComments()
-	{
-		List<String> worlds = new ArrayList<>();
-		worlds.add("dn exw res");
-		worlds.add("tovilage re noobaki");
-		worlds.add("???");
-		worlds.add("??");
-		return worlds;
-	}
-	
+	 {"..."},{"dn exw res"},{"shit.."},
+     {"tovilage re noobaki"},{"???"},{"??"}
+    };
+
 	@Override
 	protected ShotType getShotType()
 	{

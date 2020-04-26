@@ -23,6 +23,7 @@ public class GrandBossManager
 {
 	protected static Logger _log = Logger.getLogger(GrandBossManager.class.getName());
 	
+	private static final String SELECT_GRAND_BOSS_DATA = "SELECT * from grandboss_data ORDER BY boss_id";
 	private static final String DELETE_GRAND_BOSS_LIST = "DELETE FROM grandboss_list";	
 	private static final String INSERT_GRAND_BOSS_LIST = "INSERT INTO grandboss_list (player_id,zone) VALUES (?,?)";
 	private static final String UPDATE_GRAND_BOSS_DATA = "UPDATE grandboss_data SET loc_x = ?, loc_y = ?, loc_z = ?, heading = ?, respawn_time = ?, currentHP = ?, currentMP = ?, status = ? WHERE boss_id = ?";
@@ -47,47 +48,36 @@ public class GrandBossManager
 	
 	private static void init()
 	{	
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM grandboss_data ORDER BY boss_id");
-			ResultSet rset = statement.executeQuery();
-			
-			while (rset.next())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement ps = con.prepareStatement(SELECT_GRAND_BOSS_DATA);
+				ResultSet rset = ps.executeQuery())
 			{
-				// Read all info from DB, and store it for AI to read and decide what to do
-				// faster than accessing DB in real time
-				StatsSet info = new StatsSet();
-				int bossId = rset.getInt("boss_id");
-				info.set("loc_x", rset.getInt("loc_x"));
-				info.set("loc_y", rset.getInt("loc_y"));
-				info.set("loc_z", rset.getInt("loc_z"));
-				info.set("heading", rset.getInt("heading"));
-				info.set("respawn_time", rset.getLong("respawn_time"));
-				double HP = rset.getDouble("currentHP"); // jython doesn't recognize doubles
-				int true_HP = (int) HP; // so use java's ability to type cast
-				info.set("currentHP", true_HP); // to convert double to int
-				double MP = rset.getDouble("currentMP");
-				int true_MP = (int) MP;
-				info.set("currentMP", true_MP);
-				_bossStatus.put(bossId, rset.getInt("status"));
-				
-				_storedInfo.put(bossId, info);
-				info = null;
+				while (rset.next())
+				{					
+					final StatsSet info = new StatsSet();
+					final int bossId = rset.getInt("boss_id");
+					info.set("loc_x", rset.getInt("loc_x"));
+					info.set("loc_y", rset.getInt("loc_y"));
+					info.set("loc_z", rset.getInt("loc_z"));
+					info.set("heading", rset.getInt("heading"));
+					info.set("respawn_time", rset.getLong("respawn_time"));
+					info.set("currentHP", rset.getDouble("currentHP"));
+					info.set("currentMP", rset.getDouble("currentMP"));
+					
+					_bossStatus.put(bossId, rset.getInt("status"));
+					_storedInfo.put(bossId, info);
+				}
 			}
-			
-			_log.info(GrandBossManager.class.getSimpleName() + ": Loaded " + _storedInfo.size() + " Instances.");
-			
-			rset.close();
-			statement.close();
-		}
 		catch (SQLException e)
 		{
 			_log.warning(GrandBossManager.class.getName() + ": Could not load grandboss_data table");
 			e.printStackTrace();
 		}
+		
+		_log.info(GrandBossManager.class.getSimpleName() + ": Loaded " + _storedInfo.size() + " Instances.");
 	}
 	
-	public void initZones()
+	public void initZoness()
 	{
 		HashMap<Integer, ArrayList<Integer>> zones = new HashMap<>();
 		
@@ -193,6 +183,7 @@ public class GrandBossManager
 	public static void setBossStatus(int bossId, int status)
 	{
 		_bossStatus.put(bossId, status);
+		storeToDb(bossId,true);
 	}
 	
 	public static void addBoss(L2GrandBossInstance boss)
@@ -220,76 +211,143 @@ public class GrandBossManager
 	public static void setStatsSet(int bossId, StatsSet info)
 	{
 		_storedInfo.put(bossId, info);
-		storeToDb();
+		storeToDb(bossId,false);
 	}
 	
-	private static void storeToDb()
+	private static void storeToDb(int bossId, boolean status)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			PreparedStatement statement = con.prepareStatement(DELETE_GRAND_BOSS_LIST);
-			statement.executeUpdate();
-			statement.close();
+			final StatsSet info = _storedInfo.get(bossId);
+			final L2GrandBossInstance boss = _bosses.get(bossId);
 			
-			for (L2BossZone zone : _zones)
+			if (status || boss == null || info == null)
 			{
-				if (zone == null)
-					continue;
-				Integer id = zone.getId();
-				Set<Integer> list = zone.getAllowedPlayers();
-				if (list == null || list.isEmpty())
-					continue;
-				for (Integer player : list)
+				try (PreparedStatement ps = con.prepareStatement(UPDATE_GRAND_BOSS_DATA2))
 				{
-					statement = con.prepareStatement(INSERT_GRAND_BOSS_LIST);
-					statement.setInt(1, player);
-					statement.setInt(2, id);
-					statement.executeUpdate();
-					statement.close();
+					ps.setInt(1, _bossStatus.get(bossId));
+					ps.setInt(2, bossId);
+					ps.executeUpdate();
 				}
 			}
-			
-			for (Integer bossId : _storedInfo.keySet())
+			else
 			{
+				try (PreparedStatement ps = con.prepareStatement(UPDATE_GRAND_BOSS_DATA))
+				{
+					ps.setInt(1, boss.getX());
+					ps.setInt(2, boss.getY());
+					ps.setInt(3, boss.getZ());
+					ps.setInt(4, boss.getHeading());
+					ps.setLong(5, info.getLong("respawn_time"));
+					ps.setDouble(6, (boss.isDead()) ? boss.getMaxHp() : boss.getCurrentHp());
+					ps.setDouble(7, (boss.isDead()) ? boss.getMaxMp() : boss.getCurrentMp());
+					ps.setInt(8, _bossStatus.get(bossId));
+					ps.setInt(9, bossId);
+					ps.executeUpdate();
+				}
+			}
+				
+			try (PreparedStatement ps = con.prepareStatement(DELETE_GRAND_BOSS_LIST))
+			{
+				ps.executeUpdate();
+			}
+			
+			try (PreparedStatement ps = con.prepareStatement(INSERT_GRAND_BOSS_LIST))
+			{
+				for (L2BossZone zone : _zones)
+				{
+					if (zone == null)
+						continue;
+					Integer id = zone.getId();
+					Set<Integer> list = zone.getAllowedPlayers();
+					if (list == null || list.isEmpty())
+						continue;
+					for (Integer player : list)
+					{
+						ps.setInt(1, player);
+						ps.setInt(2, id);
+						ps.addBatch();
+					}
+				}
+				ps.executeBatch();
+			}		
+		}
+		catch (Exception e)
+		{
+			_log.warning(GrandBossManager.class.getName() + ": Couldn't store grandbosses to database: " +e);
+		}
+	}
+
+	public void cleanUp()
+	{
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps1 = con.prepareStatement(UPDATE_GRAND_BOSS_DATA2);
+			PreparedStatement ps2 = con.prepareStatement(UPDATE_GRAND_BOSS_DATA))
+		{					
+			for (Map.Entry<Integer, StatsSet> infoEntry : _storedInfo.entrySet())
+			{
+				final int bossId = infoEntry.getKey();
+				final StatsSet info = infoEntry.getValue();
 				final L2GrandBossInstance boss = _bosses.get(bossId);
-				StatsSet info = _storedInfo.get(bossId);
+				
 				if (boss == null || info == null)
 				{
-					statement = con.prepareStatement(UPDATE_GRAND_BOSS_DATA2);
-					statement.setInt(1, _bossStatus.get(bossId));
-					statement.setInt(2, bossId);
+					ps1.setInt(1, _bossStatus.get(bossId));
+					ps1.setInt(2, bossId);
+					ps1.addBatch();
 				}
 				else
 				{
-					statement = con.prepareStatement(UPDATE_GRAND_BOSS_DATA);
-					statement.setInt(1, boss.getX());
-					statement.setInt(2, boss.getY());
-					statement.setInt(3, boss.getZ());
-					statement.setInt(4, boss.getHeading());
-					statement.setLong(5, info.getLong("respawn_time"));
-					double hp = boss.getCurrentHp();
-					double mp = boss.getCurrentMp();
-					if (boss.isDead())
-					{
-						hp = boss.getMaxHp();
-						mp = boss.getMaxMp();
-					}
-					statement.setDouble(6, hp);
-					statement.setDouble(7, mp);
-					statement.setInt(8, _bossStatus.get(bossId));
-					statement.setInt(9, bossId);
+					ps2.setInt(1, boss.getX());
+					ps2.setInt(2, boss.getY());
+					ps2.setInt(3, boss.getZ());
+					ps2.setInt(4, boss.getHeading());
+					ps2.setLong(5, info.getLong("respawn_time"));
+					ps2.setDouble(6, (boss.isDead()) ? boss.getMaxHp() : boss.getCurrentHp());
+					ps2.setDouble(7, (boss.isDead()) ? boss.getMaxMp() : boss.getCurrentMp());
+					ps2.setInt(8, _bossStatus.get(bossId));
+					ps2.setInt(9, bossId);
+					ps2.addBatch();
 				}
-				statement.executeUpdate();
-				statement.clearParameters();
-				statement.close();
+			}
+			
+			ps1.executeBatch();
+			ps2.executeBatch();
+			
+			try (PreparedStatement ps = con.prepareStatement(DELETE_GRAND_BOSS_LIST))
+			{
+				ps.executeUpdate();
+			}
+			
+			try (PreparedStatement ps = con.prepareStatement(INSERT_GRAND_BOSS_LIST))
+			{
+				for (L2BossZone zone : _zones)
+				{
+					if (zone == null)
+						continue;
+					Integer id = zone.getId();
+					Set<Integer> list = zone.getAllowedPlayers();
+					if (list == null || list.isEmpty())
+						continue;
+					for (Integer player : list)
+					{
+						ps.setInt(1, player);
+						ps.setInt(2, id);
+						ps.addBatch();
+					}
+				}
+				ps.executeBatch();
 			}
 		}
-		catch (SQLException e)
+		catch (Exception e)
 		{
-			_log.warning(GrandBossManager.class.getName() + ": Couldn't store grandbosses to database:");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			_log.warning(GrandBossManager.class.getName() + ": cleanUp couldn't store grandbosses to database: " +e);
 		}
+		
+		_bosses.clear();
+		_storedInfo.clear();
+		_bossStatus.clear();
+		_zones.clear();
 	}
 	
 	public static boolean isInBossZone(L2Character character)
@@ -301,17 +359,7 @@ public class GrandBossManager
 		}
 		return false;
 	}
-	
-	public void cleanUp()
-	{
-		storeToDb();
-		
-		_bosses.clear();
-		_storedInfo.clear();
-		_bossStatus.clear();
-		_zones.clear();
-	}
-	
+
 	public List<L2BossZone> getZones()
 	{
 		return _zones;

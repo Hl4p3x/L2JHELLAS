@@ -230,7 +230,6 @@ public class Sailren extends AbstractNpcAI
 					cancelQuestTimers("inactivity");
 					
 					long respawnTime = (long) Config.Interval_Of_Sailren_Spawn + Rnd.get(-Config.Random_Of_Sailren_Spawn, Config.Random_Of_Sailren_Spawn);
-					respawnTime *= 3600000;
 					
 					startQuestTimer("oust", INTERVAL_CHECK, null, null, false);
 					startQuestTimer("unlock", respawnTime, null, null, false);

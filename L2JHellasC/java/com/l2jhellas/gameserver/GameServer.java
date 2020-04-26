@@ -392,7 +392,7 @@ public class GameServer
 			_log.log(Level.INFO, "FakePlayer System: Disabled");	
 		
 		EventConfig.getInstance();
-		EventBuffer.getInstance();
+		EventBuffer.getInstance();		
 	}
 	
 	public static void main(String[] args) throws Exception

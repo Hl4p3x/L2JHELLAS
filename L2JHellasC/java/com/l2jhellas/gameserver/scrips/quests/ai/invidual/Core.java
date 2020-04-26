@@ -158,8 +158,7 @@ public class Core extends AbstractNpcAI
 			GrandBossManager.setBossStatus(CORE, DEAD);
 			
 			long respawnTime = (long) Config.Interval_Of_Core_Spawn + Rnd.get(-Config.Random_Of_Core_Spawn, Config.Random_Of_Core_Spawn);
-			respawnTime *= 3600000;
-			
+
 			startQuestTimer("core_unlock", respawnTime, null, null, false);
 			
 			final StatsSet info = GrandBossManager.getStatsSet(CORE);

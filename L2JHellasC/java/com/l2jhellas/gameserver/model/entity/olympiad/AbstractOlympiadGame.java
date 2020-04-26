@@ -230,14 +230,12 @@ public abstract class AbstractOlympiadGame
 			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(1204));
 		}
 		
-		if (!player.isMageClass())
+		// Acumen - Haste 1
+		skill = SkillTable.getInstance().getInfo(player.isMageClass() ? 1085 : 1086, 1); 
+		if (skill != null)
 		{
-			skill = SkillTable.getInstance().getInfo(1086, 1); // Haste 1
-			if (skill != null)
-			{
-				skill.getEffects(player, player);
-				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(1086));
-			}
+			skill.getEffects(player, player);
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(skill.getId()));
 		}
 		
 		// Heal Player fully
@@ -317,8 +315,9 @@ public abstract class AbstractOlympiadGame
 					L2Skill skill = SkillTable.getInstance().getInfo(sk.getSkillId(),sk.getLevel());
 					player.addSkill(skill, false);
 				}
-			}
-			player.sendSkillList();
+			}	
+			
+			player.resetSkillTime(true);
 		}
 		catch (Exception e)
 		{

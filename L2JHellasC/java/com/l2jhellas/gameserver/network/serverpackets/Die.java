@@ -3,6 +3,7 @@ package com.l2jhellas.gameserver.network.serverpackets;
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.model.L2AccessLevel;
+import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2SiegeClan;
 import com.l2jhellas.gameserver.model.actor.L2Attackable;
 import com.l2jhellas.gameserver.model.actor.L2Character;
@@ -16,7 +17,7 @@ public class Die extends L2GameServerPacket
 	private final boolean _fake;
 	private boolean _sweepable;
 	private L2AccessLevel _access = AdminData.getInstance().getAccessLevel(0);
-	private com.l2jhellas.gameserver.model.L2Clan _clan;
+	private L2Clan _clan;
 	L2Character _activeChar;
 	private boolean _funEvent;
 	
@@ -28,7 +29,7 @@ public class Die extends L2GameServerPacket
 			L2PcInstance player = (L2PcInstance) cha;
 			_access = player.getAccessLevel();
 			_clan = player.getClan();
-			_funEvent = !player.isInFunEvent();
+			_funEvent = player.isInFunEvent();
 		}
 		_charObjId = cha.getObjectId();
 		_fake = !cha.isDead();
@@ -45,19 +46,12 @@ public class Die extends L2GameServerPacket
 		if (_fake)
 			return;
 		
-		writeC(0x06);
-		
+		writeC(0x06);	
 		writeD(_charObjId);
-		// NOTE:
-		// 6d 00 00 00 00 - to nearest village
-		// 6d 01 00 00 00 - to hide away
-		// 6d 02 00 00 00 - to castle
-		// 6d 03 00 00 00 - to siege HQ
-		// sweepable
-		// 6d 04 00 00 00 - FIXED
-		
-		writeD(_funEvent ? 0x01 : 0); // 6d 00 00 00 00 - to nearest village
-		if (_funEvent && _clan != null)
+
+		writeD(_funEvent ? 0 : 0x01); // to nearest village
+
+		if (!_funEvent && _clan != null)
 		{
 			L2SiegeClan siegeClan = null;
 			Boolean isInDefense = false;

@@ -62,7 +62,7 @@ public class L2Attackable extends L2Npc
 		
 		final AggroInfo ai = _aggroListPro.computeIfAbsent(attacker, AggroInfo::new);
 		ai.addDamage(damage);
-		
+
 		// If aggro is negative, its comming from SEE_SPELL, buffs use constant 150
 		if (targetPlayer != null && aggro == 0)
 		{
@@ -1247,9 +1247,7 @@ public class L2Attackable extends L2Npc
 						
 						// Check if the autoLoot mode is active
 						if (Config.AUTO_LOOT && !(this instanceof L2RaidBossInstance) && !(this instanceof L2MinionInstance) && !(this instanceof L2GrandBossInstance))
-						{
 							player.doAutoLoot(this, item); // Give this or these Item(s) to the L2PcInstance that has killed the L2Attackable
-						}
 						else if (Config.AUTO_LOOT_RAID && this instanceof L2RaidBossInstance && !(this instanceof L2MinionInstance))
 							player.doAutoLoot(this, item);
 						else if (Config.AUTO_LOOT_GRAND && this instanceof L2GrandBossInstance)
@@ -1522,17 +1520,13 @@ public class L2Attackable extends L2Npc
 			{
 				RewardItem item = new RewardItem(8611, 1); // Herb of Speed
 				if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-				{
 					player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-				}
 				else
-				{
 					dropItem(player, item);
-				}
 			}
 		}
 		
-		if (Config.ALLOW_PRIVATE_ANTI_BOT && Rnd.get(1000) < 60)
+		if (Config.ALLOW_PRIVATE_ANTI_BOT  && player != null && Rnd.get(1000) < 5)
 		    BotsPreventionManager.getInstance().StartCheck(player);	
 	}
 	

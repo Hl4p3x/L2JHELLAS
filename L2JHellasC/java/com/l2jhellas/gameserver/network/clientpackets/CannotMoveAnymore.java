@@ -4,6 +4,7 @@ import com.l2jhellas.gameserver.ai.CtrlEvent;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.PartyMemberPosition;
 
 public final class CannotMoveAnymore extends L2GameClientPacket
@@ -32,7 +33,10 @@ public final class CannotMoveAnymore extends L2GameClientPacket
 			return;
 		
 		if (player.hasAI())
+		{
 			player.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED_BLOCKED, new Location(_x, _y, _z, _heading));
+			player.sendPacket(ActionFailed.STATIC_PACKET);
+		}
 		
 		if (player instanceof L2PcInstance && ((L2PcInstance) player).getParty() != null)
 			((L2PcInstance) player).getParty().broadcastToPartyMembers(((L2PcInstance) player), new PartyMemberPosition(player.getParty()));

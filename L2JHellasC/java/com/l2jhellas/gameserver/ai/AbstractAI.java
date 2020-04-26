@@ -171,9 +171,7 @@ public abstract class AbstractAI implements Ctrl
 	public final void notifyEvent(CtrlEvent evt, Object arg0, Object arg1)
 	{
 		if ((!_actor.isVisible() && !_actor.isTeleporting()) || !_actor.hasAI())
-		{
 			return;
-		}
 		
 		switch (evt)
 		{
@@ -301,7 +299,7 @@ public abstract class AbstractAI implements Ctrl
 	
 	protected void clientActionFailed()
 	{
-		if (_actor instanceof L2PcInstance)
+		if (_actor.isPlayer())
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
@@ -338,13 +336,24 @@ public abstract class AbstractAI implements Ctrl
 			Location destPos = new Location(pawn.getX(), pawn.getY(), pawn.getZ());
 
 			if(_actor.isMoving() && !_actor.getAI().isFollowing() && _tempMovePos.equals(destPos))
+			{
+				clientActionFailed();
 				return;
+			}
+			
+			if (_actor.isInsideRadius(pawn, offset, true,true))
+			{
+				_actor.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
+				_tempMovePos.clean();
+				return;
+			}	
 			
 			_actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
 
 			if (!_actor.isMoving())
 			{
 				clientActionFailed();
+				_tempMovePos.clean();
 				return;
 			}
 			
@@ -366,6 +375,7 @@ public abstract class AbstractAI implements Ctrl
 		else
 		{
 			clientActionFailed();
+			_tempMovePos.clean();
 		}
 	}
 	

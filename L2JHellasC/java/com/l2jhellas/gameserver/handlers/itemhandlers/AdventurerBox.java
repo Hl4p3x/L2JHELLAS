@@ -39,7 +39,7 @@ public class AdventurerBox implements IItemHandler
 
 		if (!FloodProtectors.performAction(activeChar.getClient(), Action.ITEM_HANDLER))
 		{
-			activeChar.sendMessage("You are using this action too fast.");
+			activeChar.sendMessage("You may not use the box at this time. Try again later.");
 			return;
 		}
 		

@@ -2,6 +2,7 @@ package com.l2jhellas.gameserver.model.actor.instance;
 
 import com.l2jhellas.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jhellas.gameserver.model.L2Spawn;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.ExQuestInfo;
 import com.l2jhellas.gameserver.network.serverpackets.RadarControl;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
@@ -53,6 +54,8 @@ public class L2AdventurerInstance extends L2NpcInstance
 			player.sendPacket(new ExQuestInfo());
 		else
 			super.onBypassFeedback(player, command);
+		
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override

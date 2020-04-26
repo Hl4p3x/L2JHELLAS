@@ -703,6 +703,31 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 	
+	public long getPremServiceData()
+	{		
+		long _endDate = 0;
+		
+		if (Config.USE_PREMIUMSERVICE)
+		{
+		    try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				   PreparedStatement ps = con.prepareStatement(RESTORE_PREMIUMSERVICE))
+			   {
+			       ps.setString(1, getAccountName());
+				   try (ResultSet rs = ps.executeQuery())
+				   {
+					   while (rs.next())
+						   _endDate = rs.getLong("enddate");
+				   }
+		   	   }
+			   catch (Exception e)
+			   {
+				   _log.warning(L2PcInstance.class.getSimpleName() + ": Could not restore prem service data " + e);		
+			   }
+		}
+		
+		return _endDate;
+	}
+	
 	private static void restorePremServiceData(L2PcInstance player, String account)
 	{
 		boolean sucess = false;
@@ -2353,11 +2378,7 @@ public class L2PcInstance extends L2Playable
 	public void addAdena(String process, int count, L2Object reference, boolean sendMessage)
 	{
 		if (sendMessage)
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.EARNED_S1_ADENA);
-			sm.addNumber(count);
-			sendPacket(sm);
-		}
+			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_S1_ADENA).addNumber(count));
 		
 		if (count > 0)
 		{
@@ -3342,9 +3363,7 @@ public class L2PcInstance extends L2Playable
 		
 		// Check if the player already target this L2PcInstance
 		if (player.getTarget() != this)
-		{
 			player.setTarget(this);
-		}
 		else
 		{
 			// Check if this L2PcInstance has a Private Store
@@ -3512,7 +3531,15 @@ public class L2PcInstance extends L2Playable
 		if (isInParty())
 			getParty().distributeItem(this, item, false, target);
 		else if (item.getItemId() == 57)
-			addAdena("Loot", item.getCount(), target, true);
+		{
+			if (getInventory().getAdenaInstance() != null)
+				addAdena("Loot", item.getCount(), null, true);
+			else
+			{
+				addItem("Loot", 57, item.getCount(), null, false);
+				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_S1_ADENA).addNumber(item.getCount()));
+			}
+		}
 		else
 			addItem("Loot", item.getItemId(), item.getCount(), target, true);
 	}
@@ -3527,11 +3554,7 @@ public class L2PcInstance extends L2Playable
 		
 		// Check if the L2Object to pick up is a L2ItemInstance
 		if (!(object instanceof L2ItemInstance))
-		{
-			// dont try to pickup anything that is not an item :)
-			_log.warning(L2PcInstance.class.getName() + ": trying to pickup wrong target." + getTarget());
 			return;
-		}
 		
 		L2ItemInstance target = (L2ItemInstance) object;
 		
@@ -3544,7 +3567,6 @@ public class L2PcInstance extends L2Playable
 			if (!target.isVisible())
 			{
 				sendPacket(new DeleteObject(target));
-				// Send a Server->Client packet ActionFailed to this L2PcInstance
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
@@ -3571,10 +3593,8 @@ public class L2PcInstance extends L2Playable
 			
 			if (isInvul() && !isGM())
 			{
+				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1).addItemName(target.getItemId()));
 				sendPacket(ActionFailed.STATIC_PACKET);
-				SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1);
-				smsg.addItemName(target.getItemId());
-				sendPacket(smsg);
 				return;
 			}
 			
@@ -3585,29 +3605,15 @@ public class L2PcInstance extends L2Playable
 			}
 			
 			if (target.getOwnerId() != 0 && target.getOwnerId() != getObjectId() && !isInLooterParty(target.getOwnerId()))
-			{
-				sendPacket(ActionFailed.STATIC_PACKET);
-				
+			{				
 				if (target.getItemId() == 57)
-				{
-					SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1_ADENA);
-					smsg.addNumber(target.getCount());
-					sendPacket(smsg);
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1_ADENA).addNumber(target.getCount()));
 				else if (target.getCount() > 1)
-				{
-					SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S2_S1_S);
-					smsg.addItemName(target.getItemId());
-					smsg.addNumber(target.getCount());
-					sendPacket(smsg);
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S2_S1_S).addItemName(target.getItemId()).addNumber(target.getCount()));
 				else
-				{
-					SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1);
-					smsg.addItemName(target.getItemId());
-					sendPacket(smsg);
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1).addItemName(target.getItemId()));
 				
+				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
 			}
 			
@@ -3625,57 +3631,44 @@ public class L2PcInstance extends L2Playable
 		{
 			IItemHandler handler = ItemHandler.getInstance().getHandler(target.getItemId());
 			if (handler == null)
-			{
 				_log.fine("No item handler registered for item ID " + target.getItemId() + ".");
-			}
 			else
-			{
 				handler.useItem(this, target);
-			}
+
 			ItemTable.getInstance().destroyItem("Consume", target, this, null);
 		}
 		// Cursed Weapons are not distributed
 		else if (CursedWeaponsManager.getInstance().isCursed(target.getItemId()))
-		{
 			addItem("Pickup", target, null, true);
-		}
 		else
 		{
 			// if item is instance of L2ArmorType or L2WeaponType broadcast an "Attention" system message
 			if (target.getItemType() instanceof L2ArmorType || target.getItemType() instanceof L2WeaponType)
 			{
-				if (target.getEnchantLevel() > 0)
-				{
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.ATTENTION_S1_PICKED_UP_S2_S3);
-					msg.addString(getName());
-					msg.addNumber(target.getEnchantLevel());
-					msg.addItemName(target.getItemId());
-					broadcastPacket(msg, 1400);
-				}
-				else
-				{
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.ATTENTION_S1_PICKED_UP_S2);
-					msg.addString(getName());
-					msg.addItemName(target.getItemId());
-					broadcastPacket(msg, 1400);
-				}
+				SystemMessage msg = target.getEnchantLevel() > 0 ? SystemMessage.getSystemMessage(SystemMessageId.ATTENTION_S1_PICKED_UP_S2_S3).addString(getActor().getName()).addNumber(target.getEnchantLevel()).addItemName(target.getItemId()) 
+				: SystemMessage.getSystemMessage(SystemMessageId.ATTENTION_S1_PICKED_UP_S2).addString(getActor().getName()).addItemName(target.getItemId());
+				
+				broadcastPacket(msg, 1400);
 			}
 			
 			// Check if a Party is in progress
 			if (isInParty())
-			{
 				getParty().distributeItem(this, target);
-			}
-			else if (target.getItemId() == 57 && getInventory().getAdenaInstance() != null)
+			else if (target.getItemId() == 57)
 			{
-				addAdena("Pickup", target.getCount(), null, true);
-				ItemTable.getInstance().destroyItem("Pickup", target, this, null);
+				if(getInventory().getAdenaInstance() != null)
+				   addAdena("Pickup", target.getCount(), null, true);
+				else
+				{
+				   addItem("Pickup", 57,target.getCount(), null,false);	
+				   sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_S1_ADENA).addNumber(target.getCount()));
+				}
+				
+			    ItemTable.getInstance().destroyItem("Pickup", target, this, null);
 			}
 			// Target is regular item
 			else
-			{
 				addItem("Pickup", target, null, true);
-			}
 			
 			// Like L2OFF Auto-Equip arrows if player has a bow and player picks up arrows.
 			if (target.getItem() != null && target.getItem().getItemType() == L2EtcItemType.ARROW && getActiveWeaponInstance() != null && getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND).getItemType() == L2WeaponType.BOW)
@@ -5425,7 +5418,7 @@ public class L2PcInstance extends L2Playable
 			restoreRecipeBook();
 		}
 	}
-	
+
 	private void storeRecipeBook()
 	{
 		// If the player is on a sub-class don't even attempt to store a recipe
@@ -5437,30 +5430,31 @@ public class L2PcInstance extends L2Playable
 		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			PreparedStatement statement = con.prepareStatement("DELETE FROM character_recipebook WHERE char_id=?");
-			statement.setInt(1, getObjectId());
-			statement.execute();
-			statement.close();
-			
-			Collection<L2RecipeList> recipes = getCommonRecipeBook();
-			
-			for (L2RecipeList recipe : recipes)
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM character_recipebook WHERE char_id=?"))
 			{
-				statement = con.prepareStatement("INSERT INTO character_recipebook (char_id, id, type) values(?,?,0)");
-				statement.setInt(1, getObjectId());
-				statement.setInt(2, recipe.getId());
-				statement.execute();
-				statement.close();
+				ps.setInt(1, getObjectId());
+				ps.execute();
 			}
 			
-			recipes = getDwarvenRecipeBook();
-			for (L2RecipeList recipe : recipes)
+			try (PreparedStatement ps = con.prepareStatement("INSERT INTO character_recipebook (char_id, id, type) values(?,?,?)"))
 			{
-				statement = con.prepareStatement("INSERT INTO character_recipebook (char_id, id, type) values(?,?,1)");
-				statement.setInt(1, getObjectId());
-				statement.setInt(2, recipe.getId());
-				statement.execute();
-				statement.close();
+				for (final L2RecipeList recipe : getCommonRecipeBook())
+				{
+					ps.setInt(1, getObjectId());
+					ps.setInt(2, recipe.getId());
+					ps.setInt(3, 0);
+					ps.addBatch();
+				}
+				
+				for (final L2RecipeList recipe : getDwarvenRecipeBook())
+				{
+					ps.setInt(1, getObjectId());
+					ps.setInt(2, recipe.getId());
+					ps.setInt(3, 1);
+					ps.addBatch();
+				}
+				
+				ps.executeBatch();
 			}
 		}
 		catch (SQLException e)
@@ -5521,18 +5515,17 @@ public class L2PcInstance extends L2Playable
 	
 	private void storeCharBase()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			// Get the exp, level, and sp of base class to store in base table
-			int currentClassIndex = getClassIndex();
-			_classIndex = 0;
-			long exp = getStat().getExp();
-			int level = getStat().getLevel();
-			int sp = getStat().getSp();
-			_classIndex = currentClassIndex;
-			
-			PreparedStatement statement = con.prepareStatement(UPDATE_CHARACTER);
-			
+		// Get the exp, level, and sp of base class to store in base table
+		int currentClassIndex = getClassIndex();
+		_classIndex = 0;
+		long exp = getStat().getExp();
+		int level = getStat().getLevel();
+		int sp = getStat().getSp();
+		_classIndex = currentClassIndex;
+		
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(UPDATE_CHARACTER))
+		{						
 			// Update base class
 			statement.setInt(1, level);
 			statement.setInt(2, getMaxHp());
@@ -5566,11 +5559,6 @@ public class L2PcInstance extends L2Playable
 			statement.setInt(30, getMaxLoad());
 			statement.setInt(31, getRace().ordinal());
 			
-			// if (!isSubClassActive())
-			
-			// else
-			// statement.setInt(30, getBaseTemplate().race.ordinal());
-			
 			statement.setInt(32, getClassId().getId());
 			statement.setLong(33, getDeleteTimer());
 			statement.setString(34, getTitle());
@@ -5584,9 +5572,7 @@ public class L2PcInstance extends L2Playable
 			long totalOnlineTime = _onlineTime;
 			
 			if (_onlineBeginTime > 0)
-			{
 				totalOnlineTime += (System.currentTimeMillis() - _onlineBeginTime) / 1000;
-			}
 			
 			statement.setLong(41, totalOnlineTime);
 			statement.setInt(42, isInJail() ? 1 : 0);
@@ -5607,130 +5593,125 @@ public class L2PcInstance extends L2Playable
 			statement.setInt(57, getChatFilterCount());
 			statement.setInt(58, getObjectId());
 			
-			statement.execute();
-			statement.close();
+			statement.execute();			
 		}
-		catch (SQLException e)
+		catch (Exception e)
 		{
-			_log.warning(L2PcInstance.class.getName() + ": Could not store char base data: ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			_log.warning(L2PcInstance.class.getName()+ ": Could not store char base data: " + e);
 		}
 	}
 	
 	private void storeCharSub()
-	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			if (getTotalSubClasses() > 0)
+	{	
+		if (getSubClasses().isEmpty())
+            return;
+		
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement ps = con.prepareStatement(UPDATE_CHAR_SUBCLASS))
 			{
-				for (SubClass subClass : getSubClasses().values())
+				for (final SubClass subClass : _subClasses.values())
 				{
-					PreparedStatement statement = con.prepareStatement(UPDATE_CHAR_SUBCLASS);
-					statement.setLong(1, subClass.getExp());
-					statement.setInt(2, subClass.getSp());
-					statement.setInt(3, subClass.getLevel());
-					statement.setInt(4, subClass.getClassId());
-					statement.setInt(5, getObjectId());
-					statement.setInt(6, subClass.getClassIndex());
-					
-					statement.execute();
-					statement.close();
+					ps.setLong(1, subClass.getExp());
+					ps.setInt(2, subClass.getSp());
+					ps.setInt(3, subClass.getLevel());
+					ps.setInt(4, subClass.getClassId());
+					ps.setInt(5, getObjectId());
+					ps.setInt(6, subClass.getClassIndex());
+					ps.addBatch();
 				}
+				ps.executeBatch();
 			}
-		}
 		catch (SQLException e)
 		{
-			_log.warning(L2PcInstance.class.getName() + ": Could not store sub class data for " + getName() + ": ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			_log.warning(L2PcInstance.class.getName() + ": Could not store sub class data for " + getName() + ": " + e);
 		}
 	}
 	
-	private synchronized void storeEffect()
+	private void storeEffect()
 	{
 		if (!Config.STORE_SKILL_COOLTIME)
 			return;
 		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			// Delete all current stored effects for char to avoid dupe
-			PreparedStatement statement = con.prepareStatement(DELETE_SKILL_SAVE);
-			statement.setInt(1, getObjectId());
-			statement.setInt(2, getClassIndex());
-			statement.execute();
-			statement.close();
+			try (PreparedStatement ps = con.prepareStatement(DELETE_SKILL_SAVE))
+			{
+				ps.setInt(1, getObjectId());
+				ps.setInt(2, getClassIndex());
+				ps.executeUpdate();
+			}
 			
 			int buff_index = 0;
 			
-			// Store all effect data along with calulated remaining
-			// reuse delays for matching skills. 'restore_type'= 0.
-			for (L2Effect effect : getAllEffects())
+			try (PreparedStatement ps = con.prepareStatement(ADD_SKILL_SAVE))
 			{
-				if (effect != null && effect.getInUse() && !effect.getSkill().isToggle())
+				for (L2Effect effect : getAllEffects())
 				{
-					int skillId = effect.getSkill().getId();
-					buff_index++;
-					
-					statement = con.prepareStatement(ADD_SKILL_SAVE);
-					statement.setInt(1, getObjectId());
-					statement.setInt(2, skillId);
-					statement.setInt(3, effect.getSkill().getLevel());
-					statement.setInt(4, effect.getCount());
-					statement.setInt(5, effect.getTime());
-					
-					if (_reuseTimeStamps.containsKey(skillId))
+					switch (effect.getEffectType())
 					{
-						TimeStamp t = _reuseTimeStamps.remove(skillId);
-						statement.setLong(6, t.hasNotPassed() ? t.getReuse() : 0);
-						statement.setLong(7, t.hasNotPassed() ? t.getStamp() : 0);
+						case HEAL_OVER_TIME :
+						case COMBAT_POINT_HEAL_OVER_TIME :
+							continue;
+						default :
+							break;
 					}
-					else
+
+					final L2Skill skill = effect.getSkill();
+
+					if (!effect.isHerbEffect() && effect.getInUse() && !skill.isToggle())
 					{
-						statement.setLong(6, 0);
-						statement.setLong(7, 0);
+						ps.setInt(1, getObjectId());
+						ps.setInt(2, skill.getId());
+						ps.setInt(3, skill.getLevel());
+						ps.setInt(4, effect.getCount());
+						ps.setInt(5, effect.getTime());
+
+						if (_reuseTimeStamps.containsKey(skill.getId()))
+						{
+							TimeStamp t = _reuseTimeStamps.remove(skill.getId());
+							ps.setLong(6, t.hasNotPassed() ? t.getReuse() : 0);
+							ps.setLong(7, t.hasNotPassed() ? t.getStamp() : 0);
+						}
+						else
+						{
+							ps.setLong(6, 0);
+							ps.setLong(7, 0);
+						}
+
+						ps.setInt(8, 0);
+						ps.setInt(9, getClassIndex());
+						ps.setInt(10, ++buff_index);
+						ps.addBatch();
 					}
-					
-					statement.setInt(8, 0);
-					statement.setInt(9, getClassIndex());
-					statement.setInt(10, buff_index);
-					statement.execute();
-					statement.close();
 				}
-			}
-			
-			// Store the reuse delays of remaining skills which
-			// lost effect but still under reuse delay. 'restore_type' 1.
-			for (TimeStamp t : _reuseTimeStamps.values())
-			{
-				if (t.hasNotPassed())
+								
+				for (TimeStamp t : _reuseTimeStamps.values())
 				{
-					statement = con.prepareStatement(ADD_SKILL_SAVE);
-					statement.setInt(1, getObjectId());
-					statement.setInt(2, t.getSkill());
-					statement.setInt(3, 1);
-					statement.setInt(4, -1);
-					statement.setInt(5, -1);
-					statement.setLong(6, t.getReuse());
-					statement.setLong(7, t.getStamp());
-					statement.setInt(8, 0);
-					statement.setInt(9, getClassIndex());
-					statement.setInt(10, ++buff_index);
-					statement.execute();
-					statement.close();
+					if (t != null && t.hasNotPassed())
+					{						
+						ps.setInt(1, getObjectId());
+						ps.setInt(2, t.getSkill());
+						ps.setInt(3, 1);
+						ps.setInt(4, -1);
+						ps.setInt(5, -1);
+						ps.setLong(6, t.getReuse());
+						ps.setDouble(7, t.getStamp());
+						ps.setInt(8, 1);
+						ps.setInt(9, getClassIndex());
+						ps.setInt(10, ++buff_index);
+						ps.addBatch();
+					}
 				}
+				
+				ps.executeBatch();
 			}
-			statement.close();
-			_reuseTimeStamps.clear();
 		}
-		catch (SQLException e)
+		catch (final Exception e)
 		{
-			_log.warning(L2PcInstance.class.getName() + ": Could not store char effect data: ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
-		}
+			_log.warning(L2PcInstance.class.getName() + ": Could not store char effect data: " + e);
+		}	
 	}
-	
+
 	public int ChatFilterCount = 0;
 	
 	public void setChatFilterCount(int cfcount)
@@ -7315,13 +7296,14 @@ public class L2PcInstance extends L2Playable
 	{
 		return _activeSoulShots;
 	}
-	
-	public void rechargeAutoSoulShot(boolean physical, boolean magic, boolean summon)
+
+	@Override
+	public void rechargeShots(boolean physical, boolean magic, boolean summon)
 	{
 		L2ItemInstance item;
 		IItemHandler handler;
 		
-		if (_activeSoulShots == null || _activeSoulShots.size() == 0)
+		if (_activeSoulShots == null || _activeSoulShots.isEmpty())
 			return;
 		
 		for (int itemId : _activeSoulShots.values())
@@ -7332,65 +7314,28 @@ public class L2PcInstance extends L2Playable
 			{
 				if (magic)
 				{
-					if (!summon)
+					if (itemId == 2509 || itemId == 2510 || itemId == 2511 || itemId == 2512 || itemId == 2513 || itemId == 2514 || itemId == 3947 || itemId == 3948 || itemId == 3949 || itemId == 3950 || itemId == 3951 || itemId == 3952 || itemId == 5790)
 					{
-						if (itemId == 2509 || itemId == 2510 || itemId == 2511 || itemId == 2512 || itemId == 2513 || itemId == 2514 || itemId == 3947 || itemId == 3948 || itemId == 3949 || itemId == 3950 || itemId == 3951 || itemId == 3952 || itemId == 5790)
-						{
-							handler = ItemHandler.getInstance().getHandler(itemId);
+						handler = ItemHandler.getInstance().getHandler(itemId);
 							
-							if (handler != null)
-							{
-								handler.useItem(this, item);
-							}
-						}
-					}
-					else
-					{
-						if (itemId == 6646 || itemId == 6647)
-						{
-							handler = ItemHandler.getInstance().getHandler(itemId);
-							
-							if (handler != null)
-							{
-								handler.useItem(this, item);
-							}
-						}
+						if (handler != null)
+							handler.useItem(this, item);
 					}
 				}
 				
 				if (physical)
 				{
-					if (!summon)
-					{
 						if (itemId == 1463 || itemId == 1464 || itemId == 1465 || itemId == 1466 || itemId == 1467 || itemId == 1835 || itemId == 5789)
-						// || itemId == 6535 || itemId == 6536 || itemId == 6537 || itemId == 6538 || itemId == 6539 || itemId == 6540)
 						{
 							handler = ItemHandler.getInstance().getHandler(itemId);
 							
 							if (handler != null)
-							{
 								handler.useItem(this, item);
-							}
 						}
-					}
-					else
-					{
-						if (itemId == 6645)
-						{
-							handler = ItemHandler.getInstance().getHandler(itemId);
-							
-							if (handler != null)
-							{
-								handler.useItem(this, item);
-							}
-						}
-					}
 				}
 			}
 			else
-			{
 				removeAutoSoulShot(itemId);
-			}
 		}
 	}
 	
@@ -8778,7 +8723,7 @@ public class L2PcInstance extends L2Playable
 		{
 			setProtection(false);
 			sendMessage("As you acted, you are no longer under spawn protection.");
-		}
+		}		
 	}
 	
 	public void setExpertiseIndex(int expertiseIndex)
@@ -10190,19 +10135,17 @@ public class L2PcInstance extends L2Playable
 		return _reuseTimeStamps;
 	}
 	
-	public void resetSkillTime(boolean ssl)
+	public void resetSkillTime(boolean sendSkiiList)
 	{
-		L2Skill arr$[] = getAllSkills();
-		int len$ = arr$.length;
-		for (int i$ = 0; i$ < len$; i$++)
+		for(L2Skill skill : getAllSkills())
 		{
-			L2Skill skill = arr$[i$];
 			if (skill != null && skill.isActive() && skill.getId() != 1324)
-				enableSkill(skill.getId());
+				enableSkill(skill.getId());		
 		}
 		
-		if (ssl)
+		if (sendSkiiList)
 			sendSkillList();
+		
 		sendPacket(new SkillCoolTime(this));
 	}
 	
@@ -10957,7 +10900,7 @@ public class L2PcInstance extends L2Playable
 		  getAppearance().setVisible();
 
 		RegionBBSManager.getInstance().changeCommunityBoard();
-		
+				
 		sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
@@ -11101,7 +11044,7 @@ public class L2PcInstance extends L2Playable
 				if (item.getItem() instanceof L2Weapon)
 				{
 					// charge Soulshot/Spiritshot like L2OFF
-					rechargeAutoSoulShot(true, true, false);
+					rechargeShots(true, true, false);
 					item.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
 					item.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
 					CheckIfWeaponIsAllowed();
@@ -12122,13 +12065,7 @@ public class L2PcInstance extends L2Playable
 			for (L2PcInstance player : L2World.getInstance().getVisibleObjects(this, L2PcInstance.class))
 			{
 				if (player.getOlympiadGameId() == getOlympiadGameId() && player.isOlympiadStart())
-				{
-					if (Config.DEBUG)
-					{
-						_log.fine("Send status for Olympia window of " + getObjectId() + "(" + getName() + ") to " + player.getObjectId() + "(" + player.getName() + "). CP: " + getCurrentCp() + " HP: " + getCurrentHp() + " MP: " + getCurrentMp());
-					}
 					player.sendPacket(olyInfo);
-				}
 			}
 			
 			if (isInOlympiadMode() && isOlympiadStart() && (needCpUpdate || needHpUpdate))
@@ -12457,7 +12394,8 @@ public class L2PcInstance extends L2Playable
 	public void SummonRotate(L2Summon summon, double distance)
 	{
 		//AbsolutePower rotate summon to face the owner, for now only when the click distance is <= 250.
-		if (summon.isAutoFollow() && distance != 0 && distance <= 250 && !summon.isDead() && !summon.isAttackingNow() && !summon.isCastingNow())
+		if (summon.isAutoFollow() && distance != 0 && distance <= 250 && !summon.isDead() && !summon.isAttackingNow() && !summon.isCastingNow()
+		&& !summon.isMovementDisabled() && !summon.isOutOfControl())
 			summon.broadcastPacket(new MoveToPawn(summon, this, 70));		
 	}
 	
@@ -12488,5 +12426,5 @@ public class L2PcInstance extends L2Playable
 	public void clearCaptcha()
 	{
 		_answer = "";
-	}
+	}		
 }

@@ -17,10 +17,7 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 	
 	@Override
 	protected boolean read()
-	{
-        if(getClient() == null)
-        	return false;
-        
+	{  
 		try
 		{
 			readImpl();

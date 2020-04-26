@@ -141,6 +141,7 @@
 	<admin command="admin_edit_npc" accessLevel="7" />
 	<admin command="admin_save_npc" accessLevel="7" />
 	<admin command="admin_show_droplist" accessLevel="7" />
+	<admin command="admin_show_pagedroplist" accessLevel="7" />		
 	<admin command="admin_edit_drop" accessLevel="7" />
 	<admin command="admin_add_drop" accessLevel="7" />
 	<admin command="admin_del_drop" accessLevel="7" />
@@ -497,12 +498,8 @@
 	
 	<!-- ADMIN PREMIUM -->
 	<admin command="admin_premium_menu" accessLevel="7" />
-	<admin command="admin_premium_add1" accessLevel="7" />
-	<admin command="admin_premium_add2" accessLevel="7" />
-	<admin command="admin_premium_add3" accessLevel="7" />
-	<admin command="admin_premium_add4" accessLevel="7" />
-	<admin command="admin_premium_add5" accessLevel="7" />
-	
+	<admin command="admin_premium_add" accessLevel="7" />
+
 	<!-- ADMIN TvT Event -->
 	<admin command="admin_tvt" accessLevel="7" />
 	<admin command="admin_tvt_name" accessLevel="7" />

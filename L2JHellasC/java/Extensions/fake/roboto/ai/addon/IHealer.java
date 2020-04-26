@@ -22,8 +22,10 @@ public interface IHealer
 			
 			L2World.getInstance().forEachVisibleObjectInRange(player, L2CharacterClass, radius, target ->
 			{
-				if (!target.isDead())
-					targets.add(target);
+				if (target.isDead() || target.isPlayer() && target.getActingPlayer().getAppearance().getInvisible() || !target.isVisible())
+					return;
+				
+				targets.add(target);
 			});
 			
 			List<L2Character> sortedTargets = targets.stream().sorted((x1, x2) -> Double.compare(x1.getCurrentHp(), x2.getCurrentHp())).collect(Collectors.toList());

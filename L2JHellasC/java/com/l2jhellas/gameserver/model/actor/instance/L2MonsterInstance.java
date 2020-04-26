@@ -59,6 +59,15 @@ public class L2MonsterInstance extends L2Attackable
 		// dynamic script-based minions spawned here, after all preparations.
 		super.onSpawn();
 	}
+
+	@Override
+	public void onTeleported()
+	{
+		super.onTeleported();
+		
+		if (hasMinions())
+			getMinionList().onMasterTeleported();
+	}
 	
 	@Override
 	public boolean returnHome()
