@@ -39,11 +39,10 @@ public final class L2BufferInstance extends L2NpcInstance
 		{
 			if (buffid != 0)
 			{
-				MagicSkillUse mgc = new MagicSkillUse(this, player, buffid, bufflevel, 5, 0);
 				final L2Skill skill = SkillTable.getInstance().getInfo(buffid, bufflevel);
 				skill.getEffects(player, player);
 				showMessageWindow(player);
-				player.broadcastPacket(mgc);
+				player.broadcastPacket(new MagicSkillUse(this, player, buffid, bufflevel, 5, 0));
 			}
 		}
 		else if (actualCommand.equalsIgnoreCase("restore"))

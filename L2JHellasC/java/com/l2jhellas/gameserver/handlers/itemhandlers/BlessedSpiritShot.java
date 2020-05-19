@@ -65,7 +65,7 @@ public class BlessedSpiritShot implements IItemHandler
 		// Check if Blessed Spiritshot can be used
 		if (weaponInst == null || weaponItem.getSpiritShotCount() == 0)
 		{
-			if (!activeChar.getAutoSoulShot().containsKey(itemId))
+			if (!activeChar.getAutoSoulShot().contains(itemId))
 				activeChar.sendPacket(SystemMessageId.CANNOT_USE_SPIRITSHOTS);
 			return;
 		}
@@ -78,7 +78,7 @@ public class BlessedSpiritShot implements IItemHandler
 		L2CrystalType weaponGrade = weaponItem.getCrystalType();
 		if ((weaponGrade == L2CrystalType.NONE && itemId != 3947) || (weaponGrade == L2CrystalType.D && itemId != 3948) || (weaponGrade == L2CrystalType.C && itemId != 3949) || (weaponGrade == L2CrystalType.B && itemId != 3950) || (weaponGrade == L2CrystalType.A && itemId != 3951) || (weaponGrade == L2CrystalType.S && itemId != 3952))
 		{
-			if (!activeChar.getAutoSoulShot().containsKey(itemId))
+			if (!activeChar.getAutoSoulShot().contains(itemId))
 				activeChar.sendPacket(SystemMessageId.SPIRITSHOTS_GRADE_MISMATCH);
 			return;
 		}
@@ -86,7 +86,7 @@ public class BlessedSpiritShot implements IItemHandler
 		// Consume Blessed Spiritshot if player has enough of them
 		if (!activeChar.destroyItemWithoutTrace("Consume", item.getObjectId(), weaponItem.getSpiritShotCount(), null, false))
 		{
-			if (activeChar.getAutoSoulShot().containsKey(itemId))
+			if (activeChar.getAutoSoulShot().contains(itemId))
 			{
 				activeChar.removeAutoSoulShot(itemId);
 				activeChar.sendPacket(new ExAutoSoulShot(itemId, 0));

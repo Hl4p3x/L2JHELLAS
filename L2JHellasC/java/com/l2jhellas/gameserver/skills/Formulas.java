@@ -390,7 +390,7 @@ public final class Formulas
 
 		damage *= attacker.getRandomDamage();
 		
-		if (target instanceof L2PcInstance)
+		if (target.isPlayer())
 		{
 			final L2Armor armor = ((L2PcInstance) target).getActiveChestArmorItem();
 			if (armor != null)

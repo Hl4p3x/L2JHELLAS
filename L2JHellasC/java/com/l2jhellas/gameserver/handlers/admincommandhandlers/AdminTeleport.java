@@ -18,6 +18,7 @@ import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.network.SystemMessageId;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
@@ -344,6 +345,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 			player.teleToLocation(x, y, z, true);
+			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}
 	

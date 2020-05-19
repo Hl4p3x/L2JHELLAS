@@ -68,7 +68,7 @@ public class Splendor extends AbstractNpcAI
 		int NewMob = SplendorId.get(npcId)[0];
 		int chance = SplendorId.get(npcId)[1];
 		int ModeSpawn = SplendorId.get(npcId)[2];
-		if (Rnd.get(100) <= chance * Config.RATE_DROP_QUEST)
+		if (Rnd.get(100) <= chance * Config.RATE_QUEST_DROP)
 		{
 			if (SplendorId.containsKey(npcId))
 			{

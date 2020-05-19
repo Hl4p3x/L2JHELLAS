@@ -83,19 +83,9 @@ public class CursedWeapon
 				_player.store();
 				
 				// Destroy
-				L2ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
-				if (!Config.FORCE_INVENTORY_UPDATE)
-				{
-					InventoryUpdate iu = new InventoryUpdate();
-					if (removedItem.getCount() == 0)
-						iu.addRemovedItem(removedItem);
-					else
-						iu.addModifiedItem(removedItem);
-					
-					_player.sendPacket(iu);
-				}
-				else
-					_player.sendPacket(new ItemList(_player, true));
+				_player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
+
+				_player.sendPacket(new ItemList(_player,false));
 				
 				_player.broadcastUserInfo();
 			}
@@ -142,21 +132,8 @@ public class CursedWeapon
 			// OR this cursed weapon is on the ground.
 			if ((_player != null) && (_player.getInventory().getItemByItemId(_itemId) != null))
 			{
-				// Destroy
-				L2ItemInstance removedItem = _player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
-				if (!Config.FORCE_INVENTORY_UPDATE)
-				{
-					InventoryUpdate iu = new InventoryUpdate();
-					if (removedItem.getCount() == 0)
-						iu.addRemovedItem(removedItem);
-					else
-						iu.addModifiedItem(removedItem);
-					
-					_player.sendPacket(iu);
-				}
-				else
-					_player.sendPacket(new ItemList(_player, true));
-				
+				_player.getInventory().destroyItemByItemId("", _itemId, 1, _player, null);
+				_player.sendPacket(new ItemList(_player, false));		
 				_player.broadcastUserInfo();
 			}
 			// is dropped on the ground
@@ -236,15 +213,12 @@ public class CursedWeapon
 		}
 		else
 		{
+			_player.abortAllAttacks();
 			_player.dropItem("DieDrop", _item, killer, true);
 			_player.setKarma(_playerKarma);
 			_player.setPkKills(_playerPkKills);
 			_player.setCursedWeaponEquipedId(0);
-			removeSkill();
-			_player.abortAttack();
-			// L2ItemInstance item = _player.getInventory().getItemByItemId(_itemId);
-			// _player.getInventory().dropItem("DieDrop", item, _player, null);
-			// _player.getInventory().getItemByItemId(_itemId).dropMe(_player, _player.getX(), _player.getY(), _player.getZ());
+			removeSkill();		
 		}
 		
 		_isDropped = true;
@@ -451,6 +425,7 @@ public class CursedWeapon
 			// Unequip weapon
 			// _player.getInventory().unEquipItemInSlot(Inventory.PAPERDOLL_LRHAND);
 			
+			_player.sendPacket(new ItemList(_player, false));
 			_player.broadcastUserInfo();
 		}
 	}

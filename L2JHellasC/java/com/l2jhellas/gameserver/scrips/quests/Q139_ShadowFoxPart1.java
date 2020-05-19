@@ -119,9 +119,12 @@ public class Q139_ShadowFoxPart1 extends Quest
 		
 		final QuestState st = member.getQuestState(qn);
 
+	     if(st == null)
+	 		return super.onKill(npc, player, isSummon);
+	     
 		final QuestState qs = player.getQuestState(qn);
 		
-		if (qs == null)
+		if (qs == null )
 			return super.onKill(npc, player, isSummon);
 		
 		if (!st.isSet("talk") && (Rnd.get(100) < DROP_CHANCE))

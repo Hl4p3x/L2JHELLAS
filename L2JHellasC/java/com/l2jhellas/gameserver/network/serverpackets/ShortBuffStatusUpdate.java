@@ -3,6 +3,9 @@ package com.l2jhellas.gameserver.network.serverpackets;
 public class ShortBuffStatusUpdate extends L2GameServerPacket
 {
 	private static final String _S__F4_SHORTBUFFSTATUSUPDATE = "[S] F4 ShortBuffStatusUpdate";
+	
+	public static final ShortBuffStatusUpdate RESET_SHORT_BUFF = new ShortBuffStatusUpdate(0, 0, 0);
+	
 	private final int _skillId;
 	private final int _skillLvl;
 	private final int _duration;

@@ -4,6 +4,7 @@ import Extensions.fake.roboto.FakePlayer;
 import Extensions.fake.roboto.FakePlayerManager;
 import Extensions.fake.roboto.FakePlayerTaskManager;
 import Extensions.fake.roboto.ai.EnchanterAI;
+import Extensions.fake.roboto.ai.FallbackAI;
 import Extensions.fake.roboto.ai.walker.GiranWalkerAI;
 
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
@@ -17,9 +18,10 @@ public class AdminFakePlayers implements IAdminCommandHandler
 		"admin_takecontrol",
 		"admin_releasecontrol",
 		"admin_fakes",
-		"admin_spawnrandom",
 		"admin_deletefake",
+		"admin_spawnrandom",		
 		"admin_spawnenchanter",
+		"admin_spawnfallback",
 		"admin_spawnwalker"
 	};
 	
@@ -61,6 +63,13 @@ public class AdminFakePlayers implements IAdminCommandHandler
 		{
 			FakePlayer fakePlayer = FakePlayerManager.spawnPlayer(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 			fakePlayer.setFakeAi(new GiranWalkerAI(fakePlayer));
+			return true;
+		}
+					
+		if (command.startsWith("admin_spawnfallback"))
+		{
+			FakePlayer fakePlayer = FakePlayerManager.spawnPlayer(activeChar.getX(), activeChar.getY(), activeChar.getZ());
+			fakePlayer.setFakeAi(new FallbackAI(fakePlayer));
 			return true;
 		}
 		

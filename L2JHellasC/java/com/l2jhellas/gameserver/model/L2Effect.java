@@ -12,7 +12,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SummonInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ExOlympiadSpelledInfo;
-import com.l2jhellas.gameserver.network.serverpackets.MagicEffectIcons;
+import com.l2jhellas.gameserver.network.serverpackets.AbnormalStatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.PartySpelled;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.skills.Env;
@@ -131,7 +131,7 @@ public abstract class L2Effect
 			}
 			catch (Throwable e)
 			{
-				_log.severe(EffectTask.class.getName() + ": Could run effect task." +e);
+				
 			}
 		}
 	}
@@ -438,7 +438,7 @@ public abstract class L2Effect
 		return funcs.toArray(new Func[funcs.size()]);
 	}
 	
-	public final void addIcon(MagicEffectIcons mi)
+	public final void addIcon(AbnormalStatusUpdate mi)
 	{
 		if (_state != EffectState.ACTING)
 			return;
@@ -448,14 +448,14 @@ public abstract class L2Effect
 		if (_totalCount > 1)
 		{
 			if (sk.isPotion())
-				mi.addEffect(sk.getId(), getLevel(), sk.getBuffDuration() - (getTaskTime() * 1000));
+				mi.addEffect(sk, sk.getBuffDuration() - (getTaskTime() * 1000));
 			else
-				mi.addEffect(sk.getId(), getLevel(), -1);
+				mi.addEffect(sk, -1);
 		}
 		else if (future != null)
-			mi.addEffect(sk.getId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
+			mi.addEffect(sk, (int) future.getDelay(TimeUnit.MILLISECONDS));
 		else if (_period == -1)
-			mi.addEffect(sk.getId(), getLevel(), _period);
+			mi.addEffect(sk, _period);
 	}
 	
 	public final void addPartySpelledIcon(PartySpelled ps)
@@ -482,6 +482,11 @@ public abstract class L2Effect
 			os.addEffect(sk.getId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
 		else if (_period == -1)
 			os.addEffect(sk.getId(), getLevel(), _period);
+	}
+	
+	public boolean onSameEffect(L2Effect effect)
+	{
+		return true;
 	}
 	
 	public int getLevel()

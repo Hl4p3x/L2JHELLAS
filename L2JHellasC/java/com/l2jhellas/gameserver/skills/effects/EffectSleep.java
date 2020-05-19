@@ -24,6 +24,12 @@ public final class EffectSleep extends L2Effect
 	}
 	
 	@Override
+	public boolean onSameEffect(L2Effect effect)
+	{
+		return false;
+	}
+	
+	@Override
 	public void onExit()
 	{
 		getEffected().stopSleeping(this);

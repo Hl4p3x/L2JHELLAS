@@ -496,7 +496,7 @@ public class L2CharacterAI extends AbstractAI
 			}
 			
 			if (getIntention() != AI_INTENTION_MOVE_TO)
-				setIntention(AI_INTENTION_ACTIVE);
+				setIntention(AI_INTENTION_ACTIVE);			
 		}
 		
 		if (_actor == object)
@@ -647,7 +647,7 @@ public class L2CharacterAI extends AbstractAI
 				if (offset < 5)
 					offset = 5;	
 
-				if (_actor.getStat().getMoveSpeed() <= 174 && _actor.isInsideRadius(target,_actor.getPhysicalAttackRange()+40, false, true))
+				if (((L2Character) target).isMoving() && _actor.getStat().getMoveSpeed() <= 174 && _actor.isInsideRadius(target,_actor.getPhysicalAttackRange()+40, false, true))
 				{
 					if (isFollowing())
 						stopFollow();
@@ -682,6 +682,7 @@ public class L2CharacterAI extends AbstractAI
 			
 			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
 			setIntention(AI_INTENTION_ACTIVE);
+			clientActionFailed();
 			return true;
 		}
 		return false;
@@ -704,6 +705,7 @@ public class L2CharacterAI extends AbstractAI
 		{
 			// Set the Intention of this AbstractAI to AI_INTENTION_ACTIVE
 			setIntention(AI_INTENTION_ACTIVE);
+			clientActionFailed();
 			return true;
 		}
 		return false;

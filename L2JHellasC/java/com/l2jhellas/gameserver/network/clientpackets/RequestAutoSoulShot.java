@@ -60,7 +60,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 							final L2Summon pet = activeChar.getPet();
 							
 							if(pet != null)
-								pet.rechargeShots(true, true, true);
+								pet.rechargeShots(true, true);
 						}
 						else
 						{
@@ -75,7 +75,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 									
 									// start the auto soulshot use
 									activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.USE_OF_S1_WILL_BE_AUTO).addString(item.getItemName()));								
-									activeChar.rechargeShots(true, true, false);
+									activeChar.rechargeShots(true, true);
 								}
 							}
 							else

@@ -29,7 +29,7 @@ public class FallbackAI extends CombatAI
 		setBusyThinking(true);
 		applyDefaultBuffs();
 		handleShots();
-		getCloserTarget(L2Character.class, 70);
+		getCloserTarget(L2Character.class, 200);
 		avoid((L2Character) _fakePlayer.getTarget());
 		setBusyThinking(false);
 	}
@@ -77,7 +77,7 @@ public class FallbackAI extends CombatAI
 		if (_fakePlayer.isDead() || _fakePlayer.isMovementDisabled())
 			return;
 		
-		if (!_fakePlayer.isMoving() && Rnd.get(400) < 50)
+		if (!_fakePlayer.isMoving() && Rnd.get(700) < 50)
 		{
 			final int X = _fakePlayer.getX();
 			final int Y = _fakePlayer.getY();

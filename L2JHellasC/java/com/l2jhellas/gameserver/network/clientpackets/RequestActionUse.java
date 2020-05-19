@@ -1,7 +1,5 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
-import java.util.logging.Logger;
-
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.enums.player.ChatType;
 import com.l2jhellas.gameserver.model.L2Object;
@@ -20,11 +18,9 @@ import com.l2jhellas.gameserver.network.serverpackets.NpcSay;
 import com.l2jhellas.util.MathUtil;
 import com.l2jhellas.util.Rnd;
 
-
 public final class RequestActionUse extends L2GameClientPacket
 {
 	private static final String _C__45_REQUESTACTIONUSE = "[C] 45 RequestActionUse";
-	private static final Logger _log = Logger.getLogger(RequestActionUse.class.getName());
 	
 	private static final int SIN_EATER_ID = 12564;
 	

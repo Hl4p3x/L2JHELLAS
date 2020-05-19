@@ -70,6 +70,10 @@ public class BalanceLife implements ISkillHandler
 		{
 			target = (L2Character) target2;
 			
+			// We should not heal if char is dead
+			if (target == null || target.isDead())
+				continue;
+			
 			double newHP = target.getMaxHp() * percentHP;
 			double totalHeal = newHP - target.getCurrentHp();
 			

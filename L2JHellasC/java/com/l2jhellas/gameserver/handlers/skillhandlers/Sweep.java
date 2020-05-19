@@ -1,5 +1,7 @@
 package com.l2jhellas.gameserver.handlers.skillhandlers;
 
+import java.util.List;
+
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.handler.ISkillHandler;
 import com.l2jhellas.gameserver.model.L2Object;
@@ -23,29 +25,29 @@ public class Sweep implements ISkillHandler
 			return;
 		
 		final L2PcInstance player = (L2PcInstance) activeChar;
-
-		for(L2Object target : targets)
-		{			
+		
+		for (L2Object target : targets)
+		{
 			if (!(target instanceof L2MonsterInstance))
 				continue;
 			
 			final L2MonsterInstance mob = ((L2MonsterInstance) target);
-							
-			if (mob.isSweepActive())
-			{
-				final RewardItem[] items = mob.takeSweep();
-				
-				if (items == null || items.length == 0)
-					continue;	
-				
-				for (RewardItem ritem : items)
-				{
-				    if (player.isInParty())
-					    player.getParty().distributeItem(player, ritem, true, mob);
-				    else
-						player.getInventory().addItem("Sweep", ritem.getItemId(), ritem.getCount(), player, target);				
-				}
 			
+			if (mob.isSweepActive() && mob.getIsSpoiledBy() == player.getObjectId())
+			{
+				final List<RewardItem> items = mob.getSweepItems();
+
+				if (items.isEmpty())
+					continue;
+
+				for (RewardItem item : items)
+				{
+					if (player.isInParty())
+						player.getParty().distributeItem(player, item, true,mob);
+					else
+						player.addItem("Sweep", item.getItemId(),item.getCount(), player, true);
+				}	
+				mob.getSweepItems().clear();
 			}
 			
 			mob.endDecayTask();

@@ -34,110 +34,132 @@ public class L2SkillDrain extends L2Skill
 		if (activeChar.isAlikeDead())
 			return;
 		
-		boolean ss = false;
-		boolean bss = false;
+		boolean sps = false;
+		boolean bsps = false;
+		final boolean isPlayable = activeChar.isPlayable();
 		
-		for (L2Object target2 : targets)
+
+		final L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+		
+		if (weaponInst != null)
 		{
-			L2Character target = (L2Character) target2;
+			switch (weaponInst.getChargedSpiritshot())
+			{
+				case L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT:
+					weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
+					bsps = true;
+					break;
+				case L2ItemInstance.CHARGED_SPIRITSHOT:
+					weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
+					sps = true;
+					break;
+			}
+		}	
+		else if (activeChar instanceof L2Summon)
+		{
+			L2Summon activeSummon = (L2Summon) activeChar;
+			switch (activeSummon.getChargedSpiritShot())
+			{
+				case L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT:
+					activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+					bsps = true;
+					break;
+				case L2ItemInstance.CHARGED_SPIRITSHOT:
+					activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
+					sps = true;
+					break;
+			}
+		}
+		
+		for (L2Object obj : targets)
+		{
+			if (!(obj instanceof L2Character))
+				continue;
+			
+			final L2Character target = ((L2Character) obj);
 			if (target.isAlikeDead() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
 				continue;
 			
 			if (activeChar != target && target.isInvul())
-				continue; // No effect on invulnerable chars unless they cast it themselves.
+				continue;
 				
-			L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
+			final boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, this));
+			final int damage = (int) Formulas.calcMagicDam(activeChar, target, this, sps, bsps, mcrit);
 			
-			if (weaponInst != null)
+			if (damage > 0)
 			{
-				if (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
-				{
-					bss = true;
-					weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-				}
-				else if (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_SPIRITSHOT)
-				{
-					ss = true;
-					weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-				}
-			}
-			// If there is no weapon equipped, check for an active summon.
-			else if (activeChar instanceof L2Summon)
-			{
-				L2Summon activeSummon = (L2Summon) activeChar;
+				int _CurrCp = (int) target.getCurrentCp();
+				int _CurrHp = (int) target.getCurrentHp();
+				int _drain = 0;
 				
-				if (activeSummon.getChargedSpiritShot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
+				if (isPlayable && _CurrCp > 0)
 				{
-					bss = true;
-					activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-				}
-				else if (activeSummon.getChargedSpiritShot() == L2ItemInstance.CHARGED_SPIRITSHOT)
-				{
-					ss = true;
-					activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-				}
-			}
-			
-			boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, this));
-			int damage = (int) Formulas.calcMagicDam(activeChar, target, this, ss, bss, mcrit);
-			
-			double hpAdd = _absorbAbs + _absorbPart * damage;
-			double hp = ((activeChar.getCurrentHp() + hpAdd) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + hpAdd));
-			
-			activeChar.setCurrentHp(hp);
-			
-			StatusUpdate suhp = new StatusUpdate(activeChar.getObjectId());
-			suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
-			activeChar.sendPacket(suhp);
-			
-			// Check to see if we should damage the target
-			if (damage > 0 && (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB))
-			{
-				// Manage attack or cast break of the target (calculating rate, sending message...)
-				if (!target.isRaid() && !target.isBoss() && Formulas.calcAtkBreak(target, damage))
-				{
-					target.breakAttack();
-					target.breakCast();
-				}
-				
-				activeChar.sendDamageMessage(target, damage, mcrit, false, false);
-				
-				if (hasEffects() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
-				{
-					if ((Formulas.calcSkillReflect(target, this) & 1) > 0)
-					{
-						activeChar.stopSkillEffects(getId());
-						getEffects(target, activeChar);
-						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(getId()));
-					}
+					if (damage < _CurrCp)
+						_drain = 0;
 					else
-					{
-						// activate attacked effects, if any
-						target.stopSkillEffects(getId());
-						if (Formulas.calcSkillSuccess(activeChar, target, this, false, ss, bss))
-							getEffects(activeChar, target);
-						else
-							activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_RESISTED_YOUR_S2).addCharName(target).addSkillName(getId()));
-					}
+						_drain = damage - _CurrCp;
+				}
+				else if (damage > _CurrHp)
+					_drain = _CurrHp;
+				else
+					_drain = damage;
+				
+				final double hpAdd = _absorbAbs + _absorbPart * _drain;
+				if (hpAdd > 0)
+				{
+					final double hp = ((activeChar.getCurrentHp() + hpAdd) > activeChar.getMaxHp() ? activeChar.getMaxHp() : (activeChar.getCurrentHp() + hpAdd));
+					
+					activeChar.setCurrentHp(hp);
+					
+					StatusUpdate suhp = new StatusUpdate(activeChar.getObjectId());
+					suhp.addAttribute(StatusUpdate.CUR_HP, (int) hp);
+					activeChar.sendPacket(suhp);
 				}
 				
-				target.reduceCurrentHp(damage, activeChar);
+				if (!target.isDead() || getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
+				{
+					if (!target.isRaid() && !target.isBoss() && Formulas.calcAtkBreak(target, damage))
+					{
+						target.breakAttack();
+						target.breakCast();
+					}
+					
+					activeChar.sendDamageMessage(target, damage, mcrit, false, false);
+					
+					if (hasEffects() && getTargetType() != L2SkillTargetType.TARGET_CORPSE_MOB)
+					{
+						if ((Formulas.calcSkillReflect(target, this) & 1) > 0)
+						{
+							activeChar.stopSkillEffects(getId());
+							getEffects(target, activeChar);
+							activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(getId()));
+						}
+						else
+						{
+							target.stopSkillEffects(getId());
+							if (Formulas.calcSkillSuccess(activeChar, target, this, false,sps,bsps))
+								getEffects(activeChar, target);
+							else
+								activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_RESISTED_YOUR_S2).addCharName(target).addSkillName(getId()));
+						}
+					}
+					target.reduceCurrentHp(damage, activeChar);
+				}
 			}
 			
-			// Check to see if we should do the decay right after the cast
 			if (target.isDead() && getTargetType() == L2SkillTargetType.TARGET_CORPSE_MOB && target instanceof L2Npc)
-			{
 				((L2Npc) target).endDecayTask();
-			}
 		}
-		// effect self :]
-		L2Effect effect = activeChar.getFirstEffect(getId());
-		if (effect != null && effect.isSelfEffect())
+		
+		if (hasEffects())
 		{
-			// Replace old effect with new one.
-			effect.exit();
+			final L2Effect effect = activeChar.getFirstEffect(getId());
+			if (effect != null && effect.isSelfEffect())
+				effect.exit();
+			
+			getEffectsSelf(activeChar);
 		}
-		// cast self effect if any
-		getEffectsSelf(activeChar);
+
+		activeChar.rechargeShots(false, true);
 	}
 }

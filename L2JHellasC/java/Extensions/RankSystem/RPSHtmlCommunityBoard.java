@@ -18,9 +18,7 @@ public final class RPSHtmlCommunityBoard
 		file = getBody();
 		
 		if (file == null)
-		{
 			file = "<html><body><br><br><center>404 :File Not found!<br> (check file: data/html/CommunityBoard/rankpvpsystem/body.htm) </center></body></html>";
-		}
 		else
 		{
 			file = prepareHeaderName(page, file);
@@ -76,11 +74,14 @@ public final class RPSHtmlCommunityBoard
 			else
 				topTable = TopTable.getInstance().getTopKillsTable();
 			
-			if (topTable == null)
+			if (topTable == null || topTable.isEmpty())
 				return file;
 			
 			for (Entry<Integer, TopField> e : topTable.entrySet())
 			{
+				if(e == null)
+					continue;
+				
 				pos++;
 				
 				TopField tf = e.getValue();
@@ -88,70 +89,44 @@ public final class RPSHtmlCommunityBoard
 				if (activeChar.getObjectId() == tf.getCharacterId())
 				{
 					if (pos <= 10)
-					{
-						// add row to the top 10 list for current player who is watching the list:
 						list += prepareListItem(pos, tf.getCharacterName(), tf.getCharacterLevel(), RPSUtil.getClassName(tf.getCharacterBaseClassId()), tf.getValue(), "2080D0");
-					}
 					else
-					{
-						// add row under the top 10 list for current player who is watching the list:
 						list += "<br>" + prepareListItem(pos, tf.getCharacterName(), tf.getCharacterLevel(), RPSUtil.getClassName(tf.getCharacterBaseClassId()), tf.getValue(), "2080D0");
-					}
-					
 					playerInfo = true;
 					
 				}
 				else if (pos <= 10)
-				{
-					// add row to list with player data:
 					list += prepareListItem(pos, tf.getCharacterName(), tf.getCharacterLevel(), RPSUtil.getClassName(tf.getCharacterBaseClassId()), tf.getValue(), null);
-				}
 				
 				if (pos > 10 && playerInfo)
-				{
-					// if list complete:
 					break;
-				}
 			}
 			
 			if (!playerInfo)
 			{
 				if (Config.TOP_LIST_IGNORE_TIME_LIMIT > 0)
-				{
 					file = file.replace("%message%", "You're out of " + TopTable.TOP_LIMIT + ", or you did not kill anyone or even killed more than " + Math.round((double) Config.TOP_LIST_IGNORE_TIME_LIMIT / (double) 86400000) + " days ago.");
-				}
 				else
-				{
 					file = file.replace("%message%", "You're out of " + TopTable.TOP_LIMIT + ", or you did not kill anyone.");
-				}
 				
 			}
 			else
-			{
 				file = file.replace("%message%", "&nbsp;");
-			}
 			
-			if (list.equals(""))
-			{
+			if (list.isEmpty())
 				list += "No one on TOP 10 list yet";
-			}
 			
-			// add list header before item list:
 			list = prepareListHead(page) + list;
 			
 		}
 		else
-		{ // if is updating:
+		{
 			list = "<font color=FF8000>Updating... try again for few seconds</font><br><br>";
 			
 			if (page == 1)
-			{
 				list += "<button value=\"Refresh\" action=\"bypass _bbsrps:1\" width=" + Config.BUTTON_W + " height=" + Config.BUTTON_H + " back=\"" + Config.BUTTON_DOWN + "\" fore=\"" + Config.BUTTON_UP + "\">";
-			}
 			else
-			{
 				list += "<button value=\"Refresh\" action=\"bypass _bbsrps:0\" width=" + Config.BUTTON_W + " height=" + Config.BUTTON_H + " back=\"" + Config.BUTTON_DOWN + "\" fore=\"" + Config.BUTTON_UP + "\">";
-			}
 			
 		}
 		
@@ -164,14 +139,9 @@ public final class RPSHtmlCommunityBoard
 		String item = getListHead();
 		
 		if (page == 1)
-		{
 			item = item.replace("%col5_name%", "Rank Point's");
-		}
 		else
-		{
 			item = item.replace("%col5_name%", "PvP Kill's");
-		}
-		
 		return item;
 	}
 	
@@ -203,9 +173,7 @@ public final class RPSHtmlCommunityBoard
 		if (!TopTable.getInstance().isUpdating())
 		{
 			if (page == 0)
-			{
 				return "<button value=\">>\" action=\"bypass _bbsrps:1\" width=" + Config.BUTTON_W + " height=" + Config.BUTTON_H + " back=\"" + Config.BUTTON_DOWN + "\" fore=\"" + Config.BUTTON_UP + "\">";
-			}
 			
 			return "&nbsp;";
 		}

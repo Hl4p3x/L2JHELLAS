@@ -84,6 +84,12 @@ public final class EffectFear extends L2Effect
 	}
 	
 	@Override
+	public boolean onSameEffect(L2Effect effect)
+	{
+		return false;
+	}
+	
+	@Override
 	public boolean onActionTime()
 	{
 		getEffected().stopFear(this);

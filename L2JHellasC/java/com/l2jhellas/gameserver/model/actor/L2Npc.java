@@ -94,8 +94,6 @@ public class L2Npc extends L2Character
 	
 	volatile boolean _isDecayed = false;
 	
-	private boolean _isSpoil = false;
-	
 	private int _castleIndex = -2;
 	
 	public boolean isEventMob = false, _isEventMobCTF = false, _isCTF_throneSpawn = false, _isCTF_Flag = false;
@@ -332,14 +330,9 @@ public class L2Npc extends L2Character
 	
 	public boolean isSpoil()
 	{
-		return _isSpoil;
+		return _isSpoiledBy > 0;
 	}
-	
-	public void setSpoil(boolean isSpoil)
-	{
-		_isSpoil = isSpoil;
-	}
-	
+
 	public final int getIsSpoiledBy()
 	{
 		return _isSpoiledBy;

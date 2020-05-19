@@ -31,16 +31,11 @@ public abstract class L2Playable extends L2Character
 	public void onActionShift(L2PcInstance player)
 	{
 		if (player.getTarget() != this)
-		{
 			player.setTarget(this);
-		}
-		else
-		{
-			if (isAutoAttackable(player) && player.isInsideRadius(this, player.getPhysicalAttackRange(), false, false) && ((Config.GEODATA) ? GeoEngine.canSeeTarget(player, this, isFlying()) : GeoEngine.canSeeTarget(player, this)))
+		else if (isAutoAttackable(player) && player.isInsideRadius(this, player.getPhysicalAttackRange(), false, false) && ((Config.GEODATA) ? GeoEngine.canSeeTarget(player, this, isFlying()) : GeoEngine.canSeeTarget(player, this)))
 				player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
-			else
-				player.sendPacket(ActionFailed.STATIC_PACKET);
-		}
+		
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override

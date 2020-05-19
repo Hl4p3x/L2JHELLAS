@@ -26,6 +26,9 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
+		if (_skillId <= 0 || _skillLvl <= 0)
+			return;
+		
 		L2PcInstance activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null)
@@ -39,16 +42,15 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 		if (((trainer == null) || !activeChar.isInsideRadius(trainer, L2Npc.INTERACTION_DISTANCE, false, false)) && !activeChar.isGM())
 			return;
 		
+		if (activeChar.getSkillLevel(_skillId) >= _skillLvl)
+			return;
+		
 		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl);
 		
 		boolean canteach = false;
 		
 		if ((skill == null) || (skill.getId() != _skillId))
-		{
-			_log.warning(RequestExEnchantSkillInfo.class.getName() + ": enchant skill id " + _skillId + " level " + _skillLvl + " is undefined. aquireEnchantSkillInfo failed. report this to http://l2jhellas.info/ forum.");
-			activeChar.sendMessage("This skill doesn't yet have enchant info in Datapack");
 			return;
-		}
 		
 		if(trainer==null)
 			return;

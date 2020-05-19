@@ -206,23 +206,20 @@ public final class L2TeleporterInstance extends L2NpcInstance
 	
 	private void doTeleport(L2PcInstance player, int val)
 	{
+		if (player.isAlikeDead() || player.isDead())
+			return;
+		
+		if (player.isInFunEvent())
+		{
+			player.sendMessage("You cannot teleport while in Event.");
+			return;
+		}
+		
 		L2TeleportLocation list = TeleportLocationData.getInstance().getTemplate(val);
 		if (list != null)
 		{
-			int payType = 0;
-			if (player.getLevel() < 41)
-				payType = 1;
-							
-			if (player.isAlikeDead() || player.isDead())
-				return;
-			
-			if (player.isInFunEvent())
-			{
-				player.sendMessage("You cannot teleport while in Event.");
-				return;
-			}
-				
-			// you cannot teleport to village that is in siege
+			final int payType = Config.ALT_GAME_FREE_TELEPORT ? 1 : 0;
+					
 			if (SiegeManager.getSiege(list.getLocX(), list.getLocY(), list.getLocZ()) != null)
 			{
 				player.sendPacket(SystemMessageId.NO_PORT_THAT_IS_IN_SIGE);
@@ -289,23 +286,14 @@ public final class L2TeleporterInstance extends L2NpcInstance
 				html.replace("%playername%", player.getName());
 				player.sendPacket(html);
 			}
-			else if (!list.getIsForNoble() && (Config.ALT_GAME_FREE_TELEPORT || player.destroyItemsByList("Teleport " + (list.getIsForNoble() ? " nobless" : ""), list.getItemsList(), this, true, payType)))
-			{
-				if (Config.DEBUG)
-					_log.fine("Teleporting player " + player.getName() + " to new location: " + list.getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
+			else if (!list.getIsForNoble() && player.destroyItemsByList("Teleport " + (list.getIsForNoble() ? " nobless" : ""), list.getItemsList(), this, true, payType))
 				player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ(), true);
-			}
-			else if (list.getIsForNoble() && (Config.ALT_GAME_FREE_TELEPORT || player.destroyItemsByList("Teleport " + (list.getIsForNoble() ? " nobless" : ""), list.getItemsList(), this, true, payType)))
-			{
-				if (Config.DEBUG)
-					_log.fine("Teleporting player " + player.getName() + " to new location: " + list.getLocX() + ":" + list.getLocY() + ":" + list.getLocZ());
+			else if (list.getIsForNoble() && player.destroyItemsByList("Teleport " + (list.getIsForNoble() ? " nobless" : ""), list.getItemsList(), this, true, payType))
 				player.teleToLocation(list.getLocX(), list.getLocY(), list.getLocZ(), true);
-			}
 		}
 		else
-		{
 			_log.warning(L2TeleporterInstance.class.getName() + ":No teleport destination with id:" + val);
-		}
+
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	

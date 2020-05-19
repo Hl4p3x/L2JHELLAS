@@ -243,8 +243,9 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		}
 		
-		activeChar.onActionRequest();
-		
+        if(activeChar.isSpawnProtected())
+        	activeChar.onActionRequest();
+        
 		if (item.isPetItem())
 		{
 			L2Summon summon = activeChar.getPet();

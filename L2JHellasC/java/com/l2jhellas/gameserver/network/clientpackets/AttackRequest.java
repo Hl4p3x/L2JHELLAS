@@ -88,7 +88,7 @@ public final class AttackRequest extends L2GameClientPacket
 			if ((target.getObjectId() != activeChar.getObjectId()) && !activeChar.isInStoreMode() && activeChar.getActiveRequester() == null)
 				target.onForcedAttack(activeChar);
 			else
-				sendPacket(ActionFailed.STATIC_PACKET);
+				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}
 	

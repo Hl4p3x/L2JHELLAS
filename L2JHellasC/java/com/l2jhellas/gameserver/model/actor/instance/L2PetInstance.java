@@ -1033,16 +1033,27 @@ public class L2PetInstance extends L2Summon
 	}
 	
 	@Override
-	public void rechargeShots(boolean physical, boolean magic, boolean summon)
+	protected void onHitTimer(L2Character target, int damage, boolean crit, boolean miss, boolean soulshot, byte shld)
+	{
+		super.onHitTimer(target, damage, crit, miss, soulshot, shld);
+		rechargeShots(true,false);
+	}
+	
+	@Override
+	public void rechargeShots(boolean physical, boolean magic)
 	{
 		if (getOwner().getAutoSoulShot() == null || getOwner().getAutoSoulShot().isEmpty())
 			return;
 		
-		for (int itemId : getOwner().getAutoSoulShot().values())
+		for (int itemId : getOwner().getAutoSoulShot())
 		{
 			L2ItemInstance item = getOwner().getInventory().getItemByItemId(itemId);
 			if (item != null)
 			{
+				// Check if Soulshot is already active
+				if (item.getChargedSoulshot() != L2ItemInstance.CHARGED_NONE)
+					continue;
+				
 				if (magic && itemId == 6646 || itemId == 6647)
 				{
 					final IItemHandler handler = ItemHandler.getInstance().getHandler(itemId);

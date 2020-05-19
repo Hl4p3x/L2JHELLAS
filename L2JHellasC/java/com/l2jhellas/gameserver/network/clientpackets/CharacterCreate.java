@@ -138,6 +138,7 @@ public final class CharacterCreate extends L2GameClientPacket
 	
 	private static boolean isValidName(String text)
 	{
+
 		boolean result = true;
 		String test = text;
 		Pattern pattern;
@@ -147,14 +148,20 @@ public final class CharacterCreate extends L2GameClientPacket
 		}
 		catch (PatternSyntaxException e) // case of illegal pattern
 		{
-			_log.warning(CharacterCreate.class.getName() + ": ERROR : Character name pattern of config is wrong!using default .*");
 			pattern = Pattern.compile(".*");
 		}
 		Matcher regexp = pattern.matcher(test);
 		if (!regexp.matches())
-		{
 			result = false;
+		else
+		{		
+			for (int i = 0; i < text.length(); i++)
+			{
+				if (Character.UnicodeBlock.of(text.charAt(i)).equals(Character.UnicodeBlock.CYRILLIC))
+					result = false;
+			}
 		}
+		
 		return result;
 	}
 	

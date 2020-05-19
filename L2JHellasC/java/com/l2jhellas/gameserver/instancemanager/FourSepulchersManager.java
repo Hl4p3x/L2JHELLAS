@@ -1885,7 +1885,7 @@ public class FourSepulchersManager
 	public void showHtmlFile(L2PcInstance player, String file, L2Npc npc, L2PcInstance member)
 	{
 		NpcHtmlMessage html = new NpcHtmlMessage(npc.getObjectId());
-		html.setFile("data/html/SepulcherNpc/" + file);
+		html.setFile("data/html/sepulchers/" + file);
 		if (member != null)
 			html.replace("%member%", member.getName());
 		player.sendPacket(html);

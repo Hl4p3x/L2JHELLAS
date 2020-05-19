@@ -121,7 +121,7 @@ public abstract class CombatAI extends FakePlayerAI
 		if (_fakePlayer.getAutoSoulShot().isEmpty())
 		{
 			_fakePlayer.addAutoSoulShot(getShotId());
-			_fakePlayer.rechargeShots(true, true);
+			_fakePlayer.rechargeShotsForFake(true, true);
 		}
 	}
 	

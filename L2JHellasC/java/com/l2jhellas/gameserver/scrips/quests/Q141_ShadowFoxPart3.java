@@ -115,6 +115,9 @@ public class Q141_ShadowFoxPart3 extends Quest
 		
 		final QuestState qs = member.getQuestState(qn);
 
+	     if(qs == null)
+	 		return super.onKill(npc, player, isSummon);
+	     
 		if (Rnd.get(100) < MOBS.get(npc.getNpcId()))
 		{
 			qs.giveItems(PREDECESSORS_REPORT, 1);

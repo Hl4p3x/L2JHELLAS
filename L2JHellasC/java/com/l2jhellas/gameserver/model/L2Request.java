@@ -58,10 +58,7 @@ public class L2Request
 		}
 		if (partner.getRequest().isProcessingRequest())
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER);
-			sm.addString(partner.getName());
-			_player.sendPacket(sm);
-			sm = null;
+			_player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_IS_BUSY_TRY_LATER).addString(partner.getName()));
 			return false;
 		}
 		if (isProcessingRequest())
@@ -96,9 +93,7 @@ public class L2Request
 	public void onRequestResponse()
 	{
 		if (_partner != null)
-		{
 			_partner.getRequest().clear();
-		}
 		clear();
 	}
 	

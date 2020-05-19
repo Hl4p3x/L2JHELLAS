@@ -65,10 +65,10 @@ public class CharStatus
 	
 	public void reduceHp(double value, L2Character attacker, boolean awake)
 	{
-		if (getActiveChar().isInvul() || getActiveChar().isDead())
+		if (getActiveChar().isInvul())
 			return;
 		
-		if (getActiveChar() instanceof L2PcInstance)
+		if (getActiveChar().isPlayer())
 		{
 			if (((L2PcInstance) getActiveChar()).isInDuel())
 			{
@@ -80,9 +80,7 @@ public class CharStatus
 				
 				// cancel duel if player got hit by another player, that is not part of the duel or a monster
 				if (!(attacker instanceof L2SummonInstance) && !(attacker instanceof L2PcInstance && ((L2PcInstance) attacker).getDuelId() == ((L2PcInstance) getActiveChar()).getDuelId()))
-				{
 					((L2PcInstance) getActiveChar()).setDuelState(DuelState.INTERRUPTED);
-				}
 			}
 			if (getActiveChar().isDead() && !getActiveChar().isFakeDeath())
 				return; // Disabled == null check so skills like Body to Mind work again until another solution is found

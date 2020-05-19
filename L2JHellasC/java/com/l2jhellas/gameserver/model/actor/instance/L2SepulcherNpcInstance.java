@@ -33,7 +33,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 	protected Future<?> _spawnNextMysteriousBoxTask = null;
 	protected Future<?> _spawnMonsterTask = null;
 	
-	private final static String HTML_FILE_PATH = "data/html/SepulcherNpc/";
+	private final static String HTML_FILE_PATH = "data/html/sepulchers/";
 	private final static int HALLS_KEY = 7260;
 	
 	public L2SepulcherNpcInstance(int objectID, L2NpcTemplate template)
@@ -407,7 +407,7 @@ public class L2SepulcherNpcInstance extends L2Npc
 	public void showHtmlFile(L2PcInstance player, String file)
 	{
 		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		html.setFile("data/html/SepulcherNpc/" + file);
+		html.setFile("data/html/sepulchers/" + file);
 		html.replace("%npcname%", getName());
 		player.sendPacket(html);
 	}

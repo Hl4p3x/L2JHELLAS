@@ -135,6 +135,20 @@ public class L2SummonAI extends L2CharacterAI
 		}
 		else
 			summon.setFollowStatus(((L2Summon) _actor).getFollowStatus());
+		
+		if (_skill != null)
+		{
+			if (_skill.useSoulShot())
+				_actor.rechargeShots(true, false);
+			else if (_skill.useSpiritShot())
+				_actor.rechargeShots(false, true);
+		}
+	}
+	
+	@Override
+	protected void onEvtReadyToAct()
+	{		
+		super.onEvtReadyToAct();
 	}
 	
 	@Override

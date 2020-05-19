@@ -129,6 +129,9 @@ public class Q140_ShadowFoxPart2 extends Quest
 			return super.onKill(npc, player, isSummon);
 
 		final QuestState qs = member.getQuestState(qn);
+ 
+	     if(qs == null)
+	 		return super.onKill(npc, player, isSummon);
 
 		if (Rnd.get(100) < MOBS.get(npc.getNpcId()))
 		{

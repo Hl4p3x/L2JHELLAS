@@ -24,6 +24,12 @@ public final class EffectStun extends L2Effect
 	}
 	
 	@Override
+	public boolean onSameEffect(L2Effect effect)
+	{
+		return false;
+	}
+	
+	@Override
 	public void onExit()
 	{
 		getEffected().stopStunning(this);

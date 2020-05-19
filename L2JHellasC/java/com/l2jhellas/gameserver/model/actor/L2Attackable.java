@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ItemsAutoDestroy;
@@ -489,7 +488,7 @@ public class L2Attackable extends L2Npc
 		_seeThroughSilentMove = val;
 	}
 	
-	private RewardItem[] _sweepItems;
+	private final List<RewardItem> _sweepItems = new ArrayList<>();
 	
 	private RewardItem[] _harvestItems;
 	private int _seedType = 0;
@@ -1166,25 +1165,18 @@ public class L2Attackable extends L2Npc
 	{
 		L2PcInstance player = null;
 		if (lastAttacker instanceof L2PcInstance)
-		{
 			player = (L2PcInstance) lastAttacker;
-		}
 		else if (lastAttacker instanceof L2Summon)
-		{
 			player = ((L2Summon) lastAttacker).getOwner();
-		}
 		
 		if (player == null)
-			return; // Don't drop anything if the last attacker or ownere isn't
-		// L2PcInstance
+			return;
 		
 		final int levelModifier = calculateLevelModifierForDrop(player); // level
 		
 		// Check the drop of a cursed weapon
 		if (levelModifier == 0 && player.getLevel() > 20)
-		{
 			CursedWeaponsManager.getInstance().checkDrop(this, player);
-		}
 		
 		// now throw all categorized drops and handle spoil.
 		if (npcTemplate.getDropData() != null)
@@ -1196,28 +1188,14 @@ public class L2Attackable extends L2Npc
 				{
 					// according to sh1ny, seeded mobs CAN be spoiled and swept.
 					if (isSpoil())
-					{
-						ArrayList<RewardItem> sweepList = new ArrayList<>();
-						
+					{						
 						for (L2DropData drop : cat.getAllDrops())
 						{
 							item = calculateRewardItem(player, drop, levelModifier, true);
 							if (item == null)
-							{
 								continue;
-							}
-							
-							if (Config.DEBUG)
-							{
-								_log.log(Level.FINE, getClass().getName() + ": item id to spoil: " + item.getItemId() + " amount: " + item.getCount());
-							}
-							sweepList.add(item);
-						}
-						
-						// Set the table _sweepItems of this L2Attackable
-						if (!sweepList.isEmpty())
-						{
-							_sweepItems = sweepList.toArray(new RewardItem[sweepList.size()]);
+
+							_sweepItems.add(item);
 						}
 					}
 				}
@@ -1227,24 +1205,15 @@ public class L2Attackable extends L2Npc
 					{
 						L2DropData drop = cat.dropSeedAllowedDropsOnly();
 						if (drop == null)
-						{
 							continue;
-						}
 						
 						item = calculateRewardItem(player, drop, levelModifier, false);
 					}
 					else
-					{
 						item = calculateCategorizedRewardItem(player, cat, levelModifier);
-					}
 					
 					if (item != null)
 					{
-						if (Config.DEBUG)
-						{
-							_log.fine("Item id to drop: " + item.getItemId() + " amount: " + item.getCount());
-						}
-						
 						// Check if the autoLoot mode is active
 						if (Config.AUTO_LOOT && !(this instanceof L2RaidBossInstance) && !(this instanceof L2MinionInstance) && !(this instanceof L2GrandBossInstance))
 							player.doAutoLoot(this, item); // Give this or these Item(s) to the L2PcInstance that has killed the L2Attackable
@@ -1278,13 +1247,9 @@ public class L2Attackable extends L2Npc
 			// the L2Attackable
 			RewardItem item = new RewardItem(Config.CHAMPION_SPCL_ITEM, champqty);
 			if (Config.AUTO_LOOT)
-			{
 				player.doAutoLoot(this, item);
-			}
 			else
-			{
 				dropItem(player, item);
-			}
 		}
 		
 		// Instant Item Drop :>
@@ -1591,14 +1556,12 @@ public class L2Attackable extends L2Npc
 	
 	public boolean isSweepActive()
 	{
-		return _sweepItems != null;
+		return !_sweepItems.isEmpty();
 	}
-	
-	public synchronized RewardItem[] takeSweep()
+
+	public synchronized List<RewardItem> getSweepItems()
 	{
-		RewardItem[] sweep = _sweepItems;
-		_sweepItems = null;
-		return sweep;
+		return _sweepItems;
 	}
 	
 	public synchronized RewardItem[] takeHarvest()
@@ -1778,7 +1741,7 @@ public class L2Attackable extends L2Npc
 		// Clear overhit value
 		overhitEnabled(false);
 		
-		_sweepItems = null;
+		_sweepItems.clear();
 		resetAbsorbList();
 		
 		setWalking();

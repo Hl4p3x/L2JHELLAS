@@ -46,24 +46,23 @@ public class AdminRes implements IAdminCommandHandler
 	private static void handleRes(L2PcInstance activeChar, String resParam)
 	{
 		L2Object obj = activeChar.getTarget();
-		
-		if (resParam != null)
-		{
-			L2PcInstance plyr = L2World.getInstance().getPlayer(resParam);
-			
-			if (plyr != null)
-				obj = plyr;
+
+		if (!resParam.isEmpty())
+		{			
+			L2PcInstance plr = L2World.getInstance().getPlayer(resParam);
+
+			if(plr != null)
+				obj = plr;
 			else
 			{
-				// Otherwise, check if the param was a radius.
 				try
 				{
 					int radius = Integer.parseInt(resParam);
 					
-					for (L2Character knownPlayer : L2World.getInstance().getVisibleObjects(activeChar, L2Character.class, radius))
+					L2World.getInstance().forEachVisibleObjectInRange(activeChar, L2PcInstance.class, radius, knownPlayer ->
 					{
 						doResurrect(knownPlayer);
-					}
+					});
 					
 					activeChar.sendMessage("Resurrected all players within a " + radius + " unit radius.");
 					return;
@@ -76,15 +75,15 @@ public class AdminRes implements IAdminCommandHandler
 			}
 		}
 		
-		if (obj == null)
-			obj = activeChar;
-		
 		if (obj instanceof L2ControllableMobInstance)
 		{
 			activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			return;
 		}
-
+		
+		if (obj == null)
+			obj = activeChar;
+		
 		doResurrect((L2Character) obj);
 	}
 	
@@ -99,17 +98,14 @@ public class AdminRes implements IAdminCommandHandler
 		
 		try
 		{
-			int radius = 0;
-			
-			if (!radiusStr.equals(""))
+			if (!radiusStr.isEmpty())
 			{
-				radius = Integer.parseInt(radiusStr);
-				
-				for (L2Character knownChar : L2World.getInstance().getVisibleObjects(activeChar, L2Character.class, radius))
-					if (!(knownChar.isPlayer()) && !(knownChar instanceof L2ControllableMobInstance))
-					{
-						doResurrect(knownChar);
-					}
+				int radius = Integer.parseInt(radiusStr);
+
+				L2World.getInstance().forEachVisibleObjectInRange(activeChar, L2Character.class, radius, knownPlayer ->
+				{
+					doResurrect(knownPlayer);
+				});
 				
 				activeChar.sendMessage("Resurrected all non-players within a " + radius + " unit radius.");
 			}

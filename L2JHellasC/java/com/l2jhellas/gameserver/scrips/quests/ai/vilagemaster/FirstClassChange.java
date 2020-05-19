@@ -8,6 +8,7 @@ import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.model.quest.QuestState;
+import com.l2jhellas.gameserver.network.serverpackets.HennaInfo;
 
 public class FirstClassChange extends Quest
 {
@@ -346,6 +347,7 @@ public class FirstClassChange extends Quest
 						
 						player.setClassId(array[0]);
 						player.setBaseClass(array[0]);
+						player.sendPacket(new HennaInfo(player));
 						player.broadcastUserInfo();
 					}
 					else

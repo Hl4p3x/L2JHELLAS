@@ -302,9 +302,6 @@ public final class Config
 	public static int BANKING_SYSTEM_GOLDBARS;
 	public static int BANKING_SYSTEM_ADENA;
 	public static int BANKING_SYSTEM_ITEM;
-	public static boolean BANKINGALTERNATE_SYSTEM_ENABLED;
-	public static int BANKINGALTERNATE_SYSTEM_GOLDBARS;
-	public static int BANKINGALTERNATE_SYSTEM_ADENA;
 	public static boolean CHAR_TITLE;
 	public static String ADD_CHAR_TITLE;
 	public static boolean ALLOW_CREATE_LVL;
@@ -537,7 +534,6 @@ public final class Config
 	public static boolean NPC_NOBLES_ENABLE;
 	public static int NPC_NOBLESS_ID;
 	public static int NPC_NOBLESS_QUANTITY;
-	public static int BOSS_RESPAWN_NPC_ID;
 	public static int[] BOSS_RESPAWN_INFO;
 	public static boolean RAID_INFO_SHOW_TIME;
 	
@@ -714,7 +710,6 @@ public final class Config
 	public static double RATE_QUEST_REWARD;
 	public static double RATE_QUEST_REWARD_XP;
 	public static double RATE_QUEST_REWARD_SP;
-	public static double RATE_QUEST_REWARD_ADENA;
 	
 	public static float RATE_XP;
 	public static float RATE_SP;
@@ -733,8 +728,6 @@ public final class Config
 	public static boolean ALLOW_SATURDAY_RATE_XP_SP;
 	public static float SATURDAY_RATE_XP;
 	public static float SATURDAY_RATE_SP;
-	public static float RATE_DROP_QUEST;
-	public static float RATE_QUESTS_REWARD;
 	public static float RATE_KARMA_EXP_LOST;
 	public static float RATE_SIEGE_GUARDS_PRICE;
 	public static int PLAYER_DROP_LIMIT;
@@ -2183,7 +2176,6 @@ public final class Config
 			RATE_QUEST_REWARD = Float.parseFloat(ratesSettings.getProperty("RateQuestReward", "1"));
 			RATE_QUEST_REWARD_XP = Float.parseFloat(ratesSettings.getProperty("RateQuestRewardXP", "1"));
 			RATE_QUEST_REWARD_SP = Float.parseFloat(ratesSettings.getProperty("RateQuestRewardSP", "1"));
-			RATE_QUEST_REWARD_ADENA = Float.parseFloat(ratesSettings.getProperty("RateQuestRewardAdena", "1"));
 			
 			RATE_XP = Float.parseFloat(ratesSettings.getProperty("RateXp", "1"));
 			RATE_SP = Float.parseFloat(ratesSettings.getProperty("RateSp", "1"));
@@ -2206,8 +2198,6 @@ public final class Config
 			SATURDAY_RATE_XP = Float.parseFloat(ratesSettings.getProperty("SaturDayXp", "2."));
 			SATURDAY_RATE_SP = Float.parseFloat(ratesSettings.getProperty("SaturDaySp", "2."));
 
-			RATE_DROP_QUEST = Float.parseFloat(ratesSettings.getProperty("RateDropQuest", "1"));
-			RATE_QUESTS_REWARD = Float.parseFloat(ratesSettings.getProperty("RateQuestsReward", "1"));
 			RATE_KARMA_EXP_LOST = Float.parseFloat(ratesSettings.getProperty("RateKarmaExpLost", "1"));
 			RATE_SIEGE_GUARDS_PRICE = Float.parseFloat(ratesSettings.getProperty("RateSiegeGuardsPrice", "1"));
 			PLAYER_DROP_LIMIT = Integer.parseInt(ratesSettings.getProperty("PlayerDropLimit", "0"));
@@ -2539,9 +2529,6 @@ public final class Config
 			case "RatePartySp":
 				RATE_PARTY_SP = Float.parseFloat(pValue);
 				break;
-			case "RateQuestsReward":
-				RATE_QUESTS_REWARD = Float.parseFloat(pValue);
-				break;
 			case "RateDropAdena":
 				RATE_DROP_ADENA = Float.parseFloat(pValue);
 				break;
@@ -2556,9 +2543,6 @@ public final class Config
 				break;
 			case "RateDropManor":
 				RATE_DROP_MANOR = Integer.parseInt(pValue);
-				break;
-			case "RateDropQuest":
-				RATE_DROP_QUEST = Float.parseFloat(pValue);
 				break;
 			case "RateKarmaExpLost":
 				RATE_KARMA_EXP_LOST = Float.parseFloat(pValue);

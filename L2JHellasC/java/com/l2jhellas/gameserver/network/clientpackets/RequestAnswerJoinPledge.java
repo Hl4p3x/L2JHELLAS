@@ -27,26 +27,16 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
-		{
 			return;
-		}
 		
 		final L2PcInstance requestor = activeChar.getRequest().getPartner();
 		if (requestor == null)
-		{
 			return;
-		}
 		
 		if (_answer == 0)
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_DID_NOT_RESPOND_TO_S1_CLAN_INVITATION);
-			sm.addString(requestor.getName());
-			activeChar.sendPacket(sm);
-			sm = null;
-			sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DID_NOT_RESPOND_TO_CLAN_INVITATION);
-			sm.addString(activeChar.getName());
-			requestor.sendPacket(sm);
-			sm = null;
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_DID_NOT_RESPOND_TO_S1_CLAN_INVITATION).addString(requestor.getName()));
+			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_DID_NOT_RESPOND_TO_CLAN_INVITATION).addString(activeChar.getName()));
 		}
 		else
 		{
@@ -55,7 +45,7 @@ public final class RequestAnswerJoinPledge extends L2GameClientPacket
 			
 			final RequestJoinPledge requestPacket = (RequestJoinPledge) requestor.getRequest().getRequestPacket();
 			final L2Clan clan = requestor.getClan();
-			// we must double check this cause during response time conditions can be changed, i.e. another player could join clan
+			
 			if (clan.checkClanJoinCondition(requestor, activeChar, requestPacket.getPledgeType()))
 			{
 				final JoinPledge jp = new JoinPledge(requestor.getClanId());

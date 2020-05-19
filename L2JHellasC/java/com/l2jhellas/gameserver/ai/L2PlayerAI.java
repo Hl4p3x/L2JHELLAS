@@ -19,6 +19,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2StaticObjectInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.network.SystemMessageId;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 
 public class L2PlayerAI extends L2CharacterAI
@@ -81,6 +82,14 @@ public class L2PlayerAI extends L2CharacterAI
 			else
 				setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		}
+		
+		if (_skill != null)
+		{
+			if (_skill.useSoulShot())
+				_actor.rechargeShots(true, false);
+			else if (_skill.useSpiritShot())
+				_actor.rechargeShots(false, true);
+		}
 	}
 
 	@Override
@@ -92,6 +101,8 @@ public class L2PlayerAI extends L2CharacterAI
 			_nextIntention = null;
 		}
 		
+		_actor.rechargeShots(true, false);
+		
 		super.onEvtReadyToAct();
 	}
 	
@@ -100,6 +111,7 @@ public class L2PlayerAI extends L2CharacterAI
 	{
 		_nextIntention = null;
 		super.onEvtCancel();
+		_actor.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override
@@ -170,6 +182,8 @@ public class L2PlayerAI extends L2CharacterAI
 				
 				if (isBad && target != null)
 					setTarget(null);
+				
+				_actor.sendPacket(ActionFailed.STATIC_PACKET);		
 				return;
 			}
 
@@ -191,20 +205,20 @@ public class L2PlayerAI extends L2CharacterAI
 		if (getIntention() == AI_INTENTION_REST)
 		{
 			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
-			clientActionFailed();
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		if (_actor.getActingPlayer().getDuelState() == DuelState.DEAD)
 		{
-			clientActionFailed();
 			_actor.getActingPlayer().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_MOVE_FROZEN));
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
 		{
-			clientActionFailed();
 			saveNextIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc, null);
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -218,7 +232,10 @@ public class L2PlayerAI extends L2CharacterAI
 	private void thinkPickUp()
 	{
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
+		{
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
+		}
 		
 		L2Object target = getTarget();
 		
@@ -243,13 +260,13 @@ public class L2PlayerAI extends L2CharacterAI
 	{
 		if (getIntention() == CtrlIntention.AI_INTENTION_REST)
 		{
-			clientActionFailed();
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
 		{
-			clientActionFailed();
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
@@ -258,6 +275,8 @@ public class L2PlayerAI extends L2CharacterAI
 		setTarget(object);
 		
 		moveToPawn(object, 60);		
+		
+		_actor.sendPacket(ActionFailed.STATIC_PACKET);	
 	}
 	
 	@Override
@@ -269,20 +288,25 @@ public class L2PlayerAI extends L2CharacterAI
 	private void thinkInteract()
 	{
 		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow())
+		{
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
+		}
 			
 		L2Object target = getTarget();
 		
 		if (checkTargetLost(target))
 			return;
 		
-		if (maybeMoveToPawn(target, 36))
+		if (maybeMoveToPawn(target, 40))
 			return;
 		
 		if (!(target instanceof L2StaticObjectInstance))
 			_actor.getActingPlayer().doInteract((L2Character) target);
 			
 		setIntention(AI_INTENTION_ACTIVE);	
+		
+		_actor.sendPacket(ActionFailed.STATIC_PACKET);	
 	}
 	
 	@Override
@@ -290,7 +314,10 @@ public class L2PlayerAI extends L2CharacterAI
 	{
 		
 		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
+		{
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
+		}
 
 		_thinking = true;
 		
@@ -332,6 +359,6 @@ public class L2PlayerAI extends L2CharacterAI
 			_nextIntention = null;
 		}
 		
-		super.onEvtArrived();
+		super.onEvtArrived();	
 	}
 }

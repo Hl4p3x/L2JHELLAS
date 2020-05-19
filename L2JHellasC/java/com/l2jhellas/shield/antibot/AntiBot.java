@@ -101,7 +101,7 @@ public class AntiBot
 
 	public static void CheckBypass(L2PcInstance player, String answer)
 	{
-		if(!isvoting)
+		if(!isvoting || answer.isEmpty())
 			return;
 		
 		if (answer == null || !player.getCorrectCaptcha().equals(answer))

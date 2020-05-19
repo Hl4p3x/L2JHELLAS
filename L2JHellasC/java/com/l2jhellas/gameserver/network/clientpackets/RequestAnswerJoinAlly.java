@@ -21,15 +21,11 @@ public final class RequestAnswerJoinAlly extends L2GameClientPacket
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		if (activeChar == null)
-		{
 			return;
-		}
 		
 		final L2PcInstance requestor = activeChar.getRequest().getPartner();
 		if (requestor == null)
-		{
 			return;
-		}
 		
 		if (_response == 0)
 		{
@@ -39,9 +35,7 @@ public final class RequestAnswerJoinAlly extends L2GameClientPacket
 		else
 		{
 			if (!(requestor.getRequest().getRequestPacket() instanceof RequestJoinAlly))
-			{
 				return; // hax
-			}
 			
 			final L2Clan clan = requestor.getClan();
 			// we must double check this cause of hack

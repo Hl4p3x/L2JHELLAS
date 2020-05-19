@@ -163,7 +163,7 @@ public abstract class L2Summon extends L2Playable
 			party.broadcastToPartyMembers(getOwner(), new PetStatusUpdate(this));
 		
 		setShowSummonAnimation(false); 
-		rechargeShots(true, true, false);
+		rechargeShots(true, true);
 	}
 	
 	@Override
@@ -176,10 +176,6 @@ public abstract class L2Summon extends L2Playable
 		}
 		else if (player.getTarget() != this)
 		{
-			if (Config.DEBUG)
-			{
-				_log.fine("new target selected:" + getObjectId());
-			}
 			player.setTarget(this);
 			MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel() - getLevel());
 			player.sendPacket(my);
@@ -196,37 +192,23 @@ public abstract class L2Summon extends L2Playable
 		{
 			if (isAutoAttackable(player))
 			{
-				if (Config.GEODATA)
-				{
-					if (GeoEngine.canSeeTarget(player, this, player.isFlying()))
-					{
-						player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
-						player.onActionRequest();
-					}
-				}
-				else
-				{
+				if (Config.GEODATA && GeoEngine.canSeeTarget(player, this, player.isFlying()))
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
-					player.onActionRequest();
-				}
+				else
+					player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
 			}
 			else
 			{
-				// This Action Failed packet avoids player getting stuck when clicking three or more times
-				player.sendPacket(ActionFailed.STATIC_PACKET);
-				if (Config.GEODATA)
-				{
-					if (GeoEngine.canSeeTarget(player, this, player.isFlying()))
-					{
-						player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, this);
-					}
-				}
-				else
-				{
+				if (Config.GEODATA && GeoEngine.canSeeTarget(player, this, player.isFlying()))
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, this);
-				}
+				else
+					player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, this);
 			}
+			
+	        if(player.isSpawnProtected())
+	        	player.onActionRequest();
 		}
+		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	public long getExpForThisLevel()
@@ -746,16 +728,27 @@ public abstract class L2Summon extends L2Playable
 	}
 	
 	@Override
-	public void rechargeShots(boolean physical, boolean magic, boolean summon)
+	protected void onHitTimer(L2Character target, int damage, boolean crit, boolean miss, boolean soulshot, byte shld)
+	{
+		super.onHitTimer(target, damage, crit, miss, soulshot, shld);
+		rechargeShots(true,false);
+	}
+	
+	@Override
+	public void rechargeShots(boolean physical, boolean magic)
 	{
 		if (getOwner().getAutoSoulShot() == null || getOwner().getAutoSoulShot().isEmpty())
 			return;
 		
-		for (int itemId : getOwner().getAutoSoulShot().values())
+		for (int itemId : getOwner().getAutoSoulShot())
 		{
 			L2ItemInstance item = getOwner().getInventory().getItemByItemId(itemId);
 			if (item != null)
 			{
+				// Check if Soulshot is already active
+				if (item.getChargedSoulshot() != L2ItemInstance.CHARGED_NONE)
+					continue;
+				
 				if (magic && itemId == 6646 || itemId == 6647)
 				{
 					final IItemHandler handler = ItemHandler.getInstance().getHandler(itemId);

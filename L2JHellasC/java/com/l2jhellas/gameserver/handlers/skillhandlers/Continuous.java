@@ -134,7 +134,6 @@ public class Continuous implements ISkillHandler
 					}
 				}
 				
-				Formulas.getInstance();
 				boolean acted = Formulas.calcSkillSuccess(activeChar, target, skill, ss, sps, bss);
 				if (!acted)
 				{

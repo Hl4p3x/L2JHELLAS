@@ -96,6 +96,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				{
 				}
 			});
+			return;
 		}
 		else if (_command.equals("come_here") && activeChar.isGM())
 			comeHere(activeChar);
@@ -293,9 +294,14 @@ public final class RequestBypassToServer extends L2GameClientPacket
 		}
 		else if(_command.startsWith("captcha"));
 		{
-			String answer = _command.substring("answer ".length());
-			answer = answer.replace(" ", "");			
-			AntiBot.CheckBypass(activeChar,answer.trim());
+			final StringTokenizer st = new StringTokenizer(_command);
+			st.nextToken();
+			
+			if(st.hasMoreTokens())
+			{
+				final String answer = st.nextToken();
+				AntiBot.CheckBypass(activeChar, answer.trim());
+			}
 		}
 	}
 	

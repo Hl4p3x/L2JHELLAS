@@ -565,12 +565,6 @@ public abstract class L2Character extends L2Object
 		if (Config.ALT_GAME_TIREDNESS)
 			setCurrentCp(getCurrentCp() - 10);
 		
-		// Recharge any active auto soulshot tasks for player (or player's summon if one exists).
-		if (player != null)
-			player.rechargeShots(true, false, false);
-		if (this instanceof L2Summon)
-			((L2Summon) this).rechargeShots(true, false, true);
-		
 		// Verify if soulshots are charged.
 		boolean wasSSCharged;
 
@@ -955,22 +949,6 @@ public abstract class L2Character extends L2Object
 				sendPacket(sm);
 				return;
 			}
-		}
-		
-		// Recharge AutoSoulShot
-		if (skill.useSoulShot())
-		{
-			if (this instanceof L2PcInstance)
-				((L2PcInstance) this).rechargeShots(true, false, false);
-			if (this instanceof L2Summon)
-				((L2Summon) this).rechargeShots(true, false, true);
-		}
-		else if (skill.useSpiritShot())
-		{
-			if (this instanceof L2PcInstance)
-				((L2PcInstance) this).rechargeShots(false, true, false);
-			if (this instanceof L2Summon)
-				((L2Summon) this).rechargeShots(false, true, true);
 		}
 
 		// Get all possible targets of the skill in a table in function of the skill target type
@@ -1580,7 +1558,7 @@ public abstract class L2Character extends L2Object
 		if (getMoveSpeed() != 0)
 			broadcastPacket(new ChangeMoveType(this));
 		
-		if (this instanceof L2PcInstance)
+		if (isPlayer())
 			getActingPlayer().broadcastUserInfo();
 		if (this instanceof L2Summon)
 			broadcastStatusUpdate();
@@ -2470,10 +2448,10 @@ public abstract class L2Character extends L2Object
 		StatusUpdate su = null;
 		
 		if (this instanceof L2Summon && ((L2Summon) this).getOwner() != null)
-			((L2Summon) this).updateAndBroadcastStatus(1);
+		    ((L2Summon) this).updateAndBroadcastStatus(1);
 		else
 		{
-			for (Stats stat : stats)
+			for (final Stats stat : stats)
 			{
 				if (stat == Stats.POWER_ATTACK_SPEED)
 				{
@@ -2501,7 +2479,7 @@ public abstract class L2Character extends L2Object
 			}
 		}
 		
-		if (this instanceof L2PcInstance)
+		if (isPlayer())
 		{
 			if (broadcastFull)
 				((L2PcInstance) this).updateAndBroadcastStatus(2);
@@ -2512,7 +2490,7 @@ public abstract class L2Character extends L2Object
 					broadcastPacket(su);
 			}
 		}
-		else if (this instanceof L2Npc)
+		else if (isNpc())
 		{
 			if (broadcastFull)
 			{
@@ -4508,7 +4486,8 @@ public abstract class L2Character extends L2Object
 		}
 		catch (Exception e)
 		{
-			_log.warning(L2Character.class.getSimpleName() + " callSkill() failed on skill id: " + skill.getId() +" , " + e);
+			if(Config.DEBUG)
+			  _log.warning(L2Character.class.getSimpleName() + " callSkill() failed on skill id: " + skill.getId() +" , " + e);
 		}
 	}
 	
@@ -4571,7 +4550,7 @@ public abstract class L2Character extends L2Object
 	
 	public final double getRandomDamage()
 	{
-		L2Weapon activeWeapon = getActiveWeaponItem();
+		final L2Weapon activeWeapon = getActiveWeaponItem();
 		int rdmg;
 		
 		if (activeWeapon != null)
@@ -5128,7 +5107,7 @@ public abstract class L2Character extends L2Object
 		return 0;
 	}
 	
-	public void rechargeShots(boolean physical, boolean magic, boolean summon)
+	public void rechargeShots(boolean physical, boolean magic)
 	{
 		// Dummy method to be overriden.
 	}

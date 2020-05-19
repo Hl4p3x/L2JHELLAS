@@ -32,8 +32,6 @@ public abstract class AbstractAI implements Ctrl
 	
 	protected final L2Character _actor;
 		
-	private final Location _tempMovePos = new Location();
-
 	protected CtrlIntention _intention = AI_INTENTION_IDLE;
 	
 	protected Object _intentionArg0 = null;
@@ -333,18 +331,9 @@ public abstract class AbstractAI implements Ctrl
 			if (pawn == null)
 				return;
 			
-			Location destPos = new Location(pawn.getX(), pawn.getY(), pawn.getZ());
-
-			if(_actor.isMoving() && !_actor.getAI().isFollowing() && _tempMovePos.equals(destPos))
-			{
-				clientActionFailed();
-				return;
-			}
-			
 			if (_actor.isInsideRadius(pawn, offset, true,true))
 			{
 				_actor.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
-				_tempMovePos.clean();
 				return;
 			}	
 			
@@ -353,12 +342,9 @@ public abstract class AbstractAI implements Ctrl
 			if (!_actor.isMoving())
 			{
 				clientActionFailed();
-				_tempMovePos.clean();
 				return;
 			}
 			
-			_tempMovePos.set(destPos);
-
 			if (pawn instanceof L2Character)
 			{
 				if (_actor.isOnGeodataPath())
@@ -373,10 +359,7 @@ public abstract class AbstractAI implements Ctrl
 				_actor.broadcastPacket(new MoveToLocation(_actor));
 		}
 		else
-		{
 			clientActionFailed();
-			_tempMovePos.clean();
-		}
 	}
 	
 	public void moveTo(int x, int y, int z)

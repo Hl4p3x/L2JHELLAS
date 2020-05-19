@@ -144,9 +144,7 @@ public final class RequestDropItem extends L2GameClientPacket
 			
 			activeChar.sendPacket(iu);
 			activeChar.broadcastUserInfo();
-			
-			ItemList il = new ItemList(activeChar, true);
-			activeChar.sendPacket(il);
+			activeChar.sendPacket(new ItemList(activeChar, true));
 		}
 		
 		activeChar.dropItem("Drop", _objectId, _count, _x, _y, _z, null, false);

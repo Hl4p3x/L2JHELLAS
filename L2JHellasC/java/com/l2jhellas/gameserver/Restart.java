@@ -44,11 +44,12 @@ public class Restart
 				StartTime.set(Calendar.HOUR_OF_DAY, Integer.parseInt(splitTimeOfDay[0]));
 				StartTime.set(Calendar.MINUTE, Integer.parseInt(splitTimeOfDay[1]));
 				StartTime.set(Calendar.SECOND, 00);
+				
 				if (StartTime.getTimeInMillis() < currentTime.getTimeInMillis())
-				{
 					StartTime.add(Calendar.DAY_OF_MONTH, 1);
-				}
+				
 				datime = StartTime.getTimeInMillis() - currentTime.getTimeInMillis();
+				
 				if (count == 0)
 				{
 					flush2 = datime;
@@ -59,14 +60,15 @@ public class Restart
 					flush2 = datime;
 					NextRestart = StartTime;
 				}
+				
 				count++;
 			}
-			_log.info(Restart.class.getName() + "[Restart System]: Next Restart Time: " + NextRestart.getTime().toString());
+			_log.info(Restart.class.getSimpleName() + "[Restart System]: Next Restart Time: " + NextRestart.getTime().toString());
 			ThreadPoolManager.getInstance().scheduleGeneral(new StartRestartTask(), flush2);
 		}
 		catch (Exception e)
 		{
-			_log.warning(Restart.class.getName() + ": [Restart System]: The automatic restart system presented error while loading the configs.");
+			_log.warning(Restart.class.getSimpleName() + ": [Restart System]: The automatic restart system presented error while loading the configs.");
 		}
 	}
 	
@@ -76,7 +78,8 @@ public class Restart
 		public void run()
 		{
 			_log.info(Restart.class.getSimpleName() + ": Start automated restart GameServer.");
-			Shutdown.getInstance().autoRestart(Config.RESTART_SECONDS);
+			Shutdown restart = new Shutdown(Config.RESTART_SECONDS, true);
+			restart.start();
 		}
 	}
 }

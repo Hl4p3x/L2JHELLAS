@@ -39,10 +39,13 @@ public class AdminHeal implements IAdminCommandHandler
 					
 					L2World.getInstance().forEachVisibleObjectInRange(activeChar, L2Character.class,radius, character ->
 					{
-						character.setCurrentHpMp(character.getMaxHp(), character.getMaxMp());
-						
-						if (character.isPlayer() && !character.isDead())
-							character.setCurrentCp(character.getMaxCp());
+						if (!character.isDead())
+						{
+							character.setCurrentHpMp(character.getMaxHp(),character.getMaxMp());
+
+							if (character.isPlayer())
+								character.setCurrentCp(character.getMaxCp());
+						}
 					});
 					
 					activeChar.sendMessage("You instant healed all characters within " + radius + " unit radius.");
@@ -57,12 +60,15 @@ public class AdminHeal implements IAdminCommandHandler
 			{
 				final L2Character character = (L2Character) object;
 				
-				character.setCurrentHpMp(character.getMaxHp(), character.getMaxMp());
-				
-				if (character.isPlayer() && !character.isDead())
-					character.setCurrentCp(character.getMaxCp());
-				
-				activeChar.sendMessage("You instant healed " + character.getName() + ".");
+				if (!character.isDead())
+				{
+					character.setCurrentHpMp(character.getMaxHp(),character.getMaxMp());
+
+					if (character.isPlayer())
+						character.setCurrentCp(character.getMaxCp());
+
+					activeChar.sendMessage("You instant healed " + character.getName() + ".");
+				}
 			}
 			else
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);

@@ -470,26 +470,13 @@ public final class QuestState
 		
 		// Send message to the client.
 		if (itemId == 57)
-		{
-			SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.EARNED_S1_ADENA);
-			smsg.addItemNumber(itemCount);
-			_player.sendPacket(smsg);
-		}
+			_player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_S1_ADENA).addItemNumber(itemCount));
 		else
 		{
 			if (itemCount > 1)
-			{
-				SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.EARNED_S2_S1_S);
-				smsg.addItemName(itemId);
-				smsg.addItemNumber(itemCount);
-				_player.sendPacket(smsg);
-			}
+				_player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_S2_S1_S).addItemName(itemId).addItemNumber(itemCount));
 			else
-			{
-				SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1);
-				smsg.addItemName(itemId);
-				_player.sendPacket(smsg);
-			}
+				_player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_ITEM_S1).addItemName(itemId));
 		}
 		
 		// Send status update packet.
@@ -548,7 +535,7 @@ public final class QuestState
 		switch (type)
 		{
 			case DROP_DIVMOD:
-				dropChance *= Config.RATE_DROP_QUEST;
+				dropChance *= Config.RATE_QUEST_DROP;
 				amount = count * (dropChance / L2DropData.MAX_CHANCE);
 				if (Rnd.get(L2DropData.MAX_CHANCE) < dropChance % L2DropData.MAX_CHANCE)
 					amount += count;
@@ -556,11 +543,11 @@ public final class QuestState
 			
 			case DROP_FIXED_RATE:
 				if (Rnd.get(L2DropData.MAX_CHANCE) < dropChance)
-					amount = (int) (count * Config.RATE_DROP_QUEST);
+					amount = (int) (count * Config.RATE_QUEST_DROP);
 				break;
 			
 			case DROP_FIXED_COUNT:
-				if (Rnd.get(L2DropData.MAX_CHANCE) < dropChance * Config.RATE_DROP_QUEST)
+				if (Rnd.get(L2DropData.MAX_CHANCE) < dropChance * Config.RATE_QUEST_DROP)
 					amount = count;
 				break;
 			
@@ -626,7 +613,7 @@ public final class QuestState
 			switch (type)
 			{
 				case DROP_DIVMOD:
-					dropChance *= Config.RATE_DROP_QUEST;
+					dropChance *= Config.RATE_QUEST_DROP;
 					amount = count * (dropChance / L2DropData.MAX_CHANCE);
 					if (Rnd.get(L2DropData.MAX_CHANCE) < dropChance % L2DropData.MAX_CHANCE)
 						amount += count;
@@ -634,11 +621,11 @@ public final class QuestState
 				
 				case DROP_FIXED_RATE:
 					if (Rnd.get(L2DropData.MAX_CHANCE) < dropChance)
-						amount = (int) (count * Config.RATE_DROP_QUEST);
+						amount = (int) (count * Config.RATE_QUEST_DROP);
 					break;
 				
 				case DROP_FIXED_COUNT:
-					if (Rnd.get(L2DropData.MAX_CHANCE) < dropChance * Config.RATE_DROP_QUEST)
+					if (Rnd.get(L2DropData.MAX_CHANCE) < dropChance * Config.RATE_QUEST_DROP)
 						amount = count;
 					break;
 				
@@ -679,12 +666,12 @@ public final class QuestState
 	
 	public void rewardItems(int itemId, int itemCount)
 	{
-		giveItems(itemId, (int) (itemCount * Config.RATE_QUESTS_REWARD), 0);
+		giveItems(itemId, (int) (itemCount * Config.RATE_QUEST_REWARD), 0);
 	}
 	
 	public void rewardExpAndSp(long exp, int sp)
 	{
-		_player.addExpAndSp((long) getPlayer().calcStat(Stats.EXPSP_RATE, exp * Config.RATE_QUESTS_REWARD, null, null), (int) getPlayer().calcStat(Stats.EXPSP_RATE, sp * Config.RATE_QUESTS_REWARD, null, null));
+		_player.addExpAndSp((long) getPlayer().calcStat(Stats.EXPSP_RATE, exp * Config.RATE_QUEST_REWARD_XP, null, null), (int) getPlayer().calcStat(Stats.EXPSP_RATE, sp * Config.RATE_QUEST_REWARD_SP, null, null));
 	}
 	
 	// TODO: More radar functions need to be added when the radar class is complete.
