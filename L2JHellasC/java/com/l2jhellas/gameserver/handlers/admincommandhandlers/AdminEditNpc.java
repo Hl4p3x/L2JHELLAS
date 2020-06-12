@@ -310,9 +310,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 					}
 				}
 				else
-				{
 					activeChar.sendMessage("Usage: //edit_skill_npc <npc_id> <item_id> [<level>]");
-				}
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
@@ -360,9 +358,7 @@ public class AdminEditNpc implements IAdminCommandHandler
 					}
 				}
 				else
-				{
 					activeChar.sendMessage("Usage: //add_skill_npc <npc_id> [<level>]");
-				}
 			}
 			catch (StringIndexOutOfBoundsException e)
 			{
@@ -386,13 +382,10 @@ public class AdminEditNpc implements IAdminCommandHandler
 			}
 			
 			if (npcId > 0)
-			{
 				deleteNpcSkillData(activeChar, npcId, skillId);
-			}
 			else
-			{
 				activeChar.sendMessage("Usage: //del_skill_npc <npc_id> <skill_id>");
-			}
+			
 			showNpcSkillList(activeChar, npcId, -1);
 		}
 		
@@ -407,10 +400,8 @@ public class AdminEditNpc implements IAdminCommandHandler
 		
 		L2Item item = ItemTable.getInstance().getTemplate(itemID);
 		if (tradeList.getPriceForItemId(itemID) < 0)
-		{
 			return;
-		}
-		
+
 		if (args.length > 3)
 		{
 			int price = Integer.parseInt(args[3]);

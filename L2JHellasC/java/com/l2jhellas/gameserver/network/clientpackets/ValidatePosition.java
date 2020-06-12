@@ -3,7 +3,6 @@ package com.l2jhellas.gameserver.network.clientpackets;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.TaskPriority;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
-import com.l2jhellas.gameserver.datatables.xml.DoorData;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
@@ -122,11 +121,8 @@ public class ValidatePosition extends L2GameClientPacket
 					activeChar.broadcastPacket(new MoveToLocation(activeChar));
 				}
 			}
-			activeChar.setLastClientPosition(_x, _y, _z);
-			
-			if (DoorData.getInstance().checkIfDoorsBetween(activeChar.getX(), activeChar.getY(), activeChar.getZ(),_x, _y, _z) ==0)
-			    activeChar.setLastServerPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-
+			activeChar.setLastClientPosition(_x, _y, _z);			
+			activeChar.setLastServerPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ());
 		}
 		else if (Config.COORD_SYNCHRONIZE == -1)
 		{

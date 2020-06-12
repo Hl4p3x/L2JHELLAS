@@ -60,6 +60,11 @@ public enum FakePlayerManager
 		return getFakePlayers().size();
 	}
 	
+	public static void deleteAllFakes()
+	{
+		getFakePlayers().forEach(f -> f.despawnPlayer());
+	}
+	
 	public static List<FakePlayer> getFakePlayers()
 	{
 		return L2World.getInstance().getAllPlayers().values().stream().filter(x -> x instanceof FakePlayer).map(x -> (FakePlayer) x).collect(Collectors.toList());

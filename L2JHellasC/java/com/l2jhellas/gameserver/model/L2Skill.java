@@ -2034,6 +2034,11 @@ public abstract class L2Skill
 		return (_effectTemplates != null && _effectTemplates.length > 0);
 	}
 	
+	public boolean hasSelfEffects()
+	{
+		return (_effectTemplatesSelf != null && _effectTemplatesSelf.length > 0);
+	}
+	
 	public final L2Effect[] getEffects(L2Character effector, L2Character effected)
 	{
 		if (!hasEffects() || isPassive())

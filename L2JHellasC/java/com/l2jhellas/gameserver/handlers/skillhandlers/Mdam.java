@@ -67,50 +67,17 @@ public class Mdam implements ISkillHandler
 			L2Character target = (L2Character) target2;
 			
 			if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && target.isAlikeDead() && target.isFakeDeath())
-			{
 				target.getActingPlayer().stopFakeDeath(null);
-			}
 			else if (target.isAlikeDead())
-			{
 				continue;
-			}
-			// if (skill != null)
-			// if (skill.isOffensive())
-			// {
-			
-			// boolean acted;
-			// if (skill.getSkillType() == L2Skill.SkillType.DOT ||
-			// skill.getSkillType() == L2Skill.SkillType.MDOT)
-			// acted = Formulas.getInstance().calcSkillSuccess(
-			// activeChar, target, skill);
-			// else
-			// acted = Formulas.getInstance().calcMagicAffected(
-			// activeChar, target, skill);
-			// if (!acted) {
-			// activeChar.sendPacket(new
-			// SystemMessage(SystemMessage.MISSED_TARGET));
-			// continue;
-			// }
-			//
-			// }
-			
+
 			boolean mcrit = Formulas.calcMCrit(activeChar.getMCriticalHit(target, skill));
 			
 			int damage = (int) Formulas.calcMagicDam(activeChar, target, skill, ss, bss, mcrit);
 			final byte reflect = Formulas.calcSkillReflect(target, skill);
 
-			// Why are we trying to reduce the current target HP here?
-			// Why not inside the below "if" condition, after the effects
-			// processing as it should be?
-			// It doesn't seem to make sense for me. I'm moving this line inside
-			// the "if" condition, right after the effects processing...
-			// [changed by nexus - 2006-08-15]
-			// target.reduceCurrentHp(damage, activeChar);
-			
 			if (damage > 0)
 			{
-				// Manage attack or cast break of the target (calculating rate,
-				// sending message...)
 				if (!target.isRaid() && !target.isBoss() && Formulas.calcAtkBreak(target, damage))
 				{
 					target.breakAttack();
@@ -143,14 +110,15 @@ public class Mdam implements ISkillHandler
 				}			
 			}
 		}
-		// self Effect :]
-		L2Effect effect = activeChar.getFirstEffect(skill.getId());
-		if (effect != null && effect.isSelfEffect())
+		
+		if (skill.hasSelfEffects())
 		{
-			// Replace old effect with new one.
-			effect.exit();
+			final L2Effect effect = activeChar.getFirstEffect(skill.getId());
+			if (effect != null && effect.isSelfEffect())
+				effect.exit();
+			
+			skill.getEffectsSelf(activeChar);
 		}
-		skill.getEffectsSelf(activeChar);
 		
 		if (skill.isSuicideAttack())
 		{

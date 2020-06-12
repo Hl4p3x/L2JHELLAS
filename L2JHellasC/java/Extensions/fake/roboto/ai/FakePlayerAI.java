@@ -272,9 +272,9 @@ public abstract class FakePlayerAI
 		_fakePlayer.broadcastUserInfo();
 		
 		if (Rnd.get(1, 2) == 1)
-			_fakePlayer.setFakeAi(new EnchanterAI(_fakePlayer));
+		    _fakePlayer.assignCustomAI(2);
 		else
-			_fakePlayer.setFakeAi(new FallbackAI(_fakePlayer));
+			_fakePlayer.assignCustomAI(0);
 		
 		_fakePlayer.getFakeAi().setBusyThinking(false);
 	}

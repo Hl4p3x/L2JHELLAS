@@ -27,7 +27,6 @@ public class RequestGetBossRecord extends L2GameClientPacket
 		if (_bossId != 0)
 			_log.info("C5: RequestGetBossRecord: d: " + _bossId + " ActiveChar: " + activeChar);
 		
-		RaidBossPointsManager.getInstance();
 		int points = RaidBossPointsManager.getInstance().getPointsByOwnerId(activeChar.getObjectId());
 		int ranking = RaidBossPointsManager.getInstance().calculateRanking(activeChar.getObjectId());
 		Map<Integer, Integer> list = RaidBossPointsManager.getInstance().getList(activeChar);

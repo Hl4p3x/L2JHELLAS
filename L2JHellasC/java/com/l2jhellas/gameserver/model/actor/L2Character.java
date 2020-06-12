@@ -314,8 +314,7 @@ public abstract class L2Character extends L2Object
 		}
 		// Stop movement
 		stopMove(null);
-		abortAttack();
-		abortCast();
+		abortAllAttacks();
 		
 		setIsTeleporting(true);
 		setTarget(null);
@@ -2433,10 +2432,14 @@ public abstract class L2Character extends L2Object
 			if (i >= Stats.NUM_STATS)
 				_calculators = NPC_STD_CALCULATOR;
 		}
-		
-		if (owner instanceof L2Effect && !((L2Effect) owner).preventExitUpdate)
-			broadcastModifiedStats(modifiedStats);
-		
+
+		if (owner instanceof L2Effect)
+		{
+			if (!((L2Effect) owner).preventExitUpdate)
+				broadcastModifiedStats(modifiedStats);
+		}
+		else
+			broadcastModifiedStats(modifiedStats);		
 	}
 	
 	private void broadcastModifiedStats(List<Stats> stats)
@@ -2766,6 +2769,15 @@ public abstract class L2Character extends L2Object
 		return _target;
 	}
 
+	public void tryToFlee(L2Character attacker)
+	{
+		final double angle = Math.toRadians(Util.calculateAngleFrom(attacker, this));
+		final int posX = (int) (getX() + (440 * Math.cos(angle)));
+		final int posY = (int) (getY() + (440 * Math.sin(angle)));
+		final int posZ = getZ();
+		getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,new Location(posX, posY, posZ,getHeading()));
+	}
+	
 	public void moveToLocation(int x, int y, int z, int offset)
 	{
 		final float speed = getStat().getMoveSpeed();

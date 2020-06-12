@@ -547,7 +547,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 				if (getActiveChar() != null && !isDetached())
 				{
 					setDetached(true);
-					fast = !getActiveChar().isInCombat();
+					fast = !getActiveChar().isInCombat() && !getActiveChar().isLocked();
 				}
 				cleanMe(fast);
 			}

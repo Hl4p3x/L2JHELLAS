@@ -403,15 +403,11 @@ public class Valakas extends AbstractNpcAI
 	private void callSkillAI(L2Npc npc)
 	{
 		if (npc.isInvul() || npc.isCastingNow())
-		{
 			return;
-		}
 		
 		// Pickup a target if no or dead victim. 10% luck he decides to reconsiders his target.
 		if ((_actualVictim == null) || _actualVictim.isDead() || (getRandom(10) == 0))
-		{
 			_actualVictim = getRandomTarget(npc);
-		}
 		
 		// If result is still null, Valakas will roam. Don't go deeper in skill AI.
 		if (_actualVictim == null)
@@ -454,22 +450,16 @@ public class Valakas extends AbstractNpcAI
 		
 		// Valakas Lava Skin has priority.
 		if ((hpRatio < 75) && (getRandom(150) == 0) && npc.getFirstEffect(4680) == null)
-		{
 			return VALAKAS_LAVA_SKIN;
-		}
 		
 		final int[] playersAround = getPlayersCountInPositions(1200, npc, false);
 		
 		// Valakas will use mass spells if he feels surrounded.
 		if (playersAround[1] > playersAround[0])
-		{
 			return VALAKAS_AOE_SKILLS[getRandom(VALAKAS_AOE_SKILLS.length)];
-		}
 		
 		if (hpRatio > 50)
-		{
 			return VALAKAS_REGULAR_SKILLS[getRandom(VALAKAS_REGULAR_SKILLS.length)];
-		}
 		
 		return VALAKAS_LOWHP_SKILLS[getRandom(VALAKAS_LOWHP_SKILLS.length)];
 	}
@@ -481,13 +471,9 @@ public class Valakas extends AbstractNpcAI
 		for (L2Character obj : L2World.getInstance().getVisibleObjects(npc, L2Playable.class, 2000))
 		{
 			if ((obj == null) || obj instanceof L2Summon || obj instanceof L2PetInstance)
-			{
 				continue;
-			}
 			else if (!obj.isDead())
-			{
 				result.add((L2Playable) obj);
-			}
 		}
 		
 		return (result.isEmpty()) ? null : result.get(getRandom(result.size()));

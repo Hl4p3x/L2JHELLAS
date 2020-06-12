@@ -72,22 +72,11 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		
-		if (activeChar == null || activeChar.isDead() || activeChar.isFakeDeath())
+		if (activeChar == null)
 			return;
 				
-		if (activeChar.isSitting())
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (activeChar.isOutOfControl())
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
-		if (activeChar.isTeleporting())
+		if (activeChar.isDead() || activeChar.isFakeDeath() || activeChar.isSitting() 
+		|| activeChar.isOutOfControl() || activeChar.isTeleporting())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -130,8 +119,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		
 		double dx = _targetX - _curX;
 		double dy = _targetY - _curY;
-		// Can't move if character is confused, or trying to move a huge
-		// distance
+		// Can't move if character trying to move a huge distance
 		if (((dx * dx + dy * dy) > 98010000)) // 9900*9900
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);

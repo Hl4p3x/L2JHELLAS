@@ -49,30 +49,26 @@ public class TopPlayers
 		
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(SELECT_CHARS + sort + " DESC LIMIT " + Config.TOP_PLAYER_RESULTS))
 		{
 			pos = 0;
-			PreparedStatement statement = con.prepareStatement(SELECT_CHARS + sort + " DESC LIMIT " + Config.TOP_PLAYER_RESULTS);
-			
-			ResultSet result = statement.executeQuery();
-			
-			while (result.next())
+						
+			try (ResultSet result = statement.executeQuery())
 			{
-				boolean status = false;
-				pos++;
-				
-				if (result.getInt("online") == 1)
+				while (result.next())
 				{
-					status = true;
+					boolean status = false;
+					pos++;
+
+					if (result.getInt("online") == 1)
+						status = true;
+					
+					String timeon = getPlayerRunTime(result.getInt("ch.onlinetime"));
+					String adenas = getAdenas(result.getLong("SUM(it.count)"));
+					addChar(pos, result.getString("ch.char_name"), result.getInt("base_class"), result.getInt("ch.pvpkills"), result.getInt("ch.pkkills"), result.getInt("SUM(chr.points)"), adenas, timeon, status);
 				}
-				String timeon = getPlayerRunTime(result.getInt("ch.onlinetime"));
-				String adenas = getAdenas(result.getLong("SUM(it.count)"));
-				
-				addChar(pos, result.getString("ch.char_name"), result.getInt("base_class"), result.getInt("ch.pvpkills"), result.getInt("ch.pkkills"), result.getInt("SUM(chr.points)"), adenas, timeon, status);
 			}
-			
-			result.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{

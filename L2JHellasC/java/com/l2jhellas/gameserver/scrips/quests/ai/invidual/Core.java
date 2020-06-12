@@ -115,12 +115,7 @@ public class Core extends AbstractNpcAI
 		}
 		else if (event.equalsIgnoreCase("despawn_minions"))
 		{
-			for (int i = 0; i < _minions.size(); i++)
-			{
-				final L2Attackable mob = _minions.get(i);
-				if (mob != null)
-					mob.decayMe();
-			}
+			_minions.forEach(L2Npc::deleteMe);
 			_minions.clear();
 		}
 		return super.onAdvEvent(event, npc, player);
@@ -129,16 +124,20 @@ public class Core extends AbstractNpcAI
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if (npc.isScriptValue(1))
+		if (attacker.isPlayable())
 		{
-			if (Rnd.get(100) == 0)
-				npc.broadcastNpcSay("Removing intruders.");
-		}
-		else
-		{
-			npc.setScriptValue(1);
-			npc.broadcastNpcSay("A non-permitted target has been discovered.");
-			npc.broadcastNpcSay("Starting intruder removal system.");
+			if (npc.isScriptValue(1))
+			{
+				if (Rnd.get(100) == 0)
+					npc.broadcastNpcSay("Removing intruders.");
+			}
+			else
+			{
+				npc.setScriptValue(1);
+				npc.broadcastNpcSay(
+						"A non-permitted target has been discovered.");
+				npc.broadcastNpcSay("Starting intruder removal system.");
+			}
 		}
 		return super.onAttack(npc, attacker, damage, isPet);
 	}

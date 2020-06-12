@@ -53,7 +53,6 @@ import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Antharas;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Baium;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Core;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.DrChaos;
-import com.l2jhellas.gameserver.scrips.quests.ai.invidual.FleeNpc;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Frintezza;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Gordon;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.IceFairySirra;
@@ -485,7 +484,6 @@ public class ScriptLoader
 		Baium.class,
 		Core.class,
 		DrChaos.class,
-		FleeNpc.class,
 		Frintezza.class,
 		Gordon.class,
 		IceFairySirra.class,

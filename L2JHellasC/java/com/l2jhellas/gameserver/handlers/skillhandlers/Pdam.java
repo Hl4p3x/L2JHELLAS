@@ -236,13 +236,14 @@ public class Pdam implements ISkillHandler
 					}
 				}
 				// self Effect :]
-				L2Effect effect = activeChar.getFirstEffect(skill.getId());
-				if (effect != null && effect.isSelfEffect())
+				if (skill.hasSelfEffects())
 				{
-					// Replace old effect with new one.
-					effect.exit();
+					final L2Effect effect = activeChar.getFirstEffect(skill.getId());
+					if (effect != null && effect.isSelfEffect())
+						effect.exit();
+					
+					skill.getEffectsSelf(activeChar);
 				}
-				skill.getEffectsSelf(activeChar);
 			}
 			
 			if (skill.isSuicideAttack())

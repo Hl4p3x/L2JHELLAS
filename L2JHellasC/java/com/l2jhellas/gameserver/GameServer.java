@@ -290,8 +290,7 @@ public class GameServer
 		RunCustoms();
 			
 		Util.printSection("Game Server Info");
-		if (Config.ENABLE_GUI)
-			gui = new Gui();
+		
 		Runtime.getRuntime().addShutdownHook(Shutdown.getInstance());
 
 		final SelectorConfig sc = new SelectorConfig();
@@ -341,6 +340,9 @@ public class GameServer
 		_loginThread.start();
 		
 		_log.info(optimizer);		
+		
+		if (Config.ENABLE_GUI)
+			gui = new Gui();
 	}
 	
 	private void RunOptimizer()

@@ -213,11 +213,15 @@ public class Blow implements ISkillHandler
 					
 				}
 			}
-			L2Effect effect = activeChar.getFirstEffect(skill.getId());
-			// Self Effect
-			if (effect != null && effect.isSelfEffect())
-				effect.exit();
-			skill.getEffectsSelf(activeChar);
+			
+			if (skill.hasSelfEffects())
+			{
+				final L2Effect effect = activeChar.getFirstEffect(skill.getId());
+				if (effect != null && effect.isSelfEffect())
+					effect.exit();
+				
+				skill.getEffectsSelf(activeChar);
+			}
 		}
 	}
 	

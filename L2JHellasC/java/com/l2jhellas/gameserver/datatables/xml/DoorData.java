@@ -172,43 +172,30 @@ public class DoorData implements DocumentParser
 		boolean unlockable = false;
 		
 		if (st.hasMoreTokens())
-		{
 			unlockable = Boolean.parseBoolean(st.nextToken());
-		}
+		
 		boolean autoOpen = false;
 		
 		if (st.hasMoreTokens())
-		{
 			autoOpen = Boolean.parseBoolean(st.nextToken());
-		}
 		
 		st = null;
 		
 		if (rangeXMin > rangeXMax)
-		{
 			_log.warning(DoorData.class.getSimpleName() + ": Error in door data, ID:" + id);
-		}
 		
 		if (rangeYMin > rangeYMax)
-		{
 			_log.warning(DoorData.class.getSimpleName() + ": Error in door data, ID:" + id);
-		}
 		
 		if (rangeZMin > rangeZMax)
-		{
 			_log.warning(DoorData.class.getSimpleName() + ": Error in door data, ID:" + id);
-		}
 		
 		int collisionRadius;
 		
 		if (rangeXMax - rangeXMin > rangeYMax - rangeYMin)
-		{
 			collisionRadius = rangeYMax - rangeYMin;
-		}
 		else
-		{
 			collisionRadius = rangeXMax - rangeXMin;
-		}
 		
 		StatsSet npcDat = new StatsSet();
 		npcDat.set("npcId", id);
@@ -298,17 +285,11 @@ public class DoorData implements DocumentParser
 		for (L2DoorInstance doorInst : getDoors())
 		{
 			if (doorInst.getDoorName().startsWith("goe"))
-			{
 				doorInst.setAutoActionDelay(420000);
-			}
 			else if (doorInst.getDoorName().startsWith("aden_tower"))
-			{
 				doorInst.setAutoActionDelay(300000);
-			}
 			else if (doorInst.getDoorName().startsWith("cruma"))
-			{
 				doorInst.setAutoActionDelay(1200000);
-			}
 		}
 	}
 	
@@ -333,82 +314,6 @@ public class DoorData implements DocumentParser
 		{
 			_log.warning(DoorData.class.getSimpleName() + ": There are errors in your Doors.xml file.");
 		}
-	}
-	
-	public int checkIfDoorsBetween(int x, int y, int z, int tx, int ty, int tz)
-	{
-		int region;
-		try
-		{
-			region = MapRegionTable.getMapRegion(x, y);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			
-			return 0;
-		}
-		
-		for (L2DoorInstance doorInst : getDoors())
-		{
-			if (doorInst.getMapRegion() != region)
-			{
-				continue;
-			}
-			if (doorInst.getXMax() == 0)
-			{
-				continue;
-			}
-			
-			// line segment goes through box
-			// heavy approximation disabling some shooting angles especially near 2-piece doors
-			// but most calculations should stop short
-			// phase 1, x
-			if (x <= doorInst.getXMax() && tx >= doorInst.getXMin() || tx <= doorInst.getXMax() && x >= doorInst.getXMin())
-			{
-				// phase 2, y
-				if (y <= doorInst.getYMax() && ty >= doorInst.getYMin() || ty <= doorInst.getYMax() && y >= doorInst.getYMin())
-				{
-					// phase 3, basically only z remains but now we calculate it with another formula (by rage)
-					// in some cases the direct line check (only) in the beginning isn't sufficient,
-					// when char z changes a lot along the path
-					if (doorInst.getStatus().getCurrentHp() > 0 && !doorInst.getOpen())
-					{
-						int px1 = doorInst.getXMin();
-						int py1 = doorInst.getYMin();
-						int pz1 = doorInst.getZMin();
-						int px2 = doorInst.getXMax();
-						int py2 = doorInst.getYMax();
-						int pz2 = doorInst.getZMax();
-						
-						int l = tx - x;
-						int m = ty - y;
-						int n = tz - z;
-						
-						int dk;
-						
-						if ((dk = (doorInst.getA() * l + doorInst.getB() * m + doorInst.getC() * n)) == 0)
-						{
-							continue; // Parallel
-						}
-						
-						float p = (float) (doorInst.getA() * x + doorInst.getB() * y + doorInst.getC() * z + doorInst.getD()) / (float) dk;
-						
-						int fx = (int) (x - l * p);
-						int fy = (int) (y - m * p);
-						int fz = (int) (z - n * p);
-						
-						if ((Math.min(x, tx) <= fx && fx <= Math.max(x, tx)) && (Math.min(y, ty) <= fy && fy <= Math.max(y, ty)) && (Math.min(z, tz) <= fz && fz <= Math.max(z, tz)))
-						{
-							
-							if (((fx >= px1 && fx <= px2) || (fx >= px2 && fx <= px1)) && ((fy >= py1 && fy <= py2) || (fy >= py2 && fy <= py1)) && ((fz >= pz1 && fz <= pz2) || (fz >= pz2 && fz <= pz1)))
-								return doorInst.getTemplate().getCollisionRadius(); // Door between
-						}
-					}
-				}
-			}
-		}
-		return 0;
 	}
 	
 	public static DoorData getInstance()

@@ -81,7 +81,7 @@ public class AdminBan implements IAdminCommandHandler
 		{
 			// May need to check usage in admin_ban_menu as well.
 			
-			if (targetPlayer == null && player.equals(""))
+			if (targetPlayer == null && player.isEmpty())
 			{
 				activeChar.sendMessage("Usage: //ban_acc <account_name> (if none, target char's account gets banned)");
 				return false;
@@ -99,7 +99,7 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_ban_char"))
 		{
-			if (targetPlayer == null && player.equals(""))
+			if (targetPlayer == null && player.isEmpty())
 			{
 				activeChar.sendMessage("Usage: //ban_char <char_name> (if none, target char is banned)");
 				return false;
@@ -133,7 +133,7 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_unban_char"))
 		{
-			if (targetPlayer == null && player.equals(""))
+			if (targetPlayer == null && player.isEmpty())
 			{
 				activeChar.sendMessage("Usage: //unban_char <char_name>");
 				return false;
@@ -148,7 +148,7 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_jail"))
 		{
-			if (targetPlayer == null && player.equals(""))
+			if (targetPlayer == null && player.isEmpty())
 			{
 				activeChar.sendMessage("Usage: //jail <charname> [penalty_minutes] (if no name is given, selected target is jailed indefinitely)");
 				return false;
@@ -168,15 +168,15 @@ public class AdminBan implements IAdminCommandHandler
 		}
 		else if (command.startsWith("admin_unjail"))
 		{
-			if (targetPlayer == null && player.equals(""))
+			if (targetPlayer == null && player.isEmpty())
 			{
 				activeChar.sendMessage("Usage: //unjail <charname> (If no name is given target is used)");
 				return false;
 			}
 			else if (targetPlayer != null)
 			{
-				targetPlayer.setPunishLevel(L2PcInstance.PunishLevel.NONE, 0);
 				targetPlayer.setInJail(false);
+				targetPlayer.setPunishLevel(L2PcInstance.PunishLevel.NONE, 0);
 				activeChar.sendMessage("Character " + targetPlayer.getName() + " removed from jail");
 			}
 			else

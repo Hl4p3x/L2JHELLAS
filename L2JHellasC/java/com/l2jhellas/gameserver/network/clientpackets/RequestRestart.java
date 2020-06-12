@@ -10,7 +10,6 @@ import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.network.L2GameClient;
 import com.l2jhellas.gameserver.network.L2GameClient.GameClientState;
 import com.l2jhellas.gameserver.network.SystemMessageId;
-import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.CharSelectInfo;
 import com.l2jhellas.gameserver.network.serverpackets.RestartResponse;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -30,12 +29,15 @@ public final class RequestRestart extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		final L2PcInstance player = getClient().getActiveChar();
 		if (player == null)
 			return;
 		
-		if (player.getActiveEnchantItem() != null)
+		if (player.getActiveEnchantItem() != null || player.isLocked())
+		{
+			sendPacket(RestartResponse.valueOf(false));
 			return;
+		}
 		
 		if (player.isInBoat())
 		{
@@ -53,60 +55,59 @@ public final class RequestRestart extends L2GameClientPacket
 		if ((player.getOlympiadGameId() > 0) || player.isInOlympiadMode())
 		{
 			player.sendMessage("You can't logout in olympiad mode.");
+			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
-		if (player.isTeleporting())
-		{
-			player.abortCast();
-			player.setIsTeleporting(false);
-		}
-		
 		if ((player.isInStoreMode() || (player.isInCraftMode())))
 		{
 			player.sendMessage("You cannot restart while you are on store mode.");
+			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
-		
-		if (player.getActiveRequester() != null)
-		{
-			player.getActiveRequester().onTradeCancel(player);
-			player.onTradeCancel(player.getActiveRequester());
-		}
-		
 		if (AttackStanceTaskManager.getInstance().isInAttackStance(player) && !player.isGM())
 		{
 			player.sendPacket(SystemMessageId.CANT_RESTART_WHILE_FIGHTING);
-			player.sendPacket(ActionFailed.STATIC_PACKET);
+			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
 
 		if (player.getClan() != null && player.getFirstEffect(EffectType.CLAN_GATE) != null)
 		{
 			player.sendMessage("You can't logout while Clan Gate is active.");
+			sendPacket(RestartResponse.valueOf(false));
 			return;
 		}
-		// Prevent player from restarting if they are a festival participant
-		// and it is in progress, otherwise notify party members that the player
-		// is not longer a participant.
+
 		if (player.isFestivalParticipant())
 		{
 			if (SevenSignsFestival.getInstance().isFestivalInitialized())
 			{
 				player.sendPacket(SystemMessage.sendString("You cannot restart while you are a participant in a festival."));
-				player.sendPacket(ActionFailed.STATIC_PACKET);
+				sendPacket(RestartResponse.valueOf(false));
 				return;
 			}
 			L2Party playerParty = player.getParty();
 			
 			if (playerParty != null)
-			{
 				player.getParty().broadcastToPartyMembers(SystemMessage.sendString(player.getName() + " has been removed from the upcoming festival."));
-			}
 		}
-		if (player.isFlying())
+		
+		
+		if (player.isTeleporting())
 		{
-			player.removeSkill(SkillTable.getInstance().getInfo(4289, 1));
+			player.abortCast();
+			player.setIsTeleporting(false);
 		}
+				
+		if (player.getActiveRequester() != null)
+		{
+			player.getActiveRequester().onTradeCancel(player);
+			player.onTradeCancel(player.getActiveRequester());
+		}
+		
+		
+		if (player.isFlying())
+			player.removeSkill(SkillTable.getInstance().getInfo(4289, 1));
 		
 		if (player.isRegisteredInFunEvent())
 		{

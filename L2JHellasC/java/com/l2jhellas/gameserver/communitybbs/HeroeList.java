@@ -25,24 +25,23 @@ public class HeroeList
 	
 	private void loadFromDB()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(SELECT_DATA))
 		{
-			_posId = 0;
-			PreparedStatement statement = con.prepareStatement(SELECT_DATA);
-			ResultSet result = statement.executeQuery();
-			
-			while (result.next())
+			_posId = 0;			
+			try (ResultSet result = statement.executeQuery())
 			{
-				boolean status = false;
-				_posId = _posId + 1;
-				
-				if (result.getInt("online") == 1)
-					status = true;
-				
-				addPlayerToList(_posId, result.getInt("count"), result.getInt("played"), result.getString("char_name"), result.getInt("base_class"), result.getString("clan_name"), result.getString("ally_name"), status);
+				while (result.next())
+				{
+					boolean status = false;
+					_posId = _posId + 1;
+
+					if (result.getInt("online") == 1)
+						status = true;
+
+					addPlayerToList(_posId, result.getInt("count"), result.getInt("played"), result.getString("char_name"), result.getInt("base_class"), result.getString("clan_name"), result.getString("ally_name"), status);
+				}
 			}
-			result.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{

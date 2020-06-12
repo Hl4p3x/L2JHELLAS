@@ -46,9 +46,9 @@ public class Post
 	
 	public void insertindb(CPost cp)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("INSERT INTO posts (post_id,post_owner_name,post_ownerid,post_date,post_topic_id,post_forum_id,post_txt) VALUES (?,?,?,?,?,?,?)"))
 		{
-			PreparedStatement statement = con.prepareStatement("INSERT INTO posts (post_id,post_owner_name,post_ownerid,post_date,post_topic_id,post_forum_id,post_txt) VALUES (?,?,?,?,?,?,?)");
 			statement.setInt(1, cp.postId);
 			statement.setString(2, cp.postOwner);
 			statement.setInt(3, cp.postOwnerId);
@@ -57,7 +57,6 @@ public class Post
 			statement.setInt(6, cp.postForumId);
 			statement.setString(7, cp.postTxt);
 			statement.execute();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -90,13 +89,12 @@ public class Post
 	public void deleteme(Topic t)
 	{
 		PostBBSManager.getInstance().delPostByTopic(t);
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("DELETE FROM posts WHERE post_forum_id=? AND post_topic_id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("DELETE FROM posts WHERE post_forum_id=? AND post_topic_id=?");
 			statement.setInt(1, t.getForumID());
 			statement.setInt(2, t.getID());
 			statement.execute();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -110,26 +108,27 @@ public class Post
 	
 	private void load(Topic t)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM posts WHERE post_forum_id=? AND post_topic_id=? ORDER BY post_id ASC"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM posts WHERE post_forum_id=? AND post_topic_id=? ORDER BY post_id ASC");
 			statement.setInt(1, t.getForumID());
 			statement.setInt(2, t.getID());
-			ResultSet result = statement.executeQuery();
-			while (result.next())
+			
+			try (ResultSet result = statement.executeQuery())
 			{
-				CPost cp = new CPost();
-				cp.postId = Integer.parseInt(result.getString("post_id"));
-				cp.postOwner = result.getString("post_owner_name");
-				cp.postOwnerId = Integer.parseInt(result.getString("post_ownerid"));
-				cp.postDate = Long.parseLong(result.getString("post_date"));
-				cp.postTopicId = Integer.parseInt(result.getString("post_topic_id"));
-				cp.postForumId = Integer.parseInt(result.getString("post_forum_id"));
-				cp.postTxt = result.getString("post_txt");
-				_post.add(cp);
+				while (result.next())
+				{
+					CPost cp = new CPost();
+					cp.postId = Integer.parseInt(result.getString("post_id"));
+					cp.postOwner = result.getString("post_owner_name");
+					cp.postOwnerId = Integer.parseInt(result.getString("post_ownerid"));
+					cp.postDate = Long.parseLong(result.getString("post_date"));
+					cp.postTopicId = Integer.parseInt(result.getString("post_topic_id"));
+					cp.postForumId = Integer.parseInt(result.getString("post_forum_id"));
+					cp.postTxt = result.getString("post_txt");
+					_post.add(cp);
+				}
 			}
-			result.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -141,16 +140,15 @@ public class Post
 	
 	public void updatetxt(int i)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("UPDATE posts SET post_txt=? WHERE post_id=? AND post_topic_id=? AND post_forum_id=?"))
 		{
 			CPost cp = getCPost(i);
-			PreparedStatement statement = con.prepareStatement("UPDATE posts SET post_txt=? WHERE post_id=? AND post_topic_id=? AND post_forum_id=?");
 			statement.setString(1, cp.postTxt);
 			statement.setInt(2, cp.postId);
 			statement.setInt(3, cp.postTopicId);
 			statement.setInt(4, cp.postForumId);
 			statement.execute();
-			statement.close();
 		}
 		catch (Exception e)
 		{

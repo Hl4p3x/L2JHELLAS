@@ -30,7 +30,7 @@ public final class RequestCursedWeaponLocation extends L2GameClientPacket
 		final List<CursedWeaponInfo> list = new ArrayList<>();
 		for (CursedWeapon cw : CursedWeaponsManager.getInstance().getCursedWeapons())
 		{
-			if (!cw.isActive())
+			if (cw == null || !cw.isActive())
 				continue;
 			
 			final Location pos = cw.getWorldPosition();

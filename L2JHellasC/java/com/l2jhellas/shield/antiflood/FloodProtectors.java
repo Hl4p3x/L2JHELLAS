@@ -45,14 +45,15 @@ public final class FloodProtectors
 		if (reuseDelay == 0)
 			return true;
 		
-		long[] value = client.getFloodProtectors();
+		final long currentTime = System.nanoTime();
+		final long[] value = client.getFloodProtectors();
 		
 		synchronized (value)
 		{
-			if (value[action.ordinal()] > System.currentTimeMillis())
+			if (value[action.ordinal()] > currentTime)
 				return false;
 			
-			value[action.ordinal()] = System.currentTimeMillis() + reuseDelay;
+			value[action.ordinal()] = currentTime + reuseDelay * 1000000;
 			return true;
 		}
 	}

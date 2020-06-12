@@ -333,12 +333,6 @@ public class Baium extends AbstractNpcAI
 	@Override
 	public String onAttack(L2Npc npc, L2PcInstance attacker, int damage, boolean isPet)
 	{
-		if (!_baiumLair.isInsideZone(attacker))
-		{
-			attacker.doDie(attacker);
-			return null;
-		}
-		
 		if (npc.isInvul())
 			return null;
 		

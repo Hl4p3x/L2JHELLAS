@@ -14,6 +14,7 @@ import Extensions.fake.roboto.ai.CardinalAI;
 import Extensions.fake.roboto.ai.DominatorAI;
 import Extensions.fake.roboto.ai.DreadnoughtAI;
 import Extensions.fake.roboto.ai.DuelistAI;
+import Extensions.fake.roboto.ai.EnchanterAI;
 import Extensions.fake.roboto.ai.FakePlayerAI;
 import Extensions.fake.roboto.ai.FallbackAI;
 import Extensions.fake.roboto.ai.GhostHunterAI;
@@ -26,6 +27,7 @@ import Extensions.fake.roboto.ai.SoultakerAI;
 import Extensions.fake.roboto.ai.StormScreamerAI;
 import Extensions.fake.roboto.ai.TitanAI;
 import Extensions.fake.roboto.ai.WindRiderAI;
+import Extensions.fake.roboto.ai.walker.GiranWalkerAI;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.CharTemplateData;
@@ -458,5 +460,10 @@ public class FakeHelpers
 			return FallbackAI.class;
 		
 		return ai;
+	}
+	
+	public static Class<? extends FakePlayerAI> getAIbyCustom(int type)
+	{
+		return type == 1 ? GiranWalkerAI.class : type == 2 ? EnchanterAI.class :  FallbackAI.class ;
 	}
 }

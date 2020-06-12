@@ -606,6 +606,7 @@
 	<admin command="admin_fakes" accessLevel="7" />
 	<admin command="admin_spawnrandom" accessLevel="7" />
 	<admin command="admin_deletefake" accessLevel="7" />
+	<admin command="admin_deleteallfake" accessLevel="7" />
 	<admin command="admin_spawnenchanter" accessLevel="7" />
 	<admin command="admin_spawnwalker" accessLevel="7" />	
 	<admin command="admin_spawnfallback" accessLevel="7" />

@@ -68,6 +68,19 @@ public class FakePlayer extends L2PcInstance
 		}
 	}
 	
+	public void assignCustomAI(int type)
+	{
+		//1 = giranwalker, 2 = enchanter , default(0) = fallback.
+		try
+		{
+			setFakeAi(FakeHelpers.getAIbyCustom(type).getConstructor(FakePlayer.class).newInstance(this));
+		}
+		catch (Exception e)
+		{
+			
+		}
+	}
+	
 	public boolean checkUseMagicConditions(L2Skill skill, boolean forceUse, boolean dontMove)
 	{
 		if (skill == null)

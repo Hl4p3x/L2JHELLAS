@@ -117,21 +117,25 @@ public class L2AttackableAI extends L2CharacterAI
 			}
 			
 			if (me instanceof L2GuardInstance)
-			{
-				L2World.getInstance().forEachVisibleObjectInRange(me, L2GuardInstance.class, 600, guard ->
-				{
-					if (guard.isAttackingNow() && (guard.getTarget() == player))
-					{
-						if(player.getKarma() > 0)
-						{
-						   me.getAI().startFollow(player);
-						   me.addDamageHate(player, 0, 10);
-						}
-					}
-				});
-				
+			{			
 				if (player.getKarma() > 0)
+				{
+					L2World.getInstance().forEachVisibleObjectInRange(me, L2GuardInstance.class, 600, guard ->
+					{
+						if (guard.isAttackingNow() && (guard.getTarget() == player))
+						{							
+							int hating = me.getHating(player);
+
+							if (hating == 0)
+							{
+							    me.addDamageHate(player, 0, 10);
+							    me.getAI().startFollow(player);
+							}
+						}
+					});
+					
 					return ((Config.GEODATA) ? GeoEngine.canSeeTarget(me, target, me.isFlying()) : GeoEngine.canSeeTarget(me, target));
+				}
 			}
 			
 			if ("varka".equals(me.getFactionId()) && player.isAlliedWithVarka())
@@ -294,7 +298,7 @@ public class L2AttackableAI extends L2CharacterAI
 				
 		if (_globalAggro >= 0)
 		{
-			if (!npc.isCastingNow() && !npc.isAttackingNow() && npc.isAggressive() || (npc instanceof L2GuardInstance))
+			if (!npc.isCastingNow() && !npc.isAttackingNow() && npc.isAggressive() || (npc instanceof L2GuardInstance && !npc.isCastingNow() && !npc.isAttackingNow()))
 			{
 				final int range = npc instanceof L2GuardInstance ? 600 : npc.getAggroRange();
 				L2World.getInstance().forEachVisibleObjectInRange(npc, L2Character.class, range, t ->
@@ -489,48 +493,43 @@ public class L2AttackableAI extends L2CharacterAI
 		if (npc.getFactionId() != null)
 		{
 			final int factionRange = npc.getFactionRange() + collision;
-			try
+
+			final L2Character finalTarget = target;			
+			L2World.getInstance().forEachVisibleObjectInRange(npc, L2Npc.class,factionRange, called ->
 			{
-				final L2Character finalTarget = target;
-				L2World.getInstance().forEachVisibleObjectInRange(npc, L2Npc.class, factionRange, called ->
+				if(getActiveChar().getFactionId() != called.getFactionId())
+					return;
+				
+				if (called.hasAI() && !called.isDead())
 				{
-					if (getActiveChar().getFactionId() != called.getFactionId())
-						return;
-					
-					if (called.hasAI() && !called.isDead())
+					boolean canSee = ((Config.GEODATA)? GeoEngine.canSeeTarget(called,finalTarget, called.isFlying()) : GeoEngine.canSeeTarget(called,finalTarget));
+
+					if (canSee&& (Math.abs(finalTarget.getZ()- called.getZ()) < 600) && npc.getAttackByList().stream().anyMatch(o -> o == finalTarget)
+					&& (called.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE)|| (called.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE)
+					|| (called.getAI()._intention == CtrlIntention.AI_INTENTION_MOVE_TO && !called.isRunning()))
 					{
-						boolean canSee  = ((Config.GEODATA) ? GeoEngine.canSeeTarget(called, finalTarget, called.isFlying()) : GeoEngine.canSeeTarget(called, finalTarget));
-						
-						if (canSee && (Math.abs(finalTarget.getZ() - called.getZ()) < 600) && npc.getAttackByList().stream().anyMatch(o -> o == finalTarget) && (called.getAI()._intention == CtrlIntention.AI_INTENTION_IDLE) || (called.getAI()._intention == CtrlIntention.AI_INTENTION_ACTIVE) || (called.getAI()._intention == CtrlIntention.AI_INTENTION_MOVE_TO && !called.isRunning()))
+						if (finalTarget.isPlayable())
 						{
-							if (finalTarget.isPlayable())
+							final List<Quest> factionCallScript = called.getTemplate().getEventQuests(QuestEventType.ON_FACTION_CALL);
+							if (factionCallScript != null)
 							{
-								final List<Quest> factionCallScript = called.getTemplate().getEventQuests(QuestEventType.ON_FACTION_CALL);
-								if (factionCallScript != null)
-								{
-									final L2PcInstance player = finalTarget.getActingPlayer();
-									final boolean isSummon = finalTarget instanceof L2Summon;
-									
-									for (Quest quest : factionCallScript)
-										quest.notifyFactionCall(called, npc, player, isSummon);
-								}
-								
-								called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, finalTarget, 1);
+								final L2PcInstance player = finalTarget.getActingPlayer();
+								final boolean isSummon = finalTarget instanceof L2Summon;
+
+								for (Quest quest : factionCallScript)
+									quest.notifyFactionCall(called, npc,player, isSummon);
 							}
-							else if (called.isAttackable() && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
-							{
-								((L2Attackable) called).addDamageHate(finalTarget, 0, npc.getHating(finalTarget));
-								called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, finalTarget);
-							}
+
+							called.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION,finalTarget, 1);
+						}
+						else if (called.isAttackable() && (called.getAI()._intention != CtrlIntention.AI_INTENTION_ATTACK))
+						{
+							((L2Attackable) called).addDamageHate(finalTarget, 0,npc.getHating(finalTarget));
+							called.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK,finalTarget);
 						}
 					}
-				});
-			}
-			catch (NullPointerException e)
-			{
-				_log.info("L2AttackableAI: thinkAttack() faction call failed.");
-				e.printStackTrace();
-			}
+				}
+			});
 		}
 		
 		if (npc.isCoreAIDisabled())

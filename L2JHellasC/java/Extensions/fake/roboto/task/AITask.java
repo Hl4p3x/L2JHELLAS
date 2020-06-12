@@ -19,17 +19,20 @@ public class AITask implements Runnable
 	@Override
 	public void run()
 	{
-		adjustPotentialIndexOutOfBounds();
-		
-		List<FakePlayer> fakePlayers = FakePlayerManager.getFakePlayers().subList(_from, _to);
-		
-		for (FakePlayer fpl : fakePlayers)
+		if (FakePlayerManager.getFakePlayersCount() > 0)
 		{
-			if (fpl == null)
-				continue;
-			
-			if (fpl.getFakeAi() != null && !fpl.getFakeAi().isBusyThinking())
-				fpl.getFakeAi().thinkAndAct();
+			adjustPotentialIndexOutOfBounds();
+
+			List<FakePlayer> fakePlayers = FakePlayerManager.getFakePlayers().subList(_from, _to);
+
+			for (FakePlayer fpl : fakePlayers)
+			{
+				if (fpl == null)
+					continue;
+
+				if (fpl.getFakeAi() != null && !fpl.getFakeAi().isBusyThinking())
+					fpl.getFakeAi().thinkAndAct();
+			}
 		}
 	}
 	

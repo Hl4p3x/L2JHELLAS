@@ -35,9 +35,7 @@ public abstract class CombatAI extends FakePlayerAI
 			
 			L2Skill skill = _fakePlayer.getSkill(botSkill.getSkillId());
 			if (skill != null)
-			{
 				castSpell(skill);
-			}
 		}
 	}
 	
@@ -106,18 +104,9 @@ public abstract class CombatAI extends FakePlayerAI
 	
 	protected void handleShots()
 	{
-		if (_fakePlayer.getInventory().getItemByItemId(getShotId()) != null)
-		{
-			if (_fakePlayer.getInventory().getItemByItemId(getShotId()).getCount() <= 20)
-			{
-				_fakePlayer.getInventory().addItem("", getShotId(), 500, _fakePlayer, null);
-			}
-		}
-		else
-		{
+		if (_fakePlayer.getInventory().getItemByItemId(getShotId()) == null)
 			_fakePlayer.getInventory().addItem("", getShotId(), 500, _fakePlayer, null);
-		}
-		
+
 		if (_fakePlayer.getAutoSoulShot().isEmpty())
 		{
 			_fakePlayer.addAutoSoulShot(getShotId());

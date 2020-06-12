@@ -1,6 +1,7 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 
 public final class RequestTargetCanceld extends L2GameClientPacket
 {
@@ -30,6 +31,8 @@ public final class RequestTargetCanceld extends L2GameClientPacket
 			}
 			else if (activeChar.getTarget() != null)
 				activeChar.setTarget(null);
+			
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 	}
 	

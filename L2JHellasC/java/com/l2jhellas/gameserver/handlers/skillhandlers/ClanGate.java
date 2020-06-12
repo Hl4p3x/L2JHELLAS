@@ -58,12 +58,14 @@ public class ClanGate implements ISkillHandler
 			}
 		}
 		
-		L2Effect effect = player.getFirstEffect(skill.getId());
-		if (effect != null && effect.isSelfEffect())
+		if (skill.hasSelfEffects())
 		{
-			effect.exit();
+			final L2Effect effect = activeChar.getFirstEffect(skill.getId());
+			if (effect != null && effect.isSelfEffect())
+				effect.exit();
+			
+			skill.getEffectsSelf(activeChar);
 		}
-		skill.getEffectsSelf(player);
 	}
 	
 	private class RemoveClanGate implements Runnable

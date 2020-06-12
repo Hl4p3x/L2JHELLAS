@@ -715,8 +715,6 @@ public class Siege
 			_siegeRegistrationEndDate.setTimeInMillis(getCastle().getSiegeDate().getTimeInMillis());
 			_siegeRegistrationEndDate.add(Calendar.DAY_OF_MONTH, -1);
 
-			_log.info(Siege.class.getSimpleName() + ": Siege of " + getCastle().getName() + ": " + getCastle().getSiegeDate().getTime());
-
 			// Schedule siege auto start
 			ThreadPoolManager.getInstance().scheduleGeneral(new Siege.ScheduleStartSiegeTask(getCastle()), 1000);
 		}
@@ -899,6 +897,8 @@ public class Siege
 		
 		if (launch)
 		    startAutoTask(); // Prepare auto start siege and end registration
+		
+		_log.info("New date for siege of " + getCastle().getName() + ": " + getCastle().getSiegeDate().getTime());
 	}
 	
 	public void saveSiegeDate()
