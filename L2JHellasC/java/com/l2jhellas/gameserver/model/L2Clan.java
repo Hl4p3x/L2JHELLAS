@@ -1366,13 +1366,9 @@ public class L2Clan
 		if (pledgeType == 0)
 		{
 			if (pledgeType == L2Clan.SUBUNIT_ACADEMY)
-			{
 				player.sendPacket(SystemMessageId.CLAN_HAS_ALREADY_ESTABLISHED_A_CLAN_ACADEMY);
-			}
 			else
-			{
 				player.sendMessage("You can't create any more sub-units of this type");
-			}
 			return null;
 		}
 		if (_leader.getName().equals(leaderName))
@@ -1385,8 +1381,7 @@ public class L2Clan
 		// Order of Knights 10000 points per each
 		if (pledgeType != -1 && ((getReputationScore() < 5000 && pledgeType < L2Clan.SUBUNIT_KNIGHT1) || (getReputationScore() < 10000 && pledgeType > L2Clan.SUBUNIT_ROYAL2)))
 		{
-			SystemMessage sp = SystemMessage.getSystemMessage(SystemMessageId.THE_CLAN_REPUTATION_SCORE_IS_TOO_LOW);
-			player.sendPacket(sp);
+			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THE_CLAN_REPUTATION_SCORE_IS_TOO_LOW));
 			return null;
 		}
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
@@ -1413,14 +1408,9 @@ public class L2Clan
 				// Royal Guard 5000 points per each
 				// Order of Knights 10000 points per each
 				if (pledgeType < L2Clan.SUBUNIT_KNIGHT1)
-				{
 					setReputationScore(getReputationScore() - 2500, true);
-				}
 				else
-				{
 					setReputationScore(getReputationScore() - 2500, true);
-					// TODO: clan lvl9 or more can reinforce knights cheaper if first knight unit already created, use Config.KNIGHT_REINFORCE_COST
-				}
 			}
 			
 			if (Config.DEBUG)

@@ -169,6 +169,8 @@ public abstract class AbstractNpcInfo extends L2GameServerPacket
 				_title = "Champion";
 			else if (cha.getTemplate().serverSideTitle)
 				_title = cha.getTemplate().title;
+			else
+				 _title = cha.getTitle();
 			
 			if (Config.SHOW_NPC_LVL && _npc instanceof L2MonsterInstance)
 				_title = "Lv " + _npc.getLevel() + (_npc.getTemplate().aggroRange > 0 ? "* " : " ") + _title;

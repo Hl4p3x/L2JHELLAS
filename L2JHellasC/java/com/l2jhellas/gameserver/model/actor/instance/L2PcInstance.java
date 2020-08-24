@@ -1094,14 +1094,14 @@ public class L2PcInstance extends L2Playable
 		_dwarvenRecipeBook.put(recipe.getId(), recipe);
 	}
 	
+	public boolean hasRecipeList(int recipeId, boolean isDwarven)
+	{
+		return (isDwarven) ? _dwarvenRecipeBook.containsKey(recipeId) : _commonRecipeBook.containsKey(recipeId);
+	}
+	
 	public boolean hasRecipeList(int recipeId)
 	{
-		if (_dwarvenRecipeBook.containsKey(recipeId))
-			return true;
-		else if (_commonRecipeBook.containsKey(recipeId))
-			return true;
-		else
-			return false;
+		return _dwarvenRecipeBook.containsKey(recipeId) || _commonRecipeBook.containsKey(recipeId);
 	}
 	
 	public void unregisterRecipeList(int recipeId)
@@ -7057,6 +7057,10 @@ public class L2PcInstance extends L2Playable
 		switch (mountType)
 		{
 			case 0:
+				
+				if (isFlying())
+					removeSkill(SkillTable.getInstance().getInfo(4289, 1));
+				
 				setIsFlying(false);
 				setIsRiding(false);
 				break; // Dismounted
@@ -8437,13 +8441,11 @@ public class L2PcInstance extends L2Playable
 	
 	public void restartRecom()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(DELETE_CHAR_RECOMS))
 		{
-			PreparedStatement statement = con.prepareStatement(DELETE_CHAR_RECOMS);
 			statement.setInt(1, getObjectId());
-			statement.execute();
-			statement.close();
-			
+			statement.execute();			
 			_recomChars.clear();
 		}
 		catch (Exception e)
@@ -9217,59 +9219,35 @@ public class L2PcInstance extends L2Playable
 				{
 					case 7807: // green lure, preferred by fast-moving (nimble) fish (type 5)
 						if (check <= 54)
-						{
 							type = 5;
-						}
 						else if (check <= 77)
-						{
 							type = 4;
-						}
 						else
-						{
 							type = 6;
-						}
 						break;
 					case 7808: // purple lure, preferred by fat fish (type 4)
 						if (check <= 54)
-						{
 							type = 4;
-						}
 						else if (check <= 77)
-						{
 							type = 6;
-						}
 						else
-						{
 							type = 5;
-						}
 						break;
 					case 7809: // yellow lure, preferred by ugly fish (type 6)
 						if (check <= 54)
-						{
 							type = 6;
-						}
 						else if (check <= 77)
-						{
 							type = 5;
-						}
 						else
-						{
 							type = 4;
-						}
 						break;
 					case 8486: // prize-winning fishing lure for beginners
 						if (check <= 33)
-						{
 							type = 4;
-						}
 						else if (check <= 66)
-						{
 							type = 5;
-						}
 						else
-						{
 							type = 6;
-						}
 						break;
 				}
 				break;
@@ -9288,21 +9266,13 @@ public class L2PcInstance extends L2Playable
 					case 6521:
 					case 8507:
 						if (check <= 54)
-						{
 							type = 1;
-						}
 						else if (check <= 74)
-						{
 							type = 0;
-						}
 						else if (check <= 94)
-						{
 							type = 2;
-						}
 						else
-						{
 							type = 3;
-						}
 						break;
 					case 6522: // all theese lures (purple) are prefered by fat fish (type 0)
 					case 8508:
@@ -9310,21 +9280,13 @@ public class L2PcInstance extends L2Playable
 					case 6524:
 					case 8510:
 						if (check <= 54)
-						{
 							type = 0;
-						}
 						else if (check <= 74)
-						{
 							type = 1;
-						}
 						else if (check <= 94)
-						{
 							type = 2;
-						}
 						else
-						{
 							type = 3;
-						}
 						break;
 					case 6525: // all theese lures (yellow) are prefered by ugly fish (type 2)
 					case 8511:
@@ -9332,35 +9294,21 @@ public class L2PcInstance extends L2Playable
 					case 6527:
 					case 8513:
 						if (check <= 55)
-						{
 							type = 2;
-						}
 						else if (check <= 74)
-						{
 							type = 1;
-						}
 						else if (check <= 94)
-						{
 							type = 0;
-						}
 						else
-						{
 							type = 3;
-						}
 						break;
 					case 8484: // prize-winning fishing lure
 						if (check <= 33)
-						{
 							type = 0;
-						}
 						else if (check <= 66)
-						{
 							type = 1;
-						}
 						else
-						{
 							type = 2;
-						}
 						break;
 				}
 				break;
@@ -9369,59 +9317,35 @@ public class L2PcInstance extends L2Playable
 				{
 					case 8506: // green lure, preferred by fast-moving (nimble) fish (type 8)
 						if (check <= 54)
-						{
 							type = 8;
-						}
 						else if (check <= 77)
-						{
 							type = 7;
-						}
 						else
-						{
 							type = 9;
-						}
 						break;
 					case 8509: // purple lure, preferred by fat fish (type 7)
 						if (check <= 54)
-						{
 							type = 7;
-						}
 						else if (check <= 77)
-						{
 							type = 9;
-						}
 						else
-						{
 							type = 8;
-						}
 						break;
 					case 8512: // yellow lure, preferred by ugly fish (type 9)
 						if (check <= 54)
-						{
 							type = 9;
-						}
 						else if (check <= 77)
-						{
 							type = 8;
-						}
 						else
-						{
 							type = 7;
-						}
 						break;
 					case 8485: // prize-winning fishing lure
 						if (check <= 33)
-						{
 							type = 7;
-						}
 						else if (check <= 66)
-						{
 							type = 8;
-						}
 						else
-						{
 							type = 9;
-						}
 						break;
 				}
 		}
@@ -9435,9 +9359,7 @@ public class L2PcInstance extends L2Playable
 		for (L2Effect e : effects)
 		{
 			if (e.getSkill().getId() == 2274)
-			{
 				skilllvl = (int) e.getSkill().getPower(this);
-			}
 		}
 		if (skilllvl <= 0)
 			return 1;
@@ -9445,24 +9367,18 @@ public class L2PcInstance extends L2Playable
 		int check = Rnd.get(100);
 		
 		if (check <= 50)
-		{
 			randomlvl = skilllvl;
-		}
 		else if (check <= 85)
 		{
 			randomlvl = skilllvl - 1;
 			if (randomlvl <= 0)
-			{
 				randomlvl = 1;
-			}
 		}
 		else
 		{
 			randomlvl = skilllvl + 1;
 			if (randomlvl > 27)
-			{
 				randomlvl = 27;
-			}
 		}
 		
 		return randomlvl;
@@ -10078,16 +9994,19 @@ public class L2PcInstance extends L2Playable
 		long banLength = 0;
 		String banReason = "";
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(BAN_CHAT_GET))
 		{
-			PreparedStatement statement = con.prepareStatement(BAN_CHAT_GET);
 			statement.setString(1, getName());
-			ResultSet rset = statement.executeQuery();
-			rset.next();
-			banLength = rset.getLong("chatban_timer");
-			banReason = rset.getString("chatban_reason");
-			rset.close();
-			statement.close();
+	
+			try (ResultSet rset = statement.executeQuery())
+			{
+				while (rset.next())
+				{
+					banLength = rset.getLong("chatban_timer");
+					banReason = rset.getString("chatban_reason");
+				}
+			}
 		}
 		catch (SQLException e)
 		{
@@ -10124,14 +10043,13 @@ public class L2PcInstance extends L2Playable
 			banLengthMSec = nowTime + (banLength * 1000);
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(BAN_CHAT_SET))
 		{
-			PreparedStatement statement = con.prepareStatement(BAN_CHAT_SET);
 			statement.setLong(1, banLengthMSec);
 			statement.setString(2, banReason);
 			statement.setString(3, getName());
 			statement.execute();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
@@ -10422,9 +10340,9 @@ public class L2PcInstance extends L2Playable
 	
 	public void getAchievemntData()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM achievements WHERE owner_id=" + getObjectId()))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM achievements WHERE owner_id=" + getObjectId());
 			ResultSet rs = statement.executeQuery();
 			String values = "owner_id";
 			String in = Integer.toString(getObjectId());
@@ -10873,7 +10791,7 @@ public class L2PcInstance extends L2Playable
 		SystemMessage sm = null;
 		
 
-		if (item.getItem() instanceof L2Weapon)
+		if (item.isWeapon())
 		{
 			item.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
 			item.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
@@ -10881,30 +10799,14 @@ public class L2PcInstance extends L2Playable
 		
 		if (isEquipped)
 		{
-			if (item.getEnchantLevel() > 0)
-			{
-				sm = SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED);
-				sm.addNumber(item.getEnchantLevel());
-				sm.addItemName(item.getItemId());
-			}
-			else
-			{
-				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED);
-				sm.addItemName(item.getItemId());
-			}
+			sm = item.getEnchantLevel() > 0 ? SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED).addNumber(item.getEnchantLevel()).addItemName(item.getItemId())
+            : SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED).addItemName(item.getItemId());
+
 			sendPacket(sm);
 			
 			items = getInventory().unEquipItemInBodySlotAndRecord(item);
 			WeddingSKillCheck(item, false);
 			
-			if (item.getItemType().equals(L2WeaponType.BOW))
-			{
-				for (L2Skill skill : getAllSkills())
-				{
-					if (skill.getId() == 313)
-						stopSkillEffects(skill.getId());
-				}
-			}
 		}
 		else
 		{
@@ -10912,22 +10814,16 @@ public class L2PcInstance extends L2Playable
 			
 			if (item.isEquipped())
 			{
-				if (item.getEnchantLevel() > 0)
-				{
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2_EQUIPPED);
-					sm.addNumber(item.getEnchantLevel());
-					sm.addItemName(item.getItemId());
-				}
-				else
-				{
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1_EQUIPPED);
-					sm.addItemName(item.getItemId());
-				}
+				
+				sm =  item.getEnchantLevel() > 0 ? SystemMessage.getSystemMessage(SystemMessageId.S1_S2_EQUIPPED).addNumber(item.getEnchantLevel()).addItemName(item.getItemId())
+				: SystemMessage.getSystemMessage(SystemMessageId.S1_EQUIPPED).addItemName(item.getItemId());
+
 				sendPacket(sm);
 				
 				// Consume mana - will start a task if required; returns if item is not a shadow item
 				item.decreaseMana(false);
-				if (item.getItem() instanceof L2Weapon)
+				
+				if (item.isWeapon())
 				{
 					// charge Soulshot/Spiritshot like L2OFF
 					rechargeShots(true, true);
@@ -11567,20 +11463,10 @@ public class L2PcInstance extends L2Playable
 			return;
 		}
 		
-		if (isDead())
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
 		// Get the level of the used skill
 		final int level = getSkillLevel(skillId);
-		if (level <= 0)
-		{
-			sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		if (isOutOfControl())
+		
+		if (isDead() || isOutOfControl() || level <= 0)
 		{
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -11857,24 +11743,22 @@ public class L2PcInstance extends L2Playable
 	{
 		_friendList.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT friend_id FROM character_friends WHERE char_id = ?"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT friend_id FROM character_friends WHERE char_id = ?");
-			statement.setInt(1, getObjectId());
-			ResultSet rset = statement.executeQuery();
-			
-			int friendId;
-			while (rset.next())
-			{
-				friendId = rset.getInt("friend_id");
-				if (friendId == getObjectId())
-					continue;
-				
-				_friendList.add(friendId);
-			}
-			
-			rset.close();
-			statement.close();
+			statement.setInt(1, getObjectId());			
+			try (ResultSet rset = statement.executeQuery())
+		    {
+				int friendId;
+				while (rset.next())
+				{
+					friendId = rset.getInt("friend_id");
+					if (friendId == getObjectId())
+						continue;
+
+					_friendList.add(friendId);
+				}
+		    }
 		}
 		catch (Exception e)
 		{
@@ -12309,6 +12193,45 @@ public class L2PcInstance extends L2Playable
 	public void clearCaptcha()
 	{
 		_answer = "";
+	}
+
+	public void tsekarepos(boolean isfloating)
+	{
+		int realX = getX();
+		int realY = getY();
+		int realZ = getZ();
+		if (realX != 0 && realY != 0 && realZ != 0)
+		{
+			if(isfloating)
+			{
+				setXYZ(realX, realY, realZ);
+				return;
+			}
+
+			if (Config.GEODATA && GeoEngine.getNSWE(getX(), getY(), getZ()) == 15)
+			{
+				setXYZ(realX, realY, GeoEngine.getHeight(realX, realY, realZ));
+				broadcastPacket(new ValidateLocation(this));
+			}
+			else
+				teleToLocation(MapRegionTable.TeleportWhereType.TOWN);
+		}
+		else if (getClientX() != 0 && getClientY() != 0 && getClientZ() != 0)
+		{
+			if(isfloating)
+			{
+				setXYZ(realX, realY, realZ);
+				return;
+			}
+
+			if (Config.GEODATA && GeoEngine.getNSWE(getClientX(), getClientY(), getClientZ()) == 15)
+			{
+				setXYZ(getClientX(), getClientY(), GeoEngine.getHeight(getClientX(), getClientY(), getClientZ()));
+				broadcastPacket(new ValidateLocation(this));
+			}
+			else
+				teleToLocation(MapRegionTable.TeleportWhereType.TOWN);
+		}
+		sendPacket(ActionFailed.STATIC_PACKET);
 	}	
-	
 }

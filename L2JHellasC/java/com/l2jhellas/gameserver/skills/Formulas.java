@@ -960,7 +960,6 @@ public final class Formulas
 			type = skill.getEffectType();
 		}
 		
-		// TODO: Temporary fix for skills with EffectPower = 0 or EffectType not set
 		if (value == 0 || type == null)
 		{
 			if (skill.getSkillType() == L2SkillType.PDAM)
@@ -976,7 +975,6 @@ public final class Formulas
 			}
 		}
 		
-		// TODO: Temporary fix for skills with Power = 0 or LevelDepend not set
 		if (value == 0)
 			value = (type == L2SkillType.PARALYZE) ? 30 : (type == L2SkillType.FEAR) ? 20 : 40;
 		if (lvlDepend == 0)

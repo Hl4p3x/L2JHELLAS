@@ -113,7 +113,6 @@ public class L2Attackable extends L2Npc
 	{
 		if (getAI() instanceof L2SiegeGuardAI)
 		{
-			// TODO: this just prevents error until siege guards are handled properly
 			stopHating(target);
 			setTarget(null);
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
@@ -626,56 +625,18 @@ public class L2Attackable extends L2Npc
 		if (!super.doDie(killer))
 			return false;
 		
-		// Notify the Quest Engine of the L2Attackable death if necessary
-		try
+		// Notify the Quest Engine of the L2Attackable death if necessary		
+		if (killer.isPlayer())
 		{
-			L2PcInstance player = null;
-			
-			if (killer != null)
-				player = killer.getActingPlayer();
-			
-			if (killer instanceof L2PcInstance)
-			{
-				levelSoulCrystals(killer);
-			}
-			
-			if (player != null)
-			{
-				if (getTemplate().getEventQuests(QuestEventType.ON_KILL) != null)
-					for (Quest quest : getTemplate().getEventQuests(QuestEventType.ON_KILL))
-						ThreadPoolManager.getInstance().scheduleEffect(new OnKillNotifyTask(this, quest, player, killer instanceof L2Summon), 3000);
-			}
+			levelSoulCrystals(killer);
+
+			final List<Quest> scripts = getTemplate().getEventQuests(QuestEventType.ON_KILL);
+			if (scripts != null)
+				for (Quest quest : scripts)
+					ThreadPoolManager.getInstance().scheduleEffect(() -> quest.notifyKill(this, killer.getActingPlayer(),killer instanceof L2Summon), 3000);
 		}
-		catch (Exception e)
-		{
-			_log.severe(L2Attackable.class.getName() + ": Exception: doDie");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
-		}
-		
+			
 		return true;
-	}
-	
-	private static class OnKillNotifyTask implements Runnable
-	{
-		private final L2Attackable _attackable;
-		private final Quest _quest;
-		private final L2PcInstance _killer;
-		private final boolean _isPet;
-		
-		public OnKillNotifyTask(L2Attackable attackable, Quest quest, L2PcInstance killer, boolean isPet)
-		{
-			_attackable = attackable;
-			_quest = quest;
-			_killer = killer;
-			_isPet = isPet;
-		}
-		
-		@Override
-		public void run()
-		{
-			_quest.notifyKill(_attackable, _killer, _isPet);
-		}
 	}
 	
 	@Override
@@ -1266,13 +1227,9 @@ public class L2Attackable extends L2Npc
 			{
 				RewardItem item = new RewardItem(8612, 1); // Herb of Warrior
 				if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-				{
 					player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-				}
 				else
-				{
 					dropItem(player, item);
-				}
 				_spec = true;
 			}
 			else
@@ -1284,27 +1241,17 @@ public class L2Attackable extends L2Npc
 					{
 						item = null;
 						if (i == 0)
-						{
 							item = new RewardItem(8606, 1); // Herb of Power
-						}
 						if (i == 1)
-						{
 							item = new RewardItem(8608, 1); // Herb of Atk. Spd.
-						}
 						if (i == 2)
-						{
 							item = new RewardItem(8610, 1); // Herb of Critical
 							// Attack
-						}
 						
 						if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-						{
 							player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-						}
 						else
-						{
 							dropItem(player, item);
-						}
 						break;
 					}
 				}
@@ -1316,13 +1263,9 @@ public class L2Attackable extends L2Npc
 			{
 				RewardItem item = new RewardItem(8613, 1); // Herb of Mystic
 				if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-				{
 					player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-				}
 				else
-				{
 					dropItem(player, item);
-				}
 				_spec = true;
 			}
 			else
@@ -1334,23 +1277,14 @@ public class L2Attackable extends L2Npc
 					{
 						item2 = null;
 						if (i == 0)
-						{
 							item2 = new RewardItem(8607, 1); // Herb of Magic
-						}
 						if (i == 1)
-						{
 							item2 = new RewardItem(8609, 1); // Herb of Casting
-							// Speed
-						}
 						
 						if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-						{
 							player.addItem("Loot", item2.getItemId(), item2.getCount(), this, true);
-						}
 						else
-						{
 							dropItem(player, item2);
-						}
 						break;
 					}
 				}
@@ -1362,13 +1296,9 @@ public class L2Attackable extends L2Npc
 			{
 				RewardItem item = new RewardItem(8614, 1); // Herb of Recovery
 				if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-				{
 					player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-				}
 				else
-				{
 					dropItem(player, item);
-				}
 				_mp = true;
 				_hp = true;
 				_spec = true;
@@ -1381,13 +1311,10 @@ public class L2Attackable extends L2Npc
 				{
 					RewardItem item = new RewardItem(8600, 1); // Herb of Life
 					if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-					{
 						player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-					}
 					else
-					{
 						dropItem(player, item);
-					}
+					
 					_hp = true;
 				}
 			}
@@ -1399,13 +1326,10 @@ public class L2Attackable extends L2Npc
 					RewardItem item = new RewardItem(8601, 1); // Greater Herb
 					// of Life
 					if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-					{
 						player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-					}
 					else
-					{
 						dropItem(player, item);
-					}
+
 					_hp = true;
 				}
 			}
@@ -1417,13 +1341,9 @@ public class L2Attackable extends L2Npc
 					RewardItem item = new RewardItem(8602, 1); // Superior Herb
 					// of Life
 					if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-					{
 						player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-					}
 					else
-					{
 						dropItem(player, item);
-					}
 				}
 			}
 			// mp - restore mp type
@@ -1434,13 +1354,9 @@ public class L2Attackable extends L2Npc
 				{
 					RewardItem item = new RewardItem(8603, 1); // Herb of Manna
 					if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-					{
 						player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-					}
 					else
-					{
 						dropItem(player, item);
-					}
 					_mp = true;
 				}
 			}
@@ -1452,13 +1368,9 @@ public class L2Attackable extends L2Npc
 					RewardItem item = new RewardItem(8604, 1); // Greater Herb
 					// of Mana
 					if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-					{
 						player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-					}
 					else
-					{
 						dropItem(player, item);
-					}
 					_mp = true;
 				}
 			}
@@ -1470,13 +1382,9 @@ public class L2Attackable extends L2Npc
 					RewardItem item = new RewardItem(8605, 1); // Superior Herb
 					// of Mana
 					if (Config.AUTO_LOOT && Config.AUTO_LOOT_HERBS)
-					{
 						player.addItem("Loot", item.getItemId(), item.getCount(), this, true);
-					}
 					else
-					{
 						dropItem(player, item);
-					}
 				}
 			}
 			// speed enhance type

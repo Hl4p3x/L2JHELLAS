@@ -26,9 +26,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		
 		if (activeChar == null || activeChar.isOnline() == 0)
 			return;
-		
-        if(activeChar.isSpawnProtected())
-        	activeChar.onActionRequest();
+
 		activeChar.ReqMagicSkillUse(_magicId, _ctrlPressed, _shiftPressed);
 	}
 	

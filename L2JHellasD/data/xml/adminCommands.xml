@@ -10,9 +10,7 @@
 	<admin command="admin_gmliston" accessLevel="7" />
 	<admin command="admin_gmlistoff" accessLevel="7" />
 	<admin command="admin_silence" accessLevel="7" />
-	<admin command="admin_invis" accessLevel="7" />
 	<admin command="admin_invisible" accessLevel="7" />
-	<admin command="admin_vis" accessLevel="7" />
 	<admin command="admin_visible" accessLevel="7" />
 	<admin command="admin_invis_menu" accessLevel="7" />
 	<admin command="admin_tradeoff" accessLevel="7" />
@@ -21,6 +19,7 @@
 	<admin command="admin_set_mod" accessLevel="7" />
 	<admin command="admin_saveolymp" accessLevel="7" />
 	<admin command="admin_manualhero" accessLevel="7" />
+	<admin command="admin_hide" accessLevel="7" />
 	
 	<admin command="admin_sethero" accessLevel="7" />
 	<admin command="admin_setnoble" accessLevel="7" />

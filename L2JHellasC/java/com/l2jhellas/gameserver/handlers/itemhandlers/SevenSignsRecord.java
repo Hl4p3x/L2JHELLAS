@@ -27,8 +27,7 @@ public class SevenSignsRecord implements IItemHandler
 		else
 			return;
 		
-		SSQStatus ssqs = new SSQStatus(activeChar, 1);
-		activeChar.sendPacket(ssqs);
+		activeChar.sendPacket(new SSQStatus(activeChar, 1));
 	}
 	
 	@Override

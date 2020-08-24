@@ -29,19 +29,16 @@ public class EnergyStone implements IItemHandler
 	{
 		
 		L2PcInstance activeChar;
-		if (playable instanceof L2PcInstance)
-		{
+		if (playable.isPlayer())
 			activeChar = (L2PcInstance) playable;
-		}
 		else if (playable instanceof L2PetInstance)
-		{
 			activeChar = ((L2PetInstance) playable).getOwner();
-		}
 		else
 			return;
 		
 		if (item.getItemId() != 5589)
 			return;
+		
 		int classid = activeChar.getClassId().getId();
 		
 		if (classid == 2 || classid == 48 || classid == 88 || classid == 114)
@@ -62,9 +59,7 @@ public class EnergyStone implements IItemHandler
 			_skill = getChargeSkill(activeChar);
 			if (_skill == null)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
-				sm.addItemName(5589);
-				activeChar.sendPacket(sm);
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED).addItemName(5589));
 				return;
 			}
 			
@@ -84,25 +79,19 @@ public class EnergyStone implements IItemHandler
 			
 			if (_effect.getLevel() < 2)
 			{
-				MagicSkillUse MSU = new MagicSkillUse(playable, activeChar, _skill.getId(), 1, 1, 0);
-				activeChar.sendPacket(MSU);
-				activeChar.broadcastPacket(MSU);
+				activeChar.broadcastPacket(new MagicSkillUse(playable, activeChar, _skill.getId(), 1, 1, 0));
 				_effect.addNumCharges(1);
 				activeChar.sendPacket(new EtcStatusUpdate(activeChar));
 				activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false);
 			}
 			else if (_effect.getLevel() == 2)
-			{
 				activeChar.sendPacket(SystemMessageId.FORCE_MAXLEVEL_REACHED);
-			}
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1);
-			sm.addNumber(_effect.getLevel());
-			activeChar.sendPacket(sm);
+
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1).addNumber(_effect.getLevel()));
 			return;
 		}
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
-		sm.addItemName(5589);
-		activeChar.sendPacket(sm);
+
+		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED).addItemName(5589));
 		return;
 	}
 	
@@ -112,9 +101,7 @@ public class EnergyStone implements IItemHandler
 		for (L2Skill s : skills)
 		{
 			if (s.getId() == 50 || s.getId() == 8)
-			{
 				return (L2SkillCharge) s;
-			}
 		}
 		return null;
 	}

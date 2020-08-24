@@ -13,7 +13,6 @@ import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.CharSelectInfo;
 import com.l2jhellas.gameserver.network.serverpackets.RestartResponse;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
-import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.gameserver.taskmanager.AttackStanceTaskManager;
 
 public final class RequestRestart extends L2GameClientPacket
@@ -104,10 +103,9 @@ public final class RequestRestart extends L2GameClientPacket
 			player.getActiveRequester().onTradeCancel(player);
 			player.onTradeCancel(player.getActiveRequester());
 		}
-		
-		
-		if (player.isFlying())
-			player.removeSkill(SkillTable.getInstance().getInfo(4289, 1));
+					
+		if(player.isMounted())
+		   player.dismount();
 		
 		if (player.isRegisteredInFunEvent())
 		{

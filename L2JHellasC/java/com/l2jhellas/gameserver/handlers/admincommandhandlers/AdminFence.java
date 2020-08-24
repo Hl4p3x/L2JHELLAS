@@ -122,9 +122,7 @@ public class AdminFence implements IAdminCommandHandler
 						activeChar.sendMessage("Fence removed succesfully.");
 					}
 					else
-					{
 						activeChar.sendMessage("Target is not a fence.");
-					}
 				}
 				catch (Exception e)
 				{
@@ -146,9 +144,7 @@ public class AdminFence implements IAdminCommandHandler
 					final int objId = Integer.parseInt(st.nextToken());
 					final L2Object obj = L2World.getInstance().findObject(objId);
 					if (obj != null)
-					{
 						activeChar.teleToLocation(obj.getX(), obj.getY(), obj.getZ());
-					}
 				}
 				catch (Exception e)
 				{

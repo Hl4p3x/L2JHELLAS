@@ -44,6 +44,7 @@ import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminGmChat;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminHeal;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminHelpPage;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminHero;
+import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminHide;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminInvul;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminKick;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminKill;
@@ -88,7 +89,6 @@ import com.l2jhellas.gameserver.handlers.chathandlers.ChatPetition;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatShout;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatTell;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatTrade;
-import com.l2jhellas.gameserver.handlers.itemhandlers.AdventurerBox;
 import com.l2jhellas.gameserver.handlers.itemhandlers.BeastSoulShot;
 import com.l2jhellas.gameserver.handlers.itemhandlers.BeastSpice;
 import com.l2jhellas.gameserver.handlers.itemhandlers.BeastSpiritShot;
@@ -105,6 +105,7 @@ import com.l2jhellas.gameserver.handlers.itemhandlers.CrystalCarol;
 import com.l2jhellas.gameserver.handlers.itemhandlers.Crystals;
 import com.l2jhellas.gameserver.handlers.itemhandlers.EnchantScrolls;
 import com.l2jhellas.gameserver.handlers.itemhandlers.EnergyStone;
+import com.l2jhellas.gameserver.handlers.itemhandlers.ExtractableItems;
 import com.l2jhellas.gameserver.handlers.itemhandlers.Firework;
 import com.l2jhellas.gameserver.handlers.itemhandlers.FishShots;
 import com.l2jhellas.gameserver.handlers.itemhandlers.Harvester;
@@ -289,6 +290,7 @@ public class MasterHandler
 			AdminHeal.class,
 			AdminHelpPage.class,
 			AdminHero.class,
+			AdminHide.class,
 			AdminInvul.class,
 			AdminKick.class,
 			AdminKill.class,
@@ -343,7 +345,6 @@ public class MasterHandler
 		},
 		{
 			// Item Handlers
-			AdventurerBox.class,
 			BeastSoulShot.class,
 			BeastSpice.class,
 			BeastSpiritShot.class,
@@ -360,6 +361,7 @@ public class MasterHandler
 			Crystals.class,
 			EnchantScrolls.class,
 			EnergyStone.class,
+			ExtractableItems.class,
 			Firework.class,
 			FishShots.class,
 			Harvester.class,

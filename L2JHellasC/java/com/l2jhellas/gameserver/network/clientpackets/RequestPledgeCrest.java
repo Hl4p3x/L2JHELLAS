@@ -53,4 +53,10 @@ public final class RequestPledgeCrest extends L2GameClientPacket
 	{
 		return _C__68_REQUESTPLEDGECREST;
 	}
+	
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

@@ -297,8 +297,7 @@ public class CursedWeapon
 		{
 			if (_player.setMountType(0))
 			{
-				Ride dismount = new Ride(_player.getObjectId(), Ride.ACTION_DISMOUNT, 0);
-				_player.broadcastPacket(dismount);
+				_player.broadcastPacket(new Ride(_player.getObjectId(), Ride.ACTION_DISMOUNT, 0));
 				_player.setMountObjectID(0);
 			}
 			else

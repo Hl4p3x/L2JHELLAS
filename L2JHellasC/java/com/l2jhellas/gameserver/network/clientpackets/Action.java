@@ -31,7 +31,6 @@ public final class Action extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		// Get the current L2PcInstance of the player
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		
 		if (activeChar == null)
@@ -44,14 +43,12 @@ public final class Action extends L2GameClientPacket
 			return;
 		}
 		
-		// If the player is the requester of a transaction
 		if (activeChar.getActiveRequester() != null || activeChar.isOutOfControl())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		// If requested object doesn't exist
 		final L2Object obj = (activeChar.getTargetId() == _objectId) ? activeChar.getTarget() : L2World.getInstance().findObject(_objectId);
 		if (obj == null)
 		{
@@ -80,5 +77,11 @@ public final class Action extends L2GameClientPacket
 	public String getType()
 	{
 		return ACTION__C__04;
+	}
+	
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
 	}
 }

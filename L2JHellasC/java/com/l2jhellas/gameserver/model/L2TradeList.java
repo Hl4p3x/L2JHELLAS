@@ -253,17 +253,11 @@ public class L2TradeList
 		L2ItemInstance playerItem, recieverItem, temp, newitem;
 		InventoryUpdate update = new InventoryUpdate();
 		ItemTable itemTable = ItemTable.getInstance();
-		
-		// boolean isValid;
-		// LinkedList<L2ItemInstance> itemsToAdd = new LinkedList<L2ItemInstance>();
-		// LinkedList<L2ItemInstance> itemsToRemove = new LinkedList<L2ItemInstance>();
-		// LinkedList countsToRemove = new LinkedList();
-		
+
 		for (int y = 0; y < _items.size(); y++)
 		{
 			temp = _items.get(y);
 			playerItem = playersInv.getItemByObjectId(temp.getObjectId());
-			// FIXME: why is this null??
 			if (playerItem == null)
 				continue;
 			newitem = itemTable.createItem("L2TradeList", playerItem.getItemId(), playerItem.getCount(), player);

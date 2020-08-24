@@ -16,7 +16,6 @@ import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.FriendList;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
-import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.gameserver.taskmanager.AttackStanceTaskManager;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
@@ -93,9 +92,9 @@ public final class Logout extends L2GameClientPacket
 			else
 			   EventManager.getInstance().onLogout(player);
 		}
-		
-		if (player.isFlying())
-			player.removeSkill(SkillTable.getInstance().getInfo(4289, 1));
+
+		if(player.isMounted())
+		   player.dismount();
 		
 		player.endDuel();
 		

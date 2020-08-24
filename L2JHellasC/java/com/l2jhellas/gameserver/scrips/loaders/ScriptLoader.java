@@ -411,7 +411,6 @@ public class ScriptLoader
 		Q663_SeductiveWhispers.class,
 		Q688_DefeatTheElrokianRaiders.class,
 		Q998_FallenAngelSelect.class,
-		(Config.ALLOW_TUTORIAL ? Q999_T1Tutorial.class : null),
 		
 		AncientEGG.class,
 		CatsEyeBandit.class,

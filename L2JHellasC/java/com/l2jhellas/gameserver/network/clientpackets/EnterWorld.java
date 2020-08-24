@@ -40,4 +40,10 @@ public class EnterWorld extends L2GameClientPacket
 	{
 		return _C__03_ENTERWORLD;
 	}
+	
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
+		return false;
+	}
 }

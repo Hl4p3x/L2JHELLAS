@@ -476,121 +476,120 @@ public class L2Npc extends L2Character
 		if (player == null)
 			return;
 		
-		// Check if the L2PcInstance is a GM
-		if (!Config.ALT_GAME_VIEWNPC && player.getAccessLevel().isGm())
+		player.setTarget(this);
+		player.sendPacket(new MyTargetSelected(getObjectId(), player.getLevel() - getLevel()));
+		
+		if (isAutoAttackable(player))
 		{
-			// Set the target of the L2PcInstance player
-			player.setTarget(this);
-			
-			// Send a Server->Client packet MyTargetSelected to the L2PcInstance player
-			// The player.getLevel() - getLevel() permit to display the correct color in the select window
-			MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel() - getLevel());
-			player.sendPacket(my);
-			
-			// Check if the player is attackable (without a forced attack)
-			if (isAutoAttackable(player))
-			{
-				// Send a Server->Client packet StatusUpdate of the L2NpcInstance to the L2PcInstance to update its HP bar
-				StatusUpdate su = new StatusUpdate(getObjectId());
-				su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-				su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-				player.sendPacket(su);
-			}
-			
-			// Send a Server->Client NpcHtmlMessage() containing the GM console about this L2NpcInstance
-			NpcHtmlMessage html = new NpcHtmlMessage(0);
-			StringBuilder html1 = new StringBuilder("<html><body><center><font color=\"LEVEL\">NPC Information</font></center>");
-			String className = getClass().getName().substring(43);
-			html1.append("<br>");
-			
-			html1.append("Instance Type: " + className + "<br1>Faction: " + getFactionId() + "<br1>Location ID: " + (getSpawn() != null ? getSpawn().getLocation() : 0) + "<br1>");
-			
-			if (this instanceof L2ControllableMobInstance)
-				html1.append("Mob Group: " + MobGroupTable.getInstance().getGroupForMob((L2ControllableMobInstance) this).getGroupId() + "<br>");
-			else
-				html1.append("Respawn Time: " + (getSpawn() != null ? (getSpawn().getRespawnDelay() / 1000) + "  Seconds<br>" : "?  Seconds<br>"));
-			
-			html1.append("<table border=\"0\" width=\"100%\">");
-			html1.append("<tr><td>Object ID</td><td>" + getObjectId() + "</td><td>NPC ID</td><td>" + getTemplate().npcId + "</td></tr>");
-			html1.append("<tr><td>Coords</td><td>" + getX() + "," + getY() + "," + getZ() + "</td></tr>");			
-			html1.append("<tr><td>Level</td><td>" + getLevel() + "</td><td>Aggro</td><td>" + ((this instanceof L2Attackable) ? ((L2Attackable) this).getAggroRange() : 0) + "</td></tr>");
-			html1.append("</table><br>");
-			
-			html1.append("<font color=\"LEVEL\">Combat</font>");
-			html1.append("<table border=\"0\" width=\"100%\">");
-			html1.append("<tr><td>Current HP</td><td>" + getCurrentHp() + "</td><td>Current MP</td><td>" + getCurrentMp() + "</td></tr>");
-			html1.append("<tr><td>Max.HP</td><td>" + (int) (getMaxHp() / getStat().calcStat(Stats.MAX_HP, 1, this, null)) + "*" + getStat().calcStat(Stats.MAX_HP, 1, this, null) + "</td><td>Max.MP</td><td>" + getMaxMp() + "</td></tr>");
-			html1.append("<tr><td>P.Atk.</td><td>" + getPAtk(null) + "</td><td>M.Atk.</td><td>" + getMAtk(null, null) + "</td></tr>");
-			html1.append("<tr><td>P.Def.</td><td>" + getPDef(null) + "</td><td>M.Def.</td><td>" + getMDef(null, null) + "</td></tr>");
-			html1.append("<tr><td>Accuracy</td><td>" + getAccuracy() + "</td><td>Evasion</td><td>" + getEvasionRate(null) + "</td></tr>");
-			html1.append("<tr><td>Critical</td><td>" + getCriticalHit(null, null) + "</td><td>Speed</td><td>" + getRunSpeed() + "</td></tr>");
-			html1.append("<tr><td>Atk.Speed</td><td>" + getPAtkSpd() + "</td><td>Cast.Speed</td><td>" + getMAtkSpd() + "</td></tr>");
-			html1.append("</table><br>");
-			
-			html1.append("<font color=\"LEVEL\">Basic Stats</font>");
-			html1.append("<table border=\"0\" width=\"100%\">");
-			html1.append("<tr><td>STR</td><td>" + getSTR() + "</td><td>DEX</td><td>" + getDEX() + "</td><td>CON</td><td>" + getCON() + "</td></tr>");
-			html1.append("<tr><td>INT</td><td>" + getINT() + "</td><td>WIT</td><td>" + getWIT() + "</td><td>MEN</td><td>" + getMEN() + "</td></tr>");
-			html1.append("</table>");
-			
-			html1.append("<br><center><table>");
-			html1.append("<tr><td><button value=\"Edit NPC\" action=\"bypass -h admin_edit_npc " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("<tr><td><button value=\"Show DropList\" action=\"bypass -h admin_show_droplist " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("<tr><td><button value=\"Show Skillist\" action=\"bypass -h admin_show_skilllist_npc " + getTemplate().npcId + "\" width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("<tr><td align=center><button value=\"Kill\" action=\"bypass -h admin_kill\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("<tr><td align=center><button value=\"Delete\" action=\"bypass -h admin_delete\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("</table></center><br>");
-			html1.append("</body></html>");
-			
-			html.setHtml(html1.toString());
-			player.sendPacket(html);
+			StatusUpdate su = new StatusUpdate(getObjectId());
+			su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
+			su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
+			player.sendPacket(su);
 		}
-		else if (Config.ALT_GAME_VIEWNPC && player.getAccessLevel().isGm())
-		{
-			// Set the target of the L2PcInstance player
-			player.setTarget(this);
-			
-			// Send a Server->Client packet MyTargetSelected to the L2PcInstance player
-			// The player.getLevel() - getLevel() permit to display the correct color in the select window
-			MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel() - getLevel());
-			player.sendPacket(my);
-			
-			// Check if the player is attackable (without a forced attack)
-			if (isAutoAttackable(player))
+		
+		if (player.getAccessLevel().isGm())
+		{		
+			if (!Config.ALT_GAME_VIEWNPC)
 			{
-				// Send a Server->Client packet StatusUpdate of the L2NpcInstance to the L2PcInstance to update its HP bar
-				StatusUpdate su = new StatusUpdate(getObjectId());
-				su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-				su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-				player.sendPacket(su);
+				NpcHtmlMessage html = new NpcHtmlMessage(0);
+				StringBuilder html1 = new StringBuilder("<html><body><center><font color=\"LEVEL\">NPC Information</font></center>");
+				String className = getClass().getName().substring(43);
+				html1.append("<br>");
+
+				html1.append("Instance Type: " + className + "<br1>Faction: " + getFactionId() + "<br1>Location ID: " + (getSpawn() != null ? getSpawn().getLocation() : 0) + "<br1>");
+
+				if (this instanceof L2ControllableMobInstance)
+					html1.append("Mob Group: " + MobGroupTable.getInstance().getGroupForMob((L2ControllableMobInstance) this).getGroupId() + "<br>");
+				else
+					html1.append("Respawn Time: " + (getSpawn() != null ? (getSpawn().getRespawnDelay() / 1000) + "  Seconds<br>" : "?  Seconds<br>"));
+
+				html1.append("<table border=\"0\" width=\"100%\">");
+				html1.append("<tr><td>Object ID</td><td>" + getObjectId() + "</td><td>NPC ID</td><td>" + getTemplate().npcId + "</td></tr>");
+				html1.append("<tr><td>Coords</td><td>" + getX() + "," + getY() + "," + getZ() + "</td></tr>");			
+				html1.append("<tr><td>Level</td><td>" + getLevel() + "</td><td>Aggro</td><td>" + ((this instanceof L2Attackable) ? ((L2Attackable) this).getAggroRange() : 0) + "</td></tr>");
+				html1.append("</table><br>");
+
+				html1.append("<font color=\"LEVEL\">Combat</font>");
+				html1.append("<table border=\"0\" width=\"100%\">");
+				html1.append("<tr><td>Current HP</td><td>" + getCurrentHp() + "</td><td>Current MP</td><td>" + getCurrentMp() + "</td></tr>");
+				html1.append("<tr><td>Max.HP</td><td>" + (int) (getMaxHp() / getStat().calcStat(Stats.MAX_HP, 1, this, null)) + "*" + getStat().calcStat(Stats.MAX_HP, 1, this, null) + "</td><td>Max.MP</td><td>" + getMaxMp() + "</td></tr>");
+				html1.append("<tr><td>P.Atk.</td><td>" + getPAtk(null) + "</td><td>M.Atk.</td><td>" + getMAtk(null, null) + "</td></tr>");
+				html1.append("<tr><td>P.Def.</td><td>" + getPDef(null) + "</td><td>M.Def.</td><td>" + getMDef(null, null) + "</td></tr>");
+				html1.append("<tr><td>Accuracy</td><td>" + getAccuracy() + "</td><td>Evasion</td><td>" + getEvasionRate(null) + "</td></tr>");
+				html1.append("<tr><td>Critical</td><td>" + getCriticalHit(null, null) + "</td><td>Speed</td><td>" + getRunSpeed() + "</td></tr>");
+				html1.append("<tr><td>Atk.Speed</td><td>" + getPAtkSpd() + "</td><td>Cast.Speed</td><td>" + getMAtkSpd() + "</td></tr>");
+				html1.append("</table><br>");
+
+				html1.append("<font color=\"LEVEL\">Basic Stats</font>");
+				html1.append("<table border=\"0\" width=\"100%\">");
+				html1.append("<tr><td>STR</td><td>" + getSTR() + "</td><td>DEX</td><td>" + getDEX() + "</td><td>CON</td><td>" + getCON() + "</td></tr>");
+				html1.append("<tr><td>INT</td><td>" + getINT() + "</td><td>WIT</td><td>" + getWIT() + "</td><td>MEN</td><td>" + getMEN() + "</td></tr>");
+				html1.append("</table>");
+
+				html1.append("<br><center><table>");
+				html1.append("<tr><td><button value=\"Edit NPC\" action=\"bypass -h admin_edit_npc " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("<tr><td><button value=\"Show DropList\" action=\"bypass -h admin_show_droplist " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("<tr><td><button value=\"Show Skillist\" action=\"bypass -h admin_show_skilllist_npc " + getTemplate().npcId + "\" width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("<tr><td align=center><button value=\"Kill\" action=\"bypass -h admin_kill\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("<tr><td align=center><button value=\"Delete\" action=\"bypass -h admin_delete\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("</table></center><br>");
+				html1.append("</body></html>");
+
+				html.setHtml(html1.toString());
+				player.sendPacket(html);
 			}
-			
+			else
+			{
+				NpcHtmlMessage html = new NpcHtmlMessage(0);
+				StringBuilder html1 = new StringBuilder("<html><body>");
+
+				html1.append("<br><center><font color=\"LEVEL\">[Combat Stats]</font></center>");
+				html1.append("<table border=0 width=\"100%\">");
+				html1.append("<tr><td>Max.HP</td><td>" + (int) (getMaxHp() / getStat().calcStat(Stats.MAX_HP, 1, this, null)) + "*" + (int) getStat().calcStat(Stats.MAX_HP, 1, this, null) + "</td><td>Max.MP</td><td>" + getMaxMp() + "</td></tr>");
+				html1.append("<tr><td>P.Atk.</td><td>" + getPAtk(null) + "</td><td>M.Atk.</td><td>" + getMAtk(null, null) + "</td></tr>");
+				html1.append("<tr><td>P.Def.</td><td>" + getPDef(null) + "</td><td>M.Def.</td><td>" + getMDef(null, null) + "</td></tr>");
+				html1.append("<tr><td>Accuracy</td><td>" + getAccuracy() + "</td><td>Evasion</td><td>" + getEvasionRate(null) + "</td></tr>");
+				html1.append("<tr><td>Critical</td><td>" + getCriticalHit(null, null) + "</td><td>Speed</td><td>" + getRunSpeed() + "</td></tr>");
+				html1.append("<tr><td>Atk.Speed</td><td>" + getPAtkSpd() + "</td><td>Cast.Speed</td><td>" + getMAtkSpd() + "</td></tr>");
+				html1.append("<tr><td>Race</td><td>" + getTemplate().race + "</td><td></td><td></td></tr>");
+				html1.append("</table>");
+
+				html1.append("<br><center><font color=\"LEVEL\">[Basic Stats]</font></center>");
+				html1.append("<table border=0 width=\"100%\">");
+				html1.append("<tr><td>STR</td><td>" + getSTR() + "</td><td>DEX</td><td>" + getDEX() + "</td><td>CON</td><td>" + getCON() + "</td></tr>");
+				html1.append("<tr><td>INT</td><td>" + getINT() + "</td><td>WIT</td><td>" + getWIT() + "</td><td>MEN</td><td>" + getMEN() + "</td></tr>");
+				html1.append("</table>");
+
+				html1.append("<tr><td><button value=\"Edit NPC\" action=\"bypass -h admin_edit_npc " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("<tr><td><button value=\"Show DropList\" action=\"bypass -h admin_show_droplist " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("<tr><td><button value=\"Show Skillist\" action=\"bypass -h admin_show_skilllist_npc " + getTemplate().npcId + "\" width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("<tr><td align=center><button value=\"Kill\" action=\"bypass -h admin_kill\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+				html1.append("<tr><td align=center><button value=\"Delete\" action=\"bypass -h admin_delete\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+
+				html1.append("<center><font color=\"LEVEL\">[Drop Info]</font></center>");
+				html1.append("<table border=1 width=\"100%\">");
+				html1.append("<tr><td><center>Item Name</center></td><td width=\"55\" valign=middle align=center><center>Category</center></td><td width=\"50\" valign=middle align=center><center>Chance</center></td></tr>");
+
+				if (getTemplate().getDropData() != null)
+					for (L2DropCategory cat : getTemplate().getDropData())
+						for (L2DropData drop : cat.getAllDrops())
+						{
+							String name = ItemTable.getInstance().getTemplate(drop.getItemId()).getItemName();
+							html1.append("<tr><td><font color=\"33EEEE\">" + name + "</font></td><td width=\"55\" valign=middle align=center>" + (drop.isQuestDrop() ? "<font color=\"FF6600\">Quest</font>" : (cat.isSweep() ? "<font color=\"LEVEL\">Sweep</font>" : "<font color=\"33FF77\">Drop</font>")) + "</td><td width=\"50\" valign=middle align=center>" + (drop.getChance() >= 10000 ? (double) drop.getChance() / 10000 : drop.getChance() < 10000 ? (double) drop.getChance() / 10000 : "N/A") + "%</td></tr>");
+						}
+
+				html1.append("</table>");
+				html1.append("</body></html>");
+
+				html.setHtml(html1.toString());
+				player.sendPacket(html);
+			}
+		
+		}
+		else if (Config.PLAYER_ALT_GAME_VIEWNPC)
+		{		
 			NpcHtmlMessage html = new NpcHtmlMessage(0);
 			StringBuilder html1 = new StringBuilder("<html><body>");
-			
-			html1.append("<br><center><font color=\"LEVEL\">[Combat Stats]</font></center>");
-			html1.append("<table border=0 width=\"100%\">");
-			html1.append("<tr><td>Max.HP</td><td>" + (int) (getMaxHp() / getStat().calcStat(Stats.MAX_HP, 1, this, null)) + "*" + (int) getStat().calcStat(Stats.MAX_HP, 1, this, null) + "</td><td>Max.MP</td><td>" + getMaxMp() + "</td></tr>");
-			html1.append("<tr><td>P.Atk.</td><td>" + getPAtk(null) + "</td><td>M.Atk.</td><td>" + getMAtk(null, null) + "</td></tr>");
-			html1.append("<tr><td>P.Def.</td><td>" + getPDef(null) + "</td><td>M.Def.</td><td>" + getMDef(null, null) + "</td></tr>");
-			html1.append("<tr><td>Accuracy</td><td>" + getAccuracy() + "</td><td>Evasion</td><td>" + getEvasionRate(null) + "</td></tr>");
-			html1.append("<tr><td>Critical</td><td>" + getCriticalHit(null, null) + "</td><td>Speed</td><td>" + getRunSpeed() + "</td></tr>");
-			html1.append("<tr><td>Atk.Speed</td><td>" + getPAtkSpd() + "</td><td>Cast.Speed</td><td>" + getMAtkSpd() + "</td></tr>");
-			html1.append("<tr><td>Race</td><td>" + getTemplate().race + "</td><td></td><td></td></tr>");
-			html1.append("</table>");
-			
-			html1.append("<br><center><font color=\"LEVEL\">[Basic Stats]</font></center>");
-			html1.append("<table border=0 width=\"100%\">");
-			html1.append("<tr><td>STR</td><td>" + getSTR() + "</td><td>DEX</td><td>" + getDEX() + "</td><td>CON</td><td>" + getCON() + "</td></tr>");
-			html1.append("<tr><td>INT</td><td>" + getINT() + "</td><td>WIT</td><td>" + getWIT() + "</td><td>MEN</td><td>" + getMEN() + "</td></tr>");
-			html1.append("</table>");
-			
-			html1.append("<tr><td><button value=\"Edit NPC\" action=\"bypass -h admin_edit_npc " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("<tr><td><button value=\"Show DropList\" action=\"bypass -h admin_show_droplist " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("<tr><td><button value=\"Show Skillist\" action=\"bypass -h admin_show_skilllist_npc " + getTemplate().npcId + "\" width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("<tr><td align=center><button value=\"Kill\" action=\"bypass -h admin_kill\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			html1.append("<tr><td align=center><button value=\"Delete\" action=\"bypass -h admin_delete\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-			
 			html1.append("<center><font color=\"LEVEL\">[Drop Info]</font></center>");
 			html1.append("<table border=1 width=\"100%\">");
 			html1.append("<tr><td><center>Item Name</center></td><td width=\"55\" valign=middle align=center><center>Category</center></td><td width=\"50\" valign=middle align=center><center>Chance</center></td></tr>");
@@ -610,47 +609,6 @@ public class L2Npc extends L2Character
 			player.sendPacket(html);
 		}
 		
-		if (Config.PLAYER_ALT_GAME_VIEWNPC && !player.getAccessLevel().isGm())
-		{
-			// Set the target of the L2PcInstance player
-			player.setTarget(this);
-			
-			// Send a Server->Client packet MyTargetSelected to the L2PcInstance player
-			// The player.getLevel() - getLevel() permit to display the correct color in the select window
-			MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel() - getLevel());
-			player.sendPacket(my);
-			
-			// Check if the player is attackable (without a forced attack)
-			if (isAutoAttackable(player))
-			{
-				// Send a Server->Client packet StatusUpdate of the L2NpcInstance to the L2PcInstance to update its HP bar
-				StatusUpdate su = new StatusUpdate(getObjectId());
-				su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-				su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-				player.sendPacket(su);
-			}
-			
-			NpcHtmlMessage html = new NpcHtmlMessage(0);
-			StringBuilder html1 = new StringBuilder("<html><body>");
-			html1.append("<center><font color=\"LEVEL\">[Drop Info]</font></center>");
-			html1.append("<table border=1 width=\"100%\">");
-			html1.append("<tr><td><center>Item Name</center></td><td width=\"55\" valign=middle align=center><center>Category</center></td><td width=\"50\" valign=middle align=center><center>Chance</center></td></tr>");
-			
-			if (getTemplate().getDropData() != null)
-				for (L2DropCategory cat : getTemplate().getDropData())
-					for (L2DropData drop : cat.getAllDrops())
-					{
-						String name = ItemTable.getInstance().getTemplate(drop.getItemId()).getItemName();
-						html1.append("<tr><td><font color=\"33EEEE\">" + name + "</font></td><td width=\"55\" valign=middle align=center>" + (drop.isQuestDrop() ? "<font color=\"FF6600\">Quest</font>" : (cat.isSweep() ? "<font color=\"LEVEL\">Sweep</font>" : "<font color=\"33FF77\">Drop</font>")) + "</td><td width=\"50\" valign=middle align=center>" + (drop.getChance() >= 10000 ? (double) drop.getChance() / 10000 : drop.getChance() < 10000 ? (double) drop.getChance() / 10000 : "N/A") + "%</td></tr>");
-					}
-			
-			html1.append("</table>");
-			html1.append("</body></html>");
-			
-			html.setHtml(html1.toString());
-			player.sendPacket(html);
-		}
-		// Send a Server->Client ActionFailed to the L2PcInstance in order to avoid that the client wait another packet
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	

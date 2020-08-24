@@ -868,7 +868,6 @@ public class L2PetInstance extends L2Summon
 	
 	private void deathPenalty()
 	{
-		// TODO Need Correct Penalty
 		int lvl = getStat().getLevel();
 		double percentLost = -0.07 * lvl + 6.5;
 		

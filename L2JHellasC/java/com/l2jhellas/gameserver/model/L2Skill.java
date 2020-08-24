@@ -28,6 +28,8 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SiegeFlagInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SummonInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
+import com.l2jhellas.gameserver.model.actor.item.Extractable.ExtractableProductItem;
+import com.l2jhellas.gameserver.model.actor.item.Extractable.ExtractableSkill;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.EtcStatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -290,7 +292,7 @@ public abstract class L2Skill
 	protected FuncTemplate[] _funcTemplates;
 	protected EffectTemplate[] _effectTemplates;
 	protected EffectTemplate[] _effectTemplatesSelf;
-	private L2ExtractableSkill _extractableItems = null;
+	private ExtractableSkill _extractableItems = null;
 
 	private L2Character target;
 
@@ -2138,10 +2140,10 @@ public abstract class L2Skill
 		return effects.toArray(new L2Effect[effects.size()]);
 	}
 	
-	private L2ExtractableSkill parseExtractableSkill(int skillId, int skillLvl, String values)
+	private ExtractableSkill parseExtractableSkill(int skillId, int skillLvl, String values)
 	{
 		final String[] prodLists = values.split(";");
-		final List<L2ExtractableProductItem> products = new ArrayList<>();
+		final List<ExtractableProductItem> products = new ArrayList<>();
 		
 		for (String prodList : prodLists)
 		{
@@ -2176,16 +2178,16 @@ public abstract class L2Skill
 			{
 				_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> incomplete/invalid production data or wrong seperator!");
 			}
-			products.add(new L2ExtractableProductItem(items, chance));
+			products.add(new ExtractableProductItem(items, chance));
 		}
 		
 		if (products.isEmpty())
 			_log.warning("Extractable skills data: Error in Skill Id: " + skillId + " Level: " + skillLvl + " -> There are no production items!");
 		
-		return new L2ExtractableSkill(SkillTable.getSkillHashCode(this), products);
+		return new ExtractableSkill(SkillTable.getSkillHashCode(this), products);
 	}
 	
-	public L2ExtractableSkill getExtractableSkill()
+	public ExtractableSkill getExtractableSkill()
 	{
 		return _extractableItems;
 	}

@@ -902,6 +902,7 @@ public final class Config
 	public static int USE_ITEM;
 	public static int SOCIAL;
 	public static int HANDLER;
+	public static int MOVE_ACTION_TIME;
 	
 	public static enum ObjectMapType
 	{
@@ -2083,6 +2084,7 @@ public final class Config
 			USE_ITEM = Integer.valueOf(optionsSettings.getProperty("FloodUseItem", "100"));
 			SOCIAL = Integer.valueOf(optionsSettings.getProperty("FloodSocial", "100"));		
 			HANDLER = Integer.valueOf(optionsSettings.getProperty("FloodItemHandler", "100"));
+			MOVE_ACTION_TIME = Integer.valueOf(optionsSettings.getProperty("FloodMoveTime", "100"));
 		
 			Properties otherSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(OTHER_CONFIG_FILE)))

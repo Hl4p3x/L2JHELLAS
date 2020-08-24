@@ -14,7 +14,6 @@ public class ShadowWeapon extends Quest
 	private static final int D_COUPON = 8869;
 	private static final int C_COUPON = 8870;
 	
-	// TODO: That list will be moved into SecondClassChange once it's made.
 	public static final int[] SECONDCLASSNPCS =
 	{
 		30109,

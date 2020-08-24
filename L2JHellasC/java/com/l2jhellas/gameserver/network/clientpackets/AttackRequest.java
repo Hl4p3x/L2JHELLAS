@@ -1,11 +1,13 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
 import com.l2jhellas.gameserver.ai.CtrlIntention;
+import com.l2jhellas.gameserver.enums.player.ChatType;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 
 public final class AttackRequest extends L2GameClientPacket
 {
@@ -35,21 +37,23 @@ public final class AttackRequest extends L2GameClientPacket
 		
 		if (activeChar == null)
 			return;
-				
+			
+		if (activeChar.getAppearance().getInvisible())
+		{
+			activeChar.sendPacket(new CreatureSay(0, ChatType.GENERAL, "SYS", "You cannot do this action in hide mode."));
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
 		if (activeChar.inObserverMode())
 		{
 			activeChar.sendPacket(SystemMessageId.OBSERVERS_CANNOT_PARTICIPATE);
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-				
-		L2Object target;
-		
-		if (activeChar.getTargetId() == _objectId)
-			target = activeChar.getTarget();
-		else
-			target = L2World.getInstance().findObject(_objectId);
-		
+
+		final L2Object target = (activeChar.getTargetId() == _objectId) ? activeChar.getTarget() : L2World.getInstance().findObject(_objectId);
+
 		if (target == null)
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -62,24 +66,18 @@ public final class AttackRequest extends L2GameClientPacket
 			return;
 		}
 		
-		// Like L2OFF
 		if (activeChar.isAttackingNow() && activeChar.isMoving())
 		{
-			// If target is not attackable, send a Server->Client packet ActionFailed
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		// Checking if target has moved to peace zone
 		if (activeChar.isInsidePeaceZone(activeChar, target))
 		{
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
-		if(activeChar.isSpawnProtected())
-		   activeChar.onActionRequest();
 
 		if (activeChar.getTarget() != target)
 			target.onAction(activeChar);

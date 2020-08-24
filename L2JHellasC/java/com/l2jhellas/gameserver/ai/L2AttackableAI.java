@@ -765,8 +765,9 @@ public class L2AttackableAI extends L2CharacterAI
 			if (range < 5)
 				range = 5;
 			
-			moveToPawn(target, range);	
-			
+			if((GameTimeController.getInstance().getGameTicks() % 2) == 0)
+			     moveToPawn(target, range);	
+
 			if (npc.getNpcId() == 25325)
 			{
 				final int BARAKIELx1 = 89800;

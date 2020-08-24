@@ -39,6 +39,12 @@ public final class Say2 extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
+		if (activeChar.getAppearance().getInvisible())
+		{		
+			activeChar.sendPacket(SystemMessageId.NOT_CHAT_WHILE_INVISIBLE);
+			return;
+		}
+		
 		if (_text.isEmpty() || _text.length() > 100)
 			return;
 		
@@ -169,6 +175,12 @@ public final class Say2 extends L2GameClientPacket
 			if (text.startsWith(botCommand))
 				return true;
 		}
+		return false;
+	}
+	
+	@Override
+	protected boolean triggersOnActionRequest()
+	{
 		return false;
 	}
 }

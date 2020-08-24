@@ -10,9 +10,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jhellas.gameserver.ThreadPoolManager;
+import com.l2jhellas.gameserver.instancemanager.BufferManager;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.skills.SkillTable;
+import com.l2jhellas.util.StringUtil;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public class EventBuffer
@@ -116,54 +118,101 @@ public class EventBuffer
 		
 		return false;
 	}
-	
+
 	public void showHtml(L2PcInstance player)
 	{
-		try
+		final NpcHtmlMessage html = new NpcHtmlMessage(0);
+		html.setFile(HtmlPath()); 
+		html.replace("%plname%", player.getName());
+		html.replace("%count%", EventManager.getInstance().getInt("maxBuffNum"));
+		html.replace("%bufflist%", getSkillList(player));
+		html.replace("%objectId%", player.getTargetId());
+		player.sendPacket(html);
+	}
+	
+	public String HtmlPath()
+	{		
+		return "data/html/mods/buffer/eventbuffer.htm";
+	}
+	
+	private String getSkillList(L2PcInstance  player)
+	{
+		
+		StringTokenizer st = new StringTokenizer(EventManager.getInstance().getString("allowedBuffsList"), ",");
+		List<Integer> skillList = new CopyOnWriteArrayList<>();
+		
+		while (st.hasMoreTokens())
+			skillList.add(Integer.parseInt(st.nextToken()));
+		
+		String playerId = "" + player.getObjectId() + player.getClassIndex();
+		
+		if (!buffTemplates.containsKey(playerId))
 		{
-			String playerId = "" + player.getObjectId() + player.getClassIndex();
-			
-			if (!buffTemplates.containsKey(playerId))
-			{
-				buffTemplates.put(playerId, new CopyOnWriteArrayList<Integer>());
-				changes.put(playerId, true);
-			}
-			
-			StringTokenizer st = new StringTokenizer(EventManager.getInstance().getString("allowedBuffsList"), ",");
-			List<Integer> skillList = new CopyOnWriteArrayList<>();
-			
-			while (st.hasMoreTokens())
-				skillList.add(Integer.parseInt(st.nextToken()));
-			
-			NpcHtmlMessage html = new NpcHtmlMessage(0);
-			StringBuilder sb = new StringBuilder();
-			
-			sb.append("<html><body><table width=270><tr><td width=200>Event Engine </td></tr></table><br><center><table width=270 bgcolor=5A5A5A><tr><td width=70>Edit Buffs</td><td width=80></td><td width=120>Remaining slots: " + (EventManager.getInstance().getInt("maxBuffNum") - buffTemplates.get(playerId).size()) + "</td></tr></table><br><br><table width=270 bgcolor=5A5A5A><tr><td>Added buffs:</td></tr></table><br>");
-			
-			for (int skillId : buffTemplates.get(playerId))
-				sb.append("<a action=\"bypass -h eventbuffer " + skillId + " 0\">" + SkillTable.getInstance().getInfo(skillId, SkillTable.getInstance().getMaxLevel(skillId,0)).getName() + "</a><br>");
-			
-			sb.append("<br><table width=270 bgcolor=5A5A5A><tr><td>Available buffs:</td></tr></table><br>");
-			
-			for (int skillId : skillList)
-			{
+			buffTemplates.put(playerId, new CopyOnWriteArrayList<Integer>());
+			changes.put(playerId, true);
+		}
+		
+		final StringBuilder sb = new StringBuilder(skillList.size() * 150);
+		
+		int row = 0;
+		
+		sb.append("<html><body><table width=270><tr><td width=200>Event Engine </td></tr></table><br><center><table width=270 bgcolor=5A5A5A><tr><td width=70>Edit Buffs</td><td width=80></td><td width=120>Remaining slots: " + (EventManager.getInstance().getInt("maxBuffNum") - buffTemplates.get(playerId).size()) + "</td></tr></table><br><br><table width=270 bgcolor=5A5A5A><tr><td>Added buffs:</td></tr></table><br>");
+
+
+		for (int skillId : buffTemplates.get(playerId))
+		{
+			String icon = "";
+
+			if(skillId == 4702 || skillId == 4703)
+				icon = "icon.skill1332";
+			else if(skillId == 4699 || skillId == 4700)
+				icon = "icon.skill1331";
+			else
+				icon = (skillId < 100) ? "icon.skill00" + skillId : (skillId < 1000) ? "icon.skill0" + skillId : "icon.skill" + skillId;
+
+			sb.append(((row % 2) == 0 ? "<table width=\"280\" bgcolor=\"000000\"><tr>" : "<table width=\"280\"><tr>"));
+
+			StringUtil.append(sb, "<td height=40 width=40><img src=\"", icon, "\" width=32 height=32></td><td width=190>", SkillTable.getInstance().getInfo(skillId, 1).getName(), "<br1><font color=\"B09878\">", BufferManager.getInstance().getAvailableBuff(skillId).getDescription(), "</font></td><td><button action=\"bypass -h eventbuffer " + skillId + " 0", "\" width=32 height=32 back=\"L2UI_CH3.mapbutton_zoomout2\" fore=\"L2UI_CH3.mapbutton_zoomout1\"></td>");
+
+			sb.append("</tr></table><img src=\"L2UI.SquareGray\" width=277 height=1>");
+			row++;
+		}
+
+		sb.append("<br><table width=270 bgcolor=5A5A5A><tr><td>Available buffs:</td></tr></table><br>");
+
+		for (int skillId : skillList)
+		{
+			String icon = "";
+
+				if(skillId == 4702 || skillId == 4703)
+					icon = "icon.skill1332";
+				else if(skillId == 4699 || skillId == 4700)
+					icon = "icon.skill1331";
+				else
+					icon = (skillId < 100) ? "icon.skill00" + skillId : (skillId < 1000) ? "icon.skill0" + skillId : "icon.skill" + skillId;
+
+				sb.append(((row % 2) == 0 ? "<table width=\"280\" bgcolor=\"000000\"><tr>" : "<table width=\"280\"><tr>"));
+
 				if (!buffTemplates.get(playerId).contains(skillId))
 				{
-					if (EventManager.getInstance().getInt("maxBuffNum") - buffTemplates.get(playerId).size() != 0)
-						sb.append("<a action=\"bypass -h eventbuffer " + skillId + " 1\">" + SkillTable.getInstance().getInfo(skillId, SkillTable.getInstance().getMaxLevel(skillId,0)).getName() + "</a><br>");
+					if(EventManager.getInstance().getInt("maxBuffNum") - buffTemplates.get(playerId).size() != 0)
+						StringUtil.append(sb, "<td height=40 width=40><img src=\"", icon, "\" width=32 height=32></td><td width=190>", SkillTable.getInstance().getInfo(skillId, 1).getName(), "<br1><font color=\"B09878\">", BufferManager.getInstance().getAvailableBuff(skillId).getDescription(), "</font></td><td><button action=\"bypass -h eventbuffer " + skillId + " 1", "\" width=32 height=32 back=\"L2UI_CH3.mapbutton_zoomout2\" fore=\"L2UI_CH3.mapbutton_zoomin1\"></td>");
 					else
 						break;
 				}
-			}
-			
-			sb.append("</center></body></html>");
-			html.setHtml(sb.toString());
-			player.sendPacket(html);
+				
+				sb.append("</tr></table><img src=\"L2UI.SquareGray\" width=277 height=1>");
+				row++;
 		}
-		catch (Throwable e)
-		{
-			e.printStackTrace();
-		}
+		
+		for (int i = 10; i > row; i--)
+			StringUtil.append(sb, "<img height=41>");
+		
+		sb.append("<br><img src=\"L2UI.SquareGray\" width=277 height=1><table width=\"100%\" bgcolor=000000><tr>");
+		
+		sb.append("</tr></table><img src=\"L2UI.SquareGray\" width=277 height=1>");
+		
+		return sb.toString();
 	}
 	
 	public void updateSQL()

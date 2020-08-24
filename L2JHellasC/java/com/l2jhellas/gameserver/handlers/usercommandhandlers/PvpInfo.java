@@ -18,9 +18,7 @@ public class PvpInfo implements IUserCommandHandler
 	public boolean useUserCommand(int id, L2PcInstance activeChar)
 	{
 		if (id != COMMAND_IDS[0])
-		{
 			return false;
-		}
 		
 		if (activeChar == null)
 			return false;
@@ -32,15 +30,11 @@ public class PvpInfo implements IUserCommandHandler
 		
 		// reset death status:
 		if (!activeChar.isDead())
-		{
 			pc.setDeathStatus(null);
-		}
 		
 		// save target of active player when command executed:
-		if (activeChar.getTarget() != null && activeChar.getTarget() instanceof L2PcInstance)
-		{
+		if (activeChar.getTarget() != null && activeChar.getTarget().isPlayer())
 			pc.setTarget((L2PcInstance) activeChar.getTarget());
-		}
 		else
 		{
 			pc.setTarget(activeChar);

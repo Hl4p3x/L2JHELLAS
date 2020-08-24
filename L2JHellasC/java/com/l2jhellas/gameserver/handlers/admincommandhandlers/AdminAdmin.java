@@ -22,8 +22,6 @@ public class AdminAdmin implements IAdminCommandHandler
 		"admin_gmliston",
 		"admin_gmlistoff",
 		"admin_silence",
-		"admin_invis",
-		"admin_vis",
 		"admin_inv_menu",
 		"admin_diet",
 		"admin_tradeoff",
@@ -65,22 +63,6 @@ public class AdminAdmin implements IAdminCommandHandler
 				activeChar.getAppearance().setVisible();
 				activeChar.broadcastUserInfo();
 			}
-			RegionBBSManager.getInstance().changeCommunityBoard();
-			AdminHelpPage.showHelpPage(activeChar, "main_menu.htm");
-		}
-		else if (command.startsWith("admin_invis"))
-		{
-			activeChar.getAppearance().setInvisible();
-			activeChar.broadcastUserInfo();
-			activeChar.decayMe();
-			activeChar.spawnMe();
-			RegionBBSManager.getInstance().changeCommunityBoard();
-			AdminHelpPage.showHelpPage(activeChar, "main_menu.htm");
-		}
-		else if (command.startsWith("admin_vis"))
-		{
-			activeChar.getAppearance().setVisible();
-			activeChar.broadcastUserInfo();
 			RegionBBSManager.getInstance().changeCommunityBoard();
 			AdminHelpPage.showHelpPage(activeChar, "main_menu.htm");
 		}

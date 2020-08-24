@@ -42,9 +42,9 @@ public class RequestAquireSkill extends L2GameClientPacket
 		
 		if(canRead(player))
 		{
-		  _id = readD();
-		  _level = readD();
-		  _skillType = readD();
+			_id = readD();
+			_level = readD();
+			_skillType = readD();
 		}
 	}
 	
@@ -174,18 +174,15 @@ public class RequestAquireSkill extends L2GameClientPacket
 			}
 			else
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SP_TO_LEARN_SKILL);
-				player.sendPacket(sm);
-				sm = null;
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.NOT_ENOUGH_SP_TO_LEARN_SKILL));
 				return;
 			}
 		}
-		else if (_skillType == 2) // pledge skills TODO: Find appropriate system messages.
+		else if (_skillType == 2)
 		{
 			if (!player.isClanLeader())
 			{
-				// TODO: Find and add system msg
-				player.sendMessage("This feature is available only for the clan leader");
+				player.sendPacket(SystemMessageId.YOU_ARE_NOT_AUTHORIZED_TO_DO_THAT);
 				return;
 			}
 			

@@ -486,7 +486,6 @@ public class L2Party
 					if (((L2PetInstance) member).getPetData().getOwnerExpTaken() > 0)
 						continue;
 					
-					// TODO: This is a temporary fix while correct pet xp in party is figured out
 					penalty = (float) 0.85;
 				}
 				

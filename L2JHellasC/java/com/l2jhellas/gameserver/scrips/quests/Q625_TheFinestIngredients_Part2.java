@@ -237,7 +237,7 @@ public class Q625_TheFinestIngredients_Part2 extends Quest
 			
 			// teleport raid from secret place
 			raid.teleToLocation(157117, -121939, -2397, true);
-			raid.broadcastNpcSay("Hmmm, what do I smell over here?"); // FIXME missing retail message
+			raid.broadcastNpcSay("I smell something delicious...");
 			
 			// set raid status
 			_status = IDLE_INTERVAL;

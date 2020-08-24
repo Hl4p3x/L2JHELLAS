@@ -47,7 +47,7 @@ public class AdminRes implements IAdminCommandHandler
 	{
 		L2Object obj = activeChar.getTarget();
 
-		if (!resParam.isEmpty())
+		if (resParam != null)
 		{			
 			L2PcInstance plr = L2World.getInstance().getPlayer(resParam);
 

@@ -394,7 +394,7 @@
 	</class>
 	<class Id="56" name="Artisan" RaceId="4">
 		<stats str="39" con="45" dex="29" _int="20" wit="10" men="27" p_atk="4" p_def="80" m_atk="6" m_def="41" p_spd="300" m_spd="333" acc="33" critical="43" evasion="33" move_spd="115" _load="83000" x="108512" y="-174026" z="-400" canCraft="1" m_unk1="1.09" m_unk2="1.487196" m_col_r="9" m_col_h="18" f_unk1="1.09" f_unk2="1.487196" f_col_r="5" f_col_h="19">
-			<lvlup hpbase="1110.8" hpadd="57.1" hpmod="0.37" cpbase="777.5" cpadd="39.94" cpmod="0.22" mpbase="359.1" mpadd="19.4" mpmod="0.14" class_lvl="40">
+			<lvlup hpbase="1110.8" hpadd="32.9" hpmod="0.37" cpbase="777.5" cpadd="39.94" cpmod="0.22" mpbase="359.1" mpadd="19.4" mpmod="0.14" class_lvl="40">
 				<item item1="1147" item2="1146" item3="10" item4="2370" item5="5588"/>
 			</lvlup>
 		</stats>

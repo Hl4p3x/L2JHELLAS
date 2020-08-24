@@ -1,5 +1,11 @@
 package com.l2jhellas.gameserver.scrips.quests;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.l2jhellas.gameserver.enums.player.ClassRace;
+import com.l2jhellas.gameserver.enums.player.ClassType;
+import com.l2jhellas.gameserver.holder.IntIntHolder;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.quest.Quest;
@@ -10,335 +16,439 @@ public class Q343_UnderTheShadowOfTheIvoryTower extends Quest
 {	
 	private static final String qn = "Q343_UnderTheShadowOfTheIvoryTower";
 
-	public int CEMA = 30834;
-	public int ICARUS = 30835;
-	public int MARSHA = 30934;
-	public int TRUMPIN = 30935;
-	public int ORB = 4364;
-	public int ECTOPLASM = 4365;
-	public int CHANCE = 50;
+	// NPCs
+	private static final int CEMA = 30834;
+	private static final int ICARUS = 30835;
+	private static final int MARSHA = 30934;
+	private static final int TRUMPIN = 30935; 
+
+	// Item
+	private static final int NEBULITE_ORB = 4364;
 	
-	public int[] ALLOWED_CLASSES =
-	{
-		11,
-		12,
-		13,
-		14,
-		26,
-		27,
-		28,
-		39,
-		40,
-		41
-	};
+	// Rewards
+	private static final int TOWER_SHIELD = 103;
+	private static final int NECKLACE_OF_MAGIC = 118;
+	private static final int SAGE_BLOOD = 316;
+	private static final int SQUARE_SHIELD = 630;
+	private static final int SCROLL_OF_ESCAPE = 736;
+	private static final int RING_OF_AGES = 885;
+	private static final int NECKLACE_OF_MERMAID = 917;
+	private static final int SCROLL_ENCHANT_WEAPON_C_GRADE = 951;
+	private static final int SCROLL_ENCHANT_WEAPON_D_GRADE = 955;
+	private static final int SPIRITSHOT_D_GRADE = 2510;
+	private static final int SPIRITSHOT_C_GRADE = 2511;
+	private static final int ECTOPLASM_LIQUEUR = 4365;
 	
-	public int[] MOBS = new int[]
+	private static final Map<Integer, IntIntHolder> DROPDATA = new HashMap<>();
 	{
-		20563,
-		20564,
-		20565,
-		20566
-	};
-		
+		DROPDATA.put(20563, new IntIntHolder(630000, 12));
+		DROPDATA.put(20564, new IntIntHolder(630000, 12));
+		DROPDATA.put(20565, new IntIntHolder(650000, 12));
+		DROPDATA.put(20566, new IntIntHolder(680000, 13));
+	}
+	
 	public Q343_UnderTheShadowOfTheIvoryTower()
 	{
 		super(343, qn, "Under the Shadow of the Ivory Tower");		
-		setItemsIds(4364);
+		setItemsIds(NEBULITE_ORB);
 		
-		addStartNpc(30834);
-		addTalkId(30834, 30835, 30934, 30935);
-		
-		for (int i : MOBS)
-		{
-			addKillId(i);
-		}		
+		addStartNpc(CEMA);
+		addTalkId(CEMA, ICARUS, MARSHA, TRUMPIN);
+
+		for (int npcId : DROPDATA.keySet())
+			addKillId(npcId);
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
 		String htmltext = event;
-		final QuestState st = player.getQuestState(qn);
-		
+		QuestState st = player.getQuestState(qn);
 		if (st == null)
 			return htmltext;
 		
-		final int random1 = Rnd.get(3);
-		final int random2 = Rnd.get(2);
-		final int orbs = st.getQuestItemsCount(4364);
-		
-		if ("30834-03.htm".equalsIgnoreCase(event))
+		if (event.equalsIgnoreCase("30834-05.htm"))
 		{
 			st.setState(STATE_STARTED);
 			st.set("cond", "1");
+			st.set("memoState", "1");
+			st.set("memoStateEx", "0");
 			st.playSound(QuestState.SOUND_ACCEPT);
 		}
-		else if ("30834-08.htm".equalsIgnoreCase(event))
+		else if (event.equalsIgnoreCase("30834-08.htm"))
 		{
-			if (orbs > 0)
+			if (st.hasQuestItems(NEBULITE_ORB))
 			{
-				st.giveItems(57, orbs * 120);
-				st.takeItems(4364, -1);
+				final int count = st.getQuestItemsCount(NEBULITE_ORB) * 120;
+				
+				st.takeItems(NEBULITE_ORB, -1);
+				st.giveItems(57, count);
 			}
 			else
-				htmltext = "30834-08.htm";
+				htmltext = "30834-08a.htm";
 		}
-		else if ("30834-09.htm".equalsIgnoreCase(event))
+		else if (event.equalsIgnoreCase("30834-11.htm"))
 		{
-			st.playSound(QuestState.SOUND_FINISH);
+			st.playSound(QuestState.SOUND_GIVEUP);
 			st.exitQuest(true);
 		}
-		else if ("30934-02.htm".equalsIgnoreCase(event) || "30934-03.htm".equalsIgnoreCase(event))
+		else if (event.equalsIgnoreCase("30835-02.htm"))
 		{
-			if (orbs < 10)
-				htmltext = "noorbs.htm";
-			else if ("30934-03.htm".equalsIgnoreCase(event))
+			if (st.hasQuestItems(ECTOPLASM_LIQUEUR))
 			{
-				if (orbs >= 10)
-				{
-					st.takeItems(4364, 10);
-					st.set("playing", "1");
-				}
+				htmltext = "30835-03.htm";
+				st.takeItems(ECTOPLASM_LIQUEUR, 1);
+				
+				final int chance = Rnd.get(1000);
+				if (chance < 120)
+					st.giveItems(SCROLL_ENCHANT_WEAPON_D_GRADE, 1);
+				else if (chance < 170)
+					st.giveItems(SCROLL_ENCHANT_WEAPON_C_GRADE, 1);
+				else if (chance < 330)
+					st.giveItems(SPIRITSHOT_C_GRADE, Rnd.get(200) + 401);
+				else if (chance < 560)
+					st.giveItems(SPIRITSHOT_D_GRADE, Rnd.get(200) + 401);
+				else if (chance < 562)
+					st.giveItems(SAGE_BLOOD, 1);
+				else if (chance < 579)
+					st.giveItems(SQUARE_SHIELD, 1);
+				else if (chance < 580)
+					st.giveItems(NECKLACE_OF_MAGIC, 1);
+				else if (chance < 582)
+					st.giveItems(RING_OF_AGES, 1);
+				else if (chance < 583)
+					st.giveItems(TOWER_SHIELD, 1);
+				else if (chance < 585)
+					st.giveItems(NECKLACE_OF_MERMAID, 1);
 				else
-					htmltext = "noorbs.htm";
+					st.giveItems(SCROLL_OF_ESCAPE, 1);
 			}
 		}
-		else if ("30934-04.htm".equalsIgnoreCase(event))
+		else if (event.equalsIgnoreCase("30934-05.htm"))
 		{
-			if (st.getInt("playing") > 0)
+			if (st.getInt("memoState") == 1)
 			{
-				switch (random1)
+				final int memoStateEx = st.getInt("memoStateEx");
+				if (memoStateEx >= 1 && memoStateEx < 25)
 				{
-					case 0:
-					{
-						htmltext = "30934-05.htm";
-						st.giveItems(4364, 10);
-						break;
-					}
-					case 1:
-					{
+					if (st.getQuestItemsCount(NEBULITE_ORB) < 10)
 						htmltext = "30934-06.htm";
-						break;
-					}
-					default:
-					{
-						htmltext = "30934-04.htm";
-						st.giveItems(4364, 20);
-						break;
-					}
-				}
-				st.unset("playing");
-			}
-			else
-			{
-				htmltext = "Player is cheating";
-				st.takeItems(4364, -1);
-				st.exitQuest(true);
-			}
-		}
-		else if ("30934-05.htm".equalsIgnoreCase(event))
-		{
-			if (st.getInt("playing") > 0)
-			{
-				switch (random1)
-				{
-					case 0:
-						htmltext = "30934-04.htm";
-						st.giveItems(4364, 20);
-						break;
-					case 1:
-						htmltext = "30934-05.htm";
-						st.giveItems(4364, 10);
-						break;
-					default:
-						htmltext = "30934-06.htm";
-						break;
-				}
-				st.unset("playing");
-			}
-			else
-			{
-				htmltext = "Player is cheating";
-				st.takeItems(4364, -1);
-				st.exitQuest(true);
-			}
-		}
-		else if ("30934-06.htm".equalsIgnoreCase(event))
-		{
-			if (st.getInt("playing") > 0)
-			{
-				switch (random1)
-				{
-					case 0:
-						htmltext = "30934-04.htm";
-						st.giveItems(4364, 20);
-						break;
-					case 1:
-						htmltext = "30934-06.htm";
-						break;
-					default:
-						htmltext = "30934-05.htm";
-						st.giveItems(4364, 10);
-						break;
-				}
-				st.unset("playing");
-			}
-			else
-			{
-				htmltext = "Player is cheating";
-				st.takeItems(4364, -1);
-				st.exitQuest(true);
-			}
-		}
-		else if ("30935-02.htm".equalsIgnoreCase(event) || "30935-03.htm".equalsIgnoreCase(event))
-		{
-			st.unset("toss");
-			if (orbs < 10)
-				htmltext = "noorbs.htm";
-		}
-		else if ("30935-05.htm".equalsIgnoreCase(event))
-		{
-			if (orbs >= 10)
-			{
-				if (random2 == 0)
-				{
-					final int toss = st.getInt("toss");
-					if (toss == 4)
-					{
-						st.unset("toss");
-						st.giveItems(4364, 150);
-						htmltext = "30935-07.htm";
-					}
 					else
 					{
-						st.set("toss", String.valueOf(toss + 1));
-						htmltext = "30935-04.htm";
+						st.set("memoState", "2");
+						st.takeItems(NEBULITE_ORB, 10);
+						htmltext = "30934-07.htm";
 					}
 				}
-				else
-				{
-					st.unset("toss");
-					st.takeItems(4364, 10);
-				}
-			}
-			else
-			{
-				htmltext = "noorbs.htm";
 			}
 		}
-		else if ("30935-06.htm".equalsIgnoreCase(event))
+		else if (event.equalsIgnoreCase("30934-08a.htm"))
 		{
-			if (orbs >= 10)
+			if (st.getInt("memoState") == 2)
 			{
-				final int toss = st.getInt("toss");
-				st.unset("toss");
-				switch (toss)
-				{
-					case 1:
-						st.giveItems(4364, 10);
-						break;
-					case 2:
-						st.giveItems(4364, 30);
-						break;
-					case 3:
-						st.giveItems(4364, 70);
-						break;
-					case 4:
-						st.giveItems(4364, 150);
-						break;
-				}
-			}
-			else
-			{
-				htmltext = "noorbs.htm";
-			}
-		}
-		else if ("30835-02.htm".equalsIgnoreCase(event))
-		{
-			if (st.getQuestItemsCount(4365) > 0)
-			{
-				st.takeItems(4365, 1);
-				final int random3 = Rnd.get(1000);
+				final int i0 = Rnd.get(100);
+				final int i1 = Rnd.get(3);
 				
-				if (random3 <= 119)
-					st.giveItems(955, 1);
-				else if (random3 <= 169)
-					st.giveItems(951, 1);
-				else if (random3 <= 329)
-					st.giveItems(2511, (Rnd.get(200) + 401));
-				else if (random3 <= 559)
-					st.giveItems(2510, (Rnd.get(200) + 401));
-				else if (random3 <= 561)
-					st.giveItems(316, 1);
-				else if (random3 <= 578)
-					st.giveItems(630, 1);
-				else if (random3 <= 579)
-					st.giveItems(188, 1);
-				else if (random3 <= 581)
-					st.giveItems(885, 1);
-				else if (random3 <= 582)
-					st.giveItems(103, 1);
-				else if (random3 <= 584)
-					st.giveItems(917, 1);
+				if (i0 < 20)
+				{
+					if (i1 == 0)
+						st.set("param1", "0");
+					else if (i1 == 1)
+					{
+						st.set("param1", "1");
+						htmltext = "30934-08b.htm";
+					}
+					else if (i1 == 2)
+					{
+						st.set("param1", "2");
+						htmltext = "30934-08c.htm";
+					}
+					st.set("memoStateEx", String.valueOf(st.getInt("memoStateEx") + 4));
+				}
+				else if (i0 < 50)
+				{
+					if (i1 == 0)
+					{
+						htmltext = "30934-09a.htm";
+						st.set("param1", (Rnd.nextBoolean()) ? "0" : "1");
+					}
+					else if (i1 == 1)
+					{
+						htmltext = "30934-09b.htm";
+						st.set("param1", (Rnd.nextBoolean()) ? "1" : "2");
+					}
+					else if (i1 == 2)
+					{
+						htmltext = "30934-09c.htm";
+						st.set("param1", (Rnd.nextBoolean()) ? "2" : "0");
+					}
+					st.set("memoStateEx", String.valueOf(st.getInt("memoStateEx") + 4));
+				}
 				else
-					st.giveItems(736, 1);
+				{
+					htmltext = "30934-10.htm";
+					st.set("param1", String.valueOf(i1));
+				}
+			}
+		}
+		else if (event.equalsIgnoreCase("30934-11a.htm"))
+		{
+			if (st.getInt("memoState") == 2)
+			{
+				final int param1 = st.getInt("param1");
+				if (param1 == 0)
+				{
+					st.giveItems(NEBULITE_ORB, 10);
+					st.set("param1", "4");
+				}
+				else if (param1 == 1)
+					htmltext = "30934-11b.htm";
+				else if (param1 == 2)
+				{
+					st.giveItems(NEBULITE_ORB, 20);
+					st.set("param1", "4");
+					htmltext = "30934-11c.htm";
+				}
+				st.set("memoState", "1");
+			}
+		}
+		else if (event.equalsIgnoreCase("30934-12a.htm"))
+		{
+			if (st.getInt("memoState") == 2)
+			{
+				final int param1 = st.getInt("param1");
+				if (param1 == 0)
+				{
+					st.giveItems(NEBULITE_ORB, 20);
+					st.set("param1", "4");
+				}
+				else if (param1 == 1)
+				{
+					st.giveItems(NEBULITE_ORB, 10);
+					st.set("param1", "4");
+					htmltext = "30934-12b.htm";
+				}
+				else if (param1 == 2)
+					htmltext = "30934-12c.htm";
+				
+				st.set("memoState", "1");
+			}
+		}
+		else if (event.equalsIgnoreCase("30934-13a.htm"))
+		{
+			if (st.getInt("memoState") == 2)
+			{
+				final int param1 = st.getInt("param1");
+				if (param1 == 0)
+					htmltext = event;
+				else if (param1 == 1)
+				{
+					st.giveItems(NEBULITE_ORB, 20);
+					st.set("param1", "4");
+					htmltext = "30934-13b.htm";
+				}
+				else if (param1 == 2)
+				{
+					st.giveItems(NEBULITE_ORB, 10);
+					st.set("param1", "4");
+					htmltext = "30934-13c.htm";
+				}
+				st.set("memoState", "1");
+			}
+		}
+		else if (event.equalsIgnoreCase("30935-03.htm"))
+		{
+			if (st.getQuestItemsCount(NEBULITE_ORB) >= 10)
+			{
+				st.set("param2", String.valueOf(Rnd.get(2)));
+				htmltext = "30935-04.htm";
+			}
+		}
+		else if (event.equalsIgnoreCase("30935-05.htm"))
+		{
+			if (st.getQuestItemsCount(NEBULITE_ORB) >= 10)
+			{
+				final int param2 = st.getInt("param2");
+				if (param2 == 0)
+				{
+					final int param1 = st.getInt("param1");
+					if (param1 == 0)
+					{
+						st.set("param1", "1");
+						st.set("param2", "2");
+					}
+					else if (param1 == 1)
+					{
+						st.set("param1", "2");
+						st.set("param2", "2");
+						htmltext = "30935-05a.htm";
+					}
+					else if (param1 == 2)
+					{
+						st.set("param1", "3");
+						st.set("param2", "2");
+						htmltext = "30935-05b.htm";
+					}
+					else if (param1 == 3)
+					{
+						st.set("param1", "4");
+						st.set("param2", "2");
+						htmltext = "30935-05c.htm";
+					}
+					else if (param1 == 4)
+					{
+						st.set("param1", "0");
+						st.set("param2", "2");
+						st.giveItems(NEBULITE_ORB, 310);
+						htmltext = "30935-05d.htm";
+					}
+				}
+				else if (param2 == 1)
+				{
+					st.takeItems(NEBULITE_ORB, 10);
+					st.set("param1", "0");
+					st.set("param2", "2");
+					htmltext = "30935-06.htm";
+				}
 			}
 			else
-				htmltext = "30835-03.htm";
+				htmltext = "30935-03.htm";
+		}
+		else if (event.equalsIgnoreCase("30935-07.htm"))
+		{
+			if (st.getQuestItemsCount(NEBULITE_ORB) >= 10)
+			{
+				final int param2 = st.getInt("param2");
+				if (param2 == 0)
+				{
+					st.takeItems(NEBULITE_ORB, 10);
+					st.set("param1", "0");
+					st.set("param2", "2");
+				}
+				else if (param2 == 1)
+				{
+					final int param1 = st.getInt("param1");
+					if (param1 == 0)
+					{
+						st.set("param1", "1");
+						st.set("param2", "2");
+						htmltext = "30935-08.htm";
+					}
+					else if (param1 == 1)
+					{
+						st.set("param1", "2");
+						st.set("param2", "2");
+						htmltext = "30935-08a.htm";
+					}
+					else if (param1 == 2)
+					{
+						st.set("param1", "3");
+						st.set("param2", "2");
+						htmltext = "30935-08b.htm";
+					}
+					else if (param1 == 3)
+					{
+						st.set("param1", "4");
+						st.set("param2", "2");
+						htmltext = "30935-08c.htm";
+					}
+					else if (param1 == 4)
+					{
+						st.set("param1", "0");
+						st.set("param2", "2");
+						st.giveItems(NEBULITE_ORB, 310);
+						htmltext = "30935-08d.htm";
+					}
+				}
+			}
+			else
+				htmltext = "30935-03.htm";
+		}
+		else if (event.equalsIgnoreCase("30935-09.htm"))
+		{
+			final int param1 = st.getInt("param1");
+			if (param1 == 1)
+			{
+				st.set("param1", "0");
+				st.set("param2", "2");
+				st.giveItems(NEBULITE_ORB, 10);
+				htmltext = event;
+			}
+			else if (param1 == 2)
+			{
+				st.set("param1", "0");
+				st.set("param2", "2");
+				st.giveItems(NEBULITE_ORB, 30);
+				htmltext = "30935-09a.htm";
+			}
+			else if (param1 == 3)
+			{
+				st.set("param1", "0");
+				st.set("param2", "2");
+				st.giveItems(NEBULITE_ORB, 70);
+				htmltext = "30935-09b.htm";
+			}
+			else if (param1 == 4)
+			{
+				st.set("param1", "0");
+				st.set("param2", "2");
+				st.giveItems(NEBULITE_ORB, 150);
+				htmltext = "30935-09c.htm";
+			}
+		}
+		else if (event.equalsIgnoreCase("30935-10.htm"))
+		{
+			st.set("param1", "0");
+			st.set("param2", "2");
 		}
 		return htmltext;
 	}
-	
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		final QuestState st = player.getQuestState(qn);
+		QuestState st = player.getQuestState(qn);
 		String htmltext = getNoQuestMsg();
-		
 		if (st == null)
 			return htmltext;
 		
-		final int npcId = npc.getNpcId();
-		final int id = st.getState();
-		switch (npcId)
+		switch (st.getState())
 		{
-			case 30834:
-			{
-				if (id != 2)
+			case STATE_CREATED:
+				htmltext = (player.getClassId().getType() == ClassType.MYSTIC && player.getRace() != ClassRace.ORC) ? ((player.getLevel() < 40) ? "30834-02.htm" : "30834-03.htm") : "30834-01.htm";
+				break;
+			
+			case STATE_STARTED:
+				switch (npc.getNpcId())
 				{
-					for (int i : ALLOWED_CLASSES)
-					{
-						if ((st.getPlayer().getClassId().getId() == i) && (st.getPlayer().getLevel() >= 40))
-							htmltext = "30834-01.htm";
-					}
-					if (!"30834-01.htm".equals(htmltext))
-					{
-						htmltext = "30834-07.htm";
-						st.exitQuest(true);
-					}
+					case CEMA:
+						htmltext = (!st.hasQuestItems(NEBULITE_ORB)) ? "30834-06.htm" : "30834-07.htm";
+						break;
+					
+					case ICARUS:
+						htmltext = "30835-01.htm";
+						break;
+					
+					case MARSHA:
+						if (st.getInt("memoStateEx") == 0)
+						{
+							st.set("memoStateEx", "1");
+							htmltext = "30934-03.htm";
+						}
+						else
+						{
+							st.set("memoState", "1");
+							htmltext = "30934-04.htm";
+						}
+						break;
+					
+					case TRUMPIN:
+						st.set("param1", "0");
+						htmltext = "30935-01.htm";
+						break;
 				}
-				else if (st.getQuestItemsCount(4364) > 0)
-					htmltext = "30834-06.htm";
-				else
-					htmltext = "30834-05.htm";
 				break;
-			}
-			case 30835:
-			{
-				htmltext = "30835-01.htm";
-				break;
-			}
-			case 30934:
-			{
-				htmltext = "30934-01.htm";
-				break;
-			}
-			case 30935:
-			{
-				htmltext = "30935-01.htm";
-				break;
-			}
 		}
+		
 		return htmltext;
 	}
 	
@@ -346,15 +456,20 @@ public class Q343_UnderTheShadowOfTheIvoryTower extends Quest
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
 		final QuestState st = checkPlayerState(player, npc, STATE_STARTED);
-		
 		if (st == null)
 			return null;
 		
-		if (Rnd.get(100) < 50)
-		{
-			st.giveItems(4364, 1);
-			st.playSound(QuestState.SOUND_ITEMGET);
-		}
+		final IntIntHolder dropdata = DROPDATA.get(npc.getNpcId());
+		if (dropdata == null)
+			return null;
+		
+		st.dropItems(NEBULITE_ORB, 1, -1, dropdata.getId());		
+		st.playSound(QuestState.SOUND_ITEMGET);
+		
+		final int memoStateEx = st.getInt("memoStateEx");
+		if (memoStateEx > 1 && Rnd.get(100) <= dropdata.getValue())
+			st.set("memoStateEx", String.valueOf(memoStateEx - 1));
+		
 		return null;
 	}
 	

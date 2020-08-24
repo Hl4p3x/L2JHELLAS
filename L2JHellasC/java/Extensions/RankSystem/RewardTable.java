@@ -138,12 +138,11 @@ public class RewardTable
 			{
 				L2Skill skill = SkillTable.getInstance().getInfo(skillReward.getSkillId(), skillReward.getSkillLevel());
 				if (skill != null)
-				{
 					player.addSkill(skill, true);
-					// TODO check the skill list update.
-				}
 			}
 		}
+		
+		player.sendSkillList();
 	}
 	
 	public void giveReward(L2PcInstance player)

@@ -55,9 +55,7 @@ public abstract class L2Summon extends L2Playable
 	
 	private int _chargedSoulShot;
 	private int _chargedSpiritShot;
-	
-	// TODO: currently, all servitors use 1 shot. However, this value
-	// should vary depending on the servitor template (id and level)!
+
 	private final int _soulShotsPerHit = 1;
 	private final int _spiritShotsPerHit = 1;
 	protected boolean _showSummonAnimation;

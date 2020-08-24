@@ -8,6 +8,7 @@ import com.l2jhellas.gameserver.ai.NextAction;
 import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.enums.items.L2ArmorType;
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
+import com.l2jhellas.gameserver.enums.player.ChatType;
 import com.l2jhellas.gameserver.enums.player.StoreType;
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.handler.ItemHandler;
@@ -22,6 +23,7 @@ import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.PetItemList;
 import com.l2jhellas.gameserver.network.serverpackets.ShowCalculator;
@@ -53,6 +55,13 @@ public final class UseItem extends L2GameClientPacket
 		// Flood protect UseItem
 		if (!FloodProtectors.performAction(getClient(),Action.USE_ITEM))
 			return;
+		
+		if (activeChar.getAppearance().getInvisible())
+		{
+			activeChar.sendPacket(new CreatureSay(0, ChatType.GENERAL, "SYS", "You cannot do this action in hide mode."));
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 		
 		if (activeChar.getPrivateStoreType() != StoreType.NONE)
 		{
@@ -242,10 +251,7 @@ public final class UseItem extends L2GameClientPacket
 			sm = null;
 			return;
 		}
-		
-        if(activeChar.isSpawnProtected())
-        	activeChar.onActionRequest();
-        
+
 		if (item.isPetItem())
 		{
 			L2Summon summon = activeChar.getPet();

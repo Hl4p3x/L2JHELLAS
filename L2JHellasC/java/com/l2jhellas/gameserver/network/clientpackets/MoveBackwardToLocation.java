@@ -146,9 +146,6 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			double distance = Math.hypot(_targetX - activeChar.getX(), _targetY - activeChar.getY());
 			activeChar.SummonRotate(activeChar.getPet(), distance);
 		}	
-		
-		if(activeChar.isSpawnProtected())
-		   activeChar.onActionRequest();
 	}
 
 	@Override

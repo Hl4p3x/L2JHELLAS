@@ -8,7 +8,6 @@ import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.ClanHallManager;
-import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -22,42 +21,12 @@ import com.l2jhellas.gameserver.skills.SkillTable;
 public class ScrollOfEscape implements IItemHandler
 {
 	// all the items ids that this handler knowns
-	private static final int[] ITEM_IDS =
-	{
-		736,
-		1830,
-		1829,
-		1538,
-		3958,
-		5858,
-		5859,
-		7117,
-		7118,
-		7119,
-		7120,
-		7121,
-		7122,
-		7123,
-		7124,
-		7125,
-		7126,
-		7127,
-		7128,
-		7129,
-		7130,
-		7131,
-		7132,
-		7133,
-		7134,
-		7135,
-		7554,
-		7555,
-		7556,
-		7557,
-		7558,
-		7559,
-		7618,
-		7619
+	private static final int[] ITEM_IDS = 
+	{ 
+	  736, 1830, 1829, 1538, 3958, 5858,5859,7117,7118, 
+	  7119, 7120, 7121, 7122, 7123, 7124, 7125, 7126,
+	  7127, 7128, 7129, 7130, 7131, 7132, 7133, 7134, 
+	  7135, 7554, 7555,7556, 7557, 7558, 7559, 7618, 7619 
 	};
 	
 	@Override
@@ -115,11 +84,6 @@ public class ScrollOfEscape implements IItemHandler
 			return;
 		}
 		
-		// activeChar.abortCast();
-		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-		// SoE Animation section
-		activeChar.setTarget(activeChar);
-		
 		// Modified by Tempy - 28 Jul 05 \\
 		// Check if this is a blessed scroll, if it is then shorten the cast
 		// time.
@@ -129,22 +93,15 @@ public class ScrollOfEscape implements IItemHandler
 		if (!activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false))
 			return;
 		
+		activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 		activeChar.disableAllSkills();
-		
-		L2Object oldtarget = activeChar.getTarget();
 		activeChar.setTarget(activeChar);
 		
 		L2Skill skill = SkillTable.getInstance().getInfo(escapeSkill, 1);
-		MagicSkillUse msu = new MagicSkillUse(activeChar, escapeSkill, 1, skill.getHitTime(), 0);
-		activeChar.broadcastPacket(msu);
-		activeChar.setTarget(oldtarget);
-		SetupGauge sg = new SetupGauge(0, skill.getHitTime());
-		activeChar.sendPacket(sg);
-		// End SoE Animation section
-		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED);
-		sm.addItemName(itemId);
-		activeChar.sendPacket(sm);
+		activeChar.broadcastPacket(new MagicSkillUse(activeChar, escapeSkill, 1, skill.getHitTime(), 0));
+		activeChar.sendPacket(new SetupGauge(0, skill.getHitTime()));
+
+		activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_DISAPPEARED).addItemName(itemId));
 		
 		EscapeFinalizer ef = new EscapeFinalizer(activeChar, itemId);
 		// continue execution later

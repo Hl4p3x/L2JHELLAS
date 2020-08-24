@@ -31,12 +31,7 @@ public class SpecialXMas implements IItemHandler
 		}
 		
 		if (itemId == 5555)
-		{
-			ShowXMasSeal SXS = new ShowXMasSeal(5555);
-			activeChar.sendPacket(SXS);
-			SXS = null;
-		}
-		activeChar = null;
+			activeChar.sendPacket(new ShowXMasSeal(5555));
 	}
 	
 	@Override

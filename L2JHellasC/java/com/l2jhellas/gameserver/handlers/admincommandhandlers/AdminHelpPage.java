@@ -37,9 +37,7 @@ public class AdminHelpPage implements IAdminCommandHandler
 	{
 		return ADMIN_COMMANDS;
 	}
-	
-	// FIXME: implement method to send html to player in L2PcInstance directly
-	// PUBLIC & STATIC so other classes from package can include it directly
+
 	public static void showHelpPage(L2PcInstance targetChar, String filename)
 	{
 		String content = HtmCache.getInstance().getHtm("data/html/admin/" + filename);

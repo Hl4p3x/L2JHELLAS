@@ -5,22 +5,21 @@ import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.model.quest.QuestState;
+import com.l2jhellas.gameserver.network.serverpackets.SocialAction;
 
 public class Q101_SwordOfSolidarity extends Quest
 {
 	private static final String qn = "Q101_SwordOfSolidarity";
 	
-	// NPCs
 	private static final int ROIEN = 30008;
 	private static final int ALTRAN = 30283;
 	
-	// Items
 	private static final int BROKEN_SWORD_HANDLE = 739;
 	private static final int BROKEN_BLADE_BOTTOM = 740;
 	private static final int BROKEN_BLADE_TOP = 741;
-	private static final int ROIENS_LETTER = 796;
-	private static final int DIR_TO_RUINS = 937;
-	private static final int ALTRANS_NOTE = 742;
+	private static final int ROIEN_LETTER = 796;
+	private static final int DIRECTIONS_TO_RUINS = 937;
+	private static final int ALTRAN_NOTE = 742;
 	
 	private static final int SWORD_OF_SOLIDARITY = 738;
 	private static final int SPIRITSHOT_FOR_BEGINNERS = 5790;
@@ -34,9 +33,9 @@ public class Q101_SwordOfSolidarity extends Quest
 	
 	public Q101_SwordOfSolidarity()
 	{
-		super(101, qn, "Sword of Solidarity");
+		super(101, qn,"Sword of Solidarity");
 		
-		setItemsIds(BROKEN_SWORD_HANDLE, BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP, ALTRANS_NOTE, ROIENS_LETTER, DIR_TO_RUINS);
+		setItemsIds(BROKEN_SWORD_HANDLE, BROKEN_BLADE_BOTTOM, BROKEN_BLADE_TOP, ROIEN_LETTER, DIRECTIONS_TO_RUINS, ALTRAN_NOTE);
 		
 		addStartNpc(ROIEN);
 		addTalkId(ROIEN, ALTRAN);
@@ -57,14 +56,14 @@ public class Q101_SwordOfSolidarity extends Quest
 			st.setState(STATE_STARTED);
 			st.set("cond", "1");
 			st.playSound(QuestState.SOUND_ACCEPT);
-			st.giveItems(ROIENS_LETTER, 1);
+			st.giveItems(ROIEN_LETTER, 1);
 		}
 		else if (event.equalsIgnoreCase("30283-02.htm"))
 		{
 			st.set("cond", "2");
 			st.playSound(QuestState.SOUND_MIDDLE);
-			st.takeItems(ROIENS_LETTER, 1);
-			st.giveItems(DIR_TO_RUINS, 1);
+			st.takeItems(ROIEN_LETTER, 1);
+			st.giveItems(DIRECTIONS_TO_RUINS, 1);
 		}
 		else if (event.equalsIgnoreCase("30283-06.htm"))
 		{
@@ -92,6 +91,7 @@ public class Q101_SwordOfSolidarity extends Quest
 			st.giveItems(ECHO_SOLITUDE, 10);
 			st.giveItems(ECHO_FEAST, 10);
 			st.giveItems(ECHO_CELEBRATION, 10);
+			player.broadcastPacket(new SocialAction(player.getObjectId(), 3));
 			st.playSound(QuestState.SOUND_FINISH);
 			st.exitQuest(false);
 		}
@@ -102,10 +102,10 @@ public class Q101_SwordOfSolidarity extends Quest
 	@Override
 	public String onTalk(L2Npc npc, L2PcInstance player)
 	{
-		String htmltext = getNoQuestMsg();
 		QuestState st = player.getQuestState(qn);
+		String htmltext = getNoQuestMsg();
 		if (st == null)
-			return htmltext;
+			st = newQuestState(player);
 		
 		switch (st.getState())
 		{
@@ -116,8 +116,7 @@ public class Q101_SwordOfSolidarity extends Quest
 					htmltext = "30008-01.htm";
 				else
 					htmltext = "30008-02.htm";
-				break;
-			
+				break;			
 			case STATE_STARTED:
 				int cond = (st.getInt("cond"));
 				switch (npc.getNpcId())
@@ -134,7 +133,7 @@ public class Q101_SwordOfSolidarity extends Quest
 							htmltext = "30008-05.htm";
 							st.set("cond", "5");
 							st.playSound(QuestState.SOUND_MIDDLE);
-							st.takeItems(ALTRANS_NOTE, 1);
+							st.takeItems(ALTRAN_NOTE, 1);
 							st.giveItems(BROKEN_SWORD_HANDLE, 1);
 						}
 						else if (cond == 5)
@@ -151,10 +150,10 @@ public class Q101_SwordOfSolidarity extends Quest
 							htmltext = "30283-04.htm";
 							st.set("cond", "4");
 							st.playSound(QuestState.SOUND_MIDDLE);
-							st.takeItems(DIR_TO_RUINS, 1);
+							st.takeItems(DIRECTIONS_TO_RUINS, 1);
 							st.takeItems(BROKEN_BLADE_TOP, 1);
 							st.takeItems(BROKEN_BLADE_BOTTOM, 1);
-							st.giveItems(ALTRANS_NOTE, 1);
+							st.giveItems(ALTRAN_NOTE, 1);
 						}
 						else if (cond == 4)
 							htmltext = "30283-04a.htm";
@@ -175,13 +174,14 @@ public class Q101_SwordOfSolidarity extends Quest
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
 	{
-		QuestState st = checkPlayerCondition(player, npc, "cond", "2");
+		final QuestState st = checkPlayerCondition(player, npc, "cond", "2");
 		if (st == null)
 			return null;
 		
-		if (st.dropItems(BROKEN_BLADE_BOTTOM, 1, 1, 300000))
-			if (st.dropItems(BROKEN_BLADE_TOP, 1, 1, 300000))
-				st.set("cond", "3");
+		if (!st.hasQuestItems(BROKEN_BLADE_TOP))
+			st.dropItems(BROKEN_BLADE_TOP, 1, 1, 200000);
+		else if (st.dropItems(BROKEN_BLADE_BOTTOM, 1, 1, 200000))
+			st.set("cond", "3");
 		
 		return null;
 	}

@@ -98,8 +98,7 @@ public class AdminCreateItem implements IAdminCommandHandler
 		
 		if (all)
 		{
-			final Collection<L2PcInstance> players = L2World.getInstance().getAllPlayers().values().stream()
-			.filter(Objects::nonNull).collect(Collectors.toList());
+			final Collection<L2PcInstance> players = L2World.getInstance().getAllPlayers().values().stream().filter(Objects::nonNull).collect(Collectors.toList());
 			for (L2PcInstance player : players)
 			    player.getInventory().addItem("Admin", id, num, player,null);
 			

@@ -7,7 +7,6 @@ import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 import java.util.concurrent.Future;
 import java.util.logging.Logger;
 
-import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.model.L2Object;
@@ -329,7 +328,10 @@ public abstract class AbstractAI implements Ctrl
 			_moveToPawnTimeout += 1000 / GameTimeController.MILLIS_IN_TICK;		
 
 			if (pawn == null)
+			{
+				clientActionFailed();
 				return;
+			}
 			
 			if (_actor.isInsideRadius(pawn, offset, true,true))
 			{
@@ -417,10 +419,6 @@ public abstract class AbstractAI implements Ctrl
 
 	public void clientStartAutoAttack()
 	{		
-		// npcs should not get in combat if not attackable
-		if (_actor.isNpc() && !_actor.isAttackable())
-			return;
-		
 		if (!AttackStanceTaskManager.getInstance().isInAttackStance(_actor))
 		{
 			_actor.broadcastPacket(new AutoAttackStart(_actor.getObjectId()));
@@ -434,10 +432,6 @@ public abstract class AbstractAI implements Ctrl
 	
 	public void clientStopAutoAttack()
 	{		
-		// npcs should not get in combat if not attackable
-		if (_actor.isNpc() && !_actor.isAttackable())
-			return;
-		
 		if (AttackStanceTaskManager.getInstance().remove(_actor))
 		{
 			_actor.broadcastPacket(new AutoAttackStop(_actor.getObjectId()));
@@ -520,9 +514,7 @@ public abstract class AbstractAI implements Ctrl
 			}
 			catch (Throwable t)
 			{
-				_log.warning(AbstractAI.class.getName() + ": ");
-				if (Config.DEVELOPER)
-					t.printStackTrace();
+
 			}
 		}
 	}

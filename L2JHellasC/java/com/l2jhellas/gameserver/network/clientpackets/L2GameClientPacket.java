@@ -3,6 +3,7 @@ package com.l2jhellas.gameserver.network.clientpackets;
 import java.nio.BufferUnderflowException;
 import java.util.logging.Logger;
 
+import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.L2GameClient;
 import com.l2jhellas.gameserver.network.serverpackets.L2GameServerPacket;
 import com.l2jhellas.mmocore.network.ReceivablePacket;
@@ -44,6 +45,13 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 		try
 		{
 			runImpl();
+			
+			if (triggersOnActionRequest())
+			{
+				final L2PcInstance player = getClient().getActiveChar();
+				if (player != null && player.isSpawnProtected())
+					player.onActionRequest();
+			}
 		}
 		catch (Throwable t)
 		{
@@ -60,5 +68,10 @@ public abstract class L2GameClientPacket extends ReceivablePacket<L2GameClient>
 	protected final void sendPacket(L2GameServerPacket gsp)
 	{
 		getClient().sendPacket(gsp);
+	}
+	
+	protected boolean triggersOnActionRequest()
+	{
+		return true;
 	}
 }

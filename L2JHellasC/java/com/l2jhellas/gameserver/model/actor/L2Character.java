@@ -100,6 +100,8 @@ import com.l2jhellas.gameserver.templates.L2Armor;
 import com.l2jhellas.gameserver.templates.L2CharTemplate;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.gameserver.templates.L2Weapon;
+import com.l2jhellas.shield.antiflood.FloodProtectors;
+import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
 import com.l2jhellas.util.Broadcast;
 import com.l2jhellas.util.MathUtil;
 import com.l2jhellas.util.Rnd;
@@ -2748,13 +2750,8 @@ public abstract class L2Character extends L2Object
 			object = null;
 		
 		// If object==null, Cancel Attak or Cast
-		if (object == null)
-		{
-			if (_target != null)
-			{
-				broadcastPacket(new TargetUnselected(this));
-			}
-		}
+		if (object == null && _target != null)
+			broadcastPacket(new TargetUnselected(this));
 		
 		_target = object;
 	}
@@ -2780,6 +2777,9 @@ public abstract class L2Character extends L2Object
 	
 	public void moveToLocation(int x, int y, int z, int offset)
 	{
+		if (isPlayer() && !FloodProtectors.performAction(getActingPlayer().getClient(), Action.MOVE_ACTION))
+			return;
+		
 		final float speed = getStat().getMoveSpeed();
 		final boolean isFloating = isFlying() || isInsideZone(ZoneId.WATER);
 
@@ -2831,7 +2831,7 @@ public abstract class L2Character extends L2Object
 			
 			if (distance < 1 || distance - offset <= 0)
 			{
-				ThreadPoolManager.getInstance().executeAi(() -> getAI().notifyEvent(CtrlEvent.EVT_ARRIVED));
+				getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
 				return;
 			}
 			
@@ -2885,7 +2885,7 @@ public abstract class L2Character extends L2Object
 
 				if (curX < L2World.WORLD_X_MIN || curX > L2World.WORLD_X_MAX || curY < L2World.WORLD_Y_MIN || curY > L2World.WORLD_Y_MAX)
 				{
-					getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+					getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 
 					if (isPlayer())
 					{
@@ -2909,7 +2909,7 @@ public abstract class L2Character extends L2Object
 					if (isPlayer()|| (!(isPlayable()) && !(this instanceof L2MinionInstance) && Math.abs(z - curZ) > 140)
 					|| (this instanceof L2Summon && !((L2Summon) this).getFollowStatus()))
 					{			
-						getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
+						getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 						
 						if(isPlayer())
 							sendPacket(new ActionFailed());
@@ -2936,7 +2936,7 @@ public abstract class L2Character extends L2Object
 
 					dx = (x - curX);
 					dy = (y - curY);
-
+					
 					distance = verticalMovementOnly ? Math.pow(dz, 2) : Math.hypot(dx, dy);
 
 					sin = dy / distance;
@@ -3055,7 +3055,7 @@ public abstract class L2Character extends L2Object
 		
 		final boolean isFloating = isFlying() || isInsideZone(ZoneId.WATER);
 
-		if (Config.GEODATA && (Config.COORD_SYNCHRONIZE == 2) && !(this instanceof L2Vehicle) && !isFloating && !m.disregardingGeodata && ((GameTimeController.getInstance().getGameTicks() % 10) == 0))
+		if (Config.GEODATA && (Config.COORD_SYNCHRONIZE == 2) && !(this instanceof L2Vehicle) && !isFloating && !m.disregardingGeodata && ((GameTimeController.getInstance().getGameTicks() % 15) == 0))
 		{
 			int geoHeight = GeoEngine.getHeight(xPrev, yPrev, zPrev);
 			dz = m._zDestination - geoHeight;
@@ -3429,13 +3429,7 @@ public abstract class L2Character extends L2Object
 						int reflectedDamage = (int) (reflectPercent / 100. * damage);
 						damage -= reflectedDamage;
 						
-						if (reflectedDamage > target.getMaxHp()) // to prevent
-							// extreme
-							// damage
-							// when
-							// hitting a
-							// low lvl
-							// char...
+						if (reflectedDamage > target.getMaxHp()) 
 							reflectedDamage = target.getMaxHp();
 						
 						getStatus().reduceHp(reflectedDamage, target, true);
@@ -3499,12 +3493,9 @@ public abstract class L2Character extends L2Object
 			// ActionFailed packet
 			abortAttack();
 			
-			if (this instanceof L2PcInstance)
+			if (isPlayer())
 			{
-				// abortAttack
 				sendPacket(ActionFailed.STATIC_PACKET);
-				
-				// Send a system message
 				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACK_FAILED));
 			}
 		}
@@ -3519,10 +3510,8 @@ public abstract class L2Character extends L2Object
 			// MagicSkillCanceld/ActionFailed packet.
 			abortCast();
 			
-			if (this instanceof L2PcInstance)
-			{
+			if (isPlayer())
 				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CASTING_INTERRUPTED));
-			}
 		}
 	}
 	
