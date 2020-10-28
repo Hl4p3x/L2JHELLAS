@@ -31,6 +31,7 @@ public class L2Manor implements DocumentParser
 	@Override
 	public void load()
 	{
+		_seeds.clear();
 		parseFile(new File(PackRoot.DATAPACK_ROOT, "data/xml/seeds.xml"));	
 		_log.info("ManorManager: Loaded " + _seeds.size() + " seeds.");
 	}

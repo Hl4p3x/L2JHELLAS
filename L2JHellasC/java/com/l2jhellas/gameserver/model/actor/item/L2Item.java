@@ -45,9 +45,11 @@ public abstract class L2Item
 	public static final int SLOT_UNDERWEAR = 0x0001;
 	public static final int SLOT_R_EAR = 0x0002;
 	public static final int SLOT_L_EAR = 0x0004;
+	public static final int SLOT_LR_EAR = 0x00006;
 	public static final int SLOT_NECK = 0x0008;
 	public static final int SLOT_R_FINGER = 0x0010;
 	public static final int SLOT_L_FINGER = 0x0020;
+	public static final int SLOT_LR_FINGER = 0x0030;
 	public static final int SLOT_HEAD = 0x0040;
 	public static final int SLOT_R_HAND = 0x0080;
 	public static final int SLOT_L_HAND = 0x0100;
@@ -58,13 +60,19 @@ public abstract class L2Item
 	public static final int SLOT_BACK = 0x2000;
 	public static final int SLOT_LR_HAND = 0x4000;
 	public static final int SLOT_FULL_ARMOR = 0x8000;
-	public static final int SLOT_HAIR = 0x010000;
-	public static final int SLOT_WOLF = 0x020000;
-	public static final int SLOT_HATCHLING = 0x100000;
-	public static final int SLOT_STRIDER = 0x200000;
-	public static final int SLOT_BABYPET = 0x400000;
-	public static final int SLOT_FACE = 0x040000;
-	public static final int SLOT_DHAIR = 0x080000;
+	public static final int SLOT_FACE = 0x010000;
+	public static final int SLOT_ALLDRESS = 0x020000;
+	public static final int SLOT_HAIR = 0x040000;
+	public static final int SLOT_HAIRALL = 0x080000;
+	
+	public static final int SLOT_ALLWEAPON = SLOT_LR_HAND | SLOT_R_HAND;
+
+	public static final int SLOT_WOLF = -100;
+	public static final int SLOT_HATCHLING = -101;
+	public static final int SLOT_STRIDER = -102;
+	public static final int SLOT_BABYPET = -103;
+	
+	
 	
 	public static final int MATERIAL_STEEL = 0x00; // ??
 	public static final int MATERIAL_FINE_STEEL = 0x01; // ??
@@ -454,14 +462,12 @@ public abstract class L2Item
 		List<Integer> items = Config.OLY_RESTRICTED_ITEMS_LIST;
 		
 		for (L2ItemInstance i : activeChar.getActingPlayer().getInventory().getItems())
-		{
-			
+		{			
 			if (items.get(0).equals(i.getItemId()) || isHeroItem() && ((activeChar instanceof L2PcInstance) && activeChar.getActingPlayer().isInOlympiadMode()))
 			{				
 				activeChar.getActingPlayer().sendPacket(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
 				return false;
-			}
-			
+			}		
 		}
 		return true;
 	}

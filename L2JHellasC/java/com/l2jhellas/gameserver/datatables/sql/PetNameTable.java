@@ -31,23 +31,24 @@ public class PetNameTable
 	public boolean doesPetNameExist(String name, int petNpcId)
 	{
 		boolean result = true;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT name FROM pets p, items i WHERE p.item_obj_id = i.object_id AND name=? AND i.item_id IN (?)"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT name FROM pets p, items i WHERE p.item_obj_id = i.object_id AND name=? AND i.item_id IN (?)");
 			statement.setString(1, name);
 			
-
 			StringBuilder cond = new StringBuilder();
+			
 			if (!cond.toString().isEmpty())
 				cond.append(", ");
 			
 			cond.append(PetData.getPetItemsAsNpc(petNpcId));
 	
 			statement.setString(2, cond.toString());
-			ResultSet rset = statement.executeQuery();
-			result = rset.next();
-			rset.close();
-			statement.close();
+			
+			try(ResultSet rset = statement.executeQuery())
+			{
+				result = rset.next();
+			}
 		}
 		catch (SQLException e)
 		{

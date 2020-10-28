@@ -9,9 +9,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.Inventory;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
-import com.l2jhellas.gameserver.network.serverpackets.CharInfo;
-import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
-import com.l2jhellas.gameserver.network.serverpackets.UserInfo;
+import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.util.IllegalPlayerAction;
 import com.l2jhellas.util.Util;
 
@@ -75,13 +73,7 @@ public class AdminEnchant implements IAdminCommandHandler
 				armorType = Inventory.PAPERDOLL_UNDER;
 			else if (command.startsWith("admin_setba"))
 				armorType = Inventory.PAPERDOLL_BACK;
-			
-			if (armorType == Inventory.PAPERDOLL_NULL)
-			{
-				activeChar.sendMessage("Your target has no item equipted in your selected slot.");
-				armorType = -1;
-			}
-			
+
 			if ((armorType != -1))
 			{
 				try
@@ -115,6 +107,9 @@ public class AdminEnchant implements IAdminCommandHandler
 					activeChar.sendMessage("Please specify a valid new enchant value.");
 				}
 			}
+			else
+				activeChar.sendMessage("Your target has no item equipted in your selected slot.");
+			
 			// show the enchant menu after an action
 			showMainPage(activeChar);
 		}
@@ -137,12 +132,6 @@ public class AdminEnchant implements IAdminCommandHandler
 		L2ItemInstance parmorInstance = player.getInventory().getPaperdollItem(armorType);
 		if (parmorInstance != null && parmorInstance.getEquipSlot() == armorType)
 			itemInstance = parmorInstance;
-		else
-		{
-			parmorInstance = player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LRHAND);
-			if (parmorInstance != null && parmorInstance.getEquipSlot() == Inventory.PAPERDOLL_LRHAND)
-				itemInstance = parmorInstance;
-		}
 		
 		if (itemInstance == null)
 		{
@@ -150,16 +139,12 @@ public class AdminEnchant implements IAdminCommandHandler
 			return;
 		}
 		
-		player.getInventory().unEquipItemInSlotAndRecord(armorType);
 		curEnchant = itemInstance.getEnchantLevel();
 		itemInstance.setEnchantLevel(ench);
-		player.getInventory().equipItemAndRecord(itemInstance);
-		
-		InventoryUpdate iu = new InventoryUpdate();
-		iu.addModifiedItem(itemInstance);
-		player.sendPacket(iu);
-		player.broadcastPacket(new CharInfo(player));
-		player.sendPacket(new UserInfo(player));
+		itemInstance.updateDatabase();
+
+		player.sendPacket(new ItemList(player, false));		
+		player.broadcastUserInfo();
 		
 		activeChar.sendMessage("Changed enchantment of " + player.getName() + "'s " + itemInstance.getItem().getItemName() + " from " + curEnchant + " to " + ench + ".");
 		player.sendMessage("Admin has changed the enchantment of your " + itemInstance.getItem().getItemName() + " from " + curEnchant + " to " + ench + ".");

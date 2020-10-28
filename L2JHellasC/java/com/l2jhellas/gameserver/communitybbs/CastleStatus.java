@@ -1,74 +1,36 @@
 package com.l2jhellas.gameserver.communitybbs;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
-import com.l2jhellas.Config;
-import com.l2jhellas.util.database.L2DatabaseFactory;
+import com.l2jhellas.gameserver.datatables.sql.ClanTable;
+import com.l2jhellas.gameserver.instancemanager.CastleManager;
+import com.l2jhellas.gameserver.model.L2Clan;
 
 public class CastleStatus
 {
 	protected static final Logger _log = Logger.getLogger(CastleStatus.class.getName());
 	
-	private static final String SELECT_CLAN_DATA = "SELECT clan_name,clan_level FROM clan_data WHERE hasCastle=";
-	private static final String SELECT_CASTLE_DATA = "SELECT name,siegeDate,taxPercent FROM castle WHERE id=";
-	
 	private final StringBuilder _playerList = new StringBuilder();
 	
 	public CastleStatus()
 	{
-		loadFromDB();
+		loadCastle();
 	}
 	
-	private void loadFromDB()
-	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			for (int i = 1; i < 9; i++)
-			{
-				PreparedStatement statement = con.prepareStatement(SELECT_CLAN_DATA + i);
-				ResultSet result = statement.executeQuery();
-				
-				PreparedStatement statement2 = con.prepareStatement(SELECT_CASTLE_DATA + i);
-				ResultSet result2 = statement2.executeQuery();
-				
-				while (result.next())
-				{
-					String owner = result.getString("clan_name");
-					int level = result.getInt("clan_level");
-					
-					while (result2.next())
-					{
-						String name = result2.getString("name");
-						long someLong = result2.getLong("siegeDate");
-						int tax = result2.getInt("taxPercent");
-						Date anotherDate = new Date(someLong);
-						String DATE_FORMAT = "dd-MM-yyyy HH:mm";
-						SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-						
-						addCastleToList(name, owner, level, tax, sdf.format(anotherDate));
-					}
-
-				}
-							
-				result2.close();
-				statement2.close();
-				
-				result.close();
-				statement.close();
-			}
-		}
-		
-		catch (Exception e)
-		{
-			_log.warning(CastleStatus.class.getName() + ": Error loading db ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
-		}
+	private void loadCastle()
+	{		
+		CastleManager.getInstance().getCastles().forEach(castle ->
+		{		
+			List<L2Clan> CastleOwners = ClanTable.getInstance().getClans().stream().filter(Objects::nonNull).filter(clan -> clan.hasCastle() == castle.getCastleId()).collect(Collectors.toList());			
+			
+			CastleOwners.forEach(owner ->
+			{		
+				addCastleToList(castle.getName(),  owner.getLeaderName(), owner.getLevel(), castle.getTaxPercent(), castle.getSiegeDate().getTime().toString());
+			});	
+		});
 	}
 	
 	private void addCastleToList(String name, String owner, int level, int tax, String siegeDate)

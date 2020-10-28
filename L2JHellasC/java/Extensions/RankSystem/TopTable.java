@@ -162,7 +162,8 @@ public class TopTable
 		int KillPosition = 0;
 		int PointPosition = 0;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT char_name as name, base_class as base_class, level as level FROM characters WHERE " + RankLoader.CHAR_ID_COLUMN_NAME + " = ?"))
 		{
 			// for TopKillersTable:
 			for (int i = 1; i <= TOP_LIMIT; i++)
@@ -212,21 +213,17 @@ public class TopTable
 					tf.setTopPosition(KillPosition);
 					
 					// get character data:
-					PreparedStatement statement = con.prepareStatement("SELECT char_name as name, base_class as base_class, level as level FROM characters WHERE " + RankLoader.CHAR_ID_COLUMN_NAME + " = ?");
 					statement.setInt(1, bestKiller);
 					
-					ResultSet rset = statement.executeQuery();
-					
-					while (rset.next())
+					try(ResultSet rset = statement.executeQuery())
 					{
-						tf.setCharacterName(rset.getString("name"));
-						tf.setCharacterLevel(rset.getInt("level"));
-						tf.setCharacterBaseClassId(rset.getInt("base_class"));
+						while (rset.next())
+						{
+							tf.setCharacterName(rset.getString("name"));
+							tf.setCharacterLevel(rset.getInt("level"));
+							tf.setCharacterBaseClassId(rset.getInt("base_class"));
+						}
 					}
-					
-					rset.close();
-					statement.close();
-					
 					// add this killer on temporary top list:
 					tmpTopKillsTable.put(bestKiller, tf);
 				}
@@ -244,65 +241,61 @@ public class TopTable
 					tf.setTopPosition(PointPosition);
 					
 					// get character data:
-					PreparedStatement statement = con.prepareStatement("SELECT char_name as name, base_class as base_class, level as level FROM characters WHERE " + RankLoader.CHAR_ID_COLUMN_NAME + " = ?");
-					statement.setInt(1, bestGatherer);
-					
-					ResultSet rset = statement.executeQuery();
-					
-					while (rset.next())
+					try(PreparedStatement ps = con.prepareStatement("SELECT char_name as name, base_class as base_class, level as level FROM characters WHERE " + RankLoader.CHAR_ID_COLUMN_NAME + " = ?"))
 					{
-						tf.setCharacterName(rset.getString("name"));
-						tf.setCharacterLevel(rset.getInt("level"));
-						tf.setCharacterBaseClassId(rset.getInt("base_class"));
+						ps.setInt(1, bestGatherer);
+
+						try(ResultSet rset = ps.executeQuery())
+						{
+							while (rset.next())
+							{
+								tf.setCharacterName(rset.getString("name"));
+								tf.setCharacterLevel(rset.getInt("level"));
+								tf.setCharacterBaseClassId(rset.getInt("base_class"));
+							}
+						}
 					}
-					
-					rset.close();
-					statement.close();
-					
 					// add this gatherer on top list:
 					tmpTopGatherersTable.put(bestGatherer, tf);
-				}
-				
+				}			
 			}
 			
 			// TODO reorder the tmpTopKillsTable and tmpTopGatherersTable here, can be required in special situations.
-			
 			// add new top tables:
 			setTopKillsTable(tmpTopKillsTable);
 			setTopGatherersTable(tmpTopGatherersTable);
 
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_top_table");
-			
-			// clear Top Table:
-			statement.addBatch("DELETE FROM rank_pvp_system_top_table");
-			
-			// insert new Top Killers list:
-			for (Map.Entry<Integer, TopField> e : _topKillsTable.entrySet())
+			try(PreparedStatement ps = con.prepareStatement("SELECT * FROM rank_pvp_system_top_table"))
 			{
-				statement.addBatch("INSERT INTO rank_pvp_system_top_table (position, player_id, value, table_id) VALUES (" + e.getValue().getTopPosition() + "," + e.getValue().getCharacterId() + "," + e.getValue().getValue() + ",1)");
+				// clear Top Table:
+				ps.addBatch("DELETE FROM rank_pvp_system_top_table");
+
+				// insert new Top Killers list:
+				for (Map.Entry<Integer, TopField> e : _topKillsTable.entrySet())
+				{
+					ps.addBatch("INSERT INTO rank_pvp_system_top_table (position, player_id, value, table_id) VALUES (" + e.getValue().getTopPosition() + "," + e.getValue().getCharacterId() + "," + e.getValue().getValue() + ",1)");
+				}
+
+				// insert new Top Killers list:
+				for (Map.Entry<Integer, TopField> e : _topGatherersTable.entrySet())
+				{
+					ps.addBatch("INSERT INTO rank_pvp_system_top_table (position, player_id, value, table_id) VALUES (" + e.getValue().getTopPosition() + "," + e.getValue().getCharacterId() + "," + e.getValue().getValue() + ",2)");
+				}
+
+				ps.executeBatch();
+				ps.close();
 			}
-			
-			// insert new Top Killers list:
-			for (Map.Entry<Integer, TopField> e : _topGatherersTable.entrySet())
-			{
-				statement.addBatch("INSERT INTO rank_pvp_system_top_table (position, player_id, value, table_id) VALUES (" + e.getValue().getTopPosition() + "," + e.getValue().getCharacterId() + "," + e.getValue().getValue() + ",2)");
-			}
-			
-			statement.executeBatch();
-			statement.close();
-			
+
 			// save time of update in rank_pvp_system_options table:
 			long calendar = Calendar.getInstance().getTimeInMillis();
-			statement = con.prepareStatement("UPDATE rank_pvp_system_options SET option_value_long=? WHERE option_id=1");
-			statement.setLong(1, calendar);
+			try(PreparedStatement ps = con.prepareStatement("UPDATE rank_pvp_system_options SET option_value_long=? WHERE option_id=1"))
+			{
+				ps.setLong(1, calendar);
+				ps.execute();
+				_lastUpdateTime = calendar;
+			}
 			
-			statement.execute();
-			statement.close();
-			
-			_lastUpdateTime = calendar;
-			
-			ok = true;
-			
+			ok = true;	
 		}
 		catch (SQLException e)
 		{
@@ -328,31 +321,29 @@ public class TopTable
 		_topKillsTable.clear();
 		_topGatherersTable.clear();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT position, player_id, value, table_id, char_name as name, base_class as base_class, level as level FROM rank_pvp_system_top_table JOIN characters ON rank_pvp_system_top_table.player_id = characters." + RankLoader.CHAR_ID_COLUMN_NAME + " ORDER BY position"))
 		{
 			// get top killers:
-			PreparedStatement statement = con.prepareStatement("SELECT position, player_id, value, table_id, char_name as name, base_class as base_class, level as level FROM rank_pvp_system_top_table JOIN characters ON rank_pvp_system_top_table.player_id = characters." + RankLoader.CHAR_ID_COLUMN_NAME + " ORDER BY position");
-			ResultSet rset = statement.executeQuery();
-			
-			while (rset.next())
+			try(ResultSet rset = statement.executeQuery())
 			{
-				TopField tf = new TopField();
-				
-				tf.setCharacterId(rset.getInt("player_id"));
-				tf.setValue(rset.getLong("value"));
-				tf.setTopPosition(rset.getInt("position"));
-				tf.setCharacterName(rset.getString("name"));
-				tf.setCharacterLevel(rset.getInt("level"));
-				tf.setCharacterBaseClassId(rset.getInt("base_class"));
-				
-				if (rset.getInt("table_id") == 1)
-					_topKillsTable.put(rset.getInt("player_id"), tf);
-				else if (rset.getInt("table_id") == 2)
-					_topGatherersTable.put(rset.getInt("player_id"), tf);
+				while (rset.next())
+				{
+					TopField tf = new TopField();
+
+					tf.setCharacterId(rset.getInt("player_id"));
+					tf.setValue(rset.getLong("value"));
+					tf.setTopPosition(rset.getInt("position"));
+					tf.setCharacterName(rset.getString("name"));
+					tf.setCharacterLevel(rset.getInt("level"));
+					tf.setCharacterBaseClassId(rset.getInt("base_class"));
+
+					if (rset.getInt("table_id") == 1)
+						_topKillsTable.put(rset.getInt("player_id"), tf);
+					else if (rset.getInt("table_id") == 2)
+						_topGatherersTable.put(rset.getInt("player_id"), tf);
+				}
 			}
-			
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
@@ -362,19 +353,17 @@ public class TopTable
 	
 	private static void loadLastUpdate()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT option_value_long FROM rank_pvp_system_options WHERE option_id=1"))
 		{
 			// get top killers:
-			PreparedStatement statement = con.prepareStatement("SELECT option_value_long FROM rank_pvp_system_options WHERE option_id=1");
-			ResultSet rset = statement.executeQuery();
-			
-			while (rset.next())
+			try(ResultSet rset = statement.executeQuery())
 			{
-				_lastUpdateTime = (rset.getLong("option_value_long"));
+				while (rset.next())
+				{
+					_lastUpdateTime = (rset.getLong("option_value_long"));
+				}
 			}
-			
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{

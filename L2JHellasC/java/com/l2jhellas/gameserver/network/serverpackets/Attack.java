@@ -16,7 +16,6 @@ public class Attack extends L2GameServerPacket
 	private final boolean _soulshot;
 	private final int _ssGrade;
 	private final Location _attackerLoc;
-	private final Location _targetLoc;
 	private final List<Hit> _hits = new ArrayList<>();
 	
 	public Attack(L2Character attacker, L2Character target, boolean useShots, int ssGrade)
@@ -25,7 +24,6 @@ public class Attack extends L2GameServerPacket
 		_soulshot = useShots;
 		_ssGrade = ssGrade;
 		_attackerLoc = new Location(attacker.getX(), attacker.getY(), attacker.getZ());
-		_targetLoc = new Location(target.getX(), target.getY(), target.getZ());
 	}
 	
 	public void addHit(L2Character target, int damage, boolean miss, boolean crit, byte shld)
@@ -63,14 +61,13 @@ public class Attack extends L2GameServerPacket
 		writeD(_attackerLoc.getZ());
 		
 		writeH(_hits.size() - 1);
-		while (it.hasNext())
+		if(_hits.size() > 1)
 		{
-			writeHit(it.next());
+			while (it.hasNext())
+			{
+				writeHit(it.next());
+			}
 		}
-		
-		writeD(_targetLoc.getX());
-		writeD(_targetLoc.getY());
-		writeD(_targetLoc.getZ());
 	}
 	
 	@Override

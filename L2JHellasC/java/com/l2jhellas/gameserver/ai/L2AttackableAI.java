@@ -84,7 +84,7 @@ public class L2AttackableAI extends L2CharacterAI
 			if (player.isGM() && !player.getAccessLevel().canTakeAggro())
 				return false;
 
-			if (player.isRecentFakeDeath())
+			if (player.isRecentFakeDeath() || player.isDead())
 				return false;
 			
 			if (!(me.isRaid()) && !(me.canSeeThroughSilentMove()) && player.isSilentMoving())

@@ -10,6 +10,7 @@ import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.enums.items.L2ArmorType;
 import com.l2jhellas.gameserver.enums.player.ClassId;
+import com.l2jhellas.gameserver.enums.player.Position;
 import com.l2jhellas.gameserver.enums.skills.HeroSkills;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
@@ -1379,14 +1380,18 @@ public abstract class L2Skill
 					};
 				
 				int radius = getSkillRadius();
-				for (L2Object obj : L2World.getInstance().getVisibleObjects(activeChar, L2Object.class, radius))
+				for (L2Character obj : L2World.getInstance().getVisibleObjects(activeChar, L2Character.class, radius))
 				{
 					if (obj == null)
 						continue;
+					
 					if (!Util.checkIfInRange(radius, activeChar, obj, true))
 						continue;
 					
-					if (obj instanceof L2Attackable && obj != target)
+					final Position position = Position.getPosition(activeChar,obj);
+					final boolean isFront = position != Position.BACK;
+					
+					if (isFront && obj instanceof L2Attackable && obj != target)
 						targetList.add((L2Character) obj);
 					
 					if (targetList.size() == 0)
@@ -1396,8 +1401,6 @@ public abstract class L2Skill
 					}
 				}
 				return targetList.toArray(new L2Character[targetList.size()]);
-				// TODO multiface targets all around right now. need it to just get targets
-				// the character is facing.
 			}
 			case TARGET_PARTY:
 			{
@@ -1532,23 +1535,26 @@ public abstract class L2Skill
 					{
 						// Get all visible objects in a spheric area near the L2Character
 						// Get Clan Members
-						for (L2Object newTarget : L2World.getInstance().getVisibleObjects(activeChar, L2Object.class, radius))
+						for (L2PcInstance newTarget : L2World.getInstance().getVisibleObjects(activeChar, L2PcInstance.class, radius))
 						{
-							if (newTarget == null || !(newTarget instanceof L2PcInstance))
+							if (newTarget == null)
 								continue;
-							if ((((L2PcInstance) newTarget).getAllyId() == 0 || ((L2PcInstance) newTarget).getAllyId() != player.getAllyId()) && (((L2PcInstance) newTarget).getClan() == null || ((L2PcInstance) newTarget).getClanId() != player.getClanId()))
+							
+							if ((newTarget.getAllyId() == 0 || (newTarget.getAllyId() != player.getAllyId()) && newTarget.getClan() == null || newTarget.getClanId() != player.getClanId()))
 								continue;
+							
 							if (player.isInDuel() && (player.getDuelId() != ((L2PcInstance) newTarget).getDuelId() || (player.getParty() != null && !player.getParty().getPartyMembers().contains(newTarget))))
 								continue;
 
 							if (targetType == L2SkillTargetType.TARGET_CORPSE_ALLY)
 							{
-								if (!((L2PcInstance) newTarget).isDead())
+								if (!newTarget.isDead())
 									continue;
+								
 								if (getSkillType() == L2SkillType.RESURRECT)
 								{
 									// check target is not in a active siege zone
-									if (((L2PcInstance) newTarget).isInsideZone(ZoneId.SIEGE))
+									if (newTarget.isInsideZone(ZoneId.SIEGE))
 										continue;
 								}
 							}

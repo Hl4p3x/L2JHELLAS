@@ -10,7 +10,6 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
-import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.skills.SkillTable;
 
@@ -138,13 +137,7 @@ public class Potions implements IItemHandler
 			activeChar.sendPacket(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
 			return;
 		}
-		
-		if (activeChar.isAllSkillsDisabled())
-		{
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-		
+
 		if (!Config.ALLOW_POTS_IN_PVP)
 		{
 			if (activeChar.getPvpFlag() != 0)
@@ -449,9 +442,7 @@ public class Potions implements IItemHandler
 				// custom pot durations...
 				if (e.getTaskTime() > (e.getSkill().getBuffDuration() * 67) / 100000)
 					return true;
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE);
-				sm.addItemName(itemId);
-				activeChar.sendPacket(sm);
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE).addItemName(itemId));
 				return false;
 			}
 		}

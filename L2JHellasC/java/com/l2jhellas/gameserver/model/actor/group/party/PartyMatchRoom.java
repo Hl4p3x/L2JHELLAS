@@ -1,7 +1,7 @@
 package com.l2jhellas.gameserver.model.actor.group.party;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -18,7 +18,7 @@ public class PartyMatchRoom
 	private int _minlvl;
 	private int _maxlvl;
 	private int _maxmem;
-	private final List<L2PcInstance> _members = new ArrayList<>();
+	private final List<L2PcInstance> _members = new CopyOnWriteArrayList<>();
 	
 	public PartyMatchRoom(int id, String title, int loot, int minlvl, int maxlvl, int maxmem, L2PcInstance owner)
 	{
@@ -44,6 +44,9 @@ public class PartyMatchRoom
 	
 	public void deleteMember(L2PcInstance player)
 	{
+		if (player == null || !_members.contains(player))
+			return;
+		
 		if (player != getOwner())
 		{
 			_members.remove(player);
@@ -96,6 +99,11 @@ public class PartyMatchRoom
 	public L2PcInstance getOwner()
 	{
 		return _members.get(0);
+	}
+	
+	public boolean isFull()
+	{
+		return _members.size() >= getMaxMembers();
 	}
 	
 	public int getMembers()
@@ -161,5 +169,10 @@ public class PartyMatchRoom
 	public void setTitle(String title)
 	{
 		_title = title;
+	}
+	
+	public boolean allowToEnter(L2PcInstance player)
+	{
+		return player.getLevel() >= _minlvl && player.getLevel() <= _maxlvl && _members.size() < _maxmem;
 	}
 }

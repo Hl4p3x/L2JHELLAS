@@ -2364,4 +2364,15 @@ public class L2Clan
 	{
 		setReputationScore(_reputationScore - value);
 	}
+	
+	public boolean isSubPledgeLeader(String name)
+	{
+		for (SubPledge sp : getAllSubPledges())
+		{
+			if (sp.getLeaderName() == name)
+				return true;
+		}
+		
+		return false;
+	}
 }

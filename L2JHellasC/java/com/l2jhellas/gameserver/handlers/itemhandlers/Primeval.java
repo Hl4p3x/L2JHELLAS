@@ -29,17 +29,11 @@ public class Primeval implements IItemHandler
 		L2PcInstance activeChar;
 		
 		if (playable instanceof L2PcInstance)
-		{
 			activeChar = (L2PcInstance) playable;
-		}
 		else if (playable instanceof L2PetInstance)
-		{
 			activeChar = ((L2PetInstance) playable).getOwner();
-		}
 		else
-		{
 			return;
-		}
 		
 		if (activeChar.isInOlympiadMode())
 		{
@@ -53,26 +47,17 @@ public class Primeval implements IItemHandler
 			return;
 		}
 		
+		if (!activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false))
+			return;
+		
 		int itemId = item.getItemId();
-		L2Skill skill = null;
 		
-		switch (itemId)
-		{
-			case 8786:
-				skill = SkillTable.getInstance().getInfo(2305, 1);
-				break;
-			// Springant's Fruit need correct skill id (effect primeval potions is a temp fix).
-			case 8787:
-				skill = SkillTable.getInstance().getInfo(2305, 1);
-				break;
-			default:
-		}
-		
+		L2Skill skill = itemId == 8786 ? SkillTable.getInstance().getInfo(2305, 1) 
+		// Springant's Fruit need correct skill id (effect primeval potions is a temp fix).
+		: itemId == 8787 ? SkillTable.getInstance().getInfo(2305, 1) : null;	
+
 		if (skill != null)
-		{
 			activeChar.doCast(skill);
-			playable.destroyItem("Consume", item.getObjectId(), 1, null, false);
-		}
 	}
 	
 	@Override

@@ -149,37 +149,26 @@ public class CursedWeaponsManager
 	
 	private final void restore()
 	{
-		if (Config.DEBUG)
-			_log.config(CursedWeaponsManager.class.getName() + ": Restoring ... ");
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT itemId, playerId, playerKarma, playerPkKills, nbKills, endTime FROM cursed_weapons"))
 		{
 			// Retrieve the L2PcInstance from the characters table of the database
-			PreparedStatement statement = con.prepareStatement("SELECT itemId, playerId, playerKarma, playerPkKills, nbKills, endTime FROM cursed_weapons");
-			ResultSet rset = statement.executeQuery();
-			
-			if (rset.next())
+			try(ResultSet rset = statement.executeQuery())
 			{
-				int itemId = rset.getInt("itemId");
-				int playerId = rset.getInt("playerId");
-				int playerKarma = rset.getInt("playerKarma");
-				int playerPkKills = rset.getInt("playerPkKills");
-				int nbKills = rset.getInt("nbKills");
-				long endTime = rset.getLong("endTime");
-				
-				CursedWeapon cw = _cursedWeapons.get(itemId);
-				cw.setPlayerId(playerId);
-				cw.setPlayerKarma(playerKarma);
-				cw.setPlayerPkKills(playerPkKills);
-				cw.setNbKills(nbKills);
-				cw.setEndTime(endTime);
-				cw.reActivate();
+				while (rset.next())
+				{
+					CursedWeapon cw = _cursedWeapons.get(rset.getInt("itemId"));
+					if(cw != null)
+					{
+						cw.setPlayerId(rset.getInt("playerId"));
+						cw.setPlayerKarma(rset.getInt("playerKarma"));
+						cw.setPlayerPkKills(rset.getInt("playerPkKills"));
+						cw.setNbKills(rset.getInt("nbKills"));
+						cw.setEndTime(rset.getLong("endTime"));
+						cw.reActivate();
+					}
+				}
 			}
-			
-			rset.close();
-			statement.close();
-			
-			if (Config.DEBUG)
-				_log.config(CursedWeaponsManager.class.getName() + ": OK");
 		}
 		catch (Exception e)
 		{
@@ -192,9 +181,10 @@ public class CursedWeaponsManager
 	
 	private final void controlPlayers()
 	{
-		if (Config.DEBUG)
-			_log.config(CursedWeaponsManager.class.getName() + ": Checking players ... ");
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT owner_id FROM items WHERE item_id=?");
+		PreparedStatement statement1 = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
+		PreparedStatement statement2 = con.prepareStatement("UPDATE characters SET karma=?, pkkills=? WHERE obj_Id=?"))
 		{
 			for (CursedWeapon cw : _cursedWeapons.values())
 			{
@@ -203,29 +193,21 @@ public class CursedWeaponsManager
 				
 				// Do an item check to be sure that the cursed weapon isn't hold by someone
 				int itemId = cw.getItemId();
-				try
-				{
-					PreparedStatement statement = con.prepareStatement("SELECT owner_id FROM items WHERE item_id=?");
-					statement.setInt(1, itemId);
-					ResultSet rset = statement.executeQuery();
-					
-					if (rset.next())
+				statement.setInt(1, itemId);
+
+				try(ResultSet rset = statement.executeQuery())
+				{				
+					while (rset.next())
 					{
-						// A player has the cursed weapon in his inventory ...
-						int playerId = rset.getInt("owner_id");
-						_log.warning(CursedWeaponsManager.class.getSimpleName() + ": Player " + playerId + " owns the cursed weapon " + itemId + " but he shouldn't.");
-						
+						int playerId = rset.getInt("owner_id");						
 						// Delete the item
-						PreparedStatement statement1 = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
 						statement1.setInt(1, playerId);
 						statement1.setInt(2, itemId);
 						if (statement1.executeUpdate() != 1)
 						{
 							_log.warning(CursedWeaponsManager.class.getSimpleName() + ": Error while deleting cursed weapon " + itemId + " from userId " + playerId);
 						}
-						statement1.close();
 						// Restore the player's old karma and pk count
-						PreparedStatement statement2 = con.prepareStatement("UPDATE characters SET karma=?, pkkills=? WHERE obj_Id=?");
 						statement2.setInt(1, cw.getPlayerKarma());
 						statement2.setInt(2, cw.getPlayerPkKills());
 						statement2.setInt(3, playerId);
@@ -233,12 +215,9 @@ public class CursedWeaponsManager
 						{
 							_log.warning(CursedWeaponsManager.class.getSimpleName() + ": Error while updating karma & pkkills for userId " + cw.getPlayerId());
 						}
-						statement2.close();
 						// clean up the cursedweapons table.
 						removeFromDb(itemId);
 					}
-					rset.close();
-					statement.close();
 				}
 				catch (SQLException e)
 				{
@@ -334,26 +313,21 @@ public class CursedWeaponsManager
 				cw.setItem(player.getInventory().getItemByItemId(cw.getItemId()));
 				cw.giveSkill();
 				player.setCursedWeaponEquipedId(cw.getItemId());
-				
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S2_MINUTE_OF_USAGE_TIME_ARE_LEFT_FOR_S1);
-				sm.addString(cw.getName());
-				// sm.addItemName(cw.getItemId());
-				sm.addNumber((int) ((cw.getEndTime() - System.currentTimeMillis()) / 60000));
-				player.sendPacket(sm);
+
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S2_MINUTE_OF_USAGE_TIME_ARE_LEFT_FOR_S1)
+				.addString(cw.getName()).addNumber((int) ((cw.getEndTime() - System.currentTimeMillis()) / 60000)));
 			}
 		}
 	}
 	
 	public static void removeFromDb(int itemId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?"))
 		{
 			// Delete datas
-			PreparedStatement statement = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?");
 			statement.setInt(1, itemId);
-			statement.executeUpdate();
-			
-			statement.close();
+			statement.executeUpdate();		
 		}
 		catch (SQLException e)
 		{

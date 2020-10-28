@@ -1,17 +1,17 @@
 package com.l2jhellas.gameserver.model.actor.group.party;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 
 public class PartyMatchWaitingList
 {
-	private final List<L2PcInstance> _members;
+	private final List<L2PcInstance> _members = new CopyOnWriteArrayList<>();
 	
 	protected PartyMatchWaitingList()
 	{
-		_members = new ArrayList<>();
+		
 	}
 	
 	public void addPlayer(L2PcInstance player)

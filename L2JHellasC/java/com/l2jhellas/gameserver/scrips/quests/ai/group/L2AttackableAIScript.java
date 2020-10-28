@@ -56,7 +56,7 @@ public final class L2AttackableAIScript extends Quest
 		
 		if (skillAggroPoints > 0)
 		{
-			if (attackable.hasAI() && (attackable.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK))
+			if (!attackable.isDead() && attackable.hasAI() && (attackable.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK))
 			{
 				L2Object npcTarget = attackable.getTarget();
 				for (L2Object skillTarget : targets)

@@ -300,7 +300,7 @@ public class L2Spawn
 		int newlocy = getLocy();
 		int newlocz = getLocz();
 		
-		if (Config.GEODATA)
+		if (Config.GEODATA && !mob.isFlying())
 			newlocz = GeoEngine.getHeight(newlocx, newlocy, getLocz());
 		
 		if (Math.abs(newlocz - getLocz()) > 200)

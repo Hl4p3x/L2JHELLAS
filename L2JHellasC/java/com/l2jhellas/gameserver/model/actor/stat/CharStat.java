@@ -55,9 +55,7 @@ public class CharStat
 		// avoid some troubles with negative stats (some stats should never be
 		// negative)
 		if (env.value <= 0 && ((stat == Stats.MAX_HP) || (stat == Stats.MAX_MP) || (stat == Stats.MAX_CP) || (stat == Stats.MAGIC_DEFENCE) || (stat == Stats.POWER_DEFENCE) || (stat == Stats.POWER_ATTACK) || (stat == Stats.MAGIC_ATTACK) || (stat == Stats.POWER_ATTACK_SPEED) || (stat == Stats.MAGIC_ATTACK_SPEED) || (stat == Stats.SHIELD_DEFENCE) || (stat == Stats.STAT_CON) || (stat == Stats.STAT_DEX) || (stat == Stats.STAT_INT) || (stat == Stats.STAT_MEN) || (stat == Stats.STAT_STR) || (stat == Stats.STAT_WIT)))
-		{
-			env.value = 1;
-		}
+			env.value = 1.0;
 		
 		return env.value;
 	}
@@ -95,64 +93,39 @@ public class CharStat
 	public int getCriticalHit(L2Character target, L2Skill skill)
 	{
 		int criticalHit = (int) (calcStat(Stats.CRITICAL_RATE, _activeChar.getTemplate().baseCritRate, target, skill) * 10.0 + 0.5);
-		criticalHit /= 10;
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			criticalHit += BalanceLoad.Critical[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		// Set a cap of Critical Hit at 500
-		if (criticalHit > Config.MAX_PCRIT_RATE)
-			criticalHit = Config.MAX_PCRIT_RATE;
-		
-		return criticalHit;
+		criticalHit /= 10;		
+		return Math.min(criticalHit, Config.MAX_PCRIT_RATE);
 	}
 	
-	public final int getMCriticalHit(L2Character target, L2Skill skill)
+	public int getMCriticalHit(L2Character target, L2Skill skill)
 	{
 		int mrate = (int) calcStat(Stats.MCRITICAL_RATE, _activeChar.getTemplate().baseMCritRate, target, skill);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			mrate += BalanceLoad.MagicCritical[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		if (mrate > Config.MAX_MCRIT_RATE)
-			mrate = Config.MAX_MCRIT_RATE;
-		return mrate;
+		return Math.min(mrate,Config.MAX_MCRIT_RATE);
 	}
 	
 	public int getEvasionRate(L2Character target)
 	{
-		int val = (int) (calcStat(Stats.EVASION_RATE, 0, target, null) / _activeChar.getArmourExpertisePenalty());
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			val += BalanceLoad.Evasion[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return val;
+		return (int) (calcStat(Stats.EVASION_RATE, 0, target, null) / _activeChar.getArmourExpertisePenalty());
 	}
 	
 	public int getAccuracy()
 	{
-		int val = (int) calcStat(Stats.ACCURACY_COMBAT, 0, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			val += BalanceLoad.Accuracy[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return val;
+		return (int) calcStat(Stats.ACCURACY_COMBAT, 0, null, null);
 	}
 	
 	public int getMaxHp()
 	{
-		int val = (int) calcStat(Stats.MAX_HP, _activeChar.getTemplate().baseHpMax, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			val += BalanceLoad.HP[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return val;
+		return (int) calcStat(Stats.MAX_HP, _activeChar.getTemplate().baseHpMax, null, null);
 	}
 	
 	public int getMaxCp()
 	{
-		int val = (int) calcStat(Stats.MAX_CP, _activeChar.getTemplate().baseCpMax, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			val += BalanceLoad.CP[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return val;
+		return 0;
 	}
 	
 	public int getMaxMp()
 	{
-		int val = (int) calcStat(Stats.MAX_MP, _activeChar.getTemplate().baseMpMax, null, null);
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
-			val += BalanceLoad.MP[((L2PcInstance) _activeChar).getClassId().getId() - 88];
-		return val;
+		return (int) calcStat(Stats.MAX_MP, _activeChar.getTemplate().baseMpMax, null, null);
 	}
 	
 	@SuppressWarnings("incomplete-switch")

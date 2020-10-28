@@ -15,12 +15,10 @@ public class EffectCharge extends L2Effect
 	{
 		super(env, template);
 		numCharges = 1;
-		if (env.target instanceof L2PcInstance)
+		if (env.target.isPlayer())
 		{
 			env.target.sendPacket(new EtcStatusUpdate((L2PcInstance) env.target));
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1);
-			sm.addNumber(numCharges);
-			getEffected().sendPacket(sm);
+			getEffected().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FORCE_INCREASED_TO_S1).addNumber(numCharges));
 		}
 	}
 	

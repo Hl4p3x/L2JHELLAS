@@ -54,36 +54,33 @@ public class ClanHallManager
 	
 	private final void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM clanhall ORDER BY id"))
 		{
-			int id;
-			PreparedStatement statement;
-			ResultSet rs;
-			statement = con.prepareStatement("SELECT * FROM clanhall ORDER BY id");
-			rs = statement.executeQuery();
-			while (rs.next())
+			try(ResultSet rs = statement.executeQuery())
 			{
-				id = rs.getInt("id");
-				if (rs.getInt("ownerId") == 0)
-					_freeClanHall.put(id, new ClanHall(id, rs.getString("name"), rs.getInt("ownerId"), rs.getInt("lease"), rs.getString("desc"), rs.getString("location"), 0, rs.getInt("Grade"), rs.getBoolean("paid")));
-				else
+				while (rs.next())
 				{
-					if (ClanTable.getInstance().getClan(rs.getInt("ownerId")) != null)
-					{
-						_clanHall.put(id, new ClanHall(id, rs.getString("name"), rs.getInt("ownerId"), rs.getInt("lease"), rs.getString("desc"), rs.getString("location"), rs.getLong("paidUntil"), rs.getInt("Grade"), rs.getBoolean("paid")));
-						ClanTable.getInstance().getClan(rs.getInt("ownerId")).setHasHideout(id);
-					}
+					int id = rs.getInt("id");
+					if (rs.getInt("ownerId") == 0)
+						_freeClanHall.put(id, new ClanHall(id, rs.getString("name"), rs.getInt("ownerId"), rs.getInt("lease"), rs.getString("desc"), rs.getString("location"), 0, rs.getInt("Grade"), rs.getBoolean("paid")));
 					else
 					{
-						_freeClanHall.put(id, new ClanHall(id, rs.getString("name"), rs.getInt("ownerId"), rs.getInt("lease"), rs.getString("desc"), rs.getString("location"), rs.getLong("paidUntil"), rs.getInt("Grade"), rs.getBoolean("paid")));
-						_freeClanHall.get(id).free();
-						AuctionManager.getInstance().initNPC(id);
+						if (ClanTable.getInstance().getClan(rs.getInt("ownerId")) != null)
+						{
+							_clanHall.put(id, new ClanHall(id, rs.getString("name"), rs.getInt("ownerId"), rs.getInt("lease"), rs.getString("desc"), rs.getString("location"), rs.getLong("paidUntil"), rs.getInt("Grade"), rs.getBoolean("paid")));
+							ClanTable.getInstance().getClan(rs.getInt("ownerId")).setHasHideout(id);
+						}
+						else
+						{
+							_freeClanHall.put(id, new ClanHall(id, rs.getString("name"), rs.getInt("ownerId"), rs.getInt("lease"), rs.getString("desc"), rs.getString("location"), rs.getLong("paidUntil"), rs.getInt("Grade"), rs.getBoolean("paid")));
+							_freeClanHall.get(id).free();
+							AuctionManager.getInstance().initNPC(id);
+						}
 					}
-					
 				}
 			}
-			rs.close();
-			statement.close();
+
 			_log.info(ClanHallManager.class.getSimpleName() + ": Loaded: " + getClanHalls().size() + " taken clan halls.");
 			_log.info(ClanHallManager.class.getSimpleName() + ": Loaded: " + getFreeClanHalls().size() + " free clan halls.");
 			_loaded = true;

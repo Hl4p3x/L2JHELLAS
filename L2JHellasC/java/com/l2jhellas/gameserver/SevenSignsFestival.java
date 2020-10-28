@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,8 +48,7 @@ public class SevenSignsFestival
 
 	private static final String GET_CLAN_NAME = "SELECT clan_name FROM clan_data WHERE clan_id = (SELECT clanid FROM characters WHERE char_name = ?)";
 	private static final String SELECT_FEST = "SELECT festivalId, cabal, cycle, date, score, members FROM seven_signs_festival";
-	private static final String UPDATE_FEST = "UPDATE seven_signs_festival SET date=?, score=?, members=? WHERE cycle=? AND cabal=? AND festivalId=?";
-	private static final String INSERT_FEST = "INSERT INTO seven_signs_festival (festivalId, cabal, cycle, date, score, members) VALUES (?,?,?,?,?,?)";
+	private static final String UPDATE_FEST = "REPLACE INTO seven_signs_festival (festivalId, cabal, cycle, date, score, members) VALUES (?,?,?,?,?,?)";
 
 	public static final long FESTIVAL_SIGNUP_TIME = Config.ALT_FESTIVAL_CYCLE_LENGTH - Config.ALT_FESTIVAL_LENGTH - 60000;
 
@@ -818,196 +818,110 @@ public class SevenSignsFestival
 		// at the specified time, then invoke it automatically after every
 		// cycle.
 		FestivalManager fm = new FestivalManager();
-		setNextFestivalStart(
-				Config.ALT_FESTIVAL_MANAGER_START + FESTIVAL_SIGNUP_TIME);
-		_managerScheduledTask = ThreadPoolManager.getInstance()
-				.scheduleGeneralAtFixedRate(fm,
-						Config.ALT_FESTIVAL_MANAGER_START,
-						Config.ALT_FESTIVAL_CYCLE_LENGTH);
+		setNextFestivalStart(Config.ALT_FESTIVAL_MANAGER_START + FESTIVAL_SIGNUP_TIME);
+		_managerScheduledTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(fm,Config.ALT_FESTIVAL_MANAGER_START,Config.ALT_FESTIVAL_CYCLE_LENGTH);
 
-		_log.info(SevenSignsFestival.class.getSimpleName()
-				+ ": The first Festival of Darkness cycle begins in "
-				+ (Config.ALT_FESTIVAL_MANAGER_START / 60000) + " minute(s).");
+		_log.info(SevenSignsFestival.class.getSimpleName()+ ": The first Festival of Darkness cycle begins in " + (Config.ALT_FESTIVAL_MANAGER_START / 60000) + " minute(s).");
 	}
 
-	protected void restoreFestivalData()
+	protected void restoreFestivalData() 
 	{
-
-		if (Config.DEBUG)
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		Statement s = con.createStatement();
+		ResultSet rs = s.executeQuery(SELECT_FEST)) 
 		{
-			_log.info(SevenSignsFestival.class.getSimpleName()
-					+ ": Restoring festival data. Current SS Cycle: "
-					+ _signsCycle);
-		}
-
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement(SELECT_FEST);
-			ResultSet rset = statement.executeQuery();
-
-			while (rset.next())
+			while (rs.next()) 
 			{
-				int festivalCycle = rset.getInt("cycle");
-				int festivalId = rset.getInt("festivalId");
-				String cabal = rset.getString("cabal");
-
+				int festivalCycle = rs.getInt("cycle");
+				int festivalId = rs.getInt("festivalId");
+				String cabal = rs.getString("cabal");
+				
 				StatsSet festivalDat = new StatsSet();
 				festivalDat.set("festivalId", festivalId);
 				festivalDat.set("cabal", cabal);
 				festivalDat.set("cycle", festivalCycle);
-				festivalDat.set("date", rset.getString("date"));
-				festivalDat.set("score", rset.getInt("score"));
-				festivalDat.set("members", rset.getString("members"));
-
-				if (Config.DEBUG)
-				{
-					_log.config(SevenSignsFestival.class.getName()
-							+ ": Loaded data from DB for (Cycle = "
-							+ festivalCycle + ", Oracle = " + cabal
-							+ ", Festival = " + getFestivalName(festivalId));
-				}
-
+				festivalDat.set("date", rs.getString("date"));
+				festivalDat.set("score", rs.getInt("score"));
+				festivalDat.set("members", rs.getString("members"));
+				
 				if (cabal.equals("dawn"))
-				{
 					festivalId += FESTIVAL_COUNT;
-				}
-
-				Map<Integer, StatsSet> tempData = _festivalData
-						.get(festivalCycle);
-
-				if (tempData == null)
-				{
-					tempData = new HashMap<>();
-				}
-
+				
+				final Map<Integer, StatsSet> tempData = _festivalData.getOrDefault(festivalCycle, new HashMap<>());
 				tempData.put(festivalId, festivalDat);
 				_festivalData.put(festivalCycle, tempData);
 			}
-
-			rset.close();
-			statement.close();
-
-			String query = "SELECT festival_cycle, ";
-
-			for (int i = 0; i < FESTIVAL_COUNT - 1; i++)
+		} 
+		catch (SQLException e) 
+		{
+			_log.warning(SevenSignsFestival.class.getName() + " Failed to load configuration: ");
+			e.printStackTrace();
+		}
+		
+		StringBuilder query = new StringBuilder();
+		query.append("SELECT festival_cycle, ");
+		
+		for (int i = 0; i < (FESTIVAL_COUNT - 1); i++) 
+		{
+			query.append("accumulated_bonus");
+			query.append(i);
+			query.append(", ");
+		}
+		
+		query.append("accumulated_bonus");
+		query.append(FESTIVAL_COUNT - 1);
+		query.append(' ');
+		query.append("FROM seven_signs_status WHERE id=0");
+		
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		Statement s = con.createStatement();
+		ResultSet rs = s.executeQuery(query.toString())) 
+		{
+			while (rs.next()) 
 			{
-				query += "accumulated_bonus" + String.valueOf(i) + ", ";
-			}
-			query += "accumulated_bonus" + String.valueOf(FESTIVAL_COUNT - 1)
-					+ " ";
-			query += "FROM seven_signs_status WHERE id=0";
-
-			statement = con.prepareStatement(query);
-			rset = statement.executeQuery();
-
-			while (rset.next())
-			{
-				_festivalCycle = rset.getInt("festival_cycle");
-
+				_festivalCycle = rs.getInt("festival_cycle");
+				
 				for (int i = 0; i < FESTIVAL_COUNT; i++)
 				{
-					_accumulatedBonuses.add(i, rset
-							.getInt("accumulated_bonus" + String.valueOf(i)));
+					_accumulatedBonuses.add(i, rs.getInt("accumulated_bonus" + i));
 				}
 			}
-
-			rset.close();
-			statement.close();
-			if (Config.DEBUG)
-				_log.config(SevenSignsFestival.class.getName()
-						+ ": Loaded data from database.");
-		}
+		} 
 		catch (SQLException e)
 		{
-			_log.warning(SevenSignsFestival.class.getName()
-					+ " Failed to load configuration: ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			_log.warning(SevenSignsFestival.class.getName() + " Failed to load status: ");
+			e.printStackTrace();
 		}
 	}
-
-	public void saveFestivalData(boolean updateSettings)
+	
+	public void saveFestivalData(boolean updateSettings) 
 	{
-
-		if (Config.DEBUG)
-		{
-			_log.config(SevenSignsFestival.class.getName()
-					+ ": Saving festival data to disk.");
-		}
-
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement psInsert = con.prepareStatement(UPDATE_FEST))
 		{
 			for (Map<Integer, StatsSet> currCycleData : _festivalData.values())
 			{
 				for (StatsSet festivalDat : currCycleData.values())
 				{
-					int festivalCycle = festivalDat.getInteger("cycle");
-					int festivalId = festivalDat.getInteger("festivalId");
-					String cabal = festivalDat.getString("cabal");
-
-					// Try to update an existing record.
-					PreparedStatement statement = con
-							.prepareStatement(UPDATE_FEST);
-					statement.setLong(1,
-							Long.valueOf(festivalDat.getString("date")));
-					statement.setInt(2, festivalDat.getInteger("score"));
-					statement.setString(3, festivalDat.getString("members"));
-					statement.setInt(4, festivalCycle);
-					statement.setString(5, cabal);
-					statement.setInt(6, festivalId);
-
-					// If there was no record to update, assume it doesn't exist
-					// and add a new one,
-					// otherwise continue with the next record to store.
-					if (statement.executeUpdate() > 0)
-					{
-						if (Config.DEBUG)
-						{
-							_log.config(SevenSignsFestival.class.getName()
-									+ ": Updated data in DB (Cycle = "
-									+ festivalCycle + ", Cabal = " + cabal
-									+ ", FestID = " + festivalId + ")");
-						}
-
-						statement.close();
-						continue;
-					}
-
-					statement.close();
-					statement = con.prepareStatement(INSERT_FEST);
-					statement.setInt(1, festivalId);
-					statement.setString(2, cabal);
-					statement.setInt(3, festivalCycle);
-					statement.setLong(4,
-							Long.valueOf(festivalDat.getString("date")));
-					statement.setInt(5, festivalDat.getInteger("score"));
-					statement.setString(6, festivalDat.getString("members"));
-					statement.execute();
-					statement.close();
-
-					if (Config.DEBUG)
-					{
-						_log.config(SevenSignsFestival.class.getName()
-								+ ": Inserted data in DB (Cycle = "
-								+ festivalCycle + ", Cabal = " + cabal
-								+ ", FestID = " + festivalId + ")");
-					}
+					psInsert.setInt(1, festivalDat.getInteger("festivalId"));
+					psInsert.setString(2, festivalDat.getString("cabal"));
+					psInsert.setInt(3, festivalDat.getInteger("cycle"));
+					psInsert.setLong(4, Long.parseLong(festivalDat.getString("date")));
+					psInsert.setInt(5, festivalDat.getInteger("score"));
+					psInsert.setString(6, festivalDat.getString("members"));
+					psInsert.addBatch();
 				}
 			}
-			// Updates Seven Signs DB data also, so call only if really
-			// necessary.
-			if (updateSettings)
-			{
-				SevenSigns.getInstance().saveSevenSignsData(null, true);
-			}
+			psInsert.executeBatch();
 		}
-		catch (SQLException e)
+		catch (SQLException e) 
 		{
-			_log.warning(SevenSignsFestival.class.getName()
-					+ " Failed to save configuration: ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			_log.warning(SevenSignsFestival.class.getName() + " Failed to save configuration: ");
+			e.printStackTrace();
 		}
+		
+		if (updateSettings) 
+			SevenSigns.getInstance().saveSevenSignsData(null, true);
 	}
 
 	protected void rewardHighestRanked()
@@ -1065,20 +979,16 @@ public class SevenSignsFestival
 		}
 	}
 
-	private static void addReputationPointsForPartyMemberClan(
-			String partyMemberName)
+	private static void addReputationPointsForPartyMemberClan(String partyMemberName)
 	{
 		L2PcInstance player = L2World.getInstance().getPlayer(partyMemberName);
 		if (player != null)
 		{
 			if (player.getClan() != null)
 			{
-				player.getClan().setReputationScore(
-						player.getClan().getReputationScore() + 100, true);
-				player.getClan().broadcastToOnlineMembers(
-						new PledgeShowInfoUpdate(player.getClan()));
-				SystemMessage sm = SystemMessage.getSystemMessage(
-						SystemMessageId.CLAN_MEMBER_S1_WAS_IN_HIGHEST_RANKED_PARTY_IN_FESTIVAL_OF_DARKNESS_AND_GAINED_S2_REPUTATION);
+				player.getClan().setReputationScore(player.getClan().getReputationScore() + 100, true);
+				player.getClan().broadcastToOnlineMembers(new PledgeShowInfoUpdate(player.getClan()));
+				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBER_S1_WAS_IN_HIGHEST_RANKED_PARTY_IN_FESTIVAL_OF_DARKNESS_AND_GAINED_S2_REPUTATION);
 				sm.addString(partyMemberName);
 				sm.addNumber(100);
 				player.getClan().broadcastToOnlineMembers(sm);
@@ -1086,42 +996,34 @@ public class SevenSignsFestival
 		}
 		else
 		{
-			try (Connection con = L2DatabaseFactory.getInstance()
-					.getConnection())
+			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(GET_CLAN_NAME))
 			{
-				PreparedStatement statement = con
-						.prepareStatement(GET_CLAN_NAME);
 				statement.setString(1, partyMemberName);
-				ResultSet rset = statement.executeQuery();
-				if (rset.next())
+				try(ResultSet rset = statement.executeQuery())
 				{
-					String clanName = rset.getString("clan_name");
-					if (clanName != null)
+					if (rset.next())
 					{
-						L2Clan clan = ClanTable.getInstance()
-								.getClanByName(clanName);
-						if (clan != null)
+						String clanName = rset.getString("clan_name");
+						if (clanName != null)
 						{
-							clan.setReputationScore(
-									clan.getReputationScore() + 100, true);
-							clan.broadcastToOnlineMembers(
-									new PledgeShowInfoUpdate(clan));
-							SystemMessage sm = SystemMessage.getSystemMessage(
-									SystemMessageId.CLAN_MEMBER_S1_WAS_IN_HIGHEST_RANKED_PARTY_IN_FESTIVAL_OF_DARKNESS_AND_GAINED_S2_REPUTATION);
-							sm.addString(partyMemberName);
-							sm.addNumber(100);
-							clan.broadcastToOnlineMembers(sm);
+							L2Clan clan = ClanTable.getInstance().getClanByName(clanName);
+							if (clan != null)
+							{
+								clan.setReputationScore(clan.getReputationScore() + 100, true);
+								clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
+								SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CLAN_MEMBER_S1_WAS_IN_HIGHEST_RANKED_PARTY_IN_FESTIVAL_OF_DARKNESS_AND_GAINED_S2_REPUTATION);
+								sm.addString(partyMemberName);
+								sm.addNumber(100);
+								clan.broadcastToOnlineMembers(sm);
+							}
 						}
 					}
 				}
-				rset.close();
-				statement.close();
 			}
 			catch (SQLException e)
 			{
-				_log.warning(SevenSignsFestival.class.getName()
-						+ ": could not get clan name of " + partyMemberName
-						+ ": ");
+				_log.warning(SevenSignsFestival.class.getName()+ ": could not get clan name of " + partyMemberName+ ": ");
 				if (Config.DEVELOPER)
 					e.printStackTrace();
 			}

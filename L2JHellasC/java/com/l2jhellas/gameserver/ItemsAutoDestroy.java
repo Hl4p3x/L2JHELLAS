@@ -1,15 +1,15 @@
 package com.l2jhellas.gameserver;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 
 public class ItemsAutoDestroy
 {
-	protected List<L2ItemInstance> _items = new ArrayList<>();
-	
+	private final Set<L2ItemInstance> _items = ConcurrentHashMap.newKeySet();
+
 	protected ItemsAutoDestroy()
 	{
 		
@@ -21,13 +21,13 @@ public class ItemsAutoDestroy
 			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::removeItems,Config.AUTODESTROY_ITEM_AFTER,Config.AUTODESTROY_ITEM_AFTER);
 	}
 	
-	public synchronized void addItem(L2ItemInstance item)
+	public void addItem(L2ItemInstance item)
 	{
 		item.setDropTime(System.currentTimeMillis());
 		_items.add(item);
 	}
 	
-	public synchronized void removeItems()
+	public void removeItems()
 	{
 		if (_items.isEmpty())
 			return;

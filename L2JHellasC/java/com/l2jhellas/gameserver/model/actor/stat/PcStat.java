@@ -1,9 +1,8 @@
 package com.l2jhellas.gameserver.model.actor.stat;
 
-import java.util.logging.Logger;
-
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
+import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2ClassMasterInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -20,9 +19,7 @@ import com.l2jhellas.gameserver.skills.Stats;
 import Extensions.Balancer.BalanceLoad;
 
 public class PcStat extends PlayableStat
-{
-	private static Logger _log = Logger.getLogger(PcStat.class.getName());
-	
+{	
 	private int _oldMaxHp; // stats watch
 	private int _oldMaxMp; // stats watch
 	private int _oldMaxCp; // stats watch
@@ -146,20 +143,16 @@ public class PcStat extends PlayableStat
 		
 		if (levelIncreased)
 		{
-			QuestState qs = getActiveChar().getQuestState("255_Tutorial");
-			if (qs != null)
-				qs.getQuest().notifyEvent("CE40", null, getActiveChar());
-			
+			if(Config.ALLOW_TUTORIAL)
+			{
+				QuestState qs = getActiveChar().getQuestState("255_Tutorial");
+				if (qs != null)
+					qs.getQuest().notifyEvent("CE40", null, getActiveChar());
+			}
 			if (!Config.ALT_GAME_NEW_CHAR_ALWAYS_IS_NEWBIE)
 			{
 				if (getActiveChar().getLevel() >= 25 && getActiveChar().isNewbie())
-				{
 					getActiveChar().setNewbie(false);
-					if (Config.DEBUG)
-					{
-						_log.config(PcStat.class.getName() + ": Newbie character ended: " + getActiveChar().getCharId());
-					}
-				}
 			}
 			getActiveChar().setCurrentCp(getMaxCp());
 			getActiveChar().broadcastSocialActionInRadius(15);
@@ -194,16 +187,6 @@ public class PcStat extends PlayableStat
 		getActiveChar().sendPacket(new UserInfo(getActiveChar()));
 		
 		return levelIncreased;
-	}
-	
-	@Override
-	public int getEvasionRate(L2Character target)
-	{
-		int val = super.getEvasionRate(target);
-		
-		if (val > Config.ALT_MAX_EVASION && Config.ALT_MAX_EVASION > 0 && !getActiveChar().isGM())
-			return Config.ALT_MAX_EVASION;
-		return val;
 	}
 	
 	@Override
@@ -273,55 +256,54 @@ public class PcStat extends PlayableStat
 	@Override
 	public final int getMaxCp()
 	{
-		// Get the Max CP (base+modifier) of the L2PcInstance
-		int val = super.getMaxCp();
+		int val = (int) calcStat(Stats.MAX_CP, getActiveChar().getTemplate().baseCpMax, null, null);
+		
+		if (getActiveChar().getClassId().getId() >= 88)
+			val += BalanceLoad.CP[getActiveChar().getClassId().getId() - 88];
+		
 		if (val != _oldMaxCp)
 		{
 			_oldMaxCp = val;
 			
-			// Launch a regen task if the new Max CP is higher than the old one
 			if (getActiveChar().getStatus().getCurrentCp() != val)
-			{
-				getActiveChar().getStatus().setCurrentCp(getActiveChar().getStatus().getCurrentCp()); // trigger start of regeneration
-			}
+				getActiveChar().getStatus().setCurrentCp(getActiveChar().getStatus().getCurrentCp());
 		}
 		return val;
 	}
-	
+
 	@Override
 	public final int getMaxHp()
 	{
-		// Get the Max HP (base+modifier) of the L2PcInstance
 		int val = super.getMaxHp();
+		
+		if (getActiveChar().getClassId().getId() >= 88)
+			val += BalanceLoad.HP[getActiveChar().getClassId().getId() - 88];
+		
 		if (val != _oldMaxHp)
 		{
 			_oldMaxHp = val;
 			
-			// Launch a regeneration task if the new Max HP is higher than the old one
 			if (getActiveChar().getStatus().getCurrentHp() != val)
-			{
 				getActiveChar().getStatus().setCurrentHp(getActiveChar().getStatus().getCurrentHp()); // trigger start of regeneration
-			}
 		}
 		return val;
 	}
-	
+
 	@Override
 	public final int getMaxMp()
 	{
 		// Get the Max MP (base+modifier) of the L2PcInstance
 		int val = super.getMaxMp();
 		
+		if (getActiveChar().getClassId().getId() >= 88)
+			val += BalanceLoad.MP[getActiveChar().getClassId().getId() - 88];
+		
 		if (val != _oldMaxMp)
 		{
 			_oldMaxMp = val;
 			
-			// Launch a regeneration task if the new Max MP is higher than the old one
 			if (getActiveChar().getStatus().getCurrentMp() != val)
-			{
 				getActiveChar().getStatus().setCurrentMp(getActiveChar().getStatus().getCurrentMp());
-				// trigger start of regeneration
-			}
 		}
 		return val;
 	}
@@ -386,6 +368,46 @@ public class PcStat extends PlayableStat
 		if (getActiveChar().getClassId().getId() >= 88)
 			WIT += BalanceLoad.WIT[(getActiveChar()).getClassId().getId() - 88];
 		return WIT;
+	}
+	
+	@Override
+	public int getCriticalHit(L2Character target, L2Skill skill)
+	{
+		int val = super.getCriticalHit(target,skill);
+
+		if (getActiveChar().getClassId().getId() >= 88)
+			val += BalanceLoad.Critical[getActiveChar().getClassId().getId() - 88];
+
+		return Math.min(val, Config.MAX_PCRIT_RATE);
+	}
+	
+	@Override
+	public final int getMCriticalHit(L2Character target, L2Skill skill)
+	{
+		int val = super.getMCriticalHit(target,skill);
+
+		if (getActiveChar().getClassId().getId() >= 88)
+			val += BalanceLoad.MagicCritical[getActiveChar().getClassId().getId() - 88];
+		
+		return Math.min(val, Config.MAX_MCRIT_RATE);
+	}
+
+	@Override
+	public int getEvasionRate(L2Character target)
+	{
+		int val = super.getEvasionRate(target);
+		if (getActiveChar().getClassId().getId() >= 88)
+			val += BalanceLoad.Evasion[getActiveChar().getClassId().getId() - 88];
+		return Math.min(val, Config.ALT_MAX_EVASION);
+	}
+	
+	@Override
+	public int getAccuracy()
+	{
+		int val = super.getAccuracy();
+		if (getActiveChar().getClassId().getId() >= 88)
+			val += BalanceLoad.Accuracy[getActiveChar().getClassId().getId() - 88];
+		return val;
 	}
 	
 	@Override

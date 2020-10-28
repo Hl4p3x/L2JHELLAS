@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
 import com.l2jhellas.gameserver.enums.items.ItemLocation;
@@ -40,577 +39,95 @@ public class MercTicketManager
 	
 	private List<L2ItemInstance> _droppedTickets; // to keep track of items on the ground
 	
-	// TODO move all these values into siege.ini
 	// max tickets per merc type = 10 + (castleid * 2)?
 	// max ticker per castle = 40 + (castleid * 20)?
 	private static final int[] MAX_MERC_PER_TYPE =
-	{
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10, // Gludio
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15,
-		15, // Dion
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10, // Giran
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10,
-		10, // Oren
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20, // Aden
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20, // Innadril
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20, // Goddard
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20, // Rune
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20,
-		20
-	// Schuttgart
+	{10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+			10, // Gludio
+			15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
+			15, 15, 15, // Dion
+			10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+			10, 10, 10, // Giran
+			10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
+			10, 10, 10, // Oren
+			20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20,
+			20, 20, 20, // Aden
+			20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20,
+			20, 20, 20, // Innadril
+			20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20,
+			20, 20, 20, // Goddard
+			20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20,
+			20, 20, 20, // Rune
+			20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20,
+			20, 20, 20
+			// Schuttgart
 	};
 	private static final int[] MERCS_MAX_PER_CASTLE =
-	{
-		100, // Gludio
-		150, // Dion
-		200, // Giran
-		300, // Oren
-		400, // Aden
-		400, // Innadril
-		400, // Goddard
-		400, // Rune
-		400
-	// Schuttgart
+	{100, // Gludio
+			150, // Dion
+			200, // Giran
+			300, // Oren
+			400, // Aden
+			400, // Innadril
+			400, // Goddard
+			400, // Rune
+			400
+			// Schuttgart
 	};
-	
+
 	private static final int[] ITEM_IDS =
-	{
-		3960,
-		3961,
-		3962,
-		3963,
-		3964,
-		3965,
-		3966,
-		3967,
-		3968,
-		3969,
-		6038,
-		6039,
-		6040,
-		6041,
-		6042,
-		6043,
-		6044,
-		6045,
-		6046,
-		6047, // Gludio
-		3973,
-		3974,
-		3975,
-		3976,
-		3977,
-		3978,
-		3979,
-		3980,
-		3981,
-		3982,
-		6051,
-		6052,
-		6053,
-		6054,
-		6055,
-		6056,
-		6057,
-		6058,
-		6059,
-		6060, // Dion
-		3986,
-		3987,
-		3988,
-		3989,
-		3990,
-		3991,
-		3992,
-		3993,
-		3994,
-		3995,
-		6064,
-		6065,
-		6066,
-		6067,
-		6068,
-		6069,
-		6070,
-		6071,
-		6072,
-		6073, // Giran
-		3999,
-		4000,
-		4001,
-		4002,
-		4003,
-		4004,
-		4005,
-		4006,
-		4007,
-		4008,
-		6077,
-		6078,
-		6079,
-		6080,
-		6081,
-		6082,
-		6083,
-		6084,
-		6085,
-		6086, // Oren
-		4012,
-		4013,
-		4014,
-		4015,
-		4016,
-		4017,
-		4018,
-		4019,
-		4020,
-		4021,
-		6090,
-		6091,
-		6092,
-		6093,
-		6094,
-		6095,
-		6096,
-		6097,
-		6098,
-		6099, // Aden
-		5205,
-		5206,
-		5207,
-		5208,
-		5209,
-		5210,
-		5211,
-		5212,
-		5213,
-		5214,
-		6105,
-		6106,
-		6107,
-		6108,
-		6109,
-		6110,
-		6111,
-		6112,
-		6113,
-		6114, // Innadril
-		6779,
-		6780,
-		6781,
-		6782,
-		6783,
-		6784,
-		6785,
-		6786,
-		6787,
-		6788,
-		6792,
-		6793,
-		6794,
-		6795,
-		6796,
-		6797,
-		6798,
-		6799,
-		6800,
-		6801, // Goddard
-		7973,
-		7974,
-		7975,
-		7976,
-		7977,
-		7978,
-		7979,
-		7980,
-		7981,
-		7982,
-		7988,
-		7989,
-		7990,
-		7991,
-		7992,
-		7993,
-		7994,
-		7995,
-		7996,
-		7997, // Rune
-		7918,
-		7919,
-		7920,
-		7921,
-		7922,
-		7923,
-		7924,
-		7925,
-		7926,
-		7927,
-		7931,
-		7932,
-		7933,
-		7934,
-		7935,
-		7936,
-		7937,
-		7938,
-		7939,
-		7940
-	// Schuttgart
+	{3960, 3961, 3962, 3963, 3964, 3965, 3966, 3967, 3968, 3969, 6038, 6039,
+			6040, 6041, 6042, 6043, 6044, 6045, 6046, 6047, // Gludio
+			3973, 3974, 3975, 3976, 3977, 3978, 3979, 3980, 3981, 3982, 6051,
+			6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, // Dion
+			3986, 3987, 3988, 3989, 3990, 3991, 3992, 3993, 3994, 3995, 6064,
+			6065, 6066, 6067, 6068, 6069, 6070, 6071, 6072, 6073, // Giran
+			3999, 4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 6077,
+			6078, 6079, 6080, 6081, 6082, 6083, 6084, 6085, 6086, // Oren
+			4012, 4013, 4014, 4015, 4016, 4017, 4018, 4019, 4020, 4021, 6090,
+			6091, 6092, 6093, 6094, 6095, 6096, 6097, 6098, 6099, // Aden
+			5205, 5206, 5207, 5208, 5209, 5210, 5211, 5212, 5213, 5214, 6105,
+			6106, 6107, 6108, 6109, 6110, 6111, 6112, 6113, 6114, // Innadril
+			6779, 6780, 6781, 6782, 6783, 6784, 6785, 6786, 6787, 6788, 6792,
+			6793, 6794, 6795, 6796, 6797, 6798, 6799, 6800, 6801, // Goddard
+			7973, 7974, 7975, 7976, 7977, 7978, 7979, 7980, 7981, 7982, 7988,
+			7989, 7990, 7991, 7992, 7993, 7994, 7995, 7996, 7997, // Rune
+			7918, 7919, 7920, 7921, 7922, 7923, 7924, 7925, 7926, 7927, 7931,
+			7932, 7933, 7934, 7935, 7936, 7937, 7938, 7939, 7940
+			// Schuttgart
 	};
-	
+
 	private static final int[] NPC_IDS =
-	{
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039, // Gludio
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039, // Dion
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039, // Giran
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039, // Oren
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039, // Aden
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039, // Innadril
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039, // Goddard
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039, // Rune
-		35010,
-		35011,
-		35012,
-		35013,
-		35014,
-		35015,
-		35016,
-		35017,
-		35018,
-		35019,
-		35030,
-		35031,
-		35032,
-		35033,
-		35034,
-		35035,
-		35036,
-		35037,
-		35038,
-		35039
-	// Schuttgart
+	{35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018, 35019,
+			35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037, 35038,
+			35039, // Gludio
+			35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018,
+			35019, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037,
+			35038, 35039, // Dion
+			35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018,
+			35019, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037,
+			35038, 35039, // Giran
+			35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018,
+			35019, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037,
+			35038, 35039, // Oren
+			35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018,
+			35019, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037,
+			35038, 35039, // Aden
+			35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018,
+			35019, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037,
+			35038, 35039, // Innadril
+			35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018,
+			35019, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037,
+			35038, 35039, // Goddard
+			35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018,
+			35019, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037,
+			35038, 35039, // Rune
+			35010, 35011, 35012, 35013, 35014, 35015, 35016, 35017, 35018,
+			35019, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037,
+			35038, 35039
+			// Schuttgart
 	};
-	
+
 	public MercTicketManager()
 	{
 	}
@@ -648,59 +165,49 @@ public class MercTicketManager
 	private final void load()
 	{
 		// load merc tickets into the world
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM castle_siege_guards WHERE isHired=1");
-			ResultSet rs = statement.executeQuery();
-			
-			int npcId;
-			int itemId;
-			int x, y, z;
-			// start index to begin the search for the itemId corresponding to this NPC
-			// this will help with:
-			// a) skip unnecessary iterations in the search loop
-			// b) avoid finding the wrong itemId whenever tickets of different spawn the same npc!
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM castle_siege_guards WHERE isHired=1"))
+		{		
 			int startindex = 0;
-			
-			while (rs.next())
+			try(ResultSet rs = statement.executeQuery())
 			{
-				npcId = rs.getInt("npcId");
-				x = rs.getInt("x");
-				y = rs.getInt("y");
-				z = rs.getInt("z");
-				Castle castle = CastleManager.getInstance().getCastle(x, y, z);
-				if (castle != null)
-					startindex = 10 * (castle.getCastleId() - 1);
-				
-				// find the FIRST ticket itemId with spawns the saved NPC in the saved location
-				for (int i = startindex; i < NPC_IDS.length; i++)
-					if (NPC_IDS[i] == npcId) // Find the index of the item used
+				while (rs.next())
+				{
+					int npcId = rs.getInt("npcId");
+					int x = rs.getInt("x");
+					int y = rs.getInt("y");
+					int z = rs.getInt("z");
+					Castle castle = CastleManager.getInstance().getCastle(x, y, z);
+					if (castle != null)
+						startindex = 10 * (castle.getCastleId() - 1);
+
+					// find the FIRST ticket itemId with spawns the saved NPC in the saved location
+					for (int i = startindex; i < NPC_IDS.length; i++)
 					{
-						// only handle tickets if a siege is not ongoing in this npc's castle
-						
-						if ((castle != null) && !(castle.getSiege().getIsInProgress()))
+						if (NPC_IDS[i] == npcId) // Find the index of the item used
 						{
-							itemId = ITEM_IDS[i];
-							// create the ticket in the gameworld
-							L2ItemInstance dropticket = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
-							dropticket.setLocation(ItemLocation.INVENTORY);
-							dropticket.dropMe(null, x, y, z);
-							dropticket.setDropTime(0); // avoids it from beeing removed by the auto item destroyer
-							L2World.getInstance().storeObject(dropticket);
-							getDroppedTickets().add(dropticket);
+							// only handle tickets if a siege is not ongoing in this npc's castle
+							if ((castle != null) && !(castle.getSiege().getIsInProgress()))
+							{
+								int itemId = ITEM_IDS[i];
+								// create the ticket in the gameworld
+								L2ItemInstance dropticket = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
+								dropticket.setLocation(ItemLocation.INVENTORY);
+								dropticket.dropMe(null, x, y, z);
+								dropticket.setDropTime(0); // avoids it from beeing removed by the auto item destroyer
+								L2World.getInstance().storeObject(dropticket);
+								getDroppedTickets().add(dropticket);
+							}
+							break;
 						}
-						break;
 					}
+				}
 			}
-			rs.close();
-			statement.close();
-			
 			_log.info(MercTicketManager.class.getSimpleName() + ": Loaded " + getDroppedTickets().size() + " Mercenary Tickets.");
 		}
 		catch (Exception e)
 		{
 			_log.warning(MercTicketManager.class.getName() + ": loadMercenaryData(): ");
-			if (Config.DEVELOPER)
 				e.printStackTrace();
 		}
 	}

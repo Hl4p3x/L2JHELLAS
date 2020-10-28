@@ -44,7 +44,7 @@ public final class Broadcast
 	
 	public static void toSelfAndKnownPlayers(L2Character character, L2GameServerPacket mov)
 	{
-		if (character instanceof L2PcInstance)
+		if (character.isPlayer())
 			character.sendPacket(mov);
 		
 		toKnownPlayers(character, mov);
@@ -55,7 +55,7 @@ public final class Broadcast
 		if (radius < 0)
 			radius = 600;
 		
-		if (character instanceof L2PcInstance)
+		if (character.isPlayer())
 			character.sendPacket(mov);
 		
 		L2World.getInstance().forEachVisibleObjectInRange(character, L2PcInstance.class, radius, player ->
@@ -70,7 +70,7 @@ public final class Broadcast
 		if (radiusSq < 0)
 			radiusSq = 360000;
 		
-		if (character instanceof L2PcInstance)
+		if (character.isPlayer())
 			character.sendPacket(mov);
 		
 		for (L2PcInstance player : L2World.getInstance().getVisibleObjects(character, L2PcInstance.class))
@@ -93,7 +93,7 @@ public final class Broadcast
 	{
 		for (L2Object object : region.getVisibleObjects().values())
 		{
-			if (object instanceof L2PcInstance)
+			if (object.isPlayer())
 			{
 				final L2PcInstance player = (L2PcInstance) object;
 				

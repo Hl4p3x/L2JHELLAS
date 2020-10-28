@@ -241,19 +241,17 @@ public class TradeController
 	protected void dataTimerSave(int time)
 	{
 		long timerSave = System.currentTimeMillis() + (long) time * 60 * 60 * 1000;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(UPDATE_MERCHANT_TIMER))
 		{
-			PreparedStatement statement = con.prepareStatement(UPDATE_MERCHANT_TIMER);
 			statement.setLong(1, timerSave);
 			statement.setInt(2, time);
 			statement.executeUpdate();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
 			_log.warning(TradeController.class.getName() + ": Could not update Timer save in Buylist.");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 	
@@ -262,10 +260,10 @@ public class TradeController
 		int listId;
 		if (_listsTaskItem == null)
 			return;
-		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			
+
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(UPDATE_MERCHANT_CURCOUNT))
+		{		
 			for (L2TradeList list : _listsTaskItem.values())
 			{
 				if (list == null)
@@ -276,21 +274,20 @@ public class TradeController
 				{
 					if (Item.getCount() < Item.getInitCount()) // needed?
 					{
-						PreparedStatement statement = con.prepareStatement(UPDATE_MERCHANT_CURCOUNT);
 						statement.setInt(1, Item.getCount());
 						statement.setInt(2, Item.getItemId());
 						statement.setInt(3, listId);
-						statement.executeUpdate();
-						statement.close();
+						statement.addBatch();
 					}
 				}
+				
+				statement.executeBatch();
 			}
 		}
 		catch (SQLException e)
 		{
 			_log.warning(TradeController.class.getName() + ": Could not store Count Item");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 	

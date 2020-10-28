@@ -42,42 +42,41 @@ public class SpawnTable
 
 	private void fillSpawnTable()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement(SELECT_ALL_SPAWNS);
-			ResultSet rset = statement.executeQuery();
-
-			while (rset.next())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(SELECT_ALL_SPAWNS))
+		{	
+			try(ResultSet rset = statement.executeQuery())
 			{
-				final L2NpcTemplate template1 = NpcData.getInstance().getTemplate(rset.getInt("npc_templateid"));
-				if (template1 != null)
+				while (rset.next())
 				{
-					// Don't spawn
-					if (template1.type.equalsIgnoreCase("L2SiegeGuard"))
-                         continue;
-					if (template1.type.equalsIgnoreCase("L2RaidBoss"))
-						 continue;
-					if (!Config.ALLOW_CLASS_MASTER && template1.type.equals("L2ClassMaster"))
-						 continue;
-					
-					final L2Spawn spawnDat = new L2Spawn(template1);
-					spawnDat.setId(rset.getInt("id"));
-					spawnDat.setAmount(rset.getInt("count"));
-					spawnDat.setLocx(rset.getInt("locx"));
-					spawnDat.setLocy(rset.getInt("locy"));
-					spawnDat.setLocz(rset.getInt("locz"));
-					spawnDat.setHeading(rset.getInt("heading"));
-					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					int loc_id = rset.getInt("loc_id");
-					spawnDat.setLocation(loc_id);			
-					NotifySpawnManager(spawnDat,rset.getInt("periodOfDay"));				
-					addSpawn(spawnDat);			
+					final L2NpcTemplate template1 = NpcData.getInstance().getTemplate(rset.getInt("npc_templateid"));
+					if (template1 != null)
+					{
+						// Don't spawn
+						if (template1.type.equalsIgnoreCase("L2SiegeGuard"))
+							continue;
+						if (template1.type.equalsIgnoreCase("L2RaidBoss"))
+							continue;
+						if (!Config.ALLOW_CLASS_MASTER && template1.type.equals("L2ClassMaster"))
+							continue;
+
+						final L2Spawn spawnDat = new L2Spawn(template1);
+						spawnDat.setId(rset.getInt("id"));
+						spawnDat.setAmount(rset.getInt("count"));
+						spawnDat.setLocx(rset.getInt("locx"));
+						spawnDat.setLocy(rset.getInt("locy"));
+						spawnDat.setLocz(rset.getInt("locz"));
+						spawnDat.setHeading(rset.getInt("heading"));
+						spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
+						int loc_id = rset.getInt("loc_id");
+						spawnDat.setLocation(loc_id);			
+						NotifySpawnManager(spawnDat,rset.getInt("periodOfDay"));				
+						addSpawn(spawnDat);			
+					}
+					else
+						_log.warning("SpawnTable: data missing in npc table for id: " + rset.getInt("npc_templateid") + ".");
 				}
-				else
-					_log.warning("SpawnTable: data missing in npc table for id: " + rset.getInt("npc_templateid") + ".");
 			}
-			rset.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -109,9 +108,9 @@ public class SpawnTable
 		
 		if (storeInDb)
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(ADD_NEW_SPAWN))
 			{
-				PreparedStatement statement = con.prepareStatement(ADD_NEW_SPAWN);
 				statement.setInt(1, spawn.getId());
 				statement.setInt(2, spawn.getAmount());
 				statement.setInt(3, spawn.getNpcid());
@@ -122,7 +121,6 @@ public class SpawnTable
 				statement.setInt(8, spawn.getRespawnDelay() / 1000);
 				statement.setInt(9, spawn.getLocation());
 				statement.execute();
-				statement.close();
 			}
 			catch (Exception e)
 			{

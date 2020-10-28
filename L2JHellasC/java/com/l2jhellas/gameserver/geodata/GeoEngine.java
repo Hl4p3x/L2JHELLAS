@@ -6,7 +6,6 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
@@ -22,7 +21,6 @@ import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.taskmanager.MemoryWatchOptimize;
-import com.l2jhellas.util.GArray;
 import com.l2jhellas.util.MathUtil;
 import com.l2jhellas.util.ParallelExecutor;
 import com.l2jhellas.util.Rnd;
@@ -38,9 +36,7 @@ public class GeoEngine
 	public static final byte BLOCKTYPE_MULTILEVEL = 2;
 	public static final int BlocksInMap = 256 * 256;
 	public static int MAX_LAYERS = 1;
-	
-	private static final int Door_MaxZDiff = 256;
-	
+		
 	private static final byte[][][][] geodata = new byte[L2World.WORLD_SIZE_X][L2World.WORLD_SIZE_Y][][];
 	
 	// If geo is off do simple check
@@ -326,7 +322,7 @@ public class GeoEngine
 			h = (short) ((short) (layers[i] & 0x0fff0) >> 1);
 			if (z_min <= h && h <= z_max)
 				return Short.MIN_VALUE;
-			if (h < z0 && nearest_layer_h < h)
+			if (h < z_max && nearest_layer_h < h)
 			{
 				nearest_layer_h = h;
 				nearest_layer = layers[i];
@@ -1646,133 +1642,66 @@ public class GeoEngine
 		}
 	}
 	
-	private static void copyBlock(int ix, int iy, int blockIndex)
+	public static void returnGeoAtControl(GeoControl collision)
 	{
-		byte[][] region = geodata[ix][iy];
-		
-		if (region == null)
-		{
-			System.out.println("door at null region? [" + ix + "][" + iy + "]");
-			return;
-		}
-		
-		byte[] block = region[blockIndex];
-		byte blockType = block[0];
-		
-		switch (blockType)
-		{
-			case BLOCKTYPE_FLAT:
-				short height = makeShort(block[2], block[1]);
-				height &= 0x0fff0;
-				height <<= 1;
-				height |= NORTH;
-				height |= SOUTH;
-				height |= WEST;
-				height |= EAST;
-				byte[] newblock = new byte[129];
-				newblock[0] = BLOCKTYPE_COMPLEX;
-				for (int i = 1; i < 129; i += 2)
-				{
-					newblock[i + 1] = (byte) (height >> 8);
-					newblock[i] = (byte) (height & 0x00ff);
-				}
-				region[blockIndex] = newblock;
-				break;
-			default:
-				if (Config.COMPACT_GEO)
-					region[blockIndex] = region[blockIndex].clone();
-				break;
-		}
-	}
-	
-	private static boolean check_door_z(int minZ, int maxZ, int geoZ)
-	{
-		if (minZ <= geoZ && geoZ <= maxZ)
-			return true;
-		return Math.abs((minZ + maxZ) / 2 - geoZ) <= Door_MaxZDiff;
-	}
-	
-	private static boolean check_cell_in_door(int geoX, int geoY, Polygon pos)
-	{
-		geoX = (geoX << 4) + L2World.WORLD_X_MIN + 8;
-		geoY = (geoY << 4) + L2World.WORLD_Y_MIN + 8;
-		for (int ax = geoX; ax < geoX + 16; ax++)
-			for (int ay = geoY; ay < geoY + 16; ay++)
-				if (pos.isInside(ax, ay))
-					return true;
-		return false;
-	}
-	
-	public static void returnGeoAtControl(GeoControl control)
-	{
-		Polygon pos = control.getGeoPos();
-		HashMap<Long, Byte> around = control.getGeoAround();
-		
+		Polygon shape = collision.getGeoPos();
+
+		byte[][] around = collision.getGeoAround();
 		if (around == null)
-		{
-			System.out.println("GeoEngine: Attempt to open 'not closed' door");
-			Thread.dumpStack();
-			return;
-		}
-		
+			throw new RuntimeException("Warning: trying to remove unitialized collision: " + collision);
+
+		int minX = shape.getXmin() - L2World.WORLD_X_MIN - 16 >> 4;
+		int minY = shape.getYmin() - L2World.WORLD_Y_MIN - 16 >> 4;
+		int minZ = shape.getZmin();
+		int maxZ = shape.getZmax();
+
 		short height;
 		byte old_nswe;
-		
-		synchronized (around)
-		{
-			for (long geoXY : around.keySet())
+
+		for (int gX = 0; gX < around.length; gX++)
+			for (int gY = 0; gY < around[gX].length; gY++)
 			{
-				int geoX = (int) geoXY;
-				int geoY = (int) (geoXY >> 32);
-				
-				int ix = geoX >> 11;
-				int iy = geoY >> 11;
-				
-				int blockX = getBlock(geoX);
-				int blockY = getBlock(geoY);
-				int blockIndex = getBlockIndex(blockX, blockY);
-				
-				byte[][] region = geodata[ix][iy];
-				if (region == null)
-				{
-					System.out.println("GeoEngine: Attempt to open door at block with no geodata");
-					return;
-				}
-				
-				byte[] block = region[blockIndex];
-				
+				int geoX = minX + gX;
+				int geoY = minY + gY;
+
+				byte[] block = getGeoBlockFromGeoCoords(geoX, geoY);
+				if (block == null)
+					continue;
+
 				int cellX = getCell(geoX);
 				int cellY = getCell(geoY);
-				
+
 				int index = 0;
 				byte blockType = block[index];
 				index++;
-				
+
 				switch (blockType)
 				{
 					case BLOCKTYPE_COMPLEX:
 						index += (cellX << 3) + cellY << 1;
-						
+
 						height = makeShort(block[index + 1], block[index]);
 						old_nswe = (byte) (height & 0x0F);
 						height &= 0xfff0;
 						height >>= 1;
-						
-						// around
+
+						if (height < minZ || height > maxZ)
+							break;
+
 						height <<= 1;
 						height &= 0xfff0;
 						height |= old_nswe;
-						if (control.isGeoCloser())
-							height |= around.get(geoXY);
+						if (collision.isGeoCloser())
+							height |= around[gX][gY];
 						else
-							height &= ~around.get(geoXY);
-						
+							height &= ~around[gX][gY];
+
 						block[index + 1] = (byte) (height >> 8);
 						block[index] = (byte) (height & 0x00ff);
 						break;
 					case BLOCKTYPE_MULTILEVEL:
 						int neededIndex = -1;
-						
+
 						int offset = (cellX << 3) + cellY;
 						while (offset > 0)
 						{
@@ -1792,8 +1721,8 @@ public class GeoEngine
 							byte tmp_nswe = (byte) (height & 0x0F);
 							height &= 0xfff0;
 							height >>= 1;
-							int z_diff_last = Math.abs(pos.getZmin() - temph);
-							int z_diff_curr = Math.abs(pos.getZmin() - height);
+							int z_diff_last = Math.abs(minZ - temph);
+							int z_diff_curr = Math.abs(maxZ - height);
 							if (z_diff_last > z_diff_curr)
 							{
 								old_nswe = tmp_nswe;
@@ -1803,158 +1732,161 @@ public class GeoEngine
 							layers--;
 							index += 2;
 						}
-						// around
+
+						if (temph == Short.MIN_VALUE || (temph < minZ || temph > maxZ))
+							break;
+
 						temph <<= 1;
 						temph &= 0xfff0;
 						temph |= old_nswe;
-						if (control.isGeoCloser())
-							temph |= around.get(geoXY);
-						else
-							temph &= ~around.get(geoXY);
 						
+						if (collision.isGeoCloser())
+							temph |= around[gX][gY];
+						else
+							temph &= ~around[gX][gY];
+
 						block[neededIndex + 1] = (byte) (temph >> 8);
 						block[neededIndex] = (byte) (temph & 0x00ff);
 						break;
 				}
 			}
-		}
 	}
-	
-	public static void applyControl(GeoControl control)
+
+	public static void applyControl(GeoControl collision)
 	{
-		Polygon pos = control.getGeoPos();
-		HashMap<Long, Byte> around = control.getGeoAround();
-		
-		boolean first_time = around == null;
-		
+		Polygon shape = collision.getGeoPos();
+		if (shape.getXmax() == shape.getYmax() && shape.getXmax() == 0)
+			throw new RuntimeException("Attempt to add incorrect collision: " + collision);
+
+		boolean isFirstTime = false;
+
+		int minX = shape.getXmin() - L2World.WORLD_X_MIN - 16 >> 4;
+		int maxX = shape.getXmax() - L2World.WORLD_X_MIN + 16 >> 4;
+		int minY = shape.getYmin() - L2World.WORLD_Y_MIN - 16 >> 4;
+		int maxY = shape.getYmax() - L2World.WORLD_Y_MIN + 16 >> 4;
+		int minZ = shape.getZmin();
+		int maxZ = shape.getZmax();
+
+		byte[][] around = collision.getGeoAround();
 		if (around == null)
 		{
-			around = new HashMap<>();
-			GArray<Long> around_blocks = new GArray<>();	
-			final int minX = GeoEngine.getGeoX(pos.getXmin());
-			final int maxX = GeoEngine.getGeoY(pos.getXmax());			
-			final int minY = GeoEngine.getGeoX(pos.getYmin());
-			final int maxY = GeoEngine.getGeoY(pos.getYmax());
-							
-			for (int geoX = minX; geoX <= maxX; geoX++)
-				for (int geoY = minY; geoY <= maxY; geoY++)
-					if (check_cell_in_door(geoX, geoY, pos))
-						around_blocks.add(makeLong(geoX, geoY));
-			
-			for (long geoXY : around_blocks)
-			{
-				int geoX = (int) geoXY;
-				int geoY = (int) (geoXY >> 32);
-				long aroundN_geoXY = makeLong(geoX, geoY - 1); // close S
-				long aroundS_geoXY = makeLong(geoX, geoY + 1); // close N
-				long aroundW_geoXY = makeLong(geoX - 1, geoY); // close E
-				long aroundE_geoXY = makeLong(geoX + 1, geoY); // close W
-				around.put(geoXY, NSWE_ALL);
-				byte _nswe;
-				if (!around_blocks.contains(aroundN_geoXY))
+			isFirstTime = true;
+
+			byte[][] cells = new byte[maxX - minX + 1][maxY - minY + 1];
+			for (int gX = minX; gX <= maxX; gX++)
+				for (int gY = minY; gY <= maxY; gY++)
 				{
-					_nswe = around.containsKey(aroundN_geoXY) ? around.remove(aroundN_geoXY) : 0;
-					_nswe |= SOUTH;
-					around.put(aroundN_geoXY, _nswe);
+					int x = (gX << 4) + L2World.WORLD_X_MIN;
+					int y = (gY << 4) + L2World.WORLD_Y_MIN;
+
+					loop: for (int ax = x; ax < x + 16; ax++)
+						for (int ay = y; ay < y + 16; ay++)
+							if (shape.isInside(ax, ay))
+							{
+								cells[gX - minX][gY - minY] = 1;
+								break loop;
+							}
 				}
-				if (!around_blocks.contains(aroundS_geoXY))
+
+			around = new byte[maxX - minX + 1][maxY - minY + 1];
+			for (int gX = 0; gX < cells.length; gX++)
+				for (int gY = 0; gY < cells[gX].length; gY++)
 				{
-					_nswe = around.containsKey(aroundS_geoXY) ? around.remove(aroundS_geoXY) : 0;
-					_nswe |= NORTH;
-					around.put(aroundS_geoXY, _nswe);
+					if (cells[gX][gY] == 1)
+					{
+						around[gX][gY] = NSWE_ALL;
+
+						byte _nswe;
+						
+						if (gY > 0 && cells[gX][gY - 1] == 0)
+						{
+							_nswe = around[gX][gY - 1];
+							_nswe |= SOUTH;
+							around[gX][gY - 1] = _nswe;
+						}
+						if (gY + 1 < cells[gX].length && cells[gX][gY + 1] == 0)
+						{
+							_nswe = around[gX][gY + 1];
+							_nswe |= NORTH;
+							around[gX][gY + 1] = _nswe;
+						}
+						if (gX > 0 && cells[gX - 1][gY] == 0)
+						{
+							_nswe = around[gX - 1][gY];
+							_nswe |= EAST;
+							around[gX - 1][gY] = _nswe;
+						}
+						if (gX + 1 < cells.length && cells[gX + 1][gY] == 0)
+						{
+							_nswe = around[gX + 1][gY];
+							_nswe |= WEST;
+							around[gX + 1][gY] = _nswe;
+						}
+					}
 				}
-				if (!around_blocks.contains(aroundW_geoXY))
-				{
-					_nswe = around.containsKey(aroundW_geoXY) ? around.remove(aroundW_geoXY) : 0;
-					_nswe |= EAST;
-					around.put(aroundW_geoXY, _nswe);
-				}
-				if (!around_blocks.contains(aroundE_geoXY))
-				{
-					_nswe = around.containsKey(aroundE_geoXY) ? around.remove(aroundE_geoXY) : 0;
-					_nswe |= WEST;
-					around.put(aroundE_geoXY, _nswe);
-				}
-			}
-			around_blocks.clear();
-			control.setGeoAround(around);
+
+			collision.setGeoAround(around);
 		}
-		
+
 		short height;
 		byte old_nswe, close_nswe;
-		
-		synchronized (around)
-		{
-			Long[] around_keys = around.keySet().toArray(new Long[around.size()]);
-			for (long geoXY : around_keys)
+
+		for (int gX = 0; gX < around.length; gX++)
+			for (int gY = 0; gY < around[gX].length; gY++)
 			{
-				int geoX = (int) geoXY;
-				int geoY = (int) (geoXY >> 32);
-				
-				int ix = geoX >> 11;
-				int iy = geoY >> 11;
-				
-				int blockX = getBlock(geoX);
-				int blockY = getBlock(geoY);
-				int blockIndex = getBlockIndex(blockX, blockY);
-				
-				if (first_time)
-					copyBlock(ix, iy, blockIndex);
-				
-				byte[][] region = geodata[ix][iy];
-				if (region == null)
-				{
-					System.out.println("GeoEngine: Attempt to close door at block with no geodata");
-					return;
-				}
-				byte[] block = region[blockIndex];
-				
+				int geoX = minX + gX;
+				int geoY = minY + gY;
+
+				byte[] block = getGeoBlockFromGeoCoords(geoX, geoY);
+				if (block == null)
+					continue;
+
 				int cellX = getCell(geoX);
 				int cellY = getCell(geoY);
-				
+
 				int index = 0;
 				byte blockType = block[index];
 				index++;
-				
+
 				switch (blockType)
 				{
 					case BLOCKTYPE_COMPLEX:
 						index += (cellX << 3) + cellY << 1;
-						
+
 						height = makeShort(block[index + 1], block[index]);
 						old_nswe = (byte) (height & 0x0F);
 						height &= 0xfff0;
 						height >>= 1;
-						
-						if (first_time)
+
+						if (height < minZ || height > maxZ)
+							break;
+
+						close_nswe = around[gX][gY];
+
+						if (isFirstTime)
 						{
-							close_nswe = around.remove(geoXY);
-							if (!check_door_z(pos.getZmin(), pos.getZmax(), height))
-								break;
-							if (control.isGeoCloser())
+							if (collision.isGeoCloser())
 								close_nswe &= old_nswe;
 							else
 								close_nswe &= ~old_nswe;
-							around.put(geoXY, close_nswe);
+							around[gX][gY] = close_nswe;
 						}
-						else
-							close_nswe = around.get(geoXY);
-						
-						// around
+
 						height <<= 1;
 						height &= 0xfff0;
 						height |= old_nswe;
-						if (control.isGeoCloser())
+
+						if (collision.isGeoCloser())
 							height &= ~close_nswe;
 						else
 							height |= close_nswe;
-						
+
 						block[index + 1] = (byte) (height >> 8);
 						block[index] = (byte) (height & 0x00ff);
 						break;
 					case BLOCKTYPE_MULTILEVEL:
 						int neededIndex = -1;
-						
+
 						int offset = (cellX << 3) + cellY;
 						while (offset > 0)
 						{
@@ -1974,8 +1906,8 @@ public class GeoEngine
 							byte tmp_nswe = (byte) (height & 0x0F);
 							height &= 0xfff0;
 							height >>= 1;
-							int z_diff_last = Math.abs(pos.getZmin() - temph);
-							int z_diff_curr = Math.abs(pos.getZmin() - height);
+							int z_diff_last = Math.abs(minZ - temph);
+							int z_diff_curr = Math.abs(maxZ - height);
 							if (z_diff_last > z_diff_curr)
 							{
 								old_nswe = tmp_nswe;
@@ -1985,37 +1917,34 @@ public class GeoEngine
 							layers--;
 							index += 2;
 						}
-						
-						if (first_time)
+
+						if (temph == Short.MIN_VALUE || (temph < minZ || temph > maxZ))
+							break;
+
+						close_nswe = around[gX][gY];
+
+						if (isFirstTime)
 						{
-							close_nswe = around.remove(geoXY);
-							if (temph == Short.MIN_VALUE || !check_door_z(pos.getZmin(), pos.getZmax(), temph))
-								break;
-							if (control.isGeoCloser())
+							if (collision.isGeoCloser())
 								close_nswe &= old_nswe;
 							else
 								close_nswe &= ~old_nswe;
-							around.put(geoXY, close_nswe);
+							around[gX][gY] = close_nswe;
 						}
-						else
-							close_nswe = around.get(geoXY);
-						
-						// around
+
 						temph <<= 1;
 						temph &= 0xfff0;
 						temph |= old_nswe;
-						if (control.isGeoCloser())
+						if (collision.isGeoCloser())
 							temph &= ~close_nswe;
 						else
 							temph |= close_nswe;
-						
+
 						block[neededIndex + 1] = (byte) (temph >> 8);
 						block[neededIndex] = (byte) (temph & 0x00ff);
 						break;
 				}
 			}
-			around_keys = null;
-		}
 	}
 	
 	public static long makeLong(int nLo, int nHi)

@@ -31,18 +31,9 @@ public class BeastSpice implements IItemHandler
 			activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			return;
 		}
-		
-		int skillId = 0;
-		switch (item.getItemId())
-		{
-			case 6643:
-				skillId = 2188;
-				break;
-			case 6644:
-				skillId = 2189;
-				break;
-		}
-		
+
+		int skillId = item.getItemId() == 6643 ? 2188 : item.getItemId() == 6644 ? 2189 : 0;		
+
 		final L2Skill skill = SkillTable.getInstance().getInfo(skillId, 1);
 		if (skill != null)
 			activeChar.useMagic(skill, false, false);

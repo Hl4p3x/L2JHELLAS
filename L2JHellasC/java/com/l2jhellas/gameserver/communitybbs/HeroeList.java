@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
+import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public class HeroeList
@@ -15,16 +16,33 @@ public class HeroeList
 	protected static final Logger _log = Logger.getLogger(HeroeList.class.getName());
 	
 	private static final String SELECT_DATA = "SELECT h.count, h.played, ch.char_name, ch.base_class, ch.online, cl.clan_name, cl.ally_name FROM heroes h LEFT JOIN characters ch ON ch.obj_Id=h.char_id LEFT OUTER JOIN clan_data cl ON cl.clan_id=ch.clanid ORDER BY h.count DESC, ch.char_name ASC LIMIT 20";
-	private int _posId;
-	private final StringBuilder _heroeList = new StringBuilder();
+	private static int _posId;
+	private static StringBuilder _heroeList;
 	
 	public HeroeList()
 	{
-		loadFromDB();
+		
 	}
 	
-	private void loadFromDB()
+	//update every 4 hours.
+	static int time = 60 * 1000 * 240;
+	
+	public static void startCheck()
 	{
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				loadFromDB();
+			}
+		},time,time);
+	}
+	
+	public static void loadFromDB()
+	{
+		_heroeList  = new StringBuilder();
+
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 		PreparedStatement statement = con.prepareStatement(SELECT_DATA))
 		{
@@ -34,12 +52,11 @@ public class HeroeList
 				while (result.next())
 				{
 					boolean status = false;
-					_posId = _posId + 1;
 
 					if (result.getInt("online") == 1)
 						status = true;
 
-					addPlayerToList(_posId, result.getInt("count"), result.getInt("played"), result.getString("char_name"), result.getInt("base_class"), result.getString("clan_name"), result.getString("ally_name"), status);
+					addPlayerToList(_posId++, result.getInt("count"), result.getInt("played"), result.getString("char_name"), result.getInt("base_class"), result.getString("clan_name"), result.getString("ally_name"), status);
 				}
 			}
 		}
@@ -56,7 +73,7 @@ public class HeroeList
 		return _heroeList.toString();
 	}
 	
-	private void addPlayerToList(int objId, int count, int played, String name, int ChrClass, String clan, String ally, boolean isOnline)
+	private static void addPlayerToList(int objId, int count, int played, String name, int ChrClass, String clan, String ally, boolean isOnline)
 	{
 		_heroeList.append("<table border=0 cellspacing=0 cellpadding=2 width=610>");
 		_heroeList.append("<tr>");

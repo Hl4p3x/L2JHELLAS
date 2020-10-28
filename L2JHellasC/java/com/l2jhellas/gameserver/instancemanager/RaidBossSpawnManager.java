@@ -450,6 +450,11 @@ public class RaidBossSpawnManager
 		return _spawns;
 	}
 	
+	public static StatsSet getStatsSet(int bossId)
+	{
+		return _storedInfo.get(bossId);
+	}
+	
 	public void reloadBosses()
 	{
 		init();

@@ -26,6 +26,7 @@ import com.l2jhellas.Config;
 import com.l2jhellas.Server;
 import com.l2jhellas.gameserver.cache.CrestCache;
 import com.l2jhellas.gameserver.cache.HtmCache;
+import com.l2jhellas.gameserver.communitybbs.HeroeList;
 import com.l2jhellas.gameserver.communitybbs.Manager.ForumsBBSManager;
 import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.controllers.RecipeController;
@@ -344,7 +345,7 @@ public class GameServer
 		_log.info(optimizer);		
 		
 		if (Config.ENABLE_GUI)
-			gui = new Gui();
+			gui = new Gui();		
 	}
 	
 	private void RunOptimizer()
@@ -397,6 +398,8 @@ public class GameServer
 		
 		EventConfig.getInstance();
 		EventBuffer.getInstance();		
+		HeroeList.loadFromDB();
+		HeroeList.startCheck();
 	}
 	
 	public static void main(String[] args) throws Exception

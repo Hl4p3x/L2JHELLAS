@@ -10,7 +10,6 @@ import com.l2jhellas.gameserver.communitybbs.ClanList;
 import com.l2jhellas.gameserver.communitybbs.GrandBossList;
 import com.l2jhellas.gameserver.communitybbs.HeroeList;
 import com.l2jhellas.gameserver.communitybbs.RaidList;
-import com.l2jhellas.gameserver.communitybbs.TopPlayers;
 import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -57,26 +56,6 @@ public class TopBBSManager extends BaseBBSManager
 			
 			switch (file)
 			{
-				case "toppvp":
-					TopPlayers pvp = new TopPlayers(file);
-					content = content.replaceAll("%toppvp%", pvp.loadTopList());
-					break;
-				case "toppk":
-					TopPlayers pk = new TopPlayers(file);
-					content = content.replaceAll("%toppk%", pk.loadTopList());
-					break;
-				case "toprbrank":
-					TopPlayers raid = new TopPlayers(file);
-					content = content.replaceAll("%toprbrank%", raid.loadTopList());
-					break;
-				case "topadena":
-					TopPlayers adena = new TopPlayers(file);
-					content = content.replaceAll("%topadena%", adena.loadTopList());
-					break;
-				case "toponline":
-					TopPlayers online = new TopPlayers(file);
-					content = content.replaceAll("%toponline%", online.loadTopList());
-					break;
 				case "heroes":
 					HeroeList hr = new HeroeList();
 					content = content.replaceAll("%heroelist%", hr.loadHeroeList());

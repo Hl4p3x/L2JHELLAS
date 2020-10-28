@@ -58,9 +58,7 @@ public class RPCRewardTable
 	public void giveReward(L2PcInstance player, RPCReward rpcReward)
 	{
 		if (rpcReward == null)
-		{
 			return;
-		}
 		
 		RPC rpc = RPCTable.getInstance().getRpcByPlayerId(player.getObjectId());
 		
@@ -85,15 +83,9 @@ public class RPCRewardTable
 			return;
 		}
 		
-		// update database for this player:
-		boolean ok = false;
-
-		
-		try
-		{
-			Connection conn = L2DatabaseFactory.getInstance().getConnection();
-			Statement stat = conn.createStatement();
-			
+		try (Connection conn = L2DatabaseFactory.getInstance().getConnection();
+		Statement stat = conn.createStatement())
+		{			
 			// remove RPC from RPC Current (from model):
 			long rpcCurrent = rpc.decreaseRpcCurrentBy(rpcReward.getRpc());
 			
@@ -107,49 +99,35 @@ public class RPCRewardTable
 				rpc.setDbStatus(DBStatus.NONE);
 				stat.execute("INSERT INTO rank_pvp_system_rpc (player_id, rpc_total, rpc_current) values (" + player.getObjectId() + "," + rpc.getRpcTotal() + "," + rpcCurrent + ")");
 			}
-			
 			stat.close();
-			conn.close();
-			
-			ok = true;
-			
+			player.addItem("RPC", rpcReward.getItemId(), rpcReward.getItemAmount(), player, true);
 		}
 		catch (Exception e)
 		{
 			log.log(Level.WARNING, e.getMessage());
 
-		}
-		
-		// add item into player's inventory:
-		if (ok)
-		{
-			player.addItem("RPC", rpcReward.getItemId(), rpcReward.getItemAmount(), player, true);
-		}
-		
+		}	
 	}
 	
 	private void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_rpc_reward ORDER BY id ASC");
-			
-			ResultSet rset = statement.executeQuery();
-			
-			while (rset.next())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_rpc_reward ORDER BY id ASC"))
+		{			
+			try (ResultSet rset = statement.executeQuery())
 			{
-				RPCReward rpcr = new RPCReward();
-				
-				rpcr.setId(rset.getInt("id"));
-				rpcr.setItemId(rset.getInt("item_id"));
-				rpcr.setItemAmount(rset.getLong("item_amount"));
-				rpcr.setRpc(rset.getLong("rpc"));
-				
-				_rpcRewardList.put(rpcr.getId(), rpcr);
+				while (rset.next())
+				{
+					RPCReward rpcr = new RPCReward();
+
+					rpcr.setId(rset.getInt("id"));
+					rpcr.setItemId(rset.getInt("item_id"));
+					rpcr.setItemAmount(rset.getLong("item_amount"));
+					rpcr.setRpc(rset.getLong("rpc"));
+
+					_rpcRewardList.put(rpcr.getId(), rpcr);
+				}
 			}
-			
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{

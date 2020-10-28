@@ -7,7 +7,7 @@ import java.util.List;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.ai.L2BoatAI;
-import com.l2jhellas.gameserver.controllers.GameTimeController;
+import com.l2jhellas.gameserver.ai.L2CharacterAI;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
@@ -27,7 +27,6 @@ import com.l2jhellas.gameserver.network.serverpackets.VehicleInfo;
 import com.l2jhellas.gameserver.network.serverpackets.VehicleStarted;
 import com.l2jhellas.gameserver.templates.L2CharTemplate;
 import com.l2jhellas.gameserver.templates.L2Weapon;
-import com.l2jhellas.util.Util;
 
 public class L2Vehicle extends L2Character
 {
@@ -41,8 +40,8 @@ public class L2Vehicle extends L2Character
 	public L2Vehicle(int objectId, L2CharTemplate template)
 	{
 		super(objectId, template);
-		setIsFlying(true);
 		setAI(new L2BoatAI(this));
+		setIsFlying(true);
 	}
 
 	public boolean canBeControlled()
@@ -61,103 +60,41 @@ public class L2Vehicle extends L2Character
 			ThreadPoolManager.getInstance().scheduleGeneral(_engine, delay);
 	}
 	
-	private int _moveSpeed = 0;
-	private int _rotationSpeed = 0;
-    
-	@Override
-	public int getMoveSpeed()
-	{
-		return _moveSpeed;
-	}
-	
-	public final void setMoveSpeed(int speed)
-	{
-		_moveSpeed = speed;
-	}
-	
-	public final int getRotationSpeed()
-	{
-		return _rotationSpeed;
-	}
-	
-	public final void setRotationSpeed(int speed)
-	{
-		_rotationSpeed = speed;
-	}
-	
 	public void executePath(VehiclePathPoint[] path)
 	{
 		_runState = 0;
 		_currentPath = path;
-		
-		if (_currentPath == null)		
-			return;		
-		
-		final VehiclePathPoint point = _currentPath[0];
 			
+		moveBoat(_currentPath[0]);		
+		getActor().broadcastPacket(new VehicleStarted(getActor(), 1));		
+	}
+
+	private void moveBoat(VehiclePathPoint point)
+	{
 		if (point.getMoveSpeed() > 0)
 			getStat().setMoveSpeed(point.getMoveSpeed());
 		if (point.getRotationSpeed() > 0)
 			getStat().setRotationSpeed(point.getRotationSpeed());
-			
-		getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(point.getX(), point.getY(), point.getZ(), 0));
-	}
-	
-	@Override
-	public boolean moveToNextRoutePoint()
-	{
-		_move = null;
 		
-		if (_currentPath != null)
+		getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, new Location(point.getX(), point.getY(), point.getZ(), 0));
+
+		getActor().broadcastPacket(new VehicleDeparture(this));		
+	}
+
+	public void BoatArrived()
+	{
+		_runState++;
+
+		if (_runState < _currentPath.length)
 		{
-			_runState++;
-			if (_runState < _currentPath.length)
-			{
-				final VehiclePathPoint point = _currentPath[_runState];
-				if (!isMovementDisabled())
-				{
-					if (point.getMoveSpeed() == 0)
-					{
-						teleToLocation(point.getX(), point.getY(), point.getZ(), false);
-						_currentPath = null;
-					}
-					else
-					{
-						if (point.getMoveSpeed() > 0)
-							getStat().setMoveSpeed(point.getMoveSpeed());
-						if (point.getRotationSpeed() > 0)
-							getStat().setRotationSpeed(point.getRotationSpeed());
-						
-						MoveData m = new MoveData();
-						m.disregardingGeodata = false;
-						m.onGeodataPathIndex = -1;
-						m._xDestination = point.getX();
-						m._yDestination = point.getY();
-						m._zDestination = point.getZ();
-						m._heading = 0;
-
-						final double distance = Math.hypot(point.getX() - getX(), point.getY() - getY());
-
-						if (distance > 1)
-							setHeading(Util.calculateHeadingFrom(getX(), getY(), point.getX(), point.getY()));
-						
-						m._moveStartTime = GameTimeController.getInstance().getGameTicks();
-						_move = m;
-						
-						GameTimeController.getInstance().registerMovingObject(this);
-						broadcastPacket(new VehicleDeparture(this));
-						return true;
-					}
-				}
-			}
-			else
-				_currentPath = null;
+			moveBoat(_currentPath[_runState]);
+			return;
 		}
 		
+		_currentPath = null;
 		runEngine(10);
-		return false;
 	}
-
+	
 	@Override
 	public final VehicleStat getStat()
 	{
@@ -290,26 +227,6 @@ public class L2Vehicle extends L2Character
 	}
 	
 	@Override
-	public boolean updatePosition()
-	{
-		final boolean result = super.updatePosition();
-		
-		for (L2PcInstance player : _passengers)
-		{
-			if (player != null && player.getVehicle() == this)
-			{
-				player.setXYZ(getX(), getY(), getZ());
-				
-				if(player.getPet()!=null)
-					player.getPet().setXYZ(getX(), getY(), getZ());
-
-				player.revalidateZone(false);
-			}
-		}
-		return result;
-	}
-	
-	@Override
 	public void teleToLocation(int x, int y, int z, boolean randomOffset)
 	{
 		if (isMoving())
@@ -398,41 +315,74 @@ public class L2Vehicle extends L2Character
 	@Override
 	public int getLevel()
 	{
-		return 0;
+		return 80;
 	}
-	
+
 	@Override
 	public boolean isAutoAttackable(L2Character attacker)
 	{
 		return false;
 	}
 
-	protected void updatePeopleInTheBoat(int x, int y, int z)
+	
+	@Override
+	public boolean updatePosition()
 	{
-		if(_passengers.isEmpty())
-			return;
+		final boolean result = super.updatePosition();
 		
-		for(L2PcInstance player : _passengers)
+		if(_passengers.isEmpty())
+			return result;
+		
+		for (L2PcInstance player : _passengers)
 		{
 			if (player != null && player.getVehicle() == this)
 			{
-			    player.setXYZ(x, y, z);
-				player.revalidateZone(false);
+				player.setXYZ(getX(), getY(), getZ());
 				
 				if(player.getPet()!=null)
 				{
 					player.getPet().setXYZ(getX(), getY(), getZ());
 					player.getPet().revalidateZone(false);
 				}
+
+				player.revalidateZone(false);
 			}
 		}
 		
 		broadcastToPassengers(new OnVehicleCheckLocation(this));
+
+		return result;
+	}
+	
+	@Override
+	public void setAI(L2CharacterAI newAI)
+	{
+		if (_ai == null)
+			_ai = newAI;
+	}
+	
+	@Override
+	public L2CharacterAI getAI()
+	{
+		L2CharacterAI ai = _ai;
+		if (ai == null)
+		{
+			synchronized (this)
+			{
+				ai = _ai;
+				if (ai == null)
+					_ai = ai = new L2BoatAI(this);
+			}
+		}
+		return ai;
 	}
 	
 	@Override
 	public void sendInfo(L2PcInstance activeChar)
 	{
 		activeChar.sendPacket(new VehicleInfo(this));
+		
+		if(isMoving())
+			activeChar.sendPacket(new VehicleDeparture(this));
 	}	
 }

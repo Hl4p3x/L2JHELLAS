@@ -85,25 +85,20 @@ public class CastleManager
 	
 	private final void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement("SELECT id FROM castle ORDER BY id");
-			ResultSet rs = statement.executeQuery();
-			
-			while (rs.next())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT id FROM castle ORDER BY id"))
+		{		
+			try (ResultSet rs = statement.executeQuery())
 			{
-				getCastles().add(new Castle(rs.getInt("id")));
+				while (rs.next())
+					getCastles().add(new Castle(rs.getInt("id")));
 			}
-			rs.close();
-			statement.close();
 			
 			_log.info(CastleManager.class.getSimpleName() + ": Loaded: " + getCastles().size() + " castles.");
 		}
 		catch (Exception e)
 		{
-			_log.warning(" loadCastleData(): "+e);
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			_log.warning("Castle manager : loadCastleData(): "+e);
 		}
 	}
 	

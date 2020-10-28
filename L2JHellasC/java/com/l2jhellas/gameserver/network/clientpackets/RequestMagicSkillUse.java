@@ -1,6 +1,9 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
+import com.l2jhellas.gameserver.enums.player.ChatType;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 
 public final class RequestMagicSkillUse extends L2GameClientPacket
 {
@@ -27,6 +30,13 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		if (activeChar == null || activeChar.isOnline() == 0)
 			return;
 
+		if (activeChar.getAppearance().getInvisible())
+		{
+			activeChar.sendPacket(new CreatureSay(0, ChatType.GENERAL, "SYS", "You cannot do this action in hide mode."));
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
 		activeChar.ReqMagicSkillUse(_magicId, _ctrlPressed, _shiftPressed);
 	}
 	

@@ -37,15 +37,10 @@ public class ZoneManager implements DocumentParser
 	boolean reload = false;
 	
 	private final ZoneRegion[][] _zoneRegions = new ZoneRegion[L2World.REGIONS_X + 1][L2World.REGIONS_Y + 1];
-	
-	public static final ZoneManager getInstance()
-	{
-		return SingletonHolder._instance;
-	}
+
 	
 	protected ZoneManager()
-	{
-		
+	{		
 		for (int x = 0; x < _zoneRegions.length; x++)
 		{
 			for (int y = 0; y < _zoneRegions[x].length; y++)
@@ -459,9 +454,14 @@ public class ZoneManager implements DocumentParser
 	{
 		return getRegion(point.getX(), point.getY());
 	}
-	
-	private static class SingletonHolder
+
+	private static ZoneManager _instance;
+
+	public static ZoneManager getInstance()
 	{
-		protected static final ZoneManager _instance = new ZoneManager();
+		if (_instance == null)
+			_instance = new ZoneManager();
+		
+		return _instance;
 	}
 }

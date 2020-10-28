@@ -112,7 +112,7 @@ public class ItemTable
 		_slots.put("head", L2Item.SLOT_HEAD);
 		_slots.put("hair", L2Item.SLOT_HAIR);
 		_slots.put("face", L2Item.SLOT_FACE);
-		_slots.put("dhair", L2Item.SLOT_DHAIR);
+		_slots.put("dhair", L2Item.SLOT_HAIRALL);
 		_slots.put("underwear", L2Item.SLOT_UNDERWEAR);
 		_slots.put("back", L2Item.SLOT_BACK);
 		_slots.put("neck", L2Item.SLOT_NECK);
@@ -388,7 +388,7 @@ public class ItemTable
 		item.set.set("item_skill_id", rset.getInt("item_skill_id"));
 		item.set.set("item_skill_lvl", rset.getInt("item_skill_lvl"));
 		
-		if (bodypart == L2Item.SLOT_NECK || bodypart == L2Item.SLOT_HAIR || bodypart == L2Item.SLOT_FACE || bodypart == L2Item.SLOT_DHAIR || (bodypart & L2Item.SLOT_L_EAR) != 0 || (bodypart & L2Item.SLOT_L_FINGER) != 0)
+		if (bodypart == L2Item.SLOT_NECK || bodypart == L2Item.SLOT_HAIR || bodypart == L2Item.SLOT_FACE || bodypart == L2Item.SLOT_HAIRALL || (bodypart & L2Item.SLOT_L_EAR) != 0 || (bodypart & L2Item.SLOT_L_FINGER) != 0)
 		{
 			item.set.set("type1", L2Item.TYPE1_WEAPON_RING_EARRING_NECKLACE);
 			item.set.set("type2", L2Item.TYPE2_ACCESSORY);

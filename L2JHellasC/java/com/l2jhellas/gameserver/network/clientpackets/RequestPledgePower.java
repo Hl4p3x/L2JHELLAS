@@ -16,44 +16,33 @@ public final class RequestPledgePower extends L2GameClientPacket
 	{
 		_rank = readD();
 		_action = readD();
-		if (_action == 2)
-		{
-			_privs = readD();
-		}
-		else
-			_privs = 0;
+		_privs = (_action == 2) ? readD() : 0;
 	}
 	
 	@Override
 	protected void runImpl()
 	{
-		L2PcInstance player = getClient().getActiveChar();
+		final L2PcInstance player = getClient().getActiveChar();
 		if (player == null)
+			return;
+		
+		final L2Clan clan = player.getClan();
+		
+		if (clan == null)
 			return;
 		
 		if (_action == 2)
 		{
-			if (player.getClan() != null && player.isClanLeader())
+			if (player.isClanLeader())
 			{
 				if (_rank == 9)
-				{
-					// The rights below cannot be bestowed upon Academy members:
-					// Join a clan or be dismissed
-					// Title management, crest management, master management, level management,
-					// bulletin board administration
-					// Clan war, right to dismiss, set functions
-					// Auction, manage taxes, attack/defend registration, mercenary management
-					// => Leaves only CP_CL_VIEW_WAREHOUSE, CP_CH_OPEN_DOOR, CP_CS_OPEN_DOOR?
 					_privs = (_privs & L2Clan.CP_CL_VIEW_WAREHOUSE) + (_privs & L2Clan.CP_CH_OPEN_DOOR) + (_privs & L2Clan.CP_CS_OPEN_DOOR);
-				}
-				player.getClan().setRankPrivs(_rank, _privs);
+
+				clan.setRankPrivs(_rank, _privs);
 			}
 		}
 		else
-		{
-			ManagePledgePower mpp = new ManagePledgePower(getClient().getActiveChar().getClan(), _action, _rank);
-			player.sendPacket(mpp);
-		}
+			player.sendPacket(new ManagePledgePower(clan, _action, _rank));
 	}
 	
 	@Override

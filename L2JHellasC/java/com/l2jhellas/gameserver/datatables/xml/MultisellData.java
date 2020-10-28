@@ -15,6 +15,7 @@ import com.l2jhellas.gameserver.datatables.sql.ItemTable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
+import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.MultiSellList;
 import com.l2jhellas.gameserver.templates.L2Armor;
 import com.l2jhellas.gameserver.templates.L2Weapon;
@@ -189,6 +190,12 @@ public class MultisellData
 	
 	public void SeparateAndSend(int listId, L2PcInstance player, boolean inventoryOnly, double taxRate)
 	{
+		if (player.isProcessingTransaction())
+		{
+			player.sendPacket(SystemMessageId.CANNOT_PICKUP_OR_USE_ITEM_WHILE_TRADING);
+			return;
+		}
+		
 		MultiSellListContainer list = generateMultiSell(listId, inventoryOnly, player, taxRate);
 		MultiSellListContainer temp = new MultiSellListContainer();
 		int page = 1;

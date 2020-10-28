@@ -113,14 +113,14 @@ public class AuctionManager
 	private final void load()
 	{
 		_log.info(AuctionManager.class.getSimpleName() + ": Initializing AuctionManager");
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT id FROM auction ORDER BY id"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT id FROM auction ORDER BY id");
-			ResultSet rs = statement.executeQuery();
-			while (rs.next())
-				_auctions.add(new Auction(rs.getInt("id")));
-			rs.close();
-			statement.close();
+			try(ResultSet rs = statement.executeQuery())
+			{
+				while (rs.next())
+					_auctions.add(new Auction(rs.getInt("id")));
+			}
 			_log.info(AuctionManager.class.getSimpleName() + ": Loaded: " + getAuctions().size() + " auction(s)");
 		}
 		catch (SQLException e)

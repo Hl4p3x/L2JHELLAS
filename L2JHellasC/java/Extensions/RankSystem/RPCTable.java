@@ -87,25 +87,22 @@ public class RPCTable
 	
 	private void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_rpc ORDER BY rpc_total"); // ordered for faster search.
-			
-			ResultSet rset = statement.executeQuery();
-			
-			while (rset.next())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_rpc ORDER BY rpc_total")) // ordered for faster search.
+		{			
+			try(ResultSet rset = statement.executeQuery())
 			{
-				RPC rpc = new RPC();
-				
-				rpc.setPlayerId(rset.getInt("player_id"));
-				rpc.setRpcTotal(rset.getLong("rpc_total"));
-				rpc.setRpcCurrent(rset.getLong("rpc_current"));
-				
-				_rpcList.put(rpc.getPlayerId(), rpc);
+				while (rset.next())
+				{
+					RPC rpc = new RPC();
+
+					rpc.setPlayerId(rset.getInt("player_id"));
+					rpc.setRpcTotal(rset.getLong("rpc_total"));
+					rpc.setRpcCurrent(rset.getLong("rpc_current"));
+
+					_rpcList.put(rpc.getPlayerId(), rpc);
+				}
 			}
-			
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{

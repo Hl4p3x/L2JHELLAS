@@ -101,8 +101,8 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		
 		if (item.getItem().getType2() == L2Item.TYPE2_QUEST)
-		{
-			activeChar.sendMessage("You can't use quest items.");
+		{			
+			activeChar.sendPacket(SystemMessageId.CANNOT_USE_QUEST_ITEMS);
 			return;
 		}
 		
@@ -141,18 +141,14 @@ public final class UseItem extends L2GameClientPacket
 		if (((cl == null) || cl.hasCastle() == 0) && itemId == 7015 && Config.CASTLE_SHIELD)
 		{
 			// A shield that can only be used by the members of a clan that owns a castle.
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION);
-			activeChar.sendPacket(sm);
-			sm = null;
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 			return;
 		}
 		
 		if ((itemId >= 7860 && itemId <= 7879) && Config.APELLA_ARMORS && (cl == null || activeChar.getPledgeClass() < 5))
 		{
 			// Apella armor used by clan members may be worn by a Baron or a higher level Aristocrat.
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION);
-			activeChar.sendPacket(sm);
-			sm = null;
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 			return;
 		}
 		
@@ -168,9 +164,7 @@ public final class UseItem extends L2GameClientPacket
 		if (itemId == 6841 && Config.CASTLE_CROWN && (cl == null || (cl.hasCastle() == 0 || !activeChar.isClanLeader())))
 		{
 			// The Lord's Crown used by castle lords only
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION);
-			activeChar.sendPacket(sm);
-			sm = null;
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 			return;
 		}
 		
@@ -179,17 +173,13 @@ public final class UseItem extends L2GameClientPacket
 		{
 			if (cl == null)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION);
-				activeChar.sendPacket(sm);
-				sm = null;
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 				return;
 			}
 			int circletId = CastleManager.getInstance().getCircletByCastleId(cl.hasCastle());
 			if (activeChar.getPledgeType() == -1 || circletId != itemId)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION);
-				activeChar.sendPacket(sm);
-				sm = null;
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION));
 				return;
 			}
 		}
@@ -227,28 +217,16 @@ public final class UseItem extends L2GameClientPacket
 				return;
 			}
 		}
-		
-		if (activeChar.isFishing() && (_itemId < 6535 || _itemId > 6540))
-		{
-			// You cannot do anything else while fishing
-			activeChar.sendPacket(SystemMessageId.CANNOT_DO_WHILE_FISHING_3);
-			return;
-		}
 		// Char cannot use pet items
 		if (item.getItem().isForWolf() || item.getItem().isForHatchling() || item.getItem().isForStrider() || item.getItem().isForBabyPet())
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_PET_ITEM); // You cannot equip a pet item.
-			sm.addItemName(item.getItemId());
-			getClient().getActiveChar().sendPacket(sm);
-			sm = null;
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_EQUIP_PET_ITEM).addItemName(item.getItemId()));
 			return;
 		}
 		if (activeChar.isFishing() && (item.getItemId() < 6535 || item.getItemId() > 6540))
 		{
 			// You cannot do anything else while fishing
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DO_WHILE_FISHING_3);
-			getClient().getActiveChar().sendPacket(sm);
-			sm = null;
+			activeChar.sendPacket(SystemMessageId.CANNOT_DO_WHILE_FISHING_3);
 			return;
 		}
 
@@ -280,13 +258,13 @@ public final class UseItem extends L2GameClientPacket
 			
 			if (!pet.getInventory().validateCapacity(item))
 			{
-				activeChar.sendMessage("Pet can't carry any more items");
+				activeChar.sendPacket(SystemMessageId.PET_INVENTORY_FULL);			
 				return;
 			}
 			
 			if (!pet.getInventory().validateWeight(item, 1))
-			{
-				activeChar.sendMessage("Unable to place item your pet is too encumbered!");
+			{						
+				activeChar.sendPacket(SystemMessageId.UNABLE_TO_PLACE_ITEM_YOUR_PET_IS_TOO_ENCUMBERED);			
 				return;
 			}
 			
@@ -302,10 +280,7 @@ public final class UseItem extends L2GameClientPacket
 			pet.updateAndBroadcastStatus(1);
 			return;
 		}
-		
-		if (Config.DEBUG)
-			_log.finest(activeChar.getName() + ": use item " + _objectId);
-		
+
 		if (!item.isEquipped())
 		{
 			if ((item.isHeroItem()) && (activeChar.isInOlympiadMode()))
@@ -314,12 +289,6 @@ public final class UseItem extends L2GameClientPacket
 		
 		if (item.isEquipable())
 		{
-			if (!activeChar.isGM() && (item.getEnchantLevel() > Config.ENCHANT_MAX_ALLOWED_WEAPON) || (item.getEnchantLevel() > Config.ENCHANT_MAX_ALLOWED_ARMOR) || (item.getEnchantLevel() > Config.ENCHANT_MAX_ALLOWED_JEWELRY))
-			{
-				activeChar.sendMessage("You have been kicked for using an item overenchanted!");
-				activeChar.closeNetConnection(false);
-				return;
-			}
 			switch (item.getItem().getBodyPart())
 			{
 				case L2Item.SLOT_LR_HAND:

@@ -1129,10 +1129,10 @@ public final class Formulas
 	
 	public static double calcFallDam(L2Character cha, int fallHeight)
 	{
-		if (fallHeight < 0)
+		if (fallHeight <= 0)
 			return 0;
 		
-		return cha.calcStat(Stats.FALL, fallHeight * cha.getMaxHp() / 1000.0, null, null);
+		return cha.calcStat(Stats.FALL, (fallHeight * cha.getMaxHp()) / 1000.0, null, null);
 	}
 	
 	private static final double[] karma =

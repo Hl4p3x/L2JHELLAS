@@ -1,7 +1,5 @@
 package com.l2jhellas.gameserver.geodata;
 
-import java.util.HashMap;
-
 import com.l2jhellas.gameserver.geometry.Polygon;
 
 public interface GeoControl
@@ -10,9 +8,9 @@ public interface GeoControl
 	
 	public abstract void setGeoPos(Polygon value);
 	
-	public abstract HashMap<Long, Byte> getGeoAround();
+	public abstract byte[][] getGeoAround();
 	
-	public abstract void setGeoAround(HashMap<Long, Byte> value);
+	public abstract void setGeoAround(byte[][] around);
 	
 	public abstract boolean isGeoCloser();
 }

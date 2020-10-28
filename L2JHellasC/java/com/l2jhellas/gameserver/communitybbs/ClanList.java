@@ -1,97 +1,42 @@
 package com.l2jhellas.gameserver.communitybbs;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
-import com.l2jhellas.Config;
-import com.l2jhellas.util.database.L2DatabaseFactory;
+import com.l2jhellas.gameserver.datatables.sql.ClanTable;
+import com.l2jhellas.gameserver.instancemanager.CastleManager;
+import com.l2jhellas.gameserver.model.L2Clan;
+import com.l2jhellas.gameserver.model.entity.Castle;
 
 public class ClanList
 {
 	protected static final Logger _log = Logger.getLogger(ClanList.class.getName());
-	
-	private static final String SELECT_CLAN_DATA = "SELECT * FROM clan_data ORDER BY clan_level DESC LIMIT ";
-	private static final String SELECT_CASTLE = "SELECT name FROM castle WHERE id=";
-	private static final String SELECT_CHARNAME = "SELECT char_name FROM characters WHERE obj_Id=";
-	
+
 	private final StringBuilder _clanList = new StringBuilder();
 	
 	public ClanList(int type)
 	{
-		loadFromDB(type);
+		loadClanList(type);
 	}
 	
-	private void loadFromDB(int type)
+	private void loadClanList(int type)
 	{
-		int stpoint = 0;
-		int results = 20;
-		String castlename = "";
-		String allystatus = "";
-		String leadername = "";
-		for (int count = 1; count != type; count++)
-		{
-			stpoint += 20;
-		}
-		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement(SELECT_CLAN_DATA + stpoint + ", " + results);
-			ResultSet result = statement.executeQuery();
-			int pos = 0;
+		List<L2Clan> clans = ClanTable.getInstance().getClans().stream().filter(Objects::nonNull).sorted((x1, x2) -> Integer.compare(x2.getLevel(),x1.getLevel())).collect(Collectors.toList());
+		clans = clans.subList((1 - 1) * 15, Math.min(1 * 15, clans.size()));
+
+	    AtomicInteger counter = new AtomicInteger(0);
+
+		clans.forEach(clan ->
+		{		
+			final Castle castle = CastleManager.getInstance().getCastleById(clan.hasCastle());
+			boolean hasAlly = clan.getAllyId() > 0;			
+			String AllyStatus = !hasAlly ? "-" : clan.getAllyId() == clan.getAllyId() ? "Alliance Leader" : "Affiliated Clan";
 			
-			while (result.next())
-			{
-				int clanid = result.getInt("leader_id");
-				String clan = result.getString("clan_name");
-				String ally = result.getString("ally_name");
-				int clanleader = result.getInt("leader_id");
-				int clanlevel = result.getInt("clan_level");
-				int reputation = result.getInt("reputation_score");
-				int hascastle = result.getInt("hasCastle");
-				int allyid = result.getInt("ally_id");
-				if (allyid != 0)
-				{
-					if (allyid == clanid)
-						allystatus = "Alliance Leader";
-					allystatus = "Affiliated Clan";
-				}
-				else
-				{
-					allystatus = "-";
-					ally = "[no-ally]";
-				}
-				if (hascastle != 0)
-				{
-					PreparedStatement statement2 = con.prepareStatement(SELECT_CASTLE + hascastle);
-					ResultSet result2 = statement2.executeQuery();
-					if (result2.next())
-						castlename = result2.getString("name");
-					result2.close();
-					statement2.close();
-				}
-				else
-					castlename = "[none]";
-				PreparedStatement statement3 = con.prepareStatement(SELECT_CHARNAME + clanleader);
-				ResultSet result3 = statement3.executeQuery();
-				
-				if (result3.next())
-					leadername = result3.getString("char_name");
-				result3.close();
-				statement3.close();
-				pos++;
-				addClanToList(pos, clan, ally, leadername, clanlevel, reputation, castlename, allystatus);
-			}
-			result.close();
-			statement.close();
-		}
-		catch (Exception e)
-		{
-			_log.warning(ClanList.class.getName() + ": Error loading DB ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
-		}
+			addClanToList(counter.incrementAndGet(), clan.getName(), hasAlly ? clan.getAllyName() : "-",clan.getLeaderName(), clan.getLevel(), clan.getReputationScore(), castle == null ? "-" : castle.getName(), AllyStatus);
+		});
 	}
 	
 	private void addClanToList(int pos, String clan, String ally, String leadername, int clanlevel, int reputation, String castlename, String allystatus)

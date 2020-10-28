@@ -350,8 +350,6 @@ public final class Config
 	public static int TOP_PLAYER_ROW_HEIGHT;
 	public static int TOP_PLAYER_RESULTS;
 	public static int RAID_LIST_ROW_HEIGHT;
-	public static int RAID_LIST_RESULTS;
-	public static boolean RAID_LIST_SORT_ASC;
 	public static boolean ALLOW_REAL_ONLINE_STATS;
 	public static String ALLOW_CLASS_MASTERSCB;
 	public static String CLASS_MASTERS_PRICECB;
@@ -1858,8 +1856,6 @@ public final class Config
 			TOP_PLAYER_ROW_HEIGHT = Integer.parseInt(smartCBSettings.getProperty("TopPlayerRowHeight", "19"));
 			TOP_PLAYER_RESULTS = Integer.parseInt(smartCBSettings.getProperty("TopPlayerResults", "20"));
 			RAID_LIST_ROW_HEIGHT = Integer.parseInt(smartCBSettings.getProperty("RaidListRowHeight", "18"));
-			RAID_LIST_RESULTS = Integer.parseInt(smartCBSettings.getProperty("RaidListResults", "20"));
-			RAID_LIST_SORT_ASC = Boolean.parseBoolean(smartCBSettings.getProperty("RaidListSortAsc", "True"));
 			ALLOW_REAL_ONLINE_STATS = Boolean.parseBoolean(smartCBSettings.getProperty("AllowRealOnlineStats", "True"));
 			ALLOW_CLASS_MASTERSCB = smartCBSettings.getProperty("AllowClassMastersCB", "0");
 			CLASS_MASTERS_PRICE_ITEMCB = Integer.parseInt(smartCBSettings.getProperty("ClassMastersPriceItemCB", "57"));

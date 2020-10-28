@@ -63,7 +63,7 @@ public class CharInfo extends L2GameServerPacket
 		writeD(_activeChar.getAppearance().getSex().ordinal());
 		writeD(_activeChar.getClassIndex() == 0 ? _activeChar.getClassId().getId() : _activeChar.getBaseClass());
 		
-		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_DHAIR));
+		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIRALL));
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_LHAND));
@@ -72,7 +72,7 @@ public class CharInfo extends L2GameServerPacket
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_BACK));
-		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_LRHAND));
+		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
 		writeD(_inv.getPaperdollItemId(Inventory.PAPERDOLL_FACE));
 		
@@ -94,7 +94,7 @@ public class CharInfo extends L2GameServerPacket
 		writeH(0x00);
 		writeH(0x00);
 		writeH(0x00);
-		writeD(_inv.getPaperdollAugmentationId(Inventory.PAPERDOLL_LRHAND));
+		writeD(_inv.getPaperdollAugmentationId(Inventory.PAPERDOLL_LHAND));
 		writeH(0x00);
 		writeH(0x00);
 		writeH(0x00);

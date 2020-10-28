@@ -20,7 +20,7 @@ import Extensions.RankSystem.Util.DDSConverter;
 
 public class AntiBot
 {
-	private static final char[] CAPTCHA_POSSIBILITIES = {'A','B','C','D','E','F','G','H','K','L','M','P','R','S','T','U','W','X','Y','Z'};
+	private static final char[] CAPTCHA_POSSIBILITIES = {'0','1','2','3','4','5','6','7','8','9'};
 	private static final int CAPTCHA_LENGTH = 5;
 	private static final int CAPTCHA_MIN_ID = 1900000000;
 	private static final int CAPTCHA_MAX_ID = 2000000000;
@@ -73,6 +73,7 @@ public class AntiBot
 					{
 						if(player.isInCombat() || player.getPvpFlag() > 0 || player.getKarma() > 0)
 						{
+							player.clearCaptcha();
 							player.store();
 							player.closeNetConnection(false);
 						}
@@ -83,17 +84,9 @@ public class AntiBot
 							player.sendMessage("You have been teleported because you did not passed the protection system.");
 						}
 					}
-				}
-								
-				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-				{
-					if(player == null || !player.isbOnline() || player.isGM())
-						continue;
 					
-					player.PassedProt = false;
 					player.clearCaptcha();
-				}
-				
+				}				
 				startAntibot();				
 			}
 		}, 60 * 1000 * 2);

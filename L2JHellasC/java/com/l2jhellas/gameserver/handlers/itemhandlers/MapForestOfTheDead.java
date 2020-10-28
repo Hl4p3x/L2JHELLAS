@@ -21,12 +21,9 @@ public class MapForestOfTheDead implements IItemHandler
 	public void useItem(L2Playable playable, L2ItemInstance item)
 	{
 		if (!(playable instanceof L2PcInstance))
-		{
 			return;
-		}
 		
-		int itemId = item.getItemId();
-		if (itemId == 7063)
+		if (item.getItemId() == 7063)
 		{
 			NpcHtmlMessage html = new NpcHtmlMessage(5);
 			StringBuilder map = new StringBuilder("<html><title>Map - Forest of the Dead</title>");

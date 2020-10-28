@@ -179,7 +179,9 @@ public class CastleManorManager
 	
 	private void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement st1 = con.prepareStatement(CASTLE_MANOR_LOAD_PRODUCTION);
+		PreparedStatement st2 = con.prepareStatement(CASTLE_MANOR_LOAD_PROCURE))
 		{
 			for (Castle castle : CastleManager.getInstance().getCastles())
 			{
@@ -188,50 +190,48 @@ public class CastleManorManager
 				List<CropProcure> procure = new ArrayList<>();
 				List<CropProcure> procureNext = new ArrayList<>();
 				
-				// restore seed production info
-				PreparedStatement statement = con.prepareStatement(CASTLE_MANOR_LOAD_PRODUCTION);
-				statement.setInt(1, castle.getCastleId());
-				ResultSet rs = statement.executeQuery();
-				while (rs.next())
-				{
-					int seedId = rs.getInt("seed_id");
-					int canProduce = rs.getInt("can_produce");
-					int startProduce = rs.getInt("start_produce");
-					int price = rs.getInt("seed_price");
-					int period = rs.getInt("period");
-					
-					if (period == PERIOD_CURRENT)
-						production.add(new SeedProduction(seedId, canProduce, price, startProduce));
-					else
-						productionNext.add(new SeedProduction(seedId, canProduce, price, startProduce));
-				}
-				statement.close();
-				rs.close();
+				st1.clearParameters();
+				st1.setInt(1, castle.getCastleId());
 				
+				try(ResultSet rs = st1.executeQuery())
+				{
+					while (rs.next())
+					{
+						int seedId = rs.getInt("seed_id");
+						int canProduce = rs.getInt("can_produce");
+						int startProduce = rs.getInt("start_produce");
+						int price = rs.getInt("seed_price");
+						int period = rs.getInt("period");
+
+						if (period == PERIOD_CURRENT)
+							production.add(new SeedProduction(seedId, canProduce, price, startProduce));
+						else
+							productionNext.add(new SeedProduction(seedId, canProduce, price, startProduce));
+					}
+				}
 				castle.setSeedProduction(production, PERIOD_CURRENT);
 				castle.setSeedProduction(productionNext, PERIOD_NEXT);
 				
-				// restore procure info
-				statement = con.prepareStatement(CASTLE_MANOR_LOAD_PROCURE);
-				statement.setInt(1, castle.getCastleId());
-				rs = statement.executeQuery();
-				while (rs.next())
+				st2.clearParameters();
+				st2.setInt(1, castle.getCastleId());
+				try(ResultSet rs = st2.executeQuery())
 				{
-					int cropId = rs.getInt("crop_id");
-					int canBuy = rs.getInt("can_buy");
-					int startBuy = rs.getInt("start_buy");
-					int rewardType = rs.getInt("reward_type");
-					int price = rs.getInt("price");
-					int period = rs.getInt("period");
-					
-					if (period == PERIOD_CURRENT)
-						procure.add(new CropProcure(cropId, canBuy, rewardType, startBuy, price));
-					else
-						procureNext.add(new CropProcure(cropId, canBuy, rewardType, startBuy, price));
+					while (rs.next())
+					{
+						int cropId = rs.getInt("crop_id");
+						int canBuy = rs.getInt("can_buy");
+						int startBuy = rs.getInt("start_buy");
+						int rewardType = rs.getInt("reward_type");
+						int price = rs.getInt("price");
+						int period = rs.getInt("period");
+
+						if (period == PERIOD_CURRENT)
+							procure.add(new CropProcure(cropId, canBuy, rewardType, startBuy, price));
+						else
+							procureNext.add(new CropProcure(cropId, canBuy, rewardType, startBuy, price));
+					}
 				}
-				statement.close();
-				rs.close();
-				
+			
 				castle.setCropProcure(procure, PERIOD_CURRENT);
 				castle.setCropProcure(procureNext, PERIOD_NEXT);
 				

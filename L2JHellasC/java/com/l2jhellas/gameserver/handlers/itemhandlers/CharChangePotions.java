@@ -50,6 +50,9 @@ public class CharChangePotions implements IItemHandler
 			return;
 		}
 		
+		if (!activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false))
+			return;
+		
 		switch (itemId)
 		{
 			case 5235:
@@ -96,19 +99,9 @@ public class CharChangePotions implements IItemHandler
 				break;
 		}
 		
-		// Create a summon effect!
-		MagicSkillUse MSU = new MagicSkillUse(playable, activeChar, 2003, 1, 1, 0);
-		activeChar.broadcastPacket(MSU, 1500);
-		
-		// Update the changed stat for the character in the DB.
 		activeChar.store();
-		
-		// Remove the item from inventory.
-		activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false);
-		
-		// Broadcast the changes to the char and all those nearby.
-		UserInfo ui = new UserInfo(activeChar);
-		activeChar.broadcastPacket(ui, 1500);
+		activeChar.broadcastPacket(new MagicSkillUse(playable, activeChar, 2003, 1, 1, 0), 1500);
+		activeChar.broadcastPacket(new UserInfo(activeChar), 1500);
 	}
 	
 	@Override

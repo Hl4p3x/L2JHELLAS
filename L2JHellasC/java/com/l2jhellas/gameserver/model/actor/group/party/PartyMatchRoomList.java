@@ -2,25 +2,31 @@ package com.l2jhellas.gameserver.model.actor.group.party;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
+import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ExClosePartyRoom;
 
 public class PartyMatchRoomList
 {
-	private int _maxid = 1;
 	private final Map<Integer, PartyMatchRoom> _rooms;
+	private AtomicInteger _currentId = new AtomicInteger();
 	
 	protected PartyMatchRoomList()
 	{
 		_rooms = new HashMap<>();
 	}
 	
-	public synchronized void addPartyMatchRoom(int id, PartyMatchRoom room)
+	public int getNewId()
+	{
+		return _currentId.incrementAndGet();
+	}
+	
+	public void addPartyMatchRoom(int id, PartyMatchRoom room)
 	{
 		_rooms.put(id, room);
-		_maxid++;
 	}
 	
 	public void deleteRoom(int id)
@@ -53,10 +59,11 @@ public class PartyMatchRoomList
 	{
 		return _rooms.size();
 	}
-	
-	public int getMaxId()
-	{
-		return _maxid;
+
+	public PartyMatchRoom getAvailableRoom(L2PcInstance player,int location,boolean level)
+	{		
+		return _rooms.values().stream().filter(r -> (location == -1 ? true : location == -2 ? r.getLocation() == MapRegionTable.getClosestLocation(player.getX(), player.getY()) : r.getLocation() == location)
+		&& (level ? true : player.getLevel() >= r.getMinLvl() && player.getLevel() <= r.getMaxLvl()) && !r.isFull()).findFirst().orElse(null);
 	}
 	
 	public PartyMatchRoom getPlayerRoom(L2PcInstance player)

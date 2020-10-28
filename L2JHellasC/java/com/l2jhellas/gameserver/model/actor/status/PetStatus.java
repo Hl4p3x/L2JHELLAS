@@ -2,7 +2,6 @@ package com.l2jhellas.gameserver.model.actor.status;
 
 import com.l2jhellas.gameserver.ai.CtrlEvent;
 import com.l2jhellas.gameserver.model.actor.L2Character;
-import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -32,14 +31,7 @@ public class PetStatus extends SummonStatus
 		
 		if (attacker != null)
 		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_RECEIVED_S2_DAMAGE_BY_S1);
-			if (attacker instanceof L2Npc)
-				sm.addNpcName(((L2Npc) attacker).getTemplate().idTemplate);
-			else
-				sm.addString(attacker.getName());
-			sm.addNumber((int) value);
-			getActiveChar().getOwner().sendPacket(sm);
-			
+			getActiveChar().getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_RECEIVED_S2_DAMAGE_BY_S1).addCharName(attacker).addNumber((int) value));		
 			getActiveChar().getAI().notifyEvent(CtrlEvent.EVT_ATTACKED, attacker);
 		}
 	}

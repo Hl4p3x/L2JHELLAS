@@ -140,8 +140,7 @@ public class CTF extends Event
 		}
 		
 		player.broadcastUserInfo();
-		CreatureSay cs = new CreatureSay(player.getObjectId(), 15, ":", "You got it! Run back! ::");
-		player.sendPacket(cs);
+		player.sendPacket(new CreatureSay(player.getObjectId(), 15, ":", "You got it! Run back! ::"));
 	}
 	
 	@Override

@@ -3,7 +3,6 @@ package com.l2jhellas.gameserver.model.actor.item;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Map;
@@ -408,41 +407,38 @@ public abstract class ItemContainer
 	}
 	
 	public void restore()
-	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+	{		
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT object_id, item_id, count, enchant_level, loc, loc_data, price_sell, price_buy, custom_type1, custom_type2, mana_left, time_of_use FROM items WHERE owner_id=? AND (loc=?)"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT object_id FROM items WHERE owner_id=? AND (loc=?) " + "ORDER BY object_id DESC");
-			statement.setInt(1, getOwnerId());
-			statement.setString(2, getBaseLocation().name());
-			ResultSet inv = statement.executeQuery();
+			ps.setInt(1, getOwnerId());
+			ps.setString(2, getBaseLocation().name());
 			
-			L2ItemInstance item;
-			while (inv.next())
+			try (ResultSet rs = ps.executeQuery())
 			{
-				int objectId = inv.getInt(1);
-				item = L2ItemInstance.restoreFromDb(objectId);
-				if (item == null)
-					continue;
-				
-				L2World.getInstance().storeObject(item);
-				
-				// If stackable item is found in inventory just add to current quantity
-				if (item.isStackable() && getItemByItemId(item.getItemId()) != null)
-					addItem("Restore", item, null, getOwner());
-				else
-					addItem(item);
+				while (rs.next())
+				{
+					// Restore the item.
+					final L2ItemInstance item = L2ItemInstance.restoreFromDb(getOwnerId(), rs);
+					if (item == null)
+						continue;
+					
+					// Add the item to world objects list.
+					L2World.getInstance().storeObject(item);
+					
+					// If stackable item is found in inventory just add to current quantity
+					if (item.isStackable() && getItemByItemId(item.getItemId()) != null)
+						addItem("Restore", item, null, getOwner());
+					else
+						addItem(item);
+				}
 			}
-			
-			inv.close();
-			statement.close();
-			refreshWeight();
 		}
-		catch (SQLException e)
+		catch (Exception e)
 		{
-			_log.warning(ItemContainer.class.getName() + ": could not restore container");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
-		}
+			_log.warning(ItemContainer.class.getName() + ": could not restore container: "+e);
+	    }
+		refreshWeight();
 	}
 	
 	public boolean validateCapacity(int slots)

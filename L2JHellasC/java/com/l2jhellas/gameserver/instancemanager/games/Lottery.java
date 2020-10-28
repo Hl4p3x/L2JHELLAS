@@ -76,9 +76,9 @@ public class Lottery
 	public void increasePrize(int count)
 	{
 		_prize += count;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(UPDATE_PRICE))
 		{
-			PreparedStatement statement = con.prepareStatement(UPDATE_PRICE);
 			statement.setInt(1, getPrize());
 			statement.setInt(2, getPrize());
 			statement.setInt(3, getId());
@@ -113,51 +113,50 @@ public class Lottery
 		@Override
 		public void run()
 		{
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(SELECT_LAST_LOTTERY))
 			{
-				PreparedStatement statement = con.prepareStatement(SELECT_LAST_LOTTERY);
-				ResultSet rset = statement.executeQuery();
-				
-				if (rset.next())
+				try(ResultSet rset = statement.executeQuery())
 				{
-					_number = rset.getInt("idnr");
-					
-					if (rset.getInt("finished") == 1)
+					if (rset.next())
 					{
-						_number++;
-						_prize = rset.getInt("newprize");
-					}
-					else
-					{
-						_prize = rset.getInt("prize");
-						_enddate = rset.getLong("enddate");
-						
-						if (_enddate <= System.currentTimeMillis() + 2 * MINUTE)
+						_number = rset.getInt("idnr");
+
+						if (rset.getInt("finished") == 1)
 						{
-							(new finishLottery()).run();
-							rset.close();
-							statement.close();
-							return;
+							_number++;
+							_prize = rset.getInt("newprize");
 						}
-						
-						if (_enddate > System.currentTimeMillis())
+						else
 						{
-							_isStarted = true;
-							ThreadPoolManager.getInstance().scheduleGeneral(new finishLottery(), _enddate - System.currentTimeMillis());
-							
-							if (_enddate > System.currentTimeMillis() + 12 * MINUTE)
+							_prize = rset.getInt("prize");
+							_enddate = rset.getLong("enddate");
+
+							if (_enddate <= System.currentTimeMillis() + 2 * MINUTE)
 							{
-								_isSellingTickets = true;
-								ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - 10 * MINUTE);
+								(new finishLottery()).run();
+								rset.close();
+								statement.close();
+								return;
 							}
-							rset.close();
-							statement.close();
-							return;
+
+							if (_enddate > System.currentTimeMillis())
+							{
+								_isStarted = true;
+								ThreadPoolManager.getInstance().scheduleGeneral(new finishLottery(), _enddate - System.currentTimeMillis());
+
+								if (_enddate > System.currentTimeMillis() + 12 * MINUTE)
+								{
+									_isSellingTickets = true;
+									ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - 10 * MINUTE);
+								}
+								rset.close();
+								statement.close();
+								return;
+							}
 						}
 					}
 				}
-				rset.close();
-				statement.close();
 			}
 			catch (SQLException e)
 			{
@@ -194,16 +193,15 @@ public class Lottery
 			ThreadPoolManager.getInstance().scheduleGeneral(new stopSellingTickets(), _enddate - System.currentTimeMillis() - 10 * MINUTE);
 			ThreadPoolManager.getInstance().scheduleGeneral(new finishLottery(), _enddate - System.currentTimeMillis());
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(INSERT_LOTTERY))
 			{
-				PreparedStatement statement = con.prepareStatement(INSERT_LOTTERY);
 				statement.setInt(1, 1);
 				statement.setInt(2, getId());
 				statement.setLong(3, getEndDate());
 				statement.setInt(4, getPrize());
 				statement.setInt(5, getPrize());
 				statement.execute();
-				statement.close();
 			}
 			catch (SQLException e)
 			{
@@ -288,49 +286,48 @@ public class Lottery
 			int count3 = 0;
 			int count4 = 0;
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(SELECT_LOTTERY_ITEM))
 			{
-				PreparedStatement statement = con.prepareStatement(SELECT_LOTTERY_ITEM);
 				statement.setInt(1, getId());
-				ResultSet rset = statement.executeQuery();
-				
-				while (rset.next())
+				try(ResultSet rset = statement.executeQuery())
 				{
-					int curenchant = rset.getInt("enchant_level") & enchant;
-					int curtype2 = rset.getInt("custom_type2") & type2;
-					
-					if (curenchant == 0 && curtype2 == 0)
-						continue;
-					
-					int count = 0;
-					
-					for (int i = 1; i <= 16; i++)
+					while (rset.next())
 					{
-						int val = curenchant / 2;
-						
-						if (val != (double) curenchant / 2)
-							count++;
-						
-						int val2 = curtype2 / 2;
-						
-						if (val2 != (double) curtype2 / 2)
-							count++;
-						
-						curenchant = val;
-						curtype2 = val2;
+						int curenchant = rset.getInt("enchant_level") & enchant;
+						int curtype2 = rset.getInt("custom_type2") & type2;
+
+						if (curenchant == 0 && curtype2 == 0)
+							continue;
+
+						int count = 0;
+
+						for (int i = 1; i <= 16; i++)
+						{
+							int val = curenchant / 2;
+
+							if (val != (double) curenchant / 2)
+								count++;
+
+							int val2 = curtype2 / 2;
+
+							if (val2 != (double) curtype2 / 2)
+								count++;
+
+							curenchant = val;
+							curtype2 = val2;
+						}
+
+						if (count == 5)
+							count1++;
+						else if (count == 4)
+							count2++;
+						else if (count == 3)
+							count3++;
+						else if (count > 0)
+							count4++;
 					}
-					
-					if (count == 5)
-						count1++;
-					else if (count == 4)
-						count2++;
-					else if (count == 3)
-						count3++;
-					else if (count > 0)
-						count4++;
-				}
-				rset.close();
-				statement.close();
+				}			
 			}
 			catch (SQLException e)
 			{
@@ -381,9 +378,9 @@ public class Lottery
 				Announcements.getInstance().announceToAll(sm);
 			}
 			
-			try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+			try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement statement = con.prepareStatement(UPDATE_LOTTERY))
 			{
-				PreparedStatement statement = con.prepareStatement(UPDATE_LOTTERY);
 				statement.setInt(1, getPrize());
 				statement.setInt(2, newprize);
 				statement.setInt(3, enchant);
@@ -393,7 +390,6 @@ public class Lottery
 				statement.setInt(7, prize3);
 				statement.setInt(8, getId());
 				statement.execute();
-				statement.close();
 			}
 			catch (SQLException e)
 			{
@@ -457,65 +453,63 @@ public class Lottery
 			0
 		};
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(SELECT_LOTTERY_TICKET))
 		{
-			PreparedStatement statement = con.prepareStatement(SELECT_LOTTERY_TICKET);
 			statement.setInt(1, id);
-			ResultSet rset = statement.executeQuery();
-			
-			if (rset.next())
+			try(ResultSet rset = statement.executeQuery())
 			{
-				int curenchant = rset.getInt("number1") & enchant;
-				int curtype2 = rset.getInt("number2") & type2;
-				
-				if (curenchant == 0 && curtype2 == 0)
+				if (rset.next())
 				{
-					rset.close();
-					statement.close();
-					return res;
+					int curenchant = rset.getInt("number1") & enchant;
+					int curtype2 = rset.getInt("number2") & type2;
+
+					if (curenchant == 0 && curtype2 == 0)
+					{
+						rset.close();
+						statement.close();
+						return res;
+					}
+
+					int count = 0;
+
+					for (int i = 1; i <= 16; i++)
+					{
+						int val = curenchant / 2;
+						if (val != (double) curenchant / 2)
+							count++;
+						int val2 = curtype2 / 2;
+						if (val2 != (double) curtype2 / 2)
+							count++;
+						curenchant = val;
+						curtype2 = val2;
+					}
+
+					switch (count)
+					{
+						case 0:
+							break;
+						case 5:
+							res[0] = 1;
+							res[1] = rset.getInt("prize1");
+							break;
+						case 4:
+							res[0] = 2;
+							res[1] = rset.getInt("prize2");
+							break;
+						case 3:
+							res[0] = 3;
+							res[1] = rset.getInt("prize3");
+							break;
+						default:
+							res[0] = 4;
+							res[1] = 200;
+					}
+
+					if (Config.DEBUG)
+						_log.warning(Lottery.class.getName() + ": count: " + count + ", id: " + id + ", enchant: " + enchant + ", type2: " + type2);
 				}
-				
-				int count = 0;
-				
-				for (int i = 1; i <= 16; i++)
-				{
-					int val = curenchant / 2;
-					if (val != (double) curenchant / 2)
-						count++;
-					int val2 = curtype2 / 2;
-					if (val2 != (double) curtype2 / 2)
-						count++;
-					curenchant = val;
-					curtype2 = val2;
-				}
-				
-				switch (count)
-				{
-					case 0:
-						break;
-					case 5:
-						res[0] = 1;
-						res[1] = rset.getInt("prize1");
-						break;
-					case 4:
-						res[0] = 2;
-						res[1] = rset.getInt("prize2");
-						break;
-					case 3:
-						res[0] = 3;
-						res[1] = rset.getInt("prize3");
-						break;
-					default:
-						res[0] = 4;
-						res[1] = 200;
-				}
-				
-				if (Config.DEBUG)
-					_log.warning(Lottery.class.getName() + ": count: " + count + ", id: " + id + ", enchant: " + enchant + ", type2: " + type2);
 			}
-			
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{

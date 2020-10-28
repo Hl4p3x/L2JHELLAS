@@ -22,8 +22,7 @@ public final class RequestSiegeAttackerList extends L2GameClientPacket
 		Castle castle = CastleManager.getInstance().getCastleById(_castleId);
 		if (castle == null)
 			return;
-		SiegeAttackerList sal = new SiegeAttackerList(castle);
-		sendPacket(sal);
+		sendPacket(new SiegeAttackerList(castle));
 	}
 	
 	@Override

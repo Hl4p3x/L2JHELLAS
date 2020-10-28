@@ -3,6 +3,8 @@ package com.l2jhellas.gameserver.network.clientpackets;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2ClanMember;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.network.SystemMessageId;
+import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 
 public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 {
@@ -26,6 +28,13 @@ public final class RequestPledgeSetMemberPowerGrade extends L2GameClientPacket
 		L2Clan clan = activeChar.getClan();
 		if (clan == null)
 			return;
+		
+		if(_member.isEmpty())
+		{
+			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.INCORRECT_NAME_TRY_AGAIN));
+			return;
+		}
+		
 		L2ClanMember member = clan.getClanMember(_member);
 		if (member == null)
 			return;

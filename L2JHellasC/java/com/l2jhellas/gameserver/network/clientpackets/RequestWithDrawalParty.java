@@ -1,6 +1,10 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
+import com.l2jhellas.gameserver.model.actor.group.party.PartyMatchRoom;
+import com.l2jhellas.gameserver.model.actor.group.party.PartyMatchRoomList;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.network.serverpackets.ExPartyRoomMember;
+import com.l2jhellas.gameserver.network.serverpackets.PartyMatchDetail;
 
 public final class RequestWithDrawalParty extends L2GameClientPacket
 {
@@ -25,6 +29,19 @@ public final class RequestWithDrawalParty extends L2GameClientPacket
 				player.sendMessage("You can't exit party when you are in Dimensional Rift.");
 			else
 				player.getParty().removePartyMember(player);
+		}
+		
+		if (player.isInPartyMatchRoom())
+		{
+			final PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(player.getPartyRoom());
+			if (room != null)
+			{
+				player.sendPacket(new PartyMatchDetail(room));
+				player.sendPacket(new ExPartyRoomMember(room, 0));
+				
+				// Remove PartyMatchRoom member.
+				room.deleteMember(player);
+			}
 		}
 	}
 	

@@ -397,32 +397,30 @@ public class Baium extends AbstractNpcAI
 		int npcId = npc.getNpcId();
 		List<L2Character> result = new ArrayList<>();
 		
-		for (L2Character obj : L2World.getInstance().getVisibleObjects(npc, L2Attackable.class))
+		for (L2Character characters : L2World.getInstance().getVisibleObjects(npc, L2Character.class))
 		{
-			if (obj instanceof L2PcInstance)
+			if (characters == null || characters.isDead() || !(GeoEngine.canSeeTarget(npc, characters)))
+				continue;
+
+			if(characters.isPlayer())
 			{
-				if (obj.isDead() || !(GeoEngine.canSeeTarget(npc, obj, false)))
-					continue;
+				L2PcInstance player = (L2PcInstance) characters;
 				
-				if (((L2PcInstance) obj).isGM() && ((L2PcInstance) obj).getAppearance().getInvisible())
+				if (player.isGM() && player.getAppearance().getInvisible())
 					continue;
-				
-				if (npcId == ARCHANGEL)
+
+				if (npcId == ARCHANGEL && player.getActiveWeaponInstance() == null)
 					continue;
-				
-				if (npcId == ARCHANGEL && ((L2PcInstance) obj).getActiveWeaponInstance() == null)
-					continue;
-				
-				result.add(obj);
+
+				result.add(player);
 			}
-			// Case of Archangels, they can hit Baium.
-			else if (obj instanceof L2GrandBossInstance && npcId == ARCHANGEL)
-				result.add(obj);
+			else if (characters instanceof L2GrandBossInstance && npcId == ARCHANGEL)
+				result.add(characters);
 		}
-		
+		 
 		// If there's no players available, Baium and Angels are hitting each other.
 		if (result.isEmpty())
-		{
+		{			
 			if (npcId == LIVE_BAIUM) // Case of Baium. Angels should never be without target.
 			{
 				for (L2Npc minion : _Minions)
@@ -430,8 +428,8 @@ public class Baium extends AbstractNpcAI
 						result.add(minion);
 			}
 		}
-		
-		return (result.isEmpty()) ? null : result.get(Rnd.get(result.size()));
+				
+		return (result.isEmpty()) ? null : Rnd.get(result);
 	}
 	
 	private void callSkillAI(L2Npc npc)

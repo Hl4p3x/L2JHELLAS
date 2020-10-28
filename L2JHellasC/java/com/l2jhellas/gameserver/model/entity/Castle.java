@@ -169,13 +169,12 @@ public class Castle
 				_treasury += amount;
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("UPDATE castle SET treasury=? WHERE id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("UPDATE castle SET treasury=? WHERE id=?");
 			statement.setInt(1, getTreasury());
 			statement.setInt(2, getCastleId());
 			statement.execute();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -290,10 +289,10 @@ public class Castle
 		if (clan != null)
 		{
 			_formerOwner = clan;
+			
 			if (Config.REMOVE_CASTLE_CIRCLETS)
-			{
 				CastleManager.getInstance().removeCirclet(_formerOwner, getCastleId());
-			}
+
 			clan.setHasCastle(0);
 			new Announcements().announceToAll(clan.getName() + " has lost " + getName() + " castle");
 			clan.broadcastToOnlineMembers(new PledgeShowInfoUpdate(clan));
@@ -337,13 +336,12 @@ public class Castle
 		_taxPercent = taxPercent;
 		_taxRate = _taxPercent / 100.0;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("UPDATE castle SET taxPercent=? WHERE id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("UPDATE castle SET taxPercent=? WHERE id=?");
 			statement.setInt(1, taxPercent);
 			statement.setInt(2, getCastleId());
 			statement.execute();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -396,64 +394,64 @@ public class Castle
 	// This method loads castle
 	private void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM castle WHERE id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM castle WHERE id=?");
 			statement.setInt(1, getCastleId());
-			ResultSet rs = statement.executeQuery();
 			
-			while (rs.next())
+			try (ResultSet rs = statement.executeQuery())
 			{
-				_name = rs.getString("name");
-				// _OwnerId = rs.getInt("ownerId");
-				
-				_siegeDate = Calendar.getInstance();
-				_siegeDate.setTimeInMillis(rs.getLong("siegeDate"));
-				
-				_siegeDayOfWeek = rs.getInt("siegeDayOfWeek");
-				if (_siegeDayOfWeek < 1 || _siegeDayOfWeek > 7)
-					_siegeDayOfWeek = 7;
-				
-				_siegeHourOfDay = rs.getInt("siegeHourOfDay");
-				if (_siegeHourOfDay < 0 || _siegeHourOfDay > 23)
-					_siegeHourOfDay = 20;
-				
-				_taxPercent = rs.getInt("taxPercent");
-				_treasury = rs.getInt("treasury");
-				int showNpcCrest = rs.getInt("showNpcCrest");
-				if (showNpcCrest == 1)
-					_showNpcCrest = true;
-				
+				while (rs.next())
+				{
+					_name = rs.getString("name");
+					// _OwnerId = rs.getInt("ownerId");
+
+					_siegeDate = Calendar.getInstance();
+					_siegeDate.setTimeInMillis(rs.getLong("siegeDate"));
+
+					_siegeDayOfWeek = rs.getInt("siegeDayOfWeek");
+					if (_siegeDayOfWeek < 1 || _siegeDayOfWeek > 7)
+						_siegeDayOfWeek = 7;
+
+					_siegeHourOfDay = rs.getInt("siegeHourOfDay");
+					if (_siegeHourOfDay < 0 || _siegeHourOfDay > 23)
+						_siegeHourOfDay = 20;
+
+					_taxPercent = rs.getInt("taxPercent");
+					_treasury = rs.getInt("treasury");
+					int showNpcCrest = rs.getInt("showNpcCrest");
+					if (showNpcCrest == 1)
+						_showNpcCrest = true;
+
+				}
 			}
-			
-			rs.close();
-			statement.close();
-			
+
 			_taxRate = _taxPercent / 100.0;
 			
-			statement = con.prepareStatement("SELECT clan_id FROM clan_data WHERE hasCastle=?");
-			statement.setInt(1, getCastleId());
-			rs = statement.executeQuery();
-			
-			while (rs.next())
+			try (PreparedStatement ps = con.prepareStatement("SELECT clan_id FROM clan_data WHERE hasCastle=?"))
 			{
-				_ownerId = rs.getInt("clan_id");
+				ps.setInt(1, getCastleId());
+
+				try (ResultSet rs = ps.executeQuery())
+				{
+					while (rs.next())
+					{
+						_ownerId = rs.getInt("clan_id");
+
+						if (_ownerId > 0)
+						{
+							L2Clan clan = ClanTable.getInstance().getClan(_ownerId);// Try to find clan instance
+							if(clan != null)
+								ThreadPoolManager.getInstance().scheduleGeneral(new CastleUpdater(clan, 1), 3600000);// Schedule owner tasks to start running
+						}
+					}
+				}
 			}
-			
-			if (getOwnerId() > 0)
-			{
-				L2Clan clan = ClanTable.getInstance().getClan(getOwnerId());// Try to find clan instance
-				ThreadPoolManager.getInstance().scheduleGeneral(new CastleUpdater(clan, 1), 3600000);// Schedule owner tasks to start running
-			}
-			
-			rs.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{
-			_log.warning(Castle.class.getName() + ": Exception: loadCastleData(): ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+			_log.warning(Castle.class.getName() + ": Castle.java: loadCastleData(): ");
+			e.printStackTrace();
 		}
 	}
 	

@@ -78,30 +78,6 @@ public abstract class Event
 		}
 	}
 	
-	protected class ResurrectorTask implements Runnable
-	{
-		private L2PcInstance player;
-		
-		public ResurrectorTask(L2PcInstance p)
-		{
-			player = p;
-			ThreadPoolManager.getInstance().scheduleGeneral(this, 7000);
-		}
-		
-		@Override
-		public void run()
-		{
-			if (EventManager.getInstance().isRegistered(player))
-			{
-				player.doRevive();				
-				player.setCurrentCp(player.getMaxCp());
-				player.setCurrentHp(player.getMaxHp());
-				player.setCurrentMp(player.getMaxMp());
-				teleportToTeamPos(player);
-			}
-		}
-	}
-	
 	public Event()
 	{
 		teams = new ConcurrentHashMap<>();
@@ -131,10 +107,33 @@ public abstract class Event
 	}
 	
 	protected void addToResurrector(L2PcInstance player)
-	{
-		new ResurrectorTask(player);
+	{	
+		ThreadPoolManager.getInstance().scheduleGeneral(new ResurrectorTask(player), 7000);
 	}
 	
+	protected class ResurrectorTask implements Runnable
+	{
+		private L2PcInstance player;
+		
+		public ResurrectorTask(L2PcInstance p)
+		{
+			player = p;
+		}
+		
+		@Override
+		public void run()
+		{
+			if (EventManager.getInstance().isRegistered(player))
+			{
+				player.doRevive();				
+				player.setCurrentCp(player.getMaxCp());
+				player.setCurrentHp(player.getMaxHp());
+				player.setCurrentMp(player.getMaxMp());
+				teleportToTeamPos(player);
+			}
+		}
+	}
+		
 	protected void announce(Set<L2PcInstance> list, String text)
 	{
 		for (L2PcInstance player : list)
@@ -530,8 +529,7 @@ public abstract class Event
 		if (player.isDead())
 			player.doRevive();
 		
-		if (player.isCastingNow())
-			player.abortCast();
+		player.abortAllAttacks();
 		
 		player.getAppearance().setVisible();
 		

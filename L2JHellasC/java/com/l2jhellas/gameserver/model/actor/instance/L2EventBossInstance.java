@@ -34,22 +34,10 @@ public final class L2EventBossInstance extends L2MonsterInstance
 	@Override
 	public void reduceCurrentHp(double damage, L2Character attacker, boolean awake)
 	{
-		if (IsInSocialAction() || isInvul())
+		if (isInvul())
 			return;
 		
 		super.reduceCurrentHp(damage, attacker, awake);
-	}
-	
-	protected boolean _isInSocialAction = false;
-	
-	public boolean IsInSocialAction()
-	{
-		return _isInSocialAction;
-	}
-	
-	public void setIsInSocialAction(boolean value)
-	{
-		_isInSocialAction = value;
 	}
 	
 	@Override
@@ -79,22 +67,10 @@ public final class L2EventBossInstance extends L2MonsterInstance
 		}
 		return true;
 	}
-	
-	@Override
-	public void doAttack(L2Character target,boolean stopMov)
-	{
-		if (_isInSocialAction)
-			return;
 
-		super.doAttack(target,true);
-	}
-	
 	@Override
 	public void doCast(L2Skill skill)
 	{
-		if (_isInSocialAction)
-			return;
-
 		super.doCast(skill);
 	}
 	

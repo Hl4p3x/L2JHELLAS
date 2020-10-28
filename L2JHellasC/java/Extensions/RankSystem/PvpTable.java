@@ -207,53 +207,53 @@ public class PvpTable
 	
 	private void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_pvp"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_pvp");
-			ResultSet rset = statement.executeQuery();
-			while (rset.next())
+			try(ResultSet rset = statement.executeQuery())
 			{
-				Pvp pvp = new Pvp();
-				
-				pvp.setVictimId(rset.getInt("victim_id"));
-				pvp.setKills(rset.getInt("kills"));
-				pvp.setKillsToday(rset.getInt("kills_today"));
-				pvp.setKillsLegal(rset.getInt("kills_legal"));
-				pvp.setKillsLegalToday(rset.getInt("kills_today_legal"));
-				pvp.setRankPoints(rset.getLong("rank_points"));
-				pvp.setRankPointsToday(rset.getLong("rank_points_today"));
-				pvp.setKillTime(rset.getLong("kill_time"));
-				pvp.setKillDay(rset.getLong("kill_day"));
-				
-				PvpSummary kps = getKillerPvpSummary(rset.getInt("killer_id"), false, false);
-				
-				pvp.setDbStatus(DBStatus.NONE);
-				
-				kps.addVictimPvpOnLoadFromDB(pvp);
+				while (rset.next())
+				{
+					Pvp pvp = new Pvp();
+
+					pvp.setVictimId(rset.getInt("victim_id"));
+					pvp.setKills(rset.getInt("kills"));
+					pvp.setKillsToday(rset.getInt("kills_today"));
+					pvp.setKillsLegal(rset.getInt("kills_legal"));
+					pvp.setKillsLegalToday(rset.getInt("kills_today_legal"));
+					pvp.setRankPoints(rset.getLong("rank_points"));
+					pvp.setRankPointsToday(rset.getLong("rank_points_today"));
+					pvp.setKillTime(rset.getLong("kill_time"));
+					pvp.setKillDay(rset.getLong("kill_day"));
+
+					PvpSummary kps = getKillerPvpSummary(rset.getInt("killer_id"), false, false);
+
+					pvp.setDbStatus(DBStatus.NONE);
+
+					kps.addVictimPvpOnLoadFromDB(pvp);
+				}
 			}
 			
-			rset.close();
-			statement.close();
-			
-			statement = con.prepareStatement("SELECT * FROM rank_pvp_system_pvp_summary");
-			rset = statement.executeQuery();
-			while (rset.next())
+			try (PreparedStatement ps = con.prepareStatement("SELECT * FROM rank_pvp_system_pvp_summary"))
 			{
-				// get only existed summaries:
-				PvpSummary kps = getKillerPvpSummary(rset.getInt("killer_id"), true, false);
-				
-				kps.setPvpExp(rset.getLong("pvp_exp"));
-				kps.setTotalWarKills(rset.getInt("total_war_kills"));
-				kps.setTotalWarKillsLegal(rset.getInt("total_war_kills_legal"));
-				kps.setMaxRankId(rset.getInt("max_rank_id"));
-				
-				kps.setDbStatus(DBStatus.NONE);
-				
-				kps.updateRankId();
+				try (ResultSet rset = ps.executeQuery())
+				{
+					while (rset.next())
+					{
+						// get only existed summaries:
+						PvpSummary kps = getKillerPvpSummary(rset.getInt("killer_id"), true, false);
+
+						kps.setPvpExp(rset.getLong("pvp_exp"));
+						kps.setTotalWarKills(rset.getInt("total_war_kills"));
+						kps.setTotalWarKillsLegal(rset.getInt("total_war_kills_legal"));
+						kps.setMaxRankId(rset.getInt("max_rank_id"));
+
+						kps.setDbStatus(DBStatus.NONE);
+
+						kps.updateRankId();
+					}
+				}
 			}
-			
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
@@ -273,9 +273,9 @@ public class PvpTable
 		int insertCount = 0; // count of insert queries
 		int updateCount = 0; // count of update queries
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		Statement statement = con.createStatement())
 		{
-			Statement statement = con.createStatement();
 			// search new or updated fields in VictimPvpTable:
 			for (Map.Entry<Integer, PvpSummary> e : _pvpTable.entrySet())
 			{

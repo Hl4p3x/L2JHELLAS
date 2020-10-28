@@ -68,9 +68,6 @@ public class CursedWeapon
 		{
 			if (item != null && _player != null && _player.isOnline() == 1)
 			{
-				// Remove from player
-				_log.info(CursedWeapon.class.getSimpleName() + ": " + _name + " being removed online.");
-				
 				_player.abortAttack();
 				
 				_player.setKarma(_playerKarma);
@@ -94,29 +91,26 @@ public class CursedWeapon
 				// Remove from Db
 				_log.info(CursedWeapon.class.getSimpleName() + ": " + _name + " being removed offline.");
 				
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement statement1 = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
+				PreparedStatement statement2 = con.prepareStatement("UPDATE characters SET karma=?, pkkills=? WHERE obj_Id=?"))
 				{
 					// Delete the item
-					PreparedStatement statement = con.prepareStatement("DELETE FROM items WHERE owner_id=? AND item_id=?");
-					statement.setInt(1, _playerId);
-					statement.setInt(2, _itemId);
-					if (statement.executeUpdate() != 1)
+					statement1.setInt(1, _playerId);
+					statement1.setInt(2, _itemId);
+					if (statement1.executeUpdate() != 1)
 					{
 						_log.warning(CursedWeapon.class.getName() + ": Error while deleting itemId " + _itemId + " from userId " + _playerId);
 					}
-					statement.close();
 					
 					// Restore the karma
-					statement = con.prepareStatement("UPDATE characters SET karma=?, pkkills=? WHERE obj_Id=?");
-					statement.setInt(1, _playerKarma);
-					statement.setInt(2, _playerPkKills);
-					statement.setInt(3, _playerId);
-					if (statement.executeUpdate() != 1)
+					statement2.setInt(1, _playerKarma);
+					statement2.setInt(2, _playerPkKills);
+					statement2.setInt(3, _playerId);
+					if (statement2.executeUpdate() != 1)
 					{
 						_log.warning(CursedWeapon.class.getName() + ": Error while updating karma & pkkills for userId " + _playerId);
-					}
-					
-					statement.close();
+					}				
 				}
 				catch (SQLException e)
 				{
@@ -141,16 +135,13 @@ public class CursedWeapon
 			{
 				_item.decayMe();
 				L2World.getInstance().removeObject(_item);
-				_log.info(CursedWeapon.class.getSimpleName() + ": " + _name + " item has been removed from World.");
 			}
 		}
 		
 		// Delete infos from table if any
 		CursedWeaponsManager.removeFromDb(_itemId);
 		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_DISAPPEARED);
-		sm.addItemName(_itemId);
-		CursedWeaponsManager.announce(sm);
+		CursedWeaponsManager.announce(SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_DISAPPEARED).addItemName(_itemId));
 		
 		// Reset state
 		cancelTask();
@@ -302,8 +293,7 @@ public class CursedWeapon
 			}
 			else
 			{
-				// TODO: correct this custom message.
-				player.sendMessage("You may not pick up this item while riding in this territory");
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FAILED_TO_PICKUP_S1).addItemName(item.getItemId()));
 				return;
 			}
 		}
@@ -337,9 +327,8 @@ public class CursedWeapon
 		_item = item;
 		// L2ItemInstance[] items =
 		_player.getInventory().equipItemAndRecord(_item);
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_EQUIPPED);
-		sm.addItemName(_item.getItemId());
-		_player.sendPacket(sm);
+
+		_player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_EQUIPPED).addItemName(_item.getItemId()));
 		
 		// Fully heal player
 		_player.setCurrentHpMp(_player.getMaxHp(), _player.getMaxMp());
@@ -361,38 +350,33 @@ public class CursedWeapon
 		
 		_player.broadcastSocialActionInRadius(17);
 		
-		sm = SystemMessage.getSystemMessage(SystemMessageId.THE_OWNER_OF_S2_HAS_APPEARED_IN_THE_S1_REGION);
-		sm.addZoneName(_player.getX(), _player.getY(), _player.getZ()); // Region Name
-		sm.addItemName(_item.getItemId());
-		CursedWeaponsManager.announce(sm);
+		CursedWeaponsManager.announce(SystemMessage.getSystemMessage(SystemMessageId.THE_OWNER_OF_S2_HAS_APPEARED_IN_THE_S1_REGION).addZoneName(_player.getX(), _player.getY(), _player.getZ())
+		.addItemName(_item.getItemId()));
 	}
 	
 	public void saveData()
 	{
-		if (Config.DEBUG)
-			_log.config(CursedWeapon.class.getName() + ": Saving data to disk.");
-		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?"))
 		{
 			// Delete previous datas
-			PreparedStatement statement = con.prepareStatement("DELETE FROM cursed_weapons WHERE itemId = ?");
 			statement.setInt(1, _itemId);
 			statement.executeUpdate();
 			statement.close();
 			
 			if (_isActivated)
 			{
-				statement = con.prepareStatement("INSERT INTO cursed_weapons (itemId, playerId, playerKarma, playerPkKills, nbKills, endTime) VALUES (?, ?, ?, ?, ?, ?)");
-				statement.setInt(1, _itemId);
-				statement.setInt(2, _playerId);
-				statement.setInt(3, _playerKarma);
-				statement.setInt(4, _playerPkKills);
-				statement.setInt(5, _nbKills);
-				statement.setLong(6, _endTime);
-				statement.executeUpdate();
-			}
-			
-			statement.close();
+				try(PreparedStatement statement1 = con.prepareStatement("INSERT INTO cursed_weapons (itemId, playerId, playerKarma, playerPkKills, nbKills, endTime) VALUES (?, ?, ?, ?, ?, ?)"))
+				{
+					statement1.setInt(1, _itemId);
+					statement1.setInt(2, _playerId);
+					statement1.setInt(3, _playerKarma);
+					statement1.setInt(4, _playerPkKills);
+					statement1.setInt(5, _nbKills);
+					statement1.setLong(6, _endTime);
+					statement1.executeUpdate();
+				}
+			}		
 		}
 		catch (SQLException e)
 		{

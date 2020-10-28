@@ -39,21 +39,16 @@ public class CoupleManager
 	
 	private final void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement;
-			ResultSet rs;
-			
-			statement = con.prepareStatement("SELECT id FROM mods_wedding ORDER BY id");
-			rs = statement.executeQuery();
-			
-			while (rs.next())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT id FROM mods_wedding ORDER BY id"))
+		{							
+			try(ResultSet rs = statement.executeQuery())
 			{
-				getCouples().add(new Couple(rs.getInt("id")));
+				while (rs.next())
+				{
+					getCouples().add(new Couple(rs.getInt("id")));
+				}
 			}
-			rs.close();
-			statement.close();
-			
 			_log.info(CoupleManager.class.getSimpleName() + ": Loaded: " + getCouples().size() + " couples.");
 		}
 		catch (Exception e)

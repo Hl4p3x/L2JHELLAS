@@ -16,14 +16,9 @@ public class RPSCookie
 	{
 		if (Config.RANK_PVP_SYSTEM_ENABLED)
 		{
-			if (player != null && target != null && target instanceof L2PcInstance)
+			if (player != null && target != null && target.isPlayer())
 			{
-				// set Victim handler for Killer
-				// setTarget((L2PcInstance)target); // [not required]
-				
-				// set Killer handler for Victim
-				((L2PcInstance) target).getRPSCookie().setTarget(player);
-				
+				((L2PcInstance) target).getRPSCookie().setTarget(player);			
 				ThreadPoolManager.getInstance().executeTask(new RankPvpSystemPvpTask(player, (L2PcInstance) target));
 			}
 		}

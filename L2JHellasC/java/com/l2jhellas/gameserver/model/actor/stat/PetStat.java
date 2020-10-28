@@ -6,6 +6,7 @@ import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.base.Experience;
 import com.l2jhellas.gameserver.network.SystemMessageId;
+import com.l2jhellas.gameserver.network.serverpackets.SocialAction;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.skills.Stats;
@@ -35,10 +36,7 @@ public class PetStat extends SummonStat
 		if (!super.addExpAndSp(addToExp, addToSp))
 			return false;
 		
-		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.PET_EARNED_S1_EXP);
-		sm.addNumber((int) addToExp);
-		
-		getActiveChar().getOwner().sendPacket(sm);
+		getActiveChar().getOwner().sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_EARNED_S1_EXP).addNumber((int) addToExp));
 		
 		return true;
 	}
@@ -53,14 +51,10 @@ public class PetStat extends SummonStat
 		
 		// Sync up exp with current level
 		if (getExp() > getExpForLevel(getLevel() + 1) || getExp() < getExpForLevel(getLevel()))
-		{
 			setExp(Experience.LEVEL[getLevel()]);
-		}
 		
 		if (levelIncreased)
-		{
-			getActiveChar().getOwner().sendMessage("Your pet has increased it's level.");
-		}
+			getActiveChar().broadcastPacket(new SocialAction(getActiveChar().getObjectId(), 15));
 		
 		StatusUpdate su = new StatusUpdate(getActiveChar().getObjectId());
 		su.addAttribute(StatusUpdate.LEVEL, getLevel());

@@ -53,21 +53,19 @@ public class SiegeGuardManager
 	
 	public void removeMerc(int npcId, int x, int y, int z)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("DELETE FROM castle_siege_guards WHERE npcId = ? AND x = ? AND y = ? AND z = ? AND isHired = 1"))
 		{
-			PreparedStatement statement = con.prepareStatement("DELETE FROM castle_siege_guards WHERE npcId = ? AND x = ? AND y = ? AND z = ? AND isHired = 1");
 			statement.setInt(1, npcId);
 			statement.setInt(2, x);
 			statement.setInt(3, y);
 			statement.setInt(4, z);
 			statement.execute();
-			statement.close();
 		}
 		catch (Exception e1)
 		{
 			_log.warning(SiegeGuardManager.class.getName() + ": Error deleting hired siege guard at " + x + ',' + y + ',' + z + ":" + e1);
-			if (Config.DEVELOPER)
-				e1.printStackTrace();
+			e1.printStackTrace();
 		}
 	}
 	
@@ -128,40 +126,34 @@ public class SiegeGuardManager
 	
 	private void loadSiegeGuard(Castle castle)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM castle_siege_guards WHERE castleId = ? AND isHired = ?"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM castle_siege_guards WHERE castleId = ? AND isHired = ?");
 			statement.setInt(1, castle.getCastleId());
 			statement.setInt(2, castle.getOwnerId() > 0 ? 1 : 0);
 
-			ResultSet rs = statement.executeQuery();
-			
-			L2Spawn spawn1;
-			L2NpcTemplate template1;
-			
-			while (rs.next())
+			try(ResultSet rs = statement.executeQuery())
 			{
-				template1 = NpcData.getInstance().getTemplate(rs.getInt("npcId"));
-				if (template1 != null)
+				while (rs.next())
 				{
-					spawn1 = new L2Spawn(template1);
-					spawn1.setId(rs.getInt("id"));
-					spawn1.setAmount(1);
-					spawn1.setLocx(rs.getInt("x"));
-					spawn1.setLocy(rs.getInt("y"));
-					spawn1.setLocz(rs.getInt("z"));
-					spawn1.setHeading(rs.getInt("heading"));
-					spawn1.setRespawnDelay(rs.getInt("respawnDelay"));
-					spawn1.setLocation(0);
-					getSpawnedGuards(castle.getCastleId()).add(spawn1);
-				}
-				else
-				{
-					_log.warning(SiegeGuardManager.class.getName() + ": Missing npc data in npc table for id: " + rs.getInt("npcId"));
+					L2NpcTemplate template1 = NpcData.getInstance().getTemplate(rs.getInt("npcId"));
+					if (template1 != null)
+					{
+						L2Spawn spawn1 = new L2Spawn(template1);
+						spawn1.setId(rs.getInt("id"));
+						spawn1.setAmount(1);
+						spawn1.setLocx(rs.getInt("x"));
+						spawn1.setLocy(rs.getInt("y"));
+						spawn1.setLocz(rs.getInt("z"));
+						spawn1.setHeading(rs.getInt("heading"));
+						spawn1.setRespawnDelay(rs.getInt("respawnDelay"));
+						spawn1.setLocation(0);
+						getSpawnedGuards(castle.getCastleId()).add(spawn1);
+					}
+					else
+						_log.warning(SiegeGuardManager.class.getName() + ": Missing npc data in npc table for id: " + rs.getInt("npcId"));
 				}
 			}
-			rs.close();
-			statement.close();
 		}
 		catch (Exception e1)
 		{
@@ -173,22 +165,18 @@ public class SiegeGuardManager
 	
 	public void saveSiegeGuard(Castle castle,int x, int y, int z, int heading, int npcId, int isHire)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("INSERT INTO castle_siege_guards (castleId,npcId,x,y,z,heading,respawnDelay,isHired) VALUES (?,?,?,?,?,?,?,?)"))
 		{
-			PreparedStatement statement = con.prepareStatement("INSERT INTO castle_siege_guards (castleId,npcId,x,y,z,heading,respawnDelay,isHired) VALUES (?,?,?,?,?,?,?,?)");
 			statement.setInt(1, castle.getCastleId());
 			statement.setInt(2, npcId);
 			statement.setInt(3, x);
 			statement.setInt(4, y);
 			statement.setInt(5, z);
-			statement.setInt(6, heading);
-			if (isHire == 1)
-				statement.setInt(7, 0);
-			else
-				statement.setInt(7, 600);
+			statement.setInt(6, heading);					
+			statement.setInt(7, isHire == 1 ? 0 : 600);			
 			statement.setInt(8, isHire);
 			statement.execute();
-			statement.close();
 		}
 		catch (Exception e1)
 		{

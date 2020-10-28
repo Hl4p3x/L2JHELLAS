@@ -312,13 +312,12 @@ public class L2TradeList
 	
 	private static void changePetItemObjectId(int oldObjectId, int newObjectId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("UPDATE pets SET item_obj_id = ? WHERE item_obj_id = ?"))
 		{
-			PreparedStatement statement = con.prepareStatement("UPDATE pets SET item_obj_id = ? WHERE item_obj_id = ?");
 			statement.setInt(1, newObjectId);
 			statement.setInt(2, oldObjectId);
 			statement.executeUpdate();
-			statement.close();
 		}
 		catch (Exception e)
 		{

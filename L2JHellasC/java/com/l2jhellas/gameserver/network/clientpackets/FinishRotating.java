@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
+import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.serverpackets.StopRotation;
 
 public final class FinishRotating extends L2GameClientPacket
@@ -20,10 +21,10 @@ public final class FinishRotating extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (getClient().getActiveChar() == null)
-			return;
-		StopRotation sr = new StopRotation(getClient().getActiveChar().getObjectId(), _degree, 0);
-		getClient().getActiveChar().broadcastPacket(sr);
+		final L2PcInstance player = getClient().getActiveChar();
+		
+		if (player != null)
+		    player.broadcastPacket(new StopRotation(player.getObjectId(), _degree, 0));
 	}
 	
 	@Override

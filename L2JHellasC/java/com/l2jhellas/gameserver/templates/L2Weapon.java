@@ -2,7 +2,6 @@ package com.l2jhellas.gameserver.templates;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
@@ -10,7 +9,6 @@ import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.handler.ISkillHandler;
 import com.l2jhellas.gameserver.handler.SkillHandler;
 import com.l2jhellas.gameserver.model.L2Effect;
-import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
@@ -264,25 +262,15 @@ public final class L2Weapon extends L2Item
 					skill.useSkill(caster, targets);
 				
 				// notify quests of a skill use
-				if (caster instanceof L2PcInstance)
+				if (caster.isPlayer())
 				{
 					// Mobs in range 1000 see spell
-					
-					final Collection<L2Object> objs = L2World.getInstance().getVisibleObjects(caster, L2Object.class, 1000);
-					// synchronized (caster.getKnownList().getKnownObjects())
+					L2World.getInstance().forEachVisibleObjectInRange(caster, L2Npc.class, 1000, npcMob ->
 					{
-						for (L2Object spMob : objs)
-						{
-							if (spMob instanceof L2Npc)
-							{
-								L2Npc npcMob = (L2Npc) spMob;
-								
-								if (npcMob.getTemplate().getEventQuests(QuestEventType.ON_SKILL_SEE) != null)
-									for (Quest quest : npcMob.getTemplate().getEventQuests(QuestEventType.ON_SKILL_SEE))
-										quest.notifySkillSee(npcMob, (L2PcInstance) caster, _skillsOnCast[0], targets, false);// XXX not sure of this
-							}
-						}
-					}
+						if (npcMob != null && npcMob.getTemplate().getEventQuests(QuestEventType.ON_SKILL_SEE) != null)
+							for (Quest quest : npcMob.getTemplate().getEventQuests(QuestEventType.ON_SKILL_SEE))
+								quest.notifySkillSee(npcMob, (L2PcInstance) caster, _skillsOnCast[0], targets, false);						
+					});
 				}
 			}
 			catch (IOException e)

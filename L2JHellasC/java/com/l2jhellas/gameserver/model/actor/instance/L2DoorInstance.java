@@ -1,6 +1,5 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
-import java.util.HashMap;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Logger;
 
@@ -14,7 +13,6 @@ import com.l2jhellas.gameserver.geodata.GeoEngine;
 import com.l2jhellas.gameserver.geometry.Polygon;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
-import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
@@ -145,12 +143,6 @@ public class L2DoorInstance extends L2Character implements GeoControl
 		_name = name;
 		_unlockable = unlockable;
 		geoOpen = true;
-		
-		if (getOpen() && getGeodata())
-		{
-			GeoEngine.applyControl(this);
-			this.geoOpen = false;
-		}
 	}
 	
 	@Override
@@ -220,14 +212,9 @@ public class L2DoorInstance extends L2Character implements GeoControl
 		_autoActionDelay = actionDelay;
 	}
 	
-	public int getDamage()
+	public final int getDamage()
 	{
-		int dmg = 6 - (int) Math.ceil(getCurrentHp() / getMaxHp() * 6);
-		if (dmg > 6)
-			return 6;
-		if (dmg < 0)
-			return 0;
-		return dmg;
+		return Math.max(0, Math.min(6, 6 - (int) Math.ceil(getCurrentHp() / getMaxHp() * 6)));
 	}
 	
 	public final Castle getCastle()
@@ -269,21 +256,6 @@ public class L2DoorInstance extends L2Character implements GeoControl
 	@Override
 	public void updateAbnormalEffect()
 	{
-	}
-	
-	public int getDistanceToWatchObject(L2Object object)
-	{
-		if (!(object instanceof L2PcInstance))
-			return 0;
-		return 2000;
-	}
-	
-	public int getDistanceToForgetObject(L2Object object)
-	{
-		if (!(object instanceof L2PcInstance))
-			return 0;
-		
-		return 4000;
 	}
 	
 	@Override
@@ -434,25 +406,26 @@ public class L2DoorInstance extends L2Character implements GeoControl
 		setGeoOpen(true);
 		broadcastStatusUpdate();
 	}
-	
-	private void setGeoOpen(boolean val)
-	{
+
+    public boolean setGeoOpen(final boolean open) 
+    {
 		if(!Config.ALLOW_DOORS)
-			return;
+			return false;
 		
-		if(geoOpen == val)
-			return;
-
-		geoOpen = val;
-
-		if(getGeodata())
+        if (geoOpen == open)
+            return false;
+        
+        geoOpen = open;
+        
+        if (Config.GEODATA) 
 		{
-			if(val)
+            if (open) 
 				GeoEngine.returnGeoAtControl(this);
-			else
+            else 
 				GeoEngine.applyControl(this);
-		}
-	}
+        }
+        return true;
+    }
 	
 	@Override
 	public String toString()
@@ -509,6 +482,13 @@ public class L2DoorInstance extends L2Character implements GeoControl
 		_B = _rangeZMin * (_rangeXMax - _rangeXMin) + _rangeZMax * (_rangeXMin - _rangeXMax);
 		_C = _rangeXMin * (_rangeYMax - _rangeYMin) + _rangeXMin * (_rangeYMin - _rangeYMax);
 		_D = -1 * (_rangeXMin * (_rangeYMax * _rangeZMax - _rangeYMin * _rangeZMax) + _rangeXMax * (_rangeYMin * _rangeZMin - _rangeYMin * _rangeZMax) + _rangeXMin * (_rangeYMin * _rangeZMax - _rangeYMax * _rangeZMin));
+		
+        final Polygon shape = new Polygon();
+        shape.add(_rangeXMin, _rangeYMin);
+        shape.add(_rangeXMax, _rangeYMax);
+        shape.setZmin(_rangeZMin);
+        shape.setZmax(_rangeZMax);
+        setGeoPos(shape);
 	}
 	
 	public int getMapRegion()
@@ -555,7 +535,7 @@ public class L2DoorInstance extends L2Character implements GeoControl
 	}
 	
 	private Polygon geoPos;
-	private HashMap<Long, Byte> geoAround;
+	private byte[][] geoAround;
 
 	public Polygon getGeoPos()
 	{
@@ -567,12 +547,12 @@ public class L2DoorInstance extends L2Character implements GeoControl
 		geoPos = value;
 	}
 
-	public HashMap<Long, Byte> getGeoAround()
+	public byte[][] getGeoAround()
 	{
 		return geoAround;
 	}
 
-	public void setGeoAround(HashMap<Long, Byte> value)
+	public void setGeoAround(byte[][] value)
 	{
 		geoAround = value;
 	}

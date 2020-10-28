@@ -26,28 +26,26 @@ public class Couple
 	{
 		_Id = coupleId;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM mods_wedding WHERE id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM mods_wedding WHERE id=?");
 			statement.setInt(1, _Id);
-			ResultSet rs = statement.executeQuery();
-			
-			while (rs.next())
+			try(ResultSet rs = statement.executeQuery())
 			{
-				_player1Id = rs.getInt("player1Id");
-				_player2Id = rs.getInt("player2Id");
-				_maried = rs.getBoolean("married");
-				
-				_affiancedDate = Calendar.getInstance();
-				_affiancedDate.setTimeInMillis(rs.getLong("affianceDate"));
-				
-				_weddingDate = Calendar.getInstance();
-				_weddingDate.setTimeInMillis(rs.getLong("weddingDate"));
+				while (rs.next())
+				{
+					_player1Id = rs.getInt("player1Id");
+					_player2Id = rs.getInt("player2Id");
+					_maried = rs.getBoolean("married");
+
+					_affiancedDate = Calendar.getInstance();
+					_affiancedDate.setTimeInMillis(rs.getLong("affianceDate"));
+
+					_weddingDate = Calendar.getInstance();
+					_weddingDate.setTimeInMillis(rs.getLong("weddingDate"));
+				}
+				_maried = true;
 			}
-			
-			rs.close();
-			statement.close();
-			_maried = true;
 		}
 		catch (Exception e)
 		{
@@ -71,10 +69,10 @@ public class Couple
 		_weddingDate = Calendar.getInstance();
 		_weddingDate.setTimeInMillis(Calendar.getInstance().getTimeInMillis());
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("INSERT INTO mods_wedding (id, player1Id, player2Id, married, affianceDate, weddingDate) VALUES (?,?,?,?,?,?)"))
 		{
 			_Id = IdFactory.getInstance().getNextId();
-			PreparedStatement statement = con.prepareStatement("INSERT INTO mods_wedding (id, player1Id, player2Id, married, affianceDate, weddingDate) VALUES (?,?,?,?,?,?)");
 			statement.setInt(1, _Id);
 			statement.setInt(2, _player1Id);
 			statement.setInt(3, _player2Id);
@@ -82,9 +80,7 @@ public class Couple
 			statement.setLong(5, _affiancedDate.getTimeInMillis());
 			statement.setLong(6, _weddingDate.getTimeInMillis());
 			statement.execute();
-			statement.close();
-			_maried = true;
-			
+			_maried = true;		
 		}
 		catch (Exception e)
 		{
@@ -96,15 +92,14 @@ public class Couple
 	
 	public void marry()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("UPDATE mods_wedding SET married=?, weddingDate=? WHERE id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("UPDATE mods_wedding SET married=?, weddingDate=? WHERE id=?");
 			statement.setBoolean(1, true);
 			_weddingDate = Calendar.getInstance();
 			statement.setLong(2, _weddingDate.getTimeInMillis());
 			statement.setInt(3, _Id);
 			statement.execute();
-			statement.close();
 			_maried = true;
 		}
 		catch (Exception e)
@@ -117,12 +112,11 @@ public class Couple
 	
 	public void divorce()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("DELETE FROM mods_wedding WHERE id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("DELETE FROM mods_wedding WHERE id=?");
 			statement.setInt(1, _Id);
 			statement.execute();
-			statement.close();
 		}
 		catch (Exception e)
 		{

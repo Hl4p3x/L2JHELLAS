@@ -16,28 +16,11 @@ public class L2BoatAI extends L2CharacterAI
 	{
 		super(accessor);
 	}
-	
-	@Override
-	public void moveTo(int x, int y, int z)
-	{
-		if (!_actor.isMovementDisabled())
-		{
-			if (!_clientMoving)
-				_actor.broadcastPacket(new VehicleStarted(getActor(), 1));
-			
-			_clientMoving = true;
-			_actor.moveToLocation(x, y, z, 0);
-			_actor.broadcastPacket(new VehicleDeparture(getActor()));
-		}
-	}
 
 	@Override
 	protected void onEvtArrived()
 	{
-		if(getActor() == null)
-			return;
-
-		super.onEvtArrived();
+		getActor().BoatArrived();
 	}
 	
 	@Override

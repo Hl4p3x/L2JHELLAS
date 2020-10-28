@@ -61,6 +61,12 @@ public class MultiSellChoose extends L2GameClientPacket
 		if (!FloodProtectors.performAction(getClient(), Action.MULTISELL))
 			return;
 		
+		if (player.isProcessingTransaction())
+		{
+			player.sendPacket(SystemMessageId.CANNOT_PICKUP_OR_USE_ITEM_WHILE_TRADING);
+			return;
+		}
+		
 		final MultiSellListContainer list = MultisellData.getInstance().getList(_listId);
 		
 		if (list == null)
@@ -68,9 +74,7 @@ public class MultiSellChoose extends L2GameClientPacket
 		
 		if (_entryId < 1 || _entryId > list.getEntries().size())
 			return;
-		
-
-		
+	
 		for (MultiSellEntry entry : list.getEntries())
 		{
 			if (entry.getEntryId() == _entryId)

@@ -62,7 +62,6 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 				activeChar.sendPacket(SystemMessageId.HACKING_TOOL);
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 				Util.handleIllegalPlayerAction(activeChar,"Player " + activeChar.getName() + " trying to use L2Walker!", IllegalPlayerAction.PUNISH_KICK);
-				activeChar.closeNetConnection(false);
 			}
 		}
 	}

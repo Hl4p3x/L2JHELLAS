@@ -1,25 +1,25 @@
 package com.l2jhellas.gameserver.communitybbs;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import com.l2jhellas.Config;
-import com.l2jhellas.util.database.L2DatabaseFactory;
+import com.l2jhellas.gameserver.instancemanager.RaidBossSpawnManager;
+import com.l2jhellas.gameserver.model.actor.instance.L2RaidBossInstance;
+import com.l2jhellas.gameserver.templates.StatsSet;
 
 public class RaidList
 {
 	protected static final Logger _log = Logger.getLogger(RaidList.class.getName());
 	private static final SimpleDateFormat Time = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
-	private static final String SELECT_RAID_DATA = "SELECT id, name, level FROM npc WHERE type='L2RaidBoss' AND EXISTS (SELECT * FROM raidboss_spawnlist WHERE raidboss_spawnlist.boss_id = npc.id) ORDER BY `level` ";
-	private static final String SELECT_SPAWN = "SELECT respawn_time, respawn_min_delay, respawn_max_delay FROM raidboss_spawnlist WHERE boss_id=";
-	
 	private final StringBuilder _raidList = new StringBuilder();
-	
+
 	public RaidList(String rfid)
 	{
 		loadFromDB(rfid);
@@ -28,57 +28,21 @@ public class RaidList
 	private void loadFromDB(String rfid)
 	{
 		int type = Integer.parseInt(rfid);
-		int stpoint = 0;
-		int pos = 0;
-		String sort = "";
-		if (Config.RAID_LIST_SORT_ASC)
-			sort = "ASC";
-		else
-			sort = "DESC";
-		for (int count = 1; count != type; count++)
-		{
-			stpoint += Config.RAID_LIST_RESULTS;
-		}
-		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement(SELECT_RAID_DATA + sort + " Limit " + stpoint + ", " + Config.RAID_LIST_RESULTS);
-			ResultSet result = statement.executeQuery();
-			pos = stpoint;
-			
-			while (result.next())
-			{
-				int npcid = result.getInt("id");
-				String npcname = result.getString("name");
-				int rlevel = result.getInt("level");
-				PreparedStatement statement2 = con.prepareStatement(SELECT_SPAWN + npcid);
-				ResultSet result2 = statement2.executeQuery();
-				
-				while (result2.next())
-				{
-					pos++;
-					boolean rstatus = false;
-					long respawn = result2.getLong("respawn_time");					
-					final long currentTime = System.currentTimeMillis();
-					
-					if (respawn == 0 || respawn <= currentTime)
-							rstatus = true;
-						
-					addRaidToList(pos, npcname, rlevel, respawn, rstatus);
-				}
-				result2.close();
-				statement2.close();
-			}
-			
-			result.close();
-			statement.close();
-		}
-		catch (Exception e)
-		{
-			_log.warning(RaidList.class.getName() + ": Error Loading DB ");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
-		}
+
+		List<L2RaidBossInstance> rbs = RaidBossSpawnManager.getInstance().getBosses().values().stream().filter(Objects::nonNull).sorted((x1, x2) -> Integer.compare(x2.getLevel(),x1.getLevel())).collect(Collectors.toList());
+		rbs = rbs.subList((type - 1) * 20, Math.min(type * 20, rbs.size()));
+
+	    AtomicInteger counter = new AtomicInteger(0);
+
+        rbs.forEach(rb ->
+		{		
+			final StatsSet info = RaidBossSpawnManager.getStatsSet(rb.getNpcId());
+			long respawn = 	info.getLong("respawnTime");
+			final long currentTime = System.currentTimeMillis();
+			boolean alive = respawn <= currentTime;							
+
+			addRaidToList(counter.incrementAndGet(),rb.getName(), rb.getLevel(), respawn, alive);
+		});		
 	}
 	
 	private void addRaidToList(int pos, String npcname, int rlevel, long delay, boolean rstatus)

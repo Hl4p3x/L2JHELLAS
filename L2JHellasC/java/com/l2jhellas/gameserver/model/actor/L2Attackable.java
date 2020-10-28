@@ -910,9 +910,7 @@ public class L2Attackable extends L2Npc
 		}
 		catch (Exception e)
 		{
-			_log.severe(L2Attackable.class.getName() + ": Exception: calculateRewards");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+
 		}
 	}
 	
@@ -1625,7 +1623,7 @@ public class L2Attackable extends L2Npc
 		double overhitExp = ((overhitPercentage / 100) * normalExp);
 		
 		// Return the rounded ammount of exp points to be added to the player's normal exp reward
-		return Math.round(overhitExp);
+		return Math.round(overhitExp);		
 	}
 	
 	@Override

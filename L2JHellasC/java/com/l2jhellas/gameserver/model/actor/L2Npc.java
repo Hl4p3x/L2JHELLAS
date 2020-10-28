@@ -57,6 +57,7 @@ import com.l2jhellas.gameserver.model.zone.type.L2TownZone;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.gameserver.network.serverpackets.ExShowVariationCancelWindow;
 import com.l2jhellas.gameserver.network.serverpackets.ExShowVariationMakeWindow;
 import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
@@ -1968,7 +1969,10 @@ public class L2Npc extends L2Character
 	
 	public void broadcastNpcSay(String message)
 	{
-		broadcastPacket(new NpcSay(getObjectId(), ChatType.GENERAL.getClientId(), getNpcId(), message), 1250);
+		if(getNpcId() == 70016)
+			broadcastPacket(new CreatureSay(getObjectId(), ChatType.GENERAL.getClientId(), getName(), message), 1250);
+		else
+		    broadcastPacket(new NpcSay(getObjectId(), ChatType.GENERAL.getClientId(), getNpcId(), message), 1250);
 	}
 	
 	@Override

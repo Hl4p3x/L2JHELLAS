@@ -156,80 +156,77 @@ public class RewardTable
 	
 	private void load()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			// PvP + Level Rewards
-			PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_rank_reward ORDER BY id ASC");
-			ResultSet rset = statement.executeQuery();
-			
-			while (rset.next())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT * FROM rank_pvp_system_rank_reward ORDER BY id ASC"))
+		{					
+			try(ResultSet rset = statement.executeQuery())
 			{
-				Reward r = new Reward();
-				
-				r.setId(rset.getInt("id"));
-				r.setItemId(rset.getInt("item_id"));
-				r.setItemAmount(rset.getLong("item_amount"));
-				r.setRankId(rset.getInt("rank_id"));
-				
-				if (Config.RANK_PVP_REWARD_ENABLED && rset.getBoolean("is_pvp"))
+				while (rset.next())
 				{
-					RankReward rr = _rankRewardList.get(r.getRankId());
-					
-					if (rr == null)
+					Reward r = new Reward();
+
+					r.setId(rset.getInt("id"));
+					r.setItemId(rset.getInt("item_id"));
+					r.setItemAmount(rset.getLong("item_amount"));
+					r.setRankId(rset.getInt("rank_id"));
+
+					if (Config.RANK_PVP_REWARD_ENABLED && rset.getBoolean("is_pvp"))
 					{
-						rr = new RankReward();
-						_rankRewardList.put(r.getRankId(), rr);
-						rr.addRankPvpReward(r);
+						RankReward rr = _rankRewardList.get(r.getRankId());
+
+						if (rr == null)
+						{
+							rr = new RankReward();
+							_rankRewardList.put(r.getRankId(), rr);
+							rr.addRankPvpReward(r);
+						}
+						else
+							rr.addRankPvpReward(r);
 					}
-					else
-						rr.addRankPvpReward(r);
-				}
-				if (Config.RANK_LEVEL_REWARD_ENABLED && rset.getBoolean("is_level"))
-				{
-					RankReward rr = _rankRewardList.get(r.getRankId());
-					
-					if (rr == null)
+					if (Config.RANK_LEVEL_REWARD_ENABLED && rset.getBoolean("is_level"))
 					{
-						rr = new RankReward();
-						_rankRewardList.put(r.getRankId(), rr);
-						rr.addRankLevelReward(r);
+						RankReward rr = _rankRewardList.get(r.getRankId());
+
+						if (rr == null)
+						{
+							rr = new RankReward();
+							_rankRewardList.put(r.getRankId(), rr);
+							rr.addRankLevelReward(r);
+						}
+						else
+							rr.addRankLevelReward(r);
 					}
-					else
-						rr.addRankLevelReward(r);
 				}
 			}
-			
-			rset.close();
-			statement.close();
 			
 			// Skill Rewards
 			if (Config.RANK_SKILL_REWARD_ENABLED)
 			{
-				statement = con.prepareStatement("SELECT * FROM rank_pvp_system_rank_skill ORDER BY id ASC");
-				rset = statement.executeQuery();
-				
-				while (rset.next())
+				try(PreparedStatement ps = con.prepareStatement("SELECT * FROM rank_pvp_system_rank_skill ORDER BY id ASC"))
 				{
-					SkillReward r = new SkillReward();
-					r.setId(rset.getInt("id"));
-					r.setSkillId(rset.getInt("skill_id"));
-					r.setSkillLevel(rset.getInt("skill_level"));
-					r.setRankId(rset.getInt("rank_id"));
-					
-					RankReward rr = _rankRewardList.get(r.getRankId());
-					
-					if (rr == null)
+					try(ResultSet rset = ps.executeQuery())
 					{
-						rr = new RankReward();
-						_rankRewardList.put(r.getRankId(), rr);
-						rr.addRankSkillReward(r);
+						while (rset.next())
+						{
+							SkillReward r = new SkillReward();
+							r.setId(rset.getInt("id"));
+							r.setSkillId(rset.getInt("skill_id"));
+							r.setSkillLevel(rset.getInt("skill_level"));
+							r.setRankId(rset.getInt("rank_id"));
+
+							RankReward rr = _rankRewardList.get(r.getRankId());
+
+							if (rr == null)
+							{
+								rr = new RankReward();
+								_rankRewardList.put(r.getRankId(), rr);
+								rr.addRankSkillReward(r);
+							}
+							else
+								rr.addRankSkillReward(r);
+						}
 					}
-					else
-						rr.addRankSkillReward(r);
 				}
-				
-				rset.close();
-				statement.close();
 			}
 		}
 		catch (SQLException e)

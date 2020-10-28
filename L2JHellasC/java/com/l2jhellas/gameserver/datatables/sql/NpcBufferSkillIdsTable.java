@@ -21,30 +21,29 @@ public class NpcBufferSkillIdsTable
 	protected NpcBufferSkillIdsTable()
 	{
 		NpcBufferSkills skills = null;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("SELECT npc_id,skill_id,skill_level,skill_fee_id,skill_fee_amount FROM npc_buffer ORDER BY npc_id ASC"))
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT npc_id,skill_id,skill_level,skill_fee_id,skill_fee_amount FROM npc_buffer ORDER BY npc_id ASC");
-			ResultSet rset = statement.executeQuery();
-					
-			while (rset.next())
+			try(ResultSet rset = statement.executeQuery())
 			{
-				int npcId = rset.getInt("npc_id");
-				int skillId = rset.getInt("skill_id");
-				int skillLevel = rset.getInt("skill_level");
-				int skillFeeId = rset.getInt("skill_fee_id");
-				int skillFeeAmount = rset.getInt("skill_fee_amount");
-				
-				if(!_buffers.containsKey(npcId))
+				while (rset.next())
 				{
-				    skills = new NpcBufferSkills(npcId);
-					skills.addSkill(skillId, skillLevel, skillFeeId, skillFeeAmount);
-					_buffers.put(npcId, skills);
+					int npcId = rset.getInt("npc_id");
+					int skillId = rset.getInt("skill_id");
+					int skillLevel = rset.getInt("skill_level");
+					int skillFeeId = rset.getInt("skill_fee_id");
+					int skillFeeAmount = rset.getInt("skill_fee_amount");
+
+					if(!_buffers.containsKey(npcId))
+					{
+						skills = new NpcBufferSkills(npcId);
+						skills.addSkill(skillId, skillLevel, skillFeeId, skillFeeAmount);
+						_buffers.put(npcId, skills);
+					}
+					else if(skills!=null)
+						skills.addSkill(skillId, skillLevel, skillFeeId, skillFeeAmount);										
 				}
-				else if(skills!=null)
-					skills.addSkill(skillId, skillLevel, skillFeeId, skillFeeAmount);										
 			}
-			rset.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{

@@ -24,12 +24,8 @@ public class PledgeReceiveMemberInfo extends L2GameServerPacket
 		writeD(_member.getPowerGrade()); // power
 		
 		// clan or subpledge name
-		if (_member.getPledgeType() != 0)
-		{
-			writeS((_member.getClan().getSubPledge(_member.getPledgeType())).getName());
-		}
-		else
-			writeS(_member.getClan().getName());
+		writeS(_member.getPledgeType() != 0 ? (_member.getClan().getSubPledge(_member.getPledgeType())).getName() 
+		: _member.getClan().getName());
 		
 		writeS(_member.getApprenticeOrSponsorName()); // name of this member's apprentice/sponsor
 	}

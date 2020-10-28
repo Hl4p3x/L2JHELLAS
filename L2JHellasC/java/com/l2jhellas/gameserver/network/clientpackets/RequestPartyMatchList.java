@@ -1,7 +1,5 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
-import java.util.logging.Logger;
-
 import com.l2jhellas.gameserver.model.actor.group.party.PartyMatchRoom;
 import com.l2jhellas.gameserver.model.actor.group.party.PartyMatchRoomList;
 import com.l2jhellas.gameserver.model.actor.group.party.PartyMatchWaitingList;
@@ -13,7 +11,6 @@ import com.l2jhellas.gameserver.network.serverpackets.PartyMatchDetail;
 public class RequestPartyMatchList extends L2GameClientPacket
 {
 	private static final String _C__70_REQUESTPARTYMATCHLIST = "[C] 70 RequestPartyMatchList";
-	private static Logger _log = Logger.getLogger(RequestPartyMatchList.class.getName());
 	
 	private int _roomid;
 	private int _membersmax;
@@ -45,7 +42,6 @@ public class RequestPartyMatchList extends L2GameClientPacket
 			PartyMatchRoom room = PartyMatchRoomList.getInstance().getRoom(_roomid);
 			if (room != null)
 			{
-				_log.info("PartyMatchRoom #" + room.getId() + " changed by " + activeChar.getName());
 				room.setMaxMembers(_membersmax);
 				room.setMinLvl(_lvlmin);
 				room.setMaxLvl(_lvlmax);
@@ -64,7 +60,7 @@ public class RequestPartyMatchList extends L2GameClientPacket
 		}
 		else
 		{
-			int maxid = PartyMatchRoomList.getInstance().getMaxId();
+			int maxid = PartyMatchRoomList.getInstance().getNewId();
 			
 			PartyMatchRoom room = new PartyMatchRoom(maxid, _roomtitle, _loot, _lvlmin, _lvlmax, _membersmax, activeChar);
 						

@@ -605,15 +605,14 @@ public final class EventManager
 			}
 			else
 			{
-				try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement statement = con.prepareStatement("UPDATE characters SET x=?, y=?, z=? WHERE char_name=?"))
 				{
-					PreparedStatement statement = con.prepareStatement("UPDATE characters SET x=?, y=?, z=? WHERE char_name=?");
 					statement.setInt(1, positions.get(player)[0]);
 					statement.setInt(2, positions.get(player)[1]);
 					statement.setInt(3, positions.get(player)[2]);
 					statement.setString(4, player.getName());
 					statement.execute();
-					statement.close();
 				}
 				catch (SQLException se)
 				{

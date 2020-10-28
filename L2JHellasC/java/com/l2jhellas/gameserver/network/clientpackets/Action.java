@@ -1,6 +1,7 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
 import com.l2jhellas.Config;
+import com.l2jhellas.gameserver.enums.player.DuelState;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
@@ -61,16 +62,24 @@ public final class Action extends L2GameClientPacket
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
+		
+		final L2PcInstance targetPlayer = obj.getActingPlayer();
+		if (targetPlayer != null && targetPlayer.getDuelState() == DuelState.DEAD)
+		{
+			activeChar.sendPacket(SystemMessageId.OTHER_PARTY_IS_FROZEN);
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 
-		if (_actionId == 1)
+		if (_actionId == 0)
+			obj.onAction(activeChar);
+		else if (_actionId == 1)
 		{
 			if (!activeChar.isGM() && !(obj instanceof L2Npc && Config.ALT_GAME_VIEWNPC))
 				obj.onAction(activeChar);
 			else
 				obj.onActionShift(activeChar);
 		}
-		else
-			obj.onAction(activeChar);
 	}
 	
 	@Override

@@ -142,39 +142,36 @@ public class Olympiad
 	
 	private void load()
 	{
-		boolean loaded = false;
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 		PreparedStatement statement = con.prepareStatement(OLYMPIAD_LOAD_DATA))
 		{
 			try (ResultSet rset = statement.executeQuery())
 			{
-				while (rset.next())
+				if(rset.next())
 				{
 					_currentCycle = rset.getInt("current_cycle");
 					_period = rset.getInt("period");
 					_olympiadEnd = rset.getLong("olympiad_end");
 					_validationEnd = rset.getLong("validation_end");
 					_nextWeeklyChange = rset.getLong("next_weekly_change");
-					loaded = true;
+				}
+				else
+				{
+					_log.info(Olympiad.class.getSimpleName() + " System: default values are used.");
+					
+					_currentCycle = 1;
+					_period = 0;
+					_olympiadEnd = 0;
+					_validationEnd = 0;
+					_nextWeeklyChange = 0;
 				}
 			}
 		}
 		catch (Exception e)
 		{
-			_log.warning(Olympiad.class.getSimpleName() + ": Olympiad System: Error loading olympiad data from database: ");
+			_log.warning(Olympiad.class.getSimpleName() + ": System: Error loading olympiad data from database: ");
 		}
-		
-		if (!loaded)
-		{
-			_log.info(Olympiad.class.getSimpleName() + "Olympiad System: failed to load data from database, default values are used.");
-			
-			_currentCycle = 1;
-			_period = 0;
-			_olympiadEnd = 0;
-			_validationEnd = 0;
-			_nextWeeklyChange = 0;
-		}
-		
+
 		switch (_period)
 		{
 			case 0:
@@ -224,7 +221,7 @@ public class Olympiad
 		}
 		catch (Exception e)
 		{
-			_log.warning(Olympiad.class.getSimpleName() + ": Olympiad System: Error loading noblesse data from database: ");
+			_log.warning(Olympiad.class.getSimpleName() + ": System: Error loading noblesse data from database: ");
 		}
 		
 		synchronized (this)
@@ -274,7 +271,7 @@ public class Olympiad
 		}
 		catch (Exception e)
 		{
-			_log.warning(Olympiad.class.getSimpleName() + ": Olympiad System: Error loading noblesse data from database for Ranking: ");
+			_log.warning(Olympiad.class.getSimpleName() + ": System: Error loading noblesse data from database for Ranking: ");
 		}
 		
 		int rank1 = (int) Math.round(tmpPlace.size() * 0.01);

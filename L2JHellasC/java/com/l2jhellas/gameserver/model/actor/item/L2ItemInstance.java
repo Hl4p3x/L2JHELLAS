@@ -369,7 +369,7 @@ public final class L2ItemInstance extends L2Object
 	{
 		return ((!isEquipped()) // Not equipped
 			&& (getItem().getType2() != 3) // Not Quest Item
-			&& (getItem().getType2() != 4 || getItem().getType1() != 1) // TODO: what does this mean?
+			&& (getItem().getType2() != 4 || getItem().getType1() != 1) // what does this mean?
 			&& (player.getPet() == null || getObjectId() != player.getPet().getControlItemId()) // Not Control item of currently summoned pet
 			&& (player.getActiveEnchantItem() != this) // Not momentarily used enchant scroll
 			&& (allowAdena || getItemId() != 57) && (player.getCurrentSkill() == null || player.getCurrentSkill().getSkill().getItemConsumeId() != getItemId()) && (isTradeable()));
@@ -511,31 +511,22 @@ public final class L2ItemInstance extends L2Object
 		L2PcInstance player = (L2World.getInstance().getPlayer(getOwnerId()));
 		if (player != null)
 		{
-			SystemMessage sm;
 			switch (_mana)
 			{
 				case 10:
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1S_REMAINING_MANA_IS_NOW_10);
-					sm.addString(getItemName());
-					player.sendPacket(sm);
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1S_REMAINING_MANA_IS_NOW_10).addString(getItemName()));
 					break;
 				case 5:
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1S_REMAINING_MANA_IS_NOW_5);
-					sm.addString(getItemName());
-					player.sendPacket(sm);
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1S_REMAINING_MANA_IS_NOW_5).addString(getItemName()));
 					break;
 				case 1:
-					sm = SystemMessage.getSystemMessage(SystemMessageId.S1S_REMAINING_MANA_IS_NOW_1);
-					sm.addString(getItemName());
-					player.sendPacket(sm);
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1S_REMAINING_MANA_IS_NOW_1).addString(getItemName()));
 					break;
 			}
 			
 			if (_mana == 0) // The life time has expired
 			{
-				sm = SystemMessage.getSystemMessage(SystemMessageId.S1S_REMAINING_MANA_IS_NOW_0);
-				sm.addString(getItemName());
-				player.sendPacket(sm);
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1S_REMAINING_MANA_IS_NOW_0).addString(getItemName()));
 				
 				// unequip
 				if (isEquipped())
@@ -666,99 +657,82 @@ public final class L2ItemInstance extends L2Object
 		}
 	}
 
-	public static L2ItemInstance restoreFromDb(int objectId)
+	public static L2ItemInstance restoreFromDb(int ownerId, ResultSet rs)
 	{
 		L2ItemInstance inst = null;
-		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		int objectId = 0;
+		try
 		{
-			PreparedStatement statement = con.prepareStatement("SELECT owner_id, object_id, item_id, count, enchant_level, loc, loc_data, price_sell, price_buy, custom_type1, custom_type2, mana_left FROM items WHERE object_id = ?");
-			statement.setInt(1, objectId);
-			ResultSet rs = statement.executeQuery();
-			if (rs.next())
+			objectId = rs.getInt(1);
+			int item_id = rs.getInt("item_id");
+			int count = rs.getInt("count");
+			ItemLocation loc = ItemLocation.valueOf(rs.getString("loc"));
+			int loc_data = rs.getInt("loc_data");
+			int enchant_level = rs.getInt("enchant_level");
+			int custom_type1 = rs.getInt("custom_type1");
+			int custom_type2 = rs.getInt("custom_type2");
+			int price_sell = rs.getInt("price_sell");
+			int price_buy = rs.getInt("price_buy");
+			int manaLeft = rs.getInt("mana_left");
+
+			L2Item item = ItemTable.getInstance().getTemplate(item_id);
+
+			if (item == null)
+				return null;
+
+			inst = new L2ItemInstance(objectId, item);
+			inst._existsInDb = true;
+			inst._storedInDb = true;
+			inst._ownerId = ownerId;
+			inst._count = count;
+			inst._enchantLevel = enchant_level;
+			inst._type1 = custom_type1;
+			inst._type2 = custom_type2;
+			inst._loc = loc;
+			inst._locData = loc_data;
+			inst._priceSell = price_sell;
+			inst._priceBuy = price_buy;
+
+			// Setup life time for shadow weapons
+			inst._mana = manaLeft;
+
+			// consume 1 mana
+			if (inst._mana > 0 && inst.getLocation() == ItemLocation.PAPERDOLL)
+				inst.decreaseMana(false);
+
+			// if mana left is 0 delete this item
+			if (inst._mana == 0)
 			{
-				int owner_id = rs.getInt("owner_id");
-				int item_id = rs.getInt("item_id");
-				int count = rs.getInt("count");
-				ItemLocation loc = ItemLocation.valueOf(rs.getString("loc"));
-				int loc_data = rs.getInt("loc_data");
-				int enchant_level = rs.getInt("enchant_level");
-				int custom_type1 = rs.getInt("custom_type1");
-				int custom_type2 = rs.getInt("custom_type2");
-				int price_sell = rs.getInt("price_sell");
-				int price_buy = rs.getInt("price_buy");
-				int manaLeft = rs.getInt("mana_left");
-				L2Item item = ItemTable.getInstance().getTemplate(item_id);
-				if (item == null)
-				{
-					_log.severe("Item item_id=" + item_id + " not known, object_id=" + objectId);
-					rs.close();
-					statement.close();
-					return null;
-				}
-				inst = new L2ItemInstance(objectId, item);
-				inst._existsInDb = true;
-				inst._storedInDb = true;
-				inst._ownerId = owner_id;
-				inst._count = count;
-				inst._enchantLevel = enchant_level;
-				inst._type1 = custom_type1;
-				inst._type2 = custom_type2;
-				inst._loc = loc;
-				inst._locData = loc_data;
-				inst._priceSell = price_sell;
-				inst._priceBuy = price_buy;
-				
-				// Setup life time for shadow weapons
-				inst._mana = manaLeft;
-				
-				// consume 1 mana
-				if (inst._mana > 0 && inst.getLocation() == ItemLocation.PAPERDOLL)
-					inst.decreaseMana(false);
-				
-				// if mana left is 0 delete this item
-				if (inst._mana == 0)
-				{
-					inst.removeFromDb();
-					rs.close();
-					statement.close();
-					return null;
-				}
-				else if (inst._mana > 0 && inst.getLocation() == ItemLocation.PAPERDOLL)
-					inst.scheduleConsumeManaTask();
-				
-				rs.close();
-				statement.close();
-			}
-			else
-			{
-				_log.severe("Item object_id=" + objectId + " not found");
-				rs.close();
-				statement.close();
+				inst.removeFromDb();
 				return null;
 			}
-			rs.close();
-			statement.close();
-			
-			// load augmentation
-			statement = con.prepareStatement("SELECT attributes,skill,level FROM augmentations WHERE item_id=?");
-			statement.setInt(1, objectId);
-			rs = statement.executeQuery();
-			if (rs.next())
+			else if (inst._mana > 0 && inst.getLocation() == ItemLocation.PAPERDOLL)
+				inst.scheduleConsumeManaTask();
+
+			// load weapon augmentation
+			if (inst.isWeapon() && inst.isEquipable())
 			{
-				inst._augmentation = new L2Augmentation(inst, rs.getInt("attributes"), rs.getInt("skill"), rs.getInt("level"), false);
+				try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+						PreparedStatement ps = con.prepareStatement("SELECT attributes,skill,level FROM augmentations WHERE item_id=?"))
+				{
+					ps.setInt(1, inst.getObjectId());
+
+					try (ResultSet rsa = ps.executeQuery())
+					{
+						if (rsa.next())
+							inst._augmentation = new L2Augmentation(inst, rsa.getInt("attributes"), rsa.getInt("skill"), rsa.getInt("level"), false);
+					}
+				}
+				catch (Exception e)
+				{
+					_log.severe(L2ItemInstance.class.getName() + ": Couldn't restore augmentation for " + objectId + " from DB:" + e);
+				}
 			}
-			
-			rs.close();
-			statement.close();
-			
+
 		}
 		catch (Exception e)
-		{
-			
-			_log.severe(L2ItemInstance.class.getName() + ": Could not restore item " + objectId + " from DB:");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
+		{	
+			_log.severe(L2ItemInstance.class.getName() + ": Could not restore item " + objectId + " from DB:" +e);
 		}
 		return inst;
 	}
@@ -786,9 +760,9 @@ public final class L2ItemInstance extends L2Object
 		if (_storedInDb)
 			return;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,price_sell=?,price_buy=?,custom_type1=?,custom_type2=?,mana_left=? " + "WHERE object_id = ?"))
 		{
-			PreparedStatement statement = con.prepareStatement("UPDATE items SET owner_id=?,count=?,loc=?,loc_data=?,enchant_level=?,price_sell=?,price_buy=?,custom_type1=?,custom_type2=?,mana_left=? " + "WHERE object_id = ?");
 			statement.setInt(1, _ownerId);
 			statement.setInt(2, getCount());
 			statement.setString(3, _loc.name());
@@ -803,9 +777,7 @@ public final class L2ItemInstance extends L2Object
 			statement.executeUpdate();
 			_existsInDb = true;
 			_storedInDb = true;
-			statement.close();
-		}
-		
+		}		
 		catch (Exception e)
 		{
 			_log.severe(L2ItemInstance.class.getName() + ": Could not update item " + getObjectId() + " in DB: Reason: " + "Duplicate itemId");
@@ -821,9 +793,9 @@ public final class L2ItemInstance extends L2Object
 		if (_wear)
 			return;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("INSERT INTO items (owner_id,item_id,count,loc,loc_data,enchant_level,price_sell,price_buy,object_id,custom_type1,custom_type2,mana_left) " + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"))
 		{
-			PreparedStatement statement = con.prepareStatement("INSERT INTO items (owner_id,item_id,count,loc,loc_data,enchant_level,price_sell,price_buy,object_id,custom_type1,custom_type2,mana_left) " + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 			statement.setInt(1, _ownerId);
 			statement.setInt(2, _itemId);
 			statement.setInt(3, getCount());
@@ -840,7 +812,6 @@ public final class L2ItemInstance extends L2Object
 			statement.executeUpdate();
 			_existsInDb = true;
 			_storedInDb = true;
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -859,14 +830,13 @@ public final class L2ItemInstance extends L2Object
 		if (isAugmented())
 			_augmentation.deleteAugmentationData();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("DELETE FROM items WHERE object_id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("DELETE FROM items WHERE object_id=?");
 			statement.setInt(1, getObjectId());
 			statement.executeUpdate();
 			_existsInDb = false;
 			_storedInDb = false;
-			statement.close();
 		}
 		catch (Exception e)
 		{

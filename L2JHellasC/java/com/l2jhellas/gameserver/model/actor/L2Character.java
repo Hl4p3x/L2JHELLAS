@@ -107,6 +107,8 @@ import com.l2jhellas.util.MathUtil;
 import com.l2jhellas.util.Rnd;
 import com.l2jhellas.util.Util;
 
+import Extensions.fake.roboto.FakePlayer;
+
 public abstract class L2Character extends L2Object
 {
 	public static final Logger _log = Logger.getLogger(L2Character.class.getName());
@@ -298,7 +300,10 @@ public abstract class L2Character extends L2Object
 		// Go through the StatusListener
 		// Send the Server->Client packet StatusUpdate with current HP and MP
 		for (L2Character temp : getStatus().getStatusListener())
-			temp.sendPacket(su);
+		{
+			if(temp != null)
+				temp.sendPacket(su);
+		}
 	}
 	
 	public void sendPacket(L2GameServerPacket mov)
@@ -436,6 +441,12 @@ public abstract class L2Character extends L2Object
 
 			if (TargetPlayer != null)
 			{
+				if(TargetPlayer.getAppearance().getInvisible())
+				{
+					player.sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+				
 				if(player.isInFunEvent() && TargetPlayer.isInFunEvent() && !EventManager.getInstance().canAttack(player,TargetPlayer))
 				{
 					player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -471,7 +482,7 @@ public abstract class L2Character extends L2Object
 		}
 		
 		if(player != null && stopMov)
-		   stopMove(null);
+			player.stopMove(null);
 		
 		// Get the active weapon instance (always equipped in the right hand)
 		L2ItemInstance weaponInst = getActiveWeaponInstance();
@@ -878,53 +889,51 @@ public abstract class L2Character extends L2Object
 	}
 	
 	public void doCast(L2Skill skill)
-	{
+	{			
 		if (skill == null)
 		{
 			getAI().notifyEvent(CtrlEvent.EVT_CANCEL);
 			return;
 		}
 		
-		if (isSkillDisabled(skill.getId()))
+		if(!skill.isPotion())
 		{
-			if (this instanceof L2PcInstance)
+			if (isSkillDisabled(skill.getId()))
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE);
-				sm.addSkillName(skill.getId(), skill.getLevel());
-				sendPacket(sm);
+				if (isPlayer())
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE).addSkillName(skill.getId(), skill.getLevel()));
+				
+				return;
 			}
 			
-			return;
+			// Check if the skill is a magic spell and if the L2Character is not muted
+			if (skill.isMagic() && isMuted())
+			{
+				getAI().notifyEvent(CtrlEvent.EVT_CANCEL);
+				return;
+			}
+			
+			// Check if the skill is psychical and if the L2Character is not psychical_muted
+			if (!skill.isMagic() && isPsychicalMuted())
+			{
+				getAI().notifyEvent(CtrlEvent.EVT_CANCEL);
+				return;
+			}	
 		}
 		
-		// Check if the skill is a magic spell and if the L2Character is not muted
-		if (skill.isMagic() && isMuted() && !skill.isPotion())
-		{
-			getAI().notifyEvent(CtrlEvent.EVT_CANCEL);
-			return;
-		}
-		
-		// Check if the skill is psychical and if the L2Character is not psychical_muted
-		if (!skill.isMagic() && isPsychicalMuted() && !skill.isPotion())
-		{
-			getAI().notifyEvent(CtrlEvent.EVT_CANCEL);
-			return;
-		}
-		
-		if (this instanceof L2PcInstance)
+		if (isPlayer())
 		{
 			L2PcInstance player = (L2PcInstance) this;
 			
 			if (player.getTarget() != null && player.getTarget() == player && skill.getSkillType() == L2SkillType.CHARGEDAM)
 				return;
-		}
-		
-		// Can't use Hero and resurrect skills during Olympiad
-		if (this instanceof L2PcInstance && ((L2PcInstance) this).isInOlympiadMode() && (skill.isHeroSkill() || skill.getSkillType() == L2SkillType.RESURRECT))
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
-			sendPacket(sm);
-			return;
+			
+			// Can't use Hero and resurrect skills during Olympiad
+			if (player.isInOlympiadMode() && (skill.isHeroSkill() || skill.getSkillType() == L2SkillType.RESURRECT))
+			{
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.THIS_SKILL_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT));
+				return;
+			}
 		}
 		
 		// prevent casting signets to peace zone
@@ -945,9 +954,7 @@ public abstract class L2Character extends L2Object
 				canCast = false;
 			if (!canCast)
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED);
-				sm.addSkillName(skill);
-				sendPacket(sm);
+				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_CANNOT_BE_USED).addSkillName(skill));
 				return;
 			}
 		}
@@ -961,7 +968,7 @@ public abstract class L2Character extends L2Object
 		{
 			target = (L2Character) targets[0];
 			
-			if (this instanceof L2PcInstance && target instanceof L2PcInstance && target.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
+			if (isPlayer() && target.isPlayer() && target.getAI().getIntention() == CtrlIntention.AI_INTENTION_ATTACK)
 			{
 				if (skill.getSkillType() == L2SkillType.BUFF || skill.getSkillType() == L2SkillType.HOT || skill.getSkillType() == L2SkillType.HEAL || skill.getSkillType() == L2SkillType.HEAL_PERCENT || skill.getSkillType() == L2SkillType.MANAHEAL || skill.getSkillType() == L2SkillType.MANAHEAL_PERCENT || skill.getSkillType() == L2SkillType.BALANCE_LIFE)
 					target.setLastBuffer(this);
@@ -1081,13 +1088,9 @@ public abstract class L2Character extends L2Object
 			broadcastPacket(!skill.isPotion() ? new MagicSkillUse(this, target, displayId, level, hitTime, reuseDelay, false) : new MagicSkillUse(this, target, displayId, level, 0, 0));	
 		
 		// Send a system message USE_S1 to the L2Character
-		if (this instanceof L2PcInstance && magicId != 1312)
-		{
-			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_S1);
-			sm.addSkillName(magicId, skill.getLevel());
-			sendPacket(sm);
-		}
-		
+		if (isPlayer() && magicId != 1312)
+			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.USE_S1).addSkillName(magicId, skill.getLevel()));
+
 		// Skill reuse check
 		if (reuseDelay > 30000 && !skillMastery)
 			addTimeStamp(skill.getId(), reuseDelay);
@@ -1215,7 +1218,8 @@ public abstract class L2Character extends L2Object
 		else if (Config.REMOVE_BUFFS_ON_DIE)
 			stopAllEffects();
 		
-		calculateRewards(killer);
+		if(killer !=null)
+		   calculateRewards(killer);
 				
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
 		broadcastStatusUpdate();
@@ -1227,19 +1231,20 @@ public abstract class L2Character extends L2Object
 		ZoneManager.getInstance().getRegion(this).onDeath(this);
 		
 		// Notify Quest of character's death
-		for (QuestState qs : getNotifyQuestOfDeath())
+		if(!getNotifyQuestOfDeath().isEmpty())
 		{
-			qs.getQuest().notifyDeath((killer == null ? this : killer), this, qs.getPlayer());
+			for (QuestState qs : getNotifyQuestOfDeath())
+				qs.getQuest().notifyDeath((killer == null ? this : killer), this, qs.getPlayer());
 		}
+		
 		getNotifyQuestOfDeath().clear();
 		
 		getAttackByList().clear();
 		
 		// If character is PhoenixBlessed a resurrection popup will show up
 		if (this instanceof L2Playable && ((L2Playable) this).isPhoenixBlessed())
-		{
 			((L2PcInstance) this).reviveRequest(((L2PcInstance) this), null, false);
-		}
+
 		return true;
 	}
 	
@@ -1393,7 +1398,7 @@ public abstract class L2Character extends L2Object
 	{
 		return _allSkillsDisabled || isImmobileUntilAttacked() || isStunned() || isSleeping() || isParalyzed();
 	}
-	
+
 	public boolean isAttackingDisabled()
 	{
 		return isImmobileUntilAttacked() || isStunned() || isSleeping() || _attackEndTime > GameTimeController.getInstance().getGameTicks() || isFakeDeath() || isParalyzed();
@@ -2682,18 +2687,11 @@ public abstract class L2Character extends L2Object
 			
 			// cancels the skill hit scheduled task
 			enableAllSkills(); // re-enables the skills
-			if (this instanceof L2PcInstance)
-				getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING); // setting
-			// back
-			// previous
-			// intention
-			broadcastPacket(new MagicSkillCanceld(getObjectId())); // broadcast
-			// packet to
-			// stop
-			// animations
-			// client-side
-			sendPacket(ActionFailed.STATIC_PACKET); // send an "action failed" packet to
-			// the caster
+			if (isPlayer())
+				getAI().notifyEvent(CtrlEvent.EVT_FINISH_CASTING);
+
+			broadcastPacket(new MagicSkillCanceld(getObjectId()));
+			sendPacket(ActionFailed.STATIC_PACKET); 
 		}
 	}
 	
@@ -2777,17 +2775,16 @@ public abstract class L2Character extends L2Object
 	
 	public void moveToLocation(int x, int y, int z, int offset)
 	{
-		if (isPlayer() && !FloodProtectors.performAction(getActingPlayer().getClient(), Action.MOVE_ACTION))
+		if (!(this instanceof FakePlayer) && isPlayer() && !FloodProtectors.performAction(getActingPlayer().getClient(), Action.MOVE_ACTION))
 			return;
 		
-		final float speed = getStat().getMoveSpeed();
+		final float speed = (this instanceof L2Vehicle) ? ((L2Vehicle) this).getStat().getMoveSpeed() : getStat().getMoveSpeed();
 		final boolean isFloating = isFlying() || isInsideZone(ZoneId.WATER);
 
-		if (isDead() || speed <= 0 || isMovementDisabled())
+		if (!(this instanceof L2Vehicle) && (isDead() || speed <= 0 || isMovementDisabled()))
 		{
 			if(isPlayer())
 				sendPacket(new ActionFailed());
-			
 			return;
 		}
 		
@@ -2796,8 +2793,12 @@ public abstract class L2Character extends L2Object
 		final int curZ = super.getZ();
 		
 		if (curX == x && curY == y && curZ == z)
+		{
+			if(isPlayer())
+				sendPacket(new ActionFailed());
 			return;
-		
+		}
+
 		double dx = (x - curX);
 		double dy = (y - curY);
 		double dz = (z - curZ);
@@ -2874,7 +2875,6 @@ public abstract class L2Character extends L2Object
 					{
 						if (gtx == _move.geoPathGtx && gty == _move.geoPathGty)
 							return;
-
 						_move.onGeodataPathIndex = -1;
 
 					}
@@ -2896,12 +2896,12 @@ public abstract class L2Character extends L2Object
 						return;
 					else
 						onDecay();
+					
 					return;
 				}
 
 				m.geoPath.clear();
 				List<Location> path = findPath(curX, curY, curZ, originalX, originalY, originalZ, offset);
-
 				if (path.size() > 0)
 					m.geoPath.addAll(path);
 				if ((m.geoPath == null) || (m.geoPath.isEmpty()))
@@ -2936,7 +2936,7 @@ public abstract class L2Character extends L2Object
 
 					dx = (x - curX);
 					dy = (y - curY);
-					
+
 					distance = verticalMovementOnly ? Math.pow(dz, 2) : Math.hypot(dx, dy);
 
 					sin = dy / distance;
@@ -2956,7 +2956,7 @@ public abstract class L2Character extends L2Object
 				return;
 			}
 		}
-		
+
 		if (isFloating && !verticalMovementOnly) 
 			distance = Math.hypot(distance, dz);
 
@@ -3018,7 +3018,6 @@ public abstract class L2Character extends L2Object
 			
 			if(isPlayer())
 				sendPacket(new ActionFailed());
-			
 			return true;
 		}
 		
@@ -3028,7 +3027,7 @@ public abstract class L2Character extends L2Object
 			m._xAccurate = getX();
 			m._yAccurate = getY();
 		}
-		
+
 		final int gameTicks = GameTimeController.getInstance().getGameTicks();
 		
 		if (m._moveTimestamp == gameTicks)
@@ -3079,7 +3078,8 @@ public abstract class L2Character extends L2Object
 		
 		if (delta > 1)
 		{
-			final double distPassed = (getMoveSpeed() * (gameTicks - m._moveTimestamp)) / GameTimeController.TICKS_PER_SECOND;
+			final float speed = (this instanceof L2Vehicle) ? ((L2Vehicle) this).getStat().getMoveSpeed() : getStat().getMoveSpeed();
+			final double distPassed = (speed * (gameTicks - m._moveTimestamp)) / GameTimeController.TICKS_PER_SECOND;
 			distFraction = distPassed / delta;
 		}
 			
@@ -3102,9 +3102,6 @@ public abstract class L2Character extends L2Object
 		}
 	
 		super.setXYZ(x,y,z);
-		
-		if (this instanceof L2Vehicle)
-			((L2Vehicle) this).updatePeopleInTheBoat(x,y,z);
 
 		revalidateZone(false);
 		
@@ -3125,7 +3122,7 @@ public abstract class L2Character extends L2Object
 			_move = null;
 			return false;
 		}
-		
+
 		double speed = getMoveSpeed();
 		
 		if ((speed <= 0) || isMovementDisabled())
@@ -3133,7 +3130,7 @@ public abstract class L2Character extends L2Object
 			_move = null;
 			return false;
 		}
-		
+
 		MoveData md = _move;
 		if (md == null) 
 			return false;
@@ -3986,10 +3983,7 @@ public abstract class L2Character extends L2Object
 			}
 			targets = targetList.toArray(new L2Character[targetList.size()]);
 		}
-		
-		// Ensure that a cast is in progress
-		// Check if player is using fake death.
-		// Potions can be used while faking death.
+
 		if (!isCastingNow() || (isAlikeDead() && !skill.isPotion()))
 		{
 			_skillCast = null;
@@ -4180,11 +4174,11 @@ public abstract class L2Character extends L2Object
 		{			
 			getAI().clientStartAutoAttack();
 			
-			if (target instanceof L2PcInstance)
+			if (target.isPlayer())
 			{				
 				((L2PcInstance) target).getAI().clientStartAutoAttack();
 				
-				player = null;
+				L2PcInstance player = null;
 				
 				if (this instanceof L2PcInstance)
 					player = (L2PcInstance) this;
@@ -4333,7 +4327,7 @@ public abstract class L2Character extends L2Object
 					default: // Launch weapon Special ability skill effect if available
 						if (getActiveWeaponItem() != null && !target.isDead())
 						{
-							if (this instanceof L2PcInstance && getActiveWeaponItem().getSkillEffects(this, target, skill).length > 0)
+							if (isPlayer() && getActiveWeaponItem().getSkillEffects(this, target, skill).length > 0)
 								sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_ACTIVATED).addSkillName(skill));
 						}
 						
@@ -4400,7 +4394,7 @@ public abstract class L2Character extends L2Object
 						}
 						else
 						{
-							if (target instanceof L2PcInstance)
+							if (target.isPlayer())
 							{
 								// Casting non offensive skill on player with pvp flag set or with karma
 								if (!(target.equals(this) || target.equals(player)) && (((L2PcInstance) target).getPvpFlag() > 0 || ((L2PcInstance) target).getKarma() > 0))
@@ -5081,7 +5075,6 @@ public abstract class L2Character extends L2Object
 			getAI().stopAITask();
 	}
 	
-	private L2PcInstance player;
 
 	public final void stopEffectsOnDamage(boolean awake)
 	{

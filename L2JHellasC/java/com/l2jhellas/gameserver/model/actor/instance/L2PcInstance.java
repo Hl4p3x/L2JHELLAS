@@ -4714,7 +4714,7 @@ public class L2PcInstance extends L2Playable
 		L2ItemInstance wpn = getInventory().getPaperdollItem(Inventory.PAPERDOLL_RHAND);
 		if (wpn == null)
 		{
-			wpn = getInventory().getPaperdollItem(Inventory.PAPERDOLL_LRHAND);
+			wpn = getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
 		}
 		if (wpn != null)
 		{
@@ -7320,6 +7320,11 @@ public class L2PcInstance extends L2Playable
 	public int getClanPrivileges()
 	{
 		return _clanPrivileges;
+	}
+	
+	public boolean hasClanPrivileges(int priv)
+	{
+		return (_clanPrivileges & priv) == priv;
 	}
 	
 	public void setClanPrivileges(int n)
@@ -10921,7 +10926,9 @@ public class L2PcInstance extends L2Playable
 		}
 		
 		sendPacket(new ItemList(this, false));
-		sendPacket(new StatusUpdate(getObjectId()));
+		StatusUpdate su = new StatusUpdate(getObjectId());
+		su.addAttribute(StatusUpdate.CUR_LOAD, getCurrentLoad());
+		sendPacket(su);
 		sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
