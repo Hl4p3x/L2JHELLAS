@@ -1,6 +1,5 @@
 package com.l2jhellas.gameserver.handlers.skillhandlers;
 
-import com.l2jhellas.gameserver.enums.items.L2WeaponType;
 import com.l2jhellas.gameserver.enums.player.Position;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.enums.sound.Sound;
@@ -39,6 +38,9 @@ public class Blow implements ISkillHandler
 		if (activeChar.isAlikeDead())
 			return;
 		
+		L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
+		boolean soul = (weapon != null && weapon.getChargedSoulshot() == L2ItemInstance.CHARGED_SOULSHOT);
+
 		for (L2Character target : (L2Character[]) targets)
 		{
 			if (target.isAlikeDead())
@@ -70,8 +72,6 @@ public class Blow implements ISkillHandler
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(skill));
 					}
 				}
-				L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-				boolean soul = (weapon != null && weapon.getChargedSoulshot() == L2ItemInstance.CHARGED_SOULSHOT && weapon.getItemType() == L2WeaponType.DAGGER);
 				byte shld = Formulas.calcShldUse(activeChar, target);
 				
 				// Crit rate base crit rate for skill, modified with STR bonus
@@ -221,7 +221,7 @@ public class Blow implements ISkillHandler
 					effect.exit();
 				
 				skill.getEffectsSelf(activeChar);
-			}
+			}			
 		}
 	}
 	

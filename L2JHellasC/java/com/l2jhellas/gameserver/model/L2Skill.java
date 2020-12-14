@@ -893,6 +893,22 @@ public abstract class L2Skill
 		}
 	}
 	
+	public final boolean isBuffSkill()
+	{
+		switch (_skillType) 
+		{
+		   case BUFF:
+		   case COMBATPOINTHEAL:
+		   case REFLECT:
+		   case HEAL_PERCENT:
+		   case HEAL_STATIC:
+		   case MANAHEAL_PERCENT:
+			   return true;
+		   default:
+			   return false;
+		}		
+	}
+	
 	public final boolean isOffensive()
 	{
 		return _isOffensive;
@@ -1192,8 +1208,9 @@ public abstract class L2Skill
 						if (obj == activeChar || obj == src)
 							continue;
 
-							if (!GeoEngine.canSeeTarget(activeChar, obj, false))
+						if (((Config.GEODATA) ? !GeoEngine.canSeeTarget(activeChar, obj, activeChar.isFlying()) : !GeoEngine.canSeeTarget(activeChar, obj)))
 								continue;
+						
 							// check if both attacker and target are L2PcInstances and if they are in same party
 							if (obj instanceof L2PcInstance)
 							{
@@ -1284,7 +1301,7 @@ public abstract class L2Skill
 						continue;
 					target = (L2Character) obj;
 					
-					if (!GeoEngine.canSeeTarget(activeChar, target, false))
+					if (((Config.GEODATA) ? !GeoEngine.canSeeTarget(activeChar, obj, activeChar.isFlying()) : !GeoEngine.canSeeTarget(activeChar, obj)))
 						continue;
 					
 					if (!target.isAlikeDead() && (target != activeChar))
@@ -1765,7 +1782,7 @@ public abstract class L2Skill
 					if (!(obj instanceof L2Attackable || obj instanceof L2Playable) || ((L2Character) obj).isDead() || ((L2Character) obj) == activeChar)
 						continue;
 					
-					if (!GeoEngine.canSeeTarget(activeChar, obj, false))
+					if (((Config.GEODATA) ? !GeoEngine.canSeeTarget(activeChar, obj, activeChar.isFlying()) : !GeoEngine.canSeeTarget(activeChar, obj)))
 						continue;
 					
 					if (obj instanceof L2PcInstance && src != null)
@@ -1904,7 +1921,7 @@ public abstract class L2Skill
 					else
 						continue;
 					
-					if (!GeoEngine.canSeeTarget(activeChar, target, false))
+					if (((Config.GEODATA) ? !GeoEngine.canSeeTarget(activeChar, obj, activeChar.isFlying()) : !GeoEngine.canSeeTarget(activeChar, obj)))
 						continue;
 					
 					if (!target.isAlikeDead()) // If target is not dead/fake death and not self
@@ -1969,7 +1986,7 @@ public abstract class L2Skill
 					if (obj == null)
 						continue;
 					
-					if (!GeoEngine.canSeeTarget(activeChar, target, false))
+					if (((Config.GEODATA) ? !GeoEngine.canSeeTarget(activeChar, obj, activeChar.isFlying()) : !GeoEngine.canSeeTarget(activeChar, obj)))
 						continue;
 					
 					if (!target.isAlikeDead()) // If target is not dead/fake death and not self
@@ -2288,5 +2305,17 @@ public abstract class L2Skill
 	public boolean isClanSkill()
 	{
 		return SkillTreeData.getInstance().isClanSkill(_id, _level);
+	}
+
+	public final boolean is7Signs()
+	{
+		if (_id > 4360 && _id < 4367)
+			return true;
+		return false;
+	}
+
+	public boolean canBeRemoved(L2SkillType skillType, int negateLvl)
+	{
+		return ((getSkillType() == skillType || (getEffectType() != null && getEffectType() == skillType)) && (negateLvl == -1 || (getEffectType() != null && getEffectLvl() >= 0 && getEffectLvl() <= negateLvl) || (getLevel() >= 0 && getLevel() <= negateLvl)));
 	}
 }

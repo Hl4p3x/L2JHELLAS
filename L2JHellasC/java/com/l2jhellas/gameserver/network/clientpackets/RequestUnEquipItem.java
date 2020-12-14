@@ -45,7 +45,7 @@ public class RequestUnEquipItem extends L2GameClientPacket
 			return;
 		}
 		
-		if (activeChar.isAttackingNow() || activeChar.isCastingNow())
+		if (activeChar.isAttacking() || activeChar.isCastingNow())
 			return;
 		
 		// Remove augmentation boni

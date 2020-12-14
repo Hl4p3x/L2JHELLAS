@@ -73,7 +73,7 @@ public class CommunityBoard
 			player.sendMessage("CommunityBoard use is prohibited while Casting!");
 			return false;
 		}
-		if (player.isAttackingNow())
+		if (player.isAttacking())
 		{
 			player.sendMessage("CommunityBoard use is prohibited while Attacking!");
 			return false;
@@ -95,7 +95,7 @@ public class CommunityBoard
 		}
 		if (player.isInFunEvent())
 		{
-			player.sendMessage("CommunityBoard use is prohibited while you are in an event!");
+			player.sendMessage("CommunityBoard use is prohibited while you are in event!");
 			return false;
 		}
 		if (player.isInJail() || player.isCursedWeaponEquiped() || player.isFlying() || player.isInBoat() || player.isProcessingTransaction() || player.isStunned())
@@ -113,48 +113,28 @@ public class CommunityBoard
 			return;
 		
 		if (!checkPlayerConditions(activeChar))
-		{
 			return;
-		}
-		
+
 		if (Config.COMMUNITY_TYPE.equals("full"))
 		{
 			if (command.startsWith("_bbsclan"))
-			{
 				ClanBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbsmemo"))
-			{
 				TopicBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbstopics"))
-			{
 				TopicBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbsposts"))
-			{
 				PostBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbstop"))
-			{
 				TopBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbshome"))
-			{
 				TopBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbsloc"))
-			{
 				RegionBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbsclass"))
-			{
 				ClassBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbshop"))
-			{
 				ShopBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 			else if (command.startsWith("_bbsmultisell;"))
 			{
 				StringTokenizer st = new StringTokenizer(command, ";");
@@ -163,18 +143,12 @@ public class CommunityBoard
 				MultisellData.getInstance().SeparateAndSend(Integer.parseInt(st.nextToken()), activeChar, false, 0);
 			}
 			else if (command.startsWith("_bbsrps"))
-			{
 				RPSBBSManager.getInstance().parsecmd(command, activeChar);
-			}
 		}
 		else if (Config.COMMUNITY_TYPE.equals("old"))
-		{
 			RegionBBSManager.getInstance().parsecmd(command, activeChar);
-		}
 		else
-		{
 			activeChar.sendPacket(SystemMessageId.CB_OFFLINE);
-		}
 		
 		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 	}
@@ -185,7 +159,7 @@ public class CommunityBoard
 		if (activeChar == null)
 			return;
 		
-		if (Config.COMMUNITY_TYPE.equals("Full"))
+		if (Config.COMMUNITY_TYPE.equals("full"))
 		{
 			switch (url)
 			{
@@ -200,7 +174,7 @@ public class CommunityBoard
                     break;
 				case "Notice":
 					ClanBBSManager.getInstance().parsewrite(arg1, arg2, arg3, arg4, arg5, activeChar);
-                    break;              
+                    break;                  	
 			}
 		}
 		else if (Config.COMMUNITY_TYPE.equals("old"))

@@ -1,6 +1,5 @@
 package com.l2jhellas.gameserver.scrips.quests.ai.custom;
 
-import com.l2jhellas.gameserver.Announcements;
 import com.l2jhellas.gameserver.enums.skills.FrequentSkill;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
@@ -341,7 +340,6 @@ public class VarkaSilenosSupport extends Quest
 								// Curse the heretic or his pet.
 								npc.setTarget((isPet && player.getPet() != null) ? caster.getPet() : caster);
 								npc.doCast(FrequentSkill.VARKA_KETRA_PETRIFICATION.getSkill());
-								Announcements.getInstance().announceToAll("wtf4");
 								
 								// Revert to old target && drop the loop.
 								npc.setTarget(oldTarget);

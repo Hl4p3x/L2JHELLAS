@@ -558,7 +558,6 @@ public class L2PcInstance extends L2Playable
 		@Override
 		public void doAttack(L2Character target)
 		{
-			
 			if (isInsidePeaceZone(L2PcInstance.this, target))
 			{
 				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANT_ATK_PEACEZONE));
@@ -1362,9 +1361,6 @@ public class L2PcInstance extends L2Playable
 		setPvpFlag(value);
 		sendPacket(new UserInfo(this));
 		
-		if (getPet() != null)
-			sendPacket(new RelationChanged(getPet(), getRelation(this), false));
-
 		broadcastRelationChanged();
 	}
 	
@@ -1636,7 +1632,6 @@ public class L2PcInstance extends L2Playable
 						setIsOverloaded(false);
 					}
 					
-					sendPacket(new UserInfo(this));
 					sendPacket(new EtcStatusUpdate(this));
 					broadcastUserInfo();
 				}
@@ -3745,15 +3740,17 @@ public class L2PcInstance extends L2Playable
 			Broadcast.toKnownPlayers(this, new TargetSelected(getObjectId(), newTarget.getObjectId(), getX(), getY(), getZ()));
 		}
 		
-		if (newTarget == null && getTarget() != null)
+		if (newTarget instanceof L2NpcInstance)
+			setLastFolkNPC((L2NpcInstance) newTarget);
+		else if (newTarget == null )
 		{
-			broadcastPacket(new TargetUnselected(this));
-			setLastFolkNPC(null);
-		}
-		else
-		{
-			if (newTarget instanceof L2NpcInstance)
-				setLastFolkNPC((L2NpcInstance) newTarget);
+			sendPacket(ActionFailed.STATIC_PACKET);
+
+			if (getTarget() != null)
+			{
+				broadcastPacket(new TargetUnselected(this));
+				setLastFolkNPC(null);
+			}
 		}
 		
 		// Target the new L2Object
@@ -4924,28 +4921,7 @@ public class L2PcInstance extends L2Playable
 		// Broadcast the packet to self and known players.
 		Broadcast.toSelfAndKnownPlayersInRadius(this, msc, 810000);
 	}
-	
-	public void updateAndBroadcastStatus(int broadcastType)
-	{
-		refreshOverloaded();
-		refreshExpertisePenalty();
-
-		if (broadcastType == 1)
-			sendPacket(new UserInfo(this));
-		else if (broadcastType == 2)
-			broadcastUserInfo();
-	}
-	
-	public void broadcastKarma()
-	{
-		sendPacket(new UserInfo(this));
-
-		if (getPet() != null)
-			sendPacket(new RelationChanged(getPet(), getRelation(this), false));
-
-		broadcastRelationChanged();
-	}
-	
+		
 	public void setOnlineStatus(boolean isOnline)
 	{
 		if (_isOnline != isOnline)
@@ -5226,7 +5202,7 @@ public class L2PcInstance extends L2Playable
 					player.setCurrentHp(currentHp);
 					player.setCurrentMp(rset.getDouble("curMp"));
 
-					if (currentHp < 0.5|| player.getCurrentHp() >= player.getMaxHp())
+					if (currentHp < 0.5)
 						player.stopHpMpRegeneration();
 
 					// Restore pet if exists in the world
@@ -6703,7 +6679,7 @@ public class L2PcInstance extends L2Playable
 				return;
 			}
 			
-			if (!(target instanceof L2MonsterInstance) && SkillType == L2SkillType.CONFUSE_MOB_ONLY)
+			if (SkillType == L2SkillType.CONFUSE_MOB_ONLY && !(target instanceof L2MonsterInstance))
 			{
 				sendPacket(ActionFailed.STATIC_PACKET);
 				return;
@@ -6822,8 +6798,7 @@ public class L2PcInstance extends L2Playable
 		
 		// Check if the skill is Sweep type and if conditions not apply
 		if (SkillType == L2SkillType.SWEEP && target instanceof L2Attackable)
-		{
-			
+		{		
 			if (((L2Attackable) target).isDead())
 			{
 				final int spoilerId = ((L2Attackable) target).getIsSpoiledBy();
@@ -7091,9 +7066,20 @@ public class L2PcInstance extends L2Playable
 	}
 	
 	@Override
-	public void updateAbnormalEffect()
+	public void updateAbnormalEffect(AbnormalEffect ae)
 	{
-		broadcastUserInfo();
+		if(ae != null && !ae.equals(AbnormalEffect.NULL))
+		{
+			if(ae.equals(AbnormalEffect.FLOATING_ROOT) && !isImmobileUntilAttacked())
+			{
+				sendPacket(new UserInfo(this));
+				return;
+			}
+
+			broadcastUserInfo();
+		}
+		else
+			sendPacket(new UserInfo(this));
 	}
 	
 	public void tempInvetoryDisable()
@@ -7425,7 +7411,7 @@ public class L2PcInstance extends L2Playable
 		stopMove(null);
 		setIsParalyzed(true);
 		setIsInvul(true);
-		getAppearance().setInvisible();
+		getAppearance().setIsVisible(false);
 		teleToLocation(x, y, z, false);
 		sendPacket(new ObservationMode(x, y, z));
 		_observerMode = true;
@@ -7448,7 +7434,7 @@ public class L2PcInstance extends L2Playable
 		setTarget(null);
 		setIsInvul(true);
 		
-		getAppearance().setInvisible();
+		getAppearance().setIsVisible(false);
 		
 		teleToLocation(x, y, z, true);
 		sendPacket(new ExOlympiadMode(3));
@@ -7462,7 +7448,7 @@ public class L2PcInstance extends L2Playable
 		
 		if (!isGM())
 		{
-			getAppearance().setVisible();
+			getAppearance().setIsVisible(true);
 			setIsInvul(false);
 		}
 		
@@ -7486,7 +7472,7 @@ public class L2PcInstance extends L2Playable
 		
 		if (!isGM())
 		{
-			getAppearance().setVisible();
+			getAppearance().setIsVisible(true);
 			setIsInvul(false);
 		}
 		if (hasAI())
@@ -10472,7 +10458,7 @@ public class L2PcInstance extends L2Playable
 			if (Config.GM_STARTUP_INVULNERABLE && AdminData.getInstance().hasAccess("admin_invul", getAccessLevel()))
 				setIsInvul(true);
 			if (Config.GM_STARTUP_INVISIBLE && AdminData.getInstance().hasAccess("admin_invisible", getAccessLevel()))
-				getAppearance().setInvisible();
+				getAppearance().setIsVisible(false);
 			if (Config.GM_STARTUP_SILENCE && AdminData.getInstance().hasAccess("admin_silence", getAccessLevel()))
 				setMessageRefusal(true);
 			if (Config.GM_STARTUP_AUTO_LIST && AdminData.getInstance().hasAccess("admin_gmliston", getAccessLevel()))
@@ -10485,7 +10471,7 @@ public class L2PcInstance extends L2Playable
 			removeSkill(SkillTable.getInstance().getInfo(L2Skill.SKILL_LUCKY, 1));
 		
 		standUp();
-		
+				
 		if (isDead())
 		{
 			doDie(this);
@@ -10706,7 +10692,7 @@ public class L2PcInstance extends L2Playable
 		}
 
 		if(!isGM())
-		  getAppearance().setVisible();
+			getAppearance().setIsVisible(true);
 
 		RegionBBSManager.getInstance().changeCommunityBoard();
 				
@@ -10782,7 +10768,7 @@ public class L2PcInstance extends L2Playable
 			}
 		}				
 	}
-	
+
 	public void useEquippableItem(int objectId, boolean abortAttack)
 	{
 		final L2ItemInstance item = getInventory().getItemByObjectId(objectId);
@@ -10791,7 +10777,6 @@ public class L2PcInstance extends L2Playable
 			return;
 		
 		L2ItemInstance[] items = null;
-		final boolean isEquipped = item.isEquipped();
 		final int oldInvLimit = getInventoryLimit();
 		SystemMessage sm = null;
 		
@@ -10802,7 +10787,7 @@ public class L2PcInstance extends L2Playable
 			item.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
 		}
 		
-		if (isEquipped)
+		if (item.isEquipped())
 		{
 			sm = item.getEnchantLevel() > 0 ? SystemMessage.getSystemMessage(SystemMessageId.EQUIPMENT_S1_S2_REMOVED).addNumber(item.getEnchantLevel()).addItemName(item.getItemId())
             : SystemMessage.getSystemMessage(SystemMessageId.S1_DISARMED).addItemName(item.getItemId());
@@ -11489,7 +11474,7 @@ public class L2PcInstance extends L2Playable
 		if (skill.getSkillType() == L2SkillType.RECALL && !Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && getKarma() > 0)
 			return;
 			
-		if (isAttackingNow())
+		if (isAttacking())
 		{
 			if (skill.isToggle())
 			{
@@ -11893,8 +11878,28 @@ public class L2PcInstance extends L2Playable
 		return result;
 	}
 	
+	public void updateAndBroadcastStatus(int broadcastType)
+	{
+		refreshOverloaded();
+		refreshExpertisePenalty();
+
+		if (broadcastType == 1)
+			sendPacket(new UserInfo(this));
+		else if (broadcastType == 2)
+			broadcastUserInfo();
+	}
+	
+	public void broadcastKarma()
+	{
+		sendPacket(new UserInfo(this));
+		broadcastRelationChanged();
+	}
+	
 	public void broadcastRelationChanged()
 	{
+		if (getPet() != null)
+			sendPacket(new RelationChanged(getPet(), getRelation(this), false));
+
 		L2World.getInstance().forEachVisibleObject(this, L2PcInstance.class, player ->
 		{
 			if (isVisible())	
@@ -11958,22 +11963,25 @@ public class L2PcInstance extends L2Playable
 				activeChar.sendPacket(new ChairSit(this, ((L2StaticObjectInstance) throne).getStaticObjectId()));
 		}
 		
-		switch (getPrivateStoreType())
+		if(!getPrivateStoreType().equals(StoreType.NONE))
 		{
-			case SELL:
-			case PACKAGE_SELL:
-				activeChar.sendPacket(new PrivateStoreMsgSell(this));
-				break;
-			
-			case BUY:
-				activeChar.sendPacket(new PrivateStoreMsgBuy(this));
-				break;
-			
-			case MANUFACTURE:
-				activeChar.sendPacket(new RecipeShopMsg(this));
-				break;
-			default :
-				break;
+			switch (getPrivateStoreType())
+			{
+				case SELL:
+				case PACKAGE_SELL:
+					activeChar.sendPacket(new PrivateStoreMsgSell(this));
+					break;
+
+				case BUY:
+					activeChar.sendPacket(new PrivateStoreMsgBuy(this));
+					break;
+
+				case MANUFACTURE:
+					activeChar.sendPacket(new RecipeShopMsg(this));
+					break;
+				default :
+					break;
+			}
 		}
 	}
 
@@ -12010,53 +12018,19 @@ public class L2PcInstance extends L2Playable
 			if ((pet != null) && pet.isMountable() && !isMounted() && !isBetrayed())
 			{
 				if (isDead())
-				{
-					// A strider cannot be ridden when dead
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.STRIDER_CANT_BE_RIDDEN_WHILE_DEAD);
-					sendPacket(msg);
-					msg = null;
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.STRIDER_CANT_BE_RIDDEN_WHILE_DEAD));
 				else if (pet.isDead())
-				{
-					// A dead strider cannot be ridden.
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.DEAD_STRIDER_CANT_BE_RIDDEN);
-					sendPacket(msg);
-					msg = null;
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DEAD_STRIDER_CANT_BE_RIDDEN));
 				else if (pet.isInCombat() || pet.isRooted())
-				{
-					// A strider in battle cannot be ridden
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.STRIDER_IN_BATLLE_CANT_BE_RIDDEN);
-					sendPacket(msg);
-					msg = null;
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.STRIDER_IN_BATLLE_CANT_BE_RIDDEN));
 				else if (isInCombat())
-				{
-					// A strider cannot be ridden while in battle
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.STRIDER_CANT_BE_RIDDEN_WHILE_IN_BATTLE);
-					sendPacket(msg);
-					msg = null;
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.STRIDER_CANT_BE_RIDDEN_WHILE_IN_BATTLE));
 				else if (isSitting() || isMoving())
-				{
-					// A strider can be ridden only when standing
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.STRIDER_CAN_BE_RIDDEN_ONLY_WHILE_STANDING);
-					sendPacket(msg);
-					msg = null;
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.STRIDER_CAN_BE_RIDDEN_ONLY_WHILE_STANDING));
 				else if (isFishing())
-				{
-					// You can't mount, dismount, break and drop items while fishing
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DO_WHILE_FISHING_2);
-					sendPacket(msg);
-					msg = null;
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_DO_WHILE_FISHING_2));
 				else if (isCursedWeaponEquiped())
-				{
-					// You can't mount, dismount, break and drop items while wielding a cursed weapon
-					SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.STRIDER_CANT_BE_RIDDEN_WHILE_IN_BATTLE);
-					sendPacket(msg);
-				}
+					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.STRIDER_CANT_BE_RIDDEN_WHILE_IN_BATTLE));
 				else if (!pet.isDead() && !isMounted())
 				{
 					if (!disarmWeapons())
@@ -12070,9 +12044,7 @@ public class L2PcInstance extends L2Playable
 				}
 			}
 			else if (isRentedPet())
-			{
 				stopRentPet();
-			}
 			else if (isMounted())
 			{
 				if (setMountType(0))
@@ -12087,8 +12059,7 @@ public class L2PcInstance extends L2Playable
 				}
 			}	
 	}
-	
-	
+		
 	public void dismount()
 	{	
 		if (getActiveTradeList() != null)
@@ -12168,8 +12139,8 @@ public class L2PcInstance extends L2Playable
 	public void SummonRotate(L2Summon summon, double distance)
 	{
 		//AbsolutePower rotate summon to face the owner, for now only when the click distance is <= 250.
-		if (summon.isAutoFollow() && distance != 0 && distance <= 250 && !summon.isDead() && !summon.isAttackingNow() && !summon.isCastingNow()
-		&& !summon.isMovementDisabled() && !summon.isOutOfControl())
+		if (!summon.getAI().getIntention().equals(CtrlIntention.AI_INTENTION_CAST) && !summon.getAI().getIntention().equals(CtrlIntention.AI_INTENTION_ATTACK) && summon.isAutoFollow() && distance != 0 && distance <= 250 && !summon.isDead() && !summon.isAttacking() && !summon.isCastingNow()
+		&& !summon.isMovementDisabled() && !summon.isOutOfControl() && !summon.isMoving())
 			summon.broadcastPacket(new MoveToPawn(summon, this, 70));		
 	}
 	
@@ -12241,4 +12212,71 @@ public class L2PcInstance extends L2Playable
 		}
 		sendPacket(ActionFailed.STATIC_PACKET);
 	}	
+	
+	
+	public boolean checkIfOkToUseStriderSiegeAssault(L2PcInstance player, Castle castle, boolean isCheckOnly)
+	{
+		if (player == null)
+			return false;
+		
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2);
+		
+		if (castle == null || castle.getCastleId() <= 0)
+			sm.addString("You must be on castle ground to use strider siege assault");
+		else if (!castle.getSiege().getIsInProgress())
+			sm.addString("You can only use strider siege assault during a siege.");
+		else if (!(player.getTarget() instanceof L2DoorInstance))
+			sm.addString("You can only use strider siege assault on doors and walls.");
+		else if (!player.isRiding())
+			sm.addString("You can only use strider siege assault when on strider.");
+		else
+			return true;
+		
+		if (!isCheckOnly)
+		{
+			player.sendPacket(sm);
+		}
+		return false;
+	}
+	
+	public boolean checkIfOkToUseStriderSiegeAssault(L2PcInstance activeChar, boolean isCheckOnly)
+	{
+		return checkIfOkToUseStriderSiegeAssault(activeChar, CastleManager.getInstance().getCastle(activeChar), isCheckOnly);
+	}
+	
+	public boolean checkIfOkToPlaceFlag(L2PcInstance activeChar, boolean isCheckOnly)
+	{
+		return checkIfOkToPlaceFlag(activeChar, CastleManager.getInstance().getCastle(activeChar), isCheckOnly);
+	}
+	
+	public boolean checkIfOkToPlaceFlag(L2PcInstance player, Castle castle, boolean isCheckOnly)
+	{
+		if (player == null)
+			return false;
+		
+		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2);
+		
+		if (castle == null || castle.getCastleId() <= 0)
+			sm.addString("You must be on castle ground to place a flag");
+		else if (!castle.getSiege().getIsInProgress())
+			sm.addString("You can only place a flag during a siege.");
+		else if (castle.getSiege().getAttackerClan(player.getClan()) == null)
+			sm.addString("You must be an attacker to place a flag");
+		else if (player.getClan() == null || !player.isClanLeader())
+			sm.addString("You must be a clan leader to place a flag");
+		else if (castle.getSiege().getAttackerClan(player.getClan()).getNumFlags() >= SiegeManager.getInstance().getFlagMaxCount())
+			sm.addString("You have already placed the maximum number of flags possible");
+		else
+			return true;
+		
+		if (!isCheckOnly)
+			player.sendPacket(sm);
+
+		return false;
+	}
+	
+	public boolean isHealer()
+	{
+		return getClassId().getId() == 16 || getClassId().getId() == 97;
+	}
 }

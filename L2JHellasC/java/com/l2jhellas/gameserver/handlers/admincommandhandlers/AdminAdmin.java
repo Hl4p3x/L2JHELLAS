@@ -51,16 +51,16 @@ public class AdminAdmin implements IAdminCommandHandler
 		}
 		else if (command.equals("admin_inv_menu"))
 		{
-			if (!activeChar.getAppearance().getInvisible())
+			if (activeChar.getAppearance().isVisible())
 			{
-				activeChar.getAppearance().setInvisible();
+				activeChar.getAppearance().setIsVisible(false);
 				activeChar.broadcastUserInfo();
 				activeChar.decayMe();
 				activeChar.spawnMe();
 			}
 			else
 			{
-				activeChar.getAppearance().setVisible();
+				activeChar.getAppearance().setIsVisible(true);
 				activeChar.broadcastUserInfo();
 			}
 			RegionBBSManager.getInstance().changeCommunityBoard();

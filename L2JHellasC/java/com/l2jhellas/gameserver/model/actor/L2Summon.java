@@ -6,6 +6,7 @@ import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.ai.L2CharacterAI;
 import com.l2jhellas.gameserver.ai.L2SummonAI;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
 import com.l2jhellas.gameserver.handler.IItemHandler;
@@ -128,10 +129,13 @@ public abstract class L2Summon extends L2Playable
 	public abstract int getSummonType();
 	
 	@Override
-	public void updateAbnormalEffect()
+	public void updateAbnormalEffect(AbnormalEffect ae)
 	{	
-		for (L2PcInstance player : L2World.getInstance().getVisibleObjects(this, L2PcInstance.class))
-			player.sendPacket(new SummonInfo(this, player, 1));
+		if(ae != null && !ae.equals(AbnormalEffect.NULL))
+		{
+			for (L2PcInstance player : L2World.getInstance().getVisibleObjects(this, L2PcInstance.class))
+				player.sendPacket(new SummonInfo(this, player, 1));
+		}
 	}
 	
 	public boolean isMountable()

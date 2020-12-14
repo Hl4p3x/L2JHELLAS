@@ -71,7 +71,7 @@ public class L2BoatAI extends L2CharacterAI
 	}
 	
 	@Override
-	protected void onEvtAttacked(L2Character attacker)
+	protected void onEvtAttacked(L2Character attacker,L2Skill skill)
 	{
 	}
 	

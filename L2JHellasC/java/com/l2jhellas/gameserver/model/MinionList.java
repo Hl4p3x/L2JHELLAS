@@ -175,6 +175,7 @@ public class MinionList
 	{
 		minion.stopAllEffects();
 		minion.setDecayed(false);
+		
 		// Set the Minion HP, MP and Heading
 		minion.setCurrentHpMp(minion.getMaxHp(), minion.getMaxMp());
 		minion.setHeading(master.getHeading());

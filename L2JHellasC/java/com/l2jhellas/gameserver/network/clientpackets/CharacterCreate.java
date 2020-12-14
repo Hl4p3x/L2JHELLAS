@@ -138,8 +138,6 @@ public final class CharacterCreate extends L2GameClientPacket
 	
 	private static boolean isValidName(String text)
 	{
-
-		boolean result = true;
 		String test = text;
 		Pattern pattern;
 		try
@@ -150,19 +148,10 @@ public final class CharacterCreate extends L2GameClientPacket
 		{
 			pattern = Pattern.compile(".*");
 		}
-		Matcher regexp = pattern.matcher(test);
-		if (!regexp.matches())
-			result = false;
-		else
-		{		
-			for (int i = 0; i < text.length(); i++)
-			{
-				if (Character.UnicodeBlock.of(text.charAt(i)).equals(Character.UnicodeBlock.CYRILLIC))
-					result = false;
-			}
-		}
 		
-		return result;
+		Matcher regexp = pattern.matcher(test);
+
+		return regexp.matches();
 	}
 	
 	private void initNewChar(L2GameClient client, L2PcInstance newChar)
@@ -174,7 +163,7 @@ public final class CharacterCreate extends L2GameClientPacket
 		newChar.addAdena("Init", Config.STARTING_ADENA, null, false);
 		newChar.addAncientAdena("Init", Config.STARTING_ANCIENT, null, false);
 		
-		newChar.getAppearance().setInvisible();
+		newChar.getAppearance().setIsVisible(false);
 		newChar.getPosition().setXYZ(template.spawnX, template.spawnY, template.spawnZ);
 
 		if (Config.ALLOW_CREATE_LVL)

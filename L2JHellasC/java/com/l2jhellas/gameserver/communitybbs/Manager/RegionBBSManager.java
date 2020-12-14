@@ -161,7 +161,7 @@ public class RegionBBSManager extends BaseBBSManager
 		{
 			StringBuilder htmlCode = new StringBuilder("<html><body><br>");
 			htmlCode.append("<table border=0><tr><td FIXWIDTH=15></td><td align=center>L2JHellas Community Board<img src=\"sek.cbui355\" width=610 height=1></td></tr><tr><td FIXWIDTH=15></td><td>");
-			
+
 			try
 			{
 				
@@ -286,7 +286,7 @@ public class RegionBBSManager extends BaseBBSManager
 				if (!page.contains(player))
 				{
 					page.add(player);
-					if (!player.getAppearance().getInvisible())
+					if (player.getAppearance().isVisible())
 						_onlineCount++;
 					_onlineCountGm++;
 				}
@@ -307,7 +307,7 @@ public class RegionBBSManager extends BaseBBSManager
 			if (temp.add(player))
 			{
 				_onlinePlayers.put(page, temp);
-				if (!player.getAppearance().getInvisible())
+				if (player.getAppearance().isVisible())
 					_onlineCount++;
 				_onlineCountGm++;
 			}
@@ -500,7 +500,7 @@ public class RegionBBSManager extends BaseBBSManager
 			cell = 0;
 			for (L2PcInstance player : getOnlinePlayers(page))
 			{
-				if ((player == null) || (player.getAppearance().getInvisible()))
+				if ((player == null) || (!player.getAppearance().isVisible()))
 					continue;// Go to next
 					
 				cell++;

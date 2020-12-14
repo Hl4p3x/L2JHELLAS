@@ -119,8 +119,7 @@ public abstract class AbstractOlympiadGame
 			if (player.isInvul())
 				player.setIsInvul(false);
 			
-			if (player.getAppearance().getInvisible())
-				player.getAppearance().setVisible();
+			player.getAppearance().setIsVisible(true);
 			
 			_playerLocation[0] = player.getX();
 			_playerLocation[1] = player.getY();
@@ -168,7 +167,7 @@ public abstract class AbstractOlympiadGame
 		player.abortCast();
 			
 		// Force the character to be visible
-		player.getAppearance().setVisible();
+		player.getAppearance().setIsVisible(true);
 			
 		// Remove Hero Skills
 		if (player.isHero())

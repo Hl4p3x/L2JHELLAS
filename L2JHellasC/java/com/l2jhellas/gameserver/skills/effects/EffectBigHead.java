@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.skills.effects;
 
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.skills.Env;
 
@@ -19,14 +20,14 @@ public final class EffectBigHead extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		getEffected().startAbnormalEffect(0x02000);
+		getEffected().startAbnormalEffect(AbnormalEffect.BIG_HEAD);
 		return true;
 	}
 	
 	@Override
 	public void onExit()
 	{
-		getEffected().stopAbnormalEffect(0x02000);
+		getEffected().stopAbnormalEffect(AbnormalEffect.BIG_HEAD);
 	}
 	
 	@Override

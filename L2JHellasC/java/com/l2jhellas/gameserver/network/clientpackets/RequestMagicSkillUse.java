@@ -30,7 +30,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		if (activeChar == null || activeChar.isOnline() == 0)
 			return;
 
-		if (activeChar.getAppearance().getInvisible())
+		if (!activeChar.getAppearance().isVisible())
 		{
 			activeChar.sendPacket(new CreatureSay(0, ChatType.GENERAL, "SYS", "You cannot do this action in hide mode."));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);

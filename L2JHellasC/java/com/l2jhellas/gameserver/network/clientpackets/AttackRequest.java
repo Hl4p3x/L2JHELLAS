@@ -38,7 +38,7 @@ public final class AttackRequest extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 			
-		if (activeChar.getAppearance().getInvisible())
+		if (!activeChar.getAppearance().isVisible())
 		{
 			activeChar.sendPacket(new CreatureSay(0, ChatType.GENERAL, "SYS", "You cannot do this action in hide mode."));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -66,7 +66,7 @@ public final class AttackRequest extends L2GameClientPacket
 			return;
 		}
 		
-		if (activeChar.isAttackingNow() && activeChar.isMoving())
+		if (activeChar.isAttacking() && activeChar.isMoving())
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

@@ -3,6 +3,7 @@ package com.l2jhellas.gameserver.ai;
 import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_ACTIVE;
 import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_ATTACK;
 import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_CAST;
+import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
 import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_IDLE;
 import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_INTERACT;
 import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_PICK_UP;
@@ -14,6 +15,7 @@ import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.enums.player.DuelState;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.model.L2Object;
+import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2StaticObjectInstance;
@@ -43,19 +45,20 @@ public class L2PlayerAI extends L2CharacterAI
 	@Override
 	synchronized void changeIntention(CtrlIntention intention, Object arg0, Object arg1)
 	{
+		if(_intention == AI_INTENTION_ATTACK || _intention == AI_INTENTION_FOLLOW)
+			_actor.sendPacket(ActionFailed.STATIC_PACKET);
+		
 		if (intention != AI_INTENTION_CAST || (arg0 != null && _skill.isOffensive()))
 		{
 			_nextIntention = null;
 			super.changeIntention(intention, arg0, arg1);
 			return;
 		}
-		// do nothing if next intention is same as current one.
 		if ((intention == _intention) && (arg0 == _intentionArg0) && (arg1 == _intentionArg1))
 		{
 			super.changeIntention(intention, arg0, arg1);
 			return;
 		}
-		// save current intention so it can be used after cast
 		if ((_intention != AI_INTENTION_ACTIVE) && (_intention != AI_INTENTION_IDLE))
 			saveNextIntention(_intention, _intentionArg0, _intentionArg1);
 		
@@ -63,7 +66,7 @@ public class L2PlayerAI extends L2CharacterAI
 	}
 
 	@Override
-	protected void onEvtAttacked(L2Character target)
+	protected void onEvtAttacked(L2Character target,L2Skill skill)
 	{
 		if (target == null || _actor.isDead())
 			return;
@@ -74,14 +77,14 @@ public class L2PlayerAI extends L2CharacterAI
 	
 	@Override
 	protected void onEvtFinishCasting()
-	{
+	{		
 		if (getIntention() == CtrlIntention.AI_INTENTION_CAST)
 		{
 			if (_nextIntention != null && _nextIntention.getCtrlIntention() != CtrlIntention.AI_INTENTION_CAST)
 				setIntention(_nextIntention.getCtrlIntention(), _nextIntention._arg0, _nextIntention._arg1);
 			else
 				setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-		}
+		}	
 		
 		if (_skill != null)
 		{
@@ -99,10 +102,10 @@ public class L2PlayerAI extends L2CharacterAI
 		{
 			setIntention(_nextIntention._crtlIntention, _nextIntention._arg0, _nextIntention._arg1);
 			_nextIntention = null;
-		}
+		}	
 		
 		_actor.rechargeShots(true, false);
-		
+			
 		super.onEvtReadyToAct();
 	}
 	
@@ -125,7 +128,7 @@ public class L2PlayerAI extends L2CharacterAI
 			if (getAttackTarget() != null)
 				setAttackTarget(null);
 			
-			clientStopMoving(null);
+			clientStopMoving(null);			
 		}
 	}
 	
@@ -150,19 +153,19 @@ public class L2PlayerAI extends L2CharacterAI
 	{
 		_clientMovingToPawnOffset = 0;
 		_clientMoving = false;
-		
+
 		super.clientNotifyDead();
 	}
 		
 	private void thinkAttack()
 	{
 		L2Character target = getAttackTarget();
-		
+
 		if(checkTargetLostOrDead(target))
 			return;
 
 		if(!maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
-			_actor.doAttack(target,false);
+			_actor.doAttack(target);		
 	}
 		
 	private void thinkCast()
@@ -204,7 +207,6 @@ public class L2PlayerAI extends L2CharacterAI
 	{
 		if (getIntention() == AI_INTENTION_REST)
 		{
-			// Cancel action client side by sending Server->Client packet ActionFailed to the L2PcInstance actor
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
@@ -215,23 +217,21 @@ public class L2PlayerAI extends L2CharacterAI
 			return;
 		}
 		
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
+		if (_actor.MovementIsDisabled())
 		{
 			saveNextIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc, null);
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
 		
-		// Set the Intention of this AbstractAI to AI_INTENTION_MOVE_TO
 		changeIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc, null);
 	
-		// Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet CharMoveToLocation (broadcast)
 		moveTo(loc.getX(), loc.getY(), loc.getZ());
 	}
 	
 	private void thinkPickUp()
 	{
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttackingNow())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttacking())
 		{
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

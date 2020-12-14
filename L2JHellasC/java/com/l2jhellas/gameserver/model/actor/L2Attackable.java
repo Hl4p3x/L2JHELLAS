@@ -2,8 +2,10 @@ package com.l2jhellas.gameserver.model.actor;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.l2jhellas.Config;
@@ -27,7 +29,6 @@ import com.l2jhellas.gameserver.model.actor.group.party.L2CommandChannel;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
 import com.l2jhellas.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2MinionInstance;
-import com.l2jhellas.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2RaidBossInstance;
@@ -51,10 +52,9 @@ public class L2Attackable extends L2Npc
 	private boolean _isRaid = false;
 	private boolean _isRaidMinion = false;
 
-	
 	public void addDamageHate(L2Character attacker, int damage, int aggro)
 	{	
-		if (attacker == null)
+		if (attacker == null || isDead())
 			return;
 		
 		final L2PcInstance targetPlayer = attacker.getActingPlayer();
@@ -114,8 +114,8 @@ public class L2Attackable extends L2Npc
 		if (getAI() instanceof L2SiegeGuardAI)
 		{
 			stopHating(target);
-			setTarget(null);
 			getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
+			setTarget(null);
 			return;
 		}
 		
@@ -180,31 +180,12 @@ public class L2Attackable extends L2Npc
 		if (_aggroListPro.isEmpty() || isAlikeDead())
 			return null;
 		
-		L2Character mostHated = null;
-		int maxHate = 0;
-		
-		// While Interating over This Map Removing Object is Not Allowed
-		synchronized (this)
-		{
-			// Go through the aggroList of the L2Attackable
-			for (AggroInfo ai : _aggroListPro.values())
-			{
-				if (ai == null)
-					continue;
-				
-				if (ai.checkHate(this) > maxHate)
-				{
-					mostHated = ai.getAttacker();
-					maxHate = ai.getHate();
-				}
-			}
-		}
-		return mostHated;
+		return getAggroList().values().stream().filter(Objects::nonNull).sorted(Comparator.comparingInt(AggroInfo::getHate).reversed()).map(AggroInfo::getAttacker).findFirst().orElse(null);
 	}
 	
 	public List<L2Character> get2MostHated()
 	{
-		if (_aggroListPro.isEmpty() || isAlikeDead())
+		if (getAggroList().isEmpty() || isAlikeDead())
 			return null;
 		
 		L2Character mostHated = null;
@@ -212,52 +193,46 @@ public class L2Attackable extends L2Npc
 		int maxHate = 0;
 		List<L2Character> result = new ArrayList<>();
 		
-		// While iterating over this map removing objects is not allowed
-		synchronized (this)
+		// Go through the aggroList of the L2Attackable
+		for (AggroInfo ai : getAggroList().values())
 		{
-			// Go through the aggroList of the L2Attackable
-			for (AggroInfo ai : _aggroListPro.values())
+			if (ai == null)
+				continue;
+			
+			if (ai.checkHate(this) > maxHate)
 			{
-				if (ai == null)
-					continue;
-				
-				if (ai.checkHate(this) > maxHate)
-				{
-					secondMostHated = mostHated;
-					mostHated = ai.getAttacker();
-					maxHate = ai.getHate();
-				}
+				secondMostHated = mostHated;
+				mostHated = ai.getAttacker();
+				maxHate = ai.getHate();
 			}
 		}
+		
 		result.add(mostHated);
 		
-		if (getAttackByList().contains(secondMostHated))
+		final L2Character secondMostHatedFinal = secondMostHated;
+		if (getAttackByList().stream().anyMatch(o -> o == secondMostHatedFinal))
 			result.add(secondMostHated);
 		else
 			result.add(null);
+
 		return result;
 	}
 	
 	public List<L2Character> getHateList()
 	{
-		if (_aggroListPro.isEmpty() || isAlikeDead())
+		if (getAggroList().isEmpty() || isAlikeDead())
 			return null;
 		
-		List<L2Character> result = new ArrayList<>();
-		
-		synchronized (this)
+		final List<L2Character> result = new ArrayList<>();
+		for (AggroInfo ai : getAggroList().values())
 		{
-			for (AggroInfo ai : _aggroListPro.values())
-			{
-				if (ai == null)
-					continue;
-				
-				ai.checkHate(this);
-				
-				result.add(ai.getAttacker());
-			}
+			if (ai == null)
+				continue;
+			
+			ai.checkHate(this);
+			
+			result.add(ai.getAttacker());
 		}
-		
 		return result;
 	}
 	
@@ -271,7 +246,7 @@ public class L2Attackable extends L2Npc
 		if (ai == null)
 			return 0;
 		
-		if (ai.getAttacker() instanceof L2PcInstance && (((L2PcInstance) ai.getAttacker()).getAppearance().getInvisible() || ai.getAttacker().isInvul()))
+		if (ai.getAttacker() instanceof L2PcInstance && !(((L2PcInstance) ai.getAttacker()).getAppearance().isVisible() || ai.getAttacker().isInvul()))
 		{
 			// Remove Object Should Use This Method and Can be Blocked While Interating
 			_aggroListPro.remove(target);
@@ -602,18 +577,6 @@ public class L2Attackable extends L2Npc
 		if (attacker != null)
 			addDamageHate(attacker, (int) damage, (int) damage);
 		
-		// If this L2Attackable is a L2MonsterInstance and it has spawned minions, call its minions to battle
-		if (this instanceof L2MonsterInstance)
-		{
-			L2MonsterInstance master = (L2MonsterInstance) this;
-			
-			if (master.hasMinions())
-				master.getMinionList().onAssist(this, attacker);
-			
-			master = master.getLeader();
-			if (master != null && master.hasMinions())
-				master.getMinionList().onAssist(this, attacker);
-		}
 		// Reduce the current HP of the L2Attackable and launch the doDie Task if necessary
 		super.reduceCurrentHp(damage, attacker, awake);
 	}
@@ -2205,5 +2168,32 @@ public class L2Attackable extends L2Npc
 	public double distance2d(double x, double y)
 	{
 		return Math.sqrt(Math.pow(getX() - x, 2) + Math.pow(getY() - y, 2));
+	}
+	
+	@Override
+	public void setTarget(L2Object object)
+	{
+		if (isDead())
+			return;
+		
+		if (object == null)
+		{
+			final L2Object target = getTarget();
+			final Map<L2Character, AggroInfo> aggroList = getAggroList();
+			if (target != null)
+			{
+				if (aggroList != null)
+					aggroList.remove(target);
+			}
+			if ((aggroList != null) && aggroList.isEmpty())
+			{
+				if (getAI() instanceof L2AttackableAI)
+					((L2AttackableAI) getAI()).setGlobalAggro(-25);
+
+				setWalking();
+				clearAggroList();
+			}
+		}
+		super.setTarget(object);
 	}
 }

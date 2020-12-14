@@ -860,7 +860,7 @@ public abstract class Inventory extends ItemContainer
 				pdollSlot = PAPERDOLL_UNDER;
 				break;
 			default:
-				_log.warning(Inventory.class.getName() + ": Slot type {} is unhandled :" + slot);
+				_log.warning(Inventory.class.getName() + ": Slot type is unhandled :" + slot);
 		}
 		
 		if (pdollSlot >= 0)

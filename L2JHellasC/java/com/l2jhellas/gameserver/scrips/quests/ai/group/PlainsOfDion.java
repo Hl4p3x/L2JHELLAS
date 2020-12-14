@@ -49,7 +49,7 @@ public final class PlainsOfDion extends AbstractNpcAI
 			
 			for (L2MonsterInstance obj : L2World.getInstance().getVisibleObjects(npc, L2MonsterInstance.class, 300))
 			{
-				if (Util.contains(MONSTERS, obj.getNpcId()) && !obj.isAttackingNow() && !obj.isDead() && GeoEngine.canSeeTarget(npc, obj, false))
+				if (Util.contains(MONSTERS, obj.getNpcId()) && !obj.isAttacking() && !obj.isDead() && GeoEngine.canSeeTarget(npc, obj, false))
 				{
 					attack(obj, player);
 					obj.broadcastNpcSay(MONSTERS_ASSIST_MSG[Rnd.get(3)]);

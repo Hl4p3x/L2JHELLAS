@@ -10,6 +10,7 @@ import com.l2jhellas.gameserver.ai.L2BoatAI;
 import com.l2jhellas.gameserver.ai.L2CharacterAI;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.enums.ZoneId;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.VehiclePathPoint;
@@ -284,7 +285,7 @@ public class L2Vehicle extends L2Character
 	}
 	
 	@Override
-	public void updateAbnormalEffect()
+	public void updateAbnormalEffect(AbnormalEffect mask)
 	{
 	}
 	

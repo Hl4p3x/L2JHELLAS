@@ -125,7 +125,11 @@ public abstract class Event
 		{
 			if (EventManager.getInstance().isRegistered(player))
 			{
-				player.doRevive();				
+				player.doRevive();	
+
+				if (EventManager.getInstance().getBoolean("eventBufferEnabled")) 
+					EventBuffer.getInstance().buffPlayer(player);
+
 				player.setCurrentCp(player.getMaxCp());
 				player.setCurrentHp(player.getMaxHp());
 				player.setCurrentMp(player.getMaxMp());
@@ -153,9 +157,14 @@ public abstract class Event
 		List<L2PcInstance> list = new CopyOnWriteArrayList<>();
 		
 		for (L2PcInstance p : players.keySet())
+		{
+			if (p == null)
+				continue;
+			
 			if (getTeam(p) == teamId)
 				list.add(p);
-		
+		}
+
 		for (L2PcInstance player : list)
 		{
 			if (count % 9 == 0 && list.size() - count != 1)
@@ -175,7 +184,7 @@ public abstract class Event
 			i++;
 			L2PcInstance player = EventManager.getInstance().players.get(Rnd.get(EventManager.getInstance().players.size()));
 			
-			if (player.getClassId().getId() == 16 || player.getClassId().getId() == 97)
+			if (player == null || player.isHealer())
 				continue;
 			
 			players.put(player, new int[] { i, 0, 0 });
@@ -190,6 +199,9 @@ public abstract class Event
 		{
 			i++;
 			L2PcInstance player = EventManager.getInstance().players.get(Rnd.get(EventManager.getInstance().players.size()));
+			
+			if (player == null)
+				continue;
 			
 			players.put(player, new int[] { i, 0, 0 });
 			EventManager.getInstance().players.remove(player);
@@ -213,7 +225,7 @@ public abstract class Event
 	public void forceStandAll()
 	{
 		for (L2PcInstance player : players.keySet())
-		{
+		{	
 			player.stopAbnormalEffect(AbnormalEffect.HOLD_2);
 			player.setIsInvul(false);
 			player.setIsParalyzed(false);
@@ -226,7 +238,7 @@ public abstract class Event
 		{
 			player.abortAttack();
 			player.abortCast();
-			player.getAppearance().setInvisible();
+			player.getAppearance().setIsVisible(false);
 		}
 	}
 	
@@ -234,7 +246,7 @@ public abstract class Event
 	{
 		for (L2PcInstance player : players.keySet())
 		{
-			player.getAppearance().setVisible();
+			player.getAppearance().setIsVisible(true);
 			player.broadcastUserInfo();
 		}
 	}
@@ -428,7 +440,7 @@ public abstract class Event
 	}
 	
 	public void increasePlayersScore(L2PcInstance player)
-	{
+	{	
 		int old = getScore(player);
 		setScore(player, old + 1);
 		EventStats.getInstance().tempTable.get(player.getObjectId())[3] = EventStats.getInstance().tempTable.get(player.getObjectId())[3] + 1;
@@ -436,6 +448,9 @@ public abstract class Event
 	
 	protected void msgToAll(String text)
 	{
+		if (text.isEmpty())
+			return;
+		
 		for (L2PcInstance player : players.keySet())
 			player.sendMessage(text);
 	}
@@ -531,7 +546,7 @@ public abstract class Event
 		
 		player.abortAllAttacks();
 		
-		player.getAppearance().setVisible();
+		player.getAppearance().setIsVisible(true);
 		
 		if (player.getPet()!=null)
 			player.getPet().unSummon(player);
@@ -589,15 +604,19 @@ public abstract class Event
 			EventBuffer.getInstance().buffPlayer(player);
 		
 		player.setCurrentHpMp(player.getMaxHp(), player.getMaxMp());
-		player.setCurrentCp(player.getMaxCp());
-		
+		player.setCurrentCp(player.getMaxCp());	
 		player.broadcastUserInfo();
 	}
 
 	public void preparePlayers()
 	{
 		for (L2PcInstance player : players.keySet())
-			prepare(player);				
+		{
+			if (player == null)
+				continue;
+			
+			prepare(player);	
+		}
 	}
 	
 	protected void removePlayer(L2PcInstance player)
@@ -663,8 +682,7 @@ public abstract class Event
 			return null;
 		}
 	}
-	
-	
+		
 	public void closeAllDoors()
 	{
         closeDoor(24190002);
@@ -694,6 +712,7 @@ public abstract class Event
           if (doorInstance != null)
               doorInstance.openMe();
     }
+	
 	protected void teleportPlayer(L2PcInstance player, int[] coordinates)
 	{
 		player.teleToLocation(coordinates[0] + (Rnd.get(coordinates[3] * 2) - coordinates[3]), coordinates[1] + (Rnd.get(coordinates[3] * 2) - coordinates[3]), coordinates[2], false);
@@ -702,13 +721,37 @@ public abstract class Event
 	public void teleportToTeamPos()
 	{
 		for (L2PcInstance player : players.keySet())
-			teleportToTeamPos(player);
+			teleportTask(player);
 	}
 	
 	protected void teleportToTeamPos(L2PcInstance player)
 	{
-		int[] pos = getPosition(teams.get(getTeam(player)).getName(), 0);
-		teleportPlayer(player, pos);
+		if(player != null && player.isbOnline())
+		{
+			int[] pos = getPosition(teams.get(getTeam(player)).getName(), 0);
+			teleportPlayer(player, pos);
+		}
+	}
+		
+	protected void teleportTask(L2PcInstance player)
+	{	
+		ThreadPoolManager.getInstance().scheduleGeneral(new TeleportTask(player), Rnd.get(1500,3500));
+	}
+	
+	protected class TeleportTask implements Runnable
+	{		
+		L2PcInstance _player;
+		
+		public TeleportTask(L2PcInstance player)
+		{
+			_player = player;
+		}
+		
+		@Override
+		public void run()
+		{
+			teleportToTeamPos(_player);
+		}
 	}
 	
 	protected void unspawnNPC(L2Spawn npcSpawn)

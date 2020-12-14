@@ -27,20 +27,20 @@ public class StrSiegeAssault implements ISkillHandler
 	
 	@Override
 	public void useSkill(L2Character activeChar, L2Skill skill, L2Object[] targets)
-	{
-		
+	{		
 		if (activeChar == null || !(activeChar instanceof L2PcInstance))
 			return;
 		
 		L2PcInstance player = (L2PcInstance) activeChar;
 		
-		if (!activeChar.isRiding())
+		if (!player.isRiding())
 			return;
+		
 		if (!(player.getTarget() instanceof L2DoorInstance))
 			return;
 		
 		Castle castle = CastleManager.getInstance().getCastle(player);
-		if (castle == null || !activeChar.checkIfOkToUseStriderSiegeAssault(player, castle, true))
+		if (castle == null || !player.checkIfOkToUseStriderSiegeAssault(player, castle, true))
 			return;
 		
 		try
@@ -55,13 +55,17 @@ public class StrSiegeAssault implements ISkillHandler
 			for (L2Object target2 : targets)
 			{
 				L2Character target = (L2Character) target2;
-				L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-				if (activeChar instanceof L2PcInstance && target instanceof L2PcInstance && target.isAlikeDead() && target.isFakeDeath())
-				{
-					target.getActingPlayer().stopFakeDeath(null);
-				}
-				else if (target.isAlikeDead())
+				
+				if(target == null)
+				   continue;
+				
+				if (target.isDead())
 					continue;
+				
+				L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
+				
+				if (target.isPlayer() && target.isFakeDeath())
+					target.getActingPlayer().stopFakeDeath(null);
 				
 				boolean dual = activeChar.isUsingDualWeapon();
 				byte shld = Formulas.calcShldUse(activeChar, target);

@@ -48,6 +48,7 @@ import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminHide;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminInvul;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminKick;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminKill;
+import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminKnownlist;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminLevel;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminLogin;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminMammon;
@@ -294,6 +295,7 @@ public class MasterHandler
 			AdminInvul.class,
 			AdminKick.class,
 			AdminKill.class,
+			AdminKnownlist.class,
 			AdminLevel.class,
 			AdminLogin.class,
 			AdminMammon.class,

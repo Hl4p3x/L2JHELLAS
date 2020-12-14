@@ -77,6 +77,12 @@ public final class L2GrandBossInstance extends L2MonsterInstance
 	}
 	
 	@Override
+	public boolean isMonster()
+	{
+		return true;
+	}
+	
+	@Override
 	public boolean isBoss()
 	{
 		return true;

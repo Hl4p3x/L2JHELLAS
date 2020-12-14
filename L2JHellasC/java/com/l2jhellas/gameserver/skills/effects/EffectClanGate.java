@@ -14,7 +14,7 @@ public class EffectClanGate extends L2Effect
 	@Override
 	public boolean onStart()
 	{
-		getEffected().startAbnormalEffect(AbnormalEffect.MAGIC_CIRCLE.getMask());
+		getEffected().startAbnormalEffect(AbnormalEffect.MAGIC_CIRCLE);
 		return true;
 	}
 	
@@ -27,7 +27,7 @@ public class EffectClanGate extends L2Effect
 	@Override
 	public void onExit()
 	{
-		getEffected().stopAbnormalEffect(AbnormalEffect.MAGIC_CIRCLE.getMask());
+		getEffected().stopAbnormalEffect(AbnormalEffect.MAGIC_CIRCLE);
 	}
 	
 	@Override

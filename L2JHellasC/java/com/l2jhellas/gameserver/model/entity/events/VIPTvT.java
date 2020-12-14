@@ -42,7 +42,7 @@ public class VIPTvT extends Event
 						selectNewVipOfTeam(2);
 						forceSitAll();
 						setStatus(EventState.FIGHT);
-						schedule(20000);
+						schedule(35000);
 						break;
 						
 					case FIGHT:

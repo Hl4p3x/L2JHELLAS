@@ -44,7 +44,7 @@ public class CharInfo extends L2GameServerPacket
 	{
 		boolean canSeeInvis = false;
 		
-		if (_activeChar.getAppearance().getInvisible())
+		if (!_activeChar.getAppearance().isVisible())
 		{
 			L2PcInstance tmp = getClient().getActiveChar();
 			
@@ -154,7 +154,7 @@ public class CharInfo extends L2GameServerPacket
 		writeC(_activeChar.isInCombat() ? 1 : 0);
 		writeC(_activeChar.isAlikeDead() ? 1 : 0);
 		
-		writeC(canSeeInvis ? 0 : !_activeChar.isVisible() || _activeChar.getAppearance().getInvisible() ? 1 : 0);
+		writeC(canSeeInvis ? 0 : !_activeChar.isVisible() || !_activeChar.getAppearance().isVisible() ? 1 : 0);
 		
 		writeC(_activeChar.getMountType()); // 1 on strider 2 on wyvern 0 no mount
 		writeC(_activeChar.getPrivateStoreType().getId()); // 1 - sellshop

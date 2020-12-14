@@ -31,7 +31,7 @@ public class UnicodeReader extends Reader
 		
 		return internalIn2.getEncoding();
 	}
-	
+
 	protected void init() throws IOException
 	{
 		if (internalIn2 != null)

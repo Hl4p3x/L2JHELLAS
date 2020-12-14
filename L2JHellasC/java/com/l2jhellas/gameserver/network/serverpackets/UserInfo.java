@@ -192,7 +192,7 @@ public class UserInfo extends L2GameServerPacket
 		
 		String title = _activeChar.getTitle();
 		
-		if (_activeChar.getAppearance().getInvisible() && _activeChar.isGM())
+		if (!_activeChar.getAppearance().isVisible() && _activeChar.isGM())
 			title = "Invisible";
 		
 		writeS((_activeChar.getPoly().isMorphed()) ? "Morphed" : title);
@@ -213,7 +213,7 @@ public class UserInfo extends L2GameServerPacket
 		
 		writeC(_activeChar.isInPartyMatchRoom() ? 1 : 0);
 		
-		writeD(_activeChar.getAppearance().getInvisible() && _activeChar.isGM() ? _activeChar.getAbnormalEffect() | AbnormalEffect.STEALTH.getMask() : _activeChar.getAbnormalEffect());
+		writeD(!_activeChar.getAppearance().isVisible() && _activeChar.isGM() ? _activeChar.getAbnormalEffect() | AbnormalEffect.STEALTH.getMask() : _activeChar.getAbnormalEffect());
 		
 		writeC(_activeChar.isInsideZone(ZoneId.WATER) ? 1 : _activeChar.isFlying() ? 2 : 0);
 		

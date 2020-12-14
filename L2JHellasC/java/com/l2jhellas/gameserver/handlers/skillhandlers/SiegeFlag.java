@@ -36,7 +36,7 @@ public class SiegeFlag implements ISkillHandler
 		
 		Castle castle = CastleManager.getInstance().getCastle(player);
 		
-		if (castle == null || !activeChar.checkIfOkToPlaceFlag(player, castle, true))
+		if (castle == null || !player.checkIfOkToPlaceFlag(player, castle, true))
 			return;
 		
 		try

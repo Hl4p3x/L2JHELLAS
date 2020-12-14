@@ -22,7 +22,7 @@ public interface IHealer
 			
 			L2World.getInstance().forEachVisibleObjectInRange(player, L2CharacterClass, radius, target ->
 			{
-				if (target.isDead() || target.isPlayer() && target.getActingPlayer().getAppearance().getInvisible() || !target.isVisible())
+				if (target.isDead() || target.isPlayer() && !target.getActingPlayer().getAppearance().isVisible() || !target.isVisible())
 					return;
 				
 				targets.add(target);

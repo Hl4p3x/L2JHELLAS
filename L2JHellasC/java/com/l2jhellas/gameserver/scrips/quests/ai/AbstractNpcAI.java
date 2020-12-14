@@ -51,7 +51,7 @@ public abstract class AbstractNpcAI extends Quest
 			if (player.isDead())
 				continue;
 			
-			if (player.isGM() && player.getAppearance().getInvisible())
+			if (player.isGM() && !player.getAppearance().isVisible())
 				continue;
 			
 			result.add(player);
@@ -68,7 +68,7 @@ public abstract class AbstractNpcAI extends Quest
 			if (player.isDead())
 				continue;
 			
-			if (!invisible && player.getAppearance().getInvisible())
+			if (!invisible && !player.getAppearance().isVisible())
 				continue;
 			
 			if (Util.checkIfInRange(range, npc, player, true))
@@ -88,7 +88,7 @@ public abstract class AbstractNpcAI extends Quest
 			if (player.isDead())
 				continue;
 			
-			if (!invisible && player.getAppearance().getInvisible())
+			if (!invisible && !player.getAppearance().isVisible())
 				continue;
 			
 			if (!Util.checkIfInRange(range, npc, player, true))

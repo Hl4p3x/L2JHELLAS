@@ -37,7 +37,6 @@ public final class UseItem extends L2GameClientPacket
 	private static final String _C__14_USEITEM = "[C] 14 UseItem";
 	
 	protected int _objectId;
-	private int _itemId;
 	
 	@Override
 	protected void readImpl()
@@ -52,11 +51,11 @@ public final class UseItem extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		// Flood protect UseItem
+		//Flood protect UseItem
 		if (!FloodProtectors.performAction(getClient(),Action.USE_ITEM))
 			return;
 		
-		if (activeChar.getAppearance().getInvisible())
+		if (!activeChar.getAppearance().isVisible())
 		{
 			activeChar.sendPacket(new CreatureSay(0, ChatType.GENERAL, "SYS", "You cannot do this action in hide mode."));
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
@@ -85,11 +84,11 @@ public final class UseItem extends L2GameClientPacket
 		}
 		
 		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
-		if (item == null)
+		final int itemId = item.getItemId();
+
+		if (item == null || itemId == 0  || itemId == 57)
 			return;
-		
-		_itemId = item.getItemId();
-		
+				
 		// The player can't use an item in those special conditions
 		if (activeChar.isAlikeDead() || activeChar.isStunned() || activeChar.isSleeping() || activeChar.isParalyzed() || activeChar.isAlikeDead() || activeChar.isAfraid())
 		{
@@ -105,13 +104,10 @@ public final class UseItem extends L2GameClientPacket
 			activeChar.sendPacket(SystemMessageId.CANNOT_USE_QUEST_ITEMS);
 			return;
 		}
-		
-		if (item.getItemId() == 57)
-			return;
-		
+
 		if (!Config.ALT_GAME_KARMA_PLAYER_CAN_TELEPORT && activeChar.getKarma() > 0)
 		{
-			switch (_itemId)
+			switch (itemId)
 			{
 				case 736:
 				case 1538:
@@ -127,15 +123,10 @@ public final class UseItem extends L2GameClientPacket
 					return;
 			}
 			
-			if ((_itemId >= 7117 && _itemId <= 7135) || (_itemId >= 7554 && _itemId <= 7559))
+			if ((itemId >= 7117 && itemId <= 7135) || (itemId >= 7554 && itemId <= 7559))
 				return;
 		}
-		
-		final int itemId = item.getItemId();
-		
-		if (itemId == 0)
-			return;
-		
+
 		final L2Clan cl = activeChar.getClan();
 		
 		if (((cl == null) || cl.hasCastle() == 0) && itemId == 7015 && Config.CASTLE_SHIELD)
@@ -372,20 +363,20 @@ public final class UseItem extends L2GameClientPacket
 			if (activeChar.isInOlympiadMode() && (bodyPart == L2Item.SLOT_LR_HAND || bodyPart == L2Item.SLOT_L_HAND || bodyPart == L2Item.SLOT_R_HAND) && ((item.getItemId() >= 6611 && item.getItemId() <= 6621) || (item.getItemId() == 6842)))
 				return;
 			
-			if (activeChar.isCursedWeaponEquiped() && _itemId == 6408) // Don't allow to put formal wear
+			if (activeChar.isCursedWeaponEquiped() && itemId == 6408) // Don't allow to put formal wear
 				return;
 
 			if (activeChar.isCastingNow())
 				activeChar.getAI().setNextAction(new NextAction(CtrlEvent.EVT_FINISH_CASTING, CtrlIntention.AI_INTENTION_CAST, () -> activeChar.useEquippableItem(_objectId, true)));
-			else if (activeChar.isAttackingNow())
+			else if (activeChar.isAttacking())
 			{
 				ThreadPoolManager.getInstance().scheduleGeneral(() ->
 				{			
-					activeChar.useEquippableItem(_objectId, false);				
+					activeChar.useEquippableItem(_objectId, true);				
 				}, (activeChar.getAttackEndTime() - GameTimeController.getInstance().getGameTicks()) * GameTimeController.MILLIS_IN_TICK);
 		    }
 			else
-				activeChar.useEquippableItem(_objectId, true);
+				activeChar.useEquippableItem(_objectId, false);
 		}
 		else
 		{

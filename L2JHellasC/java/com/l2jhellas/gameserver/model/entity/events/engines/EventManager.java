@@ -92,9 +92,10 @@ public final class EventManager
 				for (Map.Entry<Integer, Event> event : events.entrySet())
 				{
 					count++;
-					sb.append("<center><table width=270 " + (count % 2 == 1 ? "" : "bgcolor=5A5A5A") + "><tr><td width=240>" + event.getValue().getString("eventName") + "</td><td width=30><a action=\"bypass -h eventvote " + event.getKey() + "\">Vote</a></td></tr></table></center>");
+					sb.append("<center><table width=270 " + (count % 2 == 1 ? "" : "bgcolor=000000") + "><tr><td width=240>" + event.getValue().getString("eventName") + "</td><td width=30><a action=\"bypass -h eventvote " + event.getKey() + "\">Vote</a></td></tr></table></center>");
+					sb.append("<img src=\"L2UI.Squaregray\" width=\"270\" height=\"1\">");
 				}
-				
+
 				sb.append("</body></html>");
 				html.setHtml(sb.toString());
 				
@@ -136,8 +137,7 @@ public final class EventManager
 					setStatus(State.REGISTERING);
 					counter = getInt("registerTime") - 1;
 					ThreadPoolManager.getInstance().scheduleGeneral(cdtask, 1);
-					break;
-					
+					break;					
 				case REGISTERING:
 					announce("Registering phase ended!");
 					if (players.size() < getCurrentEvent().getInt("minPlayers"))
@@ -156,10 +156,9 @@ public final class EventManager
 						announce("Event started!");
 						setStatus(State.RUNNING);
 						msgToAll("You'll be teleported to the event in 10 seconds.");
-						schedule(10000);
+						schedule(8000);
 					}
-					break;
-					
+					break;					
 				case RUNNING:
 					if (getCurrentEvent() instanceof Korean)
 					{
@@ -178,6 +177,9 @@ public final class EventManager
 					
 					for (L2PcInstance player : players)
 					{
+						if(player == null)
+							continue;
+						
 						EventStats.getInstance().tempTable.put(player.getObjectId(), new int[] { 0, 0, 0, 0 });
 					}
 					break;
@@ -186,33 +188,40 @@ public final class EventManager
 			}
 		}
 	}
-
-	public void teleportFinish()
-	{
+	
+	protected void teleportFinish()
+	{	
 		setStatus(State.END);
 		announce("You'll be teleported back in 10 seconds!");
 		
-		ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
+		ThreadPoolManager.getInstance().scheduleGeneral(new TeleportTask(), 10000);
+	}
+	
+	protected class TeleportTask implements Runnable
+	{		
+		public TeleportTask()
 		{
-			@Override
-			public void run()
-			{
-				teleBackEveryone();
-				EventStats.getInstance().applyChanges();
-				EventStats.getInstance().tempTable.clear();
-				EventStats.getInstance().sumPlayerStats();
-				players.clear();
-				colors.clear();
-				positions.clear();
-				titles.clear();
-				getCurrentEvent().reset();
-				setCurrentEvent(0);
-				announce("Event ended! Next event in " + getInt("betweenEventsTime") / 60 + " mins!");
-				setStatus(State.VOTING);
-				counter = getInt("betweenEventsTime") - 1;
-				ThreadPoolManager.getInstance().scheduleGeneral(cdtask, 1);
-			}
-		}, 10000);
+			
+		}
+		
+		@Override
+		public void run()
+		{
+			teleBackEveryone();
+			EventStats.getInstance().applyChanges();
+			EventStats.getInstance().tempTable.clear();
+			EventStats.getInstance().sumPlayerStats();
+			players.clear();
+			colors.clear();
+			positions.clear();
+			titles.clear();
+			getCurrentEvent().reset();
+			setCurrentEvent(0);
+			announce("Event ended! Next event in " + getInt("betweenEventsTime") / 60 + " mins!");
+			setStatus(State.VOTING);
+			counter = getInt("betweenEventsTime") - 1;
+			ThreadPoolManager.getInstance().scheduleGeneral(cdtask, 1);
+		}
 	}
 	
 	public EventManager()
@@ -477,16 +486,18 @@ public final class EventManager
 	{
 		if (votes.containsKey(player))
 			votes.remove(player);
+
 		if (players.contains(player))
-		{
 			players.remove(player);
+
+		if(colors.containsKey(player))
 			colors.remove(player);
-			
-			if(titles.containsKey(player))
-			   titles.remove(player);
-			
+
+		if(titles.containsKey(player))
+			titles.remove(player);
+
+		if(positions.containsKey(player))
 			positions.remove(player);
-		}
 	}
 	
 	public boolean registerPlayer(L2PcInstance player)
@@ -542,17 +553,18 @@ public final class EventManager
 		NpcHtmlMessage html = new NpcHtmlMessage(obj);
 		StringBuilder sb = new StringBuilder();
 		int count = 0;
-		
-		sb.append("<html><body><center><table width=270><tr><td width=145>Event Engine</td><td width=75>" + (getBoolean("eventBufferEnabled") ? "<a action=\"bypass -h eventbuffershow\">Buffer</a>" : "") + "</td></tr></table></center><br>");
+
+		sb.append("<html><body><center><table width=270><tr><td width=145>Event Buffer</td><td width=75>" + (getBoolean("eventBufferEnabled") ? "<a action=\"bypass -h eventbuffershow\">Buffer</a>" : "") + "</td></tr></table></center><br>");
 		
 		if (getStatus() == State.VOTING)
 		{
-			sb.append("<center><table width=270 bgcolor=5A5A5A><tr><td width=90>Events</td><td width=140><center>Time left: " + cdtask.getTime() + "</center></td><td width=40><center>Votes</center></td></tr></table></center><br>");
-			
+			sb.append("<center><table width=270 bgcolor=000000><tr><td width=90>Events</td><td width=140><center>Time left: " + cdtask.getTime() + "</center></td><td width=40><center>Votes</center></td></tr></table></center><br>");
+	
 			for (Map.Entry<Integer, Event> event : events.entrySet())
 			{
 				count++;
-				sb.append("<center><table width=270 " + (count % 2 == 1 ? "" : "bgcolor=5A5A5A") + "><tr><td width=180>" + event.getValue().getString("eventName") + "</td><td width=30><a action=\"bypass -h eventinfo " + event.getKey() + "\">Info</a></td><td width=30><center>" + getVoteCount(event.getKey()) + "</td></tr></table></center>");
+				sb.append("<center><table width=270 " + (count % 2 == 1 ? "" : "bgcolor=000000") + "><tr><td width=180>" + event.getValue().getString("eventName") + "</td><td width=30><a action=\"bypass -h eventinfo " + event.getKey() + "\">Info</a></td><td width=30><center>" + getVoteCount(event.getKey()) + "</td></tr></table></center>");
+				sb.append("<img src=\"L2UI.Squaregray\" width=\"270\" height=\"1\">");
 			}
 			
 			sb.append("</body></html>");
@@ -561,7 +573,7 @@ public final class EventManager
 		}
 		else if (getStatus() == State.REGISTERING)
 		{
-			sb.append("<center><table width=270 bgcolor=5A5A5A><tr><td width=70>");
+			sb.append("<center><table width=270><tr><td width=70>");
 			
 			if (players.contains(player))
 				sb.append("<a action=\"bypass -h npc_" + obj + "_unreg\">Unregister</a>");

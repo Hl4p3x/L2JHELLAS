@@ -311,7 +311,7 @@ public class L2Spawn
 		
 		// Reset decay info
 		mob.setDecayed(false);
-		
+
 		// Set the HP and MP of the L2NpcInstance to the max
 		mob.setCurrentHpMp(mob.getMaxHp(), mob.getMaxMp());
 		

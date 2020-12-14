@@ -1,6 +1,7 @@
 package com.l2jhellas.gameserver.handlers.itemhandlers;
 
 import com.l2jhellas.gameserver.ThreadPoolManager;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -15,7 +16,7 @@ public class MysteryPotion implements IItemHandler
 	{
 		5234
 	};
-	private static final int BIGHEAD_EFFECT = 0x2000;
+	
 	private static final int MYSTERY_POTION_SKILL = 2103;
 	private static final int EFFECT_DURATION = 1200000; // 20 mins
 	
@@ -32,7 +33,7 @@ public class MysteryPotion implements IItemHandler
 		activeChar.sendPacket(MSU);
 		activeChar.broadcastPacket(MSU, 1000);
 		
-		activeChar.startAbnormalEffect(BIGHEAD_EFFECT);
+		activeChar.startAbnormalEffect(AbnormalEffect.BIG_HEAD);
 		activeChar.destroyItem("Consume", item.getObjectId(), 1, null, false);
 		
 		SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.USE_S1);
@@ -60,7 +61,7 @@ public class MysteryPotion implements IItemHandler
 				if (!(_playable instanceof L2PcInstance))
 					return;
 				
-				((L2PcInstance) _playable).stopAbnormalEffect(BIGHEAD_EFFECT);
+				((L2PcInstance) _playable).stopAbnormalEffect(AbnormalEffect.BIG_HEAD);
 			}
 			catch (Throwable t)
 			{

@@ -157,20 +157,17 @@ public class CharStatus
 	
 	public final void setCurrentHp(double newHp, boolean broadcastPacket)
 	{
+		double currentHp =  getCurrentHp();
+		double maxHp = getActiveChar().getStat().getMaxHp();
+		
 		synchronized (this)
-		{
-			// Get the Max HP of the L2Character
-			double maxHp = getActiveChar().getStat().getMaxHp();
-			
+		{		
 			if (newHp >= maxHp)
 			{
 				// Set the RegenActive flag to false
 				_currentHp = maxHp;
 				_flagsRegenActive &= ~REGEN_FLAG_HP;
-				
-				if (!getActiveChar().isDead())
-				getActiveChar().setIsKilledAlready(false);
-				
+
 				// Stop the HP/MP/CP Regeneration task
 				if (_flagsRegenActive == 0)
 					stopHpMpRegeneration();
@@ -180,6 +177,7 @@ public class CharStatus
 				// Set the RegenActive flag to true
 				_currentHp = newHp;
 				_flagsRegenActive |= REGEN_FLAG_HP;
+				
 				if (!getActiveChar().isDead())
 					getActiveChar().setIsKilledAlready(false);
 				
@@ -187,9 +185,9 @@ public class CharStatus
 				startHpMpRegeneration();
 			}
 		}
-		
+
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-		if (broadcastPacket)
+		if (currentHp != _currentHp || broadcastPacket)
 			getActiveChar().broadcastStatusUpdate();
 	}
 	
@@ -211,11 +209,11 @@ public class CharStatus
 	
 	public final void setCurrentMp(double newMp, boolean broadcastPacket)
 	{
+		int currentMp = (int) getCurrentMp();
+		int maxMp = getActiveChar().getStat().getMaxMp();
+		
 		synchronized (this)
 		{
-			// Get the Max MP of the L2Character
-			int maxMp = getActiveChar().getStat().getMaxMp();
-			
 			if (newMp >= maxMp)
 			{
 				// Set the RegenActive flag to false
@@ -238,7 +236,7 @@ public class CharStatus
 		}
 		
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-		if (broadcastPacket)
+		if (currentMp != _currentMp || broadcastPacket)
 			getActiveChar().broadcastStatusUpdate();
 	}
 	

@@ -22,7 +22,7 @@ public final class RequestPartyMatchDetail extends L2GameClientPacket
 	protected void readImpl()
 	{
 		_roomid = readD(); // room id > 0 = player select room otherwise autojoin condition AbsolutePower.
-		_location = readD(); // -1 all , -2 near me . AbsolutePower.
+		_location = readD(); // -1 all , -2 near me , > 0  town id, AbsolutePower.
 		_level = readD();  // 1 = all level range , 0 my level range AbsolutePower.
 	}
 	

@@ -1,6 +1,5 @@
 package com.l2jhellas.gameserver.scrips.quests.ai.custom;
 
-import com.l2jhellas.gameserver.Announcements;
 import com.l2jhellas.gameserver.enums.skills.FrequentSkill;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
@@ -59,47 +58,14 @@ public class KetraOrcSupport extends Quest
 	
 	private static final int[][] BUFF =
 	{
-		{
-			4359,
-			1,
-			2
-		}, // Focus: Requires 2 Buffalo Horns
-		{
-			4360,
-			1,
-			2
-		}, // Death Whisper: Requires 2 Buffalo Horns
-		{
-			4345,
-			1,
-			3
-		}, // Might: Requires 3 Buffalo Horns
-		{
-			4355,
-			1,
-			3
-		}, // Acumen: Requires 3 Buffalo Horns
-		{
-			4352,
-			1,
-			3
-		}, // Berserker: Requires 3 Buffalo Horns
-		{
-			4354,
-			1,
-			3
-		}, // Vampiric Rage: Requires 3 Buffalo Horns
-		{
-			4356,
-			1,
-			6
-		}, // Empower: Requires 6 Buffalo Horns
-		{
-			4357,
-			1,
-			6
-		}
-	// Haste: Requires 6 Buffalo Horns
+			{4359, 1, 2}, // Focus: Requires 2 Buffalo Horns
+			{4360, 1, 2}, // Death Whisper: Requires 2 Buffalo Horns
+			{4345, 1, 3}, // Might: Requires 3 Buffalo Horns
+			{4355, 1, 3}, // Acumen: Requires 3 Buffalo Horns
+			{4352, 1, 3}, // Berserker: Requires 3 Buffalo Horns
+			{4354, 1, 3}, // Vampiric Rage: Requires 3 Buffalo Horns
+			{4356, 1, 6}, // Empower: Requires 6 Buffalo Horns
+			{4357, 1, 6}// Haste: Requires 6 Buffalo Horns
 	};
 	
 	private static final String[] ketraMissions =
@@ -201,8 +167,7 @@ public class KetraOrcSupport extends Quest
 					htmltext = "31371-friend.htm";
 				else
 					htmltext = "31371-no.htm";
-				break;
-			
+				break;			
 			case ASEFA:
 				st.setState(STATE_STARTED);
 				if (allianceLevel < 1)
@@ -341,7 +306,6 @@ public class KetraOrcSupport extends Quest
 								// Curse the heretic or his pet.
 								npc.setTarget((isPet && player.getPet() != null) ? caster.getPet() : caster);
 								npc.doCast(FrequentSkill.VARKA_KETRA_PETRIFICATION.getSkill());
-								Announcements.getInstance().announceToAll("wtf5");
 
 								// Revert to old target && drop the loop.
 								npc.setTarget(oldTarget);

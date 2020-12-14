@@ -189,7 +189,7 @@ public class AdminEffects implements IAdminCommandHandler
 				if (target instanceof L2Character)
 				{
 					player = (L2Character) target;
-					player.startAbnormalEffect(0x2000);
+					player.startAbnormalEffect(AbnormalEffect.BIG_HEAD);
 				}
 			}
 			catch (Exception e)
@@ -205,7 +205,7 @@ public class AdminEffects implements IAdminCommandHandler
 				if (target instanceof L2Character)
 				{
 					player = (L2Character) target;
-					player.stopAbnormalEffect((short) 0x2000);
+					player.stopAbnormalEffect(AbnormalEffect.BIG_HEAD);
 				}
 			}
 			catch (Exception e)
@@ -386,8 +386,8 @@ public class AdminEffects implements IAdminCommandHandler
 				L2Object obj = activeChar.getTarget();
 				if (st.countTokens() == 2)
 				{
-					String parm = st.nextToken();
-					int abnormal = Integer.decode("0x" + parm);
+					final int abnormal = Integer.parseInt(st.nextToken());
+
 					target = st.nextToken();
 					if (target != null)
 					{
@@ -424,7 +424,7 @@ public class AdminEffects implements IAdminCommandHandler
 				}
 				else if (st.countTokens() == 1)
 				{
-					int abnormal = Integer.decode("0x" + st.nextToken());
+					final int abnormal = Integer.parseInt(st.nextToken());
 					if (obj == null)
 						obj = activeChar;
 
@@ -482,11 +482,40 @@ public class AdminEffects implements IAdminCommandHandler
 		if (target instanceof L2Character)
 		{
 			L2Character character = (L2Character) target;
-			if ((character.getAbnormalEffect() & action) == action)
-				character.stopAbnormalEffect(action);
+
+			if(action == 11 || action == 12)
+			{
+				L2PcInstance player = character.getActingPlayer();
+				if(player != null)
+				{
+					int plteam = player.getTeam().equals(Team.RED) ? 11 : player.getTeam().equals(Team.BLUE) ? 12 : 0;
+
+					if ((plteam & action) == action)
+						player.setTeam(Team.NONE);
+					else
+						player.setTeam(action == 11 ? Team.RED : Team.BLUE);
+
+					player.broadcastUserInfo();
+					
+					return true;
+				}				
+			}
 			else
-				character.startAbnormalEffect(action);
-			return true;
+			{
+				AbnormalEffect ae = AbnormalEffect.FindById(action);
+
+				if(ae != null) 
+				{
+					if ((character.getAbnormalEffect() & action) == action)
+						character.stopAbnormalEffect(ae);
+					else
+						character.startAbnormalEffect(ae);
+
+					return true;
+				}
+
+				return false;
+			}
 		}
 		return false;
 	}

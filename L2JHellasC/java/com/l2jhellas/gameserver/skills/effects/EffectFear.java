@@ -1,6 +1,7 @@
 package com.l2jhellas.gameserver.skills.effects;
 
 import com.l2jhellas.gameserver.ai.CtrlIntention;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SiegeFlagInstance;
@@ -79,7 +80,7 @@ public final class EffectFear extends L2Effect
 	public void onExit()
 	{
 		getEffected().stopEffects(EffectType.FEAR);
-		getEffected().updateAbnormalEffect();
+		getEffected().updateAbnormalEffect(AbnormalEffect.FEAR);
 		getEffected().stopMove(null);
 	}
 	

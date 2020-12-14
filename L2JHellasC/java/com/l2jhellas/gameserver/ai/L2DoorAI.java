@@ -69,7 +69,7 @@ public class L2DoorAI extends L2CharacterAI
 	}
 	
 	@Override
-	protected void onEvtAttacked(L2Character attacker)
+	protected void onEvtAttacked(L2Character attacker,L2Skill skill)
 	{
 		L2DoorInstance me = (L2DoorInstance) _actor;
 		ThreadPoolManager.getInstance().executeTask(new onEventAttackedDoorTask(me, attacker));
@@ -153,7 +153,7 @@ public class L2DoorAI extends L2CharacterAI
 			{
 				if (Math.abs(_attacker.getZ() - guard.getZ()) < 200)
 					guard.getAI().notifyEvent(CtrlEvent.EVT_AGGRESSION, _attacker, 15);
-			});
+			});			
 		}
 	}
 	

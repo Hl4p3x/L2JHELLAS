@@ -20,15 +20,15 @@ public abstract class BaseBBSManager
 		if (html.length() < 4090)
 		{
 			acha.sendPacket(new ShowBoard(html, "101"));
-			acha.sendPacket(new ShowBoard(null, "102"));
-			acha.sendPacket(new ShowBoard(null, "103"));
+			acha.sendPacket(ShowBoard.STATIC_SHOWBOARD_102);
+			acha.sendPacket(ShowBoard.STATIC_SHOWBOARD_103);
 			
 		}
 		else if (html.length() < 8180)
 		{
 			acha.sendPacket(new ShowBoard(html.substring(0, 4090), "101"));
 			acha.sendPacket(new ShowBoard(html.substring(4090, html.length()), "102"));
-			acha.sendPacket(new ShowBoard(null, "103"));
+			acha.sendPacket(ShowBoard.STATIC_SHOWBOARD_103);
 			
 		}
 		else if (html.length() < 12270)

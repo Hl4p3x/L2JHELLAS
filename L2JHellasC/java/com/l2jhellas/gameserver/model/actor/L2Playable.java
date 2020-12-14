@@ -2,6 +2,7 @@ package com.l2jhellas.gameserver.model.actor;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.model.L2Object;
@@ -135,7 +136,7 @@ public abstract class L2Playable extends L2Character
 	public final void startNoblesseBlessing()
 	{
 		setIsNoblesseBlessed(true);
-		updateAbnormalEffect();
+		updateAbnormalEffect(AbnormalEffect.NULL);
 	}
 	
 	public final void stopNoblesseBlessing(L2Effect effect)
@@ -148,7 +149,7 @@ public abstract class L2Playable extends L2Character
 		}
 		
 		setIsNoblesseBlessed(false);
-		updateAbnormalEffect();
+		updateAbnormalEffect(AbnormalEffect.NULL);
 	}
 	
 	// Support for Soul of the Phoenix and Salvation skills
@@ -165,7 +166,7 @@ public abstract class L2Playable extends L2Character
 	public final void startPhoenixBlessing()
 	{
 		setIsPhoenixBlessed(true);
-		updateAbnormalEffect();
+		updateAbnormalEffect(AbnormalEffect.NULL);
 	}
 	
 	public final void stopPhoenixBlessing(L2Effect effect)
@@ -176,7 +177,7 @@ public abstract class L2Playable extends L2Character
 			removeEffect(effect);
 		
 		setIsPhoenixBlessed(false);
-		updateAbnormalEffect();
+		updateAbnormalEffect(AbnormalEffect.NULL);
 	}
 	
 	// for Newbie Protection Blessing skill, keeps you safe from an attack by a
@@ -194,7 +195,7 @@ public abstract class L2Playable extends L2Character
 	public void startProtectionBlessing()
 	{
 		setProtectionBlessing(true);
-		updateAbnormalEffect();
+		updateAbnormalEffect(AbnormalEffect.NULL);
 	}
 	
 	public void stopProtectionBlessing(L2Effect effect)
@@ -205,7 +206,7 @@ public abstract class L2Playable extends L2Character
 			removeEffect(effect);
 		
 		setProtectionBlessing(false);
-		updateAbnormalEffect();
+		updateAbnormalEffect(AbnormalEffect.NULL);
 	}
 	
 	public boolean _donator = false;
@@ -239,7 +240,7 @@ public abstract class L2Playable extends L2Character
 	public final void startCharmOfLuck()
 	{
 		setCharmOfLuck(true);
-		updateAbnormalEffect();
+		updateAbnormalEffect(AbnormalEffect.NULL);
 	}
 	
 	public final void stopCharmOfLuck(L2Effect effect)
@@ -250,7 +251,7 @@ public abstract class L2Playable extends L2Character
 			removeEffect(effect);
 		
 		setCharmOfLuck(false);
-		updateAbnormalEffect();
+		updateAbnormalEffect(AbnormalEffect.NULL);
 	}
 	
 	public void setLastTownName(String lastTownName)

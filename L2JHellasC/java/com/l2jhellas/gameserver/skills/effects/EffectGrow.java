@@ -26,7 +26,7 @@ public class EffectGrow extends L2Effect
 			L2Npc npc = (L2Npc) getEffected();
 			npc.setCollisionHeight((int) (npc.getCollisionHeight() * 1.24));
 			npc.setCollisionRadius((int) (npc.getCollisionRadius() * 1.19));
-			getEffected().startAbnormalEffect(AbnormalEffect.GROW.getMask());
+			getEffected().startAbnormalEffect(AbnormalEffect.GROW);
 			return true;
 		}
 		return false;
@@ -41,7 +41,7 @@ public class EffectGrow extends L2Effect
 			npc.setCollisionHeight(npc.getTemplate().collisionHeight);
 			npc.setCollisionRadius(npc.getTemplate().collisionRadius);
 			
-			getEffected().stopAbnormalEffect(AbnormalEffect.GROW.getMask());
+			getEffected().stopAbnormalEffect(AbnormalEffect.GROW);
 		}
 		return false;
 	}
@@ -55,7 +55,7 @@ public class EffectGrow extends L2Effect
 			npc.setCollisionHeight(npc.getTemplate().collisionHeight);
 			npc.setCollisionRadius(npc.getTemplate().collisionRadius);
 			
-			getEffected().stopAbnormalEffect(AbnormalEffect.GROW.getMask());
+			getEffected().stopAbnormalEffect(AbnormalEffect.GROW);
 		}
 	}
 }

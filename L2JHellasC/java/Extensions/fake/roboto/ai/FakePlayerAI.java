@@ -13,6 +13,7 @@ import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable.TeleportWhereType;
 import com.l2jhellas.gameserver.enums.ZoneId;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
 import com.l2jhellas.gameserver.geometry.Point3D;
@@ -29,7 +30,6 @@ import com.l2jhellas.gameserver.network.serverpackets.MoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.MoveToPawn;
 import com.l2jhellas.gameserver.network.serverpackets.StopMove;
 import com.l2jhellas.gameserver.network.serverpackets.StopRotation;
-import com.l2jhellas.gameserver.network.serverpackets.TeleportToLocation;
 import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.util.Rnd;
 
@@ -188,7 +188,7 @@ public abstract class FakePlayerAI
 			
 			L2World.getInstance().forEachVisibleObjectInRange(_fakePlayer, L2CharacterClass, radius, target ->
 			{
-				if (target.isDead() || target.isInsideZone(ZoneId.PEACE) || target.isPlayer() && target.getActingPlayer().getAppearance().getInvisible() || !target.isVisible())
+				if (target.isDead() || target.isInsideZone(ZoneId.PEACE) || target.isPlayer() && !target.getActingPlayer().getAppearance().isVisible() || !target.isVisible())
 					return;
 								
 				targets.add(target);
@@ -267,40 +267,16 @@ public abstract class FakePlayerAI
 		if (_fakePlayer.isDead())
 			_fakePlayer.doRevive();
 		
-		_fakePlayer.getFakeAi().teleportToLocation(location.getX(), location.getY(), location.getZ(), 50);
-		
-		_fakePlayer.broadcastUserInfo();
-		
 		if (Rnd.get(1, 2) == 1)
 		    _fakePlayer.assignCustomAI(2);
 		else
 			_fakePlayer.assignCustomAI(0);
 		
+		_fakePlayer.teleToLocation(location,true);
+				
+		_fakePlayer.broadcastUserInfo();
+			
 		_fakePlayer.getFakeAi().setBusyThinking(false);
-	}
-	
-	protected void teleportToLocation(int x, int y, int z, int randomOffset)
-	{
-		_fakePlayer.stopMove(null);
-		_fakePlayer.abortAttack();
-		_fakePlayer.abortCast();
-		_fakePlayer.setIsTeleporting(true);
-		_fakePlayer.setTarget(null);
-		
-		if (randomOffset > 0)
-		{
-			x += Rnd.get(-randomOffset, randomOffset);
-			y += Rnd.get(-randomOffset, randomOffset);
-		}
-		
-		z += 5;
-		
-		_fakePlayer.broadcastPacket(new TeleportToLocation(_fakePlayer, x, y, z, _fakePlayer.getHeading()));
-		_fakePlayer.decayMe();
-		_fakePlayer.setXYZ(x, y, z);
-		_fakePlayer.onTeleported();
-		_fakePlayer.revalidateZone(true);
-		_fakePlayer.broadcastInfo();
 	}
 	
 	protected void clientStopMoving(Location loc)
@@ -332,7 +308,7 @@ public abstract class FakePlayerAI
 				return false;
 			}
 			
-			if(victim.getAppearance().getInvisible() || !victim.isVisible())
+			if(!victim.getAppearance().isVisible() || !victim.isVisible())
 			{
 			    _fakePlayer.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 				return true;
@@ -452,7 +428,7 @@ public abstract class FakePlayerAI
 			
 			if (_fakePlayer.isSpawnProtected())
 			{
-				_fakePlayer.stopAbnormalEffect(2097152);
+				_fakePlayer.stopAbnormalEffect(AbnormalEffect.IMPRISIONING_1);
 				_fakePlayer.setProtection(false);
 			}
 			

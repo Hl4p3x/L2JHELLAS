@@ -87,10 +87,28 @@ public abstract class L2Object
 		synchronized (this)
 		{
 			setIsVisible(false);
+			getPosition().setWorldRegion(null);
 		}
 		
 		L2World.removeVisibleObject(this, reg);
 		L2World.getInstance().removeObject(this);
+		
+		if (Config.SAVE_DROPPED_ITEM)
+			ItemsOnGroundManager.getInstance().removeObject(this);
+	}
+	
+	public void decayMeOnTeleport()
+	{
+		final L2WorldRegion reg = getWorldRegion();
+		
+		synchronized (this)
+		{
+			setIsVisible(false);
+			getPosition().setWorldRegion(null);
+		}
+		
+		L2World.removeVisibleObject(this, reg);
+		L2World.getInstance().removeTeleObject(this);
 		
 		if (Config.SAVE_DROPPED_ITEM)
 			ItemsOnGroundManager.getInstance().removeObject(this);
@@ -340,6 +358,11 @@ public abstract class L2Object
 	public boolean isNpc()
 	{
 		return this instanceof L2Npc;
+	}
+	
+	public boolean isMonster()
+	{
+		return false;
 	}
 	
 	public abstract void sendInfo(L2PcInstance activeChar);

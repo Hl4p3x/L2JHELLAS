@@ -211,8 +211,8 @@ public class AdminFightCalculator implements IAdminCommandHandler
 		double dmg2 = 0;
 		
 		// ATTACK speed in milliseconds
-		int sAtk1 = Formulas.calculateTimeBetweenAttacks(npc2.getPAtkSpd());
-		int sAtk2 = Formulas.calculateTimeBetweenAttacks(npc1.getPAtkSpd());
+		int sAtk1 = Formulas.calculateTimeBetweenAttacks(npc2);
+		int sAtk2 = Formulas.calculateTimeBetweenAttacks(npc1);
 		// number of ATTACK per 100 seconds
 		sAtk1 = 100000 / sAtk1;
 		sAtk2 = 100000 / sAtk2;

@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.enums.skills;
 
+import com.l2jhellas.gameserver.holder.SkillHolder;
 import com.l2jhellas.gameserver.model.L2Skill;
 
 public enum FrequentSkill
@@ -36,18 +37,15 @@ public enum FrequentSkill
 	BLESSING_OF_PROTECTION(5182, 1),
 	FIREWORK(5965, 1);
 		
-	protected final int _id;
-	protected final int _level;
-	protected L2Skill _skill = null;
-		
+	private final SkillHolder _holder;
+
 	private FrequentSkill(int id, int level)
 	{
-		_id = id;
-		_level = level;
+		_holder = new SkillHolder(id, level);
 	}
 		
 	public L2Skill getSkill()
 	{
-		return _skill;
+		return _holder.getSkill();
 	}
 }

@@ -622,29 +622,17 @@ public final class Util
 	{
 		double d = radius * radius;
 		if (sX < x1)
-		{
 			d -= Math.pow(sX - x1, 2);
-		}
 		else if (sX > x2)
-		{
 			d -= Math.pow(sX - x2, 2);
-		}
 		if (sY < y1)
-		{
 			d -= Math.pow(sY - y1, 2);
-		}
 		else if (sY > y2)
-		{
 			d -= Math.pow(sY - y2, 2);
-		}
 		if (sZ < z1)
-		{
 			d -= Math.pow(sZ - z1, 2);
-		}
 		else if (sZ > z2)
-		{
 			d -= Math.pow(sZ - z2, 2);
-		}
 		return d > 0;
 	}
 }

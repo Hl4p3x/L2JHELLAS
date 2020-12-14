@@ -739,9 +739,6 @@ public final class L2ItemInstance extends L2Object
 	
 	public final void dropMe(L2Character dropper, int x, int y, int z)
 	{
-		if (getItemType() == L2EtcItemType.HERB)
-			return;
-		
 		setDropperObjectId(dropper != null ? dropper.getObjectId() : 0);
 		
 		spawnMe(x, y, z);

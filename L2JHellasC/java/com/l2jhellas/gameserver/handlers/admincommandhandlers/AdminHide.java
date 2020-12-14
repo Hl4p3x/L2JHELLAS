@@ -53,12 +53,12 @@ public class AdminHide implements IAdminCommandHandler
 		
 	public static boolean tryToHide(L2PcInstance player, boolean hide)
 	{
-		if (player.getAppearance().getInvisible() && hide || !player.getAppearance().getInvisible() && !hide)
+		if (!player.getAppearance().isVisible() && hide || player.getAppearance().isVisible() && !hide)
 			return false;
 	
 		if(hide)
 		{		   
-			player.getAppearance().setInvisible();
+			player.getAppearance().setIsVisible(false);
 			player.broadcastUserInfo();
 			player.decayMe();
 			player.spawnMe();
@@ -66,7 +66,7 @@ public class AdminHide implements IAdminCommandHandler
 		}
 		else
 		{		   
-			player.getAppearance().setVisible();
+			player.getAppearance().setIsVisible(true);
 			player.broadcastUserInfo();
 			RegionBBSManager.getInstance().changeCommunityBoard();
 		}

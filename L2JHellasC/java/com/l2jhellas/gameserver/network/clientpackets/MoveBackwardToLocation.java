@@ -73,7 +73,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		
 		if (activeChar == null)
 			return;
-				
+
 		if (activeChar.isDead() || activeChar.isFakeDeath() || activeChar.isSitting() 
 		|| activeChar.isOutOfControl() || activeChar.isTeleporting())
 		{
@@ -110,7 +110,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			return;
 		}
 		
-		if (activeChar.isAttackingNow() && activeChar.getActiveWeaponItem() != null && (activeChar.getActiveWeaponItem().getItemType() == L2WeaponType.BOW))
+		if (activeChar.isAttacking() && activeChar.getAttackType().equals(L2WeaponType.BOW))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -126,7 +126,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		}
 
 		// This is to avoid exploit with Hit + Fast movement
-		if ((activeChar.isMoving() && activeChar.isAttackingNow()))
+		if ((activeChar.isMoving() && activeChar.isAttacking()))
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;

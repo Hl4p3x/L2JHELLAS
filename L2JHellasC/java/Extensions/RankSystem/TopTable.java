@@ -240,21 +240,18 @@ public class TopTable
 					tf.setValue(maxPoints);
 					tf.setTopPosition(PointPosition);
 					
-					// get character data:
-					try(PreparedStatement ps = con.prepareStatement("SELECT char_name as name, base_class as base_class, level as level FROM characters WHERE " + RankLoader.CHAR_ID_COLUMN_NAME + " = ?"))
-					{
-						ps.setInt(1, bestGatherer);
+					statement.setInt(1, bestGatherer);
 
-						try(ResultSet rset = ps.executeQuery())
+					try(ResultSet rset = statement.executeQuery())
+					{
+						while (rset.next())
 						{
-							while (rset.next())
-							{
-								tf.setCharacterName(rset.getString("name"));
-								tf.setCharacterLevel(rset.getInt("level"));
-								tf.setCharacterBaseClassId(rset.getInt("base_class"));
-							}
+							tf.setCharacterName(rset.getString("name"));
+							tf.setCharacterLevel(rset.getInt("level"));
+							tf.setCharacterBaseClassId(rset.getInt("base_class"));
 						}
 					}
+					
 					// add this gatherer on top list:
 					tmpTopGatherersTable.put(bestGatherer, tf);
 				}			

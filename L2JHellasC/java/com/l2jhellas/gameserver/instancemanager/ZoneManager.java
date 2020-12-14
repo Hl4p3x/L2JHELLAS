@@ -399,27 +399,7 @@ public class ZoneManager implements DocumentParser
 		}
 		return null;
 	}
-	
-	@SuppressWarnings("unchecked")
-	public <T extends L2ZoneType> T getClosestZone(L2Object obj, Class<T> type)
-	{
-		T zone = getZone(obj, type);
-		if (zone == null)
-		{
-			double closestdis = Double.MAX_VALUE;
-			for (T temp : (Collection<T>) _classZones.get(type).values())
-			{
-				double distance = temp.getDistanceToZone(obj);
-				if (distance < closestdis)
-				{
-					closestdis = distance;
-					zone = temp;
-				}
-			}
-		}
-		return zone;
-	}
-	
+
 	public List<L2ItemInstance> getDebugItems()
 	{
 		return _debugItems;

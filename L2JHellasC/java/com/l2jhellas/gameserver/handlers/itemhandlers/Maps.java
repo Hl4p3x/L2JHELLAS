@@ -14,7 +14,7 @@ public class Maps implements IItemHandler
 	@Override
 	public void useItem(L2Playable playable, L2ItemInstance item)
 	{
-		if (!(playable instanceof L2PcInstance))
+		if (!(playable.isPlayer()))
 			return;
 			
 		final L2PcInstance activeChar = (L2PcInstance) playable;

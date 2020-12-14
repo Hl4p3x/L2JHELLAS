@@ -36,9 +36,8 @@ public class TvT extends Event
 						createPartyOfTeam(2);
 						forceSitAll();
 						setStatus(EventState.FIGHT);
-						schedule(20000);
-						break;
-						
+						schedule(35000);
+						break;					
 					case FIGHT:
 						forceStandAll();
 						sendMsg();

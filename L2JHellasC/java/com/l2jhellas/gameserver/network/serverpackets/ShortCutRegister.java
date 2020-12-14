@@ -43,6 +43,7 @@ public class ShortCutRegister extends L2GameServerPacket
 			default:
 				writeD(_shortcut.getId());
 				writeD(_shortcut.getCharacterType());
+				break;
 		}
 	}
 	

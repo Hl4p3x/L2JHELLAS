@@ -599,7 +599,7 @@
 	<admin command="admin_gofence" accessLevel="7" />
 	<admin command="admin_fence_page" accessLevel="7" />
 	
-	    <!-- Fake Players -->
+	<!-- Fake Players -->
     <admin command="admin_takecontrol" accessLevel="7" />
 	<admin command="admin_releasecontrol" accessLevel="7" />
 	<admin command="admin_fakes" accessLevel="7" />
@@ -609,4 +609,8 @@
 	<admin command="admin_spawnenchanter" accessLevel="7" />
 	<admin command="admin_spawnwalker" accessLevel="7" />	
 	<admin command="admin_spawnfallback" accessLevel="7" />
+	
+	<!-- KnownList -->
+	<admin command="admin_knownlist" accessLevel="7" />	
+	<admin command="admin_knownlist_page" accessLevel="7" />
 </list>

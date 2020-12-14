@@ -59,6 +59,12 @@ public final class L2RaidBossInstance extends L2MonsterInstance
 		return true;
 	}
 	
+	@Override
+	public boolean isMonster()
+	{
+		return true;
+	}
+	
 	public void setRaidStatus(RaidBossSpawnManager.StatusEnum status)
 	{
 		_raidStatus = status;

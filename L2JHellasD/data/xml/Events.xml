@@ -13,9 +13,9 @@
 		<property name="showVotePopupAt" value="300" /><!-- 5 min-->
 		<property name="votePopupEnabled" value="true" />
 		<property name="eventBufferEnabled" value="true" />
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />	
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />	
 	    <property name="dualboxAllowed" value="false" />	
-		<property name="maxBuffNum" value="2" />
+		<property name="maxBuffNum" value="3" />
 		<restriction type="item" ids="0" />		
 		<restriction type="skill" ids="0" />	
 	</event>
@@ -34,8 +34,8 @@
 		<property name="removeBuffs" value="true" />		
 		<property name="minPlayers" value="8" />	
 		<property name="eventBufferEnabled" value="true" />	
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />
-		<property name="maxBuffNum" value="2" />						
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />	
+		<property name="maxBuffNum" value="3" />						
 		<color owner="All" r="255" g="255" b="255"/>
 		<position owner="All" x="148578" y="46700" z="-3408" radius="700" />	
 		<restriction type="item" ids="0" />		
@@ -58,8 +58,8 @@
 		<property name="zoneRadius" value="200" />
 		<property name="zoneNpcId" value="9103" />
 		<property name="eventBufferEnabled" value="true" />		
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />
-		<property name="maxBuffNum" value="2" />
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />	
+		<property name="maxBuffNum" value="3" />
 		<color owner="Blue" r="0" g="0" b="255"/>
 		<color owner="Red" r="255" g="0" b="0"/>			
 		<position owner="Blue" x="148578" y="46700" z="-3408" radius="200" />
@@ -85,8 +85,8 @@
 		<property name="zoneRadius" value="170" />
 		<property name="zoneNpcId" value="9103" />
 		<property name="eventBufferEnabled" value="true" />		
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />
-		<property name="maxBuffNum" value="2" />
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />
+		<property name="maxBuffNum" value="3" />
 		<property name="timeToScore" value="10" />			
 		<color owner="Blue" r="0" g="0" b="255"/>
 		<color owner="Red" r="255" g="0" b="0"/>
@@ -112,8 +112,8 @@
 		<property name="removeBuffs" value="true" />		
 		<property name="minPlayers" value="8" />
 		<property name="eventBufferEnabled" value="true" />		
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />
-		<property name="maxBuffNum" value="2" />			
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />	
+		<property name="maxBuffNum" value="3" />			
 		<color owner="All" r="255" g="255" b="255"/>
 		<position owner="All" x="149629" y="47406" z="-3408" radius="700" />
 		<restriction type="item" ids="0" />		
@@ -126,7 +126,7 @@
 		<property name="minLvl" value="1" />
 		<property name="maxLvl" value="82" />
 		<property name="eventName" value="Team vs Team" />
-		<property name="matchTime" value="120" />
+		<property name="matchTime" value="1200" />
 		<property name="rewardId" value="57" />
 		<property name="rewardAmmount" value="1000000" />
 		<property name="allowPotions" value="false" />
@@ -134,8 +134,8 @@
 		<property name="removeBuffs" value="true" />		
 		<property name="minPlayers" value="8" />
 		<property name="eventBufferEnabled" value="true" />		
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />
-		<property name="maxBuffNum" value="2" />
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />	
+		<property name="maxBuffNum" value="3" />
 		<color owner="Blue" r="0" g="0" b="255"/>
 		<color owner="Red" r="255" g="0" b="0"/>
 		<position owner="Blue" x="148578" y="46700" z="-3408" radius="200" />
@@ -158,8 +158,8 @@
 		<property name="removeBuffs" value="true" />		
 		<property name="minPlayers" value="8" />
 		<property name="eventBufferEnabled" value="true" />		
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />
-		<property name="maxBuffNum" value="2" />					
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />	
+		<property name="maxBuffNum" value="3" />					
 		<color owner="Blue" r="0" g="0" b="255"/>
 		<color owner="Red" r="255" g="0" b="0"/>
 		<color owner="BlueVIP" r="0" g="255" b="0"/>
@@ -187,8 +187,8 @@
 		<property name="blueFlagHolderId" value="9106" />
 		<property name="redFlagHolderId" value="9107" />
 		<property name="eventBufferEnabled" value="true" />	
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />
-		<property name="maxBuffNum" value="2" />					
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />
+		<property name="maxBuffNum" value="3" />					
 		<color owner="Blue" r="0" g="0" b="255"/>
 		<color owner="Red" r="255" g="0" b="0"/>
 		<position owner="Blue" x="148578" y="46700" z="-3408" radius="200" />
@@ -213,8 +213,8 @@
 		<property name="removeBuffs" value="true" />		
 		<property name="minPlayers" value="8" />
 		<property name="eventBufferEnabled" value="true" />
-		<property name="allowedBuffsList" value="1068,1085,1086,1087" />
-		<property name="maxBuffNum" value="2" />				
+		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />
+		<property name="maxBuffNum" value="3" />				
 		<color owner="Blue" r="0" g="0" b="255"/>
 		<color owner="Red" r="255" g="0" b="0"/>	
 		<color owner="BlueFighters" r="0" g="200" b="200"/>

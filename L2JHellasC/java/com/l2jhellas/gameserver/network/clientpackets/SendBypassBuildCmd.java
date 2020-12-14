@@ -32,24 +32,22 @@ public final class SendBypassBuildCmd extends L2GameClientPacket
 		
 		final String command = "admin_" + _command.split(" ")[0];
 		
-		final IAdminCommandHandler ach = AdminCommandHandler.getInstance().getHandler(command);
-		
-		if (ach == null)
-		{
-			if (activeChar.isGM())
-			{
-				activeChar.sendMessage("The command " + command.substring(6) + " doesn't exist.");
-				_log.warning(SendBypassBuildCmd.class.getName() + ": No handler registered for admin command '" + command + "'");
-			}
-			
-			return;
-		}
 		if (!AdminData.getInstance().hasAccess(command, activeChar.getAccessLevel()))
 		{
 			activeChar.sendMessage("You don't have the access right to use this command.");
 			_log.warning(SendBypassBuildCmd.class.getName() + ": " + activeChar.getName() + " tried to use admin command " + command + ", but have no access to use it.");
 			return;
 		}
+		
+		final IAdminCommandHandler ach = AdminCommandHandler.getInstance().getHandler(command);
+		
+		if (ach == null)
+		{
+			if (activeChar.isGM())
+				activeChar.sendMessage("The command " + command.substring(6) + " doesn't exist.");
+			
+			return;
+		}		
 		
 		ThreadPoolManager.getInstance().executeTask(() ->
 		{

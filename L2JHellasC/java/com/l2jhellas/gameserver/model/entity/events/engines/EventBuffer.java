@@ -48,7 +48,7 @@ public class EventBuffer
 		changes = new ConcurrentHashMap<>();
 		buffTemplates = new ConcurrentHashMap<>();
 		loadSQL();
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(updateTask, 600000, 600000);
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(updateTask, 900000, 900000);
 	}
 	
 	protected void buffPlayer(L2PcInstance player)
@@ -156,7 +156,7 @@ public class EventBuffer
 		
 		int row = 0;
 		
-		sb.append("<html><body><table width=270><tr><td width=200>Event Engine </td></tr></table><br><center><table width=270 bgcolor=5A5A5A><tr><td width=70>Edit Buffs</td><td width=80></td><td width=120>Remaining slots: " + (EventManager.getInstance().getInt("maxBuffNum") - buffTemplates.get(playerId).size()) + "</td></tr></table><br><br><table width=270 bgcolor=5A5A5A><tr><td>Added buffs:</td></tr></table><br>");
+		sb.append("<html><body><table width=270><tr><td width=200>Event Engine </td></tr></table><br><center><table width=270 bgcolor=000000><tr><td width=70>Edit Buffs</td><td width=80></td><td width=120>Remaining slots: " + (EventManager.getInstance().getInt("maxBuffNum") - buffTemplates.get(playerId).size()) + "</td></tr></table><br><br><table width=270 bgcolor=000000><tr><td>Added buffs:</td></tr></table><br>");
 
 
 		for (int skillId : buffTemplates.get(playerId))
@@ -178,7 +178,7 @@ public class EventBuffer
 			row++;
 		}
 
-		sb.append("<br><table width=270 bgcolor=5A5A5A><tr><td>Available buffs:</td></tr></table><br>");
+		sb.append("<br><table width=270 bgcolor=000000><tr><td>Available buffs:</td></tr></table><br>");
 
 		for (int skillId : skillList)
 		{

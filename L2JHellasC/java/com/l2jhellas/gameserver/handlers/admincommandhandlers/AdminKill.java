@@ -47,10 +47,13 @@ public class AdminKill implements IAdminCommandHandler
 
 						L2World.getInstance().forEachVisibleObjectInRange(player, L2Character.class, radius, knownChar ->
 						{
-							if (knownChar.equals(activeChar))
-								return;
+							if(knownChar != null)
+							{
+								if (knownChar.equals(activeChar))
+									return;
 
-							kill(activeChar, knownChar);
+								kill(activeChar, knownChar);
+							}
 						});
 						activeChar.sendMessage("Killed all characters within a "+ radius + " unit radius around "+ player.getName() + ".");
 					}
@@ -66,7 +69,8 @@ public class AdminKill implements IAdminCommandHandler
 
 				L2World.getInstance().forEachVisibleObjectInRange(activeChar,L2Character.class, radius, knownChar ->
 				{
-					kill(activeChar, knownChar);
+					if(knownChar != null)
+					   kill(activeChar, knownChar);
 				});
 
 				activeChar.sendMessage("Killed all characters within a "+ radius + " unit radius.");

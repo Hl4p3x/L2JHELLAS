@@ -376,7 +376,7 @@ public class FakePlayer extends L2PcInstance
 		if (getTarget() == null)
 			return;
 		
-		if(target.isPlayer() && target.getActingPlayer().getAppearance().getInvisible() || !target.isVisible())	
+		if(target.isPlayer() && !target.getActingPlayer().getAppearance().isVisible() || !target.isVisible())	
 		{
            getFakeAi().tryTargetRandomCreatureByTypeInRadius(FakeHelpers.getTestTargetClass(), FakeHelpers.getTestTargetRange());
            return;
@@ -385,7 +385,7 @@ public class FakePlayer extends L2PcInstance
 		if (maybeMoveToPawn(target, getPhysicalAttackRange()))
 			return;
 		
-		doAttack(target,true);
+		doAttack(target);
 	}
 	
 	public synchronized void despawnPlayer()

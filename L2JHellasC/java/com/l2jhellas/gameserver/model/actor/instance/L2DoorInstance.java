@@ -8,11 +8,12 @@ import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.ai.L2CharacterAI;
 import com.l2jhellas.gameserver.ai.L2DoorAI;
+import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.geodata.GeoControl;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
 import com.l2jhellas.gameserver.geometry.Polygon;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
-import com.l2jhellas.gameserver.instancemanager.ZoneManager;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
@@ -20,7 +21,6 @@ import com.l2jhellas.gameserver.model.actor.stat.DoorStat;
 import com.l2jhellas.gameserver.model.actor.status.DoorStatus;
 import com.l2jhellas.gameserver.model.entity.Castle;
 import com.l2jhellas.gameserver.model.entity.ClanHall;
-import com.l2jhellas.gameserver.model.zone.type.L2TownZone;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.ConfirmDlg;
 import com.l2jhellas.gameserver.network.serverpackets.DoorInfo;
@@ -144,7 +144,7 @@ public class L2DoorInstance extends L2Character implements GeoControl
 		_unlockable = unlockable;
 		geoOpen = true;
 	}
-	
+
 	@Override
 	public final DoorStat getStat()
 	{
@@ -219,8 +219,7 @@ public class L2DoorInstance extends L2Character implements GeoControl
 	
 	public final Castle getCastle()
 	{
-		L2TownZone town = ZoneManager.getInstance().getClosestZone(this, L2TownZone.class);
-		return town != null ? CastleManager.getInstance().getCastleById(town.getTaxById()) : null;
+		return CastleManager.getInstance().getCastleById(MapRegionTable.getAreaCastle(this.getX(),this.getY()));
 	}
 
 	public void setClanHall(ClanHall clanhall)
@@ -254,7 +253,7 @@ public class L2DoorInstance extends L2Character implements GeoControl
 	}
 	
 	@Override
-	public void updateAbnormalEffect()
+	public void updateAbnormalEffect(AbnormalEffect mask)
 	{
 	}
 	

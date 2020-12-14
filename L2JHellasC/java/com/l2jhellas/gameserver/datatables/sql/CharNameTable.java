@@ -57,7 +57,7 @@ public class CharNameTable
 	{
 		if (name == null || name.isEmpty())
 			return -1;
-		
+
 		Iterator<Entry<Integer, String>> it = _chars.entrySet().iterator();
 		
 		Map.Entry<Integer, String> pair;

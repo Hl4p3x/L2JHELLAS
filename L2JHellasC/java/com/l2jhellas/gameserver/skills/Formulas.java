@@ -648,7 +648,7 @@ public final class Formulas
 		
 		if (Config.ALT_GAME_CANCEL_CAST && target.isCastingNow())
 			init = 15;
-		if (Config.ALT_GAME_CANCEL_BOW && target.isAttackingNow())
+		if (Config.ALT_GAME_CANCEL_BOW && target.isAttacking())
 		{
 			L2Weapon wpn = target.getActiveWeaponItem();
 			if (wpn != null && wpn.getItemType() == L2WeaponType.BOW)
@@ -673,9 +673,9 @@ public final class Formulas
 		return Rnd.get(100) < rate;
 	}
 	
-	public static int calculateTimeBetweenAttacks(int attackSpeed)
+	public static int calculateTimeBetweenAttacks(L2Character character)
 	{
-		return Math.max(50, (500000 / attackSpeed));
+		return Math.max(100, 500000 / character.getStat().getPAtkSpd());
 	}
 
 	public final static int calcMAtkSpd(L2Character attacker, L2Skill skill, double skillTime)
@@ -1015,10 +1015,10 @@ public final class Formulas
 			System.out.println(skill.getName() + ": " + value + ", " + statmodifier + ", " + lvlmodifier + ", " + resmodifier + ", " + ((int) (Math.pow((double) attacker.getMAtk(target, skill) / target.getMDef(attacker, skill), 0.2) * 100) - 100) + ", " + ssmodifier + " ==> " + rate);
 		return (Rnd.get(100) < rate);
 	}
-	
+
 	public static boolean calcMagicSuccess(L2Character attacker, L2Character target, L2Skill skill)
 	{
-		double lvlDifference = (target.getLevel() - (skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker.getLevel()));
+		double lvlDifference = (target.getLevel() - (skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker.getLevel()) + skill.getLevelDepend());
 		int rate = Math.round((float) (Math.pow(1.3, lvlDifference) * 100));
 		
 		return (Rnd.get(10000) > rate);

@@ -2,18 +2,15 @@ package com.l2jhellas.gameserver.model;
 
 import java.util.ArrayList;
 import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.controllers.GameTimeController;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SummonInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
-import com.l2jhellas.gameserver.network.serverpackets.ExOlympiadSpelledInfo;
-import com.l2jhellas.gameserver.network.serverpackets.AbnormalStatusUpdate;
-import com.l2jhellas.gameserver.network.serverpackets.PartySpelled;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.skills.Env;
 import com.l2jhellas.gameserver.skills.effects.EffectTemplate;
@@ -323,15 +320,23 @@ public abstract class L2Effect
 	
 	public boolean onStart()
 	{
-		if (_abnormalEffect != 0)
-			getEffected().startAbnormalEffect(_abnormalEffect);
+		if(_abnormalEffect != 0)
+		{
+			AbnormalEffect ae = AbnormalEffect.FindById(_abnormalEffect);
+			if (ae != null && !ae.equals(AbnormalEffect.NULL))
+				getEffected().startAbnormalEffect(ae);
+		}
 		return true;
 	}
 	
 	public void onExit()
 	{
-		if (_abnormalEffect != 0)
-			getEffected().stopAbnormalEffect(_abnormalEffect);
+		if(_abnormalEffect != 0)
+		{
+			AbnormalEffect ae = AbnormalEffect.FindById(_abnormalEffect);
+			if (ae != null && !ae.equals(AbnormalEffect.NULL))
+				getEffected().stopAbnormalEffect(ae);
+		}
 	}
 	
 	public abstract boolean onActionTime();
@@ -437,53 +442,12 @@ public abstract class L2Effect
 		
 		return funcs.toArray(new Func[funcs.size()]);
 	}
-	
-	public final void addIcon(AbnormalStatusUpdate mi)
+
+	public ScheduledFuture<?> getFuture()
 	{
-		if (_state != EffectState.ACTING)
-			return;
-		
-		final ScheduledFuture<?> future = _currentFuture;
-		final L2Skill sk = getSkill();
-		if (_totalCount > 1)
-		{
-			if (sk.isPotion())
-				mi.addEffect(sk, sk.getBuffDuration() - (getTaskTime() * 1000));
-			else
-				mi.addEffect(sk, -1);
-		}
-		else if (future != null)
-			mi.addEffect(sk, (int) future.getDelay(TimeUnit.MILLISECONDS));
-		else if (_period == -1)
-			mi.addEffect(sk, _period);
+		return _currentFuture;
 	}
-	
-	public final void addPartySpelledIcon(PartySpelled ps)
-	{
-		if (_state != EffectState.ACTING)
-			return;
-		
-		final ScheduledFuture<?> future = _currentFuture;
-		final L2Skill sk = getSkill();
-		if (future != null)
-			ps.addPartySpelledEffect(sk.getId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
-		else if (_period == -1)
-			ps.addPartySpelledEffect(sk.getId(), getLevel(), _period);
-	}
-	
-	public final void addOlympiadSpelledIcon(ExOlympiadSpelledInfo os)
-	{
-		if (_state != EffectState.ACTING)
-			return;
-		
-		final ScheduledFuture<?> future = _currentFuture;
-		final L2Skill sk = getSkill();
-		if (future != null)
-			os.addEffect(sk.getId(), getLevel(), (int) future.getDelay(TimeUnit.MILLISECONDS));
-		else if (_period == -1)
-			os.addEffect(sk.getId(), getLevel(), _period);
-	}
-	
+
 	public boolean onSameEffect(L2Effect effect)
 	{
 		return true;

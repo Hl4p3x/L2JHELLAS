@@ -48,9 +48,9 @@ public class Sweep implements ISkillHandler
 						player.addItem("Sweep", item.getItemId(),item.getCount(), player, true);
 				}	
 				mob.getSweepItems().clear();
+				mob.endDecayTask();
 			}
 			
-			mob.endDecayTask();
 		}
 	}
 	

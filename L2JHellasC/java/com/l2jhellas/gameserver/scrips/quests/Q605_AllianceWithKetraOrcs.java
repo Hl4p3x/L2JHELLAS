@@ -1,7 +1,7 @@
 package com.l2jhellas.gameserver.scrips.quests;
 
 import java.util.HashMap;
-import java.util.Set;
+import java.util.Map;
 
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -14,78 +14,76 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 	private static final String qn = "Q605_AllianceWithKetraOrcs";
 	private static final String qn2 = "Q606_WarWithVarkaSilenos";
 	
-	private static final HashMap<Integer, Integer> Chance = new HashMap<>();
+	private static final Map<Integer, Integer> CHANCES = new HashMap<>();
 	{
-		Chance.put(21350, 500000);
-		Chance.put(21351, 500000);
-		Chance.put(21353, 509000);
-		Chance.put(21354, 521000);
-		Chance.put(21355, 519000);
-		Chance.put(21357, 500000);
-		Chance.put(21358, 500000);
-		Chance.put(21360, 509000);
-		Chance.put(21361, 518000);
-		Chance.put(21362, 500000);
-		Chance.put(21364, 527000);
-		Chance.put(21365, 500000);
-		Chance.put(21366, 628000);
-		Chance.put(21368, 508000);
-		Chance.put(21369, 518000);
-		Chance.put(21370, 604000);
-		Chance.put(21371, 627000);
-		Chance.put(21372, 604000);
-		Chance.put(21373, 649000);
-		Chance.put(21374, 626000);
-		Chance.put(21375, 626000);
+		CHANCES.put(21350, 500000);
+		CHANCES.put(21351, 500000);
+		CHANCES.put(21353, 509000);
+		CHANCES.put(21354, 521000);
+		CHANCES.put(21355, 519000);
+		CHANCES.put(21357, 500000);
+		CHANCES.put(21358, 500000);
+		CHANCES.put(21360, 509000);
+		CHANCES.put(21361, 518000);
+		CHANCES.put(21362, 518000);
+		CHANCES.put(21364, 527000);
+		CHANCES.put(21365, 500000);
+		CHANCES.put(21366, 500000);
+		CHANCES.put(21368, 508000);
+		CHANCES.put(21369, 628000);
+		CHANCES.put(21370, 604000);
+		CHANCES.put(21371, 627000);
+		CHANCES.put(21372, 604000);
+		CHANCES.put(21373, 649000);
+		CHANCES.put(21374, 626000);
+		CHANCES.put(21375, 626000);
 	}
 	
-	private static final HashMap<Integer, Integer> ChanceMane = new HashMap<>();
+	private static final Map<Integer, Integer> CHANCES_MANE = new HashMap<>();
 	{
-		ChanceMane.put(21350, 500000);
-		ChanceMane.put(21353, 510000);
-		ChanceMane.put(21354, 522000);
-		ChanceMane.put(21355, 519000);
-		ChanceMane.put(21357, 529000);
-		ChanceMane.put(21358, 529000);
-		ChanceMane.put(21360, 539000);
-		ChanceMane.put(21362, 568000);
-		ChanceMane.put(21364, 558000);
-		ChanceMane.put(21365, 568000);
-		ChanceMane.put(21366, 664000);
-		ChanceMane.put(21368, 568000);
-		ChanceMane.put(21369, 548000);
-		ChanceMane.put(21371, 713000);
-		ChanceMane.put(21373, 773000);
+		CHANCES_MANE.put(21350, 500000);
+		CHANCES_MANE.put(21353, 510000);
+		CHANCES_MANE.put(21354, 522000);
+		CHANCES_MANE.put(21355, 519000);
+		CHANCES_MANE.put(21357, 529000);
+		CHANCES_MANE.put(21358, 529000);
+		CHANCES_MANE.put(21360, 539000);
+		CHANCES_MANE.put(21362, 548000);
+		CHANCES_MANE.put(21364, 558000);
+		CHANCES_MANE.put(21365, 568000);
+		CHANCES_MANE.put(21366, 568000);
+		CHANCES_MANE.put(21368, 568000);
+		CHANCES_MANE.put(21369, 664000);
+		CHANCES_MANE.put(21371, 713000);
+		CHANCES_MANE.put(21373, 738000);
 	}
 	
 	// Quest Items
-	private static final int Varka_Badge_Soldier = 7216;
-	private static final int Varka_Badge_Officer = 7217;
-	private static final int Varka_Badge_Captain = 7218;
+	private static final int VARKA_BADGE_SOLDIER = 7216;
+	private static final int VARKA_BADGE_OFFICER = 7217;
+	private static final int VARKA_BADGE_CAPTAIN = 7218;
 	
-	private static final int Ketra_Alliance_One = 7211;
-	private static final int Ketra_Alliance_Two = 7212;
-	private static final int Ketra_Alliance_Three = 7213;
-	private static final int Ketra_Alliance_Four = 7214;
-	private static final int Ketra_Alliance_Five = 7215;
+	private static final int KETRA_ALLIANCE_1 = 7211;
+	private static final int KETRA_ALLIANCE_2 = 7212;
+	private static final int KETRA_ALLIANCE_3 = 7213;
+	private static final int KETRA_ALLIANCE_4 = 7214;
+	private static final int KETRA_ALLIANCE_5 = 7215;
 	
-	private static final int Valor_Totem = 7219;
-	private static final int Wisdom_Totem = 7220;
+	private static final int TOTEM_OF_VALOR = 7219;
+	private static final int TOTEM_OF_WISDOM = 7220;
 	
-	private static final int Mane = 7233;
+	private static final int VARKA_MANE = 7233;
 	
 	public Q605_AllianceWithKetraOrcs()
 	{
 		super(605, qn, "Alliance with Ketra Orcs");
 		
-		setItemsIds(Varka_Badge_Soldier, Varka_Badge_Officer, Varka_Badge_Captain);
+		setItemsIds(VARKA_BADGE_SOLDIER, VARKA_BADGE_OFFICER, VARKA_BADGE_CAPTAIN);
 		
 		addStartNpc(31371); // Wahkan
 		addTalkId(31371);
 		
-		Set<Integer> mob = Chance.keySet();
-		
-		for (Integer mobs : mob)
+		for (int mobs : CHANCES.keySet())
 			addKillId(mobs);
 	}
 	
@@ -99,28 +97,34 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 		
 		if (event.equalsIgnoreCase("31371-03a.htm"))
 		{
-			if (player.getLevel() >= 74)
-			{
-				st.set("cond", "1");
-				st.setState(STATE_STARTED);
-				st.playSound(QuestState.SOUND_ACCEPT);
-			}
+			if (player.isAlliedWithVarka())
+				htmltext = "31371-02a.htm";
 			else
 			{
-				htmltext = "31371-02b.htm";
-				st.exitQuest(true);
-				player.setAllianceWithVarkaKetra(0);
+				st.setState(STATE_STARTED);
+				st.playSound(QuestState.SOUND_ACCEPT);
+				for (int i = KETRA_ALLIANCE_1; i <= KETRA_ALLIANCE_5; i++)
+				{
+					if (st.hasQuestItems(i))
+					{
+						st.set("cond", String.valueOf(i - 7209));
+						player.setAllianceWithVarkaKetra(i - 7210);
+						return "31371-0" + (i - 7207) + ".htm";
+					}
+				}
+				st.set("cond", "1");
 			}
 		}
 		// Stage 1
 		else if (event.equalsIgnoreCase("31371-10-1.htm"))
 		{
-			if (st.getQuestItemsCount(Varka_Badge_Soldier) >= 100)
+			if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) >= 100)
 			{
-				st.takeItems(Varka_Badge_Soldier, -1);
-				st.giveItems(Ketra_Alliance_One, 1);
-				player.setAllianceWithVarkaKetra(1);
+				st.set("cond", "2");
 				st.playSound(QuestState.SOUND_MIDDLE);
+				st.takeItems(VARKA_BADGE_SOLDIER, -1);
+				st.giveItems(KETRA_ALLIANCE_1, 1);
+				player.setAllianceWithVarkaKetra(1);
 			}
 			else
 				htmltext = "31371-03b.htm";
@@ -128,14 +132,15 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 		// Stage 2
 		else if (event.equalsIgnoreCase("31371-10-2.htm"))
 		{
-			if (st.getQuestItemsCount(Varka_Badge_Soldier) >= 200 && st.getQuestItemsCount(Varka_Badge_Officer) >= 100)
+			if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) >= 200 && st.getQuestItemsCount(VARKA_BADGE_OFFICER) >= 100)
 			{
-				st.takeItems(Varka_Badge_Soldier, -1);
-				st.takeItems(Varka_Badge_Officer, -1);
-				st.takeItems(Ketra_Alliance_One, -1);
-				st.giveItems(Ketra_Alliance_Two, 1);
-				player.setAllianceWithVarkaKetra(2);
+				st.set("cond", "3");
 				st.playSound(QuestState.SOUND_MIDDLE);
+				st.takeItems(VARKA_BADGE_SOLDIER, -1);
+				st.takeItems(VARKA_BADGE_OFFICER, -1);
+				st.takeItems(KETRA_ALLIANCE_1, -1);
+				st.giveItems(KETRA_ALLIANCE_2, 1);
+				player.setAllianceWithVarkaKetra(2);
 			}
 			else
 				htmltext = "31371-12.htm";
@@ -143,15 +148,16 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 		// Stage 3
 		else if (event.equalsIgnoreCase("31371-10-3.htm"))
 		{
-			if (st.getQuestItemsCount(Varka_Badge_Soldier) >= 300 && st.getQuestItemsCount(Varka_Badge_Officer) >= 200 && st.getQuestItemsCount(Varka_Badge_Captain) >= 100)
+			if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) >= 300 && st.getQuestItemsCount(VARKA_BADGE_OFFICER) >= 200 && st.getQuestItemsCount(VARKA_BADGE_CAPTAIN) >= 100)
 			{
-				st.takeItems(Varka_Badge_Soldier, -1);
-				st.takeItems(Varka_Badge_Officer, -1);
-				st.takeItems(Varka_Badge_Captain, -1);
-				st.takeItems(Ketra_Alliance_Two, -1);
-				st.giveItems(Ketra_Alliance_Three, 1);
-				player.setAllianceWithVarkaKetra(3);
+				st.set("cond", "4");
 				st.playSound(QuestState.SOUND_MIDDLE);
+				st.takeItems(VARKA_BADGE_SOLDIER, -1);
+				st.takeItems(VARKA_BADGE_OFFICER, -1);
+				st.takeItems(VARKA_BADGE_CAPTAIN, -1);
+				st.takeItems(KETRA_ALLIANCE_2, -1);
+				st.giveItems(KETRA_ALLIANCE_3, 1);
+				player.setAllianceWithVarkaKetra(3);
 			}
 			else
 				htmltext = "31371-15.htm";
@@ -159,16 +165,17 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 		// Stage 4
 		else if (event.equalsIgnoreCase("31371-10-4.htm"))
 		{
-			if (st.getQuestItemsCount(Varka_Badge_Soldier) >= 300 && st.getQuestItemsCount(Varka_Badge_Officer) >= 300 && st.getQuestItemsCount(Varka_Badge_Captain) >= 200 && st.getQuestItemsCount(Valor_Totem) >= 1)
+			if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) >= 300 && st.getQuestItemsCount(VARKA_BADGE_OFFICER) >= 300 && st.getQuestItemsCount(VARKA_BADGE_CAPTAIN) >= 200 && st.getQuestItemsCount(TOTEM_OF_VALOR) >= 1)
 			{
-				st.takeItems(Varka_Badge_Soldier, -1);
-				st.takeItems(Varka_Badge_Officer, -1);
-				st.takeItems(Varka_Badge_Captain, -1);
-				st.takeItems(Ketra_Alliance_Three, -1);
-				st.takeItems(Valor_Totem, -1);
-				st.giveItems(Ketra_Alliance_Four, 1);
-				player.setAllianceWithVarkaKetra(4);
+				st.set("cond", "5");
 				st.playSound(QuestState.SOUND_MIDDLE);
+				st.takeItems(VARKA_BADGE_SOLDIER, -1);
+				st.takeItems(VARKA_BADGE_OFFICER, -1);
+				st.takeItems(VARKA_BADGE_CAPTAIN, -1);
+				st.takeItems(TOTEM_OF_VALOR, -1);
+				st.takeItems(KETRA_ALLIANCE_3, -1);
+				st.giveItems(KETRA_ALLIANCE_4, 1);
+				player.setAllianceWithVarkaKetra(4);
 			}
 			else
 				htmltext = "31371-21.htm";
@@ -176,13 +183,13 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 		// Leave quest
 		else if (event.equalsIgnoreCase("31371-20.htm"))
 		{
-			st.takeItems(Ketra_Alliance_One, -1);
-			st.takeItems(Ketra_Alliance_Two, -1);
-			st.takeItems(Ketra_Alliance_Three, -1);
-			st.takeItems(Ketra_Alliance_Four, -1);
-			st.takeItems(Ketra_Alliance_Five, -1);
-			st.takeItems(Valor_Totem, -1);
-			st.takeItems(Wisdom_Totem, -1);
+			st.takeItems(KETRA_ALLIANCE_1, -1);
+			st.takeItems(KETRA_ALLIANCE_2, -1);
+			st.takeItems(KETRA_ALLIANCE_3, -1);
+			st.takeItems(KETRA_ALLIANCE_4, -1);
+			st.takeItems(KETRA_ALLIANCE_5, -1);
+			st.takeItems(TOTEM_OF_VALOR, -1);
+			st.takeItems(TOTEM_OF_WISDOM, -1);
 			player.setAllianceWithVarkaKetra(0);
 			st.exitQuest(true);
 		}
@@ -195,120 +202,73 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 	{
 		String htmltext = getNoQuestMsg();
 		QuestState st = player.getQuestState(qn);
+		
 		if (st == null)
 			return htmltext;
 		
 		switch (st.getState())
 		{
 			case STATE_CREATED:
-				if (player.isAlliedWithVarka())
-				{
-					htmltext = "31371-02a.htm";
-					st.exitQuest(true);
-				}
-				else
+				if (player.getLevel() >= 74)
 					htmltext = "31371-01.htm";
+				else
+				{
+					htmltext = "31371-02b.htm";
+					st.exitQuest(true);
+					player.setAllianceWithVarkaKetra(0);
+				}
 				break;
 			
 			case STATE_STARTED:
-				int cond = st.getInt("cond");
-				if (st.getQuestItemsCount(Ketra_Alliance_One) + st.getQuestItemsCount(Ketra_Alliance_Two) + st.getQuestItemsCount(Ketra_Alliance_Three) + st.getQuestItemsCount(Ketra_Alliance_Four) + st.getQuestItemsCount(Ketra_Alliance_Five) == 0)
+				final int cond = st.getInt("cond");
+				if (cond == 1)
 				{
-					if (st.getQuestItemsCount(Varka_Badge_Soldier) < 100)
+					if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) < 100)
 						htmltext = "31371-03b.htm";
 					else
 						htmltext = "31371-09.htm";
 				}
-				else if (st.getQuestItemsCount(Ketra_Alliance_One) == 1)
+				else if (cond == 2)
 				{
-					if (cond != 2)
-					{
-						htmltext = "31371-04.htm";
-						st.set("cond", "2");
-						player.setAllianceWithVarkaKetra(1);
-						st.playSound(QuestState.SOUND_MIDDLE);
-					}
+					if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) < 200 || st.getQuestItemsCount(VARKA_BADGE_OFFICER) < 100)
+						htmltext = "31371-12.htm";
+					else
+						htmltext = "31371-13.htm";
+				}
+				else if (cond == 3)
+				{
+					if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) < 300 || st.getQuestItemsCount(VARKA_BADGE_OFFICER) < 200 || st.getQuestItemsCount(VARKA_BADGE_CAPTAIN) < 100)
+						htmltext = "31371-15.htm";
+					else
+						htmltext = "31371-16.htm";
+				}
+				else if (cond == 4)
+				{
+					if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) < 300 || st.getQuestItemsCount(VARKA_BADGE_OFFICER) < 300 || st.getQuestItemsCount(VARKA_BADGE_CAPTAIN) < 200 || !st.hasQuestItems(TOTEM_OF_VALOR))
+						htmltext = "31371-21.htm";
+					else
+						htmltext = "31371-22.htm";
+				}
+				else if (cond == 5)
+				{
+					if (st.getQuestItemsCount(VARKA_BADGE_SOLDIER) < 400 || st.getQuestItemsCount(VARKA_BADGE_OFFICER) < 400 || st.getQuestItemsCount(VARKA_BADGE_CAPTAIN) < 200 || !st.hasQuestItems(TOTEM_OF_WISDOM))
+						htmltext = "31371-17.htm";
 					else
 					{
-						if (st.getQuestItemsCount(Varka_Badge_Soldier) < 200 || st.getQuestItemsCount(Varka_Badge_Officer) < 100)
-							htmltext = "31371-12.htm";
-						else
-							htmltext = "31371-13.htm";
-					}
-				}
-				else if (st.getQuestItemsCount(Ketra_Alliance_Two) == 1)
-				{
-					if (cond != 3)
-					{
-						htmltext = "31371-05.htm";
-						st.set("cond", "3");
-						player.setAllianceWithVarkaKetra(2);
-						st.playSound(QuestState.SOUND_MIDDLE);
-					}
-					else
-					{
-						if (st.getQuestItemsCount(Varka_Badge_Captain) < 100 || st.getQuestItemsCount(Varka_Badge_Soldier) < 300 || st.getQuestItemsCount(Varka_Badge_Officer) < 200)
-							htmltext = "31371-15.htm";
-						else
-							htmltext = "31371-16.htm";
-					}
-				}
-				else if (st.getQuestItemsCount(Ketra_Alliance_Three) == 1)
-				{
-					if (cond != 4)
-					{
-						htmltext = "31371-06.htm";
-						st.set("cond", "4");
-						player.setAllianceWithVarkaKetra(3);
-						st.playSound(QuestState.SOUND_MIDDLE);
-					}
-					else
-					{
-						if (st.getQuestItemsCount(Varka_Badge_Captain) < 200 || st.getQuestItemsCount(Varka_Badge_Soldier) < 300 || st.getQuestItemsCount(Varka_Badge_Officer) < 300 || st.getQuestItemsCount(Valor_Totem) == 0)
-							htmltext = "31371-21.htm";
-						else
-							htmltext = "31371-22.htm";
-					}
-				}
-				else if (st.getQuestItemsCount(Ketra_Alliance_Four) == 1)
-				{
-					if (cond != 5)
-					{
-						htmltext = "31371-07.htm";
-						st.set("cond", "5");
-						player.setAllianceWithVarkaKetra(4);
-						st.playSound(QuestState.SOUND_MIDDLE);
-					}
-					else
-					{
-						if (st.getQuestItemsCount(Varka_Badge_Captain) < 200 || st.getQuestItemsCount(Varka_Badge_Soldier) < 400 || st.getQuestItemsCount(Varka_Badge_Officer) < 400 || st.getQuestItemsCount(Wisdom_Totem) == 0)
-							htmltext = "31371-17.htm";
-						else
-						{
-							htmltext = "31371-10-5.htm";
-							st.takeItems(Varka_Badge_Soldier, 400);
-							st.takeItems(Varka_Badge_Officer, 400);
-							st.takeItems(Varka_Badge_Captain, 200);
-							st.takeItems(Ketra_Alliance_Four, -1);
-							st.takeItems(Wisdom_Totem, -1);
-							st.giveItems(Ketra_Alliance_Five, 1);
-							player.setAllianceWithVarkaKetra(5);
-							st.playSound(QuestState.SOUND_MIDDLE);
-						}
-					}
-				}
-				else if (st.getQuestItemsCount(Ketra_Alliance_Five) == 1)
-				{
-					if (cond != 6)
-					{
-						htmltext = "31371-18.htm";
+						htmltext = "31371-10-5.htm";
 						st.set("cond", "6");
-						player.setAllianceWithVarkaKetra(5);
 						st.playSound(QuestState.SOUND_MIDDLE);
+						st.takeItems(VARKA_BADGE_SOLDIER, 400);
+						st.takeItems(VARKA_BADGE_OFFICER, 400);
+						st.takeItems(VARKA_BADGE_CAPTAIN, 200);
+						st.takeItems(TOTEM_OF_WISDOM, -1);
+						st.takeItems(KETRA_ALLIANCE_4, -1);
+						st.giveItems(KETRA_ALLIANCE_5, 1);
+						player.setAllianceWithVarkaKetra(5);
 					}
-					else
-						htmltext = "31371-08.htm";
 				}
+				else if (cond == 6)
+					htmltext = "31371-08.htm";
 				break;
 		}
 		
@@ -317,8 +277,8 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 	
 	@Override
 	public String onKill(L2Npc npc, L2PcInstance player, boolean isPet)
-	{
-		QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
+	{		
+		final QuestState st = getRandomPartyMemberState(player, npc, STATE_STARTED);
 		if (st == null)
 			return null;
 		
@@ -326,12 +286,12 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 		
 		// Support for Q606.
 		final QuestState st2 = st.getPlayer().getQuestState(qn2);
-		if (st2 != null && Rnd.nextBoolean() && ChanceMane.containsKey(npcId))
+		if (st2 != null && Rnd.nextBoolean() && CHANCES_MANE.containsKey(npcId))
 		{
-			st2.dropItems(Mane, 1, 0, ChanceMane.get(npcId));
+			st2.dropItems(VARKA_MANE, 1, 0, CHANCES_MANE.get(npcId));
 			return null;
 		}
-				
+		
 		int cond = st.getInt("cond");
 		if (cond == 6)
 			return null;
@@ -344,13 +304,13 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 			case 21354:
 			case 21355:
 				if (cond == 1)
-					st.dropItems(Varka_Badge_Soldier, 1, 100, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_SOLDIER, 1, 100, CHANCES.get(npcId));
 				else if (cond == 2)
-					st.dropItems(Varka_Badge_Soldier, 1, 200, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_SOLDIER, 1, 200, CHANCES.get(npcId));
 				else if (cond == 3 || cond == 4)
-					st.dropItems(Varka_Badge_Soldier, 1, 300, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_SOLDIER, 1, 300, CHANCES.get(npcId));
 				else if (cond == 5)
-					st.dropItems(Varka_Badge_Soldier, 1, 400, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_SOLDIER, 1, 400, CHANCES.get(npcId));
 				break;
 			
 			case 21357:
@@ -358,19 +318,19 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 			case 21360:
 			case 21361:
 			case 21362:
+			case 21364:
 			case 21369:
 			case 21370:
 				if (cond == 2)
-					st.dropItems(Varka_Badge_Officer, 1, 100, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_OFFICER, 1, 100, CHANCES.get(npcId));
 				else if (cond == 3)
-					st.dropItems(Varka_Badge_Officer, 1, 200, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_OFFICER, 1, 200, CHANCES.get(npcId));
 				else if (cond == 4)
-					st.dropItems(Varka_Badge_Officer, 1, 300, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_OFFICER, 1, 300, CHANCES.get(npcId));
 				else if (cond == 5)
-					st.dropItems(Varka_Badge_Officer, 1, 400, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_OFFICER, 1, 400, CHANCES.get(npcId));
 				break;
 			
-			case 21364:
 			case 21365:
 			case 21366:
 			case 21368:
@@ -380,9 +340,9 @@ public class Q605_AllianceWithKetraOrcs extends Quest
 			case 21374:
 			case 21375:
 				if (cond == 3)
-					st.dropItems(Varka_Badge_Captain, 1, 100, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_CAPTAIN, 1, 100, CHANCES.get(npcId));
 				else if (cond == 4 || cond == 5)
-					st.dropItems(Varka_Badge_Captain, 1, 200, Chance.get(npcId));
+					st.dropItems(VARKA_BADGE_CAPTAIN, 1, 200, CHANCES.get(npcId));
 				break;
 		}
 		

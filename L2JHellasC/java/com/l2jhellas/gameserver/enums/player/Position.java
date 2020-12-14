@@ -20,7 +20,7 @@ public enum Position
 		else
 			return BACK;
 	}
-	
+
 	public static Position getPosition(Location activeloc, L2Character target)
 	{
 		final int heading = Math.abs(target.getHeading() - activeloc.calculateHeadingTo(target));

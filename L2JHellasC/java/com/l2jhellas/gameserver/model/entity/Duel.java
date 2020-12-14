@@ -11,6 +11,7 @@ import com.l2jhellas.gameserver.enums.Team;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.enums.player.DuelResult;
 import com.l2jhellas.gameserver.enums.player.DuelState;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.enums.sound.Music;
 import com.l2jhellas.gameserver.instancemanager.DuelManager;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
@@ -313,7 +314,7 @@ public class Duel
 				
 				final L2Summon summon = partyPlayer.getPet();
 				if (summon != null)
-					summon.updateAbnormalEffect();
+					summon.updateAbnormalEffect(AbnormalEffect.NULL);
 				
 				broadcastToTeam2(new ExDuelUpdateUserInfo(partyPlayer));
 			}
@@ -327,7 +328,7 @@ public class Duel
 				
 				final L2Summon summon = partyPlayer.getPet();
 				if (summon != null)
-					summon.updateAbnormalEffect();
+					summon.updateAbnormalEffect(AbnormalEffect.FindById(summon.getAbnormalEffect()));
 				
 				broadcastToTeam1(new ExDuelUpdateUserInfo(partyPlayer));
 			}
@@ -363,14 +364,14 @@ public class Duel
 			L2Summon summon = _playerA.getPet();
 			
 			if (summon != null)
-				summon.updateAbnormalEffect();
+				summon.updateAbnormalEffect(AbnormalEffect.FindById(summon.getAbnormalEffect()));
 			
 			_playerB.broadcastUserInfo();
 			
 			summon = _playerB.getPet();
 			
 			if (summon != null)
-				summon.updateAbnormalEffect();
+				summon.updateAbnormalEffect(AbnormalEffect.FindById(summon.getAbnormalEffect()));
 		}
 		
 		broadcastToTeam1(DUELSOUND);
@@ -409,7 +410,7 @@ public class Duel
 				
 				final L2Summon summon = partyPlayer.getPet();
 				if (summon != null)
-					summon.updateAbnormalEffect();
+					summon.updateAbnormalEffect(AbnormalEffect.FindById(summon.getAbnormalEffect()));
 			}
 			
 			for (L2PcInstance partyPlayer : _playerB.getParty().getPartyMembers())
@@ -420,7 +421,7 @@ public class Duel
 				
 				final L2Summon summon = partyPlayer.getPet();
 				if (summon != null)
-					summon.updateAbnormalEffect();
+					summon.updateAbnormalEffect(AbnormalEffect.FindById(summon.getAbnormalEffect()));
 			}
 		}
 		else
@@ -432,7 +433,7 @@ public class Duel
 			L2Summon summon = _playerA.getPet();
 			
 			if (summon != null)
-				summon.updateAbnormalEffect();
+				summon.updateAbnormalEffect(AbnormalEffect.FindById(summon.getAbnormalEffect()));
 			
 			_playerB.setIsInDuel(0);
 			_playerB.setTeam(Team.NONE);
@@ -441,7 +442,7 @@ public class Duel
 			summon = _playerB.getPet();
 			
 			if (summon != null)
-				summon.updateAbnormalEffect();
+				summon.updateAbnormalEffect(AbnormalEffect.FindById(summon.getAbnormalEffect()));
 		}
 		
 		if ((!_partyDuel && !abnormalEnd) || _partyDuel)

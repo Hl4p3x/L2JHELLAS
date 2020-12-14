@@ -10,14 +10,14 @@ public class Q606_WarWithVarkaSilenos extends Quest
 	private static final String qn = "Q606_WarWithVarkaSilenos";
 	
 	// Items
-	private static final int Horn = 7186;
-	private static final int Mane = 7233;
+	private static final int HORN_OF_BUFFALO = 7186;
+	private static final int VARKA_MANE = 7233;
 	
 	public Q606_WarWithVarkaSilenos()
 	{
 		super(606, qn, "War with Varka Silenos");
 		
-		setItemsIds(Mane);
+		setItemsIds(VARKA_MANE);
 		
 		addStartNpc(31370); // Kadun Zu Ketra
 		addTalkId(31370);
@@ -33,32 +33,24 @@ public class Q606_WarWithVarkaSilenos extends Quest
 		
 		if (event.equalsIgnoreCase("31370-03.htm"))
 		{
-			if (player.getLevel() >= 74 && player.getAllianceWithVarkaKetra() >= 1)
-			{
-				st.set("cond", "1");
-				st.setState(STATE_STARTED);
-				st.playSound(QuestState.SOUND_ACCEPT);
-			}
-			else
-			{
-				htmltext = "31370-02.htm";
-				st.exitQuest(true);
-			}
+			st.setState(STATE_STARTED);
+			st.set("cond", "1");
+			st.playSound(QuestState.SOUND_ACCEPT);
 		}
 		else if (event.equalsIgnoreCase("31370-07.htm"))
 		{
-			if (st.getQuestItemsCount(Mane) >= 100)
+			if (st.getQuestItemsCount(VARKA_MANE) >= 100)
 			{
-				st.takeItems(Mane, 100);
-				st.giveItems(Horn, 20);
 				st.playSound(QuestState.SOUND_ITEMGET);
+				st.takeItems(VARKA_MANE, 100);
+				st.giveItems(HORN_OF_BUFFALO, 20);
 			}
 			else
 				htmltext = "31370-08.htm";
 		}
 		else if (event.equalsIgnoreCase("31370-09.htm"))
 		{
-			st.takeItems(Mane, -1);
+			st.takeItems(VARKA_MANE, -1);
 			st.exitQuest(true);
 		}
 		
@@ -76,14 +68,11 @@ public class Q606_WarWithVarkaSilenos extends Quest
 		switch (st.getState())
 		{
 			case STATE_CREATED:
-				htmltext = "31370-01.htm";
+				htmltext = (player.getLevel() >= 74 && player.isAlliedWithKetra()) ? "31370-01.htm" : "31370-02.htm";
 				break;
 			
 			case STATE_STARTED:
-				if (st.getQuestItemsCount(Mane) > 0)
-					htmltext = "31370-04.htm";
-				else
-					htmltext = "31370-05.htm";
+				htmltext = (st.hasQuestItems(VARKA_MANE)) ? "31370-04.htm" : "31370-05.htm";
 				break;
 		}
 		

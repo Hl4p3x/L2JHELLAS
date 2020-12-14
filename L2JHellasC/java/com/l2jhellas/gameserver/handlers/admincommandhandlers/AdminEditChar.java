@@ -321,7 +321,7 @@ public class AdminEditChar implements IAdminCommandHandler
 			else if (npc != null)
 			{
 				npc.setTitle(val);
-				npc.updateAbnormalEffect();
+				npc.broadcastInfo();
 			}
 		}
 		else if (command.startsWith("admin_setname"))
@@ -404,7 +404,7 @@ public class AdminEditChar implements IAdminCommandHandler
 				{
 					L2Npc npc = (L2Npc) target;
 					npc.setName(_newName);
-					npc.updateAbnormalEffect();
+					npc.broadcastInfo();
 				}
 				else
 					activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);

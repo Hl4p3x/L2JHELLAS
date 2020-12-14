@@ -51,7 +51,7 @@ public class L2SummonAI extends L2CharacterAI
 		}
 		
 		if (!checkTargetLostOrDead(target) && !maybeMoveToPawn(target, summon.getPhysicalAttackRange()))
-			summon.doAttack(target,true);
+			summon.doAttack(target);
 	}
 	
 	private void thinkCast()
@@ -101,9 +101,9 @@ public class L2SummonAI extends L2CharacterAI
 	}
 	
 	@Override
-	protected void onEvtAttacked(L2Character attacker)
+	protected void onEvtAttacked(L2Character attacker,L2Skill skill)
 	{
-		super.onEvtAttacked(attacker);
+		super.onEvtAttacked(attacker,skill);
 		
 		final L2Summon summon = (L2Summon) _actor;
 		
@@ -159,7 +159,7 @@ public class L2SummonAI extends L2CharacterAI
 	
 	private void avoidAttack()
 	{		
-		if (Config.GEODATA && ((L2Summon) _actor).getOwner() !=null && ((L2Summon) _actor).getOwner().isInsideRadius(_actor,150,false,false) && !_actor.isAttackingNow() && !_actor.isCastingNow() && !_clientMoving && !_actor.isDead() && !_actor.isMovementDisabled() && (_actor.getMoveSpeed() > 0))
+		if (Config.GEODATA && ((L2Summon) _actor).getOwner() !=null && ((L2Summon) _actor).getOwner().isInsideRadius(_actor,150,false,false) && !_actor.isAttacking() && !_actor.isCastingNow() && !_clientMoving && !_actor.isDead() && !_actor.isMovementDisabled() && (_actor.getMoveSpeed() > 0))
 		{
 			final int ownerX = ((L2Summon) _actor).getOwner().getX();
 			final int ownerY = ((L2Summon) _actor).getOwner().getY();

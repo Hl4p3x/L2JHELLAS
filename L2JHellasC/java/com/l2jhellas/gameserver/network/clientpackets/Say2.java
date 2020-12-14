@@ -39,7 +39,7 @@ public final class Say2 extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (activeChar.getAppearance().getInvisible())
+		if (!activeChar.getAppearance().isVisible())
 		{		
 			activeChar.sendPacket(SystemMessageId.NOT_CHAT_WHILE_INVISIBLE);
 			return;

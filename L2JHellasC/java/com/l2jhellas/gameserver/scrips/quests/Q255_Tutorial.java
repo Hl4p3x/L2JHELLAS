@@ -789,6 +789,28 @@ public class Q255_Tutorial extends Quest
 		return null;
 	}
 
+	
+	@Override
+	public String onTalk(L2Npc npc, L2PcInstance player)
+	{
+		String htmltext = getNoQuestMsg();
+		
+		QuestState st = player.getQuestState(qn);
+		
+		if (st == null)
+			st = newQuestState(player);
+		
+		final QuestState qs = player.getQuestState("Q255_Tutorial");
+		
+		if ((qs == null))
+			return htmltext;
+		
+		if (qs.isCompleted())
+			return getAlreadyCompletedMsg();
+
+		return htmltext;
+	}
+	
 	@Override
 	public String onFirstTalk(L2Npc npc, L2PcInstance player)
 	{

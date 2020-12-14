@@ -184,11 +184,11 @@ public class PcStatus extends PlayableStatus
 	
 	public final void setCurrentCp(double newCp, boolean broadcastPacket)
 	{
+		int currentCp = (int) getCurrentCp();
+		int maxCp = getActiveChar().getStat().getMaxCp();
+		
 		synchronized (this)
-		{
-			// Get the Max CP of the L2Character
-			int maxCp = getActiveChar().getStat().getMaxCp();
-			
+		{		
 			if (newCp < 0)
 				newCp = 0;
 			
@@ -214,7 +214,7 @@ public class PcStatus extends PlayableStatus
 		}
 		
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-		if (broadcastPacket)
+		if (currentCp != _currentCp || broadcastPacket)
 			getActiveChar().broadcastStatusUpdate();
 	}
 	

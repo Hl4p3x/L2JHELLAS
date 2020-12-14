@@ -46,6 +46,7 @@ public class ShortCutInit extends L2GameServerPacket
 				default:
 					writeD(sc.getId());
 					writeD(0x01); // C6
+					break;
 			}
 		}
 	}

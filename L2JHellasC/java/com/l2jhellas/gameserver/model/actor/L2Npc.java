@@ -15,8 +15,10 @@ import com.l2jhellas.gameserver.datatables.sql.ClanTable;
 import com.l2jhellas.gameserver.datatables.sql.ItemTable;
 import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.HelperBuffData;
+import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.datatables.xml.MultisellData;
 import com.l2jhellas.gameserver.enums.player.ChatType;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
@@ -37,7 +39,6 @@ import com.l2jhellas.gameserver.model.actor.instance.L2ControllableMobInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2FestivalGuideInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2FishermanInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2MerchantInstance;
-import com.l2jhellas.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2NpcWalkerInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -53,7 +54,6 @@ import com.l2jhellas.gameserver.model.entity.olympiad.Olympiad;
 import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
 import com.l2jhellas.gameserver.model.quest.QuestState;
-import com.l2jhellas.gameserver.model.zone.type.L2TownZone;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
@@ -82,38 +82,33 @@ import com.l2jhellas.util.StringUtil;
 
 public class L2Npc extends L2Character
 {
-	public int pathfindCount = 0;
-	public int pathfindTime = 0;
-	
 	public static final int INTERACTION_DISTANCE = 150;
 	
 	private L2Spawn _spawn;
 	
 	private boolean _isBusy = false;
-	
-	private String _busyMessage = "";
-	
-	volatile boolean _isDecayed = false;
-	
-	private int _castleIndex = -2;
-	
+	volatile boolean _isDecayed = false;		
 	public boolean isEventMob = false, _isEventMobCTF = false, _isCTF_throneSpawn = false, _isCTF_Flag = false;
 	public boolean _isEventMobTvT = false;
 	public boolean _isEventMobDM = false;
 	public boolean _isEventMobVIP = false;
-	public String _CTF_FlagTeamName;
 	public boolean _isEventVIPNPC = false, _isEventVIPNPCEnd = false;
-	
-	private boolean _isInTown = false;
+    private boolean _isInTown = false;
 	
 	private int _isSpoiledBy = 0;
-	
+	public int pathfindCount = 0;
+	public int pathfindTime = 0;	
+	private int _castleIndex = -2;
 	private int _currentLHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentRHandId; // normally this shouldn't change from the template, but there exist exceptions
 	private int _currentCollisionHeight; // used for npc grow effect skills
 	private int _currentCollisionRadius; // used for npc grow effect skills
 	private int _scriptValue = 0;
 	private long lastSocialBroadcast = 0;
+	
+	
+	private String _busyMessage = "";
+	public String _CTF_FlagTeamName;
 	
 	public void onRandomAnimation()
 	{
@@ -278,7 +273,7 @@ public class L2Npc extends L2Character
 	}
 	
 	@Override
-	public void updateAbnormalEffect()
+	public void updateAbnormalEffect(AbnormalEffect mask)
 	{
 		// NpcInfo info = new NpcInfo(this);
 		// broadcastPacket(info);
@@ -363,21 +358,14 @@ public class L2Npc extends L2Character
 	{
 		_busyMessage = message;
 	}
-	
+	      
 	protected boolean canTarget(L2PcInstance player)
 	{
 		if (player.isOutOfControl())
 		{
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return false;
-		}
-		
-		if(this instanceof L2MonsterInstance && isDead())
-		{
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-		    return false;
-		}
-		
+		}		
 		return true;
 	}
 	
@@ -410,26 +398,10 @@ public class L2Npc extends L2Character
 	public void onAction(L2PcInstance player)
 	{
 		if (!canTarget(player))
-		{
-			player.sendPacket(new ActionFailed());
 			return;
-		}
 		
 		if (player.getTarget() != this)
-		{
 			player.setTarget(this);
-			
-			if (isAutoAttackable(player))
-			{
-				MyTargetSelected my = new MyTargetSelected(getObjectId(), player.getLevel() - getLevel());
-				player.sendPacket(my);
-				
-				StatusUpdate su = new StatusUpdate(getObjectId());
-				su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
-				su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
-				player.sendPacket(su);
-			}
-		}
 		else
 		{
 			if (isAutoAttackable(player) && !isAlikeDead())
@@ -440,6 +412,12 @@ public class L2Npc extends L2Character
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
 				else
 				{
+					if(isAlikeDead())
+					{
+					   player.sendPacket(ActionFailed.STATIC_PACKET);
+					   return;
+					}
+					
 					if (player.isMoving() || player.isInCombat())
 						player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
 					
@@ -453,7 +431,7 @@ public class L2Npc extends L2Character
 					
 					if (hasRandomAnimation() && !isWalker())
 						onRandomAnimation();
-					
+										
 					if (player.isInFunEvent() && EventManager.getInstance().getCurrentEvent().onTalkNpc(this, player))
 						return;
 
@@ -465,7 +443,7 @@ public class L2Npc extends L2Character
 					if (scripts != null && scripts.size() == 1)
 						scripts.get(0).notifyFirstTalk(this, player);
 					else
-						showChatWindow(player);					
+						showChatWindow(player);	
 				}
 			}
 		}
@@ -612,11 +590,10 @@ public class L2Npc extends L2Character
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
-	
+
 	public final Castle getCastle()
 	{
-		L2TownZone town = ZoneManager.getInstance().getClosestZone(this, L2TownZone.class);
-		return town != null ? CastleManager.getInstance().getCastleById(town.getTaxById()) : null;
+		return CastleManager.getInstance().getCastleById(MapRegionTable.getAreaCastle(this.getX(),this.getY()));
 	}
 	
 	public final boolean getIsInTown()

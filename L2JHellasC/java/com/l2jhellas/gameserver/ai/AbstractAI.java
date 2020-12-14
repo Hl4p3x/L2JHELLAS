@@ -176,7 +176,7 @@ public abstract class AbstractAI implements Ctrl
 				onEvtThink();
 				break;
 			case EVT_ATTACKED:
-				onEvtAttacked((L2Character) arg0);
+				onEvtAttacked((L2Character) arg0,(L2Skill)arg1);
 				break;
 			case EVT_AGGRESSION:
 				onEvtAggression((L2Character) arg0, ((Number) arg1).intValue());
@@ -260,7 +260,7 @@ public abstract class AbstractAI implements Ctrl
 	
 	protected abstract void onEvtThink();
 	
-	protected abstract void onEvtAttacked(L2Character attacker);
+	protected abstract void onEvtAttacked(L2Character attacker,L2Skill skill);
 	
 	protected abstract void onEvtAggression(L2Character target, int aggro);
 	
@@ -509,7 +509,7 @@ public abstract class AbstractAI implements Ctrl
 					return;
 				}
 
-				if (!_actor.isAttackingNow() && !_actor.isCastingNow() && !_actor.isInsideRadius(_followTarget, _range, true, false))
+				if (!_actor.isAttacking() && !_actor.isCastingNow() && !_actor.isInsideRadius(_followTarget, _range, true, false))
 					moveToPawn(_followTarget, _range);
 			}
 			catch (Throwable t)

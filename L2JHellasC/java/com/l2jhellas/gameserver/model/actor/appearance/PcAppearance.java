@@ -10,7 +10,7 @@ public class PcAppearance
 	
 	private Sex _sex;
 	
-	private boolean _invisible = false;
+	private boolean _visible = true;
 	
 	private int _nameColor = 0xFFFFFF;	
 	private int _titleColor = 0xFFFF77;
@@ -63,19 +63,14 @@ public class PcAppearance
 		_sex = sex;
 	}
 	
-	public void setInvisible()
+	public void setIsVisible(boolean vis)
 	{
-		_invisible = true;
+		_visible = vis;
 	}
-	
-	public void setVisible()
+
+	public boolean isVisible()
 	{
-		_invisible = false;
-	}
-	
-	public boolean getInvisible()
-	{
-		return _invisible;
+		return _visible;
 	}
 	
 	public int getNameColor()

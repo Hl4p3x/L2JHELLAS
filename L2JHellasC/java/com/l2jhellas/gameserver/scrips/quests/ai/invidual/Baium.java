@@ -406,7 +406,7 @@ public class Baium extends AbstractNpcAI
 			{
 				L2PcInstance player = (L2PcInstance) characters;
 				
-				if (player.isGM() && player.getAppearance().getInvisible())
+				if (player.isGM() && !player.getAppearance().isVisible())
 					continue;
 
 				if (npcId == ARCHANGEL && player.getActiveWeaponInstance() == null)

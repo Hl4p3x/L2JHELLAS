@@ -17,6 +17,7 @@ import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
 import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.DoorData;
+import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.instancemanager.GrandBossManager;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.model.L2Skill;
@@ -1346,7 +1347,7 @@ public class VanHalter extends AbstractNpcAI
 				{
 					_vanHalter.stopEffects(L2Effect.EffectType.FEAR);
 					_vanHalter.setIsAfraid(false);
-					_vanHalter.updateAbnormalEffect();
+					_vanHalter.updateAbnormalEffect(AbnormalEffect.FEAR);
 				}
 				else
 				{
@@ -1358,7 +1359,7 @@ public class VanHalter extends AbstractNpcAI
 						{
 							_vanHalter.stopEffects(L2Effect.EffectType.FEAR);
 							_vanHalter.setIsAfraid(false);
-							_vanHalter.updateAbnormalEffect();
+							_vanHalter.updateAbnormalEffect(AbnormalEffect.FEAR);
 						}
 						else
 							_vanHalter.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, pos);
@@ -1382,7 +1383,7 @@ public class VanHalter extends AbstractNpcAI
 			{
 				_vanHalter.stopEffects(L2Effect.EffectType.FEAR);
 				_vanHalter.setIsAfraid(false);
-				_vanHalter.updateAbnormalEffect();
+				_vanHalter.updateAbnormalEffect(AbnormalEffect.FEAR);
 				if (_halterEscapeTask != null)
 					_halterEscapeTask.cancel(false);
 				_halterEscapeTask = null;
