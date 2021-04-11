@@ -47,7 +47,6 @@ import com.l2jhellas.gameserver.datatables.xml.FishTable;
 import com.l2jhellas.gameserver.datatables.xml.HelperBuffData;
 import com.l2jhellas.gameserver.datatables.xml.HennaData;
 import com.l2jhellas.gameserver.datatables.xml.IconData;
-import com.l2jhellas.gameserver.datatables.xml.LevelUpData;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.datatables.xml.MultisellData;
 import com.l2jhellas.gameserver.datatables.xml.NpcWalkerRoutesData;
@@ -201,7 +200,6 @@ public class GameServer
 		CharNameTable.getInstance();
 		ClanTable.getInstance();
 		CharTemplateData.getInstance();
-		LevelUpData.getInstance();
 		CrownManager.getInstance();
 		AdminData.getInstance();
 		HennaData.getInstance();

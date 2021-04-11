@@ -18,7 +18,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.IllegalPlayerAction;
 import com.l2jhellas.util.Util;
 
@@ -63,7 +63,7 @@ public final class SendWareHouseDepositList extends L2GameClientPacket
 		L2PcInstance player = getClient().getActiveChar();
 		if (player == null)
 			return;
-		if (!FloodProtectors.performAction(getClient(), Action.MANUFACTURE))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.MANUFACTURE))
 		{
 			player.sendMessage("You depositing items too fast.");
 			return;

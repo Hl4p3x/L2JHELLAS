@@ -82,7 +82,7 @@ public class CharStatus
 				((L2Attackable) getActiveChar()).overhitEnabled(false);
 		}
 		
-		if (getActiveChar().isDead())
+		if (getActiveChar().getCurrentHp() < 0.5)
 		{
 			getActiveChar().abortAllAttacks();
 			getActiveChar().doDie(attacker);
@@ -155,13 +155,16 @@ public class CharStatus
 		setCurrentHp(newHp, true);
 	}
 	
-	public final void setCurrentHp(double newHp, boolean broadcastPacket)
+	public boolean setCurrentHp(double newHp, boolean broadcastPacket)
 	{
 		double currentHp =  getCurrentHp();
 		double maxHp = getActiveChar().getStat().getMaxHp();
 		
 		synchronized (this)
 		{		
+			if (getActiveChar().isDead())
+				return false;
+			
 			if (newHp >= maxHp)
 			{
 				// Set the RegenActive flag to false
@@ -177,26 +180,28 @@ public class CharStatus
 				// Set the RegenActive flag to true
 				_currentHp = newHp;
 				_flagsRegenActive |= REGEN_FLAG_HP;
-				
-				if (!getActiveChar().isDead())
-					getActiveChar().setIsKilledAlready(false);
-				
+
 				// Start the HP/MP/CP Regeneration task with Medium priority
 				startHpMpRegeneration();
 			}
 		}
 
-		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-		if (currentHp != _currentHp || broadcastPacket)
+		boolean hpWasChanged = currentHp != _currentHp;
+
+		if (hpWasChanged && broadcastPacket)
+			getActiveChar().broadcastStatusUpdate();
+		
+		return hpWasChanged;
+	}
+	
+	public final void setCurrentHpMp(double newHp, double newMp) 
+	{
+		boolean hpOrMpWasChanged = setCurrentHp(newHp, false);
+		hpOrMpWasChanged |= setCurrentMp(newMp, false);
+		if (hpOrMpWasChanged) 
 			getActiveChar().broadcastStatusUpdate();
 	}
-	
-	public final void setCurrentHpMp(double newHp, double newMp)
-	{
-		setCurrentHp(newHp, false);
-		setCurrentMp(newMp, true); // send the StatusUpdate only once
-	}
-	
+
 	public final double getCurrentMp()
 	{
 		return _currentMp;
@@ -207,13 +212,16 @@ public class CharStatus
 		setCurrentMp(newMp, true);
 	}
 	
-	public final void setCurrentMp(double newMp, boolean broadcastPacket)
+	public boolean setCurrentMp(double newMp, boolean broadcastPacket)
 	{
 		int currentMp = (int) getCurrentMp();
 		int maxMp = getActiveChar().getStat().getMaxMp();
 		
 		synchronized (this)
 		{
+			if (getActiveChar().isDead())
+				return false;
+			
 			if (newMp >= maxMp)
 			{
 				// Set the RegenActive flag to false
@@ -235,9 +243,12 @@ public class CharStatus
 			}
 		}
 		
-		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-		if (currentMp != _currentMp || broadcastPacket)
+		boolean mpWasChanged = currentMp != _currentMp;
+
+		if (mpWasChanged && broadcastPacket)
 			getActiveChar().broadcastStatusUpdate();
+		
+		return mpWasChanged;
 	}
 	
 	public final Set<L2Character> getStatusListener()
@@ -260,12 +271,10 @@ public class CharStatus
 		if (getCurrentMp() < charstat.getMaxMp())
 			setCurrentMp(getCurrentMp() + Formulas.calcMpRegen(getActiveChar()), false);
 		
-		if (!getActiveChar().isInActiveRegion())
-		{
-			if ((getCurrentHp() == charstat.getMaxHp()) && (getCurrentMp() == charstat.getMaxMp()))
-				stopHpMpRegeneration();
-		}
-		else
+		if ((getCurrentHp() == charstat.getMaxHp()) && (getCurrentMp() == charstat.getMaxMp()))
+			stopHpMpRegeneration();
+		
+		if (getActiveChar().isInActiveRegion())
 			getActiveChar().broadcastStatusUpdate(); 
 	}
 }

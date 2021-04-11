@@ -159,8 +159,16 @@ public class CharInfo extends L2GameServerPacket
 		writeC(_activeChar.getMountType()); // 1 on strider 2 on wyvern 0 no mount
 		writeC(_activeChar.getPrivateStoreType().getId()); // 1 - sellshop
 
-		writeH(_activeChar.getCubics().size());
-		_activeChar.getCubics().keySet().forEach(this::writeH);
+		if(_activeChar.getCubics() != null)
+		{
+			writeH(_activeChar.getCubics().size());
+			_activeChar.getCubics().keySet().forEach(this::writeH);
+		}
+		else
+		{
+			writeH(0x00);
+			writeH(0x00);
+		}
 		
 		writeC(_activeChar.isInPartyMatchRoom() ? 1 : 0);
 		

@@ -671,6 +671,8 @@ public class L2Party
 		{
 			if (_positionPacket == null)
 				_positionPacket = new PartyMemberPosition(L2Party.this);
+			else
+				_positionPacket.reuse(L2Party.this);
 			
 			broadcastToPartyMembers(_positionPacket);
 		}

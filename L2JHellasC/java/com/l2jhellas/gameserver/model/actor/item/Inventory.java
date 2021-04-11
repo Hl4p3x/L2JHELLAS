@@ -165,13 +165,13 @@ public abstract class Inventory extends ItemContainer
 		@Override
 		public void notifyUnequiped(int slot, L2ItemInstance item)
 		{
-			getOwner().removeStatsOwner(item);
+			getOwner().removeStatsOwner(item,false);
 		}
 		
 		@Override
 		public void notifyEquiped(int slot, L2ItemInstance item)
 		{
-			getOwner().addStatFuncs(item.getStatFuncs(getOwner()));
+			getOwner().addStatFuncs(item.getStatFuncs(getOwner()),false);
 		}
 	}
 	

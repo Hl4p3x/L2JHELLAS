@@ -363,7 +363,7 @@ public class L2AttackableAI extends L2CharacterAI
 			else
 				npc.setWalking();
 			
-			if (npc.distance2d(leader) > offset)
+			if (npc.distance2D(leader) > offset)
 			{
 				double x1, y1, z1;
 				x1 = Rnd.get(minRadius * 2, offset * 2); 
@@ -427,7 +427,7 @@ public class L2AttackableAI extends L2CharacterAI
 				y1 = npc.getSpawn().getLocy();
 				z1 = npc.getSpawn().getLocz();
 
-				if (!npc.isInRadius2d(npc, range))
+				if (!npc.isInRadius2D(npc, range))
 					npc.setIsReturningToSpawnPoint(true);
 				else
 				{
@@ -505,7 +505,7 @@ public class L2AttackableAI extends L2CharacterAI
 				if(!nearby.getAttackByList().contains(target))
 				    continue;
 				
-				if (npc.isInRadius2d(nearby, collision) && (nearby != target))
+				if (npc.isInRadius2D(nearby, collision) && (nearby != target))
 				{
 					double newX = combinedCollision + Rnd.get(40);
 					
@@ -521,7 +521,7 @@ public class L2AttackableAI extends L2CharacterAI
 					else
 						newY = target.getY() - newY;
 					
-					if (!npc.isInRadius2d(newX, newY, collision))
+					if (!npc.isInRadius2D((int)newX, (int)newY, collision))
 					{
 						double newZ = npc.getZ() + 30;
 						moveTo((int)newX, (int)newY, (int)newZ);
@@ -535,7 +535,7 @@ public class L2AttackableAI extends L2CharacterAI
 		{
 			if (Rnd.get(100) <= npc.getTemplate().getDodge())
 			{
-				if (npc.distance2d(target) <= (60 + combinedCollision))
+				if (npc.distance2D(target) <= (60 + combinedCollision))
 				{
 					double posX = npc.getX();
 					double posY = npc.getY();
@@ -800,7 +800,7 @@ public class L2AttackableAI extends L2CharacterAI
 			
 			if (npc.isMovementDisabled())
 			{
-				if (!npc.isInRadius2d(target, npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius() + ((L2Character) target).getTemplate().getCollisionRadius()))
+				if (!npc.isInRadius2D(target, npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius() + ((L2Character) target).getTemplate().getCollisionRadius()))
 					return false;
 				
 				if (!canSee)

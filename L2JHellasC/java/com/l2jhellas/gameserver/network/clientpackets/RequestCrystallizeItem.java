@@ -14,7 +14,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class RequestCrystallizeItem extends L2GameClientPacket
 {
@@ -39,7 +39,7 @@ public final class RequestCrystallizeItem extends L2GameClientPacket
 			return;
 		
 		// Flood protect
-		if (!FloodProtectors.performAction(getClient(),Action.USE_ITEM))
+		if (!FloodProtectors.performAction(getClient(),FloodAction.USE_ITEM))
 		{
 			activeChar.sendMessage("You are using this action too fast!");
 			return;

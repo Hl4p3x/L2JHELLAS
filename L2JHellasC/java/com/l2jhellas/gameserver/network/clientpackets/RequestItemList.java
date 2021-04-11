@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
+import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 
 public final class RequestItemList extends L2GameClientPacket
@@ -15,11 +16,14 @@ public final class RequestItemList extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if ((getClient() != null) && (getClient().getActiveChar() != null) && !getClient().getActiveChar().isInvetoryDisabled())
-		{
-			ItemList il = new ItemList(getClient().getActiveChar(), true);
-			sendPacket(il);
-		}
+		final L2PcInstance player = getClient().getActiveChar();
+		if (player == null)
+			return;
+		
+		if (player.isInvetoryDisabled())
+			return;
+		
+		sendPacket(new ItemList(player, true));
 	}
 	
 	@Override

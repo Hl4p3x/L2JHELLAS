@@ -29,7 +29,7 @@ import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.network.serverpackets.UserInfo;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.Util;
 
 public class L2VillageMasterInstance extends L2NpcInstance
@@ -323,7 +323,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					
 					boolean allowAddition = true;
 					
-					if (!FloodProtectors.performAction(player.getClient(), Action.SUBCLASS))
+					if (!FloodProtectors.performAction(player.getClient(), FloodAction.SUBCLASS))
 						return;
 					
 					if (!ItemRestriction(player))
@@ -407,7 +407,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					if (player.isLearningSkill())
 						return;
 					
-					if (!FloodProtectors.performAction(player.getClient(), Action.SUBCLASS))
+					if (!FloodProtectors.performAction(player.getClient(), FloodAction.SUBCLASS))
 						return;
 					
 					if (player.isRegisteredInFunEvent() || player.isInFunEvent())
@@ -495,7 +495,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					if (!isValidNewSubClass(player, paramTwo))
 						return;
 					
-					if (!FloodProtectors.performAction(player.getClient(), Action.SUBCLASS))
+					if (!FloodProtectors.performAction(player.getClient(), FloodAction.SUBCLASS))
 						return;
 					
 					if (Config.CHECK_SKILLS_ON_ENTER && !Config.ALT_GAME_SKILL_LEARN)

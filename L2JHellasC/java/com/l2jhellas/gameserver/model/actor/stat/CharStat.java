@@ -35,6 +35,9 @@ public class CharStat
 		if (_activeChar == null)
 			return init;
 		
+		if (stat == null)
+			return init;
+		
 		int id = stat.ordinal();
 		
 		Calculator c = _activeChar.getCalculators()[id];

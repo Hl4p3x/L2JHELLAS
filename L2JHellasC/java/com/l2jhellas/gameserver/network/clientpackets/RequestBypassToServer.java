@@ -3,10 +3,6 @@ package com.l2jhellas.gameserver.network.clientpackets;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
-import Extensions.Balancer.Balancer;
-import Extensions.Balancer.BalancerEdit;
-import Extensions.RankSystem.RPSBypass;
-
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
@@ -33,7 +29,11 @@ import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.shield.antibot.AntiBot;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
+
+import Extensions.Balancer.Balancer;
+import Extensions.Balancer.BalancerEdit;
+import Extensions.RankSystem.RPSBypass;
 
 public final class RequestBypassToServer extends L2GameClientPacket
 {
@@ -60,7 +60,7 @@ public final class RequestBypassToServer extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.SERVER_BYPASS))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.SERVER_BYPASS))
 			return;
 		
 		if (_command.startsWith("admin_") && activeChar.isGM())

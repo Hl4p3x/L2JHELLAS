@@ -16,7 +16,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.Rnd;
 
 public final class RequestEnchantItem extends AbstractEnchantPacket
@@ -41,7 +41,7 @@ public final class RequestEnchantItem extends AbstractEnchantPacket
 			return;
 		
 		// flood protect for fast auto-enchant.
-		if (!FloodProtectors.performAction(getClient(), Action.USE_ITEM))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.USE_ITEM))
 		{
 			//custom message
 			activeChar.sendMessage("System:fast enchant-autoenchant program not allowed.");

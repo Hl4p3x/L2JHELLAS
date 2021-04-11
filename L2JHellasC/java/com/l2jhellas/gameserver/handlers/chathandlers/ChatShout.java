@@ -11,7 +11,7 @@ import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public class ChatShout implements IChatHandler
 {
@@ -23,7 +23,7 @@ public class ChatShout implements IChatHandler
 	@Override
 	public void handleChat(ChatType type, L2PcInstance activeChar, String target, String text)
 	{
-		if (!FloodProtectors.performAction(activeChar.getClient(), Action.GLOBAL_CHAT))
+		if (!FloodProtectors.performAction(activeChar.getClient(), FloodAction.GLOBAL_CHAT))
 			return;
 		
 		CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);

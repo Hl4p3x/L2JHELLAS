@@ -3,7 +3,7 @@ package com.l2jhellas.gameserver.network.clientpackets;
 
 import com.l2jhellas.gameserver.network.serverpackets.CharSelectInfo;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class CharacterRestore extends L2GameClientPacket
 {
@@ -21,7 +21,7 @@ public final class CharacterRestore extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (!FloodProtectors.performAction(getClient(), Action.CHARACTER_SELECT))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.CHARACTER_SELECT))
 			return;
 		
 		getClient().markRestoredChar(_charSlot);

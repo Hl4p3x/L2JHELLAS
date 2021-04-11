@@ -5,7 +5,7 @@ import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.PackageSendableList;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class RequestPackageSendableItemList extends L2GameClientPacket
 {
@@ -26,7 +26,7 @@ public final class RequestPackageSendableItemList extends L2GameClientPacket
 		if (player == null)
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.MANUFACTURE))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.MANUFACTURE))
 		{
 			player.sendMessage("You depositing items too fast.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);

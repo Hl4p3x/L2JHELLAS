@@ -70,6 +70,7 @@ public abstract class L2Effect
 		CHARM_OF_LUCK,
 		INVINCIBLE,
 		SPOIL,
+		THROW_UP,
 		PROTECTION_BLESSING
 	}
 	
@@ -476,5 +477,18 @@ public abstract class L2Effect
 	public void setPeriodStartTicks(int periodStartTicks)
 	{
 		_periodStartTicks = periodStartTicks;
+	}
+
+	public boolean ShowIcon()
+	{
+		if(getTemplate() == null)
+			return true;
+		
+		return getTemplate().icon;
+	}
+	
+	public EffectTemplate getTemplate()
+	{
+		return getSkill().hasEffects() ? getSkill()._effectTemplates[0] : null;		
 	}
 }

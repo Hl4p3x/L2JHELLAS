@@ -475,7 +475,7 @@ public class L2CharacterAI extends AbstractAI
 		if (offset < 0)
 			return false; // skill radius -1
 			
-		if (!_actor.isInRadius2d(worldPosition.getX(), worldPosition.getY(), offset + _actor.getTemplate().collisionRadius))
+		if (!_actor.isInRadius2D(worldPosition.getX(), worldPosition.getY(), offset + _actor.getTemplate().collisionRadius))
 		{
 			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
 				return true;
@@ -553,14 +553,6 @@ public class L2CharacterAI extends AbstractAI
 								
 				if (offset < 5)
 					offset = 5;	
-
-				if (((L2Character) target).isMoving() && _actor.getStat().getMoveSpeed() <= 174 && _actor.isInsideRadius(target,_actor.getPhysicalAttackRange()+40, false, true))
-				{
-					if (isFollowing())
-						stopFollow();
-					
-					return false;
-				}
 						
 			    startFollow((L2Character) target, offset);
 			}

@@ -12,7 +12,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class RequestDropItem extends L2GameClientPacket
 {
@@ -42,7 +42,7 @@ public final class RequestDropItem extends L2GameClientPacket
 		if ((activeChar == null) || activeChar.isDead())
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.DROP_ITEM))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.DROP_ITEM))
 			return;
 		
 		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);

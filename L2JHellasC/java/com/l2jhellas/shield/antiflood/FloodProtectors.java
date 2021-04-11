@@ -6,7 +6,7 @@ import com.l2jhellas.gameserver.network.L2GameClient;
 
 public final class FloodProtectors
 {
-	public static enum Action
+	public static enum FloodAction
 	{
 		DICE_ROLL(Config.ROLL_DICE),
 		HERO_VOICE(Config.HERO_VOICE),
@@ -23,11 +23,12 @@ public final class FloodProtectors
 		USE_ITEM(Config.USE_ITEM),
 		SOCIAL_ACTION(Config.SOCIAL),
 		ITEM_HANDLER(Config.HANDLER),
-		MOVE_ACTION(Config.MOVE_ACTION_TIME);
+		MOVE_ACTION(Config.MOVE_ACTION_TIME),
+		ACTION_REQUEST(Config.ACTION_REQUEST_TIME);
 		
 		private final int _Reuse;
 		
-		private Action(int reuse)
+		private FloodAction(int reuse)
 		{
 			_Reuse = reuse;
 		}		
@@ -36,10 +37,10 @@ public final class FloodProtectors
 			return _Reuse;
 		}
 		
-		public static final int VALUES_LENGTH = Action.values().length;
+		public static final int VALUES_LENGTH = FloodAction.values().length;
 	}
 	
-	public static boolean performAction(L2GameClient client, Action action)
+	public static boolean performAction(L2GameClient client, FloodAction action)
 	{
 		final int reuseDelay = action.getReuse();	
 		

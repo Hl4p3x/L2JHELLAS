@@ -253,9 +253,9 @@ public abstract class AbstractOlympiadGame
 			player.abortAttack();
 			player.abortCast();
 			player.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE);
-			
+
 			if (player.isDead())
-				player.doRevive();
+				player.setIsDead(false);
 			
 			final L2Summon summon = player.getPet();
 			if (summon != null && !summon.isDead())

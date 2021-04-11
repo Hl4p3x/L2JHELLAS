@@ -419,7 +419,7 @@ public class L2PcInstance extends L2Playable
 	private double _mpUpdateIncCheck = .0;
 	private double _mpUpdateDecCheck = .0;
 	private double _mpUpdateInterval = .0;
-
+	
 	private long _clanJoinExpiryTime;
 	private long _clanCreateExpiryTime;
 	private long _lastRecomUpdate;
@@ -3285,8 +3285,11 @@ public class L2PcInstance extends L2Playable
 		else
 		{
 			stopAbnormalEffect(AbnormalEffect.IMPRISIONING_1);
-			_protection.cancel(true);
-			_protection = null;
+			if (_protection != null)
+			{
+				_protection.cancel(true);
+				_protection = null;
+			}
 		}
 		
 		broadcastUserInfo();		
@@ -3372,7 +3375,7 @@ public class L2PcInstance extends L2Playable
 					return;
 				}
 				
-				if (((Config.GEODATA) ? GeoEngine.canSeeTarget(player, this, isFlying()) : GeoEngine.canSeeTarget(player, this)))
+				if (((Config.GEODATA) ? GeoEngine.canSeeTarget(player, this, player.isFlying()) : GeoEngine.canSeeTarget(player, this)))
 				{
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, this);
 					
@@ -3382,18 +3385,18 @@ public class L2PcInstance extends L2Playable
 			}
 			else
 			{
-				if (player != this && ((Config.GEODATA) ? GeoEngine.canSeeTarget(player, this, isFlying()) : GeoEngine.canSeeTarget(player, this)))
+				if (player != this && ((Config.GEODATA) ? GeoEngine.canSeeTarget(player, this, player.isFlying()) : GeoEngine.canSeeTarget(player, this)))
 					player.getAI().setIntention(CtrlIntention.AI_INTENTION_FOLLOW, this);
 			}
 		}
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
-	private boolean needCpUpdate(int barPixels)
+	private boolean needCpUpdate()
 	{
 		double currentCp = getCurrentCp();
 		
-		if (currentCp <= 1.0 || getMaxCp() < barPixels)
+		if (currentCp <= 1.0 || getMaxCp() < 352.0)
 			return true;
 		
 		if (currentCp <= _cpUpdateDecCheck || currentCp >= _cpUpdateIncCheck)
@@ -3418,11 +3421,11 @@ public class L2PcInstance extends L2Playable
 		return false;
 	}
 	
-	private boolean needMpUpdate(int barPixels)
+	private boolean needMpUpdate()
 	{
 		double currentMp = getCurrentMp();
 		
-		if (currentMp <= 1.0 || getMaxMp() < barPixels)
+		if (currentMp <= 1.0 || getMaxMp() < 352.0)
 			return true;
 		
 		if (currentMp <= _mpUpdateDecCheck || currentMp >= _mpUpdateIncCheck)
@@ -3729,13 +3732,16 @@ public class L2PcInstance extends L2Playable
 			// Show the client his new target.
 			sendPacket(new MyTargetSelected(target.getObjectId(), (target.isAutoAttackable(this) || target instanceof L2Summon) ? getLevel() - target.getLevel() : 0));
 			
-			target.addStatusListener(this);
-			
-			// Send max/current hp.
-			final StatusUpdate su = new StatusUpdate(target.getObjectId());
-			su.addAttribute(StatusUpdate.MAX_HP, target.getMaxHp());
-			su.addAttribute(StatusUpdate.CUR_HP, (int) target.getCurrentHp());
-			sendPacket(su);
+			if (newTarget instanceof L2Character)
+			{
+				// Send max/current hp.
+				final StatusUpdate su = new StatusUpdate(target.getObjectId());
+				su.addAttribute(StatusUpdate.MAX_HP, target.getMaxHp());
+				su.addAttribute(StatusUpdate.CUR_HP, (int) target.getCurrentHp());
+				sendPacket(su);
+
+				target.addStatusListener(this);
+			}
 			
 			Broadcast.toKnownPlayers(this, new TargetSelected(getObjectId(), newTarget.getObjectId(), getX(), getY(), getZ()));
 		}
@@ -5203,7 +5209,10 @@ public class L2PcInstance extends L2Playable
 					player.setCurrentMp(rset.getDouble("curMp"));
 
 					if (currentHp < 0.5)
-						player.stopHpMpRegeneration();
+					{
+						player.setIsDead(true);
+						player.getStatus().stopHpMpRegeneration();
+					}
 
 					// Restore pet if exists in the world
 					final L2PetInstance pet = L2World.getInstance().getPet(player.getObjectId());
@@ -5640,7 +5649,7 @@ public class L2PcInstance extends L2Playable
 	
 	public boolean isbOnline()
 	{
-		return (_isOnline ? true : false);
+		return _isOnline;
 	}
 	
 	public boolean isIn7sDungeon()
@@ -6555,18 +6564,7 @@ public class L2PcInstance extends L2Playable
 					}
 				}
 			}
-		}
-		
-		// Are the target and the player in the same duel?
-		if (isInDuel())
-		{
-			if (!(target instanceof L2PcInstance && ((L2PcInstance) target).getDuelId() == getDuelId()))
-			{
-				sendMessage("You cannot do this while duelling.");
-				sendPacket(ActionFailed.STATIC_PACKET);
-				return;
-			}
-		}
+		}		
 			
 		// ************************************* Check Consumables *******************************************
 		
@@ -6657,7 +6655,17 @@ public class L2PcInstance extends L2Playable
 		
 		// Check if this is offensive magic skill
 		if (skill.isOffensive())
-		{
+		{		
+			// Are the target and the player in the same duel?
+			if (isInDuel())
+			{
+				if (getDuelId() != target.getDuelId())
+				{
+					sendMessage("You cannot do this while duelling.");
+					sendPacket(ActionFailed.STATIC_PACKET);
+					return;
+				}
+			}
 			
 			if (isInsidePeaceZone(this, target))
 			{
@@ -7709,6 +7717,7 @@ public class L2PcInstance extends L2Playable
 		return _isInDuel;
 	}
 	
+	@Override
 	public int getDuelId()
 	{
 		return _duelId;
@@ -8985,6 +8994,17 @@ public class L2PcInstance extends L2Playable
 			abortCast();
 			stopMove(null);
 			setTarget(null);
+			
+			if (getCubics() != null && getCubics().size() > 0)
+			{
+				for (L2CubicInstance cubic : getCubics().values())
+				{
+					cubic.stopAction();
+					cubic.cancelDisappear();
+				}
+				
+				getCubics().clear();
+			}
 			
 			setOnlineStatus(false);
 
@@ -10469,15 +10489,12 @@ public class L2PcInstance extends L2Playable
 
 		if (getLevel() > 9 && hasSkill(L2Skill.SKILL_LUCKY))
 			removeSkill(SkillTable.getInstance().getInfo(L2Skill.SKILL_LUCKY, 1));
+				
+		if (getStatus().getCurrentHp() < 0.5 && !isInvul())
+			setIsDead(true);		
 		
 		standUp();
-				
-		if (isDead())
-		{
-			doDie(this);
-			doRevive();
-		}
-				
+		
 		setRunning();
 		checkBanChat(false);
 		
@@ -11007,17 +11024,25 @@ public class L2PcInstance extends L2Playable
 		}
 	}
 	
+	public boolean hasFriends() 
+	{
+		return (_friendList != null) && !_friendList.isEmpty();
+	}
+	
 	private void notifyFriends(boolean login)
 	{
-		for (int id : _friendList)
+		if(hasFriends())
 		{
-			L2PcInstance friend = L2World.getInstance().getPlayer(id);
-			if (friend != null)
+			for (int id : _friendList)
 			{
-				friend.sendPacket(new FriendList(friend));
-				
-				if (login)
-					friend.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_S1_HAS_LOGGED_IN).addCharName(this));
+				L2PcInstance friend = L2World.getInstance().getPlayer(id);
+				if (friend != null)
+				{
+					friend.sendPacket(new FriendList(friend));
+
+					if (login)
+						friend.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.FRIEND_S1_HAS_LOGGED_IN).addCharName(this));
+				}
 			}
 		}
 	}
@@ -11803,18 +11828,20 @@ public class L2PcInstance extends L2Playable
 	@Override
 	public void broadcastStatusUpdate()
 	{
-		StatusUpdate su = new StatusUpdate(getObjectId());
+		final boolean needCpUpdate = needCpUpdate();
+		final boolean needHpUpdate = needHpUpdate();
+		StatusUpdate su = new StatusUpdate(this);
+		
+		su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
 		su.addAttribute(StatusUpdate.CUR_HP, (int) getCurrentHp());
+		su.addAttribute(StatusUpdate.MAX_MP, getMaxMp());
 		su.addAttribute(StatusUpdate.CUR_MP, (int) getCurrentMp());
-		su.addAttribute(StatusUpdate.CUR_CP, (int) getCurrentCp());
 		su.addAttribute(StatusUpdate.MAX_CP, getMaxCp());
+		su.addAttribute(StatusUpdate.CUR_CP, (int) getCurrentCp());
 		sendPacket(su);
-		
-		final boolean needCpUpdate = needCpUpdate(352);
-		final boolean needHpUpdate = needHpUpdate(352);
-		
+
 		// Check if a party is in progress and party window update is usefull
-		if (isInParty() && (needCpUpdate || needHpUpdate || needMpUpdate(352)))
+		if (isInParty() && (needCpUpdate || needHpUpdate || needMpUpdate()))
 			getParty().broadcastToPartyMembers(this, new PartySmallWindowUpdate(this));
 		
 		if (isInOlympiadMode() && isOlympiadStart() && (needCpUpdate || needHpUpdate))

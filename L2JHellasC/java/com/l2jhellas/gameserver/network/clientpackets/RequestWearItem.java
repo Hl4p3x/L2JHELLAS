@@ -22,7 +22,7 @@ import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.Util;
 
 public final class RequestWearItem extends L2GameClientPacket
@@ -96,7 +96,7 @@ public final class RequestWearItem extends L2GameClientPacket
 		if (player == null)
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.USE_ITEM))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.USE_ITEM))
 		{
 			player.sendMessage("You are using this action too fast!");
 			return;

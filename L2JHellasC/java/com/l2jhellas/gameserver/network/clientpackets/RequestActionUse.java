@@ -424,7 +424,7 @@ public final class RequestActionUse extends L2GameClientPacket
 			return false;
 		
 		final L2Summon summon = player.getPet();
-		if (summon == null)
+		if (summon == null || target == null)
 			return false;
 		
 		// Pet which is 20 levels higher than owner.
@@ -440,6 +440,9 @@ public final class RequestActionUse extends L2GameClientPacket
 			player.sendPacket(SystemMessageId.PET_REFUSING_ORDER);
 			return false;
 		}
+		
+		if(summon.getTemplate().getSkills() == null || skillId <= 0)
+			return false;
 		
 		// Verify if the launched skill is mastered by the summon.
 		final L2Skill skill = summon.getTemplate().getSkills().get(skillId);

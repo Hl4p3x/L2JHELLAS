@@ -254,11 +254,11 @@ public class PcStat extends PlayableStat
 	}
 	
 	@Override
-	public final int getMaxCp()
+	public final int getMaxCp() 
 	{
-		int val = (int) calcStat(Stats.MAX_CP, getActiveChar().getTemplate().baseCpMax, null, null);
+		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_CP, getActiveChar().getTemplate().baseCpMax, null, null);
 		
-		if (getActiveChar().getClassId().getId() >= 88)
+		if (getActiveChar() != null && getActiveChar().getClassId().getId() >= 88)
 			val += BalanceLoad.CP[getActiveChar().getClassId().getId() - 88];
 		
 		if (val != _oldMaxCp)
@@ -266,36 +266,36 @@ public class PcStat extends PlayableStat
 			_oldMaxCp = val;
 			
 			if (getActiveChar().getStatus().getCurrentCp() != val)
-				getActiveChar().getStatus().setCurrentCp(getActiveChar().getStatus().getCurrentCp());
+				getActiveChar().getStatus().setCurrentCp(getActiveChar().getStatus().getCurrentCp()); // trigger start of regeneration
 		}
 		return val;
 	}
 
 	@Override
-	public final int getMaxHp()
+	public final int getMaxHp() 
 	{
-		int val = super.getMaxHp();
+		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_HP, getActiveChar().getTemplate().baseHpMax, null, null);
 		
-		if (getActiveChar().getClassId().getId() >= 88)
+		if (getActiveChar() != null && getActiveChar().getClassId().getId() >= 88)
 			val += BalanceLoad.HP[getActiveChar().getClassId().getId() - 88];
 		
-		if (val != _oldMaxHp)
+		if (val != _oldMaxHp) 
 		{
 			_oldMaxHp = val;
 			
 			if (getActiveChar().getStatus().getCurrentHp() != val)
 				getActiveChar().getStatus().setCurrentHp(getActiveChar().getStatus().getCurrentHp()); // trigger start of regeneration
 		}
+		
 		return val;
 	}
 
 	@Override
-	public final int getMaxMp()
+	public final int getMaxMp() 
 	{
-		// Get the Max MP (base+modifier) of the L2PcInstance
-		int val = super.getMaxMp();
+		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_MP, getActiveChar().getTemplate().baseMpMax,null,null);
 		
-		if (getActiveChar().getClassId().getId() >= 88)
+		if (getActiveChar() != null && getActiveChar().getClassId().getId() >= 88)
 			val += BalanceLoad.MP[getActiveChar().getClassId().getId() - 88];
 		
 		if (val != _oldMaxMp)
@@ -303,8 +303,9 @@ public class PcStat extends PlayableStat
 			_oldMaxMp = val;
 			
 			if (getActiveChar().getStatus().getCurrentMp() != val)
-				getActiveChar().getStatus().setCurrentMp(getActiveChar().getStatus().getCurrentMp());
+				getActiveChar().getStatus().setCurrentMp(getActiveChar().getStatus().getCurrentMp()); // trigger start of regeneration
 		}
+		
 		return val;
 	}
 	

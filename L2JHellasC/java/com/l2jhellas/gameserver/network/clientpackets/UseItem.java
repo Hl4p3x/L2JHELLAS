@@ -30,7 +30,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ShowCalculator;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.templates.L2Weapon;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class UseItem extends L2GameClientPacket
 {
@@ -52,7 +52,7 @@ public final class UseItem extends L2GameClientPacket
 			return;
 		
 		//Flood protect UseItem
-		if (!FloodProtectors.performAction(getClient(),Action.USE_ITEM))
+		if (!FloodProtectors.performAction(getClient(),FloodAction.USE_ITEM))
 			return;
 		
 		if (!activeChar.getAppearance().isVisible())
@@ -84,9 +84,13 @@ public final class UseItem extends L2GameClientPacket
 		}
 		
 		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+
+		if (item == null )
+			return;
+		
 		final int itemId = item.getItemId();
 
-		if (item == null || itemId == 0  || itemId == 57)
+		if (itemId == 0  || itemId == 57)
 			return;
 				
 		// The player can't use an item in those special conditions

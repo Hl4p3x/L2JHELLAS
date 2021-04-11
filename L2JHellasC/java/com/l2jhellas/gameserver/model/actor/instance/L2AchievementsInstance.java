@@ -160,7 +160,7 @@ public class L2AchievementsInstance extends L2Npc
 		{
 			int i = 0;
 			
-			tb.append("<table width=270 border=0 bgcolor=\"33FF33\">");
+			tb.append("<table width=270 border=0 bgcolor=\"000000\">");
 			tb.append("<tr><td width=270 align=\"left\">Name:</td><td width=60 align=\"right\">Info:</td><td width=200 align=\"center\">Status:</td></tr></table>");
 			tb.append("<br><img src=\"l2ui.squaregray\" width=\"270\" height=\"1\"><br>");
 			
@@ -189,7 +189,7 @@ public class L2AchievementsInstance extends L2Npc
 		StringBuilder tb = new StringBuilder();
 		tb.append("<html><title>Achievements Manager</title><body><br>");
 		
-		tb.append("<table width=270 border=0 bgcolor=\"33FF33\">");
+		tb.append("<table width=270 border=0 bgcolor=\"000000\">");
 		tb.append("<tr><td width=270 align=\"center\">" + a.getName() + "</td></tr></table><br>");
 		tb.append("<center>Status: " + getStatusString(achievementID, player));
 		
@@ -200,12 +200,12 @@ public class L2AchievementsInstance extends L2Npc
 		
 		tb.append("<br><img src=\"l2ui.squaregray\" width=\"270\" height=\"1s\"><br>");
 		
-		tb.append("<table width=270 border=0 bgcolor=\"33FF33\">");
+		tb.append("<table width=270 border=0 bgcolor=\"000000\">");
 		tb.append("<tr><td width=270 align=\"center\">Description</td></tr></table><br>");
 		tb.append(a.getDescription());
 		tb.append("<br><img src=\"l2ui.squaregray\" width=\"270\" height=\"1s\"><br>");
 		
-		tb.append("<table width=270 border=0 bgcolor=\"33FF33\">");
+		tb.append("<table width=270 border=0 bgcolor=\"000000\">");
 		tb.append("<tr><td width=270 align=\"left\">Condition:</td><td width=100 align=\"left\">Value:</td><td width=200 align=\"center\">Status:</td></tr></table>");
 		tb.append(getConditionsStatus(achievementID, player));
 		tb.append("<br><img src=\"l2ui.squaregray\" width=\"270\" height=\"1s\"><br>");
@@ -292,7 +292,7 @@ public class L2AchievementsInstance extends L2Npc
 	
 	private static String getTableColor(int i)
 	{
-		return (i % 2 == 0) ? "<table width=270 border=0 bgcolor=\"444444\">" : "<table width=270 border=0>";
+		return (i % 2 == 0) ? "<table width=270 border=0 bgcolor=\"000000\">" : "<table width=270 border=0>";
 	}
 	
 	private static String getConditionsStatus(int achievementID, L2PcInstance player)

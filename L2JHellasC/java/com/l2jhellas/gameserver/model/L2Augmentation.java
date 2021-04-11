@@ -85,7 +85,7 @@ public final class L2Augmentation
 			if (!_active)
 				return;
 			
-			((L2Character) player).removeStatsOwner(this);
+			((L2Character) player).removeStatsOwner(this,true);
 			
 			_active = false;
 		}

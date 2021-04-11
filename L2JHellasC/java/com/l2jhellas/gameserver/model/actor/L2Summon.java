@@ -323,10 +323,8 @@ public abstract class L2Summon extends L2Playable
 	{
 		L2World.getInstance().forEachVisibleObject(this, L2PcInstance.class, player ->
 		{
-			if ((player == getOwner()))
-				return;
-
-			player.sendPacket(new SummonInfo(this, player, val));
+			if ((player != getOwner()))
+			     player.sendPacket(new SummonInfo(this, player, val));
 		});
 	}
 	
@@ -822,5 +820,11 @@ public abstract class L2Summon extends L2Playable
 	public void setXYZ(int x, int y, int z)
 	{	
 		super.setXYZ(x, y, z);		
+	}
+	
+	@Override
+	public int getDuelId()
+	{	
+		return getOwner() != null ? getOwner().getDuelId() : 0;
 	}
 }

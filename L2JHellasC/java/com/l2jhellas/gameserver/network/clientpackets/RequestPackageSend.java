@@ -20,7 +20,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class RequestPackageSend extends L2GameClientPacket
 {
@@ -61,7 +61,7 @@ public final class RequestPackageSend extends L2GameClientPacket
 		if (player.getObjectId() == _objectID)
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.MANUFACTURE))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.MANUFACTURE))
 		{
 			player.sendMessage("You using freight too fast.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -85,13 +85,6 @@ public final class RequestPackageSend extends L2GameClientPacket
 		
 		if (L2World.getInstance().getPlayer(player.getName().toLowerCase()) != null)
 			return;
-		
-		if (!FloodProtectors.performAction(getClient(), Action.MANUFACTURE))
-		{
-			player.sendMessage("You using freight too fast.");
-			player.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
 		
 		final L2PcInstance target = L2PcInstance.load(_objectID);
 		final PcFreight freight = target.getFreight();

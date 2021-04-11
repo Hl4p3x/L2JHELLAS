@@ -1,6 +1,5 @@
 package com.l2jhellas.gameserver.network.clientpackets;
 
-import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
@@ -9,21 +8,25 @@ import com.l2jhellas.gameserver.network.serverpackets.ExConfirmCancelItem;
 public final class RequestConfirmCancelItem extends L2GameClientPacket
 {
 	private static final String _C__D0_2D_REQUESTCONFIRMCANCELITEM = "[C] D0:2D RequestConfirmCancelItem";
-	private int _itemId;
+	private int _objectId;
 	
 	@Override
 	protected void readImpl()
 	{
-		_itemId = readD();
+		_objectId = readD();
 	}
 	
 	@Override
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		final L2ItemInstance item = (L2ItemInstance) L2World.getInstance().findObject(_itemId);
+
+		if (activeChar == null)
+			return;
 		
-		if ((activeChar == null) || (item == null))
+		final L2ItemInstance item = activeChar.getInventory().getItemByObjectId(_objectId);
+
+		if (item == null)
 			return;
 		
 		if (item.getOwnerId() != activeChar.getObjectId())
@@ -67,7 +70,7 @@ public final class RequestConfirmCancelItem extends L2GameClientPacket
 			default:
 				return;
 		}
-		activeChar.sendPacket(new ExConfirmCancelItem(_itemId, price));
+		activeChar.sendPacket(new ExConfirmCancelItem(item, price));
 	}
 	
 	@Override

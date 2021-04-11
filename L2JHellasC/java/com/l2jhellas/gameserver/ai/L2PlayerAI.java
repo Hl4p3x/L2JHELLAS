@@ -76,16 +76,8 @@ public class L2PlayerAI extends L2CharacterAI
 	}
 	
 	@Override
-	protected void onEvtFinishCasting()
-	{		
-		if (getIntention() == CtrlIntention.AI_INTENTION_CAST)
-		{
-			if (_nextIntention != null && _nextIntention.getCtrlIntention() != CtrlIntention.AI_INTENTION_CAST)
-				setIntention(_nextIntention.getCtrlIntention(), _nextIntention._arg0, _nextIntention._arg1);
-			else
-				setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
-		}	
-		
+	protected void onEvtFinishCasting() 
+	{
 		if (_skill != null)
 		{
 			if (_skill.useSoulShot())
@@ -93,8 +85,31 @@ public class L2PlayerAI extends L2CharacterAI
 			else if (_skill.useSpiritShot())
 				_actor.rechargeShots(false, true);
 		}
+		
+		if (getIntention() == AI_INTENTION_CAST) 
+		{			
+			IntentionCommand nextIntention = _nextIntention;
+			if (nextIntention != null) 
+			{
+				if (nextIntention._crtlIntention != AI_INTENTION_CAST)
+					setIntention(nextIntention._crtlIntention, nextIntention._arg0, nextIntention._arg1);
+				else 
+					setIntention(AI_INTENTION_IDLE);
+			} 
+			else 
+				setIntention(AI_INTENTION_IDLE);
+		}
 	}
 
+	@Override
+	protected void onIntentionIdle()
+	{
+		changeIntention(AI_INTENTION_IDLE, null, null);	
+		setTarget(null);
+		setAttackTarget(null);	
+		clientStopMoving(null);	
+	}
+	
 	@Override
 	protected void onEvtReadyToAct()
 	{
@@ -112,9 +127,9 @@ public class L2PlayerAI extends L2CharacterAI
 	@Override
 	protected void onEvtCancel()
 	{
+		_actor.sendPacket(ActionFailed.STATIC_PACKET);
 		_nextIntention = null;
 		super.onEvtCancel();
-		_actor.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 	
 	@Override
@@ -135,19 +150,9 @@ public class L2PlayerAI extends L2CharacterAI
 	@Override
 	protected void onIntentionActive()
 	{
-		if (getIntention() != AI_INTENTION_ACTIVE)
-		{
-			final IntentionCommand nextIntention = _nextIntention;
-			if (nextIntention != null)
-			{
-				_nextIntention = null;
-				setIntention(nextIntention._crtlIntention, nextIntention._arg0, nextIntention._arg1);
-			}
-			else
-				changeIntention(AI_INTENTION_ACTIVE, null, null);
-		}
+		setIntention(AI_INTENTION_IDLE);
 	}
-	
+
 	@Override
 	protected void clientNotifyDead()
 	{
@@ -164,8 +169,17 @@ public class L2PlayerAI extends L2CharacterAI
 		if(checkTargetLostOrDead(target))
 			return;
 
-		if(!maybeMoveToPawn(target, _actor.getPhysicalAttackRange()))
-			_actor.doAttack(target);		
+		if(maybeStartAttackFollow(target, _actor.getPhysicalAttackRange()))
+		{
+			if(target != null && target.isMoving() && _actor.isInRadius2D(target.getLoc(),_actor.getPhysicalAttackRange()+95))
+			{
+				_actor.getAI().stopFollow();
+				_actor.getAI().clientStopMoving(null);
+				_actor.doAttack(target);	
+			}
+		}
+	    else
+			_actor.doAttack(target);
 	}
 		
 	private void thinkCast()
@@ -190,16 +204,31 @@ public class L2PlayerAI extends L2CharacterAI
 				return;
 			}
 
-			if (target != null && maybeMoveToPawn(target, _actor.getMagicalAttackRange(_skill)))
-				return;
 		}
 
-		if (_skill.getHitTime() > 50)
-			clientStopMoving(null);
+		if (target == null)
+			return;
+		
+		if(maybeStartAttackFollow(target, _actor.getMagicalAttackRange(_skill)))
+		{
+			if(	target != null && target.isMoving() && _actor.isInRadius2D(target.getLoc(),_actor.getMagicalAttackRange(_skill)+95))
+			{
+				if (_skill.getHitTime() > 50)
+					clientStopMoving(null);
 
-		_actor.doCast(_skill);
+				_actor.doCast(_skill);
+			}		
+		}
+		else
+		{
+			if(	target != null)
+			{
+				if (_skill.getHitTime() > 50)
+					clientStopMoving(null);
 
-		return;
+				_actor.doCast(_skill);
+			}
+		}
 	}
 	
 	@Override
@@ -219,8 +248,8 @@ public class L2PlayerAI extends L2CharacterAI
 		
 		if (_actor.MovementIsDisabled())
 		{
-			saveNextIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc, null);
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
+			saveNextIntention(CtrlIntention.AI_INTENTION_MOVE_TO, loc, null);
 			return;
 		}
 		
@@ -248,7 +277,7 @@ public class L2PlayerAI extends L2CharacterAI
 		if (_actor.isAlikeDead() || getActor().isFakeDeath())
 			return;
 		
-		setIntention(AI_INTENTION_ACTIVE);
+		setIntention(AI_INTENTION_IDLE);
 		_actor.getActingPlayer().doPickupItem(target);
 		_actor.setIsParalyzed(true);
 		ThreadPoolManager.getInstance().scheduleGeneral(() -> _actor.setIsParalyzed(false), (int) (660 / _actor.getStat().getMovementSpeedMultiplier()));		
@@ -304,20 +333,16 @@ public class L2PlayerAI extends L2CharacterAI
 		if (!(target instanceof L2StaticObjectInstance))
 			_actor.getActingPlayer().doInteract((L2Character) target);
 			
-		setIntention(AI_INTENTION_ACTIVE);	
+		setIntention(AI_INTENTION_IDLE);
 		
 		_actor.sendPacket(ActionFailed.STATIC_PACKET);	
 	}
 	
 	@Override
 	protected void onEvtThink()
-	{
-		
+	{		
 		if (_thinking || _actor.isCastingNow() || _actor.isAllSkillsDisabled())
-		{
-			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
-		}
 
 		_thinking = true;
 		
@@ -339,11 +364,11 @@ public class L2PlayerAI extends L2CharacterAI
 	}
 	
 	@Override
-	protected void onEvtArrivedRevalidate()
+	protected void clientActionFailed()
 	{
-		super.onEvtArrivedRevalidate();
+		_actor.sendPacket(ActionFailed.STATIC_PACKET);
 	}
-	
+
 	@Override
 	protected void onEvtForgetObject(L2Object object)
 	{
@@ -360,5 +385,6 @@ public class L2PlayerAI extends L2CharacterAI
 		}
 		
 		super.onEvtArrived();	
+		_actor.sendPacket(ActionFailed.STATIC_PACKET);
 	}
 }

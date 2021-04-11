@@ -26,6 +26,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.network.L2GameClient;
 import com.l2jhellas.gameserver.network.SystemMessageId;
+import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.PartySmallWindowAll;
 import com.l2jhellas.gameserver.network.serverpackets.PartySmallWindowDeleteAll;
@@ -425,22 +426,12 @@ public class AdminEditChar implements IAdminCommandHandler
 				return false;
 			}
 			
-			if (player.getAppearance().getSex() != Sex.MALE)
-			{
-				player.getAppearance().setSex(Sex.MALE);
-				player.sendMessage("Your gender has been changed by a GM.");
-				player.decayMe();
-				player.spawnMe(player.getX(), player.getY(), player.getZ());
-				player.broadcastUserInfo();
-			}
-			else
-			{
-				player.getAppearance().setSex(Sex.FEMALE);
-				player.sendMessage("Your gender has been changed by a GM.");
-				player.decayMe();
-				player.spawnMe(player.getX(), player.getY(), player.getZ());
-				player.broadcastUserInfo();
-			}
+			player.getAppearance().setSex(player.getAppearance().getSex().equals(Sex.MALE) ? Sex.FEMALE : Sex.MALE);
+			player.sendMessage("Your gender has been changed by a GM.");
+			player.decayMe();
+			player.spawnMe(player.getX(), player.getY(), player.getZ());
+			player.broadcastUserInfo();
+			player.sendPacket(ActionFailed.STATIC_PACKET);
 		}
 		else if (command.startsWith("admin_setcolor"))
 		{		

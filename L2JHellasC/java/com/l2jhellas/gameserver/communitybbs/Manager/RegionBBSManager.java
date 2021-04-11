@@ -375,7 +375,7 @@ public class RegionBBSManager extends BaseBBSManager
 			
 			htmlCode.append(trOpen);
 			htmlCode.append("<td>" + getOnlineCount("gm") + " Player(s) Online</td>");
-			htmlCode.append("</tr><tr><td>Color legend: <font color=\"ffe400\">GM</font>, <font color=\"f9f8a3\">Hero</font>, <font color=\"a3f6f9\">Nooble</font>, <font color=\"ff0000\">Karma</font>, <font color=\"ffba00\">OffTrade</font></td></tr><tr>");
+			htmlCode.append("</tr><tr><td>Color legend: <font color=\"ffe400\">GM</font>, <font color=\"f9f8a3\">Hero</font>, <font color=\"a3f6f9\">Noble</font>, <font color=\"ff0000\">Karma</font>, <font color=\"ffba00\">OffTrade</font></td></tr><tr>");
 			htmlCode.append(trClose);
 			htmlCode.append("</table>");
 			

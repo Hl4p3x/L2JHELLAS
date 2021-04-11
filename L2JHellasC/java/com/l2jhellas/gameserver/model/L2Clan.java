@@ -971,6 +971,7 @@ public class L2Clan
 						if (newSkill.getMinPledgeClass() <= temp.getPlayerInstance().getPledgeClass())
 						{
 							temp.getPlayerInstance().addSkill(newSkill, false); // Skill is not saved to player DB
+							temp.getPlayerInstance().sendSkillList();
 							temp.getPlayerInstance().sendPacket(new PledgeSkillListAdd(newSkill.getId(), newSkill.getLevel()));
 						}
 					}

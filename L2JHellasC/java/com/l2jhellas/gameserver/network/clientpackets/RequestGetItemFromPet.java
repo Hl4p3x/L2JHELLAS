@@ -7,7 +7,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.IllegalPlayerAction;
 import com.l2jhellas.util.Util;
 
@@ -36,7 +36,7 @@ public final class RequestGetItemFromPet extends L2GameClientPacket
 		if ((player == null) || (player.getPet() == null) || !(player.getPet() instanceof L2PetInstance))
 			return;
 		
-		if (!FloodProtectors.performAction(player.getClient(), Action.USE_ITEM))
+		if (!FloodProtectors.performAction(player.getClient(), FloodAction.USE_ITEM))
 		{
 			player.sendMessage("You are using this action too fast!");
 			return;

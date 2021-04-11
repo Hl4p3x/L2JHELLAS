@@ -8,6 +8,8 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
+import com.l2jhellas.shield.antiflood.FloodProtectors;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class AttackRequest extends L2GameClientPacket
 {
@@ -38,6 +40,12 @@ public final class AttackRequest extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 			
+		if (activeChar.getTarget() != null && activeChar.getTarget().getObjectId() == _objectId && !FloodProtectors.performAction(activeChar.getClient(),FloodAction.ACTION_REQUEST))
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
 		if (!activeChar.getAppearance().isVisible())
 		{
 			activeChar.sendPacket(new CreatureSay(0, ChatType.GENERAL, "SYS", "You cannot do this action in hide mode."));

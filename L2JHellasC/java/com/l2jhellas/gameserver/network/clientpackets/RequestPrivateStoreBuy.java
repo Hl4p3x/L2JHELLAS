@@ -10,7 +10,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.Util;
 
 public final class RequestPrivateStoreBuy extends L2GameClientPacket
@@ -53,7 +53,7 @@ public final class RequestPrivateStoreBuy extends L2GameClientPacket
 		if (player == null)
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.MANUFACTURE))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.MANUFACTURE))
 		{
 			player.sendMessage("You buying items too fast.");
 			player.sendPacket(ActionFailed.STATIC_PACKET);

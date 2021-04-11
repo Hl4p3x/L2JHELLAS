@@ -17,7 +17,7 @@ import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.Util;
 
 public final class RequestSellItem extends L2GameClientPacket
@@ -68,7 +68,7 @@ public final class RequestSellItem extends L2GameClientPacket
 			return;
 		
 		// Flood protect 
-		if (!FloodProtectors.performAction(getClient(),Action.MANUFACTURE))
+		if (!FloodProtectors.performAction(getClient(),FloodAction.MANUFACTURE))
 			return;
 		
 		// Alt game - Karma punishment

@@ -15,7 +15,7 @@ import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public final class RequestDestroyItem extends L2GameClientPacket
@@ -40,7 +40,7 @@ public final class RequestDestroyItem extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.USE_ITEM))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.USE_ITEM))
 		{
 			activeChar.sendMessage("You are using this action too fast!");
 			return;

@@ -7,7 +7,7 @@ import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public class ChatHeroVoice implements IChatHandler
 {
@@ -21,7 +21,7 @@ public class ChatHeroVoice implements IChatHandler
 	{
 		if (activeChar.isHero() || activeChar.isGM())
 		{
-			if (!FloodProtectors.performAction(activeChar.getClient(), Action.HERO_VOICE))
+			if (!FloodProtectors.performAction(activeChar.getClient(), FloodAction.HERO_VOICE))
 				return;
 			
 			CreatureSay cs = new CreatureSay(activeChar.getObjectId(), type, activeChar.getName(), text);

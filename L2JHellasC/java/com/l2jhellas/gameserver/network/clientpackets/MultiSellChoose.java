@@ -23,7 +23,7 @@ import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.templates.L2Armor;
 import com.l2jhellas.gameserver.templates.L2Weapon;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public class MultiSellChoose extends L2GameClientPacket
 {
@@ -58,7 +58,7 @@ public class MultiSellChoose extends L2GameClientPacket
 		if (_amount < 1 || _amount > 9999)
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.MULTISELL))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.MULTISELL))
 			return;
 		
 		if (player.isProcessingTransaction())

@@ -275,6 +275,15 @@ public class Duel
 				partyPlayer.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 				partyPlayer.setTarget(null);
 				partyPlayer.sendPacket(ActionFailed.STATIC_PACKET);
+				
+				L2Summon summon = partyPlayer.getPet();
+				if(summon != null)
+				{
+					summon.abortAllAttacks();
+					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+					summon.setTarget(null);
+					summon.setFollowStatus(true);
+				}
 			}
 			
 			for (L2PcInstance partyPlayer : _playerB.getParty().getPartyMembers())
@@ -283,6 +292,15 @@ public class Duel
 				partyPlayer.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 				partyPlayer.setTarget(null);
 				partyPlayer.sendPacket(ActionFailed.STATIC_PACKET);
+				
+				L2Summon summon = partyPlayer.getPet();
+				if(summon != null)
+				{
+					summon.abortAllAttacks();
+					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+					summon.setTarget(null);
+					summon.setFollowStatus(true);
+				}
 			}
 		}
 		else
@@ -298,6 +316,25 @@ public class Duel
 			
 			_playerA.sendPacket(ActionFailed.STATIC_PACKET);
 			_playerB.sendPacket(ActionFailed.STATIC_PACKET);
+			
+			L2Summon summonA = _playerA.getPet();
+			L2Summon summonB = _playerA.getPet();
+			
+			if(summonA != null)
+			{
+				summonA.abortAllAttacks();
+				summonA.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+				summonA.setTarget(null);
+				summonA.setFollowStatus(true);
+			}
+			
+			if(summonB != null)
+			{
+				summonB.abortAllAttacks();
+				summonB.getAI().setIntention(CtrlIntention.AI_INTENTION_IDLE, null);
+				summonB.setTarget(null);
+				summonB.setFollowStatus(true);
+			}
 		}
 	}
 	

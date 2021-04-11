@@ -6,7 +6,7 @@ import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.AllyInfo;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class RequestAllyInfo extends L2GameClientPacket
 {
@@ -26,7 +26,7 @@ public final class RequestAllyInfo extends L2GameClientPacket
 			return;
 		
 		// Flood protect
-		if (!FloodProtectors.performAction(getClient(),Action.SERVER_BYPASS))
+		if (!FloodProtectors.performAction(getClient(),FloodAction.SERVER_BYPASS))
 		{
 			player.sendMessage("You are using it too fast.");
 			return;

@@ -156,8 +156,8 @@
 		<set name="skillType" val="PDAM" />
 		<set name="operateType" val="OP_ACTIVE" />
 		<for>
+			<effect count="1" name="ThrowUp" time="1" noicon="1" val="0" stackOrder="1" effectType="THROW_UP" stackType="jump_away" />
 			<effect count="1" name="Stun" time="9" val="0" stackOrder="1" stackType="Stun" />
-			<!-- FLY AWAY SKILL -->
 		</for>
 	</skill>
 	<skill id="4108" levels="1" name="Antharas Terror">

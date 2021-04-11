@@ -378,7 +378,7 @@ public class CharEffectList
 		final String stackType = effect.getStackType();
 		
 		if ("none".equals(stackType))
-			_owner.removeStatsOwner(effect);
+			_owner.removeStatsOwner(effect,true);
 		else
 		{
 			if (_stackedEffects == null)
@@ -396,7 +396,7 @@ public class CharEffectList
 				
 				if (index == 0)
 				{
-					_owner.removeStatsOwner(effect);
+					_owner.removeStatsOwner(effect,true);
 					
 					if (!stackQueue.isEmpty())
 					{
@@ -405,7 +405,7 @@ public class CharEffectList
 						{
 							// Set the effect to In Use
 							if (newStackedEffect.setInUse(true))
-								_owner.addStatFuncs(newStackedEffect.getStatFuncs());
+								_owner.addStatFuncs(newStackedEffect.getStatFuncs(),true);
 						}
 					}
 				}
@@ -419,7 +419,7 @@ public class CharEffectList
 		}
 		
 		// Remove the active skill L2effect from _effects
-		if (effectList.remove(effect) && _owner.isPlayer())
+		if (effectList.remove(effect) && _owner.isPlayer() && effect.ShowIcon())
 		{
 			SystemMessage sm = effect.getSkill().isToggle() ? SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_BEEN_ABORTED).addSkillName(effect) 
 			: SystemMessage.getSystemMessage(SystemMessageId.EFFECT_S1_DISAPPEARED).addSkillName(effect);					
@@ -538,7 +538,7 @@ public class CharEffectList
 		if ("none".equals(stackType))
 		{
 			if (newEffect.setInUse(true))
-				_owner.addStatFuncs(newEffect.getStatFuncs());
+				_owner.addStatFuncs(newEffect.getStatFuncs(),true);
 			
 			return;
 		}
@@ -604,14 +604,14 @@ public class CharEffectList
 			if (effectToRemove != null)
 			{
 				// Remove all Func objects corresponding to this stacked effect from the Calculator set.
-				_owner.removeStatsOwner(effectToRemove);				
+				_owner.removeStatsOwner(effectToRemove,true);				
 				effectToRemove.setInUse(false);
 			}
 			
 			if (effectToAdd != null)
 			{
 				if (effectToAdd.setInUse(true))
-					_owner.addStatFuncs(effectToAdd.getStatFuncs());
+					_owner.addStatFuncs(effectToAdd.getStatFuncs(),true);
 			}
 		}
 	}
@@ -631,6 +631,7 @@ public class CharEffectList
 				_buffs.stream()
 					.filter(Objects::nonNull)
 					.filter(L2Effect::getInUse)
+					.filter(L2Effect::ShowIcon)
 					.forEach(info ->
 					{
 						if (info.getSkill().isPotion())
@@ -649,6 +650,7 @@ public class CharEffectList
 				_debuffs.stream()
 					.filter(Objects::nonNull)
 					.filter(L2Effect::getInUse)
+					.filter(L2Effect::ShowIcon)
 					.forEach(info ->
 					{
 						if (info.getSkill().isPotion())

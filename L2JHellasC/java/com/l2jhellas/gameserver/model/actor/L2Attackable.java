@@ -2159,13 +2159,13 @@ public class L2Attackable extends L2Npc
 		return _mustGiveExpSp;
 	}
 	
-	public double distance2d(L2Character character)
+	public double distance2D(L2Character character)
 	{
-		return distance2d(character.getX(), character.getY());
+		return distance2D(character.getX(), character.getY());
 	}
 	
 	@Override
-	public double distance2d(double x, double y)
+	public double distance2D(int x, int y)
 	{
 		return Math.sqrt(Math.pow(getX() - x, 2) + Math.pow(getY() - y, 2));
 	}

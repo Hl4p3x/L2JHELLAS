@@ -72,7 +72,7 @@ public abstract class AbstractAI implements Ctrl
 		return _intention;
 	}
 	
-	protected synchronized void setAttackTarget(L2Character target)
+	protected void setAttackTarget(L2Character target)
 	{
 		_attackTarget = target;
 	}
@@ -296,8 +296,7 @@ public abstract class AbstractAI implements Ctrl
 	
 	protected void clientActionFailed()
 	{
-		if (_actor.isPlayer())
-			_actor.sendPacket(ActionFailed.STATIC_PACKET);
+
 	}
 	
 	public void moveToPawn(L2Object pawn, int offset)
@@ -334,10 +333,7 @@ public abstract class AbstractAI implements Ctrl
 			}
 			
 			if (_actor.isInsideRadius(pawn, offset, true,true))
-			{
-				_actor.getAI().notifyEvent(CtrlEvent.EVT_ARRIVED);
 				return;
-			}	
 			
 			_actor.moveToLocation(pawn.getX(), pawn.getY(), pawn.getZ(), offset);
 
@@ -355,13 +351,73 @@ public abstract class AbstractAI implements Ctrl
 					_clientMovingToPawnOffset = 0;
 				}
 				else
-					_actor.broadcastPacket(new MoveToPawn(_actor, pawn, offset));
+					_actor.broadcastPacket(new MoveToPawn(_actor, pawn, offset <= 10 ? _actor.getPhysicalAttackRange() : offset));
 			}
 			else
 				_actor.broadcastPacket(new MoveToLocation(_actor));
 		}
 		else
 			clientActionFailed();
+	}
+	
+	public boolean maybeStartAttackFollow(L2Character target, int weaponAttackRange)
+	{
+		if (weaponAttackRange < 0)
+			return false;
+		
+		if (_actor.isInRadius2D(target.getLoc(), (int) (weaponAttackRange + _actor.getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius())))
+			return false;
+		
+		if (!_actor.isMovementDisabled())
+			startAttackFollow(target, weaponAttackRange);
+		
+		return true;
+	}
+	
+	public void startAttackFollow(L2Character pawn, int offset)
+	{
+		if (_followTask != null)
+		{
+			_followTask.cancel(false);
+			_followTask = null;
+		}
+		
+		_followTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> AttackFollowTask(pawn, offset), 5, ATTACK_FOLLOW_INTERVAL);
+	}
+	
+	protected void AttackFollowTask(L2Character target, int offset)
+	{
+		if (_followTask == null)
+			return;
+		
+		final Location destination = target.getLoc().clone();
+		final int realOffset = (int) (offset + _actor.getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius());
+		
+		if ((!_actor.isFlying()) ? _actor.isInRadius2D(destination, realOffset) : _actor.isInRadius3D(destination, realOffset))
+			return;
+
+		StartAttackmoveTo(destination , target , offset);
+	}
+	
+	public void StartAttackmoveTo(Location loc , L2Character target , int offset)
+	{
+		if(target == null)
+			return;
+		
+		// Chek if actor can move
+		if (!_actor.isMovementDisabled())
+		{
+			if(!_actor.isAttacking() && !_actor.isCastingNow())
+			{
+				// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeController
+				_actor.moveToLocation(loc.getX() , loc.getY() , loc.getZ(), offset-10);
+
+				// Send a Server->Client packet CharMoveToLocation to the actor and all L2PcInstance in its _knownPlayers
+				_actor.broadcastPacket(target.isMoving() ? new MoveToLocation(_actor , loc) : new MoveToPawn(_actor, target, offset-10));
+			}
+		}
+		else
+		    clientActionFailed();
 	}
 	
 	public void moveTo(int x, int y, int z)
@@ -376,11 +432,11 @@ public abstract class AbstractAI implements Ctrl
 			// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeController
 			_actor.moveToLocation(x, y, z, 0);
 			
-			// Send a Server->Client packet CharMoveToLocation to the actor and all L2PcInstance in its _knownPlayers
-			_actor.broadcastPacket(new MoveToLocation(_actor));
+			if(_actor.isMoving())
+			   _actor.broadcastPacket(new MoveToLocation(_actor));
 		}
 		else
-			_actor.sendPacket(ActionFailed.STATIC_PACKET);
+			clientActionFailed();
 	}
 	
 	protected void moveToInABoat(Location destination, Location origin)

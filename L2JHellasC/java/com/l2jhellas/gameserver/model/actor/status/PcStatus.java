@@ -131,6 +131,8 @@ public class PcStatus extends PlayableStatus
 						getActiveChar().disableAllSkills();
 						stopHpMpRegeneration();
 						
+						getActiveChar().setIsDead(true);
+
 						if (attacker != null)
 						{
 							attacker.getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
@@ -138,6 +140,7 @@ public class PcStatus extends PlayableStatus
 						}
 						
 						DuelManager.getInstance().onPlayerDefeat(getActiveChar());
+						
 					}
 					value = 1;
 				}
@@ -188,7 +191,10 @@ public class PcStatus extends PlayableStatus
 		int maxCp = getActiveChar().getStat().getMaxCp();
 		
 		synchronized (this)
-		{		
+		{	
+			if (getActiveChar().isDead())
+				return;
+			
 			if (newCp < 0)
 				newCp = 0;
 			
@@ -214,7 +220,7 @@ public class PcStatus extends PlayableStatus
 		}
 		
 		// Send the Server->Client packet StatusUpdate with current HP and MP to all other L2PcInstance to inform
-		if (currentCp != _currentCp || broadcastPacket)
+		if (currentCp != _currentCp && broadcastPacket)
 			getActiveChar().broadcastStatusUpdate();
 	}
 	

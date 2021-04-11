@@ -278,15 +278,21 @@ public class L2Npc extends L2Character
 		// NpcInfo info = new NpcInfo(this);
 		// broadcastPacket(info);
 		
-		// Send a Server->Client packet NpcInfo with state of abnormal effect to all L2PcInstance in the _KnownPlayers of the L2NpcInstance
-		for (L2PcInstance player : L2World.getInstance().getVisibleObjects(this, L2PcInstance.class, 2000))
-			if (player != null)
-			{
-				if (getMoveSpeed() == 0)
-					player.sendPacket(new ServerObjectInfo(this, player));
-				else
-					player.sendPacket(new NpcInfo(this, player));
-			}
+		if(mask != null && !mask.equals(AbnormalEffect.NULL))
+		{
+			if(mask.equals(AbnormalEffect.FLOATING_ROOT) && !isImmobileUntilAttacked())
+				return;
+
+			// Send a Server->Client packet NpcInfo with state of abnormal effect to all L2PcInstance in the _KnownPlayers of the L2NpcInstance
+			for (L2PcInstance player : L2World.getInstance().getVisibleObjects(this, L2PcInstance.class, 2000))
+				if (player != null)
+				{
+					if (getMoveSpeed() == 0)
+						player.sendPacket(new ServerObjectInfo(this, player));
+					else
+						player.sendPacket(new NpcInfo(this, player));
+				}
+		}
 	}
 	
 	public int getDistanceToWatchObject(L2Object object)
@@ -431,7 +437,7 @@ public class L2Npc extends L2Character
 					
 					if (hasRandomAnimation() && !isWalker())
 						onRandomAnimation();
-										
+													
 					if (player.isInFunEvent() && EventManager.getInstance().getCurrentEvent().onTalkNpc(this, player))
 						return;
 

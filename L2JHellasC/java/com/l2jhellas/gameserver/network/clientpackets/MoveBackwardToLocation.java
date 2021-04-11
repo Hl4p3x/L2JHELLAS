@@ -11,7 +11,8 @@ import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.MoveToLocation;
-import com.l2jhellas.gameserver.network.serverpackets.StopMove;
+import com.l2jhellas.shield.antiflood.FloodProtectors;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.IllegalPlayerAction;
 import com.l2jhellas.util.MathUtil;
 import com.l2jhellas.util.Util;
@@ -24,14 +25,10 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 	private int _targetZ;
 	private int _originX;
 	private int _originY;
-	private int _originZ;
-	private int _moveMovement;
-	
-	// For geodata
-	private int _curX;
-	private int _curY;
 	@SuppressWarnings("unused")
-	private int _curZ;
+	private int _originZ;
+	
+	private int _moveMovement;
 	
 	public TaskPriority getPriority()
 	{
@@ -73,7 +70,13 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 		
 		if (activeChar == null)
 			return;
-
+		
+		if (!FloodProtectors.performAction(activeChar.getClient(),FloodAction.SERVER_BYPASS))
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
+		
 		if (activeChar.isDead() || activeChar.isFakeDeath() || activeChar.isSitting() 
 		|| activeChar.isOutOfControl() || activeChar.isTeleporting())
 		{
@@ -81,16 +84,8 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			return;
 		}
 		
-		if (_targetX == _originX && _targetY == _originY && _targetZ == _originZ)
-		{
-			activeChar.sendPacket(new StopMove(activeChar));
-			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-			return;
-		}
-
-		_curX = activeChar.getX();
-		_curY = activeChar.getY();
-		_curZ = activeChar.getZ();
+		if (activeChar.getActiveEnchantItem() != null)
+			activeChar.cancellEnchant();
 		
 		if (activeChar.getTeleMode() > 0)
 		{
@@ -100,9 +95,7 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			activeChar.teleToLocation(_targetX, _targetY, _targetZ, false);
 			return;
 		}
-		
-		if (activeChar.getActiveEnchantItem() != null)
-			activeChar.cancellEnchant();
+
 
 		if (_moveMovement == 0 && !Config.GEODATA) // cursor movement without geodata is disabled
 		{
@@ -115,11 +108,12 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
+
+		double dx = _targetX - _originX;
+		double dy = _targetY - _originY;
 		
-		double dx = _targetX - _curX;
-		double dy = _targetY - _curY;
 		// Can't move if character trying to move a huge distance
-		if (((dx * dx + dy * dy) > 98010000)) // 9900*9900
+		if ((dx * dx + dy * dy) > 98010000) // 9900*9900
 		{
 			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -138,7 +132,15 @@ public class MoveBackwardToLocation extends L2GameClientPacket
 			activeChar.broadcastPacket(new MoveToLocation(activeChar, new Location(_targetX, _targetY, _targetZ)));
 		}
 		else
+		{
 			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO,new Location(_targetX, _targetY, _targetZ));
+			
+			if(!activeChar.isMoving())
+			{
+				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+				return;
+			}
+		}
 
 		if (activeChar.getPet() != null)
 		{

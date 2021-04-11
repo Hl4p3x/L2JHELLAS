@@ -7,7 +7,7 @@ import com.l2jhellas.gameserver.network.L2GameClient.GameClientState;
 import com.l2jhellas.gameserver.network.serverpackets.CharSelected;
 import com.l2jhellas.gameserver.network.serverpackets.SkyInfo;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public class CharacterSelected extends L2GameClientPacket
 {
@@ -40,7 +40,7 @@ public class CharacterSelected extends L2GameClientPacket
 	{
 		final L2GameClient client = getClient();
 		
-		if (!FloodProtectors.performAction(client, Action.CHARACTER_SELECT))
+		if (!FloodProtectors.performAction(client, FloodAction.CHARACTER_SELECT))
 			return;
 		
 		if (client.getActiveCharLock().tryLock())

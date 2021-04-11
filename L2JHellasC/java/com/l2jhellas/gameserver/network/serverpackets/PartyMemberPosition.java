@@ -2,9 +2,9 @@ package com.l2jhellas.gameserver.network.serverpackets;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
-import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 
 public class PartyMemberPosition extends L2GameServerPacket
@@ -19,8 +19,10 @@ public class PartyMemberPosition extends L2GameServerPacket
 	public void reuse(L2Party party)
 	{
 		_locations.clear();
-		for (L2PcInstance member : party.getPartyMembers())
+		party.getPartyMembers().stream().filter(Objects :: nonNull).forEach(member ->
+		{
 			_locations.put(member.getObjectId(), new Location(member.getX(), member.getY(), member.getZ()));
+		});
 	}
 	
 	@Override

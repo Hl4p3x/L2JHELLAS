@@ -1,9 +1,8 @@
 package com.l2jhellas.gameserver.network.serverpackets;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import com.l2jhellas.gameserver.holder.IntIntHolder;
+import com.l2jhellas.gameserver.model.L2Object;
 
 public class StatusUpdate extends L2GameServerPacket
 {
@@ -42,33 +41,54 @@ public class StatusUpdate extends L2GameServerPacket
 	public static final int MAX_CP = 0x22;
 	
 	private final int _objectId;
-	private final List<IntIntHolder> _attributes;
+	private final ArrayList<Attribute> _attributes = new ArrayList<>();
+	
+	static class Attribute 
+	{
+		public int id;
+		public int value;
+		
+		Attribute(int pId, int pValue)
+		{
+			id = pId;
+			value = pValue;
+		}
+	}
 	
 	public StatusUpdate(int objectId)
 	{
-		_attributes = new ArrayList<>();
 		_objectId = objectId;
+	}
+	
+	public StatusUpdate(L2Object object)
+	{
+		_objectId = object.getObjectId();
 	}
 	
 	public void addAttribute(int id, int level)
 	{
-		_attributes.add(new IntIntHolder(id, level));
+		_attributes.add(new Attribute(id, level));
 	}
 	
+	public boolean hasAttributes()
+	{
+		return !_attributes.isEmpty();
+	}
+
 	@Override
 	protected final void writeImpl()
 	{
 		writeC(0x0e);
 		writeD(_objectId);
 		writeD(_attributes.size());
-		
-		for (IntIntHolder temp : _attributes)
+				
+		for (Attribute temp : _attributes) 
 		{
-			writeD(temp.getId());
-			writeD(temp.getValue());
-		}
+			writeD(temp.id);
+			writeD(temp.value);
+		}	
 	}
-	
+
 	@Override
 	public String getType()
 	{

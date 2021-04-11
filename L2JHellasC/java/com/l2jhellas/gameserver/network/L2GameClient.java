@@ -67,7 +67,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	
 	private final ArrayBlockingQueue<ReceivablePacket<L2GameClient>> _packetQueue;
 	private final ReentrantLock _queueLock = new ReentrantLock();
-	private final long[] _floodProtectors = new long[FloodProtectors.Action.VALUES_LENGTH];
+	private final long[] _floodProtectors = new long[FloodProtectors.FloodAction.VALUES_LENGTH];
 
 	private static final String DELETE_CHAR_FRIENDS = "DELETE FROM character_friends WHERE char_id=? OR friend_id=?";
 	private static final String DELETE_CHAR_HENNAS = "DELETE FROM character_hennas WHERE char_obj_id=?";

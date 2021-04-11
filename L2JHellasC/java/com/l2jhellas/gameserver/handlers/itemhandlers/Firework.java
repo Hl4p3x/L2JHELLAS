@@ -1,6 +1,5 @@
 package com.l2jhellas.gameserver.handlers.itemhandlers;
 
-
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
@@ -10,7 +9,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public class Firework implements IItemHandler
 {
@@ -29,7 +28,7 @@ public class Firework implements IItemHandler
 			
 		L2PcInstance activeChar = (L2PcInstance) playable;
 
-		if (!FloodProtectors.performAction(activeChar.getClient(), Action.ITEM_HANDLER))
+		if (!FloodProtectors.performAction(activeChar.getClient(), FloodAction.ITEM_HANDLER))
 		{
 			activeChar.sendMessage("You are using this action too fast!");
 			return;

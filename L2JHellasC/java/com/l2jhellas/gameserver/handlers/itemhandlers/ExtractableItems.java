@@ -12,7 +12,7 @@ import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ItemList;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.Rnd;
 
 /**
@@ -30,7 +30,7 @@ public class ExtractableItems implements IItemHandler
 
 		final L2PcInstance player = (L2PcInstance) playable;
 
-		if (!FloodProtectors.performAction(player.getClient(), Action.ITEM_HANDLER))
+		if (!FloodProtectors.performAction(player.getClient(), FloodAction.ITEM_HANDLER))
 		{
 			player.sendMessage("You may not use the item at this time. Try again later.");
 			return;

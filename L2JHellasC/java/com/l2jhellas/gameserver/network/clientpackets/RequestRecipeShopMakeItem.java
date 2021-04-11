@@ -6,7 +6,7 @@ import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 import com.l2jhellas.util.Util;
 
 public final class RequestRecipeShopMakeItem extends L2GameClientPacket
@@ -34,7 +34,7 @@ public final class RequestRecipeShopMakeItem extends L2GameClientPacket
 		if (activeChar == null)
 			return;
 		
-		if (!FloodProtectors.performAction(getClient(), Action.MANUFACTURE))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.MANUFACTURE))
 			return;
 		
 		final L2PcInstance manufacturer = L2World.getInstance().getPlayer(_id);

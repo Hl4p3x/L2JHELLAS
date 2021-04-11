@@ -11,6 +11,7 @@ import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.actor.poly.ObjectPoly;
+import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.actor.position.ObjectPosition;
 import com.l2jhellas.gameserver.model.quest.QuestState;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
@@ -78,6 +79,11 @@ public abstract class L2Object
 	public final int getZ()
 	{
 		return getPosition().getZ();
+	}
+	
+	public Location getLoc()
+	{
+		return new Location(getX(),getY(),getZ());
 	}
 	
 	public void decayMe()
@@ -395,5 +401,10 @@ public abstract class L2Object
 	public int calculateHeadingTo(L2Character activeChar)
 	{
 		return Util.calculateHeadingFrom(getX(), getY(), activeChar.getX(), activeChar.getY());
+	}
+	
+	public int getDuelId()
+	{
+		return 0;
 	}
 }

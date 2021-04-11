@@ -4,7 +4,7 @@ import com.l2jhellas.gameserver.network.serverpackets.CharDeleteFail;
 import com.l2jhellas.gameserver.network.serverpackets.CharDeleteOk;
 import com.l2jhellas.gameserver.network.serverpackets.CharSelectInfo;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class CharacterDelete extends L2GameClientPacket
 {
@@ -21,7 +21,7 @@ public final class CharacterDelete extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (!FloodProtectors.performAction(getClient(), Action.CHARACTER_SELECT))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.CHARACTER_SELECT))
 		{
 			sendPacket(new CharDeleteFail(CharDeleteFail.REASON_DELETION_FAILED));
 			return;

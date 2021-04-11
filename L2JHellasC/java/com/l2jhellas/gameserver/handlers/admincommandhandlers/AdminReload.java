@@ -15,7 +15,6 @@ import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
 import com.l2jhellas.gameserver.datatables.xml.AugmentationData;
 import com.l2jhellas.gameserver.datatables.xml.DoorData;
-import com.l2jhellas.gameserver.datatables.xml.LevelUpData;
 import com.l2jhellas.gameserver.datatables.xml.MultisellData;
 import com.l2jhellas.gameserver.datatables.xml.NpcWalkerRoutesData;
 import com.l2jhellas.gameserver.datatables.xml.SkillSpellbookData;
@@ -185,13 +184,6 @@ public class AdminReload implements IAdminCommandHandler
 					CursedWeaponsManager.reload();
 					sendReloadPage(activeChar);
 					activeChar.sendMessage("Cursed Weapons has been reloaded.");
-					break;
-				}
-				case "levelupdata":
-				{
-					LevelUpData.getInstance();
-					sendReloadPage(activeChar);
-					activeChar.sendMessage("Level up Data has been reloaded.");
 					break;
 				}
 				case "summonitems":

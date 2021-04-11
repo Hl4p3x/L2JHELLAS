@@ -8,6 +8,8 @@ import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.shield.antiflood.FloodProtectors;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class Action extends L2GameClientPacket
 {
@@ -36,6 +38,12 @@ public final class Action extends L2GameClientPacket
 		
 		if (activeChar == null)
 			return;
+		
+		if (activeChar.getTarget() != null && activeChar.getTarget().getObjectId() == _objectId && !FloodProtectors.performAction(activeChar.getClient(),FloodAction.ACTION_REQUEST))
+		{
+			activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+			return;
+		}
 		
 		if (activeChar.inObserverMode())
 		{

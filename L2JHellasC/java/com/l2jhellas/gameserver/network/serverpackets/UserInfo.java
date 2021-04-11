@@ -208,8 +208,16 @@ public class UserInfo extends L2GameServerPacket
 		writeD(_activeChar.getPkKills());
 		writeD(_activeChar.getPvpKills());
 
-		writeH(_activeChar.getCubics().size());
-		_activeChar.getCubics().keySet().forEach(this::writeH);
+		if(_activeChar.getCubics() != null)
+		{
+			writeH(_activeChar.getCubics().size());
+			_activeChar.getCubics().keySet().forEach(this::writeH);
+		}
+		else
+		{
+			writeH(0x00);
+			writeH(0x00);
+		}
 		
 		writeC(_activeChar.isInPartyMatchRoom() ? 1 : 0);
 		

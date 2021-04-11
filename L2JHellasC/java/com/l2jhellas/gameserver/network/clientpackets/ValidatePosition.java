@@ -7,7 +7,6 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.GetOnVehicle;
 import com.l2jhellas.gameserver.network.serverpackets.MoveToLocation;
-import com.l2jhellas.gameserver.network.serverpackets.PartyMemberPosition;
 
 public class ValidatePosition extends L2GameClientPacket
 {
@@ -101,9 +100,6 @@ public class ValidatePosition extends L2GameClientPacket
 		}
 		activeChar.setLastClientPosition(_x, _y, _z);			
 		activeChar.setLastServerPosition(activeChar.getX(), activeChar.getY(), activeChar.getZ());
-
-		if (activeChar.getParty() != null)
-			activeChar.getParty().broadcastToPartyMembers(activeChar, new PartyMemberPosition(activeChar.getParty()));
 	}
 
 	@Override

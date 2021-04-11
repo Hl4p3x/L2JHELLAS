@@ -27,7 +27,7 @@ public final class RequestChangePetName extends L2GameClientPacket
 	protected void runImpl()
 	{
 		L2Character activeChar = getClient().getActiveChar();
-		if (activeChar == null)
+		if (activeChar == null || _name.isEmpty())
 			return;
 		
 		final L2Summon pet = activeChar.getPet();

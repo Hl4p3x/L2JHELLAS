@@ -4,7 +4,7 @@ package com.l2jhellas.gameserver.network.clientpackets;
 import com.l2jhellas.gameserver.controllers.RecipeController;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
-import com.l2jhellas.shield.antiflood.FloodProtectors.Action;
+import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
 public final class RequestRecipeItemMakeSelf extends L2GameClientPacket
 {
@@ -21,7 +21,7 @@ public final class RequestRecipeItemMakeSelf extends L2GameClientPacket
 	@Override
 	protected void runImpl()
 	{
-		if (!FloodProtectors.performAction(getClient(), Action.MANUFACTURE))
+		if (!FloodProtectors.performAction(getClient(), FloodAction.MANUFACTURE))
 			return;
 		
 		final L2PcInstance activeChar = getClient().getActiveChar();
