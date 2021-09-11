@@ -146,7 +146,6 @@ public abstract class AbstractOlympiadGame
 		return true;
 	}
 	
-	@SuppressWarnings("static-access")
 	protected static final void removals(L2PcInstance player, boolean removeParty)
 	{
 		if (player == null)
@@ -215,7 +214,7 @@ public abstract class AbstractOlympiadGame
 		// Discharge any active shots
 		L2ItemInstance item = player.getActiveWeaponInstance();
 		if (item != null)
-			item.setChargedNoNe();
+			item.unChargeAllShots();
 			
 		player.sendSkillList();
 	}

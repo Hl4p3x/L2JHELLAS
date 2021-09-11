@@ -491,12 +491,12 @@ public class L2AttackableAI extends L2CharacterAI
 			return;
 		}
 			
-		final int collision = npc.getTemplate().getCollisionRadius();
+		final int collision = (int) npc.getTemplate().getCollisionRadius();
 						
 		if (npc.isCoreAIDisabled())
 			return;
 
-		final int combinedCollision = collision + target.getTemplate().getCollisionRadius();
+		final int combinedCollision = (int) (collision + target.getTemplate().getCollisionRadius());
 
 		if (Rnd.get(10) <= 4 && !npc.isMovementDisabled() && npc.getAttackByList().contains(target))
 		{
@@ -716,7 +716,7 @@ public class L2AttackableAI extends L2CharacterAI
         }
 		
 		final double dista = Math.sqrt(npc.getPlanDistanceSq(target.getX(), target.getY()));
-		int dist2 = (int) dista - npc.getTemplate().collisionRadius;
+		int dist2 = (int) ((int) dista - npc.getTemplate().collisionRadius);
 		
 		if (dist2 > range)
 		{		
@@ -800,7 +800,7 @@ public class L2AttackableAI extends L2CharacterAI
 			
 			if (npc.isMovementDisabled())
 			{
-				if (!npc.isInRadius2D(target, npc.getPhysicalAttackRange() + npc.getTemplate().getCollisionRadius() + ((L2Character) target).getTemplate().getCollisionRadius()))
+				if (!npc.isInRadius2D(target, npc.getPhysicalAttackRange() + (int)npc.getTemplate().getCollisionRadius() + (int)((L2Character) target).getTemplate().getCollisionRadius()))
 					return false;
 				
 				if (!canSee)
@@ -836,7 +836,7 @@ public class L2AttackableAI extends L2CharacterAI
 		
 		final boolean isBad =  skill.isDebuff() || skill.isOffensive();
 		
-		final int range = insideCastRange ? skill.getCastRange() + getActiveChar().getTemplate().getCollisionRadius() : 2000;
+		final int range = (int) (insideCastRange ? skill.getCastRange() + getActiveChar().getTemplate().getCollisionRadius() : 2000);
 		
 		Stream<L2Character> stream;
 		if (isBad)
@@ -953,7 +953,7 @@ public class L2AttackableAI extends L2CharacterAI
 			{			
 				if (me.getFactionId() != null)
 				{
-					final int collision = me.getTemplate().getCollisionRadius();
+					final int collision = (int) me.getTemplate().getCollisionRadius();
 					final int factionRange = me.getFactionRange() + collision;
 
 					final L2Character finalTarget = (L2Character) me.getTarget();	

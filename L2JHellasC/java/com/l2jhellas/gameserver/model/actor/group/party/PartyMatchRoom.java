@@ -7,6 +7,7 @@ import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ExManagePartyRoomMember;
+import com.l2jhellas.gameserver.network.serverpackets.L2GameServerPacket;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 
 public class PartyMatchRoom
@@ -89,6 +90,12 @@ public class PartyMatchRoom
 			member.sendPacket(new ExManagePartyRoomMember(oldLeader, this, 1));
 			member.sendPacket(SystemMessageId.PARTY_ROOM_LEADER_CHANGED);
 		}
+	}
+	
+	public void broadcastPacket(L2GameServerPacket packet)
+	{
+		for (L2PcInstance member : getPartyMembers())
+			member.sendPacket(packet);
 	}
 	
 	public int getId()

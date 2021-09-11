@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.handler.ISkillHandler;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
@@ -70,8 +71,8 @@ public class StrSiegeAssault implements ISkillHandler
 				boolean dual = activeChar.isUsingDualWeapon();
 				byte shld = Formulas.calcShldUse(activeChar, target);
 				boolean crit = Formulas.calcCrit(activeChar.getCriticalHit(target, skill));
-				boolean soul = (weapon != null && weapon.getChargedSoulshot() == L2ItemInstance.CHARGED_SOULSHOT && weapon.getItemType() != L2WeaponType.DAGGER);
-				
+				final boolean soul = activeChar.isChargedShot(ShotType.SOULSHOT) && (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER);
+
 				if (!crit && (skill.getCondition() & L2Skill.COND_CRIT) != 0)
 					damage = 0;
 				else
@@ -81,7 +82,7 @@ public class StrSiegeAssault implements ISkillHandler
 				{
 					target.reduceCurrentHp(damage, activeChar);
 					if (soul && weapon != null)
-						weapon.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
+					    activeChar.setChargedShot(ShotType.SOULSHOT, false);
 					
 					activeChar.sendDamageMessage(target, damage, false, false, false);
 					

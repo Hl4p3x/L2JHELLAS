@@ -109,12 +109,7 @@ public class L2DoorAI extends L2CharacterAI
 	protected void onEvtArrived()
 	{
 	}
-	
-	@Override
-	protected void onEvtArrivedRevalidate()
-	{
-	}
-	
+
 	@Override
 	protected void onEvtArrivedBlocked(Location blocked_at_pos)
 	{

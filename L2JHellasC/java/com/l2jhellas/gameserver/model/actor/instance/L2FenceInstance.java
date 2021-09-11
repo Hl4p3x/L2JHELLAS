@@ -1,8 +1,8 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
+import com.l2jhellas.gameserver.datatables.xml.FenceData;
 import com.l2jhellas.gameserver.enums.FenceState;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
-import com.l2jhellas.gameserver.instancemanager.FenceManager;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
@@ -68,14 +68,14 @@ public final class L2FenceInstance extends L2Object
 	{
 		decayMe();
 		
-		FenceManager.getInstance().removeFence(this);
+		FenceData.getInstance().removeFence(this);
 		
 		return false;
 	}
 	
 	public static boolean deleteAllFence()
 	{
-		FenceManager.getInstance().deleteAllFence();
+		FenceData.getInstance().deleteAllFence();
 		return false;
 	}
 	

@@ -17,6 +17,7 @@ import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
 import com.PackRoot;
+import com.l2jhellas.gameserver.templates.StatsSet;
 import com.l2jhellas.util.filters.file.XMLFilter;
 
 public interface DocumentParser
@@ -309,6 +310,18 @@ public interface DocumentParser
 			LOG.warning("Invalid value specified for node: " + node.getNodeName() + " specified value: " + node.getNodeValue() + " should be enum value of " + clazz.getSimpleName() + " using default value: " + defaultValue);
 			return defaultValue;
 		}
+	}
+	
+	default StatsSet parseAttributes(Node node)
+	{
+		final NamedNodeMap attrs = node.getAttributes();
+		final StatsSet map = new StatsSet();
+		for (int i = 0; i < attrs.getLength(); i++)
+		{
+			final Node att = attrs.item(i);
+			map.put(att.getNodeName(), att.getNodeValue());
+		}
+		return map;
 	}
 	
 	default <T extends Enum<T>> T parseEnum(Node node, Class<T> clazz)

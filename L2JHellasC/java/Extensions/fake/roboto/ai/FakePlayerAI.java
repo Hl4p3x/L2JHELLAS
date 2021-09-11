@@ -333,7 +333,7 @@ public abstract class FakePlayerAI
 		if (offset < 10)
 			offset = 10;
 		
-		if (!_fakePlayer.isInsideRadius(point3d.getX(), point3d.getY(), offset + _fakePlayer.getTemplate().getCollisionRadius(), false))
+		if (!_fakePlayer.isInsideRadius(point3d.getX(), point3d.getY(), offset + (int)_fakePlayer.getTemplate().getCollisionRadius(), false))
 		{
 			if (_fakePlayer.isMovementDisabled())
 				return true;

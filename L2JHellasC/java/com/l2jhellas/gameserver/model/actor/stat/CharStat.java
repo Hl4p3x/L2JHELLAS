@@ -108,7 +108,7 @@ public class CharStat
 	
 	public int getEvasionRate(L2Character target)
 	{
-		return (int) (calcStat(Stats.EVASION_RATE, 0, target, null) / _activeChar.getArmourExpertisePenalty());
+		return (int) calcStat(Stats.EVASION_RATE, 0, target, null);
 	}
 	
 	public int getAccuracy()
@@ -118,7 +118,7 @@ public class CharStat
 	
 	public int getMaxHp()
 	{
-		return (int) calcStat(Stats.MAX_HP, _activeChar.getTemplate().baseHpMax, null, null);
+		return (int) calcStat(Stats.MAX_HP, _activeChar.getTemplate().getBaseHpMax(_activeChar.getLevel()), null, null);
 	}
 	
 	public int getMaxCp()
@@ -128,7 +128,7 @@ public class CharStat
 	
 	public int getMaxMp()
 	{
-		return (int) calcStat(Stats.MAX_MP, _activeChar.getTemplate().baseMpMax, null, null);
+		return (int) calcStat(Stats.MAX_MP, _activeChar.getTemplate().getBaseMpMax(_activeChar.getLevel()), null, null);
 	}
 	
 	@SuppressWarnings("incomplete-switch")
@@ -412,6 +412,9 @@ public class CharStat
 			if (_activeChar.isInsideZone(ZoneId.SWAMP) || _activeChar.isInsideZone(ZoneId.WATER))
 				walkspd /= 1;
 			
+			if (_activeChar.isPlayer())
+				((L2PcInstance) _activeChar).setMoveSpeed(walkspd);
+			
 			return walkspd;
 		}
 		return (int) calcStat(Stats.WALK_SPEED, getBaseWalkSpeed(), null, null);
@@ -421,7 +424,7 @@ public class CharStat
 	{
 		// err we should be adding TO the persons run speed not making it a constant
 		int val = (int) (calcStat(Stats.RUN_SPEED, getBaseRunSpeed(), null, null));
-		if (_activeChar instanceof L2PcInstance && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
+		if (_activeChar.isPlayer() && ((L2PcInstance) _activeChar).getClassId().getId() >= 88)
 			val += BalanceLoad.Speed[((L2PcInstance) _activeChar).getClassId().getId() - 88];
 		
 		if (_activeChar.isFlying())
@@ -438,7 +441,11 @@ public class CharStat
 		if(_activeChar.isInsideZone(ZoneId.WATER))
 			val /= 1.4;
 
-		return Math.min(val, Config.MAX_RUN_SPEED);
+		int spd = Math.min(val, Config.MAX_RUN_SPEED);
+		if (_activeChar.isPlayer())
+			((L2PcInstance) _activeChar).setMoveSpeed(spd);
+		
+		return spd;
 	}
 
 	public int getBaseRunSpeed()

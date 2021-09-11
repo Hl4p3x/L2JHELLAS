@@ -1,21 +1,22 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
+import java.util.List;
+
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
 import com.l2jhellas.gameserver.enums.player.ClassId;
-import com.l2jhellas.gameserver.model.L2EnchantSkillLearn;
-import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2SkillLearn;
+import com.l2jhellas.gameserver.holder.EnchantSkillNode;
+import com.l2jhellas.gameserver.holder.GeneralSkillNode;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.gameserver.network.serverpackets.AcquireSkillDone;
 import com.l2jhellas.gameserver.network.serverpackets.AcquireSkillList;
 import com.l2jhellas.gameserver.network.serverpackets.ExEnchantSkillList;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.ServerObjectInfo;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
-import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 
 public class L2NpcInstance extends L2Npc
@@ -69,44 +70,20 @@ public class L2NpcInstance extends L2Npc
 			
 			return;
 		}
-		
-		L2SkillLearn[] skills = SkillTreeData.getInstance().getAvailableSkills(player, classId);
-		AcquireSkillList asl = new AcquireSkillList(AcquireSkillList.skillType.Usual);
-		int counts = 0;
-		
-		for (L2SkillLearn s : skills)
+			
+		final List<GeneralSkillNode> skills = player.getAvailableSkills();
+		if (skills.isEmpty())
 		{
-			L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
-			
-			if (sk == null || !sk.getCanLearn(player.getClassId()) || !sk.canTeachBy(npcId))
-				continue;
-			
-			int cost = SkillTreeData.getInstance().getSkillCost(player, sk);
-			counts++;
-			
-			asl.addSkill(s.getId(), s.getLevel(), s.getLevel(), cost, 0);
-		}
-		
-		if (counts == 0)
-		{
-			int minlevel = SkillTreeData.getInstance().getMinLevelForNewSkill(player, classId);
-			
+			final int minlevel = player.getRequiredLevelForNextSkill();
 			if (minlevel > 0)
-			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
-				sm.addNumber(minlevel);
-				player.sendPacket(sm);
-			}
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1).addNumber(minlevel));
 			else
-			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
-				player.sendPacket(sm);
-			}
+				player.sendPacket(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
+			
+			player.sendPacket(AcquireSkillDone.STATIC_PACKET);
 		}
 		else
-		{
-			player.sendPacket(asl);
-		}
+			player.sendPacket(new AcquireSkillList(AcquireSkillList.skillType.Usual, skills));
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
@@ -122,7 +99,7 @@ public class L2NpcInstance extends L2Npc
 			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
 			StringBuilder sb = new StringBuilder();
 			sb.append("<html><body>");
-			sb.append("I cannot teach you. My class list is empty.<br> Ask admin to fix it. Need add my npcid and classes to skill_learn.sql.<br>NpcId:" + npcId + ", Your classId:" + player.getClassId().getId() + "<br>");
+			sb.append("I cannot teach you. My class list is empty.<br> Ask admin to fix it. Need add my npcid and classes to skill_learn.xml.<br>NpcId:" + npcId + ", Your classId:" + player.getClassId().getId() + "<br>");
 			sb.append("</body></html>");
 			html.setHtml(sb.toString());
 			player.sendPacket(html);
@@ -155,44 +132,20 @@ public class L2NpcInstance extends L2Npc
 			return;
 		}
 		
-		L2EnchantSkillLearn[] skills = SkillTreeData.getInstance().getAvailableEnchantSkills(player);
-		ExEnchantSkillList esl = new ExEnchantSkillList();
-		int counts = 0;
-		
-		for (L2EnchantSkillLearn s : skills)
-		{
-			L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
-			if (sk == null)
-				continue;
-			counts++;
-			esl.addSkill(s.getId(), s.getLevel(), s.getSpCost(), s.getExp());
-		}
-		if (counts == 0)
+		final List<EnchantSkillNode> skills = SkillTreeData.getInstance().getEnchantSkillsFor(player);
+		if (skills.isEmpty())
 		{
 			player.sendPacket(SystemMessageId.THERE_IS_NO_SKILL_THAT_ENABLES_ENCHANT);
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			int level = player.getLevel();
 			
-			if (level < 74)
-			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
-				sm.addNumber(level);
-				player.sendPacket(sm);
-			}
+			if (player.getLevel() < 74)
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1).addNumber(74));
 			else
-			{
-				StringBuilder sb = new StringBuilder();
-				sb.append("<html><body>");
-				sb.append("You've learned all skills for your class.<br>");
-				sb.append("</body></html>");
-				html.setHtml(sb.toString());
-				player.sendPacket(html);
-			}
+				player.sendPacket(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
+			
+			player.sendPacket(AcquireSkillDone.STATIC_PACKET);
 		}
 		else
-		{
-			player.sendPacket(esl);
-		}
+			player.sendPacket(new ExEnchantSkillList(skills));
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}
@@ -210,63 +163,6 @@ public class L2NpcInstance extends L2Npc
 				{
 					player.setSkillLearningClassId(ClassId.values()[Integer.parseInt(id)]);
 					showSkillList(player, ClassId.values()[Integer.parseInt(id)]);
-				}
-				else
-				{
-					boolean own_class = false;
-					
-					if (_classesToTeach != null)
-					{
-						for (ClassId cid : _classesToTeach)
-						{
-							if (cid.equalsOrChildOf(player.getClassId()))
-							{
-								own_class = true;
-								break;
-							}
-						}
-					}
-					
-					String text = "<html><body><center>Skill learning:</center><br>";
-					
-					if (!own_class)
-					{
-						String mages = player.isMageClass() ? "fighters" : "mages";
-						text += "Skills of your class are the easiest to learn.<br>" + "Skills of another class are harder.<br>" + "Skills for another race are even more hard to learn.<br>" + "You can also learn skills of " + mages + ", and they are" + " the hardest to learn!<br>" + "<br>";
-					}
-					
-					// make a list of classes
-					if (_classesToTeach != null)
-					{
-						int count = 0;
-						ClassId classCheck = player.getClassId();
-						
-						while ((count == 0) && (classCheck != null))
-						{
-							for (ClassId cid : _classesToTeach)
-							{
-								if (cid.level() != classCheck.level())
-									continue;
-								
-								if (SkillTreeData.getInstance().getAvailableSkills(player, cid).length == 0)
-									continue;
-								
-								text += "<a action=\"bypass -h npc_%objectId%_SkillList " + cid.getId() + "\">Learn " + cid + "'s class Skills</a><br>\n";
-								count++;
-							}
-							classCheck = classCheck.getParent();
-						}
-						classCheck = null;
-					}
-					else
-					{
-						text += "No Skills.<br>";
-					}
-					
-					text += "</body></html>";
-					
-					insertObjectIdAndShowChatWindow(player, text);
-					player.sendPacket(ActionFailed.STATIC_PACKET);
 				}
 			}
 			else

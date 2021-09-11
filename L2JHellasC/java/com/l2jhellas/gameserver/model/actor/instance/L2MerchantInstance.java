@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.controllers.TradeController;
 import com.l2jhellas.gameserver.datatables.xml.MultisellData;
+import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.L2TradeList;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.BuyList;
@@ -48,7 +49,7 @@ public class L2MerchantInstance extends L2NpcInstance
 		
 		if (list != null)
 		{
-			WearList bl = new WearList(list, player.getAdena(), player.getExpertiseIndex());
+			WearList bl = new WearList(list, player.getAdena(), player.getSkillLevel(L2Skill.SKILL_EXPERTISE));
 			player.sendPacket(bl);
 		}
 		else

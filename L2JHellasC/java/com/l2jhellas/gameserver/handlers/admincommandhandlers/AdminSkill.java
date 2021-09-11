@@ -4,11 +4,9 @@ import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2SkillLearn;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -134,32 +132,8 @@ public class AdminSkill implements IAdminCommandHandler
 			activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 			return;
 		}
-		boolean countUnlearnable = true;
-		int unLearnable = 0;
-		int skillCounter = 0;
-		L2SkillLearn[] skills = SkillTreeData.getInstance().getAvailableSkills(player, player.getClassId());
-		while (skills.length > unLearnable)
-		{
-			for (L2SkillLearn s : skills)
-			{
-				L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
-				if (sk == null || !sk.getCanLearn(player.getClassId()))
-				{
-					if (countUnlearnable)
-						unLearnable++;
-					continue;
-				}
-				if (player.getSkillLevel(sk.getId()) == -1)
-					skillCounter++;
-				player.addSkill(sk, true);
-			}
-			countUnlearnable = false;
-			skills = SkillTreeData.getInstance().getAvailableSkills(player, player.getClassId());
-		}
-		// Notify player and admin
-		player.sendMessage("A GM gave you " + skillCounter + " skills.");
-		activeChar.sendMessage("You gave " + skillCounter + " skills to " + player.getName());
-		player.sendSkillList();
+		player.rewardSkills();
+		activeChar.sendMessage("You gave all available skills to " + player.getName() + ".");
 	}
 	
 	@Override
@@ -204,7 +178,7 @@ public class AdminSkill implements IAdminCommandHandler
 		replyMSG.append("</tr></table>");
 		replyMSG.append("<br><br>");
 		replyMSG.append("<center>Editing <font color=\"LEVEL\">" + player.getName() + "</font></center>");
-		replyMSG.append("<br><table width=270><tr><td>Lv: " + player.getLevel() + " " + player.getTemplate().className + "</td></tr></table>");
+		replyMSG.append("<br><table width=270><tr><td>Lv: " + player.getLevel() + " " + player.getTemplate().getClassName() + "</td></tr></table>");
 		replyMSG.append("<br><table width=270><tr><td>Note: Dont forget that modifying players skills can</td></tr>");
 		replyMSG.append("<tr><td>ruin the game...</td></tr></table>");
 		replyMSG.append("<br><center>Click on the skill you wish to remove:</center>");
@@ -249,7 +223,7 @@ public class AdminSkill implements IAdminCommandHandler
 		adminReply.setFile("data/html/admin/charskills.htm");
 		adminReply.replace("%name%", player.getName());
 		adminReply.replace("%level%", String.valueOf(player.getLevel()));
-		adminReply.replace("%class%", player.getTemplate().className);
+		adminReply.replace("%class%", player.getTemplate().getClassName());
 		activeChar.sendPacket(adminReply);
 	}
 	

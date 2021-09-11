@@ -1,5 +1,7 @@
 package com.l2jhellas.gameserver.model.zone.type;
 
+import java.util.Objects;
+
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.model.actor.L2Character;
@@ -39,20 +41,22 @@ public class L2SwampZone extends L2CastleZoneType
 		else
 			super.setParameter(name, value);
 	}
-	
+
 	@Override
 	protected void onEnter(L2Character character)
 	{
-		// Castle traps are active only during siege, or if they're activated.
-		// if (getCastle() != null && (!isEnabled() || !getCastle().getSiege().getIsInProgress()))
-		// return;
-		
-		// Active only for attacker? part1 for tests
-		if (character instanceof L2PcInstance && ActiveonlyForAttacker((character)))
+		L2PcInstance player = character.getActingPlayer();
+
+		if(player != null && ActiveonlyForAttacker((player)))
 		{
-			character.setInsideZone(ZoneId.SWAMP, true);
-			((L2PcInstance) character).sendPacket(new ShowCastleTrap(_castlTrapeId, 1));
-			((L2PcInstance) character).broadcastUserInfo();
+			player.setInsideZone(ZoneId.SWAMP, true);
+
+			long count = getPlayersInside().stream().filter(Objects :: nonNull).filter(p -> ActiveonlyForAttacker(p)).count();
+
+			if(count <= 1)
+				player.broadcastPacket(new ShowCastleTrap(_castlTrapeId, 1));							
+
+			player.broadcastUserInfo();
 		}
 	}
 	
@@ -68,23 +72,23 @@ public class L2SwampZone extends L2CastleZoneType
 		return (_castlTrapeId > 0 && attacker != null && getCastle() != null && getCastle().getCastleId() > 0 && getCastle().getSiege().getIsInProgress() && getCastle().getSiege().checkIsAttacker(((L2PcInstance) attacker).getClan()));
 	}
 	
-	// Active only for attacker? testActive part1
-	// private boolean ActiveonlyForTest(L2Character attacker)
-	// {
-	// return (_castlTrapeId > 0 && attacker != null && getCastle() != null);
-	// }
-	
 	@Override
 	protected void onExit(L2Character character)
 	{
-		// don't broadcast info if not needed
+		 //don't broadcast info if not needed
 		if (character.isInsideZone(ZoneId.SWAMP))
 		{
-			if (ActiveonlyForAttacker((character)))
-			{
-				character.setInsideZone(ZoneId.SWAMP, false);
-				((L2PcInstance) character).sendPacket(new ShowCastleTrap(_castlTrapeId, 0));
-				((L2PcInstance) character).broadcastUserInfo();
+			L2PcInstance player = character.getActingPlayer();
+			if(player != null && ActiveonlyForAttacker((player)))
+			{			
+				player.setInsideZone(ZoneId.SWAMP, false);
+
+				long count = getPlayersInside().stream().filter(Objects :: nonNull).filter(p -> ActiveonlyForAttacker(p)).count();
+
+				if(count <= 0)
+					player.broadcastPacket(new ShowCastleTrap(_castlTrapeId, 0));
+
+				player.broadcastUserInfo();
 			}
 		}
 	}

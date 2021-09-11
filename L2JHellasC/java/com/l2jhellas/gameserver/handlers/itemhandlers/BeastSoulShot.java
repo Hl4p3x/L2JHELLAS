@@ -1,10 +1,10 @@
 package com.l2jhellas.gameserver.handlers.itemhandlers;
 
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillUse;
@@ -53,26 +53,8 @@ public class BeastSoulShot implements IItemHandler
 			return;
 		}
 		
-		L2ItemInstance weaponInst = null;
-		
-		if (activePet instanceof L2PetInstance)
-			weaponInst = ((L2PetInstance) activePet).getActiveWeaponInstance();
-		
-		if (weaponInst == null)
-		{
-			if (activePet.getChargedSoulShot() != L2ItemInstance.CHARGED_NONE)
-				return;
-			
-			activePet.setChargedSoulShot(L2ItemInstance.CHARGED_SOULSHOT);
-		}
-		else
-		{
-			// SoulShots are already active.
-			if (weaponInst.getChargedSoulshot() != L2ItemInstance.CHARGED_NONE)
-				return;
-			
-			weaponInst.setChargedSoulshot(L2ItemInstance.CHARGED_SOULSHOT);
-		}
+		if (activePet.isChargedShot(ShotType.SOULSHOT))
+			return;
 		
 		// If the player doesn't have enough beast soulshot remaining, remove any auto soulshot task.
 		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
@@ -82,6 +64,7 @@ public class BeastSoulShot implements IItemHandler
 			return;
 		}
 		
+		activePet.setChargedShot(ShotType.SOULSHOT, true);
 		activeOwner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_USES_S1).addItemName(itemId));
 		Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activePet, activePet, 2033, 1, 0, 0), 700);
 	}

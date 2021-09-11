@@ -16,8 +16,6 @@ import Extensions.IpCatcher;
 import Extensions.AchievmentsEngine.AchievementsManager;
 import Extensions.Balancer.BalanceLoad;
 import Extensions.RankSystem.RankLoader;
-import Extensions.Vote.VoteRewardHopzone;
-import Extensions.Vote.VoteRewardTopzone;
 import Extensions.fake.roboto.FakePlayerManager;
 
 import com.L2JHellasInfo;
@@ -40,9 +38,9 @@ import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
 import com.l2jhellas.gameserver.datatables.xml.ArmorSetsData;
 import com.l2jhellas.gameserver.datatables.xml.AugmentationData;
-import com.l2jhellas.gameserver.datatables.xml.CharTemplateData;
 import com.l2jhellas.gameserver.datatables.xml.DoorData;
 import com.l2jhellas.gameserver.datatables.xml.ExtractableItemData;
+import com.l2jhellas.gameserver.datatables.xml.FenceData;
 import com.l2jhellas.gameserver.datatables.xml.FishTable;
 import com.l2jhellas.gameserver.datatables.xml.HelperBuffData;
 import com.l2jhellas.gameserver.datatables.xml.HennaData;
@@ -51,6 +49,7 @@ import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.datatables.xml.MultisellData;
 import com.l2jhellas.gameserver.datatables.xml.NpcWalkerRoutesData;
 import com.l2jhellas.gameserver.datatables.xml.PetData;
+import com.l2jhellas.gameserver.datatables.xml.PlayerDataTemplate;
 import com.l2jhellas.gameserver.datatables.xml.RecipeData;
 import com.l2jhellas.gameserver.datatables.xml.SkillSpellbookData;
 import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
@@ -110,7 +109,6 @@ import com.l2jhellas.gameserver.taskmanager.RandomAnimationTaskManager;
 import com.l2jhellas.gameserver.taskmanager.TaskManager;
 import com.l2jhellas.mmocore.network.SelectorConfig;
 import com.l2jhellas.mmocore.network.SelectorThread;
-import com.l2jhellas.shield.antibot.AntiBot;
 import com.l2jhellas.util.Util;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 import com.l2jhellas.util.hexid.HexId;
@@ -199,7 +197,7 @@ public class GameServer
 		
 		CharNameTable.getInstance();
 		ClanTable.getInstance();
-		CharTemplateData.getInstance();
+		PlayerDataTemplate.getInstance();
 		CrownManager.getInstance();
 		AdminData.getInstance();
 		HennaData.getInstance();
@@ -213,6 +211,7 @@ public class GameServer
 		SpawnTable.getInstance();
 		DayNightSpawnManager.getInstance().notifyChangeMode();
 		AutoSpawnHandler.getInstance();
+		FenceData.getInstance();
 		SevenSignsFestival.getInstance();
 		SevenSigns.getInstance().spawnSevenSignsNPC();// Spawn the Orators/Preachers if in the Seal Validation period.
 		DoorData.getInstance();
@@ -360,11 +359,6 @@ public class GameServer
 	{
 		AchievementsManager.getInstance();
 		
-		if (Config.ALLOW_TOPZONE_VOTE_REWARD)
-			VoteRewardTopzone.LoadTopZone();
-		if (Config.ALLOW_HOPZONE_VOTE_REWARD)
-			VoteRewardHopzone.LoadHopZone();
-		
 		// Rank System.
 		if (Config.RANK_PVP_SYSTEM_ENABLED)
 			RankLoader.load();
@@ -372,9 +366,6 @@ public class GameServer
 			_log.log(Level.INFO, "Rank PvP System: Disabled");
 		
 		BalanceLoad.LoadEm();
-		
-		if (Config.ALLOW_SEQURITY_QUE)
-			AntiBot.getInstance();
 
 		if (Config.RESTART_BY_TIME_OF_DAY)
 		{

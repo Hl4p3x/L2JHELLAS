@@ -1,6 +1,7 @@
 package com.l2jhellas.gameserver.skills.l2skills;
 
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.model.L2Object;
@@ -61,7 +62,7 @@ public class L2SkillChargeDmg extends L2Skill
 			return;
 		}
 		double modifier = 0;
-		modifier = 0.8 + 0.201 * (getNumCharges() + effect.numCharges); // thanks Diego Vargas of L2Guru: 70*((0.8+0.201*No.Charges) * (PATK+POWER)) / PDEF
+		modifier = 0.8 + 0.2 * (getNumCharges() + effect.numCharges); // thanks Diego Vargas of L2Guru: 70*((0.8+0.201*No.Charges) * (PATK+POWER)) / PDEF
 		if (getTargetType() != L2SkillTargetType.TARGET_AREA && getTargetType() != L2SkillTargetType.TARGET_MULTIFACE)
 			effect.numCharges -= getNumCharges();
 		if (caster instanceof L2PcInstance)
@@ -104,7 +105,7 @@ public class L2SkillChargeDmg extends L2Skill
 			// boolean dual = caster.isUsingDualWeapon();
 			byte shld = Formulas.calcShldUse(caster, target);
 			boolean crit = Formulas.calcCrit(caster.getCriticalHit(target, this));
-			boolean soul = (weapon != null && weapon.getChargedSoulshot() == L2ItemInstance.CHARGED_SOULSHOT && weapon.getItemType() != L2WeaponType.DAGGER);
+			final boolean soul = caster.isChargedShot(ShotType.SOULSHOT) && (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER);
 			
 			// damage calculation, crit is static 2x
 			int damage = (int) Formulas.calcPhysDam(caster, target, this, shld, false, false, soul);
@@ -119,7 +120,7 @@ public class L2SkillChargeDmg extends L2Skill
 				caster.sendDamageMessage(target, (int) finalDamage, false, crit, false);
 				
 				if (soul && weapon != null)
-					weapon.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
+					caster.setChargedShot(ShotType.SOULSHOT, false);
 			}
 			else
 			{

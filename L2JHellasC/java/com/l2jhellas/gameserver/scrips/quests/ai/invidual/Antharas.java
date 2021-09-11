@@ -1,7 +1,7 @@
 package com.l2jhellas.gameserver.scrips.quests.ai.invidual;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
@@ -16,6 +16,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
 import com.l2jhellas.gameserver.model.zone.type.L2BossZone;
+import com.l2jhellas.gameserver.network.serverpackets.Earthquake;
 import com.l2jhellas.gameserver.network.serverpackets.SocialAction;
 import com.l2jhellas.gameserver.network.serverpackets.SpecialCamera;
 import com.l2jhellas.gameserver.scrips.quests.ai.AbstractNpcAI;
@@ -38,8 +39,8 @@ public class Antharas extends AbstractNpcAI
 	
 	private long _action = 0; 
 	private L2PcInstance _actualVictim;
-	private final List<L2Npc> _monsters = new CopyOnWriteArrayList<>();
-	
+	private final Set<L2Npc> _minions = ConcurrentHashMap.newKeySet();
+
 	private int _antharasId; 
 	private L2Skill _skillRegen; 
 	private int _minionTimer;
@@ -47,14 +48,15 @@ public class Antharas extends AbstractNpcAI
 	public Antharas()
 	{
 		super("antharas", "ai");
-		int[] mob = {ANTHARAS,29066, 29067, 29068, 29069, 29070, 29071, 29072, 29073, 29074, 29075, 29076};
+		int[] mob = {29066, 29067, 29068, 29069, 29070, 29071, 29072, 29073, 29074, 29075, 29076};
 		
-		registerMobs(mob, QuestEventType.ON_ATTACK, QuestEventType.ON_KILL, QuestEventType.ON_SPAWN);
+		registerMobs(mob, QuestEventType.ON_ATTACK, QuestEventType.ON_KILL, QuestEventType.ON_SPAWN);	
 		
-		final StatsSet info = GrandBossManager.getStatsSet(ANTHARAS);	
+		final StatsSet info = GrandBossManager.getStatsSet(ANTHARAS);
+		
 		switch (GrandBossManager.getInstance().getBossStatus(ANTHARAS))
 		{
-			case DEAD:
+			case DEAD: 
 				long temp = (info.getLong("respawn_time") - System.currentTimeMillis());
 				if (temp > 0)
 					startQuestTimer("antharas_unlock", null, null, temp);
@@ -62,7 +64,7 @@ public class Antharas extends AbstractNpcAI
 					GrandBossManager.setBossStatus(ANTHARAS, DORMANT);
 				break;
 			
-			case WAITING:
+			case WAITING: 
 				startQuestTimer("beginning", null, null, Config.Antharas_Wait_Time);
 				break;
 			
@@ -74,30 +76,36 @@ public class Antharas extends AbstractNpcAI
 				final int hp = info.getInteger("currentHP");
 				final int mp = info.getInteger("currentMP");
 				
-				checkAntharas();	
+				checkAntharas();
+				
 				final L2Npc antharas = addSpawn(_antharasId, loc_x, loc_y, loc_z, heading, false, 0, false);
-				GrandBossManager.addBoss(ANTHARAS, (L2GrandBossInstance) antharas);			
+				GrandBossManager.addBoss(ANTHARAS, (L2GrandBossInstance) antharas);
+
 				antharas.setCurrentHpMp(hp, mp);
-				antharas.setRunning();		
+				antharas.setRunning();
+				
 				_action = System.currentTimeMillis();
 				
 				startQuestTimer("regen_task", antharas, null, 60000,true);
 				startQuestTimer("skill_task", antharas, null, 2000,true);
-				startQuestTimer("spawn_minions", antharas, null, _minionTimer,true);
+				startQuestTimer("minions_spawn", antharas, null, _minionTimer,true);
+
 				break;
 		}
 	}
 
 	@Override
-	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
-	{
-		if (event.equalsIgnoreCase("beginning"))
+	public String onAdvEvent(String name, L2Npc npc, L2PcInstance player)
+	{	
+		if (name.equalsIgnoreCase("beginning"))
 		{
 			checkAntharas();
 			
 			final L2Npc antharas = addSpawn(_antharasId, 181323, 114850, -7623, 32542, false, 0, false);
 			GrandBossManager.addBoss(ANTHARAS, (L2GrandBossInstance) antharas);
 			antharas.setIsInvul(true);
+
+			antharas.broadcastPacket(new Earthquake(antharas.getX() , antharas.getY() , antharas.getZ(), 20, 10, true));
 			
 			startQuestTimer("spawn_1", antharas, null, 16);
 			startQuestTimer("spawn_2", antharas, null, 3016);
@@ -106,75 +114,78 @@ public class Antharas extends AbstractNpcAI
 			startQuestTimer("spawn_5", antharas, null, 24016);
 			startQuestTimer("spawn_6", antharas, null, 25916);
 		}
-		if (event.equalsIgnoreCase("regen_task"))
+		else if (name.equalsIgnoreCase("regen_task"))
 		{
 			if (_action + 1800000 < System.currentTimeMillis())
 			{
 				GrandBossManager.setBossStatus(ANTHARAS, DORMANT);
+				
 				_Zone.oustAllPlayers();
 				
-				CancelTimers(npc);
+				stopTimers();
 				
 				npc.deleteMe();
 				return null;
 			}
 			_skillRegen.getEffects(npc, npc);
 		}
-		else if (event.equalsIgnoreCase("spawn_1"))
+		else if (name.equalsIgnoreCase("spawn_1"))
 			_Zone.broadcastPacket(new SpecialCamera(npc.getObjectId(), 700, 13, -19, 0, 20000, 0, 0, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_2"))
+		else if (name.equalsIgnoreCase("spawn_2"))
 		{
 			npc.broadcastPacket(new SocialAction(npc.getObjectId(), 1));
 			_Zone.broadcastPacket(new SpecialCamera(npc.getObjectId(), 700, 13, 0, 6000, 20000, 0, 0, 1, 0));
 		}
-		else if (event.equalsIgnoreCase("spawn_3"))
+		else if (name.equalsIgnoreCase("spawn_3"))
 			_Zone.broadcastPacket(new SpecialCamera(npc.getObjectId(), 3700, 0, -3, 0, 10000, 0, 0, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_4"))
+		else if (name.equalsIgnoreCase("spawn_4"))
 		{
 			npc.broadcastPacket(new SocialAction(npc.getObjectId(), 2));
 			_Zone.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1100, 0, -3, 22000, 30000, 0, 0, 1, 0));
 		}
-		else if (event.equalsIgnoreCase("spawn_5"))
+		else if (name.equalsIgnoreCase("spawn_5"))
 			_Zone.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1100, 0, -3, 300, 7000, 0, 0, 1, 0));
-		else if (event.equalsIgnoreCase("spawn_6"))
+		else if (name.equalsIgnoreCase("spawn_6"))
 		{
 			_action = System.currentTimeMillis();
 			
 			GrandBossManager.setBossStatus(ANTHARAS, FIGHTING);
+
 			npc.setIsInvul(false);
 			npc.setRunning();
-			
+
 			startQuestTimer("regen_task", npc, null, 60000,true);
 			startQuestTimer("skill_task", npc, null, 2000,true);
-			startQuestTimer("spawn_minions", npc, null, _minionTimer,true);
+			startQuestTimer("minions_spawn", npc, null, _minionTimer,true);
 		}
-		else if (event.equalsIgnoreCase("skill_task"))
+		else if (name.equalsIgnoreCase("skill_task"))
 			callSkill(npc);
-		else if (event.equalsIgnoreCase("spawn_minions"))
+		else if (name.equalsIgnoreCase("minions_spawn"))
 		{
 			boolean isBehemoth = Rnd.get(100) < 60;
 			int mobNumber = isBehemoth ? 2 : 3;
 			
 			for (int i = 0; i < mobNumber; i++)
 			{
-				if (_monsters.size() > 9)
+				if (_minions.size() > 9)
 					break;
 				
 				final int npcId = isBehemoth ? 29069 : Rnd.get(29070, 29076);
 				final L2Npc dragon = addSpawn(npcId, npc.getX() + Rnd.get(-200, 200), npc.getY() + Rnd.get(-200, 200), npc.getZ(), 0, false, 0, true);
 				((L2MonsterInstance) dragon).setIsRaidMinion(true);
 				
-				_monsters.add(dragon);
+				_minions.add(dragon);
 				
 				final L2PcInstance victim = getRandomPlayer(dragon);
 				if (victim != null)
-					attack(((L2Attackable) dragon), victim);
+				   attack(((L2Attackable) dragon), victim);
+
 				
 				if (!isBehemoth)
 					startQuestTimer("self_destruct", dragon, null, (_minionTimer / 3));
 			}
 		}
-		else if (event.equalsIgnoreCase("self_destruct"))
+		else if (name.equalsIgnoreCase("self_destruct"))
 		{
 			L2Skill skill;
 			switch (npc.getNpcId())
@@ -192,17 +203,18 @@ public class Antharas extends AbstractNpcAI
 			}
 			npc.doCast(skill);
 		}
-		else if (event.equalsIgnoreCase("die_1"))
+		else if (name.equalsIgnoreCase("die_1"))
 		{
+			// spawn teleport Cube.
 			addSpawn(31859, 177615, 114941, -7709, 0, false, 900000, false);
 			startQuestTimer("remove_players", null, null, 900000);
 		}
-		else if (event.equalsIgnoreCase("antharas_unlock"))
+		else if (name.equalsIgnoreCase("antharas_unlock"))
 			GrandBossManager.setBossStatus(ANTHARAS, DORMANT);
-		else if (event.equalsIgnoreCase("remove_players"))
+		else if (name.equalsIgnoreCase("remove_players"))
 			_Zone.oustAllPlayers();
 				
-		return super.onAdvEvent(event, npc, player);
+		return super.onAdvEvent(name, npc, player);
 	}
 
 	@Override
@@ -250,7 +262,7 @@ public class Antharas extends AbstractNpcAI
 	{
 		if (npc.getNpcId() == _antharasId)
 		{
-			CancelTimers(npc);
+			stopTimers();
 			
 			_Zone.broadcastPacket(new SpecialCamera(npc.getObjectId(), 1200, 20, -10, 10000, 13000, 0, 0, 0, 0));
 			_Zone.broadcastPacket(Music.BS01_D_10000.getPacket());
@@ -268,7 +280,7 @@ public class Antharas extends AbstractNpcAI
 		else
 		{
 			cancelQuestTimers("self_destruct");
-			_monsters.remove(npc);
+			_minions.remove(npc);
 		}	
 	
 		return super.onKill(npc, killer, isPet);
@@ -377,16 +389,16 @@ public class Antharas extends AbstractNpcAI
 		return FrequentSkill.ANTHARAS_NORMAL_ATTACK_EX.getSkill();
 	}
 	
-	private void CancelTimers(L2Npc npc)
+	private void stopTimers()
 	{
 		cancelQuestTimers("regen_task");
 		cancelQuestTimers("skill_task");
-		cancelQuestTimers("spawn_minions");
+		cancelQuestTimers("minions_spawn");
 		
 		cancelQuestTimers("self_destruct");
 		
-		_monsters.forEach(L2Npc::deleteMe);
-		_monsters.clear();
+		_minions.forEach(L2Npc::deleteMe);
+		_minions.clear();
 	}
 	
 	public static void main(String[] args)

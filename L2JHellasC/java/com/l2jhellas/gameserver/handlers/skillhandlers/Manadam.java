@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.handlers.skillhandlers;
 
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.handler.ISkillHandler;
 import com.l2jhellas.gameserver.model.L2Object;
@@ -8,7 +9,6 @@ import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -29,25 +29,15 @@ public class Manadam implements ISkillHandler
 		
 		if (activeChar.isAlikeDead())
 			return;
+
+		final boolean sps = activeChar.isChargedShot(ShotType.SPIRITSHOT);
+		final boolean bss = activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOT);	
+
+		if (bss)
+			activeChar.setChargedShot(ShotType.BLESSED_SPIRITSHOT, false);
+		else if (sps)
+			activeChar.setChargedShot(ShotType.SPIRITSHOT, false);
 		
-		boolean ss = false;
-		boolean bss = false;
-		
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-		
-		if (weaponInst != null)
-		{
-			if (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
-			{
-				bss = true;
-				weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-			}
-			else if (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_SPIRITSHOT)
-			{
-				ss = true;
-				weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-			}
-		}
 		for (L2Object target2 : targets)
 		{
 			target = (L2Character) target2;
@@ -65,7 +55,7 @@ public class Manadam implements ISkillHandler
 			}
 			else
 			{
-				double damage = Formulas.calcManaDam(activeChar, target, skill, ss, bss);
+				double damage = Formulas.calcManaDam(activeChar, target, skill, sps, bss);
 				
 				double mp = (damage > target.getCurrentMp() ? target.getCurrentMp() : damage);
 				target.reduceCurrentMp(mp);

@@ -1,6 +1,7 @@
 package com.l2jhellas.gameserver.handlers.itemhandlers;
 
 import com.l2jhellas.gameserver.enums.items.L2CrystalType;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -71,7 +72,7 @@ public class BlessedSpiritShot implements IItemHandler
 		}
 		
 		// Check if Blessed Spiritshot is already active (it can be charged over Spiritshot)
-		if (weaponInst.getChargedSpiritshot() != L2ItemInstance.CHARGED_NONE)
+		if (activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOT))
 			return;
 		
 		// Check for correct grade
@@ -101,7 +102,7 @@ public class BlessedSpiritShot implements IItemHandler
 		}
 		
 		// Charge Blessed Spiritshot
-		weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT);
+		activeChar.setChargedShot(ShotType.BLESSED_SPIRITSHOT, true);
 		
 		// Send message to client
 		activeChar.sendPacket(SystemMessageId.ENABLED_SPIRITSHOT);

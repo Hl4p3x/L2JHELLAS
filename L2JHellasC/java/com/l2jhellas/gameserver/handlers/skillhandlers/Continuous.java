@@ -2,6 +2,7 @@ package com.l2jhellas.gameserver.handlers.skillhandlers;
 
 import com.l2jhellas.gameserver.ai.CtrlEvent;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.handler.ISkillHandler;
 import com.l2jhellas.gameserver.instancemanager.DuelManager;
@@ -11,10 +12,8 @@ import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Attackable;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
-import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 import com.l2jhellas.gameserver.skills.Formulas;
@@ -78,69 +77,21 @@ public class Continuous implements ISkillHandler
 			}
 			
 			if (skill.isOffensive())
-			{
+			{				
+				final boolean sps = activeChar.isChargedShot(ShotType.SPIRITSHOT);
+				final boolean bss = activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOT);						
+				boolean acted = Formulas.calcSkillSuccess(activeChar, target, skill, false, sps, bss);
 				
-				boolean ss = false;
-				boolean sps = false;
-				boolean bss = false;
-				if (player != null)
-				{
-					L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
-					if (weaponInst != null)
-					{
-						if (skill.isMagic())
-						{
-							if (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
-							{
-								bss = true;
-								if (skill.getId() != 1020) // vitalize
-									weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-							}
-							else if (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_SPIRITSHOT)
-							{
-								sps = true;
-								if (skill.getId() != 1020) // vitalize
-									weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-							}
-						}
-						else if (weaponInst.getChargedSoulshot() == L2ItemInstance.CHARGED_SOULSHOT)
-						{
-							ss = true;
-							if (skill.getId() != 1020) // vitalize
-								weaponInst.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
-						}
-					}
-				}
-				else if (activeChar instanceof L2Summon)
-				{
-					L2Summon activeSummon = (L2Summon) activeChar;
-					if (skill.isMagic())
-					{
-						if (activeSummon.getChargedSpiritShot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
-						{
-							bss = true;
-							activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-						}
-						else if (activeSummon.getChargedSpiritShot() == L2ItemInstance.CHARGED_SPIRITSHOT)
-						{
-							sps = true;
-							activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-						}
-					}
-					else if (activeSummon.getChargedSoulShot() == L2ItemInstance.CHARGED_SOULSHOT)
-					{
-						ss = true;
-						activeSummon.setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-					}
-				}
+				if(sps && skill.getId() != 1020)
+					activeChar.setChargedShot(ShotType.SPIRITSHOT, false);
+				else if (bss && skill.getId() != 1020)
+					activeChar.setChargedShot(ShotType.BLESSED_SPIRITSHOT , false);
 				
-				boolean acted = Formulas.calcSkillSuccess(activeChar, target, skill, ss, sps, bss);
 				if (!acted)
 				{
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.ATTACK_FAILED));
 					continue;
-				}
-				
+				}							
 			}
 			boolean stopped = false;
 			

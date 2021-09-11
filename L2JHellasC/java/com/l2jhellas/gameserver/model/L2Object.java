@@ -2,6 +2,7 @@ package com.l2jhellas.gameserver.model;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.enums.ZoneId;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
 import com.l2jhellas.gameserver.instancemanager.ItemsOnGroundManager;
 import com.l2jhellas.gameserver.instancemanager.MercTicketManager;
@@ -18,6 +19,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.DeleteObject;
 import com.l2jhellas.gameserver.network.serverpackets.GetItem;
 import com.l2jhellas.util.Util;
+
 
 public abstract class L2Object
 {
@@ -138,11 +140,10 @@ public abstract class L2Object
 		if (this instanceof L2ItemInstance)
 		{
 			int itemId = ((L2ItemInstance) this).getItemId();
+			
 			if (MercTicketManager.getInstance().getTicketCastleId(itemId) > 0)
-			{
 				MercTicketManager.getInstance().removeTicket((L2ItemInstance) this);	
-				ItemsOnGroundManager.getInstance().removeObject(this);
-			}
+
 			if (itemId == 57 || itemId == 6353)
 			{
 				L2PcInstance actor = player.getActingPlayer();
@@ -406,5 +407,18 @@ public abstract class L2Object
 	public int getDuelId()
 	{
 		return 0;
+	}
+
+	public boolean isChargedShot(ShotType type)
+	{
+		return false;
+	}
+
+	public void setChargedShot(ShotType type, boolean charged)
+	{
+	}
+
+	public void rechargeShots(boolean physical, boolean magical)
+	{
 	}
 }

@@ -1055,10 +1055,6 @@ public class L2PetInstance extends L2Summon
 			L2ItemInstance item = getOwner().getInventory().getItemByItemId(itemId);
 			if (item != null)
 			{
-				// Check if Soulshot is already active
-				if (item.getChargedSoulshot() != L2ItemInstance.CHARGED_NONE)
-					continue;
-				
 				if (magic && itemId == 6646 || itemId == 6647)
 				{
 					final IItemHandler handler = ItemHandler.getInstance().getHandler(itemId);

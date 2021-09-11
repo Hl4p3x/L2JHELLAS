@@ -42,16 +42,22 @@ public class L2SummonAI extends L2CharacterAI
 	{
 		final L2Summon summon = (L2Summon) _actor;
 		final L2Character target = (L2Character) summon.getTarget();
-		
+
 		// L2OFF if the target is dead the summon must go back to his owner
 		if (target != null  && target.isDead())
 		{
+			stopFollow();
 			summon.setFollowStatus(true);
 			return;
 		}
-		
-		if (!checkTargetLostOrDead(target) && !maybeMoveToPawn(target, summon.getPhysicalAttackRange()))
-			summon.doAttack(target);
+
+		if(checkTargetLostOrDead(target))
+			return;
+
+		if(maybeStartAttackFollow(target, _actor.getPhysicalAttackRange()))
+			return;
+
+		summon.doAttack(target);
 	}
 	
 	private void thinkCast()

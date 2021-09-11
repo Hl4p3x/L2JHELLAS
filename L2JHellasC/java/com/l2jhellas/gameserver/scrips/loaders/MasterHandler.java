@@ -84,6 +84,7 @@ import com.l2jhellas.gameserver.handlers.chathandlers.ChatAlliance;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatClan;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatHeroVoice;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatParty;
+import com.l2jhellas.gameserver.handlers.chathandlers.ChatPartyMatch;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatPartyRoomAll;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatPartyRoomCommander;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatPetition;
@@ -337,7 +338,7 @@ public class MasterHandler
 			ChatClan.class,
 			ChatHeroVoice.class,
 			ChatParty.class,
-			// ChatPartyMatchRoom.class,
+			ChatPartyMatch.class,
 			ChatPartyRoomAll.class,
 			ChatPartyRoomCommander.class,
 			ChatPetition.class,

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list>
+	<fence name="myfirstfence" x="-99999" y="-99999" z="-9999" width="999" length="999" height="3" state="CLOSED" />
+	<fence name="mysecondfence" x="-99998" y="-99998" z="-9998" width="998" length="998" height="3" state="CLOSED" />
+</list>

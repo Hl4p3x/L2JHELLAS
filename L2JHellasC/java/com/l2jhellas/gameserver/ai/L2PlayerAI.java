@@ -11,17 +11,20 @@ import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_REST;
 
 import java.util.logging.Logger;
 
-import com.l2jhellas.gameserver.ThreadPoolManager;
+import com.l2jhellas.gameserver.enums.items.ItemLocation;
 import com.l2jhellas.gameserver.enums.player.DuelState;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Character;
+import com.l2jhellas.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2StaticObjectInstance;
+import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.gameserver.network.serverpackets.MoveToLocation;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 
 public class L2PlayerAI extends L2CharacterAI
@@ -73,6 +76,13 @@ public class L2PlayerAI extends L2CharacterAI
 		
 		if (_actor.getActingPlayer().getPet() != null)
 			_actor.getActingPlayer().getPet().getAI().clientStartAutoAttack();
+		
+		if (!_actor.getActingPlayer().getCubics().isEmpty())
+		{
+			for (L2CubicInstance cubic : _actor.getActingPlayer().getCubics().values())
+				if (cubic != null && cubic.getId() != L2CubicInstance.LIFE_CUBIC)
+					cubic.doAction(target);
+		}		
 	}
 	
 	@Override
@@ -171,15 +181,17 @@ public class L2PlayerAI extends L2CharacterAI
 
 		if(maybeStartAttackFollow(target, _actor.getPhysicalAttackRange()))
 		{
-			if(target != null && target.isMoving() && _actor.isInRadius2D(target.getLoc(),_actor.getPhysicalAttackRange()+95))
+			if(target != null && target.isMoving() && _actor.isInRadius2D(target.getLoc(),_actor.getPhysicalAttackRange()+60))
 			{
 				_actor.getAI().stopFollow();
 				_actor.getAI().clientStopMoving(null);
 				_actor.doAttack(target);	
 			}
+			
+			return;
 		}
-	    else
-			_actor.doAttack(target);
+			
+		_actor.doAttack(target);
 	}
 		
 	private void thinkCast()
@@ -258,30 +270,86 @@ public class L2PlayerAI extends L2CharacterAI
 		moveTo(loc.getX(), loc.getY(), loc.getZ());
 	}
 	
+	@Override
+	protected void onIntentionPickUp(L2Object object)
+	{
+		if (getIntention() == AI_INTENTION_REST)
+		{
+			clientActionFailed();
+			return;
+		}
+		
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttacking())
+		{
+			clientActionFailed();
+			return;
+		}
+		
+		if (object instanceof L2ItemInstance && (((L2ItemInstance) object).getLocation() != ItemLocation.VOID))
+			return;
+		
+		clientStopAutoAttack();
+		
+		changeIntention(AI_INTENTION_PICK_UP, object, null);
+		
+		setTarget(object);
+		if (object.getX() == 0 && object.getY() == 0)
+		{
+			_log.warning(L2CharacterAI.class.getName() + ": Object in coords 0,0 - using a temporary fix");
+			object.setXYZ(getActor().getX(), getActor().getY(), getActor().getZ() + 5);
+		}
+		
+		StartPickUpMove(object.getLoc().clone() , object , 0);		
+	}
+	
 	private void thinkPickUp()
 	{
-		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttacking())
+		if (_actor.isAllSkillsDisabled() || _actor.isCastingNow() || _actor.isAttacking() || _actor.isAlikeDead() || getActor().isFakeDeath())
 		{
 			_actor.sendPacket(ActionFailed.STATIC_PACKET);
 			return;
 		}
-		
+
 		L2Object target = getTarget();
-		
+
 		if (checkTargetLost(target))
 			return;
-		
-		if (maybeMoveToPawn(target, 36))
+
+		if (tryPickUpMove(target))
 			return;
-		
-		if (_actor.isAlikeDead() || getActor().isFakeDeath())
-			return;
-		
-		setIntention(AI_INTENTION_IDLE);
+
 		_actor.getActingPlayer().doPickupItem(target);
-		_actor.setIsParalyzed(true);
-		ThreadPoolManager.getInstance().scheduleGeneral(() -> _actor.setIsParalyzed(false), (int) (660 / _actor.getStat().getMovementSpeedMultiplier()));		
-		return;
+	}
+	
+	protected boolean tryPickUpMove(L2Object target)
+	{
+		int offset = 36;
+		final Location destination = target.getLoc().clone();
+		if (_actor.isInRadius3D(destination, offset))
+			return false;
+		
+		StartPickUpMove(destination , target , offset);			
+		return true;
+	}
+
+	public void StartPickUpMove(Location loc , L2Object target , int offset)
+	{
+		if(target == null)
+			return;
+		
+		// Chek if actor can move
+		if (!_actor.isMovementDisabled())
+		{
+			if(!_actor.isAttacking() && !_actor.isCastingNow())
+			{
+				// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeController
+				_actor.moveToLocation(loc.getX() , loc.getY() , loc.getZ(), offset);
+
+				_actor.broadcastPacket(new MoveToLocation(_actor));
+			}
+		}
+		else
+		    clientActionFailed();
 	}
 	
 	@Override

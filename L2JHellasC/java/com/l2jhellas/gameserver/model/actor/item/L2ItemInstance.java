@@ -13,6 +13,7 @@ import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.sql.ItemTable;
 import com.l2jhellas.gameserver.enums.items.ItemLocation;
 import com.l2jhellas.gameserver.enums.items.L2EtcItemType;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.instancemanager.ItemsOnGroundManager;
 import com.l2jhellas.gameserver.model.L2Augmentation;
 import com.l2jhellas.gameserver.model.L2Object;
@@ -75,20 +76,12 @@ public final class L2ItemInstance extends L2Object
 	
 	private long _dropTime;
 	
-	public static int setChargedNoNe()
+	public void unChargeAllShots()
 	{
-		return CHARGED_NONE;
+		_shotsMask = 0;
 	}
 	
-	public static final int CHARGED_NONE = 0;
-	public static final int CHARGED_SOULSHOT = 1;
-	public static final int CHARGED_SPIRITSHOT = 1;
-	public static final int CHARGED_BLESSED_SOULSHOT = 2; // It's a realy exists? ;-)
-	public static final int CHARGED_BLESSED_SPIRITSHOT = 2;
-	
-	private int _chargedSoulshot = CHARGED_NONE;
-	
-	private int _chargedSpiritshot = CHARGED_NONE;
+	private int _shotsMask = 0;
 	
 	private boolean _chargedFishtshot = false;
 	
@@ -592,35 +585,30 @@ public final class L2ItemInstance extends L2Object
 	{
 		return false;
 	}
-	
-	public int getChargedSoulshot()
-	{
-		return _chargedSoulshot;
-	}
-	
-	public int getChargedSpiritshot()
-	{
-		return _chargedSpiritshot;
-	}
-	
+
 	public boolean getChargedFishshot()
 	{
 		return _chargedFishtshot;
 	}
 	
-	public void setChargedSoulshot(int type)
-	{
-		_chargedSoulshot = type;
-	}
-	
-	public void setChargedSpiritshot(int type)
-	{
-		_chargedSpiritshot = type;
-	}
-	
 	public void setChargedFishshot(boolean type)
 	{
 		_chargedFishtshot = type;
+	}
+	
+	@Override
+	public void setChargedShot(ShotType type, boolean charged)
+	{
+		if (charged)
+			_shotsMask |= type.getMask();
+		else
+			_shotsMask &= ~type.getMask();
+	}
+
+	@Override
+	public boolean isChargedShot(ShotType type)
+	{
+		return (_shotsMask & type.getMask()) == type.getMask();
 	}
 	
 	public Func[] getStatFuncs(L2Character player)
@@ -846,7 +834,7 @@ public final class L2ItemInstance extends L2Object
 	
 	public boolean canBeRemoved()
 	{
-		final long autoDestroyTime = Config.AUTODESTROY_ITEM_AFTER == 0 ? 3600000 : Config.AUTODESTROY_ITEM_AFTER * 1000;	
+		final long autoDestroyTime = Config.AUTODESTROY_ITEM_AFTER == 0 ? 3600000 : Config.AUTODESTROY_ITEM_AFTER;	
 		long curtime = System.currentTimeMillis();
 		
 	    if ((getDropTime() == 0) || (getLocation() != ItemLocation.VOID))

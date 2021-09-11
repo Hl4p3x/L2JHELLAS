@@ -3,9 +3,9 @@ package com.l2jhellas.gameserver.handlers.admincommandhandlers;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
+import com.l2jhellas.gameserver.datatables.xml.FenceData;
 import com.l2jhellas.gameserver.enums.FenceState;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
-import com.l2jhellas.gameserver.instancemanager.FenceManager;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2FenceInstance;
@@ -66,7 +66,7 @@ public class AdminFence implements IAdminCommandHandler
 						return false;
 					}
 					
-					FenceManager.getInstance().spawnFence(_fenceName, activeChar.getX(), activeChar.getY(), activeChar.getZ(), width, length, height, state);
+					FenceData.getInstance().spawnFence(_fenceName, activeChar.getX(), activeChar.getY(), activeChar.getZ(), width, length, height, state);
 					activeChar.sendMessage("Fence:" + _fenceName + " spawned succesfully.");
 					MainFence(activeChar);
 				}
@@ -183,7 +183,7 @@ public class AdminFence implements IAdminCommandHandler
 	
 	private static void FencePage(L2PcInstance player, int id)
 	{
-		final L2FenceInstance fence = FenceManager.getInstance().getFence(id);
+		final L2FenceInstance fence = FenceData.getInstance().getFence(id);
 		final StringBuilder sb = new StringBuilder();
 		
 		sb.append("<html><body>FenceName: " + fence.getFenceName() + "<br>");
@@ -204,12 +204,12 @@ public class AdminFence implements IAdminCommandHandler
 	private static void ShowFenceList(L2PcInstance player)
 	{
 		
-		final int fences = FenceManager.getInstance().getFenceCount();
+		final int fences = FenceData.getInstance().getFenceCount();
 		final StringBuilder sb = new StringBuilder();
 		
 		sb.append("<html><body>Total Fences: " + fences + "<br><br>");
 		
-		for (L2FenceInstance fence : FenceManager.getInstance().getFences().values())
+		for (L2FenceInstance fence : FenceData.getInstance().getFences().values())
 			sb.append("<a action=\"bypass -h admin_fence_page " + fence.getObjectId() + " 1\">Fence: " + " [" + fence.getFenceName() + "]</a><br>");
 		
 		sb.append("</body></html>");

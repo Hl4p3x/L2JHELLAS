@@ -1,37 +1,18 @@
 package com.l2jhellas.gameserver.network.serverpackets;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import com.l2jhellas.gameserver.holder.EnchantSkillNode;
 
 public class ExEnchantSkillList extends L2GameServerPacket
 {
 	private static final String _S__FE_17_EXENCHANTSKILLLIST = "[S] FE:17 ExEnchantSkillList";
-	private final List<Skill> _skills;
 	
-	class Skill
-	{
-		public int id;
-		public int nextLevel;
-		public int sp;
-		public int exp;
-		
-		Skill(int pId, int pNextLevel, int pSp, int pExp)
-		{
-			id = pId;
-			nextLevel = pNextLevel;
-			sp = pSp;
-			exp = pExp;
-		}
-	}
+	private final List<EnchantSkillNode> _skills;
 	
-	public void addSkill(int id, int level, int sp, int exp)
+	public ExEnchantSkillList(List<EnchantSkillNode> skills)
 	{
-		_skills.add(new Skill(id, level, sp, exp));
-	}
-	
-	public ExEnchantSkillList()
-	{
-		_skills = new ArrayList<>();
+		_skills = skills;
 	}
 	
 	@Override
@@ -41,12 +22,12 @@ public class ExEnchantSkillList extends L2GameServerPacket
 		writeH(0x17);
 		
 		writeD(_skills.size());
-		for (Skill sk : _skills)
+		for (EnchantSkillNode esn : _skills)
 		{
-			writeD(sk.id);
-			writeD(sk.nextLevel);
-			writeD(sk.sp);
-			writeQ(sk.exp);
+			writeD(esn.getId());
+			writeD(esn.getValue());
+			writeD(esn.getSp());
+			writeQ(esn.getExp());
 		}
 	}
 	

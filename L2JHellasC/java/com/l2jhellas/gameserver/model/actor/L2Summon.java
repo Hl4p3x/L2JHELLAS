@@ -6,6 +6,7 @@ import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.ai.L2CharacterAI;
 import com.l2jhellas.gameserver.ai.L2SummonAI;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
@@ -17,6 +18,7 @@ import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.PetInventory;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
+import com.l2jhellas.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
@@ -53,6 +55,8 @@ public abstract class L2Summon extends L2Playable
 	private boolean _follow = true;
 	private boolean _previousFollowStatus = true;
 	private int _maxLoad;
+	
+	private int _shotsMask = 0;
 	
 	private int _chargedSoulShot;
 	private int _chargedSpiritShot;
@@ -637,8 +641,7 @@ public abstract class L2Summon extends L2Playable
 		
 		// Check if this is offensive magic skill
 		if (skill.isOffensive())
-		{
-			
+		{		
 			if (target.getObjectId() == getOwner().getObjectId())
 				return;
 			
@@ -677,6 +680,13 @@ public abstract class L2Summon extends L2Playable
 				// Check if a Forced ATTACK is in progress on non-attackable target
 				if (!target.isAutoAttackable(this) && !forceUse && skill.getTargetType() != L2SkillTargetType.TARGET_AURA && skill.getTargetType() != L2SkillTargetType.TARGET_CLAN && skill.getTargetType() != L2SkillTargetType.TARGET_ALLY && skill.getTargetType() != L2SkillTargetType.TARGET_PARTY && skill.getTargetType() != L2SkillTargetType.TARGET_SELF)
 					return;
+			}
+
+			if(getOwner() != null && !getOwner().isDead() && !getOwner().getCubics().isEmpty())
+			{
+				for (L2CubicInstance cubic : getOwner().getCubics().values())
+					if (cubic != null && cubic.getId() != L2CubicInstance.LIFE_CUBIC)
+						cubic.doAction((L2Character)target);
 			}
 		}
 		
@@ -735,6 +745,21 @@ public abstract class L2Summon extends L2Playable
 	}
 	
 	@Override
+	public boolean isChargedShot(ShotType type)
+	{
+		return (_shotsMask & type.getMask()) == type.getMask();
+	}
+	
+	@Override
+	public void setChargedShot(ShotType type, boolean charged)
+	{
+		if (charged)
+			_shotsMask |= type.getMask();
+		else
+			_shotsMask &= ~type.getMask();
+	}
+	
+	@Override
 	public void rechargeShots(boolean physical, boolean magic)
 	{
 		if (getOwner().getAutoSoulShot() == null || getOwner().getAutoSoulShot().isEmpty())
@@ -745,10 +770,6 @@ public abstract class L2Summon extends L2Playable
 			L2ItemInstance item = getOwner().getInventory().getItemByItemId(itemId);
 			if (item != null)
 			{
-				// Check if Soulshot is already active
-				if (item.getChargedSoulshot() != L2ItemInstance.CHARGED_NONE)
-					continue;
-				
 				if (magic && itemId == 6646 || itemId == 6647)
 				{
 					final IItemHandler handler = ItemHandler.getInstance().getHandler(itemId);
@@ -826,5 +847,19 @@ public abstract class L2Summon extends L2Playable
 	public int getDuelId()
 	{	
 		return getOwner() != null ? getOwner().getDuelId() : 0;
+	}
+	
+	public boolean maybeMoveToTarget(L2Character target)
+	{
+		if (isInRadius2D(target.getLoc(), (int) (getPhysicalAttackRange() + getTemplate().getCollisionRadius() + target.getTemplate().getCollisionRadius())))
+			return false;
+
+		if (!isMovementDisabled())
+		{
+			getAI().moveToPawn(target, 36);	
+			return true;
+		}
+
+		return false;
 	}
 }

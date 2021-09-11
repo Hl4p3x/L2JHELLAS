@@ -48,7 +48,7 @@ public class RequestSocialAction extends L2GameClientPacket
 			return;
 		}
 		
-		if (activeChar.isInStoreMode() || activeChar.getActiveRequester() != null || activeChar.isAlikeDead() || activeChar.getAI().getIntention() != CtrlIntention.AI_INTENTION_ACTIVE)
+		if (activeChar.isInStoreMode() || activeChar.getActiveRequester() != null || activeChar.isAlikeDead() || activeChar.getAI().getIntention() != CtrlIntention.AI_INTENTION_IDLE)
 			return;
 		
 		activeChar.broadcastSocialActionInRadius(_actionId);

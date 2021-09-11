@@ -1,7 +1,5 @@
 package com.l2jhellas.gameserver.skills;
 
-import java.util.logging.Logger;
-
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.enums.ZoneId;
@@ -38,24 +36,23 @@ import com.l2jhellas.gameserver.skills.funcsCalc.FuncMAtkCritical;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncMAtkMod;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncMAtkSpeed;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncMDefMod;
-import com.l2jhellas.gameserver.skills.funcsCalc.FuncMaxCpAdd;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncMaxCpMul;
-import com.l2jhellas.gameserver.skills.funcsCalc.FuncMaxHpAdd;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncMaxHpMul;
-import com.l2jhellas.gameserver.skills.funcsCalc.FuncMaxMpAdd;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncMaxMpMul;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncMoveSpeed;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncPAtkMod;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncPAtkSpeed;
 import com.l2jhellas.gameserver.skills.funcsCalc.FuncPDefMod;
-import com.l2jhellas.gameserver.templates.L2Armor;
 import com.l2jhellas.gameserver.templates.L2Weapon;
+import com.l2jhellas.util.CLogger;
+import com.l2jhellas.util.MathUtil;
 import com.l2jhellas.util.Rnd;
 import com.l2jhellas.util.Util;
 
 public final class Formulas
 {	
-	protected static final Logger _log = Logger.getLogger(L2Character.class.getName());
+	protected static final CLogger LOGGER = new CLogger(Formulas.class.getName());
+
 	private static final int HP_REGENERATE_PERIOD = 3000; // 3 secs
 	public static final int MAX_STAT_VALUE = 100;
 	
@@ -167,11 +164,8 @@ public final class Formulas
 	
 	public static void addFuncsToNewPlayer(L2PcInstance player)
 	{
-		player.addStatFunc(FuncMaxHpAdd.getInstance());
 		player.addStatFunc(FuncMaxHpMul.getInstance());
-		player.addStatFunc(FuncMaxCpAdd.getInstance());
 		player.addStatFunc(FuncMaxCpMul.getInstance());
-		player.addStatFunc(FuncMaxMpAdd.getInstance());
 		player.addStatFunc(FuncMaxMpMul.getInstance());
 		// cha.addStatFunc(FuncMultRegenResting.getInstance(Stats.REGENERATE_HP_RATE));
 		// cha.addStatFunc(FuncMultRegenResting.getInstance(Stats.REGENERATE_CP_RATE));
@@ -202,7 +196,7 @@ public final class Formulas
 	
 	public final static double calcHpRegen(L2Character cha)
 	{
-		double init = cha.getTemplate().baseHpReg;
+		double init = cha.getTemplate().getBaseHpRegen(cha.getLevel());
 		double hpRegenMultiplier = cha.isRaid() || cha.isBoss() ? Config.RAID_HP_REGEN_MULTIPLIER : Config.HP_REGEN_MULTIPLIER;
 		double hpRegenBonus = 0;
 		
@@ -262,7 +256,7 @@ public final class Formulas
 	
 	public final static double calcMpRegen(L2Character cha)
 	{
-		double init = cha.getTemplate().baseMpReg;
+		double init = cha.getTemplate().getBaseMpRegen(cha.getLevel());
 		double mpRegenMultiplier = cha.isRaid() || cha.isBoss() ? Config.RAID_MP_REGEN_MULTIPLIER : Config.MP_REGEN_MULTIPLIER;
 		double mpRegenBonus = 0;
 		
@@ -315,7 +309,7 @@ public final class Formulas
 	
 	public final static double calcCpRegen(L2PcInstance player)
 	{
-		double init = player.getTemplate().baseHpReg + ((player.getLevel() > 10) ? ((player.getLevel() - 1) / 10.0) : 0.5);
+		double init = player.getTemplate().getBaseCpRegen(player.getLevel()) + ((player.getLevel() > 10) ? ((player.getLevel() - 1) / 10.0) : 0.5);
 		double cpRegenMultiplier = Config.CP_REGEN_MULTIPLIER;
 		
 		// Calculate Movement bonus
@@ -332,8 +326,7 @@ public final class Formulas
 		if (init < 1)
 			init = 1;
 		
-		return player.calcStat(Stats.REGENERATE_CP_RATE, init, null, null) * cpRegenMultiplier;
-		
+		return player.calcStat(Stats.REGENERATE_CP_RATE, init, null, null) * cpRegenMultiplier;	
 	}
 	
 	public final static double calcSiegeRegenModifer(L2PcInstance activeChar)
@@ -355,6 +348,7 @@ public final class Formulas
 	public static double calcBlowDamage(L2Character attacker, L2Character target, L2Skill skill, byte shld, boolean ss)
 	{
 		double defence = target.getPDef(attacker);
+		
 		switch (shld)
 		{
 			case 1:
@@ -366,43 +360,31 @@ public final class Formulas
 		}
 
 		double power = skill.getPower();
-		double damage = 0;
+		double damage = attacker.getPAtk(target);
 
 		if (ss)
 		{
-			damage *= 2;
+			damage *= 2.;
 			
 			if (skill.getSSBoost() > 0)
 				power *= skill.getSSBoost();
 		}
 		
 		damage += power;
+		
+		// Get position bonus.		
+		damage *= getPositionBonus(attacker,target,true);
+		
 		damage *= attacker.calcStat(Stats.CRITICAL_DAMAGE, 1, target, skill);
-		damage += attacker.calcStat(Stats.CRITICAL_DAMAGE_ADD, 0, target, skill) * 6.5;
+		damage += attacker.calcStat(Stats.CRITICAL_DAMAGE_ADD, 0, target, skill) * 6;
 		damage *= target.calcStat(Stats.CRIT_VULN, 1, target, skill);
-
+						
 		// get the natural vulnerability for the template
 		if (target instanceof L2Npc)
 			damage *= ((L2Npc) target).getTemplate().getVulnerability(Stats.DAGGER_WPN_VULN);
 
 		damage = target.calcStat(Stats.DAGGER_WPN_VULN, damage, target, null);
-		damage *= 70 / defence;
-
-		damage *= attacker.getRandomDamage();
-		
-		if (target.isPlayer())
-		{
-			final L2Armor armor = ((L2PcInstance) target).getActiveChestArmorItem();
-			if (armor != null)
-			{
-				if (((L2PcInstance) target).isWearingHeavyArmor())
-					damage /= 1.2; // 2
-				// if(((L2PcInstance)target).isWearingLightArmor())
-				// damage /= 1.1; // 1.5
-				// if(((L2PcInstance)target).isWearingMagicArmor())
-				// damage /= 1; // 1.3
-			}
-		}
+		damage *= 70 / defence;	
 		
 		return Math.max(damage, 1);
 	}
@@ -450,6 +432,10 @@ public final class Formulas
 					damage += skillpower;
 			}
 		}
+		
+		// Get position bonus.		
+		damage *= getPositionBonus(attacker,target,crit);
+		
 		// Defense modifier depending of the attacker weapon
 		L2Weapon weapon = attacker.getActiveWeaponItem();
 		Stats stat = null;
@@ -607,7 +593,7 @@ public final class Formulas
 			}
 		}
 		else if (mcrit)
-			damage *= 4;
+			damage *= 3;
 		
 		return damage;
 	}
@@ -685,28 +671,27 @@ public final class Formulas
 	
 	public static boolean calcHitMiss(L2Character attacker, L2Character target)
 	{
-		int chance = (80 + (2 * (attacker.getAccuracy() - target.getEvasionRate(attacker)))) * 10;
-		
-		double modifier = 100;
+		int diffmod = attacker.getAccuracy() - target.getEvasionRate(attacker);
 		
 		// Get high or low Z bonus.
-		if (attacker.getZ() - target.getZ() > 50)
-			modifier += 3;
-		else if (attacker.getZ() - target.getZ() < -50)
-			modifier -= 3;
+		final int diffZ = attacker.getZ() - target.getZ();
+		if (diffZ > 50)
+			diffmod += 3;
+		else if (diffZ < -50)
+			diffmod -= 3;
 		
-		// Get weather bonus. todo rain support (-3%).
+		// Get weather bonus.
 		if (GameTimeController.getInstance().isNight())
-			modifier -= 10;
+			diffmod -= 10;
 		
-		// Get position bonus.
+		// Get position bonus.		
 		final Position position = Position.getPosition(attacker,target);
-		final int positionbonus = position == Position.BACK ? 10 : position == Position.SIDE ? 7 : 4;
-		modifier += positionbonus;
+		final int positionbonus = position.equals(Position.BACK)  ? 10 : position.equals(Position.SIDE) ? 5 : 0;
+		diffmod += positionbonus;
 		
-		chance *= modifier / 100;
-		
-		return Math.max(Math.min(chance, 980), 200) < Rnd.get(1000);
+		int chance = (90 + (2 * (diffmod))) * 10;
+
+		return MathUtil.limit(chance, 300, 980) < Rnd.get(1000);
 	}
 	
 	public static byte calcShldUse(L2Character attacker, L2Character target, boolean sendSysMsg)
@@ -1018,8 +1003,13 @@ public final class Formulas
 
 	public static boolean calcMagicSuccess(L2Character attacker, L2Character target, L2Skill skill)
 	{
-		double lvlDifference = (target.getLevel() - (skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker.getLevel()) + skill.getLevelDepend());
-		int rate = Math.round((float) (Math.pow(1.3, lvlDifference) * 100));
+		int lvlDifference = target.getLevel() - ((skill.getMagicLevel() > 0 ? skill.getMagicLevel() : attacker.getLevel()) + skill.getLevelDepend());
+		double rate = 100;
+		
+		if (lvlDifference > 0)
+			rate = (Math.pow(1.166, lvlDifference)) * 100;
+				
+		rate = Math.min(rate, 9900);
 		
 		return (Rnd.get(10000) > rate);
 	}
@@ -1280,5 +1270,13 @@ public final class Formulas
 			reflect |= 1;
 		
 		return reflect;
+	}
+	
+	// Get position bonus.		
+	private static double getPositionBonus(L2Character attacker, L2Character target, boolean crit)
+	{
+		final Position position = Position.getPosition(attacker,target);
+		final double positionbonus = position.equals(Position.BACK)  ? (crit ? 1.1 : 1.2) : position.equals(Position.SIDE) ? (crit ? 1.025 : 1.05) : 1.;
+		return positionbonus;
 	}
 }

@@ -6,7 +6,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
-import com.l2jhellas.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.serverpackets.AutoAttackStop;
 
@@ -23,20 +22,8 @@ public class AttackStanceTaskManager implements Runnable
 	
 	public final void add(L2Character character)
 	{
-		if (character !=null)
-		{
-		   if (character.isPlayer())
-		   {
-			   if (character.getActingPlayer() != null && !character.getActingPlayer().getCubics().isEmpty())
-			   {
-				   for (L2CubicInstance cubic : character.getActingPlayer().getCubics().values())
-				  	   if (cubic != null && cubic.getId() != L2CubicInstance.LIFE_CUBIC)
-						   cubic.doAction(character.getActingPlayer());
-			   }
-		   }
-		 
-		     _characters.put(character, System.currentTimeMillis() + ATTACK_STANCE_PERIOD);
-		}		
+		if (character !=null)	   		 
+			_characters.put(character, System.currentTimeMillis() + ATTACK_STANCE_PERIOD);	
 	}
 
 	public final boolean remove(L2Character character)

@@ -1,20 +1,21 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.sql.ClanTable;
-import com.l2jhellas.gameserver.datatables.xml.CharTemplateData;
+import com.l2jhellas.gameserver.datatables.xml.PlayerDataTemplate;
 import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.enums.player.ClassId;
+import com.l2jhellas.gameserver.holder.ClanSkillNode;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.SiegeManager;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2Clan.SubPledge;
 import com.l2jhellas.gameserver.model.L2ClanMember;
-import com.l2jhellas.gameserver.model.L2PledgeSkillLearn;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.base.SubClass;
 import com.l2jhellas.gameserver.model.entity.Castle;
@@ -275,9 +276,9 @@ public class L2VillageMasterInstance extends L2NpcInstance
 						content.append("Which class would you like to switch to?<br>");
 						
 						if (baseClassId == player.getActiveClass())
-							content.append(CharTemplateData.getClassNameById(baseClassId) + "&nbsp;<font color=\"LEVEL\">(Base Class)</font><br><br>");
+							content.append(PlayerDataTemplate.getInstance().getClassNameById(baseClassId) + "&nbsp;<font color=\"LEVEL\">(Base Class)</font><br><br>");
 						else
-							content.append("<a action=\"bypass -h npc_" + getObjectId() + "_Subclass 5 0\">" + CharTemplateData.getClassNameById(baseClassId) + "</a>&nbsp;" + "<font color=\"LEVEL\">(Base Class)</font><br><br>");
+							content.append("<a action=\"bypass -h npc_" + getObjectId() + "_Subclass 5 0\">" + PlayerDataTemplate.getInstance().getClassNameById(baseClassId) + "</a>&nbsp;" + "<font color=\"LEVEL\">(Base Class)</font><br><br>");
 						
 						for (Iterator<SubClass> subList = iterSubClasses(player); subList.hasNext();)
 						{
@@ -285,9 +286,9 @@ public class L2VillageMasterInstance extends L2NpcInstance
 							int subClassId = subClass.getClassId();
 							
 							if (subClassId == player.getActiveClass())
-								content.append(CharTemplateData.getClassNameById(subClassId) + "<br>");
+								content.append(PlayerDataTemplate.getInstance().getClassNameById(subClassId) + "<br>");
 							else
-								content.append("<a action=\"bypass -h npc_" + getObjectId() + "_Subclass 5 " + subClass.getClassIndex() + "\">" + CharTemplateData.getClassNameById(subClassId) + "</a><br>");
+								content.append("<a action=\"bypass -h npc_" + getObjectId() + "_Subclass 5 " + subClass.getClassIndex() + "\">" + PlayerDataTemplate.getInstance().getClassNameById(subClassId) + "</a><br>");
 						}
 					}
 					break;
@@ -309,7 +310,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 							SubClass subClass = subList.next();
 							
 							content.append("Sub-class " + classIndex + "<br1>");
-							content.append("<a action=\"bypass -h npc_" + getObjectId() + "_Subclass 6 " + subClass.getClassIndex() + "\">" + CharTemplateData.getClassNameById(subClass.getClassId()) + "</a><br>");
+							content.append("<a action=\"bypass -h npc_" + getObjectId() + "_Subclass 6 " + subClass.getClassIndex() + "\">" + PlayerDataTemplate.getInstance().getClassNameById(subClass.getClassId()) + "</a><br>");
 							
 							classIndex++;
 						}
@@ -382,8 +383,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					}
 					if (allowAddition & isValidNewSubClass(player, paramOne))
 					{
-						CharTemplateData.getInstance();
-						String className = CharTemplateData.getClassNameById(paramOne);
+						String className = PlayerDataTemplate.getInstance().getClassNameById(paramOne);
 						
 						if (!player.addSubClass(paramOne, player.getTotalSubClasses() + 1))
 						{
@@ -451,7 +451,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					
 					player.setActiveClass(paramOne);
 					
-					content.append("Change Subclass:<br>Your active sub class is now a <font color=\"LEVEL\">" + CharTemplateData.getClassNameById(player.getActiveClass()) + "</font>.");
+					content.append("Change Subclass:<br>Your active sub class is now a <font color=\"LEVEL\">" + PlayerDataTemplate.getInstance().getClassNameById(player.getActiveClass()) + "</font>.");
 					
 					player.sendPacket(SystemMessageId.SUBCLASS_TRANSFER_COMPLETED); // Transfer completed.
 					break;
@@ -498,8 +498,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					if (!FloodProtectors.performAction(player.getClient(), FloodAction.SUBCLASS))
 						return;
 					
-					if (Config.CHECK_SKILLS_ON_ENTER && !Config.ALT_GAME_SKILL_LEARN)
-						player.checkAllowedSkills();
+					player.checkAllowedSkills();
 					
 					if ((player.getOlympiadGameId() > 0) || player.isInOlympiadMode())
 					{
@@ -513,12 +512,11 @@ public class L2VillageMasterInstance extends L2NpcInstance
 					{
 						player.setActiveClass(paramOne);
 						
-						content.append("Change Subclass:<br>Your sub class has been changed to <font color=\"LEVEL\">" + CharTemplateData.getClassNameById(paramTwo) + "</font>.");
+						content.append("Change Subclass:<br>Your sub class has been changed to <font color=\"LEVEL\">" + PlayerDataTemplate.getInstance().getClassNameById(paramTwo) + "</font>.");
 						
 						player.sendPacket(SystemMessageId.ADD_NEW_SUBCLASS); // Subclass added.
 						// check player skills
-						if (Config.CHECK_SKILLS_ON_ENTER && !Config.ALT_GAME_SKILL_LEARN)
-							player.checkAllowedSkills();
+						player.checkAllowedSkills();
 					}
 					else
 					{
@@ -896,25 +894,14 @@ public class L2VillageMasterInstance extends L2NpcInstance
 		
 		if (Config.DEBUG)
 			_log.fine("PledgeSkillList activated on: " + getObjectId());
-		if (player.getClan() == null)
+		if (player.getClan() == null || !player.isClanLeader())
 			return;
 		
-		L2PledgeSkillLearn[] skills = SkillTreeData.getInstance().getAvailablePledgeSkills(player);
-		AcquireSkillList asl = new AcquireSkillList(AcquireSkillList.skillType.Clan);
-		int counts = 0;
-		
-		for (L2PledgeSkillLearn s : skills)
-		{
-			int cost = s.getRepCost();
-			counts++;
-			
-			asl.addSkill(s.getId(), s.getLevel(), s.getLevel(), cost, 0);
-		}
-		
-		if (counts == 0)
+		final List<ClanSkillNode> skills = SkillTreeData.getInstance().getClanSkillsFor(player);
+		if (skills.isEmpty())
 		{
 			NpcHtmlMessage html = new NpcHtmlMessage(1);
-			
+
 			if (player.getClan().getLevel() < 8)
 			{
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
@@ -932,9 +919,7 @@ public class L2VillageMasterInstance extends L2NpcInstance
 			}
 		}
 		else
-		{
-			player.sendPacket(asl);
-		}
+			player.sendPacket(new AcquireSkillList(AcquireSkillList.skillType.Clan, skills));
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}

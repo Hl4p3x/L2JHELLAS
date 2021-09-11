@@ -157,7 +157,7 @@ public class CharStatus
 	
 	public boolean setCurrentHp(double newHp, boolean broadcastPacket)
 	{
-		double currentHp =  getCurrentHp();
+		double currentHp =  getActiveChar().getCurrentHp();
 		double maxHp = getActiveChar().getStat().getMaxHp();
 		
 		synchronized (this)
@@ -214,7 +214,7 @@ public class CharStatus
 	
 	public boolean setCurrentMp(double newMp, boolean broadcastPacket)
 	{
-		int currentMp = (int) getCurrentMp();
+		int currentMp = (int) getActiveChar().getCurrentMp();
 		int maxMp = getActiveChar().getStat().getMaxMp();
 		
 		synchronized (this)

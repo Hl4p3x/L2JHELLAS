@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.logging.Logger;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
+import org.w3c.dom.NamedNodeMap;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.engines.DocumentParser;
@@ -36,25 +36,20 @@ public class SkillSpellbookData implements DocumentParser
 	@Override
 	public void parseDocument(Document doc)
 	{
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		forEach(doc, "list", listNode -> forEach(listNode, "book", bookNode ->
 		{
-			if (n.getNodeName().equalsIgnoreCase("list"))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if (d.getNodeName().equalsIgnoreCase("skill_spellbook"))
-					{
-						_skillSpellbooks.put(Integer.valueOf(d.getAttributes().getNamedItem("skill_id").getNodeValue()), Integer.valueOf(d.getAttributes().getNamedItem("item_id").getNodeValue()));
-					}
-				}
-			}
-		}
+			final NamedNodeMap attrs = bookNode.getAttributes();
+			_skillSpellbooks.put(parseInteger(attrs, "skillId"), parseInteger(attrs, "itemId"));
+		}));
 	}
 	
 	public int getBookForSkill(int skillId, int level)
 	{
-		if (skillId == L2Skill.SKILL_DIVINE_INSPIRATION && level != -1)
-		{
+		if (!Config.SP_BOOK_NEEDED)
+			return 0;
+		
+		if (skillId == L2Skill.SKILL_DIVINE_INSPIRATION)
+		{		
 			switch (level)
 			{
 				case 1:
@@ -66,26 +61,19 @@ public class SkillSpellbookData implements DocumentParser
 				case 4:
 					return 8621; // Ancient Book - Divine Inspiration (Original Version)
 				default:
-					return -1;
+					return 0;
 			}
 		}
 		
+		if (level != 1)
+			return 0;
+				
 		if (!_skillSpellbooks.containsKey(skillId))
-			return -1;
+			return 0;
 		
 		return _skillSpellbooks.get(skillId);
 	}
-	
-	public int getBookForSkill(L2Skill skill)
-	{
-		return getBookForSkill(skill.getId(), -1);
-	}
-	
-	public int getBookForSkill(L2Skill skill, int level)
-	{
-		return getBookForSkill(skill.getId(), level);
-	}
-	
+
 	public static SkillSpellbookData getInstance()
 	{
 		return SingletonHolder._instance;

@@ -420,13 +420,21 @@ public class L2Party
 			if (Util.checkIfInRange(Config.ALT_PARTY_RANGE2, target, member, true))
 				ToReward.add(member);
 		}
-		
+
 		if (!ToReward.isEmpty())
 		{
 			int count = adena / ToReward.size();
-			
+
 			for (L2PcInstance member : ToReward)
-				member.addAdena("Party", count, player, true);
+			{
+				if (member.getInventory().getAdenaInstance() != null)
+					member.addAdena("Loot", count, null, true);
+				else
+				{
+					member.addItem("Loot", 57, count, null, false);
+					member.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.EARNED_S1_ADENA).addNumber(count));
+				}
+			}
 		}
 	}
 	

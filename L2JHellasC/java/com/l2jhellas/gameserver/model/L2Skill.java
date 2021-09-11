@@ -57,7 +57,10 @@ public abstract class L2Skill
 	public static final int SKILL_CREATE_DWARVEN = 172;
 	public static final int SKILL_CRYSTALLIZE = 248;
 	public static final int SKILL_DIVINE_INSPIRATION = 1405;
-	
+	public static final int SKILL_EXPERTISE = 239;
+	public static final int SKILL_SHADOW_SENSE = 294;
+	public static final int SKILL_NPC_RACE = 4416;
+
 	public static final int SKILL_FAKE_INT = 9001;
 	public static final int SKILL_FAKE_WIT = 9002;
 	public static final int SKILL_FAKE_MEN = 9003;
@@ -279,6 +282,7 @@ public abstract class L2Skill
 	private final int _forceId;
 	private final boolean _isHeroSkill; // If true the skill is a Hero Skill
 	private final boolean _isDebuff;
+	
 	private final int _baseCritRate; // percent of success for skill critical hit (especially for PDAM & BLOW - they're not affected by rCrit values or buffs). Default loads -1 for all other skills but 0 to PDAM & BLOW
 	private final int _lethalEffect1; // percent of success for lethal 1st effect (hit cp to 1 or if mob hp to 50%) (only for PDAM skills)
 	private final int _lethalEffect2; // percent of success for lethal 2nd effect (hit cp,hp to 1 or if mob hp to 1) (only for PDAM skills)
@@ -342,7 +346,7 @@ public abstract class L2Skill
 		_negateStats = set.getString("negateStats", "").split(" ");
 		_negatePower = set.getFloat("negatePower", 0.f);
 		_negateId = set.getInteger("negateId", 0);
-		_magicLevel = set.getInteger("magicLvl", SkillTreeData.getInstance().getMinSkillLevel(_id, _level));
+		_magicLevel = set.getInteger("magicLvl", 1);
 		_levelDepend = set.getInteger("lvlDepend", 0);
 		_stat = set.getEnum("stat", Stats.class, null);
 		
@@ -923,7 +927,7 @@ public abstract class L2Skill
 	{
 		return _numCharges;
 	}
-	
+
 	public final int getBaseCritRate()
 	{
 		return _baseCritRate;

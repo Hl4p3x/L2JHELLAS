@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
+import com.l2jhellas.gameserver.datatables.xml.FenceData;
 import com.l2jhellas.gameserver.geodata.GeoOptimizer.BlockLink;
 import com.l2jhellas.gameserver.geodata.loader.GeoFileInfo;
 import com.l2jhellas.gameserver.geodata.loader.GeoLoader;
 import com.l2jhellas.gameserver.geodata.loader.GeoLoaderFactory;
 import com.l2jhellas.gameserver.geometry.Point3D;
 import com.l2jhellas.gameserver.geometry.Polygon;
-import com.l2jhellas.gameserver.instancemanager.FenceManager;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
@@ -174,7 +174,7 @@ public class GeoEngine
 		if (target == null)
 			return false;
 
-		if (FenceManager.getInstance().checkIfFenceBetween(actor.getX(), actor.getY(), actor.getZ(), target.getX(), target.getY(), target.getZ()))
+		if (FenceData.getInstance().checkIfFenceBetween(actor.getX(), actor.getY(), actor.getZ(), target.getX(), target.getY(), target.getZ()))
 			return false;
 		
 		if (target instanceof GeoControl || actor.equals(target))

@@ -235,14 +235,14 @@ public class FakePlayer extends L2PcInstance
 			{
 				if (sklTargetType == L2SkillTargetType.TARGET_GROUND)
 				{
-					if (!isInsideRadius(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), skill.getCastRange() + getTemplate().getCollisionRadius(), false, false))
+					if (!isInsideRadius(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), skill.getCastRange() + (int)getTemplate().getCollisionRadius(), false, false))
 					{
 						sendPacket(SystemMessageId.TARGET_TOO_FAR);
 						sendPacket(ActionFailed.STATIC_PACKET);
 						return false;
 					}
 				}
-				else if (skill.getCastRange() > 0 && !isInsideRadius(target, skill.getCastRange() + getTemplate().getCollisionRadius(), false, false))
+				else if (skill.getCastRange() > 0 && !isInsideRadius(target, skill.getCastRange() + (int)getTemplate().getCollisionRadius(), false, false))
 				{
 					sendPacket(SystemMessageId.TARGET_TOO_FAR);
 					sendPacket(ActionFailed.STATIC_PACKET);

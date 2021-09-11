@@ -117,9 +117,6 @@ public final class Config
 	public static boolean AUTO_LOOT_GRAND;
 	public static boolean AUTO_LOOT_HERBS;
 	public static boolean AUTO_LEARN_SKILLS;
-	public static boolean CHECK_SKILLS_ON_ENTER;
-	public static String ALLOWED_SKILLS;
-	public static List<Integer> ALLOWED_SKILLS_LIST = new ArrayList<>();
 	public static boolean LIFE_CRYSTAL_NEEDED;
 	public static boolean SP_BOOK_NEEDED;
 	public static boolean ES_SP_BOOK_NEEDED;
@@ -341,7 +338,6 @@ public final class Config
 	
 	public static int SOUL_CRYSTAL_BREAK_CHANCE;
 	public static int SOUL_CRYSTAL_LEVEL_CHANCE;
-	public static boolean MAX_LVL_AFTER_SUB;
 	
 	public static Map<Integer, Integer> CLAN_SKILLS;
 	public static byte CLAN_LEVEL;
@@ -365,21 +361,19 @@ public final class Config
 	public static boolean ENABLE_GUI;
 	public static boolean LOGIN_SERVER_SCHEDULE_RESTART;
 	public static long LOGIN_SERVER_SCHEDULE_RESTART_TIME;
+	
 	public static boolean ALLOW_PRIVATE_ANTI_BOT;
-	public static boolean ALLOW_SEQURITY_QUE;
-	public static int SECURITY_QUE_TIME;
-	public static boolean ALLOW_HOPZONE_VOTE_REWARD;
-	public static String HOPZONE_SERVER_LINK;
-	public static int HOPZONE_VOTES_DIFFERENCE;
-	public static int HOPZONE_REWARD_CHECK_TIME;
-	public static int[][] HOPZONE_REWARD;
-	public static int HOPZONE_BOXES_ALLOWED;
-	public static boolean ALLOW_TOPZONE_VOTE_REWARD;
-	public static String TOPZONE_SERVER_LINK;
-	public static int TOPZONE_VOTES_DIFFERENCE;
-	public static int TOPZONE_REWARD_CHECK_TIME;
-	public static int[][] TOPZONE_REWARD;
-	public static int TOPZONE_BOXES_ALLOWED;
+	
+	public static String VOTE_TOPZONE_API;
+	public static String VOTE_HOPZONE_API;
+	public static String VOTE_NETWORK_API;
+	public static String VOTE_L2TOPCO_API;
+	public static String VOTE_L2J_TOP_API;
+	public static String VOTE_TOPGAME_API;
+	public static String VOTE_L2VOTESSERV_API;
+	public static String VOTE_L2JBRAZIL_USERNAME;
+	public static int LEVEL_RESTRICTED;
+	public static int [][] VOTE_REWARD;
 	
 	public static boolean RANK_PVP_SYSTEM_ENABLED;
 	public static int LEGAL_KILL_MIN_LVL;
@@ -653,9 +647,7 @@ public final class Config
 	public static boolean RB_IMMEDIATE_INFORM;
 	public static int PLAYER_SPAWN_PROTECTION;
 	public static int UNSTUCK_INTERVAL;
-	public static double RESPAWN_RESTORE_CP;
 	public static double RESPAWN_RESTORE_HP;
-	public static double RESPAWN_RESTORE_MP;
 	public static boolean RESPAWN_RANDOM_ENABLED;
 	public static int RESPAWN_RANDOM_MAX_OFFSET;
 	public static int MAX_PVTSTORE_SLOTS_DWARF;
@@ -812,9 +804,6 @@ public final class Config
 	public static boolean ALT_DEV_NO_SPAWNS;
 	public static boolean ALT_DEV_NO_SCRIPT;
 	public static boolean ALT_DEV_NO_RB;
-	public static boolean VERBOSE_LOADING;
-	public static boolean ATTEMPT_COMPILATION;
-	public static boolean PURGE_ERROR_LOG;
 	public static int REQUEST_ID;
 	public static boolean ACCEPT_ALTERNATE_ID;
 	public static String DATABASE_URL;
@@ -935,13 +924,6 @@ public final class Config
 			AUTO_LOOT_HERBS = Boolean.parseBoolean(altSettings.getProperty("AutoLootHerbs", "False"));
 			// skills
 			AUTO_LEARN_SKILLS = Boolean.parseBoolean(altSettings.getProperty("AutoLearnSkills", "False"));
-			CHECK_SKILLS_ON_ENTER = Boolean.parseBoolean(altSettings.getProperty("CheckSkillsOnEnter", "False"));
-			ALLOWED_SKILLS = altSettings.getProperty("AllowedSkills", "541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,617,618,619");
-			ALLOWED_SKILLS_LIST = new ArrayList<>();
-			for (String id : ALLOWED_SKILLS.trim().split(","))
-			{
-				ALLOWED_SKILLS_LIST.add(Integer.parseInt(id.trim()));
-			}
 			LIFE_CRYSTAL_NEEDED = Boolean.parseBoolean(altSettings.getProperty("LifeCrystalNeeded", "True"));
 			SP_BOOK_NEEDED = Boolean.parseBoolean(altSettings.getProperty("SpBookNeeded", "True"));
 			ES_SP_BOOK_NEEDED = Boolean.parseBoolean(altSettings.getProperty("EnchantSkillSpBookNeeded", "True"));
@@ -1759,7 +1741,6 @@ public final class Config
 					}
 				}
 			}
-			MAX_LVL_AFTER_SUB = Boolean.parseBoolean(L2JHellasSettings.getProperty("MaxLvLAfterSub", "False"));
 			
 			String AioSkillsSplit[] = L2JHellasSettings.getProperty("ClanSkills", "").split(";");
 			CLAN_SKILLS = new HashMap<>(AioSkillsSplit.length);
@@ -1829,21 +1810,19 @@ public final class Config
 			ENABLE_GUI = Boolean.parseBoolean(autoSettings.getProperty("EnableGui", "True"));
 			LOGIN_SERVER_SCHEDULE_RESTART = Boolean.parseBoolean(autoSettings.getProperty("LoginRestartSchedule", "False"));
 			LOGIN_SERVER_SCHEDULE_RESTART_TIME = Long.parseLong(autoSettings.getProperty("LoginRestartTime", "24"));
-			ALLOW_SEQURITY_QUE = Boolean.valueOf(autoSettings.getProperty("AllowSecurityQuestion", "True"));
-			SECURITY_QUE_TIME = Integer.parseInt(autoSettings.getProperty("SecurityTime", "20"));
-			ALLOW_HOPZONE_VOTE_REWARD = Boolean.valueOf(autoSettings.getProperty("AllowHopzoneVoteReward", "false"));
-			HOPZONE_SERVER_LINK = autoSettings.getProperty("HopzoneServerLink", "null");
-			HOPZONE_VOTES_DIFFERENCE = Integer.parseInt(autoSettings.getProperty("HopzoneVotesDifference", "5"));
-			HOPZONE_REWARD_CHECK_TIME = Integer.parseInt(autoSettings.getProperty("HopzoneRewardCheckTime", "5"));
-			HOPZONE_REWARD = parseItemsList(autoSettings.getProperty("HopzoneReward", "57,100000000"));
-			HOPZONE_BOXES_ALLOWED = Integer.parseInt(autoSettings.getProperty("HopzoneDualboxesAllowed", "1"));
-			ALLOW_TOPZONE_VOTE_REWARD = Boolean.valueOf(autoSettings.getProperty("AllowTopzoneVoteReward", "false"));
-			TOPZONE_SERVER_LINK = autoSettings.getProperty("TopzoneServerLink", "null");
-			TOPZONE_VOTES_DIFFERENCE = Integer.parseInt(autoSettings.getProperty("TopzoneVotesDifference", "5"));
-			TOPZONE_REWARD_CHECK_TIME = Integer.parseInt(autoSettings.getProperty("TopzoneRewardCheckTime", "5"));
-			TOPZONE_REWARD = parseItemsList(autoSettings.getProperty("TopzoneReward", "57,100000000"));		                                                                   
-			TOPZONE_BOXES_ALLOWED = Integer.parseInt(autoSettings.getProperty("TopzoneDualboxesAllowed", "1"));
+			
 			ALLOW_PRIVATE_ANTI_BOT = Boolean.valueOf(autoSettings.getProperty("AllowPrivateAntiBot", "False"));
+			
+			VOTE_TOPZONE_API = autoSettings.getProperty("VoteTopzoneApi", "");
+			VOTE_HOPZONE_API = autoSettings.getProperty("VoteHopzoneApi", "");
+			VOTE_NETWORK_API = autoSettings.getProperty("VoteNetworkApi", "");
+			VOTE_L2TOPCO_API = autoSettings.getProperty("VoteL2TopCoApi", "");
+			VOTE_L2J_TOP_API = autoSettings.getProperty("VoteForL2JTopApi", "");
+			VOTE_TOPGAME_API = autoSettings.getProperty("VoteTopGameApi", "");
+			VOTE_L2VOTESSERV_API = autoSettings.getProperty("L2VotesServersApi", "");
+			VOTE_L2JBRAZIL_USERNAME = autoSettings.getProperty("L2JBrazilUserName", "");		
+			LEVEL_RESTRICTED = Integer.parseInt(autoSettings.getProperty("MinLevelToVote", "1"));
+			VOTE_REWARD = parseItemsList(autoSettings.getProperty("VoteReward", "57-1000"));
 			
 			Properties smartCBSettings = new Properties();
 			try (InputStream is = new FileInputStream(new File(MOD_SMART_CB_CONFIG_FILE)))
@@ -2014,6 +1993,8 @@ public final class Config
 			DELETE_DAYS = Integer.parseInt(optionsSettings.getProperty("DeleteCharAfterDays", "7"));
 			ALLOW_DISCARDITEM = Boolean.valueOf(optionsSettings.getProperty("AllowDiscardItem", "True"));
 			AUTODESTROY_ITEM_AFTER = Integer.parseInt(optionsSettings.getProperty("AutoDestroyDroppedItemAfter", "0"));
+			AUTODESTROY_ITEM_AFTER = AUTODESTROY_ITEM_AFTER * 60 * 1000;
+			
 			PROTECTED_ITEMS = optionsSettings.getProperty("ListOfProtectedItems");
 			LIST_PROTECTED_ITEMS = new ArrayList<>();
 			for (String listid : PROTECTED_ITEMS.split(","))
@@ -2122,9 +2103,7 @@ public final class Config
 			RB_IMMEDIATE_INFORM = Boolean.parseBoolean(otherSettings.getProperty("RaidImmediateDBupdate", "True"));
 			PLAYER_SPAWN_PROTECTION = Integer.parseInt(otherSettings.getProperty("PlayerSpawnProtection", "0"));
 			UNSTUCK_INTERVAL = Integer.parseInt(otherSettings.getProperty("UnstuckInterval", "300"));
-			RESPAWN_RESTORE_CP = Double.parseDouble(otherSettings.getProperty("RespawnRestoreCP", "0")) / 100;
 			RESPAWN_RESTORE_HP = Double.parseDouble(otherSettings.getProperty("RespawnRestoreHP", "70")) / 100;
-			RESPAWN_RESTORE_MP = Double.parseDouble(otherSettings.getProperty("RespawnRestoreMP", "70")) / 100;
 			RESPAWN_RANDOM_ENABLED = Boolean.parseBoolean(otherSettings.getProperty("RespawnRandomInTown", "False"));
 			RESPAWN_RANDOM_MAX_OFFSET = Integer.parseInt(otherSettings.getProperty("RespawnRandomMaxOffset", "50"));
 			MAX_PVTSTORE_SLOTS_DWARF = Integer.parseInt(otherSettings.getProperty("MaxPvtStoreSlotsDwarf", "5"));
@@ -2376,9 +2355,6 @@ public final class Config
 			ALT_DEV_NO_SPAWNS = Boolean.parseBoolean(serverSettings.getProperty("AltDevNoSpawns", "False"));
 			ALT_DEV_NO_SCRIPT = Boolean.parseBoolean(serverSettings.getProperty("AltDevNoScripts", "False"));
 			ALT_DEV_NO_RB = Boolean.parseBoolean(serverSettings.getProperty("AltDevNoRaidbosses", "False"));
-			VERBOSE_LOADING = Boolean.parseBoolean(serverSettings.getProperty("VerboseLoading", "False"));
-			ATTEMPT_COMPILATION = Boolean.parseBoolean(serverSettings.getProperty("AttemptCompilation", "False"));
-			PURGE_ERROR_LOG = Boolean.parseBoolean(serverSettings.getProperty("PurgeErrorLog", "False"));
 			REQUEST_ID = Integer.parseInt(serverSettings.getProperty("RequestServerID", "0"));
 			ACCEPT_ALTERNATE_ID = Boolean.parseBoolean(serverSettings.getProperty("AcceptAlternateID", "True"));
 			DATABASE_URL = serverSettings.getProperty("URL", "jdbc:mysql://localhost/l2jdb");
@@ -2766,14 +2742,8 @@ public final class Config
 			case "PartyXpCutoffLevel":
 				PARTY_XP_CUTOFF_LEVEL = Integer.parseInt(pValue);
 				break;
-			case "RespawnRestoreCP":
-				RESPAWN_RESTORE_CP = Double.parseDouble(pValue) / 100;
-				break;
 			case "RespawnRestoreHP":
 				RESPAWN_RESTORE_HP = Double.parseDouble(pValue) / 100;
-				break;
-			case "RespawnRestoreMP":
-				RESPAWN_RESTORE_MP = Double.parseDouble(pValue) / 100;
 				break;
 			case "MaxPvtStoreSlotsDwarf":
 				MAX_PVTSTORE_SLOTS_DWARF = Integer.parseInt(pValue);

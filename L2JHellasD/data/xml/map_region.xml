@@ -23,7 +23,7 @@
 <!-- Region map correspondent with the geodata layout. See http://imageshack.us/f/104/mapc6wo9.jpg/ to understand. -->
 <!-- Regions set according to this: http://bullwinkle.gardnerweb.com/pics/LineageIIc4MapPlus20v3.jpg -->
 <list>
-	<map geoY="10" geoX_16="3"  geoX_17="3"  geoX_18="3"  geoX_19="3"  geoX_20="3"  geoX_21="4"  geoX_22="4"  geoX_23="4"  geoX_24="4"  geoX_25="4"  geoX_26="4" />
+	<map geoY="10" geoX_16="3"  geoX_17="3"  geoX_18="7"  geoX_19="9"  geoX_20="11" geoX_21="4"  geoX_22="4"  geoX_23="4"  geoX_24="4"  geoX_25="4"  geoX_26="4" />
 	<map geoY="11" geoX_16="3"  geoX_17="3"  geoX_18="3"  geoX_19="3"  geoX_20="3"  geoX_21="4"  geoX_22="4"  geoX_23="4"  geoX_24="4"  geoX_25="4"  geoX_26="4" />
 	<map geoY="12" geoX_16="3"  geoX_17="3"  geoX_18="3"  geoX_19="3"  geoX_20="3"  geoX_21="4"  geoX_22="4"  geoX_23="4"  geoX_24="4"  geoX_25="4"  geoX_26="4" />
 	<map geoY="13" geoX_16="3"  geoX_17="3"  geoX_18="3"  geoX_19="3"  geoX_20="3"  geoX_21="16" geoX_22="16" geoX_23="16" geoX_24="16" geoX_25="4"  geoX_26="4" />

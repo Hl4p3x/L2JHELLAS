@@ -159,9 +159,9 @@ public class PcStat extends PlayableStat
 			getActiveChar().sendPacket(SystemMessageId.YOU_INCREASED_YOUR_LEVEL);
 		}
 		
-		// Give AutoGet skills and all normal skills if Auto-Learn is activated.
-		getActiveChar().rewardSkills();
-		
+		// Give AutoGet skills and all normal skills if Auto-Learn is activated.		
+		getActiveChar().giveSkills();
+
 		if (getActiveChar().getClan() != null)
 		{
 			getActiveChar().getClan().updateClanMember(getActiveChar());
@@ -256,7 +256,7 @@ public class PcStat extends PlayableStat
 	@Override
 	public final int getMaxCp() 
 	{
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_CP, getActiveChar().getTemplate().baseCpMax, null, null);
+		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_CP, getActiveChar().getTemplate().getBaseCpMax(getActiveChar().getLevel()), null, null);
 		
 		if (getActiveChar() != null && getActiveChar().getClassId().getId() >= 88)
 			val += BalanceLoad.CP[getActiveChar().getClassId().getId() - 88];
@@ -274,7 +274,7 @@ public class PcStat extends PlayableStat
 	@Override
 	public final int getMaxHp() 
 	{
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_HP, getActiveChar().getTemplate().baseHpMax, null, null);
+		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_HP, getActiveChar().getTemplate().getBaseHpMax(getActiveChar().getLevel()), null, null);
 		
 		if (getActiveChar() != null && getActiveChar().getClassId().getId() >= 88)
 			val += BalanceLoad.HP[getActiveChar().getClassId().getId() - 88];
@@ -293,7 +293,7 @@ public class PcStat extends PlayableStat
 	@Override
 	public final int getMaxMp() 
 	{
-		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_MP, getActiveChar().getTemplate().baseMpMax,null,null);
+		int val = (getActiveChar() == null) ? 1 : (int) calcStat(Stats.MAX_MP, getActiveChar().getTemplate().getBaseMpMax(getActiveChar().getLevel()),null,null);
 		
 		if (getActiveChar() != null && getActiveChar().getClassId().getId() >= 88)
 			val += BalanceLoad.MP[getActiveChar().getClassId().getId() - 88];
@@ -397,8 +397,14 @@ public class PcStat extends PlayableStat
 	public int getEvasionRate(L2Character target)
 	{
 		int val = super.getEvasionRate(target);
+		
 		if (getActiveChar().getClassId().getId() >= 88)
 			val += BalanceLoad.Evasion[getActiveChar().getClassId().getId() - 88];
+		
+		final int penalty = getActiveChar().getExpertisePenalty();
+		if (penalty > 0)
+			val -= (2 * penalty);		
+		
 		return Math.min(val, Config.ALT_MAX_EVASION);
 	}
 	

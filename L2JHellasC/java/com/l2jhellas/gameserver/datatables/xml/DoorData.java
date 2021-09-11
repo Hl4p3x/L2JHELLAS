@@ -74,44 +74,19 @@ public class DoorData implements DocumentParser
 						
 						StatsSet npcDat = new StatsSet();
 						npcDat.set("npcId", id);
-						npcDat.set("level", 0);
 						npcDat.set("jClass", "door");
-						npcDat.set("baseSTR", 0);
-						npcDat.set("baseCON", 0);
-						npcDat.set("baseDEX", 0);
-						npcDat.set("baseINT", 0);
-						npcDat.set("baseWIT", 0);
-						npcDat.set("baseMEN", 0);
-						npcDat.set("baseShldDef", 0);
-						npcDat.set("baseShldRate", 0);
 						npcDat.set("baseAccCombat", 38);
 						npcDat.set("baseEvasRate", 38);
 						npcDat.set("baseCritRate", 38);
-						npcDat.set("collision_radius", Math.max(50, Math.min(rangeXMax - rangeXMin, rangeYMax - rangeYMin)));
-						npcDat.set("collision_height", rangeZMax - rangeZMin & 0xfff0);
+						npcDat.set("radius", Math.max(50, Math.min(rangeXMax - rangeXMin, rangeYMax - rangeYMin)));
+						npcDat.set("height", rangeZMax - rangeZMin & 0xfff0);
 						npcDat.set("sex", "male");
-						npcDat.set("type", "");
-						npcDat.set("baseAtkRange", 0);
-						npcDat.set("baseMpMax", 0);
-						npcDat.set("baseCpMax", 0);
-						npcDat.set("rewardExp", 0);
-						npcDat.set("rewardSp", 0);
-						npcDat.set("basePAtk", 0);
-						npcDat.set("baseMAtk", 0);
-						npcDat.set("basePAtkSpd", 0);
-						npcDat.set("aggroRange", 0);
-						npcDat.set("baseMAtkSpd", 0);
-						npcDat.set("rhand", 0);
-						npcDat.set("lhand", 0);
-						npcDat.set("armor", 0);
-						npcDat.set("baseWalkSpd", 0);
-						npcDat.set("baseRunSpd", 0);
 						npcDat.set("name", name);
-						npcDat.set("baseHpMax", hp);
+						npcDat.set("hp", hp);
 						npcDat.set("baseHpReg", 3.e-3f);
 						npcDat.set("baseMpReg", 3.e-3f);
-						npcDat.set("basePDef", pdef);
-						npcDat.set("baseMDef", mdef);
+						npcDat.set("pDef", pdef);
+						npcDat.set("mDef", mdef);
 						
 						L2CharTemplate template = new L2CharTemplate(npcDat);
 						L2DoorInstance door = new L2DoorInstance(IdFactory.getInstance().getNextId(), template, id, name, unlockable);
@@ -189,54 +164,22 @@ public class DoorData implements DocumentParser
 		
 		if (rangeZMin > rangeZMax)
 			_log.warning(DoorData.class.getSimpleName() + ": Error in door data, ID:" + id);
-		
-		int collisionRadius;
-		
-		if (rangeXMax - rangeXMin > rangeYMax - rangeYMin)
-			collisionRadius = rangeYMax - rangeYMin;
-		else
-			collisionRadius = rangeXMax - rangeXMin;
-		
+
 		StatsSet npcDat = new StatsSet();
 		npcDat.set("npcId", id);
-		npcDat.set("level", 0);
 		npcDat.set("jClass", "door");
-		npcDat.set("baseSTR", 0);
-		npcDat.set("baseCON", 0);
-		npcDat.set("baseDEX", 0);
-		npcDat.set("baseINT", 0);
-		npcDat.set("baseWIT", 0);
-		npcDat.set("baseMEN", 0);
-		npcDat.set("baseShldDef", 0);
-		npcDat.set("baseShldRate", 0);
 		npcDat.set("baseAccCombat", 38);
 		npcDat.set("baseEvasRate", 38);
 		npcDat.set("baseCritRate", 38);
-		npcDat.set("collision_radius", collisionRadius);
-		npcDat.set("collision_height", rangeZMax - rangeZMin);
+		npcDat.set("radius", Math.max(50, Math.min(rangeXMax - rangeXMin, rangeYMax - rangeYMin)));
+		npcDat.set("height", rangeZMax - rangeZMin & 0xfff0);
 		npcDat.set("sex", "male");
-		npcDat.set("type", "");
-		npcDat.set("baseAtkRange", 0);
-		npcDat.set("baseMpMax", 0);
-		npcDat.set("baseCpMax", 0);
-		npcDat.set("rewardExp", 0);
-		npcDat.set("rewardSp", 0);
-		npcDat.set("basePAtk", 0);
-		npcDat.set("baseMAtk", 0);
-		npcDat.set("basePAtkSpd", 0);
-		npcDat.set("aggroRange", 0);
-		npcDat.set("baseMAtkSpd", 0);
-		npcDat.set("rhand", 0);
-		npcDat.set("lhand", 0);
-		npcDat.set("armor", 0);
-		npcDat.set("baseWalkSpd", 0);
-		npcDat.set("baseRunSpd", 0);
 		npcDat.set("name", name);
-		npcDat.set("baseHpMax", hp);
+		npcDat.set("hp", hp);
 		npcDat.set("baseHpReg", 3.e-3f);
 		npcDat.set("baseMpReg", 3.e-3f);
-		npcDat.set("basePDef", pdef);
-		npcDat.set("baseMDef", mdef);
+		npcDat.set("pDef", pdef);
+		npcDat.set("mDef", mdef);
 		
 		L2CharTemplate template = new L2CharTemplate(npcDat);
 		L2DoorInstance door = new L2DoorInstance(IdFactory.getInstance().getNextId(), template, id, name, unlockable);

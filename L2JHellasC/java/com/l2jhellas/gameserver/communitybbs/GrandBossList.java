@@ -5,12 +5,11 @@ import java.util.logging.Logger;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
 import com.l2jhellas.gameserver.instancemanager.GrandBossManager;
-import com.l2jhellas.gameserver.instancemanager.games.Lottery;
 import com.l2jhellas.gameserver.templates.StatsSet;
 
 public class GrandBossList
 {
-	protected static final Logger _log = Logger.getLogger(Lottery.class.getName());
+	protected static final Logger _log = Logger.getLogger(GrandBossList.class.getName());
 	
 	private final StringBuilder _GrandBossList = new StringBuilder();
 	

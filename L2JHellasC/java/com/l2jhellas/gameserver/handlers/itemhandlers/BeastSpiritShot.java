@@ -1,10 +1,10 @@
 package com.l2jhellas.gameserver.handlers.itemhandlers;
 
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.instance.L2PetInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillUse;
@@ -46,6 +46,8 @@ public class BeastSpiritShot implements IItemHandler
 		final int itemId = item.getItemId();
 		final int shotConsumption = activePet.getSpiritShotsPerHit();
 		
+		final boolean isBlessed = (itemId == 6647);
+
 		if (!(item.getCount() > shotConsumption))
 		{
 			// Not enough SpiritShots to use.
@@ -53,33 +55,9 @@ public class BeastSpiritShot implements IItemHandler
 				activeOwner.sendPacket(SystemMessageId.NOT_ENOUGH_SPIRITSHOTS_FOR_PET);
 			return;
 		}
-		
-		L2ItemInstance weaponInst = null;
-		
-		if (activePet instanceof L2PetInstance)
-			weaponInst = ((L2PetInstance) activePet).getActiveWeaponInstance();
-		
-		if (weaponInst == null)
-		{
-			if (activePet.getChargedSpiritShot() != L2ItemInstance.CHARGED_NONE)
-				return;
-			
-			if (itemId == 6647)
-				activePet.setChargedSpiritShot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT);
-			else
-				activePet.setChargedSpiritShot(L2ItemInstance.CHARGED_SPIRITSHOT);
-		}
-		else
-		{
-			// SpiritShots are already active.
-			if (weaponInst.getChargedSpiritshot() != L2ItemInstance.CHARGED_NONE)
-				return;
-			
-			if (itemId == 6647)
-				weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT);
-			else
-				weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_SPIRITSHOT);
-		}
+
+		if (activePet.isChargedShot(isBlessed ? ShotType.BLESSED_SPIRITSHOT : ShotType.SPIRITSHOT))
+			return;
 		
 		if (!activeOwner.destroyItemWithoutTrace("Consume", item.getObjectId(), shotConsumption, null, false))
 		{
@@ -88,8 +66,10 @@ public class BeastSpiritShot implements IItemHandler
 			return;
 		}
 		
+		activePet.setChargedShot(isBlessed ? ShotType.BLESSED_SPIRITSHOT : ShotType.SPIRITSHOT, true);
+
 		activeOwner.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PET_USES_S1).addItemName(itemId));
-		Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activePet, activePet, ((itemId == 6646) ? 2008 : 2009), 1, 0, 0), 700);
+		Broadcast.toSelfAndKnownPlayersInRadius(activeOwner, new MagicSkillUse(activePet, activePet, (isBlessed ? 2009 : 2008), 1, 0, 0), 600);
 	}
 	
 	@Override

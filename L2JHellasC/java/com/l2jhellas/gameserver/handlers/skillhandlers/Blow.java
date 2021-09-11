@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.handlers.skillhandlers;
 
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.player.Position;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.enums.sound.Sound;
@@ -15,13 +16,10 @@ import com.l2jhellas.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2MonsterInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SummonInstance;
-import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
-import com.l2jhellas.gameserver.skills.Env;
 import com.l2jhellas.gameserver.skills.Formulas;
 import com.l2jhellas.gameserver.skills.Stats;
-import com.l2jhellas.gameserver.skills.funcs.Func;
 import com.l2jhellas.util.Rnd;
 import com.l2jhellas.util.Util;
 
@@ -38,8 +36,7 @@ public class Blow implements ISkillHandler
 		if (activeChar.isAlikeDead())
 			return;
 		
-		L2ItemInstance weapon = activeChar.getActiveWeaponInstance();
-		boolean soul = (weapon != null && weapon.getChargedSoulshot() == L2ItemInstance.CHARGED_SOULSHOT);
+		final boolean soul = activeChar.isChargedShot(ShotType.SOULSHOT);
 
 		for (L2Character target : (L2Character[]) targets)
 		{
@@ -71,39 +68,31 @@ public class Blow implements ISkillHandler
 						skill.getEffects(target, activeChar);
 						activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(skill));
 					}
-				}
-				byte shld = Formulas.calcShldUse(activeChar, target);
-				
-				// Crit rate base crit rate for skill, modified with STR bonus
-				boolean crit = false;
-				if (Formulas.calcCrit(skill.getBaseCritRate() * 10 * Formulas.getSTRBonus(activeChar)))
-					crit = true;
-				double damage = (int) Formulas.calcBlowDamage(activeChar, target, skill, shld, soul);
-				if (crit)
-				{
-					damage *= 2;
-					// Vicious Stance is special after C5, and only for BLOW
-					// skills
-					// Adds directly to damage
-					L2Effect vicious = activeChar.getFirstEffect(312);
-					if (vicious != null && damage > 1)
+					else
 					{
-						for (Func func : vicious.getStatFuncs())
+						target.stopSkillEffects(skill.getId());
+						if (Formulas.calcSkillSuccess(activeChar, target, skill, false, false,true))
 						{
-							Env env = new Env();
-							env.player = activeChar;
-							env.target = target;
-							env.skill = skill;
-							env.value = damage;
-							func.calc(env);
-							damage = (int) env.value;
+							skill.getEffects(activeChar, target);
+							target.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_FEEL_S1_EFFECT).addSkillName(skill));
 						}
+						else
+							activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_RESISTED_YOUR_S2).addCharName(target).addSkillName(skill));
 					}
 				}
 				
-				if (soul && weapon != null)
-					weapon.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
-				if (skill.getDmgDirectlyToHP() && target instanceof L2PcInstance)
+				byte shld = Formulas.calcShldUse(activeChar, target);
+				
+				// Crit rate base crit rate for skill, modified with STR bonus
+				boolean crit = Formulas.calcCrit(skill.getBaseCritRate() * 10 * Formulas.getSTRBonus(activeChar));
+
+				double damage = (int) Formulas.calcBlowDamage(activeChar, target, skill, shld, soul);
+				if (crit)
+					damage *= 2;
+
+				activeChar.setChargedShot(ShotType.SOULSHOT, false);
+
+				if (skill.getDmgDirectlyToHP() && target.isPlayer())
 				{
 					L2PcInstance player = (L2PcInstance) target;
 					if (!player.isInvul())
@@ -144,10 +133,8 @@ public class Blow implements ISkillHandler
 						else
 							player.setCurrentHp(player.getCurrentHp() - damage);
 					}
-					SystemMessage smsg = SystemMessage.getSystemMessage(SystemMessageId.S1_GAVE_YOU_S2_DMG);
-					smsg.addString(activeChar.getName());
-					smsg.addNumber((int) damage);
-					player.sendPacket(smsg);
+
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_GAVE_YOU_S2_DMG).addString(activeChar.getName()).addNumber((int) damage));
 				}
 				else
 					target.reduceCurrentHp(damage, activeChar);
@@ -169,10 +156,8 @@ public class Blow implements ISkillHandler
 					activeChar.broadcastPacket(Sound.SKILLSOUND_CRITICAL.getPacket());
 					activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CRITICAL_HIT));
 				}
-				
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_DID_S1_DMG);
-				sm.addNumber((int) damage);
-				activeChar.sendPacket(sm);
+
+				activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.YOU_DID_S1_DMG).addNumber((int) damage));
 			}
 			// Possibility of a lethal strike
 			if ((!target.isRaid() && !target.isBoss()) && !(target instanceof L2DoorInstance) && !(target instanceof L2GrandBossInstance) && !(target instanceof L2MonsterInstance && ((L2MonsterInstance) target).getNpcId() == 36006) && (target instanceof L2Npc && ((L2Npc) target).getNpcId() != 35062))

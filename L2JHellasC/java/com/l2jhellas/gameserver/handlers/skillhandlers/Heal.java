@@ -1,5 +1,6 @@
 package com.l2jhellas.gameserver.handlers.skillhandlers;
 
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.handler.ISkillHandler;
 import com.l2jhellas.gameserver.handler.SkillHandler;
@@ -7,10 +8,8 @@ import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
-import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.StatusUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -42,7 +41,6 @@ public class Heal implements ISkillHandler
 		}
 		
 		L2Character target = null;
-		L2ItemInstance weaponInst = activeChar.getActiveWeaponInstance();
 		
 		L2PcInstance player = null;
 		if (activeChar instanceof L2PcInstance)
@@ -89,35 +87,18 @@ public class Heal implements ISkillHandler
 			}
 			else
 			{
-				// Added effect of SpS and Bsps
-				if (weaponInst != null)
+				final boolean sps = activeChar.isChargedShot(ShotType.SPIRITSHOT);
+				final boolean bss = activeChar.isChargedShot(ShotType.BLESSED_SPIRITSHOT);	
+
+				if (bss)
 				{
-					if (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
-					{
-						hp *= 1.5;
-						weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-					}
-					else if (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_SPIRITSHOT)
-					{
-						hp *= 1.3;
-						weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-					}
+					hp *= 1.5;
+					activeChar.setChargedShot(ShotType.BLESSED_SPIRITSHOT, false);
 				}
-				// If there is no weapon equipped, check for an active summon.
-				else if (activeChar instanceof L2Summon)
+				else if (sps)
 				{
-					L2Summon activeSummon = (L2Summon) activeChar;
-					
-					if (activeSummon.getChargedSpiritShot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT)
-					{
-						hp *= 1.5;
-						activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-					}
-					else if (activeSummon.getChargedSpiritShot() == L2ItemInstance.CHARGED_SPIRITSHOT)
-					{
-						hp *= 1.3;
-						activeSummon.setChargedSpiritShot(L2ItemInstance.CHARGED_NONE);
-					}
+					hp *= 1.3;
+					activeChar.setChargedShot(ShotType.SPIRITSHOT, false);
 				}
 			}
 			

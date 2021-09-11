@@ -1,6 +1,5 @@
 package com.l2jhellas.gameserver.skills.effects;
 
-import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
@@ -22,74 +21,63 @@ public final class EffectRelax extends L2Effect
 	
 	@Override
 	public boolean onStart()
-	{
-		
-		if (getEffected() instanceof L2PcInstance)
+	{	
+		final L2PcInstance player = getEffected().getActingPlayer();
+		if (player != null)
 		{
-			setRelax(true);
-			((L2PcInstance) getEffected()).sitDown();
+			player.setRelax(true);
+			player.sitDown();		
 		}
-		else
-			getEffected().getAI().setIntention(CtrlIntention.AI_INTENTION_REST);
+
 		return super.onStart();
 	}
 	
 	@Override
 	public void onExit()
 	{
-		setRelax(false);
+		final L2PcInstance player = getEffected().getActingPlayer();
+		if (player != null)
+			player.setRelax(false);
 		super.onExit();
 	}
 	
 	@Override
 	public boolean onActionTime()
 	{
+		final L2PcInstance player = getEffected().getActingPlayer();
 		boolean retval = true;
-		if (getEffected().isDead())
-			retval = false;
-		
-		if (getEffected() instanceof L2PcInstance)
-		{
-			if (!((L2PcInstance) getEffected()).isSitting())
+
+		if (player != null)
+		{		
+			if (player.isDead() || !player.isSitting())
 				retval = false;
-		}
-		
-		if (getEffected().getCurrentHp() + 1 > getEffected().getMaxHp())
-		{
-			if (getSkill().isToggle())
+			
+			if (player.getCurrentHp() + 1 > player.getMaxHp())
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2);
-				sm.addString("Fully rested. Effect of " + getSkill().getName() + " has been removed.");
-				getEffected().sendPacket(sm);
-				retval = false;
+				if (getSkill().isToggle())
+				{
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_S2).addString("Fully rested. Effect of " + getSkill().getName() + " has been removed."));
+					retval = false;
+				}
 			}
-		}
-		
-		double manaDam = calc();
-		
-		if (manaDam > getEffected().getCurrentMp())
-		{
-			if (getSkill().isToggle())
+			
+			double manaDam = calc();
+			
+			if (manaDam > player.getCurrentMp())
 			{
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP);
-				getEffected().sendPacket(sm);
-				// if (getEffected() instanceof L2PcInstance)
-				// ((L2PcInstance)getEffected()).standUp();
-				retval = false;
+				if (getSkill().isToggle())
+				{
+					player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.SKILL_REMOVED_DUE_LACK_MP));
+					retval = false;
+				}
 			}
+			
+			if (!retval)
+				player.setRelax(retval);
+			else
+				player.reduceCurrentMp(manaDam);			
 		}
-		
-		if (!retval)
-			setRelax(retval);
-		else
-			getEffected().reduceCurrentMp(manaDam);
 		
 		return retval;
-	}
-	
-	private void setRelax(boolean val)
-	{
-		if (getEffected() instanceof L2PcInstance)
-			((L2PcInstance) getEffected()).setRelax(val);
 	}
 }

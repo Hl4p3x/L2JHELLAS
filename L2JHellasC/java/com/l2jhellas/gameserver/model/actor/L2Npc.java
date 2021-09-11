@@ -206,8 +206,8 @@ public class L2Npc extends L2Character
 		_currentLHandId = getTemplate().lhand;
 		_currentRHandId = getTemplate().rhand;
 		// initialize the "current" collisions
-		_currentCollisionHeight = getTemplate().collisionHeight;
-		_currentCollisionRadius = getTemplate().collisionRadius;
+		_currentCollisionHeight = (int)getTemplate().collisionHeight;
+		_currentCollisionRadius = (int)getTemplate().collisionRadius;
 		
 		// Set the name of the L2Character
 		setName(template.name);
@@ -1792,8 +1792,8 @@ public class L2Npc extends L2Character
 		// we do need to reset the weapons back to the initial templated weapon.
 		_currentLHandId = getTemplate().lhand;
 		_currentRHandId = getTemplate().rhand;
-		_currentCollisionHeight = getTemplate().collisionHeight;
-		_currentCollisionRadius = getTemplate().collisionRadius;
+		_currentCollisionHeight = (int)getTemplate().collisionHeight;
+		_currentCollisionRadius = (int)getTemplate().collisionRadius;
 		DecayTaskManager.getInstance().addDecayTask(this);
 		return true;
 	}

@@ -3,34 +3,35 @@ package com.l2jhellas.gameserver.templates;
 public class L2CharTemplate
 {
 	// BaseStats
-	public final int baseSTR;
-	public final int baseCON;
-	public final int baseDEX;
-	public final int baseINT;
-	public final int baseWIT;
-	public final int baseMEN;
-	public final float baseHpMax;
-	public final float baseCpMax;
-	public final float baseMpMax;
+	public int baseSTR;
+	public int baseCON;
+	public int baseDEX;
+	public int baseINT;
+	public int baseWIT;
+	public int baseMEN;
+	public double baseHpMax;
+	public double baseCpMax;
+	public double baseMpMax;
 	
 	public final float baseHpReg;
 	
 	public final float baseMpReg;
 	
-	public final int basePAtk;
-	public final int baseMAtk;
-	public final int basePDef;
-	public final int baseMDef;
-	public final int basePAtkSpd;
-	public final int baseMAtkSpd;
-	public final float baseMReuseRate;
+	public double basePAtk;
+	public double baseMAtk;
+	public double basePDef;
+	public double baseMDef;
+	
+	public int basePAtkSpd;
+	public int baseMAtkSpd;
+	public float baseMReuseRate;
 	public final int baseShldDef;
 	public final int baseAtkRange;
 	public final int baseShldRate;
-	public final int baseCritRate;
+	public int baseCritRate;
 	public final int baseMCritRate;
-	public final int baseWalkSpd;
-	public final int baseRunSpd;
+	public int baseWalkSpd;
+	public int baseRunSpd;
 	
 	// SpecialStats
 	public final int baseBreath;
@@ -70,38 +71,41 @@ public class L2CharTemplate
 	public final int baseMpConsumeRate;
 	public final int baseHpConsumeRate;
 	
-	public final int collisionRadius;
-	public final int collisionHeight;
+	public double collisionRadius;
+	public double collisionHeight;
 	
 	public L2CharTemplate(StatsSet set)
-	{
-		
+	{		
 		// Base stats
-		baseSTR = set.getInteger("baseSTR");
-		baseCON = set.getInteger("baseCON");
-		baseDEX = set.getInteger("baseDEX");
-		baseINT = set.getInteger("baseINT");
-		baseWIT = set.getInteger("baseWIT");
-		baseMEN = set.getInteger("baseMEN");
-		baseHpMax = set.getFloat("baseHpMax");
-		baseCpMax = set.getFloat("baseCpMax");
-		baseMpMax = set.getFloat("baseMpMax");
-		baseHpReg = set.getFloat("baseHpReg");
-		baseMpReg = set.getFloat("baseMpReg");
-		basePAtk = set.getInteger("basePAtk");
-		baseMAtk = set.getInteger("baseMAtk");
-		basePDef = set.getInteger("basePDef");
-		baseMDef = set.getInteger("baseMDef");
-		basePAtkSpd = set.getInteger("basePAtkSpd");
-		baseMAtkSpd = set.getInteger("baseMAtkSpd");
+		baseSTR = set.getInteger("str", 40);
+		baseCON = set.getInteger("con", 21);
+		baseDEX = set.getInteger("dex", 30);
+		baseINT = set.getInteger("int", 20);
+		baseWIT = set.getInteger("wit", 43);
+		baseMEN = set.getInteger("men", 20);
+		
+		baseHpMax = set.getDouble("hp", 0);
+		baseCpMax = set.getDouble("baseCpMax", 0);
+		baseMpMax = set.getDouble("mp", 0);
+		baseHpReg = set.getFloat("baseHpReg", 0);
+		baseMpReg = set.getFloat("baseMpReg", 0);
+		
+		basePAtk = set.getDouble("pAtk", 4);
+		baseMAtk = set.getDouble("mAtk", 6);
+		basePDef = set.getDouble("pDef", 60);
+		baseMDef = set.getDouble("mDef", 41);
+		
+		basePAtkSpd = set.getInteger("atkSpd", 300);	
+		baseMAtkSpd = set.getInteger("baseMAtkSpd", 333);
+		
 		baseMReuseRate = set.getFloat("baseMReuseDelay", 1.f);
-		baseShldDef = set.getInteger("baseShldDef");
-		baseAtkRange = set.getInteger("baseAtkRange");
-		baseShldRate = set.getInteger("baseShldRate");
-		baseCritRate = set.getInteger("baseCritRate");
+		baseShldDef = set.getInteger("baseShldDef", 0);
+		baseAtkRange = set.getInteger("baseAtkRange", 40);
+		baseShldRate = set.getInteger("baseShldRate", 0);
+		baseCritRate = set.getInteger("crit", 4);
 		baseMCritRate = set.getInteger("baseMCritRate", 8);
-		baseWalkSpd = set.getInteger("baseWalkSpd");
-		baseRunSpd = set.getInteger("baseRunSpd");
+		baseWalkSpd = set.getInteger("walkSpd", 1);
+		baseRunSpd = set.getInteger("runSpd", 2);
 		
 		// Special Stats
 		baseBreath = set.getInteger("baseBreath", 100);
@@ -142,17 +146,37 @@ public class L2CharTemplate
 		baseHpConsumeRate = set.getInteger("baseHpConsumeRate", 0);
 		
 		// Geometry
-		collisionRadius = set.getInteger("collision_radius");
-		collisionHeight = set.getInteger("collision_height");
+		collisionRadius = set.getDouble("radius", 0);
+		collisionHeight = set.getDouble("height", 0);
 		
 	}
 	
-	public int getCollisionRadius()
+	public double getBaseHpMax(int level)
+	{
+		return baseHpMax;
+	}
+	
+	public double getBaseMpMax(int level)
+	{
+		return baseMpMax;
+	}
+	
+	public double getBaseHpRegen(int level)
+	{
+		return baseHpReg;
+	}
+	
+	public double getBaseMpRegen(int level)
+	{
+		return baseMpReg;
+	}
+	
+	public double getCollisionRadius()
 	{
 		return collisionRadius;
 	}
 	
-	public int getCollisionHeight()
+	public double getCollisionHeight()
 	{
 		return collisionHeight;
 	}

@@ -1,6 +1,7 @@
 package com.l2jhellas.gameserver.handlers.itemhandlers;
 
 import com.l2jhellas.gameserver.enums.items.L2CrystalType;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.handler.IItemHandler;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -73,7 +74,7 @@ public class SoulShots implements IItemHandler
 		}
 
 		// Check if Soulshot is already active
-		if (weaponInst.getChargedSoulshot() != L2ItemInstance.CHARGED_NONE)
+		if (activeChar.isChargedShot(ShotType.SOULSHOT))
 			return;
 			
 		// Consume Soulshots if player has enough of them
@@ -94,7 +95,7 @@ public class SoulShots implements IItemHandler
 		}
 			
 		// Charge soulshot
-		weaponInst.setChargedSoulshot(L2ItemInstance.CHARGED_SOULSHOT);
+		weaponInst.setChargedShot(ShotType.SOULSHOT, true);
 
 		// Send message to client
 		activeChar.sendPacket(SystemMessageId.ENABLED_SOULSHOT);

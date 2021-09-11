@@ -1,6 +1,7 @@
 package com.l2jhellas.gameserver.handlers.skillhandlers;
 
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.handler.ISkillHandler;
 import com.l2jhellas.gameserver.model.L2Effect;
@@ -58,7 +59,7 @@ public class Pdam implements ISkillHandler
 			if (skill.getBaseCritRate() > 0)
 				crit = Formulas.calcCrit(skill.getBaseCritRate() * 10 * Formulas.getSTRBonus(activeChar));
 			
-			boolean soul = (weapon != null && weapon.getChargedSoulshot() == L2ItemInstance.CHARGED_SOULSHOT && weapon.getItemType() != L2WeaponType.DAGGER);
+			final boolean soul = activeChar.isChargedShot(ShotType.SOULSHOT) && (weapon != null && weapon.getItemType() != L2WeaponType.DAGGER);
 			
 			if (!crit && (skill.getCondition() & L2Skill.COND_CRIT) != 0)
 				damage = 0;
@@ -69,8 +70,8 @@ public class Pdam implements ISkillHandler
 			// by buffs
 			
 			if (soul && weapon != null)
-				weapon.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
-			
+			    activeChar.setChargedShot(ShotType.SOULSHOT, false);
+		
 			boolean skillIsEvaded = Formulas.calcPhysicalSkillEvasion(target, skill);
 			
 			if (!skillIsEvaded)

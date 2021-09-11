@@ -171,9 +171,14 @@ public class L2CubicInstance
 		{
 			if (_owner.isDead() || !_owner.isbOnline())
 			{
-				_owner.delCubic(_id);
-				_owner.broadcastUserInfo();
+				if(_owner != null)
+					_owner.delCubic(_id);
+
+				if (_owner.isbOnline())
+					_owner.broadcastUserInfo();
+				
 				cancelDisappear();
+				stopAction();
 				return;
 			}
 			
@@ -183,33 +188,35 @@ public class L2CubicInstance
 				return;
 			}
 			
-			if (Rnd.get(1, 100) < _chance && _target != null && !_target.isDead())
+			final int range = 900;
+
+			if (Rnd.get(1, 100) < _chance )
 			{
-				try
+				if (_target != null && !_target.isDead() &&_target.isInsideRadius(_owner, range,true,false))
 				{
-					final L2Skill skill = SkillTable.getInstance().getInfo(_skills.get(Rnd.get(_skills.size())), _level);
-					if (skill != null)
+					try
 					{
-						final L2Character[] targets ={_target};
-						final ISkillHandler handler = SkillHandler.getInstance().getHandler(skill.getSkillType());
-						final int range = 900;
-						
-						if (_target.isInsideRadius(_owner, range,true,false))
-						{						
+						final L2Skill skill = SkillTable.getInstance().getInfo(_skills.get(Rnd.get(_skills.size())), _level);
+						if (skill != null)
+						{
+							final L2Character[] targets ={_target};
+							final ISkillHandler handler = SkillHandler.getInstance().getHandler(skill.getSkillType());
+
 							if (handler != null)
 								handler.useSkill(_owner, skill, targets);	
 							else
 								skill.useSkill(_owner, targets);
-								
+
 							_owner.broadcastPacket(new MagicSkillUse(_owner, _target, skill.getId(), _level, 0, 0));
+
 						}
 					}
-				}
-				catch (Exception e)
-				{
+					catch (Exception e)
+					{
 
+					}
 				}
-			}
+			}		
 		}
 	}
 	

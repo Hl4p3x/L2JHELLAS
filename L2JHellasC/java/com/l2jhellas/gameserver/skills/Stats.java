@@ -177,7 +177,6 @@ public enum Stats
 	// MASTERY
 	SKILL_MASTERY("skillMastery");
 	
-	
 	public static final int NUM_STATS = values().length;
 	
 	private String _value;

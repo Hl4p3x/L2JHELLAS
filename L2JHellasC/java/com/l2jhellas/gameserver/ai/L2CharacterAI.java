@@ -379,12 +379,6 @@ public class L2CharacterAI extends AbstractAI
 	}
 	
 	@Override
-	protected void onEvtArrivedRevalidate()
-	{
-		onEvtThink();
-	}
-	
-	@Override
 	protected void onEvtArrivedBlocked(Location blocked_at_pos)
 	{
 		if ((getIntention() == AI_INTENTION_MOVE_TO) || (getIntention() == AI_INTENTION_CAST))
@@ -475,7 +469,7 @@ public class L2CharacterAI extends AbstractAI
 		if (offset < 0)
 			return false; // skill radius -1
 			
-		if (!_actor.isInRadius2D(worldPosition.getX(), worldPosition.getY(), offset + _actor.getTemplate().collisionRadius))
+		if (!_actor.isInRadius2D(worldPosition.getX(), worldPosition.getY(), offset + (int)_actor.getTemplate().collisionRadius))
 		{
 			if (_actor.isMovementDisabled() || (_actor.getMoveSpeed() <= 0))
 				return true;
@@ -578,6 +572,7 @@ public class L2CharacterAI extends AbstractAI
 				return false;
 			}
 			
+			stopFollow();
 			setIntention(AI_INTENTION_ACTIVE);
 			clientActionFailed();
 			return true;

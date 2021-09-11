@@ -8,7 +8,9 @@ public class Earthquake extends L2GameServerPacket
 	private final int _z;
 	private final int _intensity;
 	private final int _duration;
-	
+	private final int _isNpc;
+
+
 	public Earthquake(int x, int y, int z, int intensity, int duration)
 	{
 		_x = x;
@@ -16,6 +18,17 @@ public class Earthquake extends L2GameServerPacket
 		_z = z;
 		_intensity = intensity;
 		_duration = duration;
+		_isNpc = 0;
+	}
+	
+	public Earthquake(int x, int y, int z, int intensity, int duration , boolean isNpc)
+	{
+		_x = x;
+		_y = y;
+		_z = z;
+		_intensity = intensity;
+		_duration = duration;
+		_isNpc = (isNpc) ? 1 : 0;
 	}
 	
 	@Override
@@ -27,7 +40,7 @@ public class Earthquake extends L2GameServerPacket
 		writeD(_z);
 		writeD(_intensity);
 		writeD(_duration);
-		writeD(0x00);// Unknown
+		writeD(_isNpc);
 	}
 	
 	@Override

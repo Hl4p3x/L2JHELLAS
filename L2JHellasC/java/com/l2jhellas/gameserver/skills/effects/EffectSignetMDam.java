@@ -3,13 +3,13 @@ package com.l2jhellas.gameserver.skills.effects;
 import java.util.ArrayList;
 
 import com.l2jhellas.gameserver.ai.CtrlEvent;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.actor.L2Attackable;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
-import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.AbstractNpcInfo.SummonInfo;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillLaunched;
@@ -56,26 +56,15 @@ final class EffectSignetMDam extends EffectSignet
 		
 		L2PcInstance caster = (L2PcInstance) getEffected();
 		
-		boolean ss = false;
-		boolean bss = false;
+		final boolean sps = caster.isChargedShot(ShotType.SPIRITSHOT);
+		final boolean bss = caster.isChargedShot(ShotType.BLESSED_SPIRITSHOT);	
+
+		if (bss)
+			caster.setChargedShot(ShotType.BLESSED_SPIRITSHOT, false);
+		else if (sps)
+			caster.setChargedShot(ShotType.SPIRITSHOT, false);
 		
-		L2ItemInstance weaponInst = caster.getActiveWeaponInstance();
-		if (weaponInst != null)
-		{
-			switch (weaponInst.getChargedSpiritshot())
-			{
-				case L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT:
-					weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-					bss = true;
-					break;
-				case L2ItemInstance.CHARGED_SPIRITSHOT:
-					weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
-					ss = true;
-					break;
-			}
-		}
-		
-		if (!bss && !ss)
+		if (!bss && !sps)
 			caster.rechargeShots(false, true);
 		
 		ArrayList<L2Character> targets = new ArrayList<>();
@@ -108,7 +97,7 @@ final class EffectSignetMDam extends EffectSignet
 			for (L2Character target : targets)
 			{
 				boolean mcrit = Formulas.calcMCrit(caster.getMCriticalHit(target, getSkill()));
-				int mdam = (int) Formulas.calcMagicDam(caster, target, getSkill(), ss, bss, mcrit);
+				int mdam = (int) Formulas.calcMagicDam(caster, target, getSkill(), sps, bss, mcrit);
 				
 				if (target instanceof L2Summon)
 				{

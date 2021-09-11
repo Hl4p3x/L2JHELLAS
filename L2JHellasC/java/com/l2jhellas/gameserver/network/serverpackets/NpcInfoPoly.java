@@ -37,8 +37,8 @@ public class NpcInfoPoly extends L2GameServerPacket
 		_rhand = 0;
 		_lhand = 0;
 		_isSummoned = false;
-		_collisionRadius = _template.collisionRadius;
-		_collisionHeight = _template.collisionHeight;
+		_collisionRadius = (int)_template.collisionRadius;
+		_collisionHeight = (int)_template.collisionHeight;
 		if (_obj instanceof L2Character)
 		{
 			_activeChar = (L2Character) obj;

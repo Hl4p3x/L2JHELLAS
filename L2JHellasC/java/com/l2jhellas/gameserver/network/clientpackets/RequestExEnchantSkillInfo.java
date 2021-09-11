@@ -2,7 +2,7 @@ package com.l2jhellas.gameserver.network.clientpackets;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
-import com.l2jhellas.gameserver.model.L2EnchantSkillLearn;
+import com.l2jhellas.gameserver.holder.EnchantSkillNode;
 import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2NpcInstance;
@@ -46,9 +46,7 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 			return;
 		
 		L2Skill skill = SkillTable.getInstance().getInfo(_skillId, _skillLvl);
-		
-		boolean canteach = false;
-		
+				
 		if ((skill == null) || (skill.getId() != _skillId))
 			return;
 		
@@ -58,31 +56,15 @@ public final class RequestExEnchantSkillInfo extends L2GameClientPacket
 		if (!trainer.getTemplate().canTeach(activeChar.getClassId()))
 			return; // cheater
 			
-		L2EnchantSkillLearn[] skills = SkillTreeData.getInstance().getAvailableEnchantSkills(activeChar);
+		final EnchantSkillNode esn = SkillTreeData.getInstance().getEnchantSkillFor(activeChar, _skillId, _skillLvl);
+		if (esn == null)
+			return;
 		
-		for (L2EnchantSkillLearn s : skills)
-		{
-			if (s.getId() == _skillId && s.getLevel() == _skillLvl)
-			{
-				canteach = true;
-				break;
-			}
-		}
+		final ExEnchantSkillInfo esi = new ExEnchantSkillInfo(_skillId, _skillLvl, esn.getSp(), esn.getExp(), esn.getEnchantRate(activeChar.getLevel()));
+		if (Config.ES_SP_BOOK_NEEDED && esn.getItem() != null)
+			esi.addRequirement(4, esn.getItem().getId(), esn.getItem().getValue(), 0);
 		
-		if (!canteach)
-			return; // cheater
-			
-		int requiredSp = SkillTreeData.getInstance().getSkillSpCost(activeChar, skill);
-		int requiredExp = SkillTreeData.getInstance().getSkillExpCost(activeChar, skill);
-		byte rate = SkillTreeData.getInstance().getSkillRate(activeChar, skill);
-		ExEnchantSkillInfo asi = new ExEnchantSkillInfo(skill.getId(), skill.getLevel(), requiredSp, requiredExp, rate);
-		
-		if (Config.ES_SP_BOOK_NEEDED && (skill.getLevel() == 101 || skill.getLevel() == 141)) // only first lvl requires book
-		{
-			int spbId = 6622;
-			asi.addRequirement(4, spbId, 1, 0);
-		}
-		sendPacket(asi);
+		sendPacket(esi);
 	}
 	
 	@Override

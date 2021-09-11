@@ -1,8 +1,8 @@
 package com.l2jhellas.gameserver.model.entity;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Future;
 
 import com.l2jhellas.gameserver.ThreadPoolManager;
@@ -33,8 +33,8 @@ import com.l2jhellas.util.Rnd;
 
 public class Duel
 {
-	private final List<PlayerCondition> _playerConditions = new ArrayList<>();
-	
+	private final List<PlayerCondition> _playerConditions = new CopyOnWriteArrayList<>();
+
 	private static final int PARTY_DUEL_DURATION = 300;
 	private static final int PLAYER_DUEL_DURATION = 120;
 	
@@ -145,8 +145,8 @@ public class Duel
 		public void registerDebuff(L2Effect debuff)
 		{
 			if (_debuffs == null)
-				_debuffs = new ArrayList<>();
-			
+			    _debuffs = new CopyOnWriteArrayList<>();
+
 			_debuffs.add(debuff);
 		}
 		
@@ -441,6 +441,7 @@ public class Duel
 		{
 			for (L2PcInstance partyPlayer : _playerA.getParty().getPartyMembers())
 			{
+				partyPlayer.setIsDead(false);
 				partyPlayer.setIsInDuel(0);
 				partyPlayer.setTeam(Team.NONE);
 				partyPlayer.broadcastUserInfo();
@@ -452,6 +453,7 @@ public class Duel
 			
 			for (L2PcInstance partyPlayer : _playerB.getParty().getPartyMembers())
 			{
+				partyPlayer.setIsDead(false);
 				partyPlayer.setIsInDuel(0);
 				partyPlayer.setTeam(Team.NONE);
 				partyPlayer.broadcastUserInfo();
@@ -463,6 +465,9 @@ public class Duel
 		}
 		else
 		{
+			_playerA.setIsDead(false);
+			_playerB.setIsDead(false);
+			
 			_playerA.setIsInDuel(0);
 			_playerA.setTeam(Team.NONE);
 			_playerA.broadcastUserInfo();

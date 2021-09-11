@@ -27,7 +27,6 @@ import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadManager;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
-import com.l2jhellas.shield.antibot.AntiBot;
 import com.l2jhellas.shield.antiflood.FloodProtectors;
 import com.l2jhellas.shield.antiflood.FloodProtectors.FloodAction;
 
@@ -291,17 +290,6 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				html.setFile("data/html/eventinfo/"+eventId+".htm");
 				activeChar.sendPacket(html);
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
-		}
-		else if(_command.startsWith("captcha"));
-		{
-			final StringTokenizer st = new StringTokenizer(_command);
-			st.nextToken();
-			
-			if(st.hasMoreTokens())
-			{
-				final String answer = st.nextToken();
-				AntiBot.CheckBypass(activeChar, answer.trim());
-			}
 		}
 	}
 	

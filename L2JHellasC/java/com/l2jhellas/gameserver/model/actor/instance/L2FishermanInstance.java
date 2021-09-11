@@ -1,21 +1,20 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
+import java.util.List;
 import java.util.StringTokenizer;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.controllers.TradeController;
 import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
-import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2SkillLearn;
+import com.l2jhellas.gameserver.holder.FishingSkillNode;
 import com.l2jhellas.gameserver.model.L2TradeList;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.gameserver.network.serverpackets.AcquireSkillDone;
 import com.l2jhellas.gameserver.network.serverpackets.AcquireSkillList;
 import com.l2jhellas.gameserver.network.serverpackets.BuyList;
-import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.SellList;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
-import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 
 public class L2FishermanInstance extends L2NpcInstance
@@ -105,50 +104,22 @@ public class L2FishermanInstance extends L2NpcInstance
 		}
 	}
 	
-	public void showSkillList(L2PcInstance player)
+	
+	public static void showSkillList(L2PcInstance player)
 	{
-		L2SkillLearn[] skills = SkillTreeData.getInstance().getAvailableSkills(player);
-		AcquireSkillList asl = new AcquireSkillList(AcquireSkillList.skillType.Fishing);
-		
-		int counts = 0;
-		
-		for (L2SkillLearn s : skills)
+		final List<FishingSkillNode> skills = SkillTreeData.getInstance().getFishingSkillsFor(player);
+		if (skills.isEmpty())
 		{
-			L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
-			
-			if (sk == null)
-				continue;
-			
-			counts++;
-			asl.addSkill(s.getId(), s.getLevel(), s.getLevel(), s.getSpCost(), 1);
-		}
-		
-		if (counts == 0)
-		{
-			NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-			int minlevel = SkillTreeData.getInstance().getMinLevelForNewSkill(player);
-			
+			final int minlevel = SkillTreeData.getInstance().getRequiredLevelForNextFishingSkill(player);
 			if (minlevel > 0)
-			{
-				// No more skills to learn, come back when you level.
-				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1);
-				sm.addNumber(minlevel);
-				player.sendPacket(sm);
-			}
+				player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.DO_NOT_HAVE_FURTHER_SKILLS_TO_LEARN_S1).addNumber(minlevel));
 			else
-			{
-				StringBuilder sb = new StringBuilder();
-				sb.append("<html><head><body>");
-				sb.append("You've learned all skills.<br>");
-				sb.append("</body></html>");
-				html.setHtml(sb.toString());
-				player.sendPacket(html);
-			}
+				player.sendPacket(SystemMessageId.NO_MORE_SKILLS_TO_LEARN);
+			
+			player.sendPacket(AcquireSkillDone.STATIC_PACKET);
 		}
 		else
-		{
-			player.sendPacket(asl);
-		}
+			player.sendPacket(new AcquireSkillList(AcquireSkillList.skillType.Fishing, skills));
 		
 		player.sendPacket(ActionFailed.STATIC_PACKET);
 	}

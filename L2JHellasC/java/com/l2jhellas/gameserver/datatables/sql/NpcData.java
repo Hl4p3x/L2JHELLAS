@@ -449,46 +449,47 @@ public class NpcData
 			npcDat.set("jClass", NpcData.getString("class"));
 			npcDat.set("baseShldDef", 0);
 			npcDat.set("baseShldRate", 0);
-			npcDat.set("baseCritRate", 38);
+			npcDat.set("crit", 38);
 			
 			npcDat.set("name", NpcData.getString("name"));
 			npcDat.set("serverSideName", NpcData.getBoolean("serverSideName"));
 			// npcDat.set("name", "");
 			npcDat.set("title", NpcData.getString("title"));
 			npcDat.set("serverSideTitle", NpcData.getBoolean("serverSideTitle"));
-			npcDat.set("collision_radius", NpcData.getDouble("collision_radius"));
-			npcDat.set("collision_height", NpcData.getDouble("collision_height"));
+			npcDat.set("radius", NpcData.getDouble("collision_radius"));
+			npcDat.set("height", NpcData.getDouble("collision_height"));
 			npcDat.set("sex", NpcData.getString("sex"));
 			npcDat.set("type", NpcData.getString("type"));
 			npcDat.set("baseAtkRange", NpcData.getInt("attackrange"));
 			npcDat.set("rewardExp", NpcData.getInt("exp"));
 			npcDat.set("rewardSp", NpcData.getInt("sp"));
-			npcDat.set("basePAtkSpd", NpcData.getInt("atkspd"));
+			npcDat.set("atkSpd", NpcData.getInt("atkSpd"));
 			npcDat.set("baseMAtkSpd", NpcData.getInt("matkspd"));
 			npcDat.set("aggroRange", NpcData.getInt("aggro"));
 			npcDat.set("rhand", NpcData.getInt("rhand"));
 			npcDat.set("lhand", NpcData.getInt("lhand"));
 			npcDat.set("armor", NpcData.getInt("armor"));
-			npcDat.set("baseWalkSpd", NpcData.getInt("walkspd"));
-			npcDat.set("baseRunSpd", NpcData.getInt("runspd"));
+			npcDat.set("walkSpd", NpcData.getInt("walkspd"));
+			npcDat.set("runSpd", NpcData.getInt("runspd"));
 			
 			// constants, until we have stats in DB
-			npcDat.set("baseSTR", NpcData.getInt("str"));
-			npcDat.set("baseCON", NpcData.getInt("con"));
-			npcDat.set("baseDEX", NpcData.getInt("dex"));
-			npcDat.set("baseINT", NpcData.getInt("int"));
-			npcDat.set("baseWIT", NpcData.getInt("wit"));
-			npcDat.set("baseMEN", NpcData.getInt("men"));
+			npcDat.set("str", NpcData.getInt("str"));
+			npcDat.set("con", NpcData.getInt("con"));
+			npcDat.set("dex", NpcData.getInt("dex"));
+			npcDat.set("int", NpcData.getInt("int"));
+			npcDat.set("wit", NpcData.getInt("wit"));
+			npcDat.set("men", NpcData.getInt("men"));
 			
-			npcDat.set("baseHpMax", NpcData.getInt("hp"));
+			npcDat.set("hp", NpcData.getInt("hp"));
 			npcDat.set("baseCpMax", 0);
-			npcDat.set("baseMpMax", NpcData.getInt("mp"));
+			npcDat.set("mp", NpcData.getInt("mp"));
 			npcDat.set("baseHpReg", NpcData.getFloat("hpreg") > 0 ? NpcData.getFloat("hpreg") : 1.5 + ((level - 1) / 10.0));
 			npcDat.set("baseMpReg", NpcData.getFloat("mpreg") > 0 ? NpcData.getFloat("mpreg") : 0.9 + 0.3 * ((level - 1) / 10.0));
-			npcDat.set("basePAtk", NpcData.getInt("patk"));
-			npcDat.set("basePDef", NpcData.getInt("pdef"));
-			npcDat.set("baseMAtk", NpcData.getInt("matk"));
-			npcDat.set("baseMDef", NpcData.getInt("mdef"));
+			
+			npcDat.set("pAtk", NpcData.getInt("patk"));
+			npcDat.set("pDef", NpcData.getInt("pdef"));
+			npcDat.set("mAtk", NpcData.getInt("matk"));
+			npcDat.set("mDef", NpcData.getInt("mdef"));
 			
 			npcDat.set("factionId", NpcData.getString("faction_id"));
 			npcDat.set("factionRange", NpcData.getInt("faction_range"));
@@ -602,7 +603,7 @@ public class NpcData
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			Map<String, Object> set = npc.getSet();
+			Map<String, Object> set = npc;
 			
 			String name = "";
 			String values = "";

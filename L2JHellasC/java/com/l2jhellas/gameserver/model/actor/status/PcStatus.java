@@ -187,7 +187,7 @@ public class PcStatus extends PlayableStatus
 	
 	public final void setCurrentCp(double newCp, boolean broadcastPacket)
 	{
-		int currentCp = (int) getCurrentCp();
+		int currentCp = (int) getActiveChar().getCurrentCp();
 		int maxCp = getActiveChar().getStat().getMaxCp();
 		
 		synchronized (this)
@@ -239,6 +239,9 @@ public class PcStatus extends PlayableStatus
 			setCurrentMp(getCurrentMp() + Formulas.calcMpRegen(getActiveChar()), false);
 		
 		getActiveChar().broadcastStatusUpdate();
+		
+		if ((getCurrentCp() == pcStat.getMaxCp()) && (getCurrentHp() == pcStat.getMaxHp()) && (getCurrentMp() == pcStat.getMaxMp()))
+			stopHpMpRegeneration();
 	}
 	
 	@Override

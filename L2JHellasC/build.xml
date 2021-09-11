@@ -60,7 +60,7 @@
 				<attribute name="Built-Date" value="${build.tstamp}" />
 				<attribute name="Implementation-URL" value="http://l2jhellas.com/" />
 				<attribute name="Main-Class" value="com.l2jhellas.Server" />
-				<attribute name="Class-Path" value=". c3p0-0.9.5-pre5.jar jna-3.5.1.jar mail.jar mysql-connector-java-8.0.15 Subnet-1.0.jar mchange-commons-java-0.2.6.2.jar" />
+				<attribute name="Class-Path" value=". lameguard-1.9.5.jar c3p0-0.9.5-pre5.jar jna-3.5.1.jar mail.jar mysql-connector-java-8.0.15 Subnet-1.0.jar mchange-commons-java-0.2.6.2.jar" />
 			</manifest>
 		</jar>	
 		<copy todir="${build.dist.libs}">

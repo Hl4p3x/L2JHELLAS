@@ -18,7 +18,7 @@ import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.sql.CharNameTable;
 import com.l2jhellas.gameserver.datatables.sql.ClanTable;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.xml.CharTemplateData;
+import com.l2jhellas.gameserver.datatables.xml.PlayerDataTemplate;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2World;
@@ -343,8 +343,7 @@ public class Hero
 				if (charId == charOneId)
 				{
 					String name = CharNameTable.getInstance().getNameById(charTwoId);
-					CharTemplateData.getInstance();
-					String cls = CharTemplateData.getClassNameById(charTwoClass);
+					String cls = PlayerDataTemplate.getInstance().getClassNameById(charTwoClass);
 					if (name != null && cls != null)
 					{
 						StatsSet fight = new StatsSet();
@@ -380,8 +379,7 @@ public class Hero
 				else if (charId == charTwoId)
 				{
 					String name = CharNameTable.getInstance().getNameById(charOneId);
-					CharTemplateData.getInstance();
-					String cls = CharTemplateData.getClassNameById(charOneClass);
+					String cls = PlayerDataTemplate.getInstance().getClassNameById(charOneClass);
 					if (name != null && cls != null)
 					{
 						StatsSet fight = new StatsSet();

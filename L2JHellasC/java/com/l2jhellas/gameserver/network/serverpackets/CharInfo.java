@@ -1,9 +1,10 @@
 package com.l2jhellas.gameserver.network.serverpackets;
 
 import com.l2jhellas.Config;
-import com.l2jhellas.gameserver.datatables.sql.NpcData;
 import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
+import com.l2jhellas.gameserver.model.actor.L2Summon;
+import com.l2jhellas.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.Inventory;
 
@@ -125,10 +126,11 @@ public class CharInfo extends L2GameServerPacket
 		writeF(_activeChar.getStat().getMovementSpeedMultiplier());
 		writeF(_activeChar.getStat().getAttackSpeedMultiplier());
 		
-		if (_activeChar.getMountType() != 0)
+		final L2Summon summon = _activeChar.getPet();
+		if (_activeChar.isMounted() && summon != null)
 		{
-			writeF(NpcData.getInstance().getTemplate(_activeChar.getMountObjectID()).getCollisionRadius());
-			writeF(NpcData.getInstance().getTemplate(_activeChar.getMountObjectID()).getCollisionHeight());
+			writeF(summon.getTemplate().getCollisionRadius());
+			writeF(summon.getTemplate().getCollisionHeight());
 		}
 		else
 		{
@@ -159,16 +161,9 @@ public class CharInfo extends L2GameServerPacket
 		writeC(_activeChar.getMountType()); // 1 on strider 2 on wyvern 0 no mount
 		writeC(_activeChar.getPrivateStoreType().getId()); // 1 - sellshop
 
-		if(_activeChar.getCubics() != null)
-		{
-			writeH(_activeChar.getCubics().size());
-			_activeChar.getCubics().keySet().forEach(this::writeH);
-		}
-		else
-		{
-			writeH(0x00);
-			writeH(0x00);
-		}
+		writeH(_activeChar.getCubics().size());
+		for (final L2CubicInstance cubic : _activeChar.getCubics().values())
+			writeH(cubic.getId());
 		
 		writeC(_activeChar.isInPartyMatchRoom() ? 1 : 0);
 		

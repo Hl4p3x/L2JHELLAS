@@ -5,9 +5,10 @@ import java.util.logging.Logger;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.SkillSpellbookData;
 import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
-import com.l2jhellas.gameserver.model.L2PledgeSkillLearn;
+import com.l2jhellas.gameserver.holder.ClanSkillNode;
+import com.l2jhellas.gameserver.holder.FishingSkillNode;
+import com.l2jhellas.gameserver.holder.GeneralSkillNode;
 import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2SkillLearn;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2NpcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -46,7 +47,6 @@ public class RequestAquireSkillInfo extends L2GameClientPacket
 		
 		final L2Skill skill = SkillTable.getInstance().getInfo(_id, _level);
 		
-		boolean canteach = false;
 		
 		if (skill == null)
 		{
@@ -55,95 +55,68 @@ public class RequestAquireSkillInfo extends L2GameClientPacket
 			return;
 		}
 		
+		final AcquireSkillInfo asi;
+
 		if (_skillType == 0)
 		{
 			if(trainer==null)
 				return;
 			
+			// Player already has such skill with same or higher level.
+			int skillLvl = activeChar.getSkillLevel(_id);
+			if (skillLvl >= _level)
+				return;
+			
+			// Requested skill must be 1 level higher than existing skill.
+			if (skillLvl != _level - 1)
+				return;
+			
 			if (!trainer.getTemplate().canTeach(activeChar.getSkillLearningClassId()))
 				return; // cheater
 				
-			final L2SkillLearn[] skills = SkillTreeData.getInstance().getAvailableSkills(activeChar, activeChar.getSkillLearningClassId());
-			
-			for (L2SkillLearn s : skills)
+			// Search if the asked skill exists on player template.
+			final GeneralSkillNode gsn = activeChar.getTemplate().findSkill(_id, _level);
+			if (gsn != null)
 			{
-				if (s.getId() == _id && s.getLevel() == _level)
-				{
-					canteach = true;
-					break;
-				}
+				asi = new AcquireSkillInfo(_id, _level, gsn.getCorrectedCost(), 0);
+				final int bookId = SkillSpellbookData.getInstance().getBookForSkill(_id, _level);
+				if (bookId != 0)
+					asi.addRequirement(99, bookId, 1, 50);
+				sendPacket(asi);
 			}
-			
-			if (!canteach)
-				return; // cheater
-				
-			final int requiredSp = SkillTreeData.getInstance().getSkillCost(activeChar, skill);
-			final AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevel(), requiredSp, 0);
-			
-			if (Config.SP_BOOK_NEEDED)
-			{
-				final int spbId = SkillSpellbookData.getInstance().getBookForSkill(skill);
-				
-				if (skill.getLevel() == 1 && spbId > -1)
-					asi.addRequirement(99, spbId, 1, 50);
-			}
-			
-			sendPacket(asi);
 		}
 		else if (_skillType == 2)
 		{
-			int requiredRep = 0;
-			int itemId = 0;
-			final L2PledgeSkillLearn[] skills = SkillTreeData.getInstance().getAvailablePledgeSkills(activeChar);
+			if (!activeChar.isClanLeader())
+				return;
 			
-			for (L2PledgeSkillLearn s : skills)
+			final ClanSkillNode csn = SkillTreeData.getInstance().getClanSkillFor(activeChar, _id, _level);
+			if (csn != null)
 			{
-				if (s.getId() == _id && s.getLevel() == _level)
-				{
-					canteach = true;
-					requiredRep = s.getRepCost();
-					itemId = s.getItemId();
-					break;
-				}
+				asi = new AcquireSkillInfo(skill.getId(), skill.getLevel(), csn.getCost(), 2);
+				if (Config.LIFE_CRYSTAL_NEEDED && csn.getItemId() != 0)
+					asi.addRequirement(1, csn.getItemId(), 1, 0);
+				sendPacket(asi);
 			}
-			
-			if (!canteach)
-				return; // cheater
-				
-			final AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevel(), requiredRep, 2);
-			
-			if (Config.LIFE_CRYSTAL_NEEDED)
-			{
-				asi.addRequirement(1, itemId, 1, 0);
-			}
-			
-			sendPacket(asi);
 		}
-		else
-		// Common Skills
+		else if (_skillType == 1)
 		{
-			int costid = 0;
-			int costcount = 0;
-			int spcost = 0;
+			// Player already has such skill with same or higher level.
+			int skillLvl = activeChar.getSkillLevel(_id);
+			if (skillLvl >= _level)
+				return;
 			
-			final L2SkillLearn[] skillsc = SkillTreeData.getInstance().getAvailableSkills(activeChar);
+			// Requested skill must be 1 level higher than existing skill.
+			if (skillLvl != _level - 1)
+				return;
 			
-			for (L2SkillLearn s : skillsc)
+			final FishingSkillNode fsn = SkillTreeData.getInstance().getFishingSkillFor(activeChar,_id, _level);
+			if (fsn != null)
 			{
-				final L2Skill sk = SkillTable.getInstance().getInfo(s.getId(), s.getLevel());
-				
-				if (sk == null || sk != skill)
-					continue;
-				
-				canteach = true;
-				costid = s.getIdCost();
-				costcount = s.getCostCount();
-				spcost = s.getSpCost();
+				asi = new AcquireSkillInfo(_id, _level, 0, 1);
+				asi.addRequirement(4, fsn.getItemId(), fsn.getItemCount(), 0);
+				sendPacket(asi);
 			}
-			
-			final AcquireSkillInfo asi = new AcquireSkillInfo(skill.getId(), skill.getLevel(), spcost, 1);
-			asi.addRequirement(4, costid, costcount, 0);
-			sendPacket(asi);
 		}
 	}
 	

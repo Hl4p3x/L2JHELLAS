@@ -7,10 +7,12 @@ import java.util.regex.PatternSyntaxException;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.sql.CharNameTable;
-import com.l2jhellas.gameserver.datatables.xml.CharTemplateData;
+import com.l2jhellas.gameserver.datatables.xml.PlayerDataTemplate;
 import com.l2jhellas.gameserver.datatables.xml.SkillTreeData;
 import com.l2jhellas.gameserver.enums.Sex;
 import com.l2jhellas.gameserver.enums.player.PlayerCreateFailReason;
+import com.l2jhellas.gameserver.holder.GeneralSkillNode;
+import com.l2jhellas.gameserver.holder.ItemTemplateHolder;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
 import com.l2jhellas.gameserver.instancemanager.QuestManager;
 import com.l2jhellas.gameserver.model.L2ShortCut;
@@ -106,9 +108,9 @@ public final class CharacterCreate extends L2GameClientPacket
 			return;
 		}
 
-		final L2PcTemplate template = CharTemplateData.getInstance().getTemplate(_classId);
+		final L2PcTemplate template = PlayerDataTemplate.getInstance().getTemplate(_classId);
 		
-		if (template == null || template.classBaseLevel > 1)
+		if (template == null || template.getClassBaseLevel() > 1)
 		{
 			sendPacket(new CharCreateFail(PlayerCreateFailReason.REASON_CREATION_FAILED));
 			return;
@@ -164,8 +166,9 @@ public final class CharacterCreate extends L2GameClientPacket
 		newChar.addAncientAdena("Init", Config.STARTING_ANCIENT, null, false);
 		
 		newChar.getAppearance().setIsVisible(false);
-		newChar.getPosition().setXYZ(template.spawnX, template.spawnY, template.spawnZ);
 
+		newChar.getPosition().setXYZ(template.getRandomSpawn().getX(),template.getRandomSpawn().getY(),template.getRandomSpawn().getZ());
+	
 		if (Config.ALLOW_CREATE_LVL)
 		{
 			long tXp = Experience.LEVEL[Config.CUSTOM_START_LVL];
@@ -180,10 +183,9 @@ public final class CharacterCreate extends L2GameClientPacket
 		newChar.registerShortCut(new L2ShortCut(3, 0, 3, 5, -1, 1));
 		newChar.registerShortCut(new L2ShortCut(10, 0, 3, 0, -1, 1));
 		
-		L2Item[] items = template.getItems();
-		for (L2Item item2 : items)
+		for (ItemTemplateHolder holder : template.getItems())
 		{
-			L2ItemInstance item = newChar.getInventory().addItem("Init", item2.getItemId(), 1, newChar, null);
+			L2ItemInstance item = newChar.getInventory().addItem("Init", holder.getId(),holder.getValue(), newChar, null);
 			
 			if (item.getItemId() == 5588)
 				newChar.registerShortCut(new L2ShortCut(11, 0, 1, item.getObjectId(), -1, 1));
@@ -194,11 +196,10 @@ public final class CharacterCreate extends L2GameClientPacket
 					newChar.getInventory().equipItemAndRecord(item);
 			}
 		}
-		
-		L2SkillLearn[] startSkills = SkillTreeData.getInstance().getAvailableSkills(newChar, newChar.getClassId());
-		for (L2SkillLearn startSkill : startSkills)
+				
+		for (GeneralSkillNode startSkill : newChar.getAvailableAutoGetSkills())
 		{
-			newChar.addSkill(SkillTable.getInstance().getInfo(startSkill.getId(), startSkill.getLevel()), true);
+			newChar.addSkill(SkillTable.getInstance().getInfo(startSkill.getId(), startSkill.getValue()), true);
 			if (startSkill.getId() == 1001 || startSkill.getId() == 1177)
 				newChar.registerShortCut(new L2ShortCut(1, 0, 2, startSkill.getId(), 1, 1));
 			if (startSkill.getId() == 1216)

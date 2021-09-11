@@ -5,6 +5,7 @@ import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
+import com.l2jhellas.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.Inventory;
 
@@ -173,11 +174,11 @@ public class UserInfo extends L2GameServerPacket
 		writeF(_activeChar.getStat().getMovementSpeedMultiplier());
 		writeF(_activeChar.getStat().getAttackSpeedMultiplier());
 		
-		L2Summon pet = _activeChar.getPet();
-		if (_activeChar.getMountType() != 0 && pet != null)
+		final L2Summon summon = _activeChar.getPet();
+		if (_activeChar.isMounted() && summon != null)
 		{
-			writeF(pet.getTemplate().getCollisionRadius());
-			writeF(pet.getTemplate().getCollisionHeight());
+			writeF(summon.getTemplate().getCollisionRadius());
+			writeF(summon.getTemplate().getCollisionHeight());
 		}
 		else
 		{
@@ -208,16 +209,9 @@ public class UserInfo extends L2GameServerPacket
 		writeD(_activeChar.getPkKills());
 		writeD(_activeChar.getPvpKills());
 
-		if(_activeChar.getCubics() != null)
-		{
-			writeH(_activeChar.getCubics().size());
-			_activeChar.getCubics().keySet().forEach(this::writeH);
-		}
-		else
-		{
-			writeH(0x00);
-			writeH(0x00);
-		}
+		writeH(_activeChar.getCubics().size());
+		for (final L2CubicInstance cubic : _activeChar.getCubics().values())
+			writeH(cubic.getId());
 		
 		writeC(_activeChar.isInPartyMatchRoom() ? 1 : 0);
 		

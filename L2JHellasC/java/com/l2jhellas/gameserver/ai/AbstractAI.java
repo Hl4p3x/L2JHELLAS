@@ -50,6 +50,8 @@ public abstract class AbstractAI implements Ctrl
 	private int _moveToPawnTimeout;
 	
 	protected Future<?> _followTask = null;
+	protected Future<?> _attackfollowTask = null;
+	
 	private static final int FOLLOW_INTERVAL = 1000;
 	private static final int ATTACK_FOLLOW_INTERVAL = 500;
 	
@@ -207,10 +209,6 @@ public abstract class AbstractAI implements Ctrl
 				if (!_actor.isCastingNow())
 					onEvtArrived();
 				break;
-			case EVT_ARRIVED_REVALIDATE:
-				if (_actor.isMoving())
-					onEvtArrivedRevalidate();
-				break;
 			case EVT_ARRIVED_BLOCKED:
 				onEvtArrivedBlocked((Location) arg0);
 				break;
@@ -279,9 +277,7 @@ public abstract class AbstractAI implements Ctrl
 	protected abstract void onEvtUserCmd(Object arg0, Object arg1);
 	
 	protected abstract void onEvtArrived();
-	
-	protected abstract void onEvtArrivedRevalidate();
-	
+		
 	protected abstract void onEvtArrivedBlocked(Location blocked_at_pos);
 	
 	protected abstract void onEvtForgetObject(L2Object object);
@@ -376,18 +372,21 @@ public abstract class AbstractAI implements Ctrl
 	
 	public void startAttackFollow(L2Character pawn, int offset)
 	{
-		if (_followTask != null)
+		if (_attackfollowTask != null)
 		{
-			_followTask.cancel(false);
-			_followTask = null;
+			_attackfollowTask.cancel(false);
+			_attackfollowTask = null;
 		}
 		
-		_followTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> AttackFollowTask(pawn, offset), 5, ATTACK_FOLLOW_INTERVAL);
+		if(pawn.isDead())
+			return;
+		
+		_attackfollowTask = ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(() -> AttackFollowTask(pawn, offset), 5, ATTACK_FOLLOW_INTERVAL);
 	}
 	
 	protected void AttackFollowTask(L2Character target, int offset)
 	{
-		if (_followTask == null)
+		if (_attackfollowTask == null || target.isDead())
 			return;
 		
 		final Location destination = target.getLoc().clone();
@@ -404,16 +403,12 @@ public abstract class AbstractAI implements Ctrl
 		if(target == null)
 			return;
 		
-		// Chek if actor can move
 		if (!_actor.isMovementDisabled())
 		{
 			if(!_actor.isAttacking() && !_actor.isCastingNow())
 			{
-				// Calculate movement data for a move to location action and add the actor to movingObjects of GameTimeController
 				_actor.moveToLocation(loc.getX() , loc.getY() , loc.getZ(), offset-10);
-
-				// Send a Server->Client packet CharMoveToLocation to the actor and all L2PcInstance in its _knownPlayers
-				_actor.broadcastPacket(target.isMoving() ? new MoveToLocation(_actor , loc) : new MoveToPawn(_actor, target, offset-10));
+				_actor.broadcastPacket(_actor.isOnGeodataPath() || target.isMoving() ? new MoveToLocation(_actor) : new MoveToPawn(_actor, target, offset-10));
 			}
 		}
 		else
@@ -505,6 +500,7 @@ public abstract class AbstractAI implements Ctrl
 		_intention = AI_INTENTION_IDLE;
 		_target = null;
 		_attackTarget = null;
+		_followTarget = null;
 		
 		// Cancel the follow task if necessary
 		stopFollow();
@@ -549,8 +545,11 @@ public abstract class AbstractAI implements Ctrl
 		{
 			try
 			{
-				if (_followTask == null)
+				if (_followTask == null || getIntention() != CtrlIntention.AI_INTENTION_FOLLOW)
+				{
+					stopFollow();
 					return;
+				}
 				
 				if (_followTarget == null || _followTarget.isTeleporting())
 				{
@@ -608,6 +607,14 @@ public abstract class AbstractAI implements Ctrl
 			_followTask.cancel(false);
 			_followTask = null;
 		}
+		
+		if (_attackfollowTask != null)
+		{
+			// Stop the Follow Task
+			_attackfollowTask.cancel(false);
+			_attackfollowTask = null;
+		}
+				
 		_followTarget = null;
 	}
 	

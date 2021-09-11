@@ -30,7 +30,7 @@ import Extensions.fake.roboto.ai.WindRiderAI;
 import Extensions.fake.roboto.ai.walker.GiranWalkerAI;
 
 import com.l2jhellas.Config;
-import com.l2jhellas.gameserver.datatables.xml.CharTemplateData;
+import com.l2jhellas.gameserver.datatables.xml.PlayerDataTemplate;
 import com.l2jhellas.gameserver.enums.Sex;
 import com.l2jhellas.gameserver.enums.player.ClassId;
 import com.l2jhellas.gameserver.enums.player.ClassRace;
@@ -243,7 +243,7 @@ public class FakeHelpers
 		
 		ClassId classId = getThirdClasses().get(Rnd.get(0, getThirdClasses().size() - 1));
 		
-		final L2PcTemplate template = CharTemplateData.getInstance().getTemplate(classId);
+		final L2PcTemplate template = PlayerDataTemplate.getInstance().getTemplate(classId);
 		PcAppearance app = getRandomAppearance(template.getRace());
 		FakePlayer player = new FakePlayer(objectId, template, accountName, app);
 		

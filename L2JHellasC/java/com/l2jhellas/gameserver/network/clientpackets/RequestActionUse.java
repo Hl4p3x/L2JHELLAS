@@ -105,12 +105,7 @@ public final class RequestActionUse extends L2GameClientPacket
 				}
 				
 				if (summon.isAttackingDisabled())
-				{
-					if (summon.getAttackEndTime() <= System.currentTimeMillis())
-						return;
-					
-					summon.getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
-				}
+					return;				
 				
 				if (summon instanceof L2PetInstance && (summon.getLevel() - player.getLevel() > 20))
 				{

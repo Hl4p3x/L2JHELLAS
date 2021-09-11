@@ -429,12 +429,11 @@ public abstract class L2Effect
 		Env env = new Env();
 		env.player = getEffector();
 		env.target = getEffected();
-		env.skill = getSkill();
-		Func f;
+		env.skill = getSkill();	
 		
 		for (FuncTemplate t : _funcTemplates)
 		{
-			f = t.getFunc(env, this); // effect is owner
+			Func f = t.getFunc(env, this); // effect is owner
 			if (f != null)
 				funcs.add(f);
 		}

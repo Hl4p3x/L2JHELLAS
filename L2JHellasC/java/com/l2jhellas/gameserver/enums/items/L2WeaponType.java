@@ -1,8 +1,7 @@
 package com.l2jhellas.gameserver.enums.items;
 
 public enum L2WeaponType
-{
-	
+{	
 	NONE(1, "Shield",40), // Shields!!!
 	SWORD(2, "Sword",40),
 	BLUNT(3, "Blunt",40),

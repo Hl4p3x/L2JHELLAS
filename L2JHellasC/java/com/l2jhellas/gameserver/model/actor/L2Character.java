@@ -22,6 +22,7 @@ import com.l2jhellas.gameserver.datatables.xml.MapRegionTable.TeleportWhereType;
 import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.enums.items.L2CrystalType;
 import com.l2jhellas.gameserver.enums.items.L2WeaponType;
+import com.l2jhellas.gameserver.enums.items.ShotType;
 import com.l2jhellas.gameserver.enums.player.DuelState;
 import com.l2jhellas.gameserver.enums.player.Position;
 import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
@@ -45,6 +46,7 @@ import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.L2WorldRegion;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
 import com.l2jhellas.gameserver.model.actor.instance.L2ArtefactInstance;
+import com.l2jhellas.gameserver.model.actor.instance.L2CubicInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2GrandBossInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2GuardInstance;
@@ -400,7 +402,6 @@ public abstract class L2Character extends L2Object
 
 		if (!GeoEngine.canSeeTarget(this, target))
 		{
-			sendPacket(new SystemMessage(SystemMessageId.CANT_SEE_TARGET));
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 			sendPacket(ActionFailed.STATIC_PACKET);
 			return;
@@ -472,9 +473,6 @@ public abstract class L2Character extends L2Object
 				}
 			}
 		}
-
-		// Get the active weapon instance (always equipped in the right hand)
-		L2ItemInstance weaponInst = getActiveWeaponInstance();
 
 		// Get the active weapon item corresponding to the active weapon instance (always equipped in the right hand)
 		L2Weapon weaponItem = getActiveWeaponItem();
@@ -567,12 +565,7 @@ public abstract class L2Character extends L2Object
 			setCurrentCp(getCurrentCp() - 10);
 
 		// Verify if soulshots are charged.
-		boolean wasSSCharged;
-
-		if (this instanceof L2Summon && !(this instanceof L2PetInstance))
-			wasSSCharged = (((L2Summon) this).getChargedSoulShot() != L2ItemInstance.CHARGED_NONE);
-		else
-			wasSSCharged = (weaponInst != null && weaponInst.getChargedSoulshot() != L2ItemInstance.CHARGED_NONE);
+		boolean wasSSCharged = isChargedShot(ShotType.SOULSHOT);
 
 		final int timeAtk = Formulas.calculateTimeBetweenAttacks(this);
 
@@ -635,7 +628,21 @@ public abstract class L2Character extends L2Object
 		getAI().clientStartAutoAttack();
 
 		if (this instanceof L2Summon)
-			((L2Summon) this).getOwner().getAI().clientStartAutoAttack();
+		{
+			L2PcInstance owners = ((L2Summon) this).getOwner();
+
+			if(owners != null && !owners.isDead())
+			{
+				owners.getAI().clientStartAutoAttack();
+
+				if (!owners.getCubics().isEmpty())
+				{
+					for (L2CubicInstance cubic : owners.getCubics().values())
+						if (cubic != null && cubic.getId() != L2CubicInstance.LIFE_CUBIC)
+							cubic.doAction(target);
+				}
+			}
+		}
 
 		if (player != null && player.getPet() != target)
 			player.updatePvPStatus(target);	
@@ -661,10 +668,7 @@ public abstract class L2Character extends L2Object
 
 			}
 
-			if (this instanceof L2Summon && !(this instanceof L2PetInstance))
-				((L2Summon) this).setChargedSoulShot(L2ItemInstance.CHARGED_NONE);
-			else if (weaponInst != null)
-				weaponInst.setChargedSoulshot(L2ItemInstance.CHARGED_NONE);
+			setChargedShot(ShotType.SOULSHOT, false);
 		}
 
 		if (attack.hasHits())
@@ -1032,7 +1036,10 @@ public abstract class L2Character extends L2Object
 		
 		if (weaponInst != null && skill.isMagic() && !hasEffectDelay && skill.getTargetType() != L2SkillTargetType.TARGET_SELF)
 		{
-			if ((weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_BLESSED_SPIRITSHOT) || (weaponInst.getChargedSpiritshot() == L2ItemInstance.CHARGED_SPIRITSHOT))
+			final boolean sps = isChargedShot(ShotType.SPIRITSHOT);
+			final boolean bss = isChargedShot(ShotType.BLESSED_SPIRITSHOT);	
+			
+			if (sps || bss)
 			{
 				// Only takes 70% of the time to cast a BSpS/SpS cast
 				hitTime = (int) (0.70 * hitTime);
@@ -1047,7 +1054,7 @@ public abstract class L2Character extends L2Object
 					case RESURRECT:
 					case RECALL:
 					case DOT:
-						weaponInst.setChargedSpiritshot(L2ItemInstance.CHARGED_NONE);
+						setChargedShot(sps ? ShotType.SPIRITSHOT : ShotType.BLESSED_SPIRITSHOT, false);
 						break;
 					default:
 						break;
@@ -1416,6 +1423,11 @@ public abstract class L2Character extends L2Object
 	public boolean isAttackingDisabled()
 	{
 		return isImmobileUntilAttacked() || isStunned() || isSleeping() || isAttacking() || isCastingNow() || isFakeDeath() || isParalyzed();
+	}
+	
+	public boolean isSitingDisabled()
+	{
+		return isImmobileUntilAttacked() || isStunned() || isSleeping() || isAttacking() || isFakeDeath() || isParalyzed();
 	}
 	
 	public boolean MovementIsDisabled()
@@ -2280,37 +2292,39 @@ public abstract class L2Character extends L2Object
 		return _NotifyQuestOfDeathList;
 	}
 	
-	public final synchronized void addStatFunc(Func f)
+	public final void addStatFunc(Func f)
 	{
 		if (f == null)
 			return;
-		
-		// Check if Calculator set is linked to the standard Calculator set of
-		// NPC
-		if (_calculators == NPC_STD_CALCULATOR)
-		{
-			// Create a copy of the standard NPC Calculator set
-			_calculators = new Calculator[Stats.NUM_STATS];
-			
-			for (int i = 0; i < Stats.NUM_STATS; i++)
-			{
-				if (NPC_STD_CALCULATOR[i] != null)
-					_calculators[i] = new Calculator(NPC_STD_CALCULATOR[i]);
-			}
-		}
-		
-		// Select the Calculator of the affected state in the Calculator set
+
 		int stat = f.stat.ordinal();
-		
-		if (_calculators[stat] == null)
-			_calculators[stat] = new Calculator();
-		
-		// Add the Func to the calculator corresponding to the state
-		_calculators[stat].addFunc(f);
-		
+
+		synchronized (_calculators)
+		{
+			// Check if Calculator set is linked to the standard Calculator set of
+			// NPC
+			if (_calculators == NPC_STD_CALCULATOR)
+			{
+				// Create a copy of the standard NPC Calculator set
+				_calculators = new Calculator[Stats.NUM_STATS];
+
+				for (int i = 0; i < Stats.NUM_STATS; i++)
+				{
+					if (NPC_STD_CALCULATOR[i] != null)
+						_calculators[i] = new Calculator(NPC_STD_CALCULATOR[i]);
+				}
+			}
+
+			// Select the Calculator of the affected state in the Calculator set
+			if (_calculators[stat] == null)
+				_calculators[stat] = new Calculator();
+
+			// Add the Func to the calculator corresponding to the state
+			_calculators[stat].addFunc(f);
+		}	
 	}
 	
-	public final synchronized void addStatFuncs(Func[] funcs,boolean update)
+	public final void addStatFuncs(Func[] funcs,boolean update)
 	{
 		List<Stats> modifiedStats = new ArrayList<>();
 		
@@ -2322,40 +2336,43 @@ public abstract class L2Character extends L2Object
 		broadcastModifiedStats(modifiedStats,update);
 	}
 	
-	public final synchronized void removeStatFunc(Func f)
+	public final void removeStatFunc(Func f)
 	{
 		if (f == null)
 			return;
-		
+
 		// Select the Calculator of the affected state in the Calculator set
 		int stat = f.stat.ordinal();
-		
+
 		if (_calculators[stat] == null)
 			return;
-		
-		// Remove the Func object from the Calculator
-		_calculators[stat].removeFunc(f);
-		
-		if (_calculators[stat].size() == 0)
-			_calculators[stat] = null;
-		
-		// If possible, free the memory and just create a link on
-		// NPC_STD_CALCULATOR
-		if (this instanceof L2Npc)
+
+		synchronized (_calculators)
 		{
-			int i = 0;
-			for (; i < Stats.NUM_STATS; i++)
+			// Remove the Func object from the Calculator
+			_calculators[stat].removeFunc(f);
+
+			if (_calculators[stat].size() == 0)
+				_calculators[stat] = null;
+
+			// If possible, free the memory and just create a link on
+			// NPC_STD_CALCULATOR
+			if (this instanceof L2Npc)
 			{
-				if (!Calculator.equalsCals(_calculators[i], NPC_STD_CALCULATOR[i]))
-					break;
+				int i = 0;
+				for (; i < Stats.NUM_STATS; i++)
+				{
+					if (!Calculator.equalsCals(_calculators[i], NPC_STD_CALCULATOR[i]))
+						break;
+				}
+
+				if (i >= Stats.NUM_STATS)
+					_calculators = NPC_STD_CALCULATOR;
 			}
-			
-			if (i >= Stats.NUM_STATS)
-				_calculators = NPC_STD_CALCULATOR;
 		}
 	}
 	
-	public final synchronized void removeStatFuncs(Func[] funcs)
+	public final void removeStatFuncs(Func[] funcs)
 	{
 		List<Stats> modifiedStats = new ArrayList<>();
 		
@@ -2367,48 +2384,50 @@ public abstract class L2Character extends L2Object
 		broadcastModifiedStats(modifiedStats,true);
 	}
 	
-	public final synchronized void removeStatsOwner(Object owner,boolean update)
-	{
-		
+	public final void removeStatsOwner(Object owner,boolean update)
+	{	
 		List<Stats> modifiedStats = null;
-		// Go through the Calculator set
-		for (int i = 0; i < _calculators.length; i++)
+		synchronized (_calculators)
 		{
-			if (_calculators[i] != null)
+			// Go through the Calculator set
+			for (int i = 0; i < _calculators.length; i++)
 			{
-				// Delete all Func objects of the selected owner
-				if (modifiedStats != null)
-					modifiedStats.addAll(_calculators[i].removeOwner(owner));
-				else
-					modifiedStats = _calculators[i].removeOwner(owner);
-				
-				if (_calculators[i].size() == 0)
-					_calculators[i] = null;
-			}
-		}
-		
-		// If possible, free the memory and just create a link on
-		// NPC_STD_CALCULATOR
-		if (this instanceof L2Npc)
-		{
-			int i = 0;
-			for (; i < Stats.NUM_STATS; i++)
-			{
-				if (!Calculator.equalsCals(_calculators[i], NPC_STD_CALCULATOR[i]))
-					break;
+				if (_calculators[i] != null)
+				{
+					// Delete all Func objects of the selected owner
+					if (modifiedStats != null)
+						modifiedStats.addAll(_calculators[i].removeOwner(owner));
+					else
+						modifiedStats = _calculators[i].removeOwner(owner);
+					
+					if (_calculators[i].size() == 0)
+						_calculators[i] = null;
+				}
 			}
 			
-			if (i >= Stats.NUM_STATS)
-				_calculators = NPC_STD_CALCULATOR;
-		}
+			// If possible, free the memory and just create a link on
+			// NPC_STD_CALCULATOR
+			if (this instanceof L2Npc)
+			{
+				int i = 0;
+				for (; i < Stats.NUM_STATS; i++)
+				{
+					if (!Calculator.equalsCals(_calculators[i], NPC_STD_CALCULATOR[i]))
+						break;
+				}
+				
+				if (i >= Stats.NUM_STATS)
+					_calculators = NPC_STD_CALCULATOR;
+			}
 
-		if (owner instanceof L2Effect)
-		{
-			if (!((L2Effect) owner).preventExitUpdate)
+			if (owner instanceof L2Effect)
+			{
+				if (!((L2Effect) owner).preventExitUpdate)
+					broadcastModifiedStats(modifiedStats,update);
+			}
+			else
 				broadcastModifiedStats(modifiedStats,update);
-		}
-		else
-			broadcastModifiedStats(modifiedStats,update);		
+		}		
 	}
 	
 	private void broadcastModifiedStats(List<Stats> stats , boolean update)
@@ -2447,7 +2466,14 @@ public abstract class L2Character extends L2Object
 					su.addAttribute(StatusUpdate.MAX_HP, getMaxHp());
 				}
 				else if (stat == Stats.RUN_SPEED || stat == Stats.WALK_SPEED)
+				{				
+					if(stat == Stats.RUN_SPEED && isRunning())
+						getRunSpeed();					
+					else if(stat == Stats.WALK_SPEED && !isRunning())
+						getWalkSpeed();
+					
 					broadcastFull = true;
+				}
 			}
 		}
 		
@@ -2925,7 +2951,6 @@ public abstract class L2Character extends L2Object
 		if (isFloating && !verticalMovementOnly) 
 			distance = Math.hypot(distance, dz);
 
-		int ticksToMove = 1 + (int) (GameTimeController.TICKS_PER_SECOND * distance / speed);
 		m._xDestination = x;
 		m._yDestination = y;
 		m._zDestination = z; 
@@ -2940,9 +2965,6 @@ public abstract class L2Character extends L2Object
 		_move = m;
 
 		GameTimeController.getInstance().registerMovingObject(this);
-
-		if (ticksToMove * GameTimeController.MILLIS_IN_TICK > 3000)
-			ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(CtrlEvent.EVT_ARRIVED_REVALIDATE), 2000);
 	}
 
 	public List<Location> findPath(int originalX, int originalY, int originalZ)
@@ -3043,7 +3065,7 @@ public abstract class L2Character extends L2Object
 		
 		if (delta > 1)
 		{
-			final float speed = (this instanceof L2Vehicle) ? ((L2Vehicle) this).getStat().getMoveSpeed() : getStat().getMoveSpeed();
+			final float speed = isPlayer() ? ((L2PcInstance) this).getMoveSpeed() :  (this instanceof L2Vehicle) ? ((L2Vehicle) this).getStat().getMoveSpeed() : getStat().getMoveSpeed();
 			final double distPassed = (speed * (gameTicks - m._moveTimestamp)) / GameTimeController.TICKS_PER_SECOND;
 			distFraction = distPassed / delta;
 		}
@@ -3129,10 +3151,6 @@ public abstract class L2Character extends L2Object
 		if (distance != 0) 
 			setHeading(Util.calculateHeadingFrom(getX(), getY(), m._xDestination, m._yDestination));
 		
-		// Caclulate the Nb of ticks between the current position and the destination
-		// One tick added for rounding reasons
-		int ticksToMove = 1 + (int) ((GameTimeController.TICKS_PER_SECOND * distance) / speed);
-		
 		m._heading = 0; // initial value for coordinate sync
 		
 		m._moveStartTime = GameTimeController.getInstance().getGameTicks();
@@ -3143,10 +3161,6 @@ public abstract class L2Character extends L2Object
 		// Add the character to movingObjects of the GameTimeController
 		GameTimeController.getInstance().registerMovingObject(this);
 		
-		// Create a task to notify the AI that L2Character arrives at a check point of the movement
-		if ((ticksToMove * GameTimeController.MILLIS_IN_TICK) > 3000)
-			ThreadPoolManager.getInstance().scheduleAi(new NotifyAITask(CtrlEvent.EVT_ARRIVED_REVALIDATE), 2000);
-
 		broadcastPacket(new MoveToLocation(this));
 		return true;
 	}

@@ -159,6 +159,7 @@ public class BotsPreventionManager
 		if(player.isInCombat() || player.getPvpFlag() > 0 || player.getKarma() > 0)
 		{
 			player.store();
+			player.getInventory().updateDatabase();
 		    player.closeNetConnection(false);
 		}
 		else

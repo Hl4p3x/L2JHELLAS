@@ -96,6 +96,8 @@ public final class Logout extends L2GameClientPacket
 		if(player.isMounted())
 		   player.dismount();
 		
+		player.getAI().stopFollow();
+		
 		player.endDuel();
 		
 		// Remove From Boss

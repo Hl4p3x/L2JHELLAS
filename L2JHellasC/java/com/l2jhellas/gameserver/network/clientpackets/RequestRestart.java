@@ -115,6 +115,8 @@ public final class RequestRestart extends L2GameClientPacket
 			   EventManager.getInstance().onLogout(player);
 		}
 		
+		player.getAI().stopFollow();
+		
 		player.endDuel();
 				
 		L2GameClient client = getClient();
