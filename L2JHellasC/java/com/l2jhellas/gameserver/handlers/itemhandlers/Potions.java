@@ -137,15 +137,6 @@ public class Potions implements IItemHandler
 			activeChar.sendPacket(SystemMessageId.THIS_ITEM_IS_NOT_AVAILABLE_FOR_THE_OLYMPIAD_EVENT);
 			return;
 		}
-
-		if (!Config.ALLOW_POTS_IN_PVP)
-		{
-			if (activeChar.getPvpFlag() != 0)
-			{
-				activeChar.sendMessage("You Cannot Use Potions In PvP!");
-				return;
-			}
-		}
 		
 		int itemId = item.getItemId();
 		

@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[dion_mass_teleporter]" event_name="[dion_mass_teleporter]">
+		<npc id="35137" count="1" respawn="60" pos="20492 160363 -1978 0" />	
+	</spawn>
+	<spawn name="[dion_siege01]" event_name="[dion_siege01]">
+		<npc id="35127" count="1" respawn="10800" pos="22420 156643 -2953 48376" />	
+		<npc id="35127" count="1" respawn="10800" pos="22392 156643 -2953 48376" />	
+		<npc id="35127" count="1" respawn="10800" pos="22364 156643 -2953 48376" />	
+		<npc id="35127" count="1" respawn="10800" pos="22336 156643 -2953 48376" />	
+		<npc id="35127" count="1" respawn="10800" pos="22308 156643 -2953 48376" />	
+		<npc id="35127" count="1" respawn="10800" pos="22280 156643 -2953 48376" />	
+		<npc id="35127" count="1" respawn="10800" pos="22252 156643 -2953 48376" />	
+		<npc id="35127" count="1" respawn="10800" pos="22224 156643 -2953 48376" />	
+		<npc id="35127" count="1" respawn="10800" pos="22196 156643 -2953 48376" />	
+		<npc id="35125" count="1" respawn="10800" pos="22420 156623 -2953 48376" />	
+		<npc id="35124" count="1" respawn="10800" pos="22392 156623 -2953 48376" />	
+		<npc id="35125" count="1" respawn="10800" pos="22364 156623 -2953 48376" />	
+		<npc id="35124" count="1" respawn="10800" pos="22336 156623 -2953 48376" />	
+		<npc id="35125" count="1" respawn="10800" pos="22308 156623 -2953 48376" />	
+		<npc id="35124" count="1" respawn="10800" pos="22280 156623 -2953 48376" />	
+		<npc id="35125" count="1" respawn="10800" pos="22252 156623 -2953 48376" />	
+		<npc id="35124" count="1" respawn="10800" pos="22224 156623 -2953 48376" />	
+		<npc id="35125" count="1" respawn="10800" pos="22196 156623 -2953 48376" />	
+		<npc id="35126" count="1" respawn="10800" pos="22420 156603 -2953 48376" />	
+		<npc id="35126" count="1" respawn="10800" pos="22392 156603 -2953 48376" />	
+		<npc id="35126" count="1" respawn="10800" pos="22364 156603 -2953 48376" />	
+		<npc id="35126" count="1" respawn="10800" pos="22336 156603 -2953 48376" />	
+		<npc id="35121" count="1" respawn="10800" pos="22308 156603 -2953 48376" />	
+		<npc id="35126" count="1" respawn="10800" pos="22280 156603 -2953 48376" />	
+		<npc id="35126" count="1" respawn="10800" pos="22252 156603 -2953 48376" />	
+		<npc id="35126" count="1" respawn="10800" pos="22224 156603 -2953 48376" />	
+		<npc id="35126" count="1" respawn="10800" pos="22196 156603 -2953 48376" />	
+	</spawn>
+	<spawn name="[dion_siege02]" event_name="[dion_siege02]">
+		<npc id="35126" count="1" respawn="10800" pos="22563 157021 -2943 32080" />	
+		<npc id="35126" count="1" respawn="10800" pos="22562 157052 -2942 32080" />	
+		<npc id="35121" count="1" respawn="10800" pos="22562 157082 -2942 32080" />	
+		<npc id="35126" count="1" respawn="10800" pos="22562 157112 -2941 32080" />	
+		<npc id="35126" count="1" respawn="10800" pos="22563 157143 -2942 32080" />	
+		<npc id="35126" count="1" respawn="10800" pos="22561 157172 -2941 32080" />	
+		<npc id="35121" count="1" respawn="10800" pos="22561 157202 -2941 32080" />	
+		<npc id="35126" count="1" respawn="10800" pos="22561 157232 -2940 32080" />	
+		<npc id="35126" count="1" respawn="10800" pos="22562 157263 -2941 32080" />	
+		<npc id="35125" count="1" respawn="10800" pos="22588 157039 -2961 32080" />	
+		<npc id="35125" count="1" respawn="10800" pos="22588 157069 -2961 32080" />	
+		<npc id="35124" count="1" respawn="10800" pos="22588 157100 -2960 32080" />	
+		<npc id="35125" count="1" respawn="10800" pos="22589 157130 -2961 32080" />	
+		<npc id="35125" count="1" respawn="10800" pos="22587 157160 -2960 32080" />	
+		<npc id="35124" count="1" respawn="10800" pos="22587 157190 -2960 32080" />	
+		<npc id="35125" count="1" respawn="10800" pos="22586 157219 -2959 32080" />	
+		<npc id="35125" count="1" respawn="10800" pos="22587 157251 -2960 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22609 157023 -2965 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22608 157053 -2965 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22608 157083 -2964 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22607 157114 -2964 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22609 157144 -2964 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22607 157174 -2963 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22607 157204 -2963 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22606 157233 -2962 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22607 157265 -2963 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22755 157041 -2966 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22755 157071 -2965 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22755 157102 -2965 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22754 157132 -2964 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22755 157162 -2964 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22753 157192 -2964 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22752 157222 -2963 32080" />	
+		<npc id="35127" count="1" respawn="10800" pos="22752 157252 -2963 32080" />	
+		<npc id="35123" count="1" respawn="10800" pos="22856 157372 -2957 48668" />	
+		<npc id="35123" count="1" respawn="10800" pos="22826 157373 -2958 48668" />	
+		<npc id="35113" count="1" respawn="60" pos="22618 157254 -2941 32080" />	
+		<npc id="35113" count="1" respawn="60" pos="22619 157190 -2941 32080" />	
+		<npc id="35113" count="1" respawn="60" pos="22619 157101 -2941 32080" />	
+		<npc id="35113" count="1" respawn="60" pos="22616 157041 -2941 32080" />	
+	</spawn>
+	<spawn name="[dion_siege03]" event_name="[dion_siege03]">
+		<npc id="35127" count="1" respawn="10800" pos="22370 157394 -2692 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22340 157395 -2693 48668" />	
+		<npc id="35122" count="1" respawn="10800" pos="22310 157392 -2692 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22280 157391 -2692 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22251 157390 -2691 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22600 157328 -2690 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22570 157329 -2691 48668" />	
+		<npc id="35122" count="1" respawn="10800" pos="22541 157326 -2690 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22511 157325 -2690 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22481 157324 -2689 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22067 157190 -2691 64432" />	
+		<npc id="35127" count="1" respawn="10800" pos="22064 157160 -2692 64432" />	
+		<npc id="35122" count="1" respawn="10800" pos="22066 157131 -2691 64432" />	
+		<npc id="35127" count="1" respawn="10800" pos="22065 157101 -2691 64432" />	
+		<npc id="35127" count="1" respawn="10800" pos="22064 157071 -2690 64432" />	
+		<npc id="35126" count="1" respawn="10800" pos="21800 157396 -2794 32712" />	
+		<npc id="35121" count="1" respawn="10800" pos="21799 157430 -2794 32712" />	
+		<npc id="35126" count="1" respawn="10800" pos="21795 157471 -2793 32712" />	
+		<npc id="35125" count="1" respawn="10800" pos="21821 157396 -2783 32712" />	
+		<npc id="35125" count="1" respawn="10800" pos="21820 157430 -2784 32712" />	
+		<npc id="35125" count="1" respawn="10800" pos="21816 157471 -2783 32712" />	
+		<npc id="35124" count="1" respawn="10800" pos="21839 157396 -2769 32712" />	
+		<npc id="35124" count="1" respawn="10800" pos="21838 157430 -2770 32712" />	
+		<npc id="35124" count="1" respawn="10800" pos="21834 157471 -2769 32712" />	
+		<npc id="35123" count="1" respawn="10800" pos="22167 157437 -2692 55444" />	
+	</spawn>
+	<spawn name="[dion_siege04]" event_name="[dion_siege04]">
+		<npc id="35124" count="1" respawn="10800" pos="22217 159415 -2687 39088" />	
+		<npc id="35126" count="1" respawn="10800" pos="22200 159440 -2688 39088" />	
+		<npc id="35124" count="1" respawn="10800" pos="22176 159466 -2687 39088" />	
+		<npc id="35126" count="1" respawn="10800" pos="22157 159489 -2687 39088" />	
+		<npc id="35124" count="1" respawn="10800" pos="22142 159507 -2686 39088" />	
+		<npc id="35126" count="1" respawn="10800" pos="22120 159533 -2688 39088" />	
+		<npc id="35124" count="1" respawn="10800" pos="22103 159558 -2688 39088" />	
+		<npc id="35126" count="1" respawn="10800" pos="22083 159579 -2688 39088" />	
+		<npc id="35124" count="1" respawn="10800" pos="22059 159590 -2689 49844" />	
+		<npc id="35126" count="1" respawn="10800" pos="22034 159571 -2688 58336" />	
+		<npc id="35124" count="1" respawn="10800" pos="22016 159547 -2688 58336" />	
+		<npc id="35126" count="1" respawn="10800" pos="22003 159527 -2687 58336" />	
+		<npc id="35124" count="1" respawn="10800" pos="21984 159500 -2689 58336" />	
+		<npc id="35126" count="1" respawn="10800" pos="21965 159476 -2690 58336" />	
+		<npc id="35124" count="1" respawn="10800" pos="21946 159446 -2689 58336" />	
+		<npc id="35126" count="1" respawn="10800" pos="21929 159421 -2689 58336" />	
+		<npc id="35124" count="1" respawn="10800" pos="21916 159402 -2688 58336" />	
+		<npc id="35125" count="1" respawn="10800" pos="22232 159435 -2689 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="22214 159459 -2690 39088" />	
+		<npc id="35125" count="1" respawn="10800" pos="22190 159485 -2689 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="22171 159509 -2689 39088" />	
+		<npc id="35125" count="1" respawn="10800" pos="22156 159527 -2688 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="22135 159553 -2690 39088" />	
+		<npc id="35125" count="1" respawn="10800" pos="22117 159577 -2690 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="22098 159598 -2690 39088" />	
+		<npc id="35125" count="1" respawn="10800" pos="22073 159609 -2691 49844" />	
+		<npc id="35127" count="1" respawn="10800" pos="22045 159608 -2688 49844" />	
+		<npc id="35125" count="1" respawn="10800" pos="22020 159589 -2687 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="22002 159565 -2687 58336" />	
+		<npc id="35125" count="1" respawn="10800" pos="21989 159545 -2686 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="21970 159518 -2688 58336" />	
+		<npc id="35125" count="1" respawn="10800" pos="21951 159494 -2689 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="21932 159464 -2688 58336" />	
+		<npc id="35125" count="1" respawn="10800" pos="21915 159439 -2688 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="21902 159420 -2687 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="22260 159540 -2687 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="22241 159563 -2687 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="22226 159581 -2686 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="22204 159607 -2688 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="22187 159632 -2689 39088" />	
+		<npc id="35127" count="1" respawn="10800" pos="21959 159598 -2683 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="21946 159578 -2682 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="21926 159551 -2684 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="21908 159527 -2685 58336" />	
+		<npc id="35127" count="1" respawn="10800" pos="21889 159497 -2684 58336" />	
+		<npc id="35123" count="1" respawn="10800" pos="21928 159674 -2685 48388" />	
+		<npc id="35122" count="1" respawn="10800" pos="21894 159674 -2686 48388" />	
+		<npc id="35122" count="1" respawn="10800" pos="22173 159677 -2686 48388" />	
+		<npc id="35123" count="1" respawn="10800" pos="22150 159676 -2686 48388" />	
+		<npc id="35127" count="1" respawn="10800" pos="22225 159402 -2684 58336" />	
+		<npc id="35113" count="1" respawn="60" pos="22234 159456 -2687 39088" />	
+		<npc id="35113" count="1" respawn="60" pos="22153 159547 -2687 39088" />	
+		<npc id="35113" count="1" respawn="60" pos="21968 159538 -2687 39088" />	
+		<npc id="35113" count="1" respawn="60" pos="21896 159435 -2687 39088" />	
+	</spawn>
+	<spawn name="[dion_siege05]" event_name="[dion_siege05]">
+		<npc id="35106" count="1" respawn="300" pos="22133 161560 -2749 49112" />	
+		<npc id="35107" count="1" respawn="180" pos="22021 161563 -2748 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="21919 161546 -2754 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="21882 161547 -2754 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="21849 161547 -2754 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="21811 161548 -2754 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="21774 161548 -2753 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="21736 161549 -2753 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="21704 161549 -2753 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="21666 161550 -2753 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="21919 161512 -2755 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="21881 161513 -2755 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="21848 161513 -2755 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="21811 161514 -2755 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="21773 161514 -2754 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="21736 161515 -2754 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="21703 161515 -2754 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="21666 161516 -2754 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="21917 161474 -2756 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="21879 161475 -2756 49112" />	
+		<npc id="35108" count="1" respawn="120" pos="21847 161475 -2756 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="21809 161476 -2756 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="21772 161476 -2755 49112" />	
+		<npc id="35108" count="1" respawn="120" pos="21734 161477 -2755 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="21702 161477 -2755 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="21664 161478 -2755 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="22479 161540 -2750 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="22441 161540 -2750 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="22409 161540 -2750 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="22371 161541 -2750 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="22334 161542 -2749 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="22296 161542 -2749 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="22263 161543 -2749 49112" />	
+		<npc id="35114" count="1" respawn="120" pos="22226 161543 -2749 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="22478 161505 -2751 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="22440 161506 -2751 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="22408 161506 -2751 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="22370 161507 -2751 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="22333 161508 -2750 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="22295 161508 -2750 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="22263 161508 -2750 49112" />	
+		<npc id="35111" count="1" respawn="120" pos="22225 161509 -2750 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="22477 161468 -2752 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="22439 161469 -2752 49112" />	
+		<npc id="35108" count="1" respawn="120" pos="22406 161469 -2752 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="22369 161470 -2752 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="22331 161470 -2751 49112" />	
+		<npc id="35108" count="1" respawn="120" pos="22294 161471 -2751 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="22261 161471 -2751 49112" />	
+		<npc id="35113" count="1" respawn="120" pos="22224 161472 -2751 49112" />	
+		<npc id="35110" count="1" respawn="120" pos="22399 161705 -2749 49112" />	
+		<npc id="35110" count="1" respawn="120" pos="22315 161705 -2748 49112" />	
+		<npc id="35110" count="1" respawn="120" pos="22236 161706 -2748 49112" />	
+		<npc id="35110" count="1" respawn="120" pos="22161 161706 -2748 49112" />	
+		<npc id="35110" count="1" respawn="120" pos="21984 161706 -2745 49112" />	
+		<npc id="35110" count="1" respawn="120" pos="21901 161706 -2745 49112" />	
+		<npc id="35110" count="1" respawn="120" pos="21821 161707 -2745 49112" />	
+		<npc id="35110" count="1" respawn="120" pos="21747 161707 -2745 49112" />	
+	</spawn>
+	<spawn name="[dion_siege06]" event_name="[dion_siege06]">
+		<npc id="35126" count="1" respawn="10800" pos="21559 160580 -2527 48856" />	
+		<npc id="35121" count="1" respawn="10800" pos="21585 160580 -2527 48856" />	
+		<npc id="35126" count="1" respawn="10800" pos="21613 160580 -2526 48856" />	
+		<npc id="35125" count="1" respawn="10800" pos="21559 160602 -2531 48856" />	
+		<npc id="35125" count="1" respawn="10800" pos="21586 160602 -2531 48856" />	
+		<npc id="35125" count="1" respawn="10800" pos="21613 160602 -2530 48856" />	
+		<npc id="35124" count="1" respawn="10800" pos="21560 160627 -2529 48856" />	
+		<npc id="35124" count="1" respawn="10800" pos="21587 160627 -2529 48856" />	
+		<npc id="35124" count="1" respawn="10800" pos="21614 160626 -2528 48856" />	
+		<npc id="35123" count="1" respawn="10800" pos="21500 160704 -2529 48856" />	
+		<npc id="35123" count="1" respawn="10800" pos="21526 160704 -2529 48856" />	
+		<npc id="35123" count="1" respawn="10800" pos="21554 160704 -2528 48856" />	
+		<npc id="35127" count="1" respawn="10800" pos="21755 161277 -2532 65460" />	
+		<npc id="35127" count="1" respawn="10800" pos="21754 161314 -2532 65460" />	
+		<npc id="35122" count="1" respawn="10800" pos="21754 161351 -2531 65460" />	
+		<npc id="35127" count="1" respawn="10800" pos="21753 161387 -2531 65460" />	
+		<npc id="35127" count="1" respawn="10800" pos="21753 161423 -2531 65460" />	
+		<npc id="35122" count="1" respawn="10800" pos="21752 161461 -2531 65460" />	
+		<npc id="35127" count="1" respawn="10800" pos="21752 161492 -2530 65460" />	
+		<npc id="35127" count="1" respawn="10800" pos="21751 161529 -2530 65460" />	
+		<npc id="35122" count="1" respawn="10800" pos="21750 161564 -2530 65460" />	
+		<npc id="35127" count="1" respawn="10800" pos="21750 161601 -2530 65460" />	
+		<npc id="35127" count="1" respawn="10800" pos="21750 161638 -2530 65460" />	
+	</spawn>
+	<spawn name="[dion_siege07]" event_name="[dion_siege07]">
+		<npc id="35126" count="1" respawn="10800" pos="22534 160514 -2527 48856" />	
+		<npc id="35121" count="1" respawn="10800" pos="22560 160514 -2527 48856" />	
+		<npc id="35126" count="1" respawn="10800" pos="22603 160517 -2526 48856" />	
+		<npc id="35125" count="1" respawn="10800" pos="22534 160536 -2531 48856" />	
+		<npc id="35125" count="1" respawn="10800" pos="22561 160536 -2531 48856" />	
+		<npc id="35125" count="1" respawn="10800" pos="22588 160536 -2530 48856" />	
+		<npc id="35124" count="1" respawn="10800" pos="22535 160561 -2529 48856" />	
+		<npc id="35124" count="1" respawn="10800" pos="22562 160561 -2529 48856" />	
+		<npc id="35124" count="1" respawn="10800" pos="22589 160560 -2528 48856" />	
+		<npc id="35123" count="1" respawn="10800" pos="22496 160802 -2529 48856" />	
+		<npc id="35123" count="1" respawn="10800" pos="22522 160802 -2529 48856" />	
+		<npc id="35123" count="1" respawn="10800" pos="22550 160802 -2528 48856" />	
+		<npc id="35127" count="1" respawn="10800" pos="22388 161632 -2532 32384" />	
+		<npc id="35127" count="1" respawn="10800" pos="22387 161596 -2532 32384" />	
+		<npc id="35122" count="1" respawn="10800" pos="22386 161559 -2531 32384" />	
+		<npc id="35127" count="1" respawn="10800" pos="22386 161523 -2531 32384" />	
+		<npc id="35127" count="1" respawn="10800" pos="22386 161487 -2531 32384" />	
+		<npc id="35122" count="1" respawn="10800" pos="22385 161449 -2531 32384" />	
+		<npc id="35127" count="1" respawn="10800" pos="22385 161418 -2530 32384" />	
+		<npc id="35127" count="1" respawn="10800" pos="22384 161381 -2530 32384" />	
+		<npc id="35122" count="1" respawn="10800" pos="22384 161346 -2530 32384" />	
+		<npc id="35127" count="1" respawn="10800" pos="22383 161309 -2530 32384" />	
+		<npc id="35127" count="1" respawn="10800" pos="22382 161272 -2530 32384" />	
+	</spawn>
+	<spawn name="[dion_siege08]" event_name="[dion_siege08]">
+		<npc id="35127" count="1" respawn="10800" pos="22084 156570 -2576 0" />	
+		<npc id="35127" count="1" respawn="10800" pos="22084 156502 -2576 0" />	
+		<npc id="35127" count="1" respawn="10800" pos="22066 156434 -2576 57344" />	
+		<npc id="35127" count="1" respawn="10800" pos="22034 156410 -2576 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21997 156410 -2576 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21960 156410 -2576 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21922 156410 -2576 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22540 156570 -2576 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="22540 156498 -2576 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="22560 156432 -2576 40960" />	
+		<npc id="35127" count="1" respawn="10800" pos="22592 156405 -2576 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22629 156405 -2576 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22665 156405 -2576 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22700 156405 -2576 49152" />	
+		<npc id="35122" count="1" respawn="10800" pos="22084 156536 -2576 0" />	
+		<npc id="35122" count="1" respawn="10800" pos="22084 156470 -2576 0" />	
+		<npc id="35122" count="1" respawn="10800" pos="22540 156533 -2576 32768" />	
+		<npc id="35122" count="1" respawn="10800" pos="22540 156464 -2576 32768" />	
+		<npc id="35123" count="1" respawn="10800" pos="22020 156475 -2576 57344" />	
+		<npc id="35123" count="1" respawn="10800" pos="22599 156480 -2576 40960" />	
+	</spawn>
+	<spawn name="[dion_siege09]" event_name="[dion_siege09]">
+		<npc id="35114" count="1" respawn="10800" pos="22136 158330 -2694 49152" />	
+		<npc id="35114" count="1" respawn="10800" pos="22008 158330 -2694 49152" />	
+		<npc id="35114" count="1" respawn="10800" pos="21945 158330 -2694 49152" />	
+		<npc id="35114" count="1" respawn="10800" pos="22200 158330 -2694 49152" />	
+		<npc id="35114" count="1" respawn="10800" pos="22331 158330 -2694 49152" />	
+		<npc id="35114" count="1" respawn="10800" pos="22459 158330 -2694 49152" />	
+		<npc id="35114" count="1" respawn="10800" pos="21817 158330 -2694 49152" />	
+		<npc id="35114" count="1" respawn="10800" pos="21688 158330 -2694 49152" />	
+		<npc id="35109" count="1" respawn="10800" pos="22264 158330 -2694 49152" />	
+		<npc id="35109" count="1" respawn="10800" pos="21881 158330 -2694 49152" />	
+		<npc id="35109" count="1" respawn="10800" pos="21624 158330 -2694 49152" />	
+		<npc id="35109" count="1" respawn="10800" pos="22523 158330 -2694 49152" />	
+		<npc id="35110" count="1" respawn="10800" pos="22072 158330 -2694 49152" />	
+		<npc id="35110" count="1" respawn="10800" pos="21753 158330 -2694 49152" />	
+		<npc id="35110" count="1" respawn="10800" pos="22395 158330 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="22520 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="22456 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="21624 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="21688 158180 -2694 49152" />	
+		<npc id="35108" count="1" respawn="10800" pos="22072 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="22392 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="22328 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="22264 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="22200 158180 -2694 49152" />	
+		<npc id="35108" count="1" respawn="10800" pos="22136 158180 -2694 49152" />	
+		<npc id="35108" count="1" respawn="10800" pos="22009 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="21945 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="21881 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="21817 158180 -2694 49152" />	
+		<npc id="35113" count="1" respawn="10800" pos="21753 158180 -2694 49152" />	
+	</spawn>
+	<spawn name="[dion_siege10]" event_name="[dion_siege10]">
+		<npc id="35127" count="1" respawn="10800" pos="21840 159083 -2385 0" />	
+		<npc id="35127" count="1" respawn="10800" pos="21841 158961 -2385 0" />	
+		<npc id="35127" count="1" respawn="10800" pos="21786 158900 -2385 57344" />	
+		<npc id="35127" count="1" respawn="10800" pos="21761 158881 -2385 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21722 158880 -2385 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21686 158880 -2385 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21840 159040 -2385 0" />	
+		<npc id="35122" count="1" respawn="10800" pos="21812 158925 -2385 57344" />	
+		<npc id="35122" count="1" respawn="10800" pos="21840 159001 -2384 0" />	
+		<npc id="35123" count="1" respawn="10800" pos="21738 158946 -2386 57344" />	
+		<npc id="35127" count="1" respawn="10800" pos="22293 159089 -2387 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="22293 159049 -2385 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="22293 158964 -2386 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="22351 158899 -2385 40960" />	
+		<npc id="35127" count="1" respawn="10800" pos="22378 158879 -2384 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22418 158880 -2385 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22457 158879 -2385 49152" />	
+		<npc id="35122" count="1" respawn="10800" pos="22293 159005 -2383 32768" />	
+		<npc id="35122" count="1" respawn="10800" pos="22315 158935 -2386 40960" />	
+		<npc id="35123" count="1" respawn="10800" pos="22395 158953 -2383 40960" />	
+	</spawn>
+	<spawn name="[dion_siege11]" event_name="[dion_siege11]">
+		<npc id="35127" count="1" respawn="10800" pos="22180 159210 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22149 159210 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22118 159210 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22086 159210 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22055 159210 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22023 159210 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21992 159210 -2694 49152" />	
+		<npc id="35122" count="1" respawn="10800" pos="21960 159210 -2694 49152" />	
+		<npc id="35122" count="1" respawn="10800" pos="22180 159190 -2694 49152" />	
+		<npc id="35123" count="1" respawn="10800" pos="22149 159190 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22118 159190 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22086 159190 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22055 159190 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22023 159190 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21992 159190 -2694 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="21960 159190 -2694 49152" />	
+	</spawn>
+	<spawn name="[dion_siege12]" event_name="[dion_siege12]">
+		<npc id="35127" count="1" respawn="10800" pos="20508 158097 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158148 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158198 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158248 -2570 32768" />	
+		<npc id="35123" count="1" respawn="10800" pos="20508 158298 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158348 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158398 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158448 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158498 -2570 32768" />	
+		<npc id="35122" count="1" respawn="10800" pos="20508 158548 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158598 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="20508 158648 -2570 32768" />	
+	</spawn>
+	<spawn name="[dion_siege13]" event_name="[dion_siege13]">
+		<npc id="35127" count="1" respawn="10800" pos="23910 158097 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158148 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158198 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158248 -2570 32768" />	
+		<npc id="35123" count="1" respawn="10800" pos="23910 158298 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158348 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158398 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158448 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158498 -2570 32768" />	
+		<npc id="35122" count="1" respawn="10800" pos="23910 158548 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158598 -2570 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="23910 158648 -2570 32768" />	
+	</spawn>
+	<spawn name="[dion_siege03]" event_name="[dion_siege03]">
+		<npc id="35127" count="1" respawn="10800" pos="22370 157394 -2692 48668" />	
+		<npc id="35122" count="1" respawn="10800" pos="22310 157392 -2692 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22251 157390 -2691 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22600 157328 -2690 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22570 157329 -2691 48668" />	
+		<npc id="35122" count="1" respawn="10800" pos="22541 157326 -2690 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22511 157325 -2690 48668" />	
+		<npc id="35127" count="1" respawn="10800" pos="22067 157190 -2691 64432" />	
+		<npc id="35122" count="1" respawn="10800" pos="22066 157131 -2691 64432" />	
+		<npc id="35127" count="1" respawn="10800" pos="22064 157071 -2690 64432" />	
+	</spawn>
+	<spawn name="[dion_siege08_1]" event_name="[dion_siege08_1]">
+		<npc id="35127" count="1" respawn="10800" pos="22064 156579 -2567 0" />	
+		<npc id="35127" count="1" respawn="10800" pos="22064 156467 -2567 0" />	
+		<npc id="35127" count="1" respawn="10800" pos="22017 156408 -2567 57344" />	
+		<npc id="35127" count="1" respawn="10800" pos="21950 156394 -2567 49152" />	
+		<npc id="35127" count="1" respawn="10800" pos="22549 156540 -2567 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="22548 156460 -2567 32768" />	
+		<npc id="35127" count="1" respawn="10800" pos="22594 156403 -2567 40960" />	
+		<npc id="35127" count="1" respawn="10800" pos="22666 156391 -2567 49152" />	
+		<npc id="35122" count="1" respawn="10800" pos="22549 156499 -2566 32768" />	
+		<npc id="35122" count="1" respawn="10800" pos="22560 156428 -2566 40960" />	
+		<npc id="35122" count="1" respawn="10800" pos="22054 156431 -2566 57344" />	
+		<npc id="35122" count="1" respawn="10800" pos="22064 156515 -2567 0" />	
+		<npc id="35123" count="1" respawn="10800" pos="22648 156430 -2567 40960" />	
+		<npc id="35123" count="1" respawn="10800" pos="21958 156438 -2567 57344" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_tk01]" event_name="[lotto_manager]">
+		<npc id="30990" count="1" respawn="60" pos="15693 142886 -2696 16000" />	
+	</spawn>
+	<spawn name="[dion15_2022_01]">
+		<territory>	
+			<location x="11433" y="134370" minz="-3358" maxz="-2558" />
+			<location x="13606" y="136693" minz="-3358" maxz="-2558" />
+			<location x="11324" y="137929" minz="-3358" maxz="-2558" />
+			<location x="9326" y="136305" minz="-3358" maxz="-2558" />
+		</territory>
+		<npc id="20292" count="4" respawn="24" />	
+		<npc id="20291" count="3" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_02]">
+		<territory>	
+			<location x="13682" y="136736" minz="-3388" maxz="-2588" />
+			<location x="15340" y="139187" minz="-3388" maxz="-2588" />
+			<location x="13616" y="139897" minz="-3388" maxz="-2588" />
+			<location x="11384" y="138012" minz="-3388" maxz="-2588" />
+		</territory>
+		<npc id="20292" count="5" respawn="24" />	
+		<npc id="20291" count="2" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_03]">
+		<territory>	
+			<location x="13475" y="134128" minz="-3533" maxz="-2733" />
+			<location x="16244" y="135212" minz="-3533" maxz="-2733" />
+			<location x="14275" y="136432" minz="-3533" maxz="-2733" />
+			<location x="11565" y="134356" minz="-3533" maxz="-2733" />
+		</territory>
+		<npc id="20292" count="2" respawn="24" />	
+		<npc id="20291" count="2" respawn="24" />	
+		<npc id="20224" count="1" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_04]">
+		<territory>	
+			<location x="16474" y="135234" minz="-3592" maxz="-2792" />
+			<location x="18828" y="136392" minz="-3592" maxz="-2792" />
+			<location x="17333" y="139303" minz="-3592" maxz="-2792" />
+			<location x="15032" y="136062" minz="-3592" maxz="-2792" />
+		</territory>
+		<npc id="20292" count="3" respawn="24" />	
+		<npc id="20291" count="2" respawn="24" />	
+		<npc id="20224" count="2" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_05]">
+		<territory>	
+			<location x="18835" y="136795" minz="-3715" maxz="-2915" />
+			<location x="21989" y="137845" minz="-3715" maxz="-2915" />
+			<location x="22021" y="139966" minz="-3715" maxz="-2915" />
+			<location x="19414" y="140687" minz="-3715" maxz="-2915" />
+			<location x="17408" y="139360" minz="-3715" maxz="-2915" />
+		</territory>
+		<npc id="20224" count="2" respawn="24" />	
+		<npc id="20265" count="4" respawn="24" />	
+		<npc id="20062" count="4" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_06]">
+		<territory>	
+			<location x="22085" y="137808" minz="-3715" maxz="-2715" />
+			<location x="24152" y="135445" minz="-3715" maxz="-2715" />
+			<location x="26151" y="136730" minz="-3715" maxz="-2715" />
+			<location x="22161" y="139904" minz="-3715" maxz="-2715" />
+		</territory>
+		<npc id="20265" count="4" respawn="24" />	
+		<npc id="20062" count="4" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_07]">
+		<territory>	
+			<location x="25435" y="135929" minz="-3289" maxz="-2489" />
+			<location x="29046" y="134625" minz="-3289" maxz="-2489" />
+			<location x="30512" y="136326" minz="-3289" maxz="-2489" />
+			<location x="26279" y="136646" minz="-3289" maxz="-2489" />
+		</territory>
+		<npc id="20062" count="3" respawn="24" />	
+		<npc id="20205" count="4" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_08]">
+		<territory>	
+			<location x="29087" y="134594" minz="-3237" maxz="-2537" />
+			<location x="31029" y="133256" minz="-3237" maxz="-2537" />
+			<location x="32066" y="133765" minz="-3237" maxz="-2537" />
+			<location x="30590" y="136240" minz="-3237" maxz="-2537" />
+		</territory>
+		<npc id="20062" count="2" respawn="24" />	
+		<npc id="20205" count="3" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_09]">
+		<territory>	
+			<location x="30475" y="137105" minz="-3280" maxz="-2680" />
+			<location x="32576" y="134728" minz="-3280" maxz="-2680" />
+			<location x="32484" y="139815" minz="-3280" maxz="-2680" />
+			<location x="31555" y="139893" minz="-3280" maxz="-2680" />
+		</territory>
+		<npc id="20062" count="3" respawn="24" />	
+		<npc id="20205" count="4" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_10]">
+		<territory>	
+			<location x="31537" y="139996" minz="-3335" maxz="-2835" />
+			<location x="32502" y="139884" minz="-3335" maxz="-2835" />
+			<location x="32520" y="143531" minz="-3335" maxz="-2835" />
+			<location x="30580" y="143553" minz="-3335" maxz="-2835" />
+		</territory>
+		<npc id="20205" count="2" respawn="24" />	
+		<npc id="20266" count="5" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_11]">
+		<territory>	
+			<location x="28269" y="141141" minz="-3335" maxz="-2535" />
+			<location x="31458" y="139969" minz="-3335" maxz="-2535" />
+			<location x="30500" y="143533" minz="-3335" maxz="-2535" />
+			<location x="27985" y="144857" minz="-3335" maxz="-2535" />
+		</territory>
+		<npc id="20062" count="4" respawn="24" />	
+		<npc id="20205" count="4" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_12]">
+		<territory>	
+			<location x="27233" y="137465" minz="-3335" maxz="-2635" />
+			<location x="30407" y="137097" minz="-3335" maxz="-2635" />
+			<location x="31479" y="139940" minz="-3335" maxz="-2635" />
+			<location x="28216" y="141043" minz="-3335" maxz="-2635" />
+		</territory>
+		<npc id="20062" count="4" respawn="24" />	
+		<npc id="20205" count="4" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_13]">
+		<territory>	
+			<location x="23686" y="139933" minz="-3520" maxz="-2520" />
+			<location x="27090" y="137383" minz="-3520" maxz="-2520" />
+			<location x="28161" y="141106" minz="-3520" maxz="-2520" />
+			<location x="24884" y="142077" minz="-3520" maxz="-2520" />
+		</territory>
+		<npc id="20291" count="5" respawn="24" />	
+		<npc id="20265" count="5" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_14]">
+		<territory>	
+			<location x="24887" y="142179" minz="-3520" maxz="-2520" />
+			<location x="28159" y="141174" minz="-3520" maxz="-2520" />
+			<location x="27872" y="144883" minz="-3520" maxz="-2520" />
+			<location x="24318" y="145875" minz="-3520" maxz="-2520" />
+		</territory>
+		<npc id="20224" count="2" respawn="24" />	
+		<npc id="20062" count="6" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_15]">
+		<territory>	
+			<location x="22160" y="143428" minz="-3466" maxz="-2666" />
+			<location x="24808" y="142152" minz="-3466" maxz="-2666" />
+			<location x="24266" y="145855" minz="-3466" maxz="-2666" />
+			<location x="22707" y="145732" minz="-3466" maxz="-2666" />
+		</territory>
+		<npc id="20203" count="4" respawn="24" />	
+		<npc id="20291" count="3" respawn="24" />	
+		<npc id="20224" count="1" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_16]">
+		<territory>	
+			<location x="21684" y="141553" minz="-3531" maxz="-2731" />
+			<location x="23675" y="139994" minz="-3531" maxz="-2731" />
+			<location x="24787" y="142103" minz="-3531" maxz="-2731" />
+			<location x="22162" y="143372" minz="-3531" maxz="-2731" />
+		</territory>
+		<npc id="20203" count="4" respawn="24" />	
+		<npc id="20147" count="3" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_17]">
+		<territory>	
+			<location x="18320" y="148268" minz="-3531" maxz="-2731" />
+			<location x="19491" y="146777" minz="-3531" maxz="-2731" />
+			<location x="21960" y="147275" minz="-3531" maxz="-2731" />
+			<location x="19135" y="149598" minz="-3531" maxz="-2731" />
+		</territory>
+		<npc id="20203" count="1" respawn="24" />	
+		<npc id="20147" count="2" respawn="24" />	
+		<npc id="20224" count="2" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_18]">
+		<territory>	
+			<location x="20490" y="149104" minz="-3450" maxz="-2450" />
+			<location x="22566" y="146716" minz="-3450" maxz="-2450" />
+			<location x="27676" y="146173" minz="-3450" maxz="-2450" />
+			<location x="25976" y="149544" minz="-3450" maxz="-2450" />
+		</territory>
+		<npc id="20224" count="4" respawn="24" />	
+		<npc id="20265" count="5" respawn="24" />	
+		<npc id="20062" count="6" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_19]">
+		<territory>	
+			<location x="26574" y="155654" minz="-3334" maxz="-2534" />
+			<location x="20812" y="149386" minz="-3334" maxz="-2534" />
+			<location x="26556" y="149717" minz="-3334" maxz="-2534" />
+			<location x="27751" y="151791" minz="-3334" maxz="-2534" />
+		</territory>
+		<npc id="20062" count="8" respawn="24" />	
+		<npc id="20205" count="7" respawn="24" />	
+	</spawn>
+	<spawn name="[dion15_2022_20]">
+		<territory>	
+			<location x="30750" y="157297" minz="-3246" maxz="-2446" />
+			<location x="27076" y="154608" minz="-3246" maxz="-2446" />
+			<location x="27873" y="151778" minz="-3246" maxz="-2446" />
+			<location x="31918" y="152428" minz="-3246" maxz="-2446" />
+		</territory>
+		<npc id="20205" count="6" respawn="24" />	
+		<npc id="20266" count="9" respawn="24" />	
+	</spawn>
+	<spawn name="[dion16_2022_01]">
+		<territory>	
+			<location x="16628" y="148700" minz="-3454" maxz="-2254" />
+			<location x="11917" y="149195" minz="-3454" maxz="-2254" />
+			<location x="11036" y="145234" minz="-3454" maxz="-2254" />
+			<location x="13279" y="144929" minz="-3454" maxz="-2254" />
+		</territory>
+		<npc id="21102" count="2" respawn="30" />	
+		<npc id="21103" count="2" respawn="30" />	
+		<npc id="21104" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_02]">
+		<territory>	
+			<location x="10973" y="145618" minz="-3167" maxz="-1967" />
+			<location x="11509" y="147905" minz="-3167" maxz="-1967" />
+			<location x="6928" y="146298" minz="-3167" maxz="-1967" />
+			<location x="7946" y="144726" minz="-3167" maxz="-1967" />
+		</territory>
+		<npc id="21102" count="3" respawn="30" />	
+		<npc id="21104" count="1" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_03]">
+		<territory>	
+			<location x="11562" y="148036" minz="-3419" maxz="-2219" />
+			<location x="9499" y="149355" minz="-3419" maxz="-2219" />
+			<location x="6269" y="148388" minz="-3419" maxz="-2219" />
+			<location x="6970" y="146398" minz="-3419" maxz="-2219" />
+		</territory>
+		<npc id="21103" count="2" respawn="30" />	
+		<npc id="21104" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_04]">
+		<territory>	
+			<location x="8769" y="150702" minz="-3601" maxz="-2801" />
+			<location x="6644" y="152798" minz="-3601" maxz="-2801" />
+			<location x="4930" y="152653" minz="-3601" maxz="-2801" />
+			<location x="5265" y="149010" minz="-3601" maxz="-2801" />
+		</territory>
+		<npc id="21103" count="3" respawn="30" />	
+		<npc id="21104" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_05]">
+		<territory>	
+			<location x="17541" y="150840" minz="-3601" maxz="-2701" />
+			<location x="18098" y="153880" minz="-3601" maxz="-2701" />
+			<location x="12911" y="153484" minz="-3601" maxz="-2701" />
+			<location x="13924" y="150542" minz="-3601" maxz="-2701" />
+		</territory>
+		<npc id="21103" count="4" respawn="30" />	
+		<npc id="21104" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_06]">
+		<territory>	
+			<location x="13811" y="150528" minz="-3488" maxz="-2588" />
+			<location x="12806" y="153462" minz="-3488" maxz="-2588" />
+			<location x="6728" y="152929" minz="-3488" maxz="-2588" />
+			<location x="8244" y="151426" minz="-3488" maxz="-2588" />
+		</territory>
+		<npc id="21102" count="3" respawn="30" />	
+		<npc id="21103" count="3" respawn="30" />	
+		<npc id="21104" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_07]">
+		<territory>	
+			<location x="9967" y="153385" minz="-3659" maxz="-2559" />
+			<location x="7478" y="156196" minz="-3659" maxz="-2559" />
+			<location x="3844" y="156272" minz="-3659" maxz="-2559" />
+			<location x="5337" y="152858" minz="-3659" maxz="-2559" />
+		</territory>
+		<npc id="21102" count="3" respawn="30" />	
+		<npc id="21103" count="3" respawn="30" />	
+		<npc id="21104" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_08]">
+		<territory>	
+			<location x="7448" y="156371" minz="-3766" maxz="-2666" />
+			<location x="9109" y="160944" minz="-3766" maxz="-2666" />
+			<location x="5419" y="161502" minz="-3766" maxz="-2666" />
+			<location x="3906" y="156495" minz="-3766" maxz="-2666" />
+		</territory>
+		<npc id="21103" count="3" respawn="30" />	
+		<npc id="21104" count="3" respawn="30" />	
+		<npc id="21105" count="3" respawn="30" />	
+		<npc id="21106" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_09]">
+		<territory>	
+			<location x="13163" y="159551" minz="-3732" maxz="-2632" />
+			<location x="13108" y="162755" minz="-3732" maxz="-2632" />
+			<location x="9373" y="161171" minz="-3732" maxz="-2632" />
+			<location x="8465" y="158834" minz="-3732" maxz="-2632" />
+		</territory>
+		<npc id="21102" count="4" respawn="30" />	
+		<npc id="21104" count="3" respawn="30" />	
+		<npc id="21105" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_10]">
+		<territory>	
+			<location x="16791" y="157256" minz="-3732" maxz="-2632" />
+			<location x="16186" y="160651" minz="-3732" maxz="-2632" />
+			<location x="13473" y="162095" minz="-3732" maxz="-2632" />
+			<location x="13216" y="157313" minz="-3732" maxz="-2632" />
+		</territory>
+		<npc id="21102" count="2" respawn="30" />	
+		<npc id="21103" count="2" respawn="30" />	
+		<npc id="21104" count="4" respawn="30" />	
+		<npc id="21105" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_11]">
+		<territory>	
+			<location x="18086" y="154007" minz="-3732" maxz="-2632" />
+			<location x="16954" y="157055" minz="-3732" maxz="-2632" />
+			<location x="13242" y="157209" minz="-3732" maxz="-2632" />
+			<location x="12861" y="153593" minz="-3732" maxz="-2632" />
+		</territory>
+		<npc id="21102" count="2" respawn="30" />	
+		<npc id="21103" count="3" respawn="30" />	
+		<npc id="21104" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_12]">
+		<territory>	
+			<location x="12751" y="153619" minz="-3261" maxz="-2061" />
+			<location x="13189" y="159415" minz="-3261" maxz="-2061" />
+			<location x="8434" y="158683" minz="-3261" maxz="-2061" />
+			<location x="7582" y="156346" minz="-3261" maxz="-2061" />
+			<location x="10132" y="153421" minz="-3261" maxz="-2061" />
+		</territory>
+		<npc id="21103" count="3" respawn="30" />	
+		<npc id="21104" count="7" respawn="30" />	
+		<npc id="21105" count="4" respawn="30" />	
+		<npc id="21106" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_13]">
+		<territory>	
+			<location x="8538" y="161948" minz="-3843" maxz="-3143" />
+			<location x="12050" y="163548" minz="-3843" maxz="-3143" />
+			<location x="6846" y="163534" minz="-3843" maxz="-3143" />
+			<location x="5983" y="162252" minz="-3843" maxz="-3143" />
+		</territory>
+		<npc id="21103" count="4" respawn="30" />	
+		<npc id="21105" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[dion16_2022_14]">
+		<territory>	
+			<location x="16283" y="161819" minz="-3843" maxz="-3143" />
+			<location x="16677" y="163564" minz="-3843" maxz="-3143" />
+			<location x="13739" y="163539" minz="-3843" maxz="-3143" />
+			<location x="14065" y="162784" minz="-3843" maxz="-3143" />
+		</territory>
+		<npc id="21103" count="2" respawn="30" />	
+		<npc id="21104" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_sp1]" event_name="[ssq_seal2_dawn]">
+		<territory>	
+			<location x="15612" y="143020" minz="-2770" maxz="-2570" />
+			<location x="15812" y="143020" minz="-2770" maxz="-2570" />
+			<location x="15812" y="143220" minz="-2770" maxz="-2570" />
+			<location x="15612" y="143220" minz="-2770" maxz="-2570" />
+		</territory>
+		<npc id="31186" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_001]">
+		<npc id="30595" count="1" respawn="60" pos="19712 143307 -3025 47152" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_002]">
+		<npc id="30594" count="1" respawn="60" pos="21017 144481 -3065 32768" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_003]">
+		<npc id="30067" count="1" respawn="60" pos="16269 142461 -2688 48400" />	
+		<npc id="30068" count="1" respawn="60" pos="16456 142447 -2688 48400" />	
+		<npc id="30461" count="1" respawn="60" pos="16427 142131 -2688 15600" />	
+		<npc id="30069" count="1" respawn="60" pos="16236 142153 -2688 15600" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_004]">
+		<npc id="30070" count="1" respawn="60" pos="15795 142347 -2680 64700" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_006]">
+		<npc id="30644" count="1" respawn="60" pos="19831 144514 -3098 0" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_007]">
+		<npc id="30654" count="1" respawn="60" pos="17220 146554 -3084 12288" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_008]">
+		<npc id="30629" count="1" respawn="60" pos="16680 142368 -2688 32768" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_009]">
+		<npc id="30625" count="1" respawn="60" pos="20983 143844 -3073 4096" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_010]">
+		<npc id="30620" count="1" respawn="60" pos="20609 145993 -3123 49152" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_011]">
+		<npc id="30608" count="1" respawn="60" pos="19041 145964 -3068 8192" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_012]">
+		<npc id="35407" count="1" respawn="60" pos="19996 146216 -3111 57344" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_013]">
+		<npc id="35406" count="1" respawn="60" pos="20237 145941 -3124 49152" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_014]">
+		<npc id="35403" count="1" respawn="60" pos="17621 144920 -3037 12288" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_015]">
+		<npc id="35402" count="1" respawn="60" pos="17672 145304 -3048 16383" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_016]">
+		<npc id="35405" count="1" respawn="60" pos="18634 143342 -3010 64500" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_017]">
+		<npc id="35404" count="1" respawn="60" pos="18984 143384 -3032 0" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_018]">
+		<npc id="30735" count="1" respawn="60" pos="19264 144672 -3098 32768" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_019]">
+		<npc id="30736" count="1" respawn="60" pos="16955 146303 -3106 28672" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_020]">
+		<npc id="30737" count="1" respawn="60" pos="19079 145762 -3080 49152" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_021]">
+		<npc id="30828" count="1" respawn="60" pos="19276 142864 -3032 32768" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_023]">
+		<npc id="30956" count="1" respawn="60" pos="17025 146070 -3074 35523" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_024]">
+		<npc id="30957" count="1" respawn="60" pos="18378 145052 -3074 64312" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_025]">
+		<npc id="30959" count="1" respawn="60" pos="20175 145480 -3114 16384" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_026]">
+		<npc id="31048" count="1" respawn="60" pos="19505 146220 -3071 42568" />	
+		<npc id="30961" count="1" respawn="60" pos="19490 145930 -3072 0" />	
+		<npc id="31043" count="1" respawn="60" pos="19034 146249 -3072 55264" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_027]">
+		<npc id="30960" count="1" respawn="60" pos="21025 144931 -3070 40960" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_028]">
+		<npc id="35145" count="1" respawn="60" pos="19342 145105 -3106 30304" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_029]">
+		<npc id="35145" count="1" respawn="60" pos="17882 144184 -3051 54112" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_030]">
+		<npc id="31080" count="1" respawn="60" pos="16354 142870 -2696 15000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_031]">
+		<npc id="31087" count="1" respawn="60" pos="18482 144626 -3056 7000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_033]">
+		<npc id="30508" count="1" respawn="60" pos="19932 143232 -3055 63000" />	
+		<npc id="30510" count="1" respawn="60" pos="19924 143196 -3055 63000" />	
+		<npc id="30509" count="1" respawn="60" pos="20040 143308 -3055 63000" />	
+		<npc id="30642" count="1" respawn="60" pos="20000 143108 -3055 63000" />	
+		<npc id="31427" count="1" respawn="60" pos="19920 143136 -3055 4000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_034]">
+		<npc id="31434" count="1" respawn="60" pos="19600 143344 -3026 56000" />	
+		<npc id="31441" count="1" respawn="60" pos="19536 143072 -3026 13000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_035]">
+		<npc id="31418" count="1" respawn="60" pos="16694 142336 -2691 32000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_036]">
+		<npc id="31570" count="1" respawn="60" pos="19539 145987 -3068 32500" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_037]">
+		<npc id="31688" count="1" respawn="60" pos="16304 144288 -2992 55000" />	
+		<npc id="31690" count="1" respawn="60" pos="16256 144256 -2992 55000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_038]">
+		<npc id="31797" count="1" respawn="60" pos="15856 142816 -2704 15000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_039]">
+		<npc id="31798" count="1" respawn="60" pos="17388 146912 -3104 3000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_040]">
+		<npc id="31799" count="1" respawn="60" pos="21088 145424 -3088 16500" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_041]">
+		<npc id="31800" count="1" respawn="60" pos="19248 143040 -3040 31000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_042]">
+		<npc id="30767" count="1" respawn="60" pos="18853 145939 -3075 49152" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_043]">
+		<npc id="30057" count="1" respawn="60" pos="20777 144971 -3068 53248" />	
+		<npc id="30058" count="1" respawn="60" pos="20750 144432 -3068 8192" />	
+		<npc id="30469" count="1" respawn="60" pos="21040 144608 -3069 32768" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_044]">
+		<npc id="30064" count="1" respawn="60" pos="19708 144780 -3088 40960" />	
+		<npc id="30066" count="1" respawn="60" pos="19516 144772 -3088 49152" />	
+		<npc id="30459" count="1" respawn="60" pos="19696 144336 -3088 24576" />	
+		<npc id="30065" count="1" respawn="60" pos="19725 144567 -3088 32768" />	
+		<npc id="30460" count="1" respawn="60" pos="19472 144334 -3088 8192" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_045]">
+		<npc id="30062" count="1" respawn="60" pos="19313 146229 -3069 49152" />	
+		<npc id="30063" count="1" respawn="60" pos="19223 146228 -3069 49152" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_046]">
+		<npc id="30060" count="1" respawn="60" pos="17999 144484 -3046 6000" />	
+		<npc id="30061" count="1" respawn="60" pos="17948 144560 -3046 6000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_047]">
+		<npc id="30463" count="1" respawn="60" pos="17384 146605 -3085 28672" />	
+		<npc id="30464" count="1" respawn="60" pos="17280 146944 -3085 45056" />	
+		<npc id="30462" count="1" respawn="60" pos="17168 146720 -3085 2500" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_048]">
+		<npc id="30059" count="1" respawn="60" pos="15631 142885 -2704 16000" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_049]">
+		<npc id="30072" count="1" respawn="60" pos="17503 147575 -3124 20480" />	
+		<npc id="30071" count="1" respawn="60" pos="17282 147500 -3119 20480" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_050]">
+		<npc id="30466" count="1" respawn="60" pos="21491 145968 -3155 0" />	
+		<npc id="30465" count="1" respawn="60" pos="21495 145728 -3145 0" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_051]">
+		<npc id="30075" count="1" respawn="60" pos="18813 142439 -3046 47500" />	
+		<npc id="30076" count="1" respawn="60" pos="19044 142392 -3057 47500" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_052]">
+		<npc id="30074" count="1" respawn="60" pos="16937 144041 -3014 36864" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_053]">
+		<npc id="30073" count="1" respawn="60" pos="15757 144638 -3079 36864" />	
+	</spawn>
+	<spawn name="[dion09_npc2022_054]">
+		<npc id="30458" count="1" respawn="60" pos="19737 143122 -3028 29500" />	
+	</spawn>
+	<spawn name="[dion11_npc2022_14]">
+		<npc id="35140" count="1" respawn="60" pos="21595 160208 -2877 0" />	
+	</spawn>
+	<spawn name="[dion11_npc2022_15]">
+		<npc id="35141" count="1" respawn="60" pos="22110 159744 -2856 16384" />	
+	</spawn>
+	<spawn name="[dion11_npc2022_16]">
+		<npc id="35143" count="1" respawn="60" pos="21912 161608 -2226 0" />	
+	</spawn>
+	<spawn name="[dion11_npc2022_17]">
+		<npc id="35144" count="1" respawn="60" pos="21836 160806 -2679 49152" />	
+	</spawn>
+	<spawn name="[dion16_npc2023_09]">
+		<npc id="30627" count="1" respawn="60" pos="10133 157155 -2383 0" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_09]" event_name="[treasure_box]">
+		<territory>	
+			<location x="30475" y="137105" minz="-3280" maxz="-2680" />
+			<location x="32576" y="134728" minz="-3280" maxz="-2680" />
+			<location x="32484" y="139815" minz="-3280" maxz="-2680" />
+			<location x="31555" y="139893" minz="-3280" maxz="-2680" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_10]" event_name="[treasure_box]">
+		<territory>	
+			<location x="31537" y="139996" minz="-3335" maxz="-2835" />
+			<location x="32502" y="139884" minz="-3335" maxz="-2835" />
+			<location x="32520" y="143531" minz="-3335" maxz="-2835" />
+			<location x="30580" y="143553" minz="-3335" maxz="-2835" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_11]" event_name="[treasure_box]">
+		<territory>	
+			<location x="28269" y="141141" minz="-3335" maxz="-2535" />
+			<location x="31458" y="139969" minz="-3335" maxz="-2535" />
+			<location x="30500" y="143533" minz="-3335" maxz="-2535" />
+			<location x="27985" y="144857" minz="-3335" maxz="-2535" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_12]" event_name="[treasure_box]">
+		<territory>	
+			<location x="27233" y="137465" minz="-3335" maxz="-2635" />
+			<location x="30407" y="137097" minz="-3335" maxz="-2635" />
+			<location x="31479" y="139940" minz="-3335" maxz="-2635" />
+			<location x="28216" y="141043" minz="-3335" maxz="-2635" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_13]" event_name="[treasure_box]">
+		<territory>	
+			<location x="23686" y="139933" minz="-3520" maxz="-2520" />
+			<location x="27090" y="137383" minz="-3520" maxz="-2520" />
+			<location x="28161" y="141106" minz="-3520" maxz="-2520" />
+			<location x="24884" y="142077" minz="-3520" maxz="-2520" />
+		</territory>
+		<npc id="18265" count="2" respawn="60" />	
+		<npc id="21801" count="2" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_14]" event_name="[treasure_box]">
+		<territory>	
+			<location x="24887" y="142179" minz="-3520" maxz="-2520" />
+			<location x="28159" y="141174" minz="-3520" maxz="-2520" />
+			<location x="27872" y="144883" minz="-3520" maxz="-2520" />
+			<location x="24318" y="145875" minz="-3520" maxz="-2520" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_14]" event_name="[treasure_box]">
+		<territory>	
+			<location x="24887" y="142179" minz="-3520" maxz="-2520" />
+			<location x="28159" y="141174" minz="-3520" maxz="-2520" />
+			<location x="27872" y="144883" minz="-3520" maxz="-2520" />
+			<location x="24318" y="145875" minz="-3520" maxz="-2520" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_15]" event_name="[treasure_box]">
+		<territory>	
+			<location x="22160" y="143428" minz="-3466" maxz="-2666" />
+			<location x="24808" y="142152" minz="-3466" maxz="-2666" />
+			<location x="24266" y="145855" minz="-3466" maxz="-2666" />
+			<location x="22707" y="145732" minz="-3466" maxz="-2666" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_16]" event_name="[treasure_box]">
+		<territory>	
+			<location x="21684" y="141553" minz="-3531" maxz="-2731" />
+			<location x="23675" y="139994" minz="-3531" maxz="-2731" />
+			<location x="24787" y="142103" minz="-3531" maxz="-2731" />
+			<location x="22162" y="143372" minz="-3531" maxz="-2731" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_17]" event_name="[treasure_box]">
+		<territory>	
+			<location x="18320" y="148268" minz="-3531" maxz="-2731" />
+			<location x="19491" y="146777" minz="-3531" maxz="-2731" />
+			<location x="21960" y="147275" minz="-3531" maxz="-2731" />
+			<location x="19135" y="149598" minz="-3531" maxz="-2731" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion15_tb2022_18]" event_name="[treasure_box]">
+		<territory>	
+			<location x="20490" y="149104" minz="-3450" maxz="-2450" />
+			<location x="22566" y="146716" minz="-3450" maxz="-2450" />
+			<location x="27676" y="146173" minz="-3450" maxz="-2450" />
+			<location x="25976" y="149544" minz="-3450" maxz="-2450" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion16_tb2022_05]" event_name="[treasure_box]">
+		<territory>	
+			<location x="17541" y="150840" minz="-3601" maxz="-2701" />
+			<location x="18098" y="153880" minz="-3601" maxz="-2701" />
+			<location x="12911" y="153484" minz="-3601" maxz="-2701" />
+			<location x="13924" y="150542" minz="-3601" maxz="-2701" />
+		</territory>
+		<npc id="18268" count="1" respawn="60" />	
+		<npc id="21804" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion16_tb2022_06]" event_name="[treasure_box]">
+		<territory>	
+			<location x="13811" y="150528" minz="-3488" maxz="-2588" />
+			<location x="12806" y="153462" minz="-3488" maxz="-2588" />
+			<location x="6728" y="152929" minz="-3488" maxz="-2588" />
+			<location x="8244" y="151426" minz="-3488" maxz="-2588" />
+		</territory>
+		<npc id="18268" count="1" respawn="60" />	
+		<npc id="21804" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion16_tb2022_07]" event_name="[treasure_box]">
+		<territory>	
+			<location x="9967" y="153385" minz="-3659" maxz="-2559" />
+			<location x="7478" y="156196" minz="-3659" maxz="-2559" />
+			<location x="3844" y="156272" minz="-3659" maxz="-2559" />
+			<location x="5337" y="152858" minz="-3659" maxz="-2559" />
+		</territory>
+		<npc id="18268" count="1" respawn="60" />	
+		<npc id="21804" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion16_tb2022_08]" event_name="[treasure_box]">
+		<territory>	
+			<location x="7448" y="156371" minz="-3766" maxz="-2666" />
+			<location x="9109" y="160944" minz="-3766" maxz="-2666" />
+			<location x="5419" y="161502" minz="-3766" maxz="-2666" />
+			<location x="3906" y="156495" minz="-3766" maxz="-2666" />
+		</territory>
+		<npc id="18268" count="1" respawn="60" />	
+		<npc id="21804" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion16_tb2022_09]" event_name="[treasure_box]">
+		<territory>	
+			<location x="13163" y="159551" minz="-3732" maxz="-2632" />
+			<location x="13108" y="162755" minz="-3732" maxz="-2632" />
+			<location x="9373" y="161171" minz="-3732" maxz="-2632" />
+			<location x="8465" y="158834" minz="-3732" maxz="-2632" />
+		</territory>
+		<npc id="18268" count="1" respawn="60" />	
+		<npc id="21804" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion16_tb2022_10]" event_name="[treasure_box]">
+		<territory>	
+			<location x="16791" y="157256" minz="-3732" maxz="-2632" />
+			<location x="16186" y="160651" minz="-3732" maxz="-2632" />
+			<location x="13473" y="162095" minz="-3732" maxz="-2632" />
+			<location x="13216" y="157313" minz="-3732" maxz="-2632" />
+		</territory>
+		<npc id="18268" count="1" respawn="60" />	
+		<npc id="21804" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion16_tb2022_11]" event_name="[treasure_box]">
+		<territory>	
+			<location x="18086" y="154007" minz="-3732" maxz="-2632" />
+			<location x="16954" y="157055" minz="-3732" maxz="-2632" />
+			<location x="13242" y="157209" minz="-3732" maxz="-2632" />
+			<location x="12861" y="153593" minz="-3732" maxz="-2632" />
+		</territory>
+		<npc id="18268" count="1" respawn="60" />	
+		<npc id="21804" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[dion16_tb2022_12]" event_name="[treasure_box]">
+		<territory>	
+			<location x="12751" y="153619" minz="-3261" maxz="-2061" />
+			<location x="13189" y="159415" minz="-3261" maxz="-2061" />
+			<location x="8434" y="158683" minz="-3261" maxz="-2061" />
+			<location x="7582" y="156346" minz="-3261" maxz="-2061" />
+			<location x="10132" y="153421" minz="-3261" maxz="-2061" />
+		</territory>
+		<npc id="18268" count="1" respawn="60" />	
+		<npc id="21804" count="1" respawn="60" />	
+	</spawn>
+
+</list>

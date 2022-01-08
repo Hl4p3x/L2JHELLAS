@@ -15,13 +15,11 @@ import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.DoorData;
 import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.instancemanager.GrandBossManager;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2DoorInstance;
@@ -29,6 +27,8 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2RaidBossInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillUse;
 import com.l2jhellas.gameserver.network.serverpackets.SpecialCamera;
 import com.l2jhellas.gameserver.scrips.quests.ai.AbstractNpcAI;
@@ -146,7 +146,7 @@ public class VanHalter extends AbstractNpcAI
 			tempSpawn.setHeading(16384);
 			tempSpawn.setAmount(1);
 			tempSpawn.setRespawnDelay(60000);
-			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
+			SpawnData.getInstance().addNewSpawn(tempSpawn, false);
 			_cameraMarkerSpawn.put(Integer.valueOf(1), tempSpawn);
 			
 			tempSpawn = new L2Spawn(template1);
@@ -156,7 +156,7 @@ public class VanHalter extends AbstractNpcAI
 			tempSpawn.setHeading(16384);
 			tempSpawn.setAmount(1);
 			tempSpawn.setRespawnDelay(60000);
-			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
+			SpawnData.getInstance().addNewSpawn(tempSpawn, false);
 			_cameraMarkerSpawn.put(Integer.valueOf(2), tempSpawn);
 			
 			tempSpawn = new L2Spawn(template1);
@@ -166,7 +166,7 @@ public class VanHalter extends AbstractNpcAI
 			tempSpawn.setHeading(16384);
 			tempSpawn.setAmount(1);
 			tempSpawn.setRespawnDelay(60000);
-			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
+			SpawnData.getInstance().addNewSpawn(tempSpawn, false);
 			_cameraMarkerSpawn.put(Integer.valueOf(3), tempSpawn);
 			
 			tempSpawn = new L2Spawn(template1);
@@ -176,7 +176,7 @@ public class VanHalter extends AbstractNpcAI
 			tempSpawn.setHeading(16384);
 			tempSpawn.setAmount(1);
 			tempSpawn.setRespawnDelay(60000);
-			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
+			SpawnData.getInstance().addNewSpawn(tempSpawn, false);
 			_cameraMarkerSpawn.put(Integer.valueOf(4), tempSpawn);
 			
 			tempSpawn = new L2Spawn(template1);
@@ -186,7 +186,7 @@ public class VanHalter extends AbstractNpcAI
 			tempSpawn.setHeading(16384);
 			tempSpawn.setAmount(1);
 			tempSpawn.setRespawnDelay(60000);
-			SpawnTable.getInstance().addNewSpawn(tempSpawn, false);
+			SpawnData.getInstance().addNewSpawn(tempSpawn, false);
 			_cameraMarkerSpawn.put(Integer.valueOf(5), tempSpawn);
 		}
 		catch (Exception e)
@@ -257,7 +257,7 @@ public class VanHalter extends AbstractNpcAI
 							spawnDat.setLocz(rset.getInt("locz"));
 							spawnDat.setHeading(rset.getInt("heading"));
 							spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-							SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+							SpawnData.getInstance().addNewSpawn(spawnDat, false);
 							_royalGuardSpawn.add(spawnDat);
 							continue;
 						}
@@ -324,7 +324,7 @@ public class VanHalter extends AbstractNpcAI
 							spawnDat.setLocz(rset.getInt("locz"));
 							spawnDat.setHeading(rset.getInt("heading"));
 							spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-							SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+							SpawnData.getInstance().addNewSpawn(spawnDat, false);
 							_triolRevelationSpawn.add(spawnDat);
 							continue;
 						}
@@ -392,7 +392,7 @@ public class VanHalter extends AbstractNpcAI
 					spawnDat.setLocz(rset.getInt("locz"));
 					spawnDat.setHeading(rset.getInt("heading"));
 					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+					SpawnData.getInstance().addNewSpawn(spawnDat, false);
 					_royalGuardCaptainSpawn.add(spawnDat);
 					continue;
 				}
@@ -459,7 +459,7 @@ public class VanHalter extends AbstractNpcAI
 					spawnDat.setLocz(rset.getInt("locz"));
 					spawnDat.setHeading(rset.getInt("heading"));
 					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+					SpawnData.getInstance().addNewSpawn(spawnDat, false);
 					_royalGuardHelperSpawn.add(spawnDat);
 					continue;
 				}
@@ -521,7 +521,7 @@ public class VanHalter extends AbstractNpcAI
 					spawnDat.setLocz(rset.getInt("locz"));
 					spawnDat.setHeading(rset.getInt("heading"));
 					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+					SpawnData.getInstance().addNewSpawn(spawnDat, false);
 					_guardOfAltarSpawn.add(spawnDat);
 					continue;
 				}
@@ -587,7 +587,7 @@ public class VanHalter extends AbstractNpcAI
 					spawnDat.setLocz(rset.getInt("locz"));
 					spawnDat.setHeading(rset.getInt("heading"));
 					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+					SpawnData.getInstance().addNewSpawn(spawnDat, false);
 					_vanHalterSpawn = spawnDat;
 					continue;
 				}
@@ -645,7 +645,7 @@ public class VanHalter extends AbstractNpcAI
 					spawnDat.setLocz(rset.getInt("locz"));
 					spawnDat.setHeading(rset.getInt("heading"));
 					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+					SpawnData.getInstance().addNewSpawn(spawnDat, false);
 					_ritualOfferingSpawn = spawnDat;
 					continue;
 				}
@@ -704,7 +704,7 @@ public class VanHalter extends AbstractNpcAI
 					spawnDat.setLocz(rset.getInt("locz"));
 					spawnDat.setHeading(rset.getInt("heading"));
 					spawnDat.setRespawnDelay(rset.getInt("respawn_delay"));
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+					SpawnData.getInstance().addNewSpawn(spawnDat, false);
 					_ritualSacrificeSpawn = spawnDat;
 					continue;
 				}

@@ -13,6 +13,7 @@ import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
+import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
 import com.l2jhellas.gameserver.network.serverpackets.L2GameServerPacket;
 
 public abstract class L2ZoneType
@@ -225,8 +226,8 @@ public abstract class L2ZoneType
 		return getClass().getSimpleName() + "[" + _id + "]";
 	}
 	
-	public void visualizeZone(int z)
+	public void visualizeZone(ExServerPrimitive debug, int z)
 	{
-		getZone().visualizeZone(z);
+		getZone().visualizeZone(toString() , debug , z);
 	}
 }

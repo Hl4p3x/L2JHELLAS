@@ -451,6 +451,9 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 	
 	public void close(L2GameServerPacket gsp)
 	{
+		if(getConnection() == null)
+			return;
+		
 		getConnection().close(gsp);
 	}
 	

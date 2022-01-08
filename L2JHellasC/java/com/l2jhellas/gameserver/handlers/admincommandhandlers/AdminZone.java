@@ -9,6 +9,7 @@ import com.l2jhellas.gameserver.instancemanager.ZoneManager;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.zone.L2ZoneType;
+import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.util.StringUtil;
 
@@ -35,23 +36,31 @@ public class AdminZone implements IAdminCommandHandler
 		{
 			try
 			{
+				final ExServerPrimitive debug = activeChar.getVisualDebugPacket("ZONE");
+				debug.reset();
+				
 				String next = st.nextToken();
 				if (next.equalsIgnoreCase("all"))
 				{
 					for (L2ZoneType zone : ZoneManager.getInstance().getZones(activeChar))
-						zone.visualizeZone(activeChar.getZ());
+					    zone.visualizeZone(debug, activeChar .getZ());
 					
+					debug.sendTo(activeChar);
 					showHtml(activeChar);
 				}
 				else if (next.equalsIgnoreCase("clear"))
 				{
-					ZoneManager.getInstance().clearDebugItems();
+					debug.sendTo(activeChar);
 					showHtml(activeChar);
 				}
 				else
 				{
 					int zoneId = Integer.parseInt(next);
-					ZoneManager.getInstance().getZoneById(zoneId).visualizeZone(activeChar.getZ());
+					if(zoneId > 0)
+					{
+						ZoneManager.getInstance().getZoneById(zoneId).visualizeZone(debug,activeChar.getZ());
+						debug.sendTo(activeChar);
+					}
 				}
 			}
 			catch (Exception e)

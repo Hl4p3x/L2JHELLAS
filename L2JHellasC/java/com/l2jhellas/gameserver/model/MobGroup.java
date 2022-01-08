@@ -5,10 +5,10 @@ import java.util.List;
 
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.ai.L2ControllableMobAI;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2ControllableMobInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.util.Rnd;
 
@@ -118,7 +118,7 @@ public final class MobGroup
 				spawn.setLocz(z);
 				spawn.stopRespawn();
 				
-				SpawnTable.getInstance().addNewSpawn(spawn, false);
+				SpawnData.getInstance().addNewSpawn(spawn, false);
 				getMobs().add((L2ControllableMobInstance) spawn.doGroupSpawn());
 			}
 		}
@@ -182,7 +182,7 @@ public final class MobGroup
 			if (!mobInst.isDead())
 				mobInst.deleteMe();
 			
-			SpawnTable.getInstance().deleteSpawn(mobInst.getSpawn(), false);
+			SpawnData.getInstance().deleteSpawn(mobInst.getSpawn(), false);
 		}
 		
 		getMobs().clear();
@@ -200,7 +200,7 @@ public final class MobGroup
 			if (!mobInst.isDead())
 				mobInst.reduceCurrentHp(mobInst.getMaxHp() + 1, activeChar);
 			
-			SpawnTable.getInstance().deleteSpawn(mobInst.getSpawn(), false);
+			SpawnData.getInstance().deleteSpawn(mobInst.getSpawn(), false);
 		}
 		
 		getMobs().clear();

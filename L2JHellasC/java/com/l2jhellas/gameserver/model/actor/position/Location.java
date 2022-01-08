@@ -124,11 +124,17 @@ public class Location
 		_z = z;
 	}
 	
+	public void setZ(int z)
+	{
+		_z = z;
+	}
+	
 	public void set(Location loc)
 	{
 		_x = loc.getX();
 		_y = loc.getY();
 		_z = loc.getZ();
+		_heading = loc.getHeading();
 	}
 	
 	@Override

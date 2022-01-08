@@ -1,21 +1,31 @@
 package com.l2jhellas.gameserver.templates;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 import com.l2jhellas.gameserver.holder.IntIntHolder;
+import com.l2jhellas.util.Util;
 
 @SuppressWarnings("serial")
 public class StatsSet extends HashMap<String, Object>
 {
+	public static final StatsSet EMPTY_STATSET = new StatsSet(Collections.emptyMap());
+
 	public StatsSet()
 	{
 		super();
+	}
+	
+	public StatsSet(Map<String, Object> map)
+	{
+		super(map);
 	}
 	
 	public StatsSet(final int size)
@@ -508,5 +518,16 @@ public class StatsSet extends HashMap<String, Object>
 			return Enum.valueOf(enumClass, (String) val);
 		
 		return defaultValue;
+	}
+	
+	public Duration getDuration(String key, Duration defaultValue)
+	{
+		Objects.requireNonNull(key);
+		final Object val = get(key);
+		if (val == null)
+		{
+			return defaultValue;
+		}
+		return Util.parseDuration(String.valueOf(val));
 	}
 }

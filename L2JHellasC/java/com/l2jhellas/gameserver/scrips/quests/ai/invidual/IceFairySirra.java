@@ -7,15 +7,15 @@ import java.util.logging.Logger;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.cache.HtmCache;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.DoorData;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.model.zone.L2ZoneType;
 import com.l2jhellas.gameserver.model.zone.type.L2BossZone;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
@@ -85,7 +85,7 @@ public class IceFairySirra extends AbstractNpcAI
 	
 	public L2Npc findTemplate(int npcId)
 	{
-		L2Spawn spawn = SpawnTable.getInstance().getSpawn(npcId);
+		L2Spawn spawn = SpawnData.getInstance().getSpawn(npcId);
 		return spawn != null ? spawn.getLastSpawn() : null;
 	}
 	
@@ -247,7 +247,7 @@ public class IceFairySirra extends AbstractNpcAI
 					spawnDat.setLocz(mobs[i][3]);
 					spawnDat.setHeading(0);
 					spawnDat.setRespawnDelay(60);
-					SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+					SpawnData.getInstance().addNewSpawn(spawnDat, false);
 					_allMobs.add(spawnDat.doSpawn());
 					spawnDat.stopRespawn();
 				}

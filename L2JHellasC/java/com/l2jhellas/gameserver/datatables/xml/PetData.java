@@ -283,66 +283,6 @@ public class PetData implements DocumentParser
 			|| itemId == 6648 || itemId == 6649 || itemId == 6650; // Babies
 	}
 	
-	public static int[] getPetItemsAsNpc(int npcId)
-	{
-		switch (npcId)
-		{
-			case 12077:// wolf pet a
-				return new int[]
-				{
-					2375
-				};
-			case 12564:// Sin Eater
-				return new int[]
-				{
-					4425
-				};
-				
-			case 12311:// hatchling of wind
-			case 12312:// hatchling of star
-			case 12313:// hatchling of twilight
-				return new int[]
-				{
-					3500,
-					3501,
-					3502
-				};
-				
-			case 12526:// wind strider
-			case 12527:// Star strider
-			case 12528:// Twilight strider
-				return new int[]
-				{
-					4422,
-					4423,
-					4424
-				};
-				
-			case 12621:// Wyvern
-				return new int[]
-				{
-					8663
-				};
-				
-			case 12780:// Baby Buffalo
-			case 12782:// Baby Cougar
-			case 12781:// Baby Kookaburra
-				return new int[]
-				{
-					6648,
-					6649,
-					6650
-				};
-				
-				// unknown item id.. should never happen
-			default:
-				return new int[]
-				{
-					0
-				};
-		}
-	}
-	
 	public static boolean isMountable(int npcId)
 	{
 		return npcId == 12526 // wind strider

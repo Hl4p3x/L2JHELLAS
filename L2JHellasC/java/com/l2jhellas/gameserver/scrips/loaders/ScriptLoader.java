@@ -64,11 +64,11 @@ import com.l2jhellas.gameserver.scrips.quests.ai.invidual.VanHalter;
 import com.l2jhellas.gameserver.scrips.quests.ai.invidual.Zaken;
 import com.l2jhellas.gameserver.scrips.quests.ai.teleports.ElrokiTeleporters;
 import com.l2jhellas.gameserver.scrips.quests.ai.teleports.GatekeeperSpirit;
-import com.l2jhellas.gameserver.scrips.quests.ai.teleports.GrandBossTeleporters;
+import com.l2jhellas.gameserver.scrips.quests.ai.teleports.GrandBossTeleporter;
 import com.l2jhellas.gameserver.scrips.quests.ai.teleports.HuntingGroundsTeleport;
 import com.l2jhellas.gameserver.scrips.quests.ai.teleports.NewbieTravelToken;
 import com.l2jhellas.gameserver.scrips.quests.ai.teleports.NoblesseTeleport;
-import com.l2jhellas.gameserver.scrips.quests.ai.teleports.OracleTeleport;
+import com.l2jhellas.gameserver.scrips.quests.ai.teleports.OracleTeleporter;
 import com.l2jhellas.gameserver.scrips.quests.ai.teleports.PaganTeleporters;
 import com.l2jhellas.gameserver.scrips.quests.ai.teleports.RaceTrack;
 import com.l2jhellas.gameserver.scrips.quests.ai.teleports.TeleportWithCharm;
@@ -461,11 +461,11 @@ public class ScriptLoader
 		// teleports
 		ElrokiTeleporters.class,
 		GatekeeperSpirit.class,
-		GrandBossTeleporters.class,
+		GrandBossTeleporter.class,
 		HuntingGroundsTeleport.class,
 		NewbieTravelToken.class,
 		NoblesseTeleport.class,
-		OracleTeleport.class,
+		OracleTeleporter.class,
 		PaganTeleporters.class,
 		RaceTrack.class,
 		TeleportWithCharm.class,

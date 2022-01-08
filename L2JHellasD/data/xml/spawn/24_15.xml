@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[godard12_mb2415_01]">
+		<territory>	
+			<location x="145192" y="-82424" minz="-6064" maxz="-5464" />
+			<location x="146160" y="-81856" minz="-6064" maxz="-5464" />
+			<location x="146116" y="-80956" minz="-6064" maxz="-5464" />
+			<location x="145444" y="-81152" minz="-6064" maxz="-5464" />
+			<location x="144852" y="-81868" minz="-6064" maxz="-5464" />
+		</territory>
+		<npc id="25302" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[godard12_mb2415_02]">
+		<territory>	
+			<location x="144376" y="-85316" minz="-6312" maxz="-5712" />
+			<location x="145500" y="-85488" minz="-6312" maxz="-5712" />
+			<location x="145524" y="-84380" minz="-6312" maxz="-5712" />
+			<location x="144588" y="-84608" minz="-6312" maxz="-5712" />
+		</territory>
+		<npc id="25305" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[godard12_mb2415_03]">
+		<territory>	
+			<location x="147356" y="-74756" minz="-4964" maxz="-4364" />
+			<location x="148620" y="-74912" minz="-4964" maxz="-4364" />
+			<location x="148868" y="-73452" minz="-4964" maxz="-4364" />
+			<location x="148336" y="-72748" minz="-4964" maxz="-4364" />
+			<location x="147592" y="-73040" minz="-4964" maxz="-4364" />
+		</territory>
+		<npc id="25299" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[godard12_npc2415_01]">
+		<npc id="31558" count="1" respawn="129600" pos="142368 -82512 -6487 58000" />	
+	</spawn>
+	<spawn name="[godard12_npc2415_02]">
+		<npc id="31615" count="1" respawn="60" pos="145904 -70880 -4098 18000" />	
+	</spawn>
+	<spawn name="[godard01_npc2415_03]">
+		<npc id="31652" count="1" respawn="60" pos="161728 -92880 -1840 16500" />	
+	</spawn>
+	<spawn name="[godard01_npc2415_04]">
+		<npc id="31653" count="1" respawn="60" pos="162848 -76496 -3051 33000" />	
+	</spawn>
+	<spawn name="[godard13_npc2415_001]">
+		<npc id="31376" count="1" respawn="60" pos="149824 -79840 -5579 48000" />	
+	</spawn>
+	<spawn name="[godard13_npc2415_002]">
+		<npc id="31370" count="1" respawn="60" pos="149980 -82204 -5579 24000" />	
+	</spawn>
+	<spawn name="[godard13_npc2415_003]">
+		<npc id="31374" count="1" respawn="60" pos="149104 -80544 -5635 48000" />	
+	</spawn>
+	<spawn name="[godard13_npc2415_004]">
+		<npc id="31375" count="1" respawn="60" pos="150416 -80752 -5603 48000" />	
+	</spawn>
+	<spawn name="[godard13_npc2415_005]">
+		<npc id="31373" count="1" respawn="60" pos="150368 -81216 -5603 15000" />	
+	</spawn>
+	<spawn name="[godard13_npc2415_006]">
+		<npc id="31372" count="1" respawn="60" pos="149052 -80996 -5648 16000" />	
+	</spawn>
+	<spawn name="[godard13_npc2415_007]">
+		<npc id="31371" count="1" respawn="60" pos="146980 -67483 -3656 33000" />	
+	</spawn>
+	<spawn name="[godard13_npc2415_008]">
+		<npc id="31559" count="1" respawn="60" pos="149000 -81392 -5633 48000" />	
+	</spawn>
+	<spawn name="[godard12_2415_01]">
+		<territory>	
+			<location x="136816" y="-91872" minz="-3860" maxz="-3360" />
+			<location x="139168" y="-91056" minz="-3860" maxz="-3360" />
+			<location x="139588" y="-90456" minz="-3860" maxz="-3360" />
+			<location x="139436" y="-89076" minz="-3860" maxz="-3360" />
+			<location x="135704" y="-88964" minz="-3860" maxz="-3360" />
+			<location x="135696" y="-90848" minz="-3860" maxz="-3360" />
+		</territory>
+		<npc id="21324" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21325" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21326" count="8" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_02]">
+		<territory>	
+			<location x="136676" y="-88396" minz="-4492" maxz="-3492" />
+			<location x="139764" y="-88056" minz="-4492" maxz="-3492" />
+			<location x="140164" y="-86940" minz="-4492" maxz="-3492" />
+			<location x="139372" y="-86212" minz="-4492" maxz="-3492" />
+			<location x="135484" y="-85736" minz="-4492" maxz="-3492" />
+			<location x="135576" y="-87860" minz="-4492" maxz="-3492" />
+		</territory>
+		<npc id="21324" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21325" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21326" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21343" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_03]">
+		<territory>	
+			<location x="139784" y="-88088" minz="-4740" maxz="-4240" />
+			<location x="142012" y="-89572" minz="-4740" maxz="-4240" />
+			<location x="144472" y="-89636" minz="-4740" maxz="-4240" />
+			<location x="145352" y="-89028" minz="-4740" maxz="-4240" />
+			<location x="140188" y="-87020" minz="-4740" maxz="-4240" />
+		</territory>
+		<npc id="21327" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21328" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21329" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21330" count="6" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_04]">
+		<territory>	
+			<location x="146604" y="-91660" minz="-4820" maxz="-3820" />
+			<location x="150592" y="-91340" minz="-4820" maxz="-3820" />
+			<location x="151312" y="-90288" minz="-4820" maxz="-3820" />
+			<location x="146352" y="-88984" minz="-4820" maxz="-3820" />
+			<location x="145072" y="-89428" minz="-4820" maxz="-3820" />
+			<location x="145448" y="-91124" minz="-4820" maxz="-3820" />
+		</territory>
+		<npc id="21331" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21332" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21333" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21334" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21345" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_05]">
+		<territory>	
+			<location x="135528" y="-85768" minz="-4460" maxz="-3760" />
+			<location x="136588" y="-85892" minz="-4460" maxz="-3760" />
+			<location x="137100" y="-83608" minz="-4460" maxz="-3760" />
+			<location x="137048" y="-82296" minz="-4460" maxz="-3760" />
+			<location x="135360" y="-81048" minz="-4460" maxz="-3760" />
+			<location x="134796" y="-82348" minz="-4460" maxz="-3760" />
+		</territory>
+		<npc id="21327" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21328" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21329" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21330" count="6" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_06]">
+		<territory>	
+			<location x="137032" y="-82216" minz="-4616" maxz="-3916" />
+			<location x="138268" y="-81884" minz="-4616" maxz="-3916" />
+			<location x="138716" y="-80652" minz="-4616" maxz="-3916" />
+			<location x="135352" y="-80876" minz="-4616" maxz="-3916" />
+		</territory>
+		<npc id="21331" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21332" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21333" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21334" count="2" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_07]">
+		<territory>	
+			<location x="138084" y="-85116" minz="-4952" maxz="-4252" />
+			<location x="139936" y="-85356" minz="-4952" maxz="-4252" />
+			<location x="141156" y="-84280" minz="-4952" maxz="-4252" />
+			<location x="140208" y="-82604" minz="-4952" maxz="-4252" />
+			<location x="138732" y="-81932" minz="-4952" maxz="-4252" />
+			<location x="137708" y="-82380" minz="-4952" maxz="-4252" />
+			<location x="137436" y="-84040" minz="-4952" maxz="-4252" />
+		</territory>
+		<npc id="21331" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21332" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21333" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21334" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21345" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_08]">
+		<territory>	
+			<location x="139988" y="-85396" minz="-4972" maxz="-4272" />
+			<location x="141808" y="-86956" minz="-4972" maxz="-4272" />
+			<location x="143808" y="-87884" minz="-4972" maxz="-4272" />
+			<location x="144344" y="-86756" minz="-4972" maxz="-4272" />
+			<location x="142656" y="-84760" minz="-4972" maxz="-4272" />
+			<location x="141168" y="-84280" minz="-4972" maxz="-4272" />
+		</territory>
+		<npc id="21335" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21336" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21337" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21338" count="6" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_09]">
+		<territory>	
+			<location x="145436" y="-89024" minz="-5136" maxz="-4636" />
+			<location x="146352" y="-88920" minz="-5136" maxz="-4636" />
+			<location x="147024" y="-87240" minz="-5136" maxz="-4636" />
+			<location x="144340" y="-86824" minz="-5136" maxz="-4636" />
+			<location x="143836" y="-87944" minz="-5136" maxz="-4636" />
+		</territory>
+		<npc id="21339" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="4" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_10]">
+		<territory>	
+			<location x="146580" y="-87008" minz="-5376" maxz="-4576" />
+			<location x="147064" y="-87236" minz="-5376" maxz="-4576" />
+			<location x="147876" y="-86016" minz="-5376" maxz="-4576" />
+			<location x="147840" y="-85036" minz="-5376" maxz="-4576" />
+		</territory>
+		<npc id="21339" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="2" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_11]">
+		<territory>	
+			<location x="147592" y="-84480" minz="-5576" maxz="-4876" />
+			<location x="147924" y="-85136" minz="-5576" maxz="-4876" />
+			<location x="148788" y="-83824" minz="-5576" maxz="-4876" />
+			<location x="148380" y="-83648" minz="-5576" maxz="-4876" />
+			<location x="147508" y="-84116" minz="-5576" maxz="-4876" />
+		</territory>
+		<npc id="21339" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="2" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_12]">
+		<territory>	
+			<location x="146864" y="-89072" minz="-4704" maxz="-4204" />
+			<location x="150200" y="-89944" minz="-4704" maxz="-4204" />
+			<location x="150696" y="-86852" minz="-4704" maxz="-4204" />
+			<location x="148388" y="-86440" minz="-4704" maxz="-4204" />
+			<location x="147520" y="-87400" minz="-4704" maxz="-4204" />
+		</territory>
+		<npc id="21339" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21347" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_13]">
+		<territory>	
+			<location x="148468" y="-86368" minz="-5048" maxz="-4348" />
+			<location x="150684" y="-86740" minz="-5048" maxz="-4348" />
+			<location x="152232" y="-84200" minz="-5048" maxz="-4348" />
+			<location x="151568" y="-82680" minz="-5048" maxz="-4348" />
+			<location x="149828" y="-83708" minz="-5048" maxz="-4348" />
+			<location x="148560" y="-85072" minz="-5048" maxz="-4348" />
+		</territory>
+		<npc id="21339" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21347" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_14]">
+		<territory>	
+			<location x="153176" y="-90884" minz="-4948" maxz="-3648" />
+			<location x="154752" y="-90236" minz="-4948" maxz="-3648" />
+			<location x="155032" y="-88920" minz="-4948" maxz="-3648" />
+			<location x="154856" y="-85720" minz="-4948" maxz="-3648" />
+			<location x="152756" y="-84528" minz="-4948" maxz="-3648" />
+			<location x="151412" y="-87056" minz="-4948" maxz="-3648" />
+			<location x="150916" y="-89336" minz="-4948" maxz="-3648" />
+			<location x="151596" y="-90252" minz="-4948" maxz="-3648" />
+		</territory>
+		<npc id="21335" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21336" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21337" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21338" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21347" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_15]">
+		<territory>	
+			<location x="152956" y="-84472" minz="-5424" maxz="-4424" />
+			<location x="154844" y="-85632" minz="-5424" maxz="-4424" />
+			<location x="155440" y="-84800" minz="-5424" maxz="-4424" />
+			<location x="154644" y="-81984" minz="-5424" maxz="-4424" />
+			<location x="152516" y="-81628" minz="-5424" maxz="-4424" />
+			<location x="152096" y="-82112" minz="-5424" maxz="-4424" />
+		</territory>
+		<npc id="21331" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21332" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21333" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21334" count="4" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_16]">
+		<territory>	
+			<location x="156376" y="-89120" minz="-4144" maxz="-3344" />
+			<location x="157528" y="-88688" minz="-4144" maxz="-3344" />
+			<location x="158720" y="-87332" minz="-4144" maxz="-3344" />
+			<location x="158696" y="-86420" minz="-4144" maxz="-3344" />
+			<location x="156452" y="-84368" minz="-4144" maxz="-3344" />
+			<location x="155440" y="-86240" minz="-4144" maxz="-3344" />
+			<location x="155584" y="-88544" minz="-4144" maxz="-3344" />
+		</territory>
+		<npc id="21327" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21328" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21329" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21330" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21343" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_17]">
+		<territory>	
+			<location x="157156" y="-84880" minz="-4008" maxz="-3208" />
+			<location x="158696" y="-86340" minz="-4008" maxz="-3208" />
+			<location x="159032" y="-85768" minz="-4008" maxz="-3208" />
+			<location x="159288" y="-83744" minz="-4008" maxz="-3208" />
+			<location x="156564" y="-83208" minz="-4008" maxz="-3208" />
+		</territory>
+		<npc id="21324" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21325" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21326" count="6" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_18]">
+		<territory>	
+			<location x="156996" y="-82204" minz="-4168" maxz="-3568" />
+			<location x="159588" y="-83080" minz="-4168" maxz="-3568" />
+			<location x="160044" y="-81328" minz="-4168" maxz="-3568" />
+			<location x="158880" y="-80108" minz="-4168" maxz="-3568" />
+			<location x="156848" y="-79988" minz="-4168" maxz="-3568" />
+		</territory>
+		<npc id="21324" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21325" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21326" count="6" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_19]">
+		<territory>	
+			<location x="156388" y="-79824" minz="-4180" maxz="-3680" />
+			<location x="157308" y="-80056" minz="-4180" maxz="-3680" />
+			<location x="158056" y="-77572" minz="-4180" maxz="-3680" />
+			<location x="157904" y="-75680" minz="-4180" maxz="-3680" />
+			<location x="157144" y="-74020" minz="-4180" maxz="-3680" />
+			<location x="155660" y="-77940" minz="-4180" maxz="-3680" />
+		</territory>
+		<npc id="21324" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21325" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21326" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21343" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_20]">
+		<territory>	
+			<location x="152692" y="-81452" minz="-5004" maxz="-4304" />
+			<location x="156400" y="-82088" minz="-5004" maxz="-4304" />
+			<location x="156372" y="-81172" minz="-5004" maxz="-4304" />
+			<location x="155008" y="-78300" minz="-5004" maxz="-4304" />
+			<location x="151056" y="-78668" minz="-5004" maxz="-4304" />
+		</territory>
+		<npc id="21327" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21328" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21329" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21330" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21345" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_21]">
+		<territory>	
+			<location x="152372" y="-78528" minz="-5016" maxz="-4016" />
+			<location x="154024" y="-78452" minz="-5016" maxz="-4016" />
+			<location x="154244" y="-77004" minz="-5016" maxz="-4016" />
+			<location x="153724" y="-75724" minz="-5016" maxz="-4016" />
+			<location x="151180" y="-74656" minz="-5016" maxz="-4016" />
+			<location x="150188" y="-77444" minz="-5016" maxz="-4016" />
+		</territory>
+		<npc id="21331" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21332" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21333" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21334" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21345" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_22]">
+		<territory>	
+			<location x="154456" y="-78248" minz="-4688" maxz="-3988" />
+			<location x="154988" y="-78196" minz="-4688" maxz="-3988" />
+			<location x="155968" y="-75696" minz="-4688" maxz="-3988" />
+			<location x="154516" y="-75828" minz="-4688" maxz="-3988" />
+		</territory>
+		<npc id="21331" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21332" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21333" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21334" count="2" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_23]">
+		<territory>	
+			<location x="154432" y="-75660" minz="-4396" maxz="-3696" />
+			<location x="156000" y="-75544" minz="-4396" maxz="-3696" />
+			<location x="156180" y="-73792" minz="-4396" maxz="-3696" />
+			<location x="151936" y="-71568" minz="-4396" maxz="-3696" />
+			<location x="151024" y="-73952" minz="-4396" maxz="-3696" />
+		</territory>
+		<npc id="21335" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21336" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21337" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21338" count="6" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_24]">
+		<territory>	
+			<location x="147964" y="-76224" minz="-4972" maxz="-4672" />
+			<location x="148388" y="-75796" minz="-4972" maxz="-4672" />
+			<location x="148920" y="-74596" minz="-4972" maxz="-4672" />
+			<location x="148932" y="-73392" minz="-4972" maxz="-4672" />
+			<location x="148348" y="-72780" minz="-4972" maxz="-4672" />
+			<location x="147500" y="-72848" minz="-4972" maxz="-4672" />
+			<location x="147132" y="-74000" minz="-4972" maxz="-4672" />
+			<location x="147132" y="-76092" minz="-4972" maxz="-4672" />
+		</territory>
+		<npc id="21335" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21336" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21337" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21338" count="4" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_25]">
+		<territory>	
+			<location x="149236" y="-78488" minz="-5028" maxz="-4328" />
+			<location x="150924" y="-78432" minz="-5028" maxz="-4328" />
+			<location x="148496" y="-76392" minz="-5028" maxz="-4328" />
+			<location x="146520" y="-76860" minz="-5028" maxz="-4328" />
+			<location x="147376" y="-78320" minz="-5028" maxz="-4328" />
+		</territory>
+		<npc id="21339" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="4" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_26]">
+		<territory>	
+			<location x="143628" y="-77888" minz="-4944" maxz="-4244" />
+			<location x="146448" y="-77252" minz="-4944" maxz="-4244" />
+			<location x="145104" y="-75076" minz="-4944" maxz="-4244" />
+			<location x="140632" y="-74040" minz="-4944" maxz="-4244" />
+			<location x="141028" y="-76036" minz="-4944" maxz="-4244" />
+		</territory>
+		<npc id="21339" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21347" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_27]">
+		<territory>	
+			<location x="139784" y="-74256" minz="-4512" maxz="-3812" />
+			<location x="141864" y="-73616" minz="-4512" maxz="-3812" />
+			<location x="141736" y="-71060" minz="-4512" maxz="-3812" />
+			<location x="138144" y="-71348" minz="-4512" maxz="-3812" />
+			<location x="138320" y="-72588" minz="-4512" maxz="-3812" />
+		</territory>
+		<npc id="21331" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21332" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21333" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21334" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21345" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_28]">
+		<territory>	
+			<location x="141924" y="-73592" minz="-4436" maxz="-3936" />
+			<location x="145428" y="-74272" minz="-4436" maxz="-3936" />
+			<location x="146656" y="-71384" minz="-4436" maxz="-3936" />
+			<location x="145424" y="-69988" minz="-4436" maxz="-3936" />
+			<location x="141804" y="-71040" minz="-4436" maxz="-3936" />
+		</territory>
+		<npc id="21335" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21336" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21337" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21338" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21347" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_29]">
+		<territory>	
+			<location x="133160" y="-71524" minz="-3496" maxz="-2996" />
+			<location x="134212" y="-71996" minz="-3496" maxz="-2996" />
+			<location x="138700" y="-68680" minz="-3496" maxz="-2996" />
+			<location x="134348" y="-68656" minz="-3496" maxz="-2996" />
+		</territory>
+		<npc id="21324" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21325" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21326" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21343" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_30]">
+		<territory>	
+			<location x="135632" y="-77768" minz="-4328" maxz="-3628" />
+			<location x="138644" y="-76984" minz="-4328" maxz="-3628" />
+			<location x="139484" y="-75408" minz="-4328" maxz="-3628" />
+			<location x="137548" y="-73064" minz="-4328" maxz="-3628" />
+			<location x="136656" y="-72704" minz="-4328" maxz="-3628" />
+			<location x="135396" y="-73344" minz="-4328" maxz="-3628" />
+			<location x="134900" y="-76248" minz="-4328" maxz="-3628" />
+		</territory>
+		<npc id="21327" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21328" count="6" respawn="120" respawn_rand="80" />	
+		<npc id="21329" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21330" count="10" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_31]">
+		<territory>	
+			<location x="137588" y="-79624" minz="-4452" maxz="-3752" />
+			<location x="139892" y="-79008" minz="-4452" maxz="-3752" />
+			<location x="140012" y="-77984" minz="-4452" maxz="-3752" />
+			<location x="139244" y="-77376" minz="-4452" maxz="-3752" />
+			<location x="138368" y="-77084" minz="-4452" maxz="-3752" />
+			<location x="135872" y="-77740" minz="-4452" maxz="-3752" />
+			<location x="135504" y="-79660" minz="-4452" maxz="-3752" />
+		</territory>
+		<npc id="21324" count="10" respawn="120" respawn_rand="80" />	
+		<npc id="21325" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21326" count="8" respawn="120" respawn_rand="80" />	
+		<npc id="21343" count="2" respawn="100" respawn_rand="30" />	
+	</spawn>
+	<spawn name="[godard12_2415_32]">
+		<territory>	
+			<location x="141108" y="-78876" minz="-4840" maxz="-4140" />
+			<location x="141872" y="-78552" minz="-4840" maxz="-4140" />
+			<location x="141380" y="-76480" minz="-4840" maxz="-4140" />
+			<location x="140468" y="-75068" minz="-4840" maxz="-4140" />
+			<location x="139544" y="-76240" minz="-4840" maxz="-4140" />
+		</territory>
+		<npc id="21339" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="2" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_33]">
+		<territory>	
+			<location x="141412" y="-80384" minz="-5380" maxz="-4880" />
+			<location x="144568" y="-79220" minz="-5380" maxz="-4880" />
+			<location x="144288" y="-78368" minz="-5380" maxz="-4880" />
+			<location x="142704" y="-78612" minz="-5380" maxz="-4880" />
+			<location x="140696" y="-79436" minz="-5380" maxz="-4880" />
+		</territory>
+		<npc id="21339" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21340" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21341" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21342" count="2" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_2415_34]">
+		<territory>	
+			<location x="138796" y="-81952" minz="-5260" maxz="-4560" />
+			<location x="140448" y="-82696" minz="-5260" maxz="-4560" />
+			<location x="141260" y="-80500" minz="-5260" maxz="-4560" />
+			<location x="140700" y="-79716" minz="-5260" maxz="-4560" />
+			<location x="139192" y="-80680" minz="-5260" maxz="-4560" />
+		</territory>
+		<npc id="21335" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21336" count="2" respawn="120" respawn_rand="80" />	
+		<npc id="21337" count="4" respawn="120" respawn_rand="80" />	
+		<npc id="21338" count="4" respawn="120" respawn_rand="80" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_01]" event_name="[treasure_box]">
+		<territory>	
+			<location x="136816" y="-91872" minz="-3860" maxz="-3360" />
+			<location x="139168" y="-91056" minz="-3860" maxz="-3360" />
+			<location x="139588" y="-90456" minz="-3860" maxz="-3360" />
+			<location x="139436" y="-89076" minz="-3860" maxz="-3360" />
+			<location x="135704" y="-88964" minz="-3860" maxz="-3360" />
+			<location x="135696" y="-90848" minz="-3860" maxz="-3360" />
+		</territory>
+		<npc id="18284" count="2" respawn="120" />	
+		<npc id="21820" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_02]" event_name="[treasure_box]">
+		<territory>	
+			<location x="136676" y="-88396" minz="-4492" maxz="-3492" />
+			<location x="139764" y="-88056" minz="-4492" maxz="-3492" />
+			<location x="140164" y="-86940" minz="-4492" maxz="-3492" />
+			<location x="139372" y="-86212" minz="-4492" maxz="-3492" />
+			<location x="135484" y="-85736" minz="-4492" maxz="-3492" />
+			<location x="135576" y="-87860" minz="-4492" maxz="-3492" />
+		</territory>
+		<npc id="18284" count="1" respawn="120" />	
+		<npc id="21820" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_03]" event_name="[treasure_box]">
+		<territory>	
+			<location x="139784" y="-88088" minz="-4740" maxz="-4240" />
+			<location x="142012" y="-89572" minz="-4740" maxz="-4240" />
+			<location x="144472" y="-89636" minz="-4740" maxz="-4240" />
+			<location x="145352" y="-89028" minz="-4740" maxz="-4240" />
+			<location x="140188" y="-87020" minz="-4740" maxz="-4240" />
+		</territory>
+		<npc id="18284" count="2" respawn="120" />	
+		<npc id="21820" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_04]" event_name="[treasure_box]">
+		<territory>	
+			<location x="146604" y="-91660" minz="-4820" maxz="-3820" />
+			<location x="150592" y="-91340" minz="-4820" maxz="-3820" />
+			<location x="151312" y="-90288" minz="-4820" maxz="-3820" />
+			<location x="146352" y="-88984" minz="-4820" maxz="-3820" />
+			<location x="145072" y="-89428" minz="-4820" maxz="-3820" />
+			<location x="145448" y="-91124" minz="-4820" maxz="-3820" />
+		</territory>
+		<npc id="18284" count="1" respawn="120" />	
+		<npc id="21820" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_05]" event_name="[treasure_box]">
+		<territory>	
+			<location x="135528" y="-85768" minz="-4460" maxz="-3760" />
+			<location x="136588" y="-85892" minz="-4460" maxz="-3760" />
+			<location x="137100" y="-83608" minz="-4460" maxz="-3760" />
+			<location x="137048" y="-82296" minz="-4460" maxz="-3760" />
+			<location x="135360" y="-81048" minz="-4460" maxz="-3760" />
+			<location x="134796" y="-82348" minz="-4460" maxz="-3760" />
+		</territory>
+		<npc id="18284" count="1" respawn="120" />	
+		<npc id="21820" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_07]" event_name="[treasure_box]">
+		<territory>	
+			<location x="138084" y="-85116" minz="-4952" maxz="-4252" />
+			<location x="139936" y="-85356" minz="-4952" maxz="-4252" />
+			<location x="141156" y="-84280" minz="-4952" maxz="-4252" />
+			<location x="140208" y="-82604" minz="-4952" maxz="-4252" />
+			<location x="138732" y="-81932" minz="-4952" maxz="-4252" />
+			<location x="137708" y="-82380" minz="-4952" maxz="-4252" />
+			<location x="137436" y="-84040" minz="-4952" maxz="-4252" />
+		</territory>
+		<npc id="18284" count="1" respawn="120" />	
+		<npc id="21820" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_08]" event_name="[treasure_box]">
+		<territory>	
+			<location x="139988" y="-85396" minz="-4972" maxz="-4272" />
+			<location x="141808" y="-86956" minz="-4972" maxz="-4272" />
+			<location x="143808" y="-87884" minz="-4972" maxz="-4272" />
+			<location x="144344" y="-86756" minz="-4972" maxz="-4272" />
+			<location x="142656" y="-84760" minz="-4972" maxz="-4272" />
+			<location x="141168" y="-84280" minz="-4972" maxz="-4272" />
+		</territory>
+		<npc id="18284" count="1" respawn="120" />	
+		<npc id="21820" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_09]" event_name="[treasure_box]">
+		<territory>	
+			<location x="145436" y="-89024" minz="-5136" maxz="-4636" />
+			<location x="146352" y="-88920" minz="-5136" maxz="-4636" />
+			<location x="147024" y="-87240" minz="-5136" maxz="-4636" />
+			<location x="144340" y="-86824" minz="-5136" maxz="-4636" />
+			<location x="143836" y="-87944" minz="-5136" maxz="-4636" />
+		</territory>
+		<npc id="18284" count="1" respawn="120" />	
+		<npc id="21820" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_12]" event_name="[treasure_box]">
+		<territory>	
+			<location x="146864" y="-89072" minz="-4704" maxz="-4204" />
+			<location x="150200" y="-89944" minz="-4704" maxz="-4204" />
+			<location x="150696" y="-86852" minz="-4704" maxz="-4204" />
+			<location x="148388" y="-86440" minz="-4704" maxz="-4204" />
+			<location x="147520" y="-87400" minz="-4704" maxz="-4204" />
+		</territory>
+		<npc id="18284" count="1" respawn="120" />	
+		<npc id="21820" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_13]" event_name="[treasure_box]">
+		<territory>	
+			<location x="148468" y="-86368" minz="-5048" maxz="-4348" />
+			<location x="150684" y="-86740" minz="-5048" maxz="-4348" />
+			<location x="152232" y="-84200" minz="-5048" maxz="-4348" />
+			<location x="151568" y="-82680" minz="-5048" maxz="-4348" />
+			<location x="149828" y="-83708" minz="-5048" maxz="-4348" />
+			<location x="148560" y="-85072" minz="-5048" maxz="-4348" />
+		</territory>
+		<npc id="18284" count="2" respawn="120" />	
+		<npc id="21820" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_14]" event_name="[treasure_box]">
+		<territory>	
+			<location x="153176" y="-90884" minz="-4948" maxz="-3648" />
+			<location x="154752" y="-90236" minz="-4948" maxz="-3648" />
+			<location x="155032" y="-88920" minz="-4948" maxz="-3648" />
+			<location x="154856" y="-85720" minz="-4948" maxz="-3648" />
+			<location x="152756" y="-84528" minz="-4948" maxz="-3648" />
+			<location x="151412" y="-87056" minz="-4948" maxz="-3648" />
+			<location x="150916" y="-89336" minz="-4948" maxz="-3648" />
+			<location x="151596" y="-90252" minz="-4948" maxz="-3648" />
+		</territory>
+		<npc id="18285" count="2" respawn="120" />	
+		<npc id="21821" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_15]" event_name="[treasure_box]">
+		<territory>	
+			<location x="152956" y="-84472" minz="-5424" maxz="-4424" />
+			<location x="154844" y="-85632" minz="-5424" maxz="-4424" />
+			<location x="155440" y="-84800" minz="-5424" maxz="-4424" />
+			<location x="154644" y="-81984" minz="-5424" maxz="-4424" />
+			<location x="152516" y="-81628" minz="-5424" maxz="-4424" />
+			<location x="152096" y="-82112" minz="-5424" maxz="-4424" />
+		</territory>
+		<npc id="18285" count="1" respawn="120" />	
+		<npc id="21821" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_16]" event_name="[treasure_box]">
+		<territory>	
+			<location x="156376" y="-89120" minz="-4144" maxz="-3344" />
+			<location x="157528" y="-88688" minz="-4144" maxz="-3344" />
+			<location x="158720" y="-87332" minz="-4144" maxz="-3344" />
+			<location x="158696" y="-86420" minz="-4144" maxz="-3344" />
+			<location x="156452" y="-84368" minz="-4144" maxz="-3344" />
+			<location x="155440" y="-86240" minz="-4144" maxz="-3344" />
+			<location x="155584" y="-88544" minz="-4144" maxz="-3344" />
+		</territory>
+		<npc id="18285" count="2" respawn="120" />	
+		<npc id="21821" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_17]" event_name="[treasure_box]">
+		<territory>	
+			<location x="157156" y="-84880" minz="-4008" maxz="-3208" />
+			<location x="158696" y="-86340" minz="-4008" maxz="-3208" />
+			<location x="159032" y="-85768" minz="-4008" maxz="-3208" />
+			<location x="159288" y="-83744" minz="-4008" maxz="-3208" />
+			<location x="156564" y="-83208" minz="-4008" maxz="-3208" />
+		</territory>
+		<npc id="18285" count="2" respawn="120" />	
+		<npc id="21821" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_18]" event_name="[treasure_box]">
+		<territory>	
+			<location x="156996" y="-82204" minz="-4168" maxz="-3568" />
+			<location x="159588" y="-83080" minz="-4168" maxz="-3568" />
+			<location x="160044" y="-81328" minz="-4168" maxz="-3568" />
+			<location x="158880" y="-80108" minz="-4168" maxz="-3568" />
+			<location x="156848" y="-79988" minz="-4168" maxz="-3568" />
+		</territory>
+		<npc id="18285" count="1" respawn="120" />	
+		<npc id="21821" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_19]" event_name="[treasure_box]">
+		<territory>	
+			<location x="156388" y="-79824" minz="-4180" maxz="-3680" />
+			<location x="157308" y="-80056" minz="-4180" maxz="-3680" />
+			<location x="158056" y="-77572" minz="-4180" maxz="-3680" />
+			<location x="157904" y="-75680" minz="-4180" maxz="-3680" />
+			<location x="157144" y="-74020" minz="-4180" maxz="-3680" />
+			<location x="155660" y="-77940" minz="-4180" maxz="-3680" />
+		</territory>
+		<npc id="18285" count="2" respawn="120" />	
+		<npc id="21821" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_20]" event_name="[treasure_box]">
+		<territory>	
+			<location x="152692" y="-81452" minz="-5004" maxz="-4304" />
+			<location x="156400" y="-82088" minz="-5004" maxz="-4304" />
+			<location x="156372" y="-81172" minz="-5004" maxz="-4304" />
+			<location x="155008" y="-78300" minz="-5004" maxz="-4304" />
+			<location x="151056" y="-78668" minz="-5004" maxz="-4304" />
+		</territory>
+		<npc id="18285" count="2" respawn="120" />	
+		<npc id="21821" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_21]" event_name="[treasure_box]">
+		<territory>	
+			<location x="152372" y="-78528" minz="-5016" maxz="-4016" />
+			<location x="154024" y="-78452" minz="-5016" maxz="-4016" />
+			<location x="154244" y="-77004" minz="-5016" maxz="-4016" />
+			<location x="153724" y="-75724" minz="-5016" maxz="-4016" />
+			<location x="151180" y="-74656" minz="-5016" maxz="-4016" />
+			<location x="150188" y="-77444" minz="-5016" maxz="-4016" />
+		</territory>
+		<npc id="18285" count="1" respawn="120" />	
+		<npc id="21821" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_22]" event_name="[treasure_box]">
+		<territory>	
+			<location x="154456" y="-78248" minz="-4688" maxz="-3988" />
+			<location x="154988" y="-78196" minz="-4688" maxz="-3988" />
+			<location x="155968" y="-75696" minz="-4688" maxz="-3988" />
+			<location x="154516" y="-75828" minz="-4688" maxz="-3988" />
+		</territory>
+		<npc id="18285" count="1" respawn="120" />	
+		<npc id="21821" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_23]" event_name="[treasure_box]">
+		<territory>	
+			<location x="154432" y="-75660" minz="-4396" maxz="-3696" />
+			<location x="156000" y="-75544" minz="-4396" maxz="-3696" />
+			<location x="156180" y="-73792" minz="-4396" maxz="-3696" />
+			<location x="151936" y="-71568" minz="-4396" maxz="-3696" />
+			<location x="151024" y="-73952" minz="-4396" maxz="-3696" />
+		</territory>
+		<npc id="18286" count="2" respawn="120" />	
+		<npc id="21822" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_24]" event_name="[treasure_box]">
+		<territory>	
+			<location x="147964" y="-76224" minz="-4972" maxz="-4672" />
+			<location x="148388" y="-75796" minz="-4972" maxz="-4672" />
+			<location x="148920" y="-74596" minz="-4972" maxz="-4672" />
+			<location x="148932" y="-73392" minz="-4972" maxz="-4672" />
+			<location x="148348" y="-72780" minz="-4972" maxz="-4672" />
+			<location x="147500" y="-72848" minz="-4972" maxz="-4672" />
+			<location x="147132" y="-74000" minz="-4972" maxz="-4672" />
+			<location x="147132" y="-76092" minz="-4972" maxz="-4672" />
+		</territory>
+		<npc id="18286" count="1" respawn="120" />	
+		<npc id="21822" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_25]" event_name="[treasure_box]">
+		<territory>	
+			<location x="149236" y="-78488" minz="-5028" maxz="-4328" />
+			<location x="150924" y="-78432" minz="-5028" maxz="-4328" />
+			<location x="148496" y="-76392" minz="-5028" maxz="-4328" />
+			<location x="146520" y="-76860" minz="-5028" maxz="-4328" />
+			<location x="147376" y="-78320" minz="-5028" maxz="-4328" />
+		</territory>
+		<npc id="18286" count="1" respawn="120" />	
+		<npc id="21822" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_26]" event_name="[treasure_box]">
+		<territory>	
+			<location x="143628" y="-77888" minz="-4944" maxz="-4244" />
+			<location x="146448" y="-77252" minz="-4944" maxz="-4244" />
+			<location x="145104" y="-75076" minz="-4944" maxz="-4244" />
+			<location x="140632" y="-74040" minz="-4944" maxz="-4244" />
+			<location x="141028" y="-76036" minz="-4944" maxz="-4244" />
+		</territory>
+		<npc id="18286" count="2" respawn="120" />	
+		<npc id="21822" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_27]" event_name="[treasure_box]">
+		<territory>	
+			<location x="139784" y="-74256" minz="-4512" maxz="-3812" />
+			<location x="141864" y="-73616" minz="-4512" maxz="-3812" />
+			<location x="141736" y="-71060" minz="-4512" maxz="-3812" />
+			<location x="138144" y="-71348" minz="-4512" maxz="-3812" />
+			<location x="138320" y="-72588" minz="-4512" maxz="-3812" />
+		</territory>
+		<npc id="18286" count="1" respawn="120" />	
+		<npc id="21822" count="1" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_28]" event_name="[treasure_box]">
+		<territory>	
+			<location x="141924" y="-73592" minz="-4436" maxz="-3936" />
+			<location x="145428" y="-74272" minz="-4436" maxz="-3936" />
+			<location x="146656" y="-71384" minz="-4436" maxz="-3936" />
+			<location x="145424" y="-69988" minz="-4436" maxz="-3936" />
+			<location x="141804" y="-71040" minz="-4436" maxz="-3936" />
+		</territory>
+		<npc id="18286" count="2" respawn="120" />	
+		<npc id="21822" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_29]" event_name="[treasure_box]">
+		<territory>	
+			<location x="133160" y="-71524" minz="-3496" maxz="-2996" />
+			<location x="134212" y="-71996" minz="-3496" maxz="-2996" />
+			<location x="138700" y="-68680" minz="-3496" maxz="-2996" />
+			<location x="134348" y="-68656" minz="-3496" maxz="-2996" />
+		</territory>
+		<npc id="18286" count="2" respawn="120" />	
+		<npc id="21822" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_30]" event_name="[treasure_box]">
+		<territory>	
+			<location x="135632" y="-77768" minz="-4328" maxz="-3628" />
+			<location x="138644" y="-76984" minz="-4328" maxz="-3628" />
+			<location x="139484" y="-75408" minz="-4328" maxz="-3628" />
+			<location x="137548" y="-73064" minz="-4328" maxz="-3628" />
+			<location x="136656" y="-72704" minz="-4328" maxz="-3628" />
+			<location x="135396" y="-73344" minz="-4328" maxz="-3628" />
+			<location x="134900" y="-76248" minz="-4328" maxz="-3628" />
+		</territory>
+		<npc id="18286" count="2" respawn="120" />	
+		<npc id="21822" count="2" respawn="120" />	
+	</spawn>
+	<spawn name="[godard12_tb2415_31]" event_name="[treasure_box]">
+		<territory>	
+			<location x="137588" y="-79624" minz="-4452" maxz="-3752" />
+			<location x="139892" y="-79008" minz="-4452" maxz="-3752" />
+			<location x="140012" y="-77984" minz="-4452" maxz="-3752" />
+			<location x="139244" y="-77376" minz="-4452" maxz="-3752" />
+			<location x="138368" y="-77084" minz="-4452" maxz="-3752" />
+			<location x="135872" y="-77740" minz="-4452" maxz="-3752" />
+			<location x="135504" y="-79660" minz="-4452" maxz="-3752" />
+		</territory>
+		<npc id="18286" count="2" respawn="120" />	
+		<npc id="21822" count="2" respawn="120" />	
+	</spawn>
+
+</list>

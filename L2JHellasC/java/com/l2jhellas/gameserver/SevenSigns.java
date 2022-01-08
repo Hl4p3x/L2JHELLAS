@@ -16,10 +16,10 @@ import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.model.AutoChatHandler;
-import com.l2jhellas.gameserver.model.AutoSpawnHandler;
-import com.l2jhellas.gameserver.model.AutoSpawnHandler.AutoSpawnInstance;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.spawn.AutoSpawnHandler;
+import com.l2jhellas.gameserver.model.spawn.AutoSpawnHandler.AutoSpawnInstance;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.SignsSky;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -396,7 +396,7 @@ public class SevenSigns
 		return _activePeriod;
 	}
 	
-	private final int getDaysToPeriodChange()
+	public final int getDaysToPeriodChange()
 	{
 		int numDays = _calendar.get(Calendar.DAY_OF_WEEK) - PERIOD_START_DAY;
 		

@@ -1,9 +1,7 @@
 package com.l2jhellas.gameserver.model.zone;
 
-import com.l2jhellas.gameserver.idfactory.IdFactory;
-import com.l2jhellas.gameserver.instancemanager.ZoneManager;
-import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
+import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
 
 public abstract class L2ZoneForm
 {
@@ -19,8 +17,8 @@ public abstract class L2ZoneForm
 	
 	public abstract int getHighZ(); // New fishing patch makes use of that to get the Z for the hook
 	
-	public abstract void visualizeZone(double z);
-	
+	public abstract void visualizeZone(String info, ExServerPrimitive debug, int z);
+
 	// public abstract boolean isInsideZone(double x, double y, double z);
 	
 	// public abstract boolean isInsideZone(int x, int y, int z);
@@ -38,14 +36,6 @@ public abstract class L2ZoneForm
 	{
 		return java.awt.geom.Line2D.linesIntersect(ax1, ay1, ax2, ay2, bx1, by1, bx2, by2);
 	}
-	
-	protected final static void dropDebugItem(int itemId, int num, int x, int y, double z)
-	{
-		L2ItemInstance item = new L2ItemInstance(IdFactory.getInstance().getNextId(), itemId);
-		item.setCount(num);
-		item.spawnMe(x, y, (int) z + 5);
-		ZoneManager.getInstance().getDebugItems().add(item);
-	}
-	
+
 	public abstract Location getRandomPoint();
 }

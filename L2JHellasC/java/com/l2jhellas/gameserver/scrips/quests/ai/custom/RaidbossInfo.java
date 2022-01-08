@@ -3,14 +3,11 @@ package com.l2jhellas.gameserver.scrips.quests.ai.custom;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.quest.Quest;
-import com.l2jhellas.gameserver.model.quest.QuestState;
-import com.l2jhellas.gameserver.templates.L2NpcTemplate;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.util.Util;
 
 public class RaidbossInfo extends Quest
@@ -146,38 +143,25 @@ public class RaidbossInfo extends Quest
 			addTalkId(npcId);
 		}
 		
-		// Add all Raid Bosses to RAIDS list
-		for (L2NpcTemplate raid : NpcData.getInstance().getAllNpcOfClassType("L2RaidBoss"))
-		{		
-			SpawnTable.getInstance().forEachSpawn(sp ->
-			{
-				if (sp != null && sp.getId() == raid.getNpcId())
-				  RADARS.put(raid.getNpcId(), new Location(sp.getLocx(), sp.getLocy(), sp.getLocz()));
-				return true;
-			});
-		}
+		SpawnData.getInstance().forEachSpawn(sp ->
+		{
+			if (sp != null && sp.getLastSpawn() != null && sp.getLastSpawn().getTemplate().isType("L2RaidBoss"))
+				 RADARS.put(sp.getNpcid(), new Location(sp.getLocx(), sp.getLocy(), sp.getLocz()));
+			return true;
+		});
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		QuestState st = player.getQuestState(qn);
-		if (st == null)
+		if (!Util.isDigit(event))
 			return event;
 		
-		if (Util.isDigit(event))
-		{
-			int rbid = Integer.parseInt(event);
-			
-			if (RADARS.containsKey(rbid))
-			{
-				Location loc = RADARS.get(rbid);
-				st.addRadar(loc.getX(), loc.getY(), loc.getZ());
-			}
-			st.exitQuest(true);
-			return null;
-		}
-		return event;
+		final Location loc = RADARS.get(Integer.parseInt(event));
+		if (loc != null)
+			player.getRadar().addMarker(loc.getX(), loc.getY(), loc.getZ());
+		
+		return null;
 	}
 	
 	@Override

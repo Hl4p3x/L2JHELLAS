@@ -61,256 +61,130 @@ public class NpcData
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			try
-			{
-				PreparedStatement statement = con.prepareStatement(RESTORE_SELECT_NPC);
-				ResultSet npcdata = statement.executeQuery();
-				fillNpcTable(npcdata, false);
-				npcdata.close();
-				statement.close();
-			}
-			catch (Exception e)
-			{
-				_log.warning(NpcData.class.getName() + ": Error creating NPC table");
-			}
-			
-			try
-			{
-				PreparedStatement statement = con.prepareStatement(RESTORE_NPC_SKILLS);
-				ResultSet npcskills = statement.executeQuery();
-				L2NpcTemplate npcDat = null;
-				L2Skill npcSkill = null;
-				
-				while (npcskills.next())
-				{
-					int mobId = npcskills.getInt("npcid");
-					npcDat = _npcs.get(mobId);
-					
-					if (npcDat == null)
+			try (PreparedStatement ps = con.prepareStatement(RESTORE_SELECT_NPC))
+			{			
+				try (ResultSet rset = ps.executeQuery())
+				{				
+					try
 					{
-						continue;
+						fillNpcTable(rset, false);
 					}
-					
-					int skillId = npcskills.getInt("skillid");
-					int level = npcskills.getInt("level");
-					
-					if (npcDat.race == null && skillId == 4416)
+					catch (Exception e)
 					{
-						npcDat.setRace(level);
-						continue;
+						_log.warning(NpcData.class.getName() + ": Error creating NPC table");
 					}
-					
-					npcSkill = SkillTable.getInstance().getInfo(skillId, level);
-					
-					if (npcSkill == null)
-					{
-						continue;
-					}
-					
-					npcDat.addSkill(npcSkill);
-					npcSkill = null;
 				}
-				
-				npcskills.close();
-				statement.close();
-			}
-			catch (Exception e)
-			{
-				_log.warning(NpcData.class.getName() + ": Error reading NPC skills table");
 			}
 			
-			try
-			{
-				PreparedStatement statement2 = con.prepareStatement(RESTORE_DROPLIST);
-				ResultSet dropData = statement2.executeQuery();
-				L2DropData dropDat = null;
-				L2NpcTemplate npcDat = null;
-				
-				while (dropData.next())
-				{
-					int mobId = dropData.getInt("mobId");
-					
-					npcDat = _npcs.get(mobId);
-					
-					if (npcDat == null)
+			try (PreparedStatement ps = con.prepareStatement(RESTORE_SELECT_CUSTOM_NPC))
+			{			
+				try (ResultSet rset = ps.executeQuery())
+				{				
+					try
 					{
-						_log.warning(NpcData.class.getName() + ": No npc correlating with id: " + mobId);
-						continue;
+						fillNpcTable(rset, true);
 					}
-					
-					dropDat = new L2DropData();
-					
-					dropDat.setItemId(dropData.getInt("itemId"));
-					dropDat.setMinDrop(dropData.getInt("min"));
-					dropDat.setMaxDrop(dropData.getInt("max"));
-					dropDat.setChance(dropData.getInt("chance"));
-					
-					int category = dropData.getInt("category");
-					
-					npcDat.addDropData(dropDat, category);
-					dropDat = null;
+					catch (Exception e)
+					{
+						_log.warning(NpcData.class.getName() + ": Error creating custom NPC table");
+					}
 				}
-				
-				dropData.close();
-				statement2.close();
-			}
-			catch (Exception e)
-			{
-				_log.warning(NpcData.class.getName() + ": Error reading NPC drop data");
 			}
 			
-			try
-			{
-				PreparedStatement statement = con.prepareStatement(RESTORE_SELECT_CUSTOM_NPC);
-				ResultSet npcdata = statement.executeQuery();
-				
-				fillNpcTable(npcdata, true);
-				npcdata.close();
-				statement.close();
-			}
-			catch (Exception e)
-			{
-				_log.info("NPCTable: Error creating custom NPC table: ");
-				if (Config.DEVELOPER)
-					e.printStackTrace();
-			}
-			
-			try
-			{
-				PreparedStatement statement = con.prepareStatement(RESTORE_NPC_SKILLS);
-				ResultSet npcskills = statement.executeQuery();
-				L2NpcTemplate npcDat = null;
-				L2Skill npcSkill = null;
-				
-				while (npcskills.next())
-				{
-					int mobId = npcskills.getInt("npcid");
-					npcDat = _npcs.get(mobId);
-					
-					if (npcDat == null)
+			try (PreparedStatement ps = con.prepareStatement(RESTORE_NPC_SKILLS))
+			{				
+				try (ResultSet rset = ps.executeQuery())
+				{				
+					while (rset.next())
 					{
-						continue;
+						int mobId = rset.getInt("npcid");
+						L2NpcTemplate npcDat = _npcs.get(mobId);
+
+						if (npcDat == null)
+							continue;
+
+						int skillId = rset.getInt("skillid");
+						int level = rset.getInt("level");
+
+						if (npcDat.race == null && skillId == 4416)
+						{
+							npcDat.setRace(level);
+							continue;
+						}
+
+						L2Skill npcSkill = SkillTable.getInstance().getInfo(skillId, level);
+
+						if (npcSkill == null)
+							continue;
+
+						npcDat.addSkill(npcSkill);
 					}
-					
-					int skillId = npcskills.getInt("skillid");
-					int level = npcskills.getInt("level");
-					
-					if (npcDat.race == null && skillId == 4416)
-					{
-						npcDat.setRace(level);
-						continue;
-					}
-					
-					npcSkill = SkillTable.getInstance().getInfo(skillId, level);
-					
-					if (npcSkill == null)
-					{
-						continue;
-					}
-					
-					npcDat.addSkill(npcSkill);
-					npcSkill = null;
 				}
-				
-				npcskills.close();
-				statement.close();
-			}
-			catch (Exception e)
-			{
-				_log.warning(NpcData.class.getName() + ": Error reading NPC skills table: ");
-				if (Config.DEVELOPER)
-					e.printStackTrace();
 			}
 			
-			try
+			try (PreparedStatement ps = con.prepareStatement(RESTORE_DROPLIST))
 			{
-				PreparedStatement statement2 = con.prepareStatement(RESTORE_CUSTOM_DROPLIST);
-				ResultSet dropData = statement2.executeQuery();
-				L2DropData dropDat = null;
-				L2NpcTemplate npcDat = null;
-				
+				try (ResultSet rset = ps.executeQuery())
+				{
+					while (rset.next())
+					{
+						int mobId = rset.getInt("mobId");
+						
+						L2NpcTemplate npcDat = _npcs.get(mobId);
+						
+						if (npcDat == null)
+						{
+							_log.warning(NpcData.class.getName() + ": No npc correlating with id: " + mobId);
+							continue;
+						}
+						
+						L2DropData dropDat = new L2DropData();
+						
+						dropDat.setItemId(rset.getInt("itemId"));
+						dropDat.setMinDrop(rset.getInt("min"));
+						dropDat.setMaxDrop(rset.getInt("max"));
+						dropDat.setChance(rset.getInt("chance"));
+						
+						int category = rset.getInt("category");
+						
+						npcDat.addDropData(dropDat, category);
+					}
+				}		
+			}
+		
+			try (PreparedStatement ps = con.prepareStatement(RESTORE_CUSTOM_DROPLIST))
+			{
 				int cCount = 0;
-				
-				while (dropData.next())
-				{
-					int mobId = dropData.getInt("mobId");
-					
-					npcDat = _npcs.get(mobId);
-					
-					if (npcDat == null)
+
+				try (ResultSet rset = ps.executeQuery())
+				{	
+					while (rset.next())
 					{
-						_log.warning(NpcData.class.getName() + ":  CUSTOM DROPLIST No npc correlating with id : " + mobId);
-						continue;
+						int mobId = rset.getInt("mobId");
+						
+						L2NpcTemplate npcDat = _npcs.get(mobId);
+						
+						if (npcDat == null)
+						{
+							_log.warning(NpcData.class.getName() + ":  CUSTOM DROPLIST No npc correlating with id : " + mobId);
+							continue;
+						}
+						
+						L2DropData dropDat = new L2DropData();
+						dropDat.setItemId(rset.getInt("itemId"));
+						dropDat.setMinDrop(rset.getInt("min"));
+						dropDat.setMaxDrop(rset.getInt("max"));
+						dropDat.setChance(rset.getInt("chance"));
+						
+						int category = rset.getInt("category");
+						
+						npcDat.addDropData(dropDat, category);
+						cCount++;
+						dropDat = null;
 					}
-					
-					dropDat = new L2DropData();
-					dropDat.setItemId(dropData.getInt("itemId"));
-					dropDat.setMinDrop(dropData.getInt("min"));
-					dropDat.setMaxDrop(dropData.getInt("max"));
-					dropDat.setChance(dropData.getInt("chance"));
-					
-					int category = dropData.getInt("category");
-					
-					npcDat.addDropData(dropDat, category);
-					cCount++;
-					dropDat = null;
 				}
-				dropData.close();
-				statement2.close();
+				
 				_log.info(NpcData.class.getSimpleName() + ": Loaded " + cCount + " custom droplist.");
-				
-				if (Config.ENABLE_CACHE_INFO)
-				{
-					FillDropList();
-				}
-			}
-			catch (Exception e)
-			{
-				_log.warning(NpcData.class.getName() + ": Error reading NPC CUSTOM drop data: ");
-				if (Config.DEVELOPER)
-					e.printStackTrace();
-			}
-			
-			try
-			{
-				PreparedStatement statement2 = con.prepareStatement(RESTORE_DROPLIST);
-				ResultSet dropData = statement2.executeQuery();
-				L2DropData dropDat = null;
-				L2NpcTemplate npcDat = null;
-				
-				while (dropData.next())
-				{
-					int mobId = dropData.getInt("mobId");
-					
-					npcDat = _npcs.get(mobId);
-					
-					if (npcDat == null)
-					{
-						_log.info("NPCTable: No npc correlating with id : " + mobId);
-						continue;
-					}
-					
-					dropDat = new L2DropData();
-					
-					dropDat.setItemId(dropData.getInt("itemId"));
-					dropDat.setMinDrop(dropData.getInt("min"));
-					dropDat.setMaxDrop(dropData.getInt("max"));
-					dropDat.setChance(dropData.getInt("chance"));
-					
-					int category = dropData.getInt("category");
-					
-					npcDat.addDropData(dropDat, category);
-					dropDat = null;
-				}
-				
-				dropData.close();
-				statement2.close();
-			}
-			catch (Exception e)
-			{
-				_log.warning(NpcData.class.getName() + ": Error reading NPC drop data: ");
-				if (Config.DEVELOPER)
-					e.printStackTrace();
 			}
 			
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -711,17 +585,6 @@ public class NpcData
 		}
 		
 		_log.info(NpcData.class.getSimpleName() + ": Players droplist was cached.");
-	}
-	
-	public L2NpcTemplate[] getAllNpcOfClassType(String classType)
-	{
-		List<L2NpcTemplate> list = new ArrayList<>();
-		
-		for (Object t : _npcs.values())
-			if (classType.equals(((L2NpcTemplate) t).type))
-				list.add((L2NpcTemplate) t);
-		
-		return list.toArray(new L2NpcTemplate[list.size()]);
 	}
 	
 	public Collection<L2NpcTemplate> getAllNpcs()

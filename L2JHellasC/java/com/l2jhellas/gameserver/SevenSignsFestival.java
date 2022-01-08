@@ -17,10 +17,8 @@ import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.sql.ClanTable;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.model.L2Clan;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
@@ -29,6 +27,8 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.base.Experience;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.gameserver.network.serverpackets.MagicSkillUse;
@@ -2006,7 +2006,7 @@ public class SevenSignsFestival
 				// NpcInstance it returns.
 				npcSpawn.startRespawn();
 
-				SpawnTable.getInstance().addNewSpawn(npcSpawn, false);
+				SpawnData.getInstance().addNewSpawn(npcSpawn, false);
 				_witchInst = npcSpawn.doSpawn();
 
 				if (Config.DEBUG)
@@ -2161,7 +2161,7 @@ public class SevenSignsFestival
 						// the NpcInstance it returns.
 						npcSpawn.startRespawn();
 
-						SpawnTable.getInstance().addNewSpawn(npcSpawn, false);
+						SpawnData.getInstance().addNewSpawn(npcSpawn, false);
 						L2FestivalMonsterInstance festivalMob = (L2FestivalMonsterInstance) npcSpawn
 								.doSpawn();
 

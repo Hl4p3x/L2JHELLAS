@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[lyonn09_2015_12]">
+		<territory>	
+			<location x="11264" y="-94340" minz="-2884" maxz="-2284" />
+			<location x="14592" y="-94004" minz="-2884" maxz="-2284" />
+			<location x="14872" y="-92360" minz="-2884" maxz="-2284" />
+			<location x="12216" y="-91088" minz="-2884" maxz="-2284" />
+			<location x="11064" y="-91476" minz="-2884" maxz="-2284" />
+			<location x="10752" y="-93136" minz="-2884" maxz="-2284" />
+		</territory>
+		<npc id="21257" count="4" respawn="15" />	
+		<npc id="21117" count="5" respawn="15" />	
+		<npc id="21118" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_14]">
+		<territory>	
+			<location x="13684" y="-96912" minz="-2892" maxz="-2492" />
+			<location x="15344" y="-96732" minz="-2892" maxz="-2492" />
+			<location x="15388" y="-95596" minz="-2892" maxz="-2492" />
+			<location x="14252" y="-94828" minz="-2892" maxz="-2492" />
+			<location x="13032" y="-95872" minz="-2892" maxz="-2492" />
+		</territory>
+		<npc id="21257" count="4" respawn="15" />	
+		<npc id="21117" count="4" respawn="15" />	
+		<npc id="21118" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_01]">
+		<territory>	
+			<location x="1716" y="-95584" minz="-3208" maxz="-2808" />
+			<location x="3340" y="-95232" minz="-3208" maxz="-2808" />
+			<location x="3896" y="-93496" minz="-3208" maxz="-2808" />
+			<location x="3680" y="-92144" minz="-3208" maxz="-2808" />
+			<location x="2248" y="-91716" minz="-3208" maxz="-2808" />
+			<location x="164" y="-92840" minz="-3208" maxz="-2808" />
+			<location x="188" y="-94416" minz="-3208" maxz="-2808" />
+		</territory>
+		<npc id="21121" count="3" respawn="15" />	
+		<npc id="21122" count="3" respawn="15" />	
+		<npc id="21123" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_02]">
+		<territory>	
+			<location x="176" y="-98184" minz="-2136" maxz="-1736" />
+			<location x="3456" y="-98240" minz="-2136" maxz="-1736" />
+			<location x="3292" y="-97196" minz="-2136" maxz="-1736" />
+			<location x="176" y="-96260" minz="-2136" maxz="-1736" />
+		</territory>
+		<npc id="21121" count="3" respawn="15" />	
+		<npc id="21122" count="3" respawn="15" />	
+		<npc id="21123" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_03]">
+		<territory>	
+			<location x="3480" y="-98192" minz="-2064" maxz="-1664" />
+			<location x="6012" y="-98212" minz="-2064" maxz="-1664" />
+			<location x="5852" y="-95556" minz="-2064" maxz="-1664" />
+			<location x="4512" y="-95688" minz="-2064" maxz="-1664" />
+		</territory>
+		<npc id="21121" count="3" respawn="15" />	
+		<npc id="21122" count="2" respawn="15" />	
+		<npc id="21123" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_04]">
+		<territory>	
+			<location x="132" y="-91464" minz="-2256" maxz="-1656" />
+			<location x="1584" y="-90888" minz="-2256" maxz="-1656" />
+			<location x="3856" y="-89028" minz="-2256" maxz="-1656" />
+			<location x="2224" y="-87424" minz="-2256" maxz="-1656" />
+			<location x="112" y="-87468" minz="-2256" maxz="-1656" />
+		</territory>
+		<npc id="21121" count="3" respawn="15" />	
+		<npc id="21122" count="3" respawn="15" />	
+		<npc id="21123" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_05]">
+		<territory>	
+			<location x="104" y="-87432" minz="-2432" maxz="-1732" />
+			<location x="2132" y="-87404" minz="-2432" maxz="-1732" />
+			<location x="1536" y="-84616" minz="-2432" maxz="-1732" />
+			<location x="1212" y="-84224" minz="-2432" maxz="-1732" />
+			<location x="128" y="-84380" minz="-2432" maxz="-1732" />
+		</territory>
+		<npc id="21121" count="2" respawn="15" />	
+		<npc id="21122" count="2" respawn="15" />	
+		<npc id="21123" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_06]">
+		<territory>	
+			<location x="144" y="-83108" minz="-2808" maxz="-2408" />
+			<location x="1752" y="-84096" minz="-2808" maxz="-2408" />
+			<location x="1536" y="-82792" minz="-2808" maxz="-2408" />
+			<location x="152" y="-81664" minz="-2808" maxz="-2408" />
+		</territory>
+		<npc id="21121" count="2" respawn="15" />	
+		<npc id="21122" count="2" respawn="15" />	
+		<npc id="21123" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_07]">
+		<territory>	
+			<location x="140" y="-81596" minz="-2792" maxz="-2492" />
+			<location x="1840" y="-82356" minz="-2792" maxz="-2492" />
+			<location x="1448" y="-81084" minz="-2792" maxz="-2492" />
+			<location x="588" y="-79828" minz="-2792" maxz="-2492" />
+			<location x="124" y="-79688" minz="-2792" maxz="-2492" />
+		</territory>
+		<npc id="21121" count="2" respawn="15" />	
+		<npc id="21122" count="2" respawn="15" />	
+		<npc id="21123" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_08]">
+		<territory>	
+			<location x="1876" y="-80128" minz="-2572" maxz="-1672" />
+			<location x="2832" y="-80016" minz="-2572" maxz="-1672" />
+			<location x="3868" y="-79408" minz="-2572" maxz="-1672" />
+			<location x="3920" y="-77012" minz="-2572" maxz="-1672" />
+			<location x="2508" y="-75780" minz="-2572" maxz="-1672" />
+			<location x="140" y="-76092" minz="-2572" maxz="-1672" />
+			<location x="212" y="-79092" minz="-2572" maxz="-1672" />
+		</territory>
+		<npc id="21121" count="4" respawn="15" />	
+		<npc id="21122" count="4" respawn="15" />	
+		<npc id="21123" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_09]">
+		<territory>	
+			<location x="180" y="-75956" minz="-2104" maxz="-1704" />
+			<location x="2492" y="-75668" minz="-2104" maxz="-1704" />
+			<location x="2964" y="-74392" minz="-2104" maxz="-1704" />
+			<location x="2280" y="-73340" minz="-2104" maxz="-1704" />
+			<location x="1368" y="-73352" minz="-2104" maxz="-1704" />
+			<location x="156" y="-74496" minz="-2104" maxz="-1704" />
+		</territory>
+		<npc id="21121" count="3" respawn="15" />	
+		<npc id="21122" count="2" respawn="15" />	
+		<npc id="21123" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_10]">
+		<territory>	
+			<location x="2896" y="-84964" minz="-2736" maxz="-1936" />
+			<location x="4296" y="-84972" minz="-2736" maxz="-1936" />
+			<location x="4608" y="-84028" minz="-2736" maxz="-1936" />
+			<location x="3560" y="-81260" minz="-2736" maxz="-1936" />
+			<location x="2572" y="-81188" minz="-2736" maxz="-1936" />
+		</territory>
+		<npc id="21121" count="2" respawn="15" />	
+		<npc id="21122" count="3" respawn="15" />	
+		<npc id="21123" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_11]">
+		<territory>	
+			<location x="15752" y="-98104" minz="-2952" maxz="-2552" />
+			<location x="16304" y="-96572" minz="-2952" maxz="-2552" />
+			<location x="14656" y="-94140" minz="-2952" maxz="-2552" />
+			<location x="11096" y="-94424" minz="-2952" maxz="-2552" />
+			<location x="12476" y="-98124" minz="-2952" maxz="-2552" />
+		</territory>
+		<npc id="21121" count="4" respawn="15" />	
+		<npc id="21122" count="4" respawn="15" />	
+		<npc id="21123" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_12]">
+		<territory>	
+			<location x="11264" y="-94340" minz="-2884" maxz="-2284" />
+			<location x="14592" y="-94004" minz="-2884" maxz="-2284" />
+			<location x="14872" y="-92360" minz="-2884" maxz="-2284" />
+			<location x="12216" y="-91088" minz="-2884" maxz="-2284" />
+			<location x="11064" y="-91476" minz="-2884" maxz="-2284" />
+			<location x="10752" y="-93136" minz="-2884" maxz="-2284" />
+		</territory>
+		<npc id="21121" count="4" respawn="15" />	
+		<npc id="21122" count="4" respawn="15" />	
+		<npc id="21123" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_13]">
+		<territory>	
+			<location x="864" y="-94328" minz="-3296" maxz="-2696" />
+			<location x="2052" y="-94724" minz="-3296" maxz="-2696" />
+			<location x="3064" y="-94240" minz="-3296" maxz="-2696" />
+			<location x="3268" y="-93432" minz="-3296" maxz="-2696" />
+			<location x="2796" y="-92184" minz="-3296" maxz="-2696" />
+			<location x="1736" y="-92060" minz="-3296" maxz="-2696" />
+			<location x="988" y="-92468" minz="-3296" maxz="-2696" />
+			<location x="544" y="-93292" minz="-3296" maxz="-2696" />
+			<location x="508" y="-93896" minz="-3296" maxz="-2696" />
+		</territory>
+		<npc id="21123" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_2015_14]">
+		<territory>	
+			<location x="13684" y="-96912" minz="-2892" maxz="-2492" />
+			<location x="15344" y="-96732" minz="-2892" maxz="-2492" />
+			<location x="15388" y="-95596" minz="-2892" maxz="-2492" />
+			<location x="14252" y="-94828" minz="-2892" maxz="-2492" />
+			<location x="13032" y="-95872" minz="-2892" maxz="-2492" />
+		</territory>
+		<npc id="21123" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn01_qm2014_03]">
+		<territory>	
+			<location x="9688" y="-92960" minz="-3100" maxz="-2400" />
+			<location x="10460" y="-93268" minz="-3100" maxz="-2400" />
+			<location x="11136" y="-90396" minz="-3100" maxz="-2400" />
+			<location x="9608" y="-88708" minz="-3100" maxz="-2400" />
+			<location x="9044" y="-89312" minz="-3100" maxz="-2400" />
+		</territory>
+		<npc id="20778" count="4" respawn="180" />	
+		<npc id="20779" count="4" respawn="180" />	
+	</spawn>
+	<spawn name="[lyonn01_npc2015_g01]">
+		<npc id="31036" count="1" respawn="60" pos="2688 -93280 -3148 0" />	
+	</spawn>
+	<spawn name="[lyonn01_npc2015_g02]">
+		<npc id="31036" count="1" respawn="60" pos="2384 -84912 -2640 0" />	
+	</spawn>
+	<spawn name="[lyonn01_npc2015_g03]">
+		<npc id="31036" count="1" respawn="60" pos="13680 -94528 -2832 0" />	
+	</spawn>
+
+</list>

@@ -2519,6 +2519,21 @@ public abstract class L2Character extends L2Object
 		_heading = heading;
 	}
 	
+	public void setHeading(int targetX, int targetY)
+	{
+		_heading = MathUtil.calculateHeadingFrom(getX(), getY(), targetX, targetY);
+	}
+
+	public void setHeading(Location loc)
+	{
+		setHeading(loc.getX(), loc.getY());
+	}
+
+	public void setHeading(L2Object object)
+	{
+		setHeading(object.getX(), object.getY());
+	}
+	
 	public final int getClientX()
 	{
 		return _clientX;
@@ -2773,7 +2788,7 @@ public abstract class L2Character extends L2Object
 		if (!(this instanceof L2Vehicle) && (isDead() || speed <= 0 || isMovementDisabled()))
 		{
 			if(isPlayer())
-				sendPacket(new ActionFailed());
+				sendPacket(ActionFailed.STATIC_PACKET);
 			_move = null;
 			return;
 		}
@@ -2785,7 +2800,7 @@ public abstract class L2Character extends L2Object
 		if (curX == x && curY == y && curZ == z)
 		{
 			if(isPlayer())
-				sendPacket(new ActionFailed());
+				sendPacket(ActionFailed.STATIC_PACKET);
 			_move = null;
 			return;
 		}
@@ -2967,7 +2982,7 @@ public abstract class L2Character extends L2Object
 		GameTimeController.getInstance().registerMovingObject(this);
 	}
 
-	public List<Location> findPath(int originalX, int originalY, int originalZ)
+	private List<Location> findPath(int originalX, int originalY, int originalZ)
 	{
 		List<Location> path = new ArrayList<>(1);
 		if (isFlying() || isInsideZone(ZoneId.WATER))
@@ -2983,11 +2998,7 @@ public abstract class L2Character extends L2Object
 				path = tpath;
 			}
 			else
-			{
-				Location nextloc = GeoEngine.moveCheck(getX(), getY(), getZ(), originalX, originalY);
-				if (!nextloc.equals(getX(), getY(), getZ()))
-					path.add(GeoEngine.moveCheck(getX(), getY(), getZ(), originalX, originalY));
-			}
+				path.add(GeoEngine.moveCheck(getX(), getY(), getZ(), originalX, originalY));
 		}
 		return path;
 	}

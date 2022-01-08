@@ -7,6 +7,7 @@ import com.l2jhellas.gameserver.datatables.sql.NpcData;
 import com.l2jhellas.gameserver.enums.sound.Music;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PenaltyMonsterInstance;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ExFishingHpRegen;
 import com.l2jhellas.gameserver.network.serverpackets.ExFishingStartCombat;

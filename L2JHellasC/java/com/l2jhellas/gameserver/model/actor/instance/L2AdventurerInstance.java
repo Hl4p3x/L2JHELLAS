@@ -1,7 +1,7 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
 import com.l2jhellas.gameserver.instancemanager.RaidBossSpawnManager;
-import com.l2jhellas.gameserver.model.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.ExQuestInfo;
 import com.l2jhellas.gameserver.network.serverpackets.RadarControl;

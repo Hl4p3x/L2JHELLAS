@@ -3,10 +3,10 @@ package com.l2jhellas.gameserver.model.entity.olympiad;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.enums.player.ChatType;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.serverpackets.NpcSay;
 
 public final class OlympiadAnnouncer implements Runnable
@@ -18,7 +18,7 @@ public final class OlympiadAnnouncer implements Runnable
 	
 	public OlympiadAnnouncer()
 	{	
-		SpawnTable.getInstance().forEachSpawn(sp ->
+		SpawnData.getInstance().forEachSpawn(sp ->
 		{
 			if (sp != null && sp.getId() == OLY_MANAGER)
 				_managers.add(sp);

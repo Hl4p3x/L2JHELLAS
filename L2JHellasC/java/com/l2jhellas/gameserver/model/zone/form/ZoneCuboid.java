@@ -1,11 +1,11 @@
 package com.l2jhellas.gameserver.model.zone.form;
 
+import java.awt.Color;
 import java.awt.Rectangle;
 
-import com.l2jhellas.gameserver.geodata.GeoEngine;
-import com.l2jhellas.gameserver.model.actor.item.Inventory;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.zone.L2ZoneForm;
+import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
 import com.l2jhellas.util.Rnd;
 
 public class ZoneCuboid extends L2ZoneForm
@@ -81,25 +81,31 @@ public class ZoneCuboid extends L2ZoneForm
 	}
 	
 	@Override
-	public void visualizeZone(double z)
+	public void visualizeZone(String info, ExServerPrimitive debug, int z)
 	{
 		int _x1 = _r.x;
 		int _x2 = _r.x + _r.width;
 		int _y1 = _r.y;
 		int _y2 = _r.y + _r.height;
+
+		final int z1 = _z1 - 32;
+		final int z2 = _z2 - 32;
 		
-		// x1->x2
-		for (int x = _x1; x < _x2; x = x + STEP)
-		{
-			dropDebugItem(Inventory.ADENA_ID, 1, x, _y1, z);
-			dropDebugItem(Inventory.ADENA_ID, 1, x, _y2, z);
-		}
-		// y1->y2
-		for (int y = _y1; y < _y2; y = y + STEP)
-		{
-			dropDebugItem(Inventory.ADENA_ID, 1, _x1, y, z);
-			dropDebugItem(Inventory.ADENA_ID, 1, _x2, y, z);
-		}
+		debug.addLine(info + " MinZ", Color.GREEN, true, _x1, _y1, z1, _x1, _y2, z1);
+		debug.addLine(info, Color.YELLOW, true, _x1, _y1, z, _x1, _y2, z);
+		debug.addLine(info + " MaxZ", Color.RED, true, _x1, _y1, z2, _x1, _y2, z2);
+		
+		debug.addLine(info + " MinZ", Color.GREEN, true, _x2, _y2, z1, _x1, _y2, z1);
+		debug.addLine(info, Color.YELLOW, true, _x2, _y2, z, _x1, _y2, z);
+		debug.addLine(info + " MaxZ", Color.RED, true, _x2, _y2, z2, _x1, _y2, z2);
+		
+		debug.addLine(info + " MinZ", Color.GREEN, true, _x2, _y2, z1, _x2, _y1, z1);
+		debug.addLine(info, Color.YELLOW, true, _x2, _y2, z, _x2, _y1, z);
+		debug.addLine(info + " MaxZ", Color.RED, true, _x2, _y2, z2, _x2, _y1, z2);
+		
+		debug.addLine(info + " MinZ", Color.GREEN, true, _x1, _y1, z1, _x2, _y1, z1);
+		debug.addLine(info, Color.YELLOW, true, _x1, _y1, z, _x2, _y1, z);
+		debug.addLine(info + " MaxZ", Color.RED, true, _x1, _y1, z2, _x2, _y1, z2);
 	}
 	
 	@Override
@@ -108,6 +114,6 @@ public class ZoneCuboid extends L2ZoneForm
 		int x = Rnd.get(_r.x, _r.x + _r.width);
 		int y = Rnd.get(_r.y, _r.y + _r.height);
 		
-		return new Location(x, y, GeoEngine.getHeight(x, y, _z1));
+		return new Location(x, y, _z1);
 	}
 }

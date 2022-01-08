@@ -1,8 +1,10 @@
 package com.l2jhellas.gameserver.model.zone.form;
 
-import com.l2jhellas.gameserver.geodata.GeoEngine;
+import java.awt.Color;
+
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.zone.L2ZoneForm;
+import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
 import com.l2jhellas.util.Rnd;
 
 public class ZoneCylinder extends L2ZoneForm
@@ -103,15 +105,21 @@ public class ZoneCylinder extends L2ZoneForm
 	}
 	
 	@Override
-	public void visualizeZone(double z)
+	public void visualizeZone(String info, ExServerPrimitive debug, int z)
 	{
+		final int z1 = _z1 - 32;
+		final int z2 = _z2 - 32;
+		
 		int count = (int) ((2 * Math.PI * _rad) / STEP);
 		double angle = (2 * Math.PI) / count;
 		for (int i = 0; i < count; i++)
 		{
 			int x = (int) (Math.cos(angle * i) * _rad);
 			int y = (int) (Math.sin(angle * i) * _rad);
-			dropDebugItem(57, 1, _x + x, _y + y, z);
+			
+			debug.addPoint(info + " MinZ", Color.GREEN, true, _x + x, _y + y, z1);
+			debug.addPoint(info, Color.YELLOW, true, _x + x, _y + y, z);
+			debug.addPoint(info + " MaxZ", Color.RED, true, _x + x, _y + y, z2);
 		}
 	}
 	
@@ -125,6 +133,6 @@ public class ZoneCylinder extends L2ZoneForm
 		x = (int) ((_rad * r * Math.cos(q)) + _x);
 		y = (int) ((_rad * r * Math.sin(q)) + _y);
 		
-		return new Location(x, y, GeoEngine.getHeight(x, y, _z1));
+		return new Location(x, y, _z1);
 	}
 }

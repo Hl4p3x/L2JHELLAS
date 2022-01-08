@@ -4,7 +4,7 @@ title L2J Hellas Login Server Console http://l2jhellas.info/
 :start
 REM -------------------------------------
 REM Default parameters for a basic server.
-java -Dfile.encoding=UTF-8 -Xmx32m -cp ./../libs/*; com.l2jhellas.loginserver.LoginServer
+java -Xmx32m -cp ./../libs/*; com.l2jhellas.loginserver.LoginServer
 REM -------------------------------------
 
 if ERRORLEVEL 2 goto restart

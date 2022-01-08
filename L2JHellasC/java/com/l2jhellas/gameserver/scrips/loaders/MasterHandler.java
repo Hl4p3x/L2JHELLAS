@@ -76,7 +76,6 @@ import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminSpawn;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminTarget;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminTeleport;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminTest;
-import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminUnblockIp;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminWho;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminZone;
 import com.l2jhellas.gameserver.handlers.chathandlers.ChatAll;
@@ -190,7 +189,6 @@ import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.PremiumCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.PvpInfoCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.ServerRestartVoteCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.TradeonoffCmd;
-import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.VipTeleportCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.VoiceInfoCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.WeddingCmd;
 import com.l2jhellas.util.Util;
@@ -324,7 +322,6 @@ public class MasterHandler
 			AdminTarget.class,
 			AdminTeleport.class,
 			AdminTest.class,
-			AdminUnblockIp.class,
 			AdminZone.class,
 			AdminWho.class,
 			AdminFence.class,
@@ -456,7 +453,6 @@ public class MasterHandler
 			(Config.RANK_PVP_SYSTEM_ENABLED && Config.PVP_INFO_COMMAND_ENABLED && Config.RANK_PVP_SYSTEM_ENABLED && !Config.PVP_INFO_USER_COMMAND_ENABLED ? PvpInfoCmd.class : null),
 			(Config.ALLOW_SERVER_RESTART_COMMAND ? ServerRestartVoteCmd.class : null),
 			(Config.ALLOW_TRADEOFF_COMMAND ? TradeonoffCmd.class : null),
-			(Config.ALLOW_VIPTELEPORT_COMMAND ? VipTeleportCmd.class : null),
 			(Config.ALLOW_INFO_COMMAND ? VoiceInfoCmd.class : null),
 			(Config.MOD_ALLOW_WEDDING ? WeddingCmd.class : null),
 		},

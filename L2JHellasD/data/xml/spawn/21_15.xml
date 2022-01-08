@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[wild_beast_npc_steward_quigby]">
+		<npc id="35628" count="1" respawn="60" pos="60790 -94390 -1352 24576" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_outer_doorman1]">
+		<npc id="35625" count="1" respawn="60" pos="55260 -93335 -1384 32768" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_outer_doorman2]">
+		<npc id="35626" count="1" respawn="60" pos="55675 -93195 -1376 16384" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_inner_doorman1]">
+		<npc id="35623" count="1" respawn="60" pos="59840 -94270 -1376 24576" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_inner_doorman2]">
+		<npc id="35624" count="1" respawn="60" pos="59955 -94315 -1352 8192" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_wild_beast_messenger]">
+		<npc id="35627" count="1" respawn="60" pos="53225 -93770 -1656 40960" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_inner_doorman1]">
+		<npc id="35623" count="1" respawn="60" pos="58784 -93726 -1376 24576" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_inner_doorman1]">
+		<npc id="35623" count="1" respawn="60" pos="57216 -93742 -1376 24576" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_inner_doorman1]">
+		<npc id="35623" count="1" respawn="60" pos="56544 -92334 -1376 24576" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_inner_doorman1]">
+		<npc id="35623" count="1" respawn="60" pos="58400 -91454 -1376 24576" />	
+	</spawn>
+	<spawn name="[wild_beast_npc_agit_inner_doorman1]">
+		<npc id="35623" count="1" respawn="60" pos="59344 -92894 -1376 24576" />	
+	</spawn>
+	<spawn name="[wild_beast_agit_pastures1]">
+		<territory>	
+			<location x="56956" y="-94178" minz="-1396" maxz="-1076" />
+			<location x="56372" y="-93594" minz="-1396" maxz="-1076" />
+			<location x="55964" y="-94010" minz="-1396" maxz="-1076" />
+			<location x="56560" y="-94624" minz="-1396" maxz="-1076" />
+		</territory>
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21489" count="3" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[wild_beast_agit_pastures2]">
+		<territory>	
+			<location x="59308" y="-94530" minz="-1396" maxz="-1076" />
+			<location x="59028" y="-94042" minz="-1396" maxz="-1076" />
+			<location x="58252" y="-94458" minz="-1396" maxz="-1076" />
+			<location x="58528" y="-94992" minz="-1396" maxz="-1076" />
+		</territory>
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21489" count="3" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[wild_beast_agit_pastures3]">
+		<territory>	
+			<location x="60268" y="-92786" minz="-1396" maxz="-1076" />
+			<location x="60148" y="-91946" minz="-1396" maxz="-1076" />
+			<location x="59612" y="-92010" minz="-1396" maxz="-1076" />
+			<location x="59712" y="-92880" minz="-1396" maxz="-1076" />
+		</territory>
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21489" count="3" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[wild_beast_agit_pastures4]">
+		<territory>	
+			<location x="58636" y="-91010" minz="-1396" maxz="-1076" />
+			<location x="58772" y="-90474" minz="-1396" maxz="-1076" />
+			<location x="57884" y="-90298" minz="-1396" maxz="-1076" />
+			<location x="57744" y="-90880" minz="-1396" maxz="-1076" />
+		</territory>
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21489" count="3" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[wild_beast_agit_pastures5]">
+		<territory>	
+			<location x="56108" y="-92242" minz="-1396" maxz="-1076" />
+			<location x="56500" y="-91434" minz="-1396" maxz="-1076" />
+			<location x="56044" y="-91194" minz="-1396" maxz="-1076" />
+			<location x="55616" y="-92032" minz="-1396" maxz="-1076" />
+		</territory>
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21489" count="3" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_npc2115_01]">
+		<npc id="31366" count="1" respawn="60" pos="50736 -82448 -2892 61000" />	
+	</spawn>
+	<spawn name="[rune06_npc2115_02]">
+		<npc id="31366" count="1" respawn="60" pos="47952 -78256 -3472 5000" />	
+	</spawn>
+	<spawn name="[rune06_npc2115_03]">
+		<npc id="31366" count="1" respawn="60" pos="49344 -87648 -2707 9000" />	
+	</spawn>
+	<spawn name="[rune06_npc2115_04]">
+		<npc id="31366" count="1" respawn="60" pos="55472 -88720 -2117 21000" />	
+	</spawn>
+	<spawn name="[rune06_npc2115_05]">
+		<npc id="31537" count="1" respawn="60" pos="53712 -83936 -2728 24000" />	
+	</spawn>
+	<spawn name="[rune06_2115_01]">
+		<territory>	
+			<location x="52862" y="-76747" minz="-3548" maxz="-3248" />
+			<location x="54218" y="-76727" minz="-3548" maxz="-3248" />
+			<location x="54894" y="-75195" minz="-3548" maxz="-3248" />
+			<location x="54522" y="-74767" minz="-3548" maxz="-3248" />
+			<location x="52726" y="-74807" minz="-3548" maxz="-3248" />
+		</territory>
+		<npc id="21443" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+		<npc id="21444" count="1" respawn="28" />	
+	</spawn>
+	<spawn name="[rune06_2115_02]">
+		<territory>	
+			<location x="50483" y="-77693" minz="-3505" maxz="-3205" />
+			<location x="51779" y="-77393" minz="-3505" maxz="-3205" />
+			<location x="51559" y="-75785" minz="-3505" maxz="-3205" />
+			<location x="49995" y="-76245" minz="-3505" maxz="-3205" />
+		</territory>
+		<npc id="21443" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+		<npc id="21444" count="1" respawn="28" />	
+	</spawn>
+	<spawn name="[rune06_2115_03]">
+		<territory>	
+			<location x="50723" y="-76012" minz="-3441" maxz="-3241" />
+			<location x="51551" y="-75760" minz="-3441" maxz="-3241" />
+			<location x="51431" y="-75228" minz="-3441" maxz="-3241" />
+			<location x="50595" y="-75376" minz="-3441" maxz="-3241" />
+		</territory>
+		<npc id="21451" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_04]">
+		<territory>	
+			<location x="48825" y="-76661" minz="-3567" maxz="-3367" />
+			<location x="49353" y="-76429" minz="-3567" maxz="-3367" />
+			<location x="49165" y="-75973" minz="-3567" maxz="-3367" />
+			<location x="48701" y="-76121" minz="-3567" maxz="-3367" />
+		</territory>
+		<npc id="21451" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_05]">
+		<territory>	
+			<location x="48762" y="-78785" minz="-3564" maxz="-3364" />
+			<location x="49866" y="-77889" minz="-3564" maxz="-3364" />
+			<location x="49474" y="-76897" minz="-3564" maxz="-3364" />
+			<location x="48982" y="-77029" minz="-3564" maxz="-3364" />
+			<location x="48254" y="-78109" minz="-3564" maxz="-3364" />
+		</territory>
+		<npc id="21444" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_06]">
+		<territory>	
+			<location x="50970" y="-81273" minz="-3261" maxz="-2861" />
+			<location x="51866" y="-80729" minz="-3261" maxz="-2861" />
+			<location x="51478" y="-79149" minz="-3261" maxz="-2861" />
+			<location x="50702" y="-79389" minz="-3261" maxz="-2861" />
+			<location x="49774" y="-80053" minz="-3261" maxz="-2861" />
+		</territory>
+		<npc id="21444" count="1" respawn="28" />	
+		<npc id="21451" count="2" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_07]">
+		<territory>	
+			<location x="52066" y="-80740" minz="-3513" maxz="-2713" />
+			<location x="52914" y="-80724" minz="-3513" maxz="-2713" />
+			<location x="53678" y="-78236" minz="-3513" maxz="-2713" />
+			<location x="51534" y="-78384" minz="-3513" maxz="-2713" />
+		</territory>
+		<npc id="21443" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_08]">
+		<territory>	
+			<location x="54324" y="-78291" minz="-3622" maxz="-3272" />
+			<location x="55036" y="-78799" minz="-3622" maxz="-3272" />
+			<location x="57280" y="-75647" minz="-3622" maxz="-3272" />
+			<location x="56452" y="-75163" minz="-3622" maxz="-3272" />
+		</territory>
+		<npc id="21443" count="1" respawn="28" />	
+		<npc id="21451" count="4" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_09]">
+		<territory>	
+			<location x="56315" y="-77041" minz="-3637" maxz="-3437" />
+			<location x="56511" y="-77213" minz="-3637" maxz="-3437" />
+			<location x="57043" y="-76417" minz="-3637" maxz="-3437" />
+			<location x="56835" y="-76261" minz="-3637" maxz="-3437" />
+		</territory>
+		<npc id="21443" count="1" respawn="28" />	
+	</spawn>
+	<spawn name="[rune06_2115_10]">
+		<territory>	
+			<location x="58468" y="-78063" minz="-3574" maxz="-3174" />
+			<location x="59168" y="-77559" minz="-3574" maxz="-3174" />
+			<location x="58436" y="-76487" minz="-3574" maxz="-3174" />
+			<location x="57556" y="-75923" minz="-3574" maxz="-3174" />
+			<location x="57144" y="-76467" minz="-3574" maxz="-3174" />
+		</territory>
+		<npc id="21445" count="1" respawn="28" />	
+		<npc id="21451" count="2" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_11]">
+		<territory>	
+			<location x="53341" y="-80791" minz="-3451" maxz="-2751" />
+			<location x="54465" y="-81651" minz="-3451" maxz="-2751" />
+			<location x="56257" y="-80019" minz="-3451" maxz="-2751" />
+			<location x="54249" y="-78367" minz="-3451" maxz="-2751" />
+		</territory>
+		<npc id="21444" count="1" respawn="28" />	
+		<npc id="21451" count="4" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_12]">
+		<territory>	
+			<location x="57434" y="-81220" minz="-3412" maxz="-3012" />
+			<location x="58462" y="-80008" minz="-3412" maxz="-3012" />
+			<location x="57390" y="-78580" minz="-3412" maxz="-3012" />
+			<location x="56174" y="-79840" minz="-3412" maxz="-3012" />
+		</territory>
+		<npc id="21443" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_13]">
+		<territory>	
+			<location x="56864" y="-81598" minz="-3236" maxz="-3036" />
+			<location x="57392" y="-81214" minz="-3236" maxz="-3036" />
+			<location x="56448" y="-80170" minz="-3236" maxz="-3036" />
+			<location x="56024" y="-80582" minz="-3236" maxz="-3036" />
+		</territory>
+		<npc id="21444" count="1" respawn="28" />	
+		<npc id="21451" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_14]">
+		<territory>	
+			<location x="56294" y="-82914" minz="-3045" maxz="-2645" />
+			<location x="56714" y="-82334" minz="-3045" maxz="-2645" />
+			<location x="55686" y="-80966" minz="-3045" maxz="-2645" />
+			<location x="54502" y="-81878" minz="-3045" maxz="-2645" />
+			<location x="54674" y="-83242" minz="-3045" maxz="-2645" />
+		</territory>
+		<npc id="21445" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_15]">
+		<territory>	
+			<location x="55045" y="-85522" minz="-2826" maxz="-2426" />
+			<location x="57409" y="-85298" minz="-2826" maxz="-2426" />
+			<location x="57013" y="-83306" minz="-2826" maxz="-2426" />
+			<location x="54809" y="-83822" minz="-2826" maxz="-2426" />
+		</territory>
+		<npc id="21446" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_16]">
+		<territory>	
+			<location x="58021" y="-84387" minz="-2781" maxz="-2581" />
+			<location x="59765" y="-84307" minz="-2781" maxz="-2581" />
+			<location x="59621" y="-82547" minz="-2781" maxz="-2581" />
+			<location x="57645" y="-83183" minz="-2781" maxz="-2581" />
+		</territory>
+		<npc id="21446" count="1" respawn="28" />	
+		<npc id="21445" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_17]">
+		<territory>	
+			<location x="56430" y="-87707" minz="-2345" maxz="-2145" />
+			<location x="58482" y="-87727" minz="-2345" maxz="-2145" />
+			<location x="59786" y="-86343" minz="-2345" maxz="-2145" />
+			<location x="57766" y="-86295" minz="-2345" maxz="-2145" />
+		</territory>
+		<npc id="21448" count="1" respawn="28" />	
+		<npc id="21445" count="1" respawn="28" />	
+		<npc id="21451" count="2" respawn="45" />	
+		<npc id="21470" count="3" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_18]">
+		<territory>	
+			<location x="52423" y="-87065" minz="-2775" maxz="-2475" />
+			<location x="54595" y="-85769" minz="-2775" maxz="-2475" />
+			<location x="53495" y="-84653" minz="-2775" maxz="-2475" />
+			<location x="52415" y="-84941" minz="-2775" maxz="-2475" />
+		</territory>
+		<npc id="21447" count="1" respawn="28" />	
+		<npc id="21445" count="1" respawn="28" />	
+		<npc id="21451" count="2" respawn="45" />	
+		<npc id="21470" count="3" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_19]">
+		<territory>	
+			<location x="52251" y="-88676" minz="-2515" maxz="-2315" />
+			<location x="54215" y="-88756" minz="-2515" maxz="-2315" />
+			<location x="54479" y="-87720" minz="-2515" maxz="-2315" />
+			<location x="54067" y="-87204" minz="-2515" maxz="-2315" />
+			<location x="52299" y="-87376" minz="-2515" maxz="-2315" />
+		</territory>
+		<npc id="21447" count="1" respawn="28" />	
+		<npc id="21445" count="1" respawn="28" />	
+		<npc id="21489" count="2" respawn="45" />	
+		<npc id="21470" count="3" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_20]">
+		<territory>	
+			<location x="52302" y="-90953" minz="-2213" maxz="-2013" />
+			<location x="52918" y="-90945" minz="-2213" maxz="-2013" />
+			<location x="53998" y="-89541" minz="-2213" maxz="-2013" />
+			<location x="52274" y="-89413" minz="-2213" maxz="-2013" />
+		</territory>
+		<npc id="21447" count="1" respawn="28" />	
+		<npc id="21489" count="2" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_21]">
+		<territory>	
+			<location x="58328" y="-93469" minz="-963" maxz="-763" />
+			<location x="59996" y="-93177" minz="-963" maxz="-763" />
+            <location x="59820" y="-91429" minz="-963" maxz="-763" />
+            <location x="57732" y="-92265" minz="-963" maxz="-763" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="4" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_22]">
+		<territory>	
+			<location x="51169" y="-93088" minz="-2223" maxz="-2023" />
+			<location x="52241" y="-93656" minz="-2223" maxz="-2023" />
+			<location x="53409" y="-91964" minz="-2223" maxz="-2023" />
+			<location x="51297" y="-92504" minz="-2223" maxz="-2023" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_23]">
+		<territory>	
+			<location x="48689" y="-91413" minz="-2525" maxz="-2125" />
+			<location x="51285" y="-91445" minz="-2525" maxz="-2125" />
+			<location x="51317" y="-88757" minz="-2525" maxz="-2125" />
+			<location x="48549" y="-88849" minz="-2525" maxz="-2125" />
+		</territory>
+		<npc id="21449" count="2" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="6" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_24]">
+		<territory>	
+			<location x="50099" y="-88455" minz="-2575" maxz="-2375" />
+			<location x="51723" y="-88691" minz="-2575" maxz="-2375" />
+			<location x="51811" y="-87395" minz="-2575" maxz="-2375" />
+			<location x="50451" y="-87167" minz="-2575" maxz="-2375" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="2" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_25]">
+		<territory>	
+			<location x="49920" y="-86767" minz="-2894" maxz="-2494" />
+			<location x="51848" y="-86551" minz="-2894" maxz="-2494" />
+			<location x="51996" y="-84951" minz="-2894" maxz="-2494" />
+			<location x="51116" y="-84583" minz="-2894" maxz="-2494" />
+			<location x="49584" y="-86387" minz="-2894" maxz="-2494" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="2" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_26]">
+		<territory>	
+			<location x="48739" y="-87172" minz="-2802" maxz="-2502" />
+			<location x="49831" y="-88004" minz="-2802" maxz="-2502" />
+			<location x="50027" y="-87188" minz="-2802" maxz="-2502" />
+			<location x="49247" y="-86636" minz="-2802" maxz="-2502" />
+		</territory>
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="2" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_27]">
+		<territory>	
+			<location x="45432" y="-90970" minz="-2728" maxz="-2528" />
+			<location x="46608" y="-92050" minz="-2728" maxz="-2528" />
+			<location x="47548" y="-91674" minz="-2728" maxz="-2528" />
+			<location x="47072" y="-90342" minz="-2728" maxz="-2528" />
+			<location x="45796" y="-90230" minz="-2728" maxz="-2528" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="3" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_28]">
+		<territory>	
+			<location x="44087" y="-93439" minz="-2429" maxz="-2229" />
+			<location x="45539" y="-94279" minz="-2429" maxz="-2229" />
+			<location x="45999" y="-93423" minz="-2429" maxz="-2229" />
+			<location x="45927" y="-92951" minz="-2429" maxz="-2229" />
+			<location x="44415" y="-91911" minz="-2429" maxz="-2229" />
+			<location x="43839" y="-91943" minz="-2429" maxz="-2229" />
+		</territory>
+		<npc id="21449" count="2" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="4" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_29]">
+		<territory>	
+			<location x="47011" y="-88806" minz="-2681" maxz="-2481" />
+			<location x="47779" y="-87318" minz="-2681" maxz="-2481" />
+			<location x="47563" y="-86754" minz="-2681" maxz="-2481" />
+			<location x="46619" y="-85946" minz="-2681" maxz="-2481" />
+			<location x="45131" y="-86946" minz="-2681" maxz="-2481" />
+			<location x="45439" y="-88234" minz="-2681" maxz="-2481" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="2" respawn="28" />	
+		<npc id="21489" count="4" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_30]">
+		<territory>	
+			<location x="48679" y="-86006" minz="-3110" maxz="-2910" />
+			<location x="49567" y="-84798" minz="-3110" maxz="-2910" />
+			<location x="49803" y="-83994" minz="-3110" maxz="-2910" />
+			<location x="47447" y="-84426" minz="-3110" maxz="-2910" />
+			<location x="47567" y="-84898" minz="-3110" maxz="-2910" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21489" count="2" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_31]">
+		<territory>	
+			<location x="46054" y="-82814" minz="-3488" maxz="-3188" />
+			<location x="47738" y="-82694" minz="-3488" maxz="-3188" />
+			<location x="47742" y="-81018" minz="-3488" maxz="-3188" />
+			<location x="46178" y="-81002" minz="-3488" maxz="-3188" />
+		</territory>
+		<npc id="21445" count="1" respawn="28" />	
+		<npc id="21447" count="1" respawn="28" />	
+		<npc id="21451" count="1" respawn="45" />	
+		<npc id="21470" count="3" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_32]">
+		<territory>	
+			<location x="45090" y="-79702" minz="-3591" maxz="-3391" />
+			<location x="45562" y="-80298" minz="-3591" maxz="-3391" />
+			<location x="47342" y="-80270" minz="-3591" maxz="-3391" />
+			<location x="48186" y="-79274" minz="-3591" maxz="-3391" />
+			<location x="47122" y="-78094" minz="-3591" maxz="-3391" />
+			<location x="45898" y="-77878" minz="-3591" maxz="-3391" />
+			<location x="45090" y="-78454" minz="-3591" maxz="-3391" />
+		</territory>
+		<npc id="21445" count="1" respawn="28" />	
+		<npc id="21447" count="1" respawn="28" />	
+		<npc id="21451" count="3" respawn="45" />	
+		<npc id="21470" count="3" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_33]">
+		<territory>	
+			<location x="48382" y="-83582" minz="-3368" maxz="-2868" />
+			<location x="50158" y="-83434" minz="-3368" maxz="-2868" />
+			<location x="50466" y="-81354" minz="-3368" maxz="-2868" />
+			<location x="49406" y="-80342" minz="-3368" maxz="-2868" />
+			<location x="48494" y="-81530" minz="-3368" maxz="-2868" />
+		</territory>
+		<npc id="21446" count="1" respawn="28" />	
+		<npc id="21448" count="1" respawn="28" />	
+		<npc id="21451" count="2" respawn="45" />	
+		<npc id="21470" count="4" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_34]">
+		<territory>	
+			<location x="50766" y="-83820" minz="-2990" maxz="-2590" />
+			<location x="51710" y="-83144" minz="-2990" maxz="-2590" />
+			<location x="51630" y="-82540" minz="-2990" maxz="-2590" />
+			<location x="50474" y="-82724" minz="-2990" maxz="-2590" />
+			<location x="50414" y="-83348" minz="-2990" maxz="-2590" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21451" count="1" respawn="45" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_35]">
+		<territory>	
+			<location x="50662" y="-82655" minz="-2967" maxz="-2567" />
+			<location x="51634" y="-82511" minz="-2967" maxz="-2567" />
+			<location x="51846" y="-82231" minz="-2967" maxz="-2567" />
+			<location x="50766" y="-82315" minz="-2967" maxz="-2567" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_36]">
+		<territory>	
+			<location x="50493" y="-82166" minz="-2964" maxz="-2664" />
+			<location x="51673" y="-82210" minz="-2964" maxz="-2664" />
+			<location x="52133" y="-81826" minz="-2964" maxz="-2664" />
+			<location x="51869" y="-80954" minz="-2964" maxz="-2664" />
+			<location x="50865" y="-81498" minz="-2964" maxz="-2664" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21447" count="1" respawn="28" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_37]">
+		<territory>	
+			<location x="53506" y="-82043" minz="-2870" maxz="-2670" />
+			<location x="54002" y="-81563" minz="-2870" maxz="-2670" />
+			<location x="52982" y="-80955" minz="-2870" maxz="-2670" />
+			<location x="51878" y="-80911" minz="-2870" maxz="-2670" />
+			<location x="52202" y="-82011" minz="-2870" maxz="-2670" />
+		</territory>
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21451" count="1" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_38]">
+		<territory>	
+			<location x="54118" y="-83977" minz="-2830" maxz="-2530" />
+			<location x="54402" y="-83229" minz="-2830" maxz="-2530" />
+			<location x="54290" y="-82013" minz="-2830" maxz="-2530" />
+			<location x="53386" y="-82593" minz="-2830" maxz="-2530" />
+			<location x="53118" y="-83213" minz="-2830" maxz="-2530" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21451" count="1" respawn="45" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_39]">
+		<territory>	
+			<location x="52847" y="-83508" minz="-2805" maxz="-2605" />
+			<location x="53451" y="-84224" minz="-2805" maxz="-2605" />
+			<location x="53875" y="-83844" minz="-2805" maxz="-2605" />
+			<location x="53111" y="-83244" minz="-2805" maxz="-2605" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_40]">
+		<territory>	
+			<location x="52827" y="-84671" minz="-2773" maxz="-2573" />
+			<location x="53423" y="-84235" minz="-2773" maxz="-2573" />
+			<location x="52827" y="-83487" minz="-2773" maxz="-2573" />
+			<location x="52375" y="-83607" minz="-2773" maxz="-2573" />
+			<location x="52139" y="-84719" minz="-2773" maxz="-2573" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_41]">
+		<territory>	
+			<location x="51292" y="-84509" minz="-2815" maxz="-2615" />
+			<location x="52124" y="-84741" minz="-2815" maxz="-2615" />
+			<location x="52340" y="-83613" minz="-2815" maxz="-2615" />
+			<location x="51956" y="-83425" minz="-2815" maxz="-2615" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21450" count="1" respawn="28" />	
+		<npc id="21470" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[rune06_2115_42]">
+		<territory>	
+			<location x="50753" y="-83825" minz="-2863" maxz="-2663" />
+			<location x="51289" y="-84497" minz="-2863" maxz="-2663" />
+			<location x="51833" y="-83605" minz="-2863" maxz="-2663" />
+			<location x="51529" y="-83281" minz="-2863" maxz="-2663" />
+		</territory>
+		<npc id="21449" count="1" respawn="28" />	
+		<npc id="21470" count="2" respawn="45" />	
+	</spawn>
+
+</list>

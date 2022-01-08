@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[fortress_of_dead_steward_bandello]">
+		<npc id="35640" count="1" respawn="60" pos="57945 -25895 592 49152" />	
+	</spawn>
+	<spawn name="[fortress_of_dead_wyvern_manager_valens]">
+		<npc id="35638" count="1" respawn="60" pos="56755 -26505 568 49152" />	
+	</spawn>
+	<spawn name="[fortress_of_dead_guard11]">
+		<npc id="35641" count="1" respawn="60" pos="58130 -29190 568 16384" />	
+	</spawn>
+	<spawn name="[fortress_of_dead_guard12]">
+		<npc id="35641" count="1" respawn="60" pos="58130 -29575 568 49152" />	
+	</spawn>
+	<spawn name="[fortress_of_dead_guard21]">
+		<npc id="35642" count="1" respawn="60" pos="58080 -26300 592 16384" />	
+	</spawn>
+	<spawn name="[fortress_of_dead_guard22]">
+		<npc id="35642" count="1" respawn="60" pos="57860 -26480 592 49152" />	
+	</spawn>
+	<spawn name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
+		<npc id="35629" count="1" respawn="7200" pos="58640 -27490 584 32768" />	
+	</spawn>
+	<spawn name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
+		<npc id="35630" count="1" respawn="7200" pos="58640 -27620 584 32768" />	
+	</spawn>
+	<spawn name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
+		<npc id="35631" count="1" respawn="7200" pos="58640 -27360 584 32768" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_room]" event_name="fortress_of_dead_guards">
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27815 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27745 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27680 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27615 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27550 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27485 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27420 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27355 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58530 -27290 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27815 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27745 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27680 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27615 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27550 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27485 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27420 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27355 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58465 -27290 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27815 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27745 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27680 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27615 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27550 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27485 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27420 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27355 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58400 -27290 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27815 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27745 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27680 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27615 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27550 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27485 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27420 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27355 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58335 -27290 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27815 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27745 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27680 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27615 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27550 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27485 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27420 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27355 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58270 -27290 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27815 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27745 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27680 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27615 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27550 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27485 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27420 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27355 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58205 -27290 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27815 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27745 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27680 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27615 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27550 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27485 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27420 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27355 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="58140 -27290 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27815 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27745 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27680 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27615 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27550 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27485 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27420 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27355 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="58075 -27290 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27815 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27745 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27680 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27615 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27550 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27485 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27420 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27355 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="58010 -27290 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27815 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27745 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27680 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27615 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27550 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27485 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27420 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27355 584 32768" />	
+		<npc id="35635" count="1" respawn="1200" pos="57945 -27290 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27815 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27745 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27680 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27615 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27550 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27485 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27420 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27355 584 32768" />	
+		<npc id="35636" count="1" respawn="1200" pos="57880 -27290 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27815 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27745 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27680 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27615 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27550 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27485 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27420 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27355 584 32768" />	
+		<npc id="35637" count="1" respawn="1200" pos="57815 -27290 584 32768" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_11]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="7200" pos="57360 -29980 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57376 -29930 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57390 -29890 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57410 -29845 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57434 -29795 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57464 -29750 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57497 -29700 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57520 -29640 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57535 -29590 584 49152" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_12]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="7200" pos="58375 -29600 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58395 -29650 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58425 -29700 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58445 -29745 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58470 -29795 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58490 -29840 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58520 -29880 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58530 -29920 584 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58560 -29970 584 49152" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_13]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="7200" pos="57090 -28775 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57110 -28705 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57130 -28640 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57140 -28595 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57150 -28535 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57170 -28480 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57190 -28415 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57205 -28360 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57155 -28355 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57140 -28400 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57125 -28465 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57110 -28525 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57095 -28575 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57075 -28630 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57065 -28690 568 57400" />	
+		<npc id="35634" count="1" respawn="7200" pos="57045 -28760 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="56985 -28750 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57010 -28680 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57025 -28620 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57045 -28565 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57065 -28510 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57080 -28450 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57090 -28395 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57100 -28340 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57050 -28335 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57030 -28390 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57015 -28440 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="57000 -28500 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="56985 -28555 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="56975 -28610 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="56955 -28685 568 57400" />	
+		<npc id="35633" count="1" respawn="7200" pos="56940 -28740 576 57400" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_14]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="7200" pos="58800 -29000 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28940 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28880 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28820 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28760 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28700 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28640 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28580 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28520 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58800 -28480 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -29000 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28940 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28880 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28820 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28760 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28700 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28640 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28580 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28520 568 32768" />	
+		<npc id="35634" count="1" respawn="7200" pos="58850 -28480 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -29000 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28940 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28880 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28820 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28760 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28700 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28640 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28580 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28520 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58900 -28480 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -29000 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28940 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28880 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28820 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28760 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28700 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28640 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28580 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28520 568 32768" />	
+		<npc id="35633" count="1" respawn="7200" pos="58950 -28480 568 32768" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_15]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="1200" pos="59000 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59040 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59080 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59120 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59160 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59200 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59240 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59280 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59320 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59360 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59400 -27180 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59000 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59040 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59080 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59120 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59160 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59200 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59240 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59280 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59320 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59360 -27120 568 49152" />	
+		<npc id="35634" count="1" respawn="1200" pos="59400 -27120 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59000 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59040 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59080 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59120 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59160 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59200 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59240 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59280 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59320 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59360 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59400 -27060 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59000 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59040 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59080 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59120 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59160 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59200 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59240 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59280 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59320 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59360 -27000 568 49152" />	
+		<npc id="35633" count="1" respawn="1200" pos="59400 -27000 568 49152" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_16]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="7200" pos="59380 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="59170 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58950 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58785 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58640 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58560 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="59380 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="59170 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="59025 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58950 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58780 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58640 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="58560 -26100 600 49152" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_17]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="7200" pos="57330 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57075 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56890 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56770 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56700 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56580 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56510 -26185 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57335 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="57075 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56890 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56770 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56700 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56580 -26100 600 49152" />	
+		<npc id="35634" count="1" respawn="7200" pos="56510 -26100 600 49152" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_18]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26900 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26860 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26820 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26780 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26740 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26700 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26660 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26620 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26580 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26540 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26480 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58500 -26440 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26900 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26860 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26820 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26780 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26740 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26700 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26660 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26620 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26580 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26540 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26480 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="58450 -26440 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26900 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26860 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26820 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26780 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26740 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26700 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26660 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26620 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26580 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26540 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26480 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="58400 -26440 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26900 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26860 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26820 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26780 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26740 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26700 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26660 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26620 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26580 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26540 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26480 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="58350 -26440 592 0" />	
+	</spawn>
+	<spawn name="[rune_fod_agit_2117_19]" event_name="fortress_of_dead_guards">
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26900 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26860 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26820 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26780 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26740 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26700 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26660 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26620 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26580 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26540 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26480 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57550 -26440 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26900 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26860 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26820 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26780 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26740 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26700 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26660 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26620 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26580 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26540 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26480 592 0" />	
+		<npc id="35634" count="1" respawn="1200" pos="57500 -26440 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26900 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26860 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26820 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26780 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26740 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26700 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26660 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26620 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26580 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26540 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26480 592 0" />	
+		<npc id="35635" count="1" respawn="1200" pos="57450 -26440 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26900 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26860 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26820 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26780 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26740 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26700 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26660 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26620 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26580 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26540 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26480 592 0" />	
+		<npc id="35636" count="1" respawn="1200" pos="57400 -26440 592 0" />	
+	</spawn>
+    <spawn name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
+        <npc id="35641" count="1" respawn="60" pos="58080 -29556 568 46154" />
+    </spawn>
+    <spawn name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
+        <npc id="35641" count="1" respawn="60" pos="58087 -29283 566 17167" />
+    </spawn>
+    <spawn name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
+        <npc id="35642" count="1" respawn="60" pos="57883 -26472 592 48218" />
+    </spawn>
+</list>

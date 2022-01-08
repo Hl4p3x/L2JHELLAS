@@ -2,14 +2,12 @@ package com.l2jhellas.gameserver.model.actor.instance;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
-import com.l2jhellas.Config;
-import com.l2jhellas.gameserver.ai.CtrlIntention;
-import com.l2jhellas.gameserver.datatables.sql.NpcData;
 import com.l2jhellas.gameserver.instancemanager.GrandBossManager;
+import com.l2jhellas.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
-import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
-import com.l2jhellas.gameserver.network.serverpackets.MyTargetSelected;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.gameserver.templates.StatsSet;
@@ -17,6 +15,12 @@ import com.l2jhellas.gameserver.templates.StatsSet;
 public class L2BossSpawnInstance extends L2Npc
 {
 	private static final SimpleDateFormat Time = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+	String aliveColor = "9CC300";
+	String deadColor = "FF0000";
+	
+	String aliveStatus = "Alive";
+	String deadStatus = "Deal";
 	
 	public L2BossSpawnInstance(int objectId, L2NpcTemplate template)
 	{
@@ -24,74 +28,99 @@ public class L2BossSpawnInstance extends L2Npc
 	}
 	
 	@Override
-	public void onAction(L2PcInstance player)
+	public void showChatWindow(L2PcInstance player, int val)
 	{
-		if (!canTarget(player))
-		{
-			return;
-		}
-		
-		if (this != player.getTarget())
-		{
-			player.setTarget(this);
+		showHtml(player);
+	}
+				
+	public void showHtml(L2PcInstance activeChar)
+	{
+		NpcHtmlMessage html = new NpcHtmlMessage(0);
+		html.setFile("data/html/mods/" + "70009.htm"); 
 			
-			player.sendPacket(new MyTargetSelected(getObjectId(), 0));
-		}
-		else if (!canInteract(player))
-		{
-			player.getAI().setIntention(CtrlIntention.AI_INTENTION_INTERACT, this);
-		}
-		else
-		{
-			showHtmlWindow(player);
-		}
+		long isOrfenAlive = isGrandBossAlive(29014);
+		long isCoreAlive = isGrandBossAlive(29006);
+		long isZakenAlive = isGrandBossAlive(29022);
+		long isQueenAlive = isGrandBossAlive(29001);
+		long isBaiumAlive = isGrandBossAlive(29020);
+		long isAntharasAlive = isGrandBossAlive(29019);
+		long isValakasAlive = isGrandBossAlive(29028);
+		long isTezzaAlive = isGrandBossAlive(29045);
+		long isSailrenAlive = isGrandBossAlive(29065);
+
+		long isShadithAlive = isRaidBossAlive(25309);
+		long isHekatonAlive = isRaidBossAlive(25299);
+		long isBarakielAlive = isRaidBossAlive(25325);
+		long isEmberAlive = isRaidBossAlive(25319);
+		long isShyeedAlive = isRaidBossAlive(25514);
+		long isKorimAlive = isRaidBossAlive(25092);
+		long isGalaxiaAlive = isRaidBossAlive(25450);
 		
-		player.sendPacket(ActionFailed.STATIC_PACKET);
+		//color twn grandboss
+		html.replace("%Orfencolor%", isOrfenAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Corecolor%",  isCoreAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Zakencolor%", isZakenAlive == 1 ? aliveColor : deadColor); 
+		html.replace("%Queencolor%", isQueenAlive == 1 ? aliveColor : deadColor); 
+		html.replace("%Baiumcolor%", isBaiumAlive == 1 ? aliveColor : deadColor);    
+		html.replace("%Antharascolor%", isAntharasAlive == 1 ? aliveColor : deadColor);		
+		html.replace("%Valakascolor%", isValakasAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Tezzacolor%", isTezzaAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Sailrencolor%", isSailrenAlive == 1 ? aliveColor : deadColor);
+
+		//color twn raid boss
+		html.replace("%Shadithcolor%", isShadithAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Hekatoncolor%", isHekatonAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Barakielcolor%",isBarakielAlive == 1 ? aliveColor : deadColor);		
+		html.replace("%Embercolor%",  isEmberAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Shyeedcolor%", isShyeedAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Korimcolor%", isKorimAlive == 1 ? aliveColor : deadColor);
+		html.replace("%Galaxiacolor%",isGalaxiaAlive == 1 ? aliveColor : deadColor);
+			
+		//status twn grandboss
+		html.replace("%Orfenstatus%", isOrfenAlive == 1 ? aliveStatus : Time.format(new Date(isOrfenAlive)));
+		html.replace("%Corestatus%",  isCoreAlive == 1 ? aliveStatus : Time.format(new Date(isCoreAlive)));
+		html.replace("%Zakenstatus%", isZakenAlive == 1 ? aliveStatus : Time.format(new Date(isZakenAlive))); 
+		html.replace("%Queenstatus%", isQueenAlive == 1 ? aliveStatus : Time.format(new Date(isQueenAlive))); 
+		html.replace("%Baiumstatus%", isBaiumAlive == 1 ? aliveStatus : Time.format(new Date(isBaiumAlive)));    
+		html.replace("%Antharasstatus%", isAntharasAlive == 1 ? aliveStatus : Time.format(new Date(isAntharasAlive)));		
+		html.replace("%Valakasstatus%", isValakasAlive == 1 ? aliveStatus : Time.format(new Date(isValakasAlive)));
+		html.replace("%Tezzastatus%", isTezzaAlive == 1 ? aliveStatus : Time.format(new Date(isTezzaAlive)));
+		html.replace("%Sailrenstatus%", isSailrenAlive == 1 ? aliveStatus : Time.format(new Date(isSailrenAlive)));
+
+		//status twn raid boss
+		html.replace("%Shadithstatus%", isShadithAlive == 1 ? aliveStatus : Time.format(new Date(isShadithAlive)));
+		html.replace("%Hekatonstatus%", isHekatonAlive == 1 ? aliveStatus : Time.format(new Date(isHekatonAlive)));
+		html.replace("%Barakielstatus%", isBarakielAlive == 1 ? aliveStatus : Time.format(new Date(isBarakielAlive)));		
+		html.replace("%Emberstatus%", isEmberAlive == 1 ? aliveStatus : Time.format(new Date(isEmberAlive)));
+		html.replace("%Shyeedstatus%", isShyeedAlive == 1 ? aliveStatus : Time.format(new Date(isShyeedAlive)));
+		html.replace("%Korimstatus%", isKorimAlive == 1 ? aliveStatus : Time.format(new Date(isKorimAlive)));
+		html.replace("%Galaxiastatus%",isGalaxiaAlive == 1 ? aliveStatus : Time.format(new Date(isGalaxiaAlive)));	
+		activeChar.sendPacket(html);
 	}
 	
-	private void showHtmlWindow(L2PcInstance activeChar)
+	@Override
+	public String getHtmlPath(int npcId, int val)
 	{
-		showRbInfo(activeChar);
-		
-		activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+		return "data/html/mods/" + "70009.htm";
 	}
 	
-	private final void showRbInfo(L2PcInstance player)
+	private long isRaidBossAlive(int id)
 	{
-		NpcHtmlMessage html = new NpcHtmlMessage(getObjectId());
-		StringBuilder tb = new StringBuilder();
-		tb.append("<html><title>Boss Info</title><body><br><center><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32>");
-		
-		for (final int boss : Config.BOSS_RESPAWN_INFO)
+		final StatsSet stats = RaidBossSpawnManager.getStatsSet(id);	
+		if (stats == null)
 		{
-			final String name = NpcData.getInstance().getTemplate(boss).getName();
-			final StatsSet stats = GrandBossManager.getStatsSet(boss);
-			if (stats == null)
-			{
-				player.sendMessage("Stats for GrandBoss " + boss + " not found!");
-				continue;
-			}
-			final long delay = stats.getLong("respawn_time");
-			final long currentTime = System.currentTimeMillis();
-			if (delay <= currentTime)
-			{
-				tb.append("<center><table width=\"280\">");
-				tb.append("<tr><td width=\"140\"><font color=\"00C3FF\">" + name + "</font>:</td><td width=\"80\" align=\"right\"> " + "<font color=\"9CC300\">Is Alive</font>" + "</td></tr></table><br1>");
-			}
-			else
-			{
-				tb.append("<center><table width=\"280\">");
-				tb.append("<tr><td width=\"95\"><font color=\"00C3FF\">" + name + "</font>:</td><td width=\"165\" align=\"right\"> " + "<font color=\"FF0000\">Is Dead");
-				if (Config.RAID_INFO_SHOW_TIME)
-					tb.append("" + " " + "" + "</font>" + " " + " <font color=\"32C332\">" + Time.format(new Date(delay)) + "</font>" + "</td></tr></table><br1>");
-				else
-					tb.append("</font></td></tr></table>");
-			}
+			ScheduledFuture<?> _feat = RaidBossSpawnManager.getInstance().getSchedule(id);
+			return _feat != null ? _feat.getDelay(TimeUnit.MILLISECONDS) : 0;
 		}
-		tb.append("<br><img src=\"L2UI_CH3.herotower_deco\" width=256 height=32></center></body></html>");
-		
-		html.setHtml(tb.toString());
-		html.replace("%objectId%", String.valueOf(getObjectId()));
-		player.sendPacket(html);
+			
+		return  stats.getLong("respawnTime") <= System.currentTimeMillis() ? 1 : stats.getLong("respawnTime");		
+	}
+	
+	private long isGrandBossAlive(int id)
+	{
+		final StatsSet stats = GrandBossManager.getStatsSet(id);
+		if (stats == null)
+			return 0;
+		return  stats.getLong("respawn_time") <= System.currentTimeMillis() ? 1 : stats.getLong("respawn_time");		
 	}
 }

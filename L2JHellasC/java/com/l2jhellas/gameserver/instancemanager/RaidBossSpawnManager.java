@@ -15,10 +15,10 @@ import java.util.logging.Logger;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.instance.L2RaidBossInstance;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.gameserver.templates.StatsSet;
 import com.l2jhellas.util.Rnd;
@@ -198,7 +198,7 @@ public class RaidBossSpawnManager
 		int bossId = spawnDat.getNpcid();
 		long time = Calendar.getInstance().getTimeInMillis();
 		
-		SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+		SpawnData.getInstance().addNewSpawn(spawnDat, false);
 		
 		if (respawnTime == 0L || (time > respawnTime))
 		{
@@ -274,7 +274,7 @@ public class RaidBossSpawnManager
 		
 		int bossId = spawnDat.getNpcid();
 		
-		SpawnTable.getInstance().deleteSpawn(spawnDat, false);
+		SpawnData.getInstance().deleteSpawn(spawnDat, false);
 		_spawns.remove(bossId);
 		
 		if (_bosses.containsKey(bossId))
@@ -407,6 +407,11 @@ public class RaidBossSpawnManager
 			return StatusEnum.DEAD;
 		else
 			return StatusEnum.UNDEFINED;
+	}
+	
+	public ScheduledFuture<?> getSchedule(int bossId)
+	{
+		return _schedules.get(bossId);
 	}
 	
 	public L2NpcTemplate getValidTemplate(int bossId)

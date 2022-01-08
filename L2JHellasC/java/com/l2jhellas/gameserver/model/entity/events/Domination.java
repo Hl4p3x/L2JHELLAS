@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jhellas.gameserver.ThreadPoolManager;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.entity.events.engines.Event;
 import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
 import com.l2jhellas.gameserver.model.entity.events.engines.EventTeam;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 
 public class Domination extends Event
@@ -202,7 +202,7 @@ public class Domination extends Event
 		{
 			s.getLastSpawn().deleteMe();
 			s.stopRespawn();
-			SpawnTable.getInstance().deleteSpawn(s, true);
+			SpawnData.getInstance().deleteSpawn(s, true);
 			zones.remove(s);
 		}
 	}

@@ -38,6 +38,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2RiftInvaderInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SiegeGuardInstance;
 import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
+import com.l2jhellas.gameserver.model.spawn.SpawnTerritory;
 import com.l2jhellas.util.Rnd;
 
 public class L2AttackableAI extends L2CharacterAI
@@ -403,9 +404,8 @@ public class L2AttackableAI extends L2CharacterAI
 		}
 		else if ((npc.getSpawn() != null) && (Rnd.nextInt(RANDOM_WALK_RATE) == 0))
 		{
-			double x1 = 0;
-			double y1 = 0;
-			double z1 = 0;
+			int x1 = 0;
+			int y1 = 0;
 			final int range = 300;
 			
 			if(npc.getTemplate().hasBuffSkill() && Rnd.get(102) < 3)
@@ -425,23 +425,21 @@ public class L2AttackableAI extends L2CharacterAI
 			{
 				x1 = npc.getSpawn().getLocx();
 				y1 = npc.getSpawn().getLocy();
-				z1 = npc.getSpawn().getLocz();
-
-				if (!npc.isInRadius2D(npc, range))
+				SpawnTerritory territory = npc.getSpawn().getTerritory();
+								
+				if (territory == null ? !npc.isInRadius2D(npc.getSpawn().getLocx(), npc.getSpawn().getLocy(), range) : !territory.isInsideZone(npc.getX(), npc.getY(), npc.getZ()))
 					npc.setIsReturningToSpawnPoint(true);
 				else
 				{
 					int deltaX = Rnd.nextInt(range * 2); 
 					int deltaY = Rnd.get(deltaX, range * 2); 
 					deltaY = (int) Math.sqrt((deltaY * deltaY) - (deltaX * deltaX)); 
-					x1 = (deltaX + x1) - range;
-					y1 = (deltaY + y1) - range;
-					z1 = npc.getZ();
-				}			
-				moveTo((int) x1, (int) y1, (int) z1);
+					x1 = (deltaX + npc.getX()) - range;
+					y1 = (deltaY + npc.getY()) - range;
+				}	
+				moveTo(x1, y1,npc.getZ());
 			}
-		}
-		
+		}		
 	}
 	
 	protected void thinkAttack()

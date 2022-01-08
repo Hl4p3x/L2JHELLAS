@@ -129,7 +129,8 @@ public final class RequestBypassToServer extends L2GameClientPacket
 						object = target;
 				}
 
-				if (object != null && object instanceof L2Npc && endOfId > 0 && activeChar.isInsideRadius(object, L2Npc.INTERACTION_DISTANCE, false, false) || ((Config.ALLOW_REMOTE_CLASS_MASTER) && (object instanceof L2ClassMasterInstance)))
+				boolean isGm = activeChar.isGM();
+				if (object != null && object instanceof L2Npc && endOfId > 0 && (isGm ? true : activeChar.isInsideRadius(object, L2Npc.INTERACTION_DISTANCE, false, false)) || ((Config.ALLOW_REMOTE_CLASS_MASTER) && (object instanceof L2ClassMasterInstance)))
 					((L2Npc) object).onBypassFeedback(activeChar, _command.substring(endOfId + 1));
 				
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);

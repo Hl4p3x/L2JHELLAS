@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[gludio17_mb1821_01]">
+		<territory>	
+			<location x="-61520" y="126320" minz="-3112" maxz="-2512" />
+			<location x="-60148" y="126440" minz="-3112" maxz="-2512" />
+			<location x="-60548" y="128388" minz="-3112" maxz="-2512" />
+			<location x="-61948" y="128240" minz="-3112" maxz="-2512" />
+		</territory>
+		<npc id="25076" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[gludio03_mb1821_02]">
+		<territory>	
+			<location x="-45896" y="110708" minz="-3880" maxz="-3280" />
+			<location x="-44836" y="110992" minz="-3880" maxz="-3280" />
+			<location x="-45296" y="111588" minz="-3880" maxz="-3280" />
+			<location x="-46060" y="111556" minz="-3880" maxz="-3280" />
+			<location x="-46476" y="111088" minz="-3880" maxz="-3280" />
+		</territory>
+		<npc id="25369" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[gludio01_qm1821_01]">
+		<territory>	
+			<location x="-59344" y="122568" minz="-3136" maxz="-2636" />
+			<location x="-58200" y="122172" minz="-3136" maxz="-2636" />
+			<location x="-57508" y="123008" minz="-3136" maxz="-2636" />
+			<location x="-58640" y="123392" minz="-3136" maxz="-2636" />
+		</territory>
+		<npc id="27030" count="3" respawn="300" />	
+	</spawn>
+	<spawn name="[gludio01_qm1821_02]">
+		<territory>	
+			<location x="-55876" y="123656" minz="-3120" maxz="-2620" />
+			<location x="-55360" y="123364" minz="-3120" maxz="-2620" />
+			<location x="-54196" y="124816" minz="-3120" maxz="-2620" />
+			<location x="-54920" y="124880" minz="-3120" maxz="-2620" />
+		</territory>
+		<npc id="27030" count="3" respawn="300" />	
+	</spawn>
+	<spawn name="[gludio01_qm1821_03]">
+		<territory>	
+			<location x="-57976" y="126924" minz="-3156" maxz="-2956" />
+			<location x="-57184" y="126960" minz="-3156" maxz="-2956" />
+			<location x="-57768" y="128052" minz="-3156" maxz="-2956" />
+			<location x="-58180" y="128240" minz="-3156" maxz="-2956" />
+			<location x="-58492" y="127792" minz="-3156" maxz="-2956" />
+		</territory>
+		<npc id="27095" count="3" respawn="180" />	
+	</spawn>
+	<spawn name="[gludio17_npc1821_002]">
+		<npc id="30413" count="1" respawn="60" pos="-60672 126592 -2957 0" />	
+	</spawn>
+	<spawn name="[gludio03_npc1821_003]">
+		<npc id="30409" count="1" respawn="60" pos="-53760 110720 -3610 0" />	
+	</spawn>
+	<spawn name="[gludio35_1821_01]">
+		<territory>	
+			<location x="-53167" y="127488" minz="-3192" maxz="-2792" />
+			<location x="-51752" y="130085" minz="-3192" maxz="-2792" />
+			<location x="-52292" y="130760" minz="-3192" maxz="-2792" />
+			<location x="-55291" y="130823" minz="-3192" maxz="-2792" />
+			<location x="-55688" y="128988" minz="-3192" maxz="-2792" />
+		</territory>
+		<npc id="20050" count="3" respawn="20" />	
+		<npc id="20359" count="3" respawn="20" />	
+	</spawn>
+	<spawn name="[gludio35_1821_02]">
+		<territory>	
+			<location x="-50207" y="129731" minz="-3156" maxz="-2156" />
+			<location x="-46686" y="129223" minz="-3156" maxz="-2156" />
+			<location x="-46629" y="130873" minz="-3156" maxz="-2156" />
+			<location x="-51389" y="130839" minz="-3156" maxz="-2156" />
+		</territory>
+		<npc id="20050" count="3" respawn="20" />	
+		<npc id="20359" count="3" respawn="20" />	
+	</spawn>
+	<spawn name="[gludio35_1821_03]">
+		<territory>	
+			<location x="-51981" y="125242" minz="-3236" maxz="-2336" />
+			<location x="-46428" y="127058" minz="-3236" maxz="-2336" />
+			<location x="-47528" y="128440" minz="-3236" maxz="-2336" />
+			<location x="-50564" y="128838" minz="-3236" maxz="-2336" />
+			<location x="-53100" y="127446" minz="-3236" maxz="-2336" />
+		</territory>
+		<npc id="20359" count="3" respawn="20" />	
+		<npc id="20050" count="3" respawn="20" />	
+	</spawn>
+	<spawn name="[gludio35_1821_04]">
+		<territory>	
+			<location x="-51114" y="124296" minz="-3104" maxz="-2104" />
+			<location x="-45997" y="124669" minz="-3104" maxz="-2104" />
+			<location x="-46436" y="126944" minz="-3104" maxz="-2104" />
+			<location x="-51960" y="125142" minz="-3104" maxz="-2104" />
+		</territory>
+		<npc id="20359" count="3" respawn="20" />	
+		<npc id="20050" count="2" respawn="20" />	
+	</spawn>
+	<spawn name="[gludio35_1821_05]">
+		<territory>	
+			<location x="-44626" y="127604" minz="-2976" maxz="-2476" />
+			<location x="-41597" y="128634" minz="-2976" maxz="-2476" />
+			<location x="-41754" y="130797" minz="-2976" maxz="-2476" />
+			<location x="-45371" y="130743" minz="-2976" maxz="-2476" />
+		</territory>
+		<npc id="20359" count="3" respawn="20" />	
+		<npc id="20050" count="2" respawn="20" />	
+	</spawn>
+	<spawn name="[gludio03_1821_01]">
+		<territory>	
+			<location x="-57608" y="109044" minz="-3624" maxz="-2624" />
+			<location x="-55716" y="110580" minz="-3624" maxz="-2624" />
+			<location x="-56884" y="112668" minz="-3624" maxz="-2624" />
+			<location x="-59680" y="114636" minz="-3624" maxz="-2624" />
+		</territory>
+		<npc id="20026" count="3" respawn="30" />	
+		<npc id="20029" count="5" respawn="30" />	
+		<npc id="20035" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_04]">
+		<territory>	
+			<location x="-59964" y="118248" minz="-3352" maxz="-2752" />
+			<location x="-58064" y="117172" minz="-3352" maxz="-2752" />
+			<location x="-55832" y="117392" minz="-3352" maxz="-2752" />
+			<location x="-54700" y="118968" minz="-3352" maxz="-2752" />
+			<location x="-55880" y="121344" minz="-3352" maxz="-2752" />
+			<location x="-58400" y="120148" minz="-3352" maxz="-2752" />
+		</territory>
+		<npc id="20029" count="4" respawn="30" />	
+		<npc id="20035" count="4" respawn="30" />	
+		<npc id="20042" count="4" respawn="30" />	
+		<npc id="20045" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_06]">
+		<territory>	
+			<location x="-43492" y="121176" minz="-3508" maxz="-2308" />
+			<location x="-42844" y="122784" minz="-3508" maxz="-2308" />
+			<location x="-46100" y="124212" minz="-3508" maxz="-2308" />
+			<location x="-49728" y="122172" minz="-3508" maxz="-2308" />
+			<location x="-50372" y="121020" minz="-3508" maxz="-2308" />
+			<location x="-44700" y="120244" minz="-3508" maxz="-2308" />
+		</territory>
+		<npc id="20029" count="5" respawn="30" />	
+		<npc id="20035" count="5" respawn="30" />	
+		<npc id="20042" count="5" respawn="30" />	
+		<npc id="20045" count="5" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_07]">
+		<territory>	
+			<location x="-58976" y="114212" minz="-3240" maxz="-2740" />
+			<location x="-57276" y="113004" minz="-3240" maxz="-2740" />
+			<location x="-55848" y="117172" minz="-3240" maxz="-2740" />
+			<location x="-57904" y="116944" minz="-3240" maxz="-2740" />
+		</territory>
+		<npc id="20029" count="2" respawn="30" />	
+		<npc id="20035" count="2" respawn="30" />	
+		<npc id="20042" count="2" respawn="30" />	
+		<npc id="20045" count="2" respawn="30" />	
+		<npc id="20045" count="2" respawn="30" />	
+		<npc id="20054" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_08]">
+		<territory>	
+			<location x="-55664" y="110652" minz="-3460" maxz="-2860" />
+			<location x="-52788" y="113300" minz="-3460" maxz="-2860" />
+			<location x="-53408" y="116096" minz="-3460" maxz="-2860" />
+			<location x="-55380" y="116924" minz="-3460" maxz="-2860" />
+			<location x="-56848" y="112736" minz="-3460" maxz="-2860" />
+		</territory>
+		<npc id="20035" count="4" respawn="30" />	
+		<npc id="20042" count="4" respawn="30" />	
+		<npc id="20045" count="4" respawn="30" />	
+		<npc id="20051" count="4" respawn="30" />	
+		<npc id="20054" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_09]">
+		<territory>	
+			<location x="-54512" y="119172" minz="-3116" maxz="-2316" />
+			<location x="-50608" y="120916" minz="-3116" maxz="-2316" />
+			<location x="-49872" y="122300" minz="-3116" maxz="-2316" />
+			<location x="-54396" y="123420" minz="-3116" maxz="-2316" />
+			<location x="-55684" y="121412" minz="-3116" maxz="-2316" />
+		</territory>
+		<npc id="20029" count="4" respawn="30" />	
+		<npc id="20035" count="4" respawn="30" />	
+		<npc id="20042" count="4" respawn="30" />	
+		<npc id="20045" count="4" respawn="30" />	
+		<npc id="20051" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_10]">
+		<territory>	
+			<location x="-47004" y="118892" minz="-3588" maxz="-2888" />
+			<location x="-48176" y="119592" minz="-3588" maxz="-2888" />
+			<location x="-51196" y="119760" minz="-3588" maxz="-2888" />
+			<location x="-53944" y="118720" minz="-3588" maxz="-2888" />
+			<location x="-54516" y="117404" minz="-3588" maxz="-2888" />
+			<location x="-51172" y="114832" minz="-3588" maxz="-2888" />
+			<location x="-49348" y="115996" minz="-3588" maxz="-2888" />
+		</territory>
+		<npc id="20035" count="5" respawn="30" />	
+		<npc id="20042" count="5" respawn="30" />	
+		<npc id="20045" count="5" respawn="30" />	
+		<npc id="20051" count="5" respawn="30" />	
+		<npc id="20054" count="5" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_11]">
+		<territory>	
+			<location x="-40196" y="114100" minz="-3360" maxz="-2760" />
+			<location x="-39552" y="116424" minz="-3360" maxz="-2760" />
+			<location x="-41060" y="116628" minz="-3360" maxz="-2760" />
+			<location x="-41992" y="115664" minz="-3360" maxz="-2760" />
+			<location x="-41544" y="114172" minz="-3360" maxz="-2760" />
+		</territory>
+		<npc id="20042" count="2" respawn="30" />	
+		<npc id="20045" count="2" respawn="30" />	
+		<npc id="20054" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_12]">
+		<territory>	
+			<location x="-42252" y="112108" minz="-3264" maxz="-2564" />
+			<location x="-41404" y="111832" minz="-3264" maxz="-2564" />
+			<location x="-39668" y="112164" minz="-3264" maxz="-2564" />
+			<location x="-39496" y="113244" minz="-3264" maxz="-2564" />
+			<location x="-40056" y="113980" minz="-3264" maxz="-2564" />
+			<location x="-41532" y="114016" minz="-3264" maxz="-2564" />
+		</territory>
+		<npc id="20029" count="2" respawn="30" />	
+		<npc id="20042" count="3" respawn="30" />	
+		<npc id="20054" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_13]">
+		<territory>	
+			<location x="-41408" y="109252" minz="-3484" maxz="-2784" />
+			<location x="-39020" y="110144" minz="-3484" maxz="-2784" />
+			<location x="-38564" y="110992" minz="-3484" maxz="-2784" />
+			<location x="-39324" y="111660" minz="-3484" maxz="-2784" />
+			<location x="-41320" y="111292" minz="-3484" maxz="-2784" />
+			<location x="-41952" y="110260" minz="-3484" maxz="-2784" />
+		</territory>
+		<npc id="20042" count="5" respawn="30" />	
+		<npc id="20045" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_14]">
+		<territory>	
+			<location x="-41988" y="107264" minz="-3588" maxz="-2688" />
+			<location x="-41556" y="109164" minz="-3588" maxz="-2688" />
+			<location x="-42000" y="110264" minz="-3588" maxz="-2688" />
+			<location x="-43836" y="109956" minz="-3588" maxz="-2688" />
+			<location x="-45292" y="108788" minz="-3588" maxz="-2688" />
+			<location x="-44856" y="107092" minz="-3588" maxz="-2688" />
+			<location x="-43116" y="106228" minz="-3588" maxz="-2688" />
+		</territory>
+		<npc id="20026" count="3" respawn="30" />	
+		<npc id="20029" count="3" respawn="30" />	
+		<npc id="20042" count="3" respawn="30" />	
+		<npc id="20054" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_15]">
+		<territory>	
+			<location x="-50364" y="105700" minz="-3552" maxz="-2952" />
+			<location x="-47616" y="105636" minz="-3552" maxz="-2952" />
+			<location x="-46108" y="106512" minz="-3552" maxz="-2952" />
+			<location x="-46868" y="107656" minz="-3552" maxz="-2952" />
+			<location x="-50056" y="106592" minz="-3552" maxz="-2952" />
+		</territory>
+		<npc id="20026" count="2" respawn="30" />	
+		<npc id="20029" count="2" respawn="30" />	
+		<npc id="20042" count="2" respawn="30" />	
+		<npc id="20054" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_16]">
+		<territory>	
+			<location x="-56664" y="108292" minz="-3580" maxz="-2680" />
+			<location x="-54872" y="110188" minz="-3580" maxz="-2680" />
+			<location x="-54772" y="111252" minz="-3580" maxz="-2680" />
+			<location x="-57360" y="109112" minz="-3580" maxz="-2680" />
+		</territory>
+		<npc id="20035" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_17]">
+		<territory>	
+			<location x="-53136" y="107048" minz="-3908" maxz="-3108" />
+			<location x="-53440" y="108652" minz="-3908" maxz="-3108" />
+			<location x="-54884" y="109444" minz="-3908" maxz="-3108" />
+			<location x="-56156" y="107888" minz="-3908" maxz="-3108" />
+			<location x="-54964" y="106360" minz="-3908" maxz="-3108" />
+		</territory>
+		<npc id="20060" count="2" respawn="30" />	
+		<npc id="20054" count="2" respawn="30" />	
+		<npc id="20045" count="2" respawn="30" />	
+		<npc id="20042" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_18]">
+		<territory>	
+			<location x="-50652" y="108232" minz="-3904" maxz="-3104" />
+			<location x="-49872" y="108764" minz="-3904" maxz="-3104" />
+			<location x="-51068" y="110468" minz="-3904" maxz="-3104" />
+			<location x="-53220" y="108716" minz="-3904" maxz="-3104" />
+			<location x="-52928" y="107652" minz="-3904" maxz="-3104" />
+		</territory>
+		<npc id="20054" count="2" respawn="30" />	
+		<npc id="20060" count="2" respawn="30" />	
+		<npc id="20062" count="2" respawn="30" />	
+		<npc id="20042" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_19]">
+		<territory>	
+			<location x="-49036" y="107564" minz="-3940" maxz="-3140" />
+			<location x="-47264" y="108572" minz="-3940" maxz="-3140" />
+			<location x="-47472" y="109268" minz="-3940" maxz="-3140" />
+			<location x="-49844" y="108692" minz="-3940" maxz="-3140" />
+			<location x="-50484" y="107956" minz="-3940" maxz="-3140" />
+		</territory>
+		<npc id="20054" count="1" respawn="30" />	
+		<npc id="20060" count="2" respawn="30" />	
+		<npc id="20062" count="1" respawn="30" />	
+		<npc id="20042" count="2" respawn="30" />	
+		<npc id="20045" count="1" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_20]">
+		<territory>	
+			<location x="-54388" y="109864" minz="-3728" maxz="-2928" />
+			<location x="-53188" y="109056" minz="-3728" maxz="-2928" />
+			<location x="-51140" y="110628" minz="-3728" maxz="-2928" />
+			<location x="-52684" y="112604" minz="-3728" maxz="-2928" />
+			<location x="-53948" y="111556" minz="-3728" maxz="-2928" />
+		</territory>
+		<npc id="20060" count="2" respawn="30" />	
+		<npc id="20054" count="2" respawn="30" />	
+		<npc id="20045" count="2" respawn="30" />	
+		<npc id="20042" count="2" respawn="30" />	
+		<npc id="20062" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_21]">
+		<territory>	
+			<location x="-47712" y="109316" minz="-3832" maxz="-3032" />
+			<location x="-47352" y="110868" minz="-3832" maxz="-3032" />
+			<location x="-47492" y="112276" minz="-3832" maxz="-3032" />
+			<location x="-49736" y="114724" minz="-3832" maxz="-3032" />
+			<location x="-52576" y="112616" minz="-3832" maxz="-3032" />
+			<location x="-49760" y="108872" minz="-3832" maxz="-3032" />
+		</territory>
+		<npc id="20060" count="4" respawn="30" />	
+		<npc id="20054" count="4" respawn="30" />	
+		<npc id="20062" count="4" respawn="30" />	
+		<npc id="20064" count="4" respawn="30" />	
+		<npc id="20042" count="4" respawn="30" />	
+		<npc id="20045" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_22]">
+		<territory>	
+			<location x="-47112" y="108788" minz="-3952" maxz="-3152" />
+			<location x="-46156" y="108736" minz="-3952" maxz="-3152" />
+			<location x="-43584" y="110680" minz="-3952" maxz="-3152" />
+			<location x="-44032" y="113848" minz="-3952" maxz="-3152" />
+			<location x="-44700" y="114560" minz="-3952" maxz="-3152" />
+			<location x="-47088" y="112264" minz="-3952" maxz="-3152" />
+		</territory>
+		<npc id="20060" count="3" respawn="30" />	
+		<npc id="20054" count="3" respawn="30" />	
+		<npc id="20045" count="3" respawn="30" />	
+		<npc id="20042" count="3" respawn="30" />	
+		<npc id="20062" count="3" respawn="30" />	
+		<npc id="20064" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_23]">
+		<territory>	
+			<location x="-47376" y="112452" minz="-3852" maxz="-3052" />
+			<location x="-44880" y="114740" minz="-3852" maxz="-3052" />
+			<location x="-44532" y="115632" minz="-3852" maxz="-3052" />
+			<location x="-45368" y="117448" minz="-3852" maxz="-3052" />
+			<location x="-46620" y="118436" minz="-3852" maxz="-3052" />
+			<location x="-48760" y="116536" minz="-3852" maxz="-3052" />
+			<location x="-49688" y="114780" minz="-3852" maxz="-3052" />
+		</territory>
+		<npc id="20054" count="3" respawn="30" />	
+		<npc id="20060" count="3" respawn="30" />	
+		<npc id="20062" count="3" respawn="30" />	
+		<npc id="20064" count="4" respawn="30" />	
+		<npc id="20042" count="4" respawn="30" />	
+		<npc id="20045" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_24]">
+		<territory>	
+			<location x="-43640" y="112812" minz="-3688" maxz="-2888" />
+			<location x="-42912" y="112592" minz="-3688" maxz="-2888" />
+			<location x="-42320" y="113188" minz="-3688" maxz="-2888" />
+			<location x="-42204" y="114508" minz="-3688" maxz="-2888" />
+			<location x="-42948" y="115320" minz="-3688" maxz="-2888" />
+			<location x="-43776" y="114704" minz="-3688" maxz="-2888" />
+		</territory>
+		<npc id="20054" count="1" respawn="30" />	
+		<npc id="20060" count="2" respawn="30" />	
+		<npc id="20042" count="1" respawn="30" />	
+		<npc id="20045" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_25]">
+		<territory>	
+			<location x="-42628" y="116652" minz="-3804" maxz="-3004" />
+			<location x="-42116" y="117772" minz="-3804" maxz="-3004" />
+			<location x="-42176" y="119248" minz="-3804" maxz="-3004" />
+			<location x="-43272" y="119640" minz="-3804" maxz="-3004" />
+			<location x="-44216" y="119016" minz="-3804" maxz="-3004" />
+			<location x="-44996" y="117440" minz="-3804" maxz="-3004" />
+			<location x="-44696" y="116268" minz="-3804" maxz="-3004" />
+			<location x="-43764" y="115772" minz="-3804" maxz="-3004" />
+		</territory>
+		<npc id="20060" count="3" respawn="30" />	
+		<npc id="20054" count="2" respawn="30" />	
+		<npc id="20042" count="3" respawn="30" />	
+		<npc id="20045" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio03_1821_26]">
+		<territory>	
+			<location x="-46472" y="118532" minz="-3680" maxz="-2880" />
+			<location x="-45280" y="117552" minz="-3680" maxz="-2880" />
+			<location x="-44816" y="119936" minz="-3680" maxz="-2880" />
+			<location x="-46324" y="120536" minz="-3680" maxz="-2880" />
+		</territory>
+		<npc id="20054" count="3" respawn="30" />	
+		<npc id="20042" count="2" respawn="30" />	
+		<npc id="20045" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[gludio33_1821_01]">
+		<territory>	
+			<location x="-65452" y="98532" minz="-3956" maxz="-3356" />
+			<location x="-61120" y="98604" minz="-3956" maxz="-3356" />
+			<location x="-61280" y="100596" minz="-3956" maxz="-3356" />
+			<location x="-63236" y="105264" minz="-3956" maxz="-3356" />
+			<location x="-65420" y="104832" minz="-3956" maxz="-3356" />
+		</territory>
+		<npc id="20021" count="8" respawn="25" />	
+		<npc id="20012" count="5" respawn="25" />	
+	</spawn>
+	<spawn name="[gludio33_1821_02]">
+		<territory>	
+			<location x="-65408" y="105012" minz="-3788" maxz="-3288" />
+			<location x="-63384" y="105452" minz="-3788" maxz="-3288" />
+			<location x="-62812" y="108976" minz="-3788" maxz="-3288" />
+			<location x="-63332" y="111240" minz="-3788" maxz="-3288" />
+			<location x="-65492" y="112488" minz="-3788" maxz="-3288" />
+		</territory>
+		<npc id="20008" count="6" respawn="25" />	
+		<npc id="20010" count="5" respawn="25" />	
+		<npc id="20014" count="8" respawn="25" />	
+	</spawn>
+	<spawn name="[gludio33_1821_03s]">
+		<territory>	
+			<location x="-64748" y="100476" minz="-3696" maxz="-3196" />
+			<location x="-62840" y="100708" minz="-3696" maxz="-3196" />
+			<location x="-62912" y="102228" minz="-3696" maxz="-3196" />
+			<location x="-64812" y="102112" minz="-3696" maxz="-3196" />
+		</territory>
+		<npc id="20021" count="4" respawn="25" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_08]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-55664" y="110652" minz="-3460" maxz="-2860" />
+			<location x="-52788" y="113300" minz="-3460" maxz="-2860" />
+			<location x="-53408" y="116096" minz="-3460" maxz="-2860" />
+			<location x="-55380" y="116924" minz="-3460" maxz="-2860" />
+			<location x="-56848" y="112736" minz="-3460" maxz="-2860" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_08]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-55664" y="110652" minz="-3460" maxz="-2860" />
+			<location x="-52788" y="113300" minz="-3460" maxz="-2860" />
+			<location x="-53408" y="116096" minz="-3460" maxz="-2860" />
+			<location x="-55380" y="116924" minz="-3460" maxz="-2860" />
+			<location x="-56848" y="112736" minz="-3460" maxz="-2860" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_10]">
+		<territory>	
+			<location x="-47004" y="118892" minz="-3588" maxz="-2888" />
+			<location x="-48176" y="119592" minz="-3588" maxz="-2888" />
+			<location x="-51196" y="119760" minz="-3588" maxz="-2888" />
+			<location x="-53944" y="118720" minz="-3588" maxz="-2888" />
+			<location x="-54516" y="117404" minz="-3588" maxz="-2888" />
+			<location x="-51172" y="114832" minz="-3588" maxz="-2888" />
+			<location x="-49348" y="115996" minz="-3588" maxz="-2888" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_10]">
+		<territory>	
+			<location x="-47004" y="118892" minz="-3588" maxz="-2888" />
+			<location x="-48176" y="119592" minz="-3588" maxz="-2888" />
+			<location x="-51196" y="119760" minz="-3588" maxz="-2888" />
+			<location x="-53944" y="118720" minz="-3588" maxz="-2888" />
+			<location x="-54516" y="117404" minz="-3588" maxz="-2888" />
+			<location x="-51172" y="114832" minz="-3588" maxz="-2888" />
+			<location x="-49348" y="115996" minz="-3588" maxz="-2888" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_17]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-53136" y="107048" minz="-3908" maxz="-3108" />
+			<location x="-53440" y="108652" minz="-3908" maxz="-3108" />
+			<location x="-54884" y="109444" minz="-3908" maxz="-3108" />
+			<location x="-56156" y="107888" minz="-3908" maxz="-3108" />
+			<location x="-54964" y="106360" minz="-3908" maxz="-3108" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_18]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-50652" y="108232" minz="-3904" maxz="-3104" />
+			<location x="-49872" y="108764" minz="-3904" maxz="-3104" />
+			<location x="-51068" y="110468" minz="-3904" maxz="-3104" />
+			<location x="-53220" y="108716" minz="-3904" maxz="-3104" />
+			<location x="-52928" y="107652" minz="-3904" maxz="-3104" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_19]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-49036" y="107564" minz="-3940" maxz="-3140" />
+			<location x="-47264" y="108572" minz="-3940" maxz="-3140" />
+			<location x="-47472" y="109268" minz="-3940" maxz="-3140" />
+			<location x="-49844" y="108692" minz="-3940" maxz="-3140" />
+			<location x="-50484" y="107956" minz="-3940" maxz="-3140" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_20]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-54388" y="109864" minz="-3728" maxz="-2928" />
+			<location x="-53188" y="109056" minz="-3728" maxz="-2928" />
+			<location x="-51140" y="110628" minz="-3728" maxz="-2928" />
+			<location x="-52684" y="112604" minz="-3728" maxz="-2928" />
+			<location x="-53948" y="111556" minz="-3728" maxz="-2928" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_21]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-47712" y="109316" minz="-3832" maxz="-3032" />
+			<location x="-47352" y="110868" minz="-3832" maxz="-3032" />
+			<location x="-47492" y="112276" minz="-3832" maxz="-3032" />
+			<location x="-49736" y="114724" minz="-3832" maxz="-3032" />
+			<location x="-52576" y="112616" minz="-3832" maxz="-3032" />
+			<location x="-49760" y="108872" minz="-3832" maxz="-3032" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_21]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-47712" y="109316" minz="-3832" maxz="-3032" />
+			<location x="-47352" y="110868" minz="-3832" maxz="-3032" />
+			<location x="-47492" y="112276" minz="-3832" maxz="-3032" />
+			<location x="-49736" y="114724" minz="-3832" maxz="-3032" />
+			<location x="-52576" y="112616" minz="-3832" maxz="-3032" />
+			<location x="-49760" y="108872" minz="-3832" maxz="-3032" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_22]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-47112" y="108788" minz="-3952" maxz="-3152" />
+			<location x="-46156" y="108736" minz="-3952" maxz="-3152" />
+			<location x="-43584" y="110680" minz="-3952" maxz="-3152" />
+			<location x="-44032" y="113848" minz="-3952" maxz="-3152" />
+			<location x="-44700" y="114560" minz="-3952" maxz="-3152" />
+			<location x="-47088" y="112264" minz="-3952" maxz="-3152" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_22]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-47112" y="108788" minz="-3952" maxz="-3152" />
+			<location x="-46156" y="108736" minz="-3952" maxz="-3152" />
+			<location x="-43584" y="110680" minz="-3952" maxz="-3152" />
+			<location x="-44032" y="113848" minz="-3952" maxz="-3152" />
+			<location x="-44700" y="114560" minz="-3952" maxz="-3152" />
+			<location x="-47088" y="112264" minz="-3952" maxz="-3152" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_23]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-47376" y="112452" minz="-3852" maxz="-3052" />
+			<location x="-44880" y="114740" minz="-3852" maxz="-3052" />
+			<location x="-44532" y="115632" minz="-3852" maxz="-3052" />
+			<location x="-45368" y="117448" minz="-3852" maxz="-3052" />
+			<location x="-46620" y="118436" minz="-3852" maxz="-3052" />
+			<location x="-48760" y="116536" minz="-3852" maxz="-3052" />
+			<location x="-49688" y="114780" minz="-3852" maxz="-3052" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_23]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-47376" y="112452" minz="-3852" maxz="-3052" />
+			<location x="-44880" y="114740" minz="-3852" maxz="-3052" />
+			<location x="-44532" y="115632" minz="-3852" maxz="-3052" />
+			<location x="-45368" y="117448" minz="-3852" maxz="-3052" />
+			<location x="-46620" y="118436" minz="-3852" maxz="-3052" />
+			<location x="-48760" y="116536" minz="-3852" maxz="-3052" />
+			<location x="-49688" y="114780" minz="-3852" maxz="-3052" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_24]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-43640" y="112812" minz="-3688" maxz="-2888" />
+			<location x="-42912" y="112592" minz="-3688" maxz="-2888" />
+			<location x="-42320" y="113188" minz="-3688" maxz="-2888" />
+			<location x="-42204" y="114508" minz="-3688" maxz="-2888" />
+			<location x="-42948" y="115320" minz="-3688" maxz="-2888" />
+			<location x="-43776" y="114704" minz="-3688" maxz="-2888" />
+		</territory>
+		<npc id="18266" count="1" respawn="60" />	
+		<npc id="21802" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[gludio03_tb1821_25]" event_name="[treasure_box]">
+		<territory>	
+			<location x="-42628" y="116652" minz="-3804" maxz="-3004" />
+			<location x="-42116" y="117772" minz="-3804" maxz="-3004" />
+			<location x="-42176" y="119248" minz="-3804" maxz="-3004" />
+			<location x="-43272" y="119640" minz="-3804" maxz="-3004" />
+			<location x="-44216" y="119016" minz="-3804" maxz="-3004" />
+			<location x="-44996" y="117440" minz="-3804" maxz="-3004" />
+			<location x="-44696" y="116268" minz="-3804" maxz="-3004" />
+			<location x="-43764" y="115772" minz="-3804" maxz="-3004" />
+		</territory>
+		<npc id="18265" count="1" respawn="60" />	
+		<npc id="21801" count="1" respawn="60" />	
+	</spawn>
+
+</list>

@@ -3,16 +3,16 @@ package com.l2jhellas.gameserver.skills.effects;
 import java.util.logging.Logger;
 
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.enums.skills.L2SkillTargetType;
 import com.l2jhellas.gameserver.geometry.Point3D;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.L2WorldRegion;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.model.zone.form.ZoneCylinder;
 import com.l2jhellas.gameserver.model.zone.type.L2SignetZone;
 import com.l2jhellas.gameserver.network.SystemMessageId;
@@ -64,7 +64,7 @@ class EffectSignet extends L2Effect
 				_spawn.setAmount(1);
 				_spawn.setHeading(getEffector().getHeading());
 				_spawn.setRespawnDelay(0);
-				SpawnTable.getInstance().addNewSpawn(_spawn, false);
+				SpawnData.getInstance().addNewSpawn(_spawn, false);
 				_spawn.init();
 				_spawn.stopRespawn();
 			}
@@ -104,7 +104,7 @@ class EffectSignet extends L2Effect
 		if (_spawn != null)
 		{
 			_spawn.getLastSpawn().deleteMe();
-			SpawnTable.getInstance().deleteSpawn(_spawn, false);
+			SpawnData.getInstance().deleteSpawn(_spawn, false);
 		}
 		
 		if (zone != null)

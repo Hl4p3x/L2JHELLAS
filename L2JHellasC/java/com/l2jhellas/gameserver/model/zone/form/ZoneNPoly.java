@@ -1,11 +1,13 @@
 package com.l2jhellas.gameserver.model.zone.form;
 
+import java.awt.Color;
 import java.awt.Polygon;
 
+import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.geodata.GeoEngine;
-import com.l2jhellas.gameserver.model.actor.item.Inventory;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.zone.L2ZoneForm;
+import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
 import com.l2jhellas.util.Rnd;
 
 public class ZoneNPoly extends L2ZoneForm
@@ -67,8 +69,11 @@ public class ZoneNPoly extends L2ZoneForm
 	}
 	
 	@Override
-	public void visualizeZone(double z)
+	public void visualizeZone(String info, ExServerPrimitive debug, int z)
 	{
+		final int z1 = _z1 - 32;
+		final int z2 = _z2 - 32;
+		
 		int[] _x = _p.xpoints;
 		int[] _y = _p.ypoints;
 		
@@ -80,39 +85,52 @@ public class ZoneNPoly extends L2ZoneForm
 			{
 				nextIndex = 0;
 			}
-			int vx = _x[nextIndex] - _x[i];
-			int vy = _y[nextIndex] - _y[i];
-			float lenght = (float) Math.sqrt((vx * vx) + (vy * vy));
-			lenght /= STEP;
-			for (int o = 1; o <= lenght; o++)
-			{
-				float k = o / lenght;
-				dropDebugItem(Inventory.ADENA_ID, 1, (int) (_x[i] + (k * vx)), (int) (_y[i] + (k * vy)), z);
-			}
+			
+			debug.addLine(info + " MinZ", Color.GREEN, true, _x[i], _y[i], z1, _x[nextIndex], _y[nextIndex], z1);
+			debug.addLine(info, Color.YELLOW, true, _x[i], _y[i], z, _x[nextIndex], _y[nextIndex], z);
+			debug.addLine(info + " MaxZ", Color.RED, true, _x[i], _y[i], z2, _x[nextIndex], _y[nextIndex], z2);
 		}
 	}
-	
+
 	@Override
 	public Location getRandomPoint()
 	{
-		int x, y;
-		
+		Location pos = new Location();
 		int _minX = _p.getBounds().x;
 		int _maxX = _p.getBounds().x + _p.getBounds().width;
 		int _minY = _p.getBounds().y;
 		int _maxY = _p.getBounds().y + _p.getBounds().height;
-		
-		x = Rnd.get(_minX, _maxX);
-		y = Rnd.get(_minY, _maxY);
-		
+
+		pos.set(Rnd.get(_minX, _maxX), Rnd.get(_minY, _maxY), _z1 + (_z2 - _z1) / 2);
+
 		int antiBlocker = 0;
-		while (!_p.contains(x, y) && (antiBlocker++ < 1000))
+		block0:
+		while (!_p.contains(pos.getX(), pos.getY()) && (antiBlocker++ < 150))
 		{
-			x = Rnd.get(_minX, _maxX);
-			y = Rnd.get(_minY, _maxY);
+			pos.set(Rnd.get(_minX, _maxX), Rnd.get(_minY, _maxY), _z1 + (_z2 - _z1) / 2);
+			
+			if(Config.GEODATA)
+			{
+				int tempz = GeoEngine.getHeight(pos);
+
+				if(_z1 != _z2 ? tempz < _z1 || tempz > _z2 : tempz < _z1 - 200 || tempz > _z1 + 200)
+					continue;
+
+				pos.setZ(tempz);
+
+				int geoX = GeoEngine.getGeoX(pos.getX());
+				int geoY = GeoEngine.getGeoY(pos.getY());
+				for(int x = geoX - 1;x <= geoX + 1;++x)
+				{
+					for(int y = geoY - 1;y <= geoY + 1;++y)
+					{
+						if(GeoEngine.NgetNSWE(x, y, tempz) != 15)
+							continue block0;
+					}
+				}
+			}
 		}
-		
-		return new Location(x, y, GeoEngine.getHeight(x, y, _z1));
+		return pos;
 	}
 	
 	public int[] getX()

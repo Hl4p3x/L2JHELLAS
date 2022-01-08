@@ -1,10 +1,10 @@
 package com.l2jhellas.gameserver.scrips.quests.ai.custom;
 
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.model.quest.QuestState;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.util.Util;
 
 public class NpcLocationInfo extends Quest
@@ -209,7 +209,7 @@ public class NpcLocationInfo extends Quest
 			
 			if (Util.contains(RADARS, npcId))
 			{
-				SpawnTable.getInstance().forEachSpawn(sp ->
+				SpawnData.getInstance().forEachSpawn(sp ->
 				{
 					if (sp != null && sp.getId() == npcId)
 						st.addRadar(sp.getLocx(), sp.getLocy(), sp.getLocz());

@@ -12,85 +12,10 @@ public class MissQueen extends Quest
 	// Rewards
 	private static final int COUPON_ONE = 7832;
 	private static final int COUPON_TWO = 7833;
-	
-	// Miss Queen locations
-	private static final int[][] LOCATIONS =
-	{
-		{
-			116224,
-			-181728,
-			-1378,
-			0
-		},
-		{
-			114885,
-			-178092,
-			-832,
-			0
-		},
-		{
-			45472,
-			49312,
-			-3072,
-			53000
-		},
-		{
-			47648,
-			51296,
-			-2994,
-			38500
-		},
-		{
-			11340,
-			15972,
-			-4582,
-			14000
-		},
-		{
-			10968,
-			17540,
-			-4572,
-			55000
-		},
-		{
-			-14048,
-			123184,
-			-3120,
-			32000
-		},
-		{
-			-44979,
-			-113508,
-			-199,
-			32000
-		},
-		{
-			-84119,
-			243254,
-			-3730,
-			8000
-		},
-		{
-			-84336,
-			242156,
-			-3730,
-			24500
-		},
-		{
-			-82032,
-			150160,
-			-3127,
-			16500
-		}
-	};
-	
+
 	public MissQueen()
 	{
 		super(-1, qn, "custom");
-		
-		// Spawn the 11 NPCs.
-		for (int[] spawn : LOCATIONS)
-			addSpawn(31760, spawn[0], spawn[1], spawn[2], spawn[3], false, 0, false);
 		
 		addStartNpc(31760);
 		addTalkId(31760);

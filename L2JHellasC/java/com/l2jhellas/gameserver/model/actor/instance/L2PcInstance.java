@@ -28,7 +28,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import Extensions.IpCatcher;
 import Extensions.AchievmentsEngine.AchievementsManager;
 import Extensions.RankSystem.RPSCookie;
 import Extensions.RankSystem.RankPvpSystem;
@@ -58,6 +57,7 @@ import com.l2jhellas.gameserver.datatables.sql.CharNameTable;
 import com.l2jhellas.gameserver.datatables.sql.ClanTable;
 import com.l2jhellas.gameserver.datatables.sql.ItemTable;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
+import com.l2jhellas.gameserver.datatables.sql.PlayerVar;
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
 import com.l2jhellas.gameserver.datatables.xml.FishTable;
 import com.l2jhellas.gameserver.datatables.xml.HennaData;
@@ -179,6 +179,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ExFishingEnd;
 import com.l2jhellas.gameserver.network.serverpackets.ExFishingStart;
 import com.l2jhellas.gameserver.network.serverpackets.ExOlympiadMode;
 import com.l2jhellas.gameserver.network.serverpackets.ExOlympiadUserInfo;
+import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
 import com.l2jhellas.gameserver.network.serverpackets.ExSetCompassZoneCode;
 import com.l2jhellas.gameserver.network.serverpackets.ExStorageMaxCount;
 import com.l2jhellas.gameserver.network.serverpackets.FinishRotation;
@@ -305,6 +306,11 @@ public class L2PcInstance extends L2Playable
 	private static final String ADD_CHAR_RECOM = "INSERT INTO character_recommends (char_id,target_id) VALUES (?,?)";
 	private static final String DELETE_CHAR_RECOMS = "DELETE FROM character_recommends WHERE char_id=?";
 	
+	private final PlayerVar _var = new PlayerVar(getObjectId());
+	
+	private Location _enterWorld;
+	private final Map<String, ExServerPrimitive> _visualDebug = new HashMap<>();
+
 	public static final int REQUEST_TIMEOUT = 15;
 	
 	public static final int STORE_PRIVATE_NONE = 0;
@@ -3026,7 +3032,7 @@ public class L2PcInstance extends L2Playable
 		if (Config.AUTODESTROY_ITEM_AFTER > 0 && Config.DESTROY_DROPPED_PLAYER_ITEM && !Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
 		{
 			if ((item.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM) || !item.isEquipable())
-				ItemsAutoDestroy.getInstance().addItem(item);
+				ItemsAutoDestroy.getInstance().addItem(item, item.isHerb());
 		}
 		if (Config.DESTROY_DROPPED_PLAYER_ITEM)
 		{
@@ -3084,7 +3090,7 @@ public class L2PcInstance extends L2Playable
 		if (Config.AUTODESTROY_ITEM_AFTER > 0 && Config.DESTROY_DROPPED_PLAYER_ITEM && !Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
 		{
 			if ((item.isEquipable() && Config.DESTROY_EQUIPABLE_PLAYER_ITEM) || !item.isEquipable())
-				ItemsAutoDestroy.getInstance().addItem(item);
+				ItemsAutoDestroy.getInstance().addItem(item , item.isHerb());
 		}
 		if (Config.DESTROY_DROPPED_PLAYER_ITEM)
 		{
@@ -5482,6 +5488,8 @@ public class L2PcInstance extends L2Playable
 			
 			int buff_index = 0;
 			
+			final List<Integer> savedskills = new ArrayList<>();
+
 			try (PreparedStatement ps = con.prepareStatement(ADD_SKILL_SAVE))
 			{
 				for (L2Effect effect : getAllEffects())
@@ -5496,6 +5504,11 @@ public class L2PcInstance extends L2Playable
 					}
 
 					final L2Skill skill = effect.getSkill();
+
+					if (savedskills.contains(SkillTable.getSkillHashCode(skill)))
+						continue;
+						
+					savedskills.add(SkillTable.getSkillHashCode(skill));
 
 					if (!effect.isHerbEffect() && effect.getInUse() && !skill.isToggle())
 					{
@@ -5526,8 +5539,14 @@ public class L2PcInstance extends L2Playable
 								
 				for (TimeStamp t : _reuseTimeStamps.values())
 				{
+					final int skilli = t.getSkill();
+					
+					if (savedskills.contains(skilli))
+						continue;
+										
 					if (t != null && t.hasNotPassed())
-					{						
+					{	
+						savedskills.add(skilli);
 						ps.setInt(1, getObjectId());
 						ps.setInt(2, t.getSkill());
 						ps.setInt(3, 1);
@@ -10272,11 +10291,6 @@ public class L2PcInstance extends L2Playable
 	
 	public void EnterWolrd()
 	{
-		final IpCatcher ipc = new IpCatcher();
-		
-		if (ipc.isCatched(this))
-			closeNetConnection(true);
-		
 		if (isGM())
 		{
 			if (Config.GM_STARTUP_INVULNERABLE && AdminData.getInstance().hasAccess("admin_invul", getAccessLevel()))
@@ -10338,6 +10352,8 @@ public class L2PcInstance extends L2Playable
 		}
 
 		spawnMe(getX(), getY(), getZ());
+		
+		setEnterWorldLoc(getX(), getY(), -16000);
 		
         EnterWorldchecks();
 			
@@ -12004,8 +12020,6 @@ public class L2PcInstance extends L2Playable
 				setXYZ(realX, realY, GeoEngine.getHeight(realX, realY, realZ));
 				broadcastPacket(new ValidateLocation(this));
 			}
-			else
-				teleToLocation(MapRegionTable.TeleportWhereType.TOWN);
 		}
 		else if (getClientX() != 0 && getClientY() != 0 && getClientZ() != 0)
 		{
@@ -12020,8 +12034,6 @@ public class L2PcInstance extends L2Playable
 				setXYZ(getClientX(), getClientY(), GeoEngine.getHeight(getClientX(), getClientY(), getClientZ()));
 				broadcastPacket(new ValidateLocation(this));
 			}
-			else
-				teleToLocation(MapRegionTable.TeleportWhereType.TOWN);
 		}
 		sendPacket(ActionFailed.STATIC_PACKET);
 	}	
@@ -12150,5 +12162,25 @@ public class L2PcInstance extends L2Playable
 	public String getIP()
 	{
 		return getClient().getConnection().getInetAddress().getHostAddress();
+	}
+	
+	public PlayerVar getVar()
+	{
+		return _var;
+	}
+	
+	public final void setEnterWorldLoc(int x, int y, int z)
+	{
+		_enterWorld = new Location(x, y, z);
+	}
+	
+	public final ExServerPrimitive getVisualDebugPacket(String name)
+	{
+		return _visualDebug.computeIfAbsent(name, p -> new ExServerPrimitive(name, _enterWorld));
+	}
+	
+	public final void clearVisualDebugPackets()
+	{
+		_visualDebug.values().stream().peek(ExServerPrimitive::reset).forEach(esp -> esp.sendTo(this));
 	}
 }

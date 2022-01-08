@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[innadril09_npc2324_lc01]" event_name="[letter_collector]">
+		<npc id="31855" count="1" respawn="60" pos="111776 221104 -3543 16384" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_lc02]" event_name="[letter_collector]">
+		<npc id="31855" count="1" respawn="60" pos="107904 218096 -3675 0" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_lc03]" event_name="[letter_collector]">
+		<npc id="31855" count="1" respawn="60" pos="114920 220020 -3632 32768" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_tk01]" event_name="[lotto_manager]">
+		<npc id="30990" count="1" respawn="60" pos="111417 219422 -3544 48000" />	
+	</spawn>
+	<spawn name="[innadril01_mb2324_01]">
+		<territory>	
+			<location x="111582" y="209341" minz="-3687" maxz="-3087" />
+			<location x="112538" y="209177" minz="-3687" maxz="-3087" />
+			<location x="112840" y="210036" minz="-3687" maxz="-3087" />
+			<location x="112103" y="210972" minz="-3687" maxz="-3087" />
+			<location x="111263" y="210522" minz="-3687" maxz="-3087" />
+		</territory>
+		<npc id="25214" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[innadril04_mb2324_02]">
+		<territory>	
+			<location x="100816" y="199980" minz="-3780" maxz="-3180" />
+			<location x="102868" y="199276" minz="-3780" maxz="-3180" />
+			<location x="102256" y="201032" minz="-3780" maxz="-3180" />
+			<location x="101284" y="201288" minz="-3780" maxz="-3180" />
+		</territory>
+		<npc id="25394" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[innadril01_qm2324_01]">
+		<territory>	
+			<location x="106252" y="197068" minz="-4236" maxz="-4036" />
+			<location x="106452" y="197068" minz="-4236" maxz="-4036" />
+			<location x="106452" y="197268" minz="-4236" maxz="-4036" />
+			<location x="106252" y="197268" minz="-4236" maxz="-4036" />
+		</territory>
+		<npc id="20314" count="3" respawn="180" />	
+	</spawn>
+	<spawn name="[innadril01_npc2324_18]">
+		<npc id="30971" count="1" respawn="60" pos="129812 219005 -3583 24952" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_01]">
+		<npc id="30918" count="1" respawn="60" pos="103710 218030 -3584 32852" />	
+		<npc id="30919" count="1" respawn="60" pos="103711 218289 -3584 32852" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_02]">
+		<npc id="30916" count="1" respawn="60" pos="106942 218040 -3664 0" />	
+		<npc id="30917" count="1" respawn="60" pos="106938 218283 -3664 0" />	
+		<npc id="35319" count="1" respawn="60" pos="107372 217848 -3675 13120" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_03]">
+		<npc id="30921" count="1" respawn="60" pos="115735 219407 -3659 32768" />	
+		<npc id="30920" count="1" respawn="60" pos="115737 219156 -3659 32768" />	
+		<npc id="35319" count="1" respawn="60" pos="115527 218850 -3664 16256" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_04]">
+		<npc id="30922" count="1" respawn="60" pos="118944 219120 -3568 0" />	
+		<npc id="30923" count="1" respawn="60" pos="118944 219437 -3568 0" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_05]">
+		<npc id="30890" count="1" respawn="60" pos="115799 217684 -3580 16416" />	
+		<npc id="30891" count="1" respawn="60" pos="115957 217807 -3582 -36216" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_06]">
+		<npc id="31050" count="1" respawn="60" pos="107253 217252 -3597 39408" />	
+		<npc id="30892" count="1" respawn="60" pos="107082 216673 -3595 13168" />	
+		<npc id="30893" count="1" respawn="60" pos="107141 216674 -3595 19624" />	
+		<npc id="31042" count="1" respawn="60" pos="106955 216987 -3600 0" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_07]">
+		<npc id="30895" count="1" respawn="60" pos="109623 220091 -3520 2088" />	
+		<npc id="30894" count="1" respawn="60" pos="109627 220168 -3520 0" />	
+		<npc id="30896" count="1" respawn="60" pos="109625 220238 -3520 -3320" />	
+		<npc id="30969" count="1" respawn="60" pos="109710 220002 -3516 7656" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_08]">
+		<npc id="30897" count="1" respawn="60" pos="108003 218963 -3656 -22328" />	
+		<npc id="30898" count="1" respawn="60" pos="107763 218725 -3659 12192" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_09]">
+		<npc id="30899" count="1" respawn="60" pos="111386 219413 -3536 -15780" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_10]">
+		<npc id="30900" count="1" respawn="60" pos="113739 218423 -3626 0" />	
+		<npc id="30901" count="1" respawn="60" pos="113967 218584 -3626 -13336" />	
+		<npc id="30902" count="1" respawn="60" pos="114373 218268 -3626 -43712" />	
+		<npc id="30903" count="1" respawn="60" pos="114251 219489 -3626 -10752" />	
+		<npc id="30904" count="1" respawn="60" pos="114205 219156 -3626 3208" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_12]">
+		<npc id="30905" count="1" respawn="60" pos="111385 216821 -3458 16264" />	
+		<npc id="30906" count="1" respawn="60" pos="111226 216994 -3458 5384" />	
+		<npc id="30908" count="1" respawn="60" pos="111548 217133 -3458 28808" />	
+		<npc id="30907" count="1" respawn="60" pos="111221 217236 -3458 5384" />	
+		<npc id="30909" count="1" respawn="60" pos="111549 217381 -3458 28808" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_13]">
+		<npc id="30910" count="1" respawn="60" pos="115904 219919 -3627 -32888" />	
+		<npc id="30911" count="1" respawn="60" pos="115618 219666 -3627 11680" />	
+		<npc id="30912" count="1" respawn="60" pos="115614 220280 -3627 54096" />	
+		<npc id="30973" count="1" respawn="60" pos="115531 220194 -3627 -76928" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_15]">
+		<npc id="30924" count="1" respawn="60" pos="112050 225462 -3627 40960" />	
+		<npc id="30925" count="1" respawn="60" pos="111487 224587 -3549 46320" />	
+		<npc id="30926" count="1" respawn="60" pos="111053 224148 -3549 3400" />	
+		<npc id="30927" count="1" respawn="60" pos="111657 223985 -3549 25456" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_17]">
+		<npc id="30970" count="1" respawn="60" pos="114939 223293 -3736 38248" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_19]">
+		<npc id="31067" count="1" respawn="60" pos="110605 219495 -3672 8192" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_20]">
+		<npc id="31148" count="1" respawn="60" pos="106354 197181 -4200 48000" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_21]">
+		<npc id="31082" count="1" respawn="60" pos="111386 220908 -3544 16000" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_22]">
+		<npc id="31089" count="1" respawn="60" pos="112486 220173 -3592 33000" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_24]">
+		<npc id="30913" count="1" respawn="60" pos="108683 218942 -3685 32500" />	
+		<npc id="30914" count="1" respawn="60" pos="108656 219056 -3680 48500" />	
+		<npc id="30915" count="1" respawn="60" pos="108652 218856 -3680 32500" />	
+		<npc id="31429" count="1" respawn="60" pos="108684 218986 -3680 32000" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_25]">
+		<npc id="31436" count="1" respawn="60" pos="107682 218987 -3657 58000" />	
+		<npc id="31443" count="1" respawn="60" pos="108165 218729 -3657 16000" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_26]">
+		<npc id="31421" count="1" respawn="60" pos="111305 218025 -3456 -16500" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_27]">
+		<npc id="31575" count="1" respawn="60" pos="107025 217312 -3600 49000" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_28]">
+		<npc id="31688" count="1" respawn="60" pos="112336 220128 -3599 33000" />	
+		<npc id="31690" count="1" respawn="60" pos="112336 220208 -3599 33000" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_29]">
+		<npc id="31819" count="1" respawn="60" pos="110000 220608 -3480 16500" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_30]">
+		<npc id="31820" count="1" respawn="60" pos="111296 218472 -3459 16500" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_31]">
+		<npc id="31821" count="1" respawn="60" pos="115920 219472 -3663 33000" />	
+	</spawn>
+	<spawn name="[innadril09_npc2324_32]">
+		<npc id="31822" count="1" respawn="60" pos="106992 218464 -3676 0" />	
+	</spawn>
+	<spawn name="[innadril13_2324_01]">
+		<territory>	
+			<location x="104812" y="201853" minz="-3753" maxz="-2953" />
+			<location x="106386" y="201898" minz="-3753" maxz="-2953" />
+			<location x="106134" y="204477" minz="-3753" maxz="-2953" />
+			<location x="103123" y="203007" minz="-3753" maxz="-2953" />
+		</territory>
+		<npc id="20792" count="2" respawn="30" />	
+		<npc id="20135" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[innadril13_2324_02]">
+		<territory>	
+			<location x="109022" y="198572" minz="-3814" maxz="-3014" />
+			<location x="111677" y="199916" minz="-3814" maxz="-3014" />
+			<location x="109883" y="201624" minz="-3814" maxz="-3014" />
+			<location x="106772" y="201334" minz="-3814" maxz="-3014" />
+		</territory>
+		<npc id="20792" count="2" respawn="30" />	
+		<npc id="20135" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[innadril13_2324_03]">
+		<territory>	
+			<location x="112870" y="198916" minz="-3814" maxz="-3014" />
+			<location x="113997" y="199265" minz="-3814" maxz="-3014" />
+			<location x="112526" y="201064" minz="-3814" maxz="-3014" />
+			<location x="110681" y="200917" minz="-3814" maxz="-3014" />
+		</territory>
+		<npc id="20135" count="4" respawn="30" />	
+	</spawn>
+	<spawn name="[innadril13_2324_04]">
+		<territory>	
+			<location x="113733" y="200706" minz="-3819" maxz="-3019" />
+			<location x="116145" y="200194" minz="-3819" maxz="-3019" />
+			<location x="115379" y="202202" minz="-3819" maxz="-3019" />
+			<location x="112944" y="202817" minz="-3819" maxz="-3019" />
+		</territory>
+		<npc id="20792" count="3" respawn="30" />	
+		<npc id="20135" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[innadril13_2324_05]">
+		<territory>	
+			<location x="118960" y="201481" minz="-3819" maxz="-3019" />
+			<location x="121673" y="201026" minz="-3819" maxz="-3019" />
+			<location x="122432" y="202430" minz="-3819" maxz="-3019" />
+			<location x="121041" y="204985" minz="-3819" maxz="-3019" />
+			<location x="118691" y="204479" minz="-3819" maxz="-3019" />
+		</territory>
+		<npc id="20791" count="2" respawn="30" />	
+		<npc id="20792" count="2" respawn="30" />	
+		<npc id="20135" count="2" respawn="30" />	
+	</spawn>
+	<spawn name="[innadril13_2324_06]">
+		<territory>	
+			<location x="121376" y="204634" minz="-3819" maxz="-3019" />
+			<location x="123344" y="205468" minz="-3819" maxz="-3019" />
+			<location x="124212" y="207017" minz="-3819" maxz="-3019" />
+			<location x="123703" y="208198" minz="-3819" maxz="-3019" />
+			<location x="121285" y="208310" minz="-3819" maxz="-3019" />
+		</territory>
+		<npc id="20791" count="2" respawn="30" />	
+		<npc id="20792" count="3" respawn="30" />	
+	</spawn>
+	<spawn name="[innadril13_2324_07]">
+		<territory>	
+			<location x="117679" y="211677" minz="-3816" maxz="-3016" />
+			<location x="121408" y="208460" minz="-3816" maxz="-3016" />
+			<location x="123515" y="208312" minz="-3816" maxz="-3016" />
+			<location x="122186" y="210758" minz="-3816" maxz="-3016" />
+			<location x="118246" y="212386" minz="-3816" maxz="-3016" />
+		</territory>
+		<npc id="20791" count="3" respawn="30" />	
+		<npc id="20792" count="3" respawn="30" />	
+	</spawn>
+
+</list>

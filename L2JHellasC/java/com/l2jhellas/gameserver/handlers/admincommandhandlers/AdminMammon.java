@@ -5,12 +5,12 @@ import java.util.regex.Pattern;
 
 import com.l2jhellas.gameserver.SevenSigns;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
-import com.l2jhellas.gameserver.model.AutoSpawnHandler;
-import com.l2jhellas.gameserver.model.AutoSpawnHandler.AutoSpawnInstance;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.spawn.AutoSpawnHandler;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
+import com.l2jhellas.gameserver.model.spawn.AutoSpawnHandler.AutoSpawnInstance;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
 
 public class AdminMammon implements IAdminCommandHandler
@@ -123,7 +123,7 @@ public class AdminMammon implements IAdminCommandHandler
 				activeChar.sendPacket(SystemMessage.sendString("Command format is //list_spawns <npcId|npc_name> [tele_index]"));
 			}
 			
-			SpawnTable.getInstance().findNPCInstances(activeChar, npcId, teleportIndex);
+			SpawnData.getInstance().findNPCInstances(activeChar, npcId, teleportIndex);
 		}
 		return true;
 	}

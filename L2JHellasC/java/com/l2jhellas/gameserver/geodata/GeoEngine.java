@@ -294,7 +294,7 @@ public class GeoEngine
 		for (int i = 1; i <= layers[0]; i++)
 		{
 			h = (short) ((short) (layers[i] & 0x0fff0) >> 1);
-			if (h < z && nearest_layer_h < h)
+			if (h <= z && nearest_layer_h <= h)
 			{
 				nearest_layer_h = h;
 				nearest_layer = layers[i];
@@ -435,109 +435,6 @@ public class GeoEngine
 					if (!canSeeWallCheck(src_nearest_lower_layer, tmp_nearest_lower_layer, i_next_x > curr_x ? EAST : WEST, curr_z, air))
 						return result.setH(-32);
 					if (!canSeeWallCheck(tmp_nearest_lower_layer, dst_nearest_lower_layer, i_next_x > curr_x ? EAST : WEST, curr_z, air))
-						return result.setH(-33);
-				}
-			}
-			
-			result.set(curr_x, curr_y, curr_z);
-			curr_x = i_next_x;
-			curr_y = i_next_y;
-			curr_z = i_next_z;
-		}
-		
-		result.set(_tx, _ty, _tz, 0xFF);
-		return result;
-	}
-	
-	public static Location canSeeTestMode(int _x, int _y, int _z, int _tx, int _ty, int _tz, boolean air)
-	{
-		int diff_x = _tx - _x, diff_y = _ty - _y, diff_z = _tz - _z;
-		int dx = Math.abs(diff_x), dy = Math.abs(diff_y);
-		
-		float steps = Math.max(dx, dy);
-		int curr_x = _x, curr_y = _y, curr_z = _z;
-		short[] curr_layers = new short[MAX_LAYERS + 1];
-		NGetLayers(curr_x, curr_y, curr_layers);
-		
-		Location result = new Location(_x, _y, _z, -1);
-		
-		if (steps == 0)
-		{
-			if (CheckNoOneLayerInRangeAndFindNearestLowerLayer(curr_layers, curr_z, curr_z + diff_z) != Short.MIN_VALUE)
-				result.set(_tx, _ty, _tz, 1);
-			return result;
-		}
-		
-		float step_x = diff_x / steps, step_y = diff_y / steps, step_z = diff_z / steps;
-		int half_step_z = (int) (step_z / 2);
-		float next_x = curr_x, next_y = curr_y, next_z = curr_z;
-		int i_next_x, i_next_y, i_next_z, middle_z;
-		short[] tmp_layers = new short[MAX_LAYERS + 1];
-		short src_nearest_lower_layer, dst_nearest_lower_layer, tmp_nearest_lower_layer;
-		
-		for (int i = 0; i < steps; i++)
-		{
-			if (curr_layers[0] == 0)
-			{
-				result.set(_tx, _ty, _tz, 0);
-				return result;
-			}
-			
-			next_x += step_x;
-			next_y += step_y;
-			next_z += step_z;
-			i_next_x = (int) (next_x + 0.5f);
-			i_next_y = (int) (next_y + 0.5f);
-			i_next_z = (int) (next_z + 0.5f);
-			middle_z = curr_z + half_step_z;
-			
-			if ((src_nearest_lower_layer = CheckNoOneLayerInRangeAndFindNearestLowerLayer(curr_layers, curr_z, middle_z)) == Short.MIN_VALUE)
-				return result.setH(-10);
-			
-			NGetLayers(curr_x, curr_y, curr_layers);
-			if (curr_layers[0] == 0)
-			{
-				result.set(_tx, _ty, _tz, 0);
-				return result;
-			}
-			
-			if ((dst_nearest_lower_layer = CheckNoOneLayerInRangeAndFindNearestLowerLayer(curr_layers, i_next_z, middle_z)) == Short.MIN_VALUE)
-				return result.setH(-11);
-			
-			if (curr_x == i_next_x)
-			{
-				if (!canSeeWallCheck(src_nearest_lower_layer, dst_nearest_lower_layer, i_next_y > curr_y ? NSWE_ALL : NSWE_ALL, curr_z, air))
-					return result.setH(-20);
-			}
-			else if (curr_y == i_next_y)
-			{
-				if (!canSeeWallCheck(src_nearest_lower_layer, dst_nearest_lower_layer, i_next_x > curr_x ? NSWE_ALL : NSWE_ALL, curr_z, air))
-					return result.setH(-21);
-			}
-			else
-			{
-				NGetLayers(curr_x, i_next_y, tmp_layers);
-				if (tmp_layers[0] == 0)
-				{
-					result.set(_tx, _ty, _tz, 0);
-					return result;
-				}
-				if ((tmp_nearest_lower_layer = CheckNoOneLayerInRangeAndFindNearestLowerLayer(tmp_layers, i_next_z, middle_z)) == Short.MIN_VALUE)
-					return result.setH(-30);
-				
-				if (!(canSeeWallCheck(src_nearest_lower_layer, tmp_nearest_lower_layer, i_next_y > curr_y ? NSWE_ALL : NSWE_ALL, curr_z, air) && canSeeWallCheck(tmp_nearest_lower_layer, dst_nearest_lower_layer, i_next_x > curr_x ? EAST : WEST, curr_z, air)))
-				{
-					NGetLayers(i_next_x, curr_y, tmp_layers);
-					if (tmp_layers[0] == 0)
-					{
-						result.set(_tx, _ty, _tz, 0);
-						return result;
-					}
-					if ((tmp_nearest_lower_layer = CheckNoOneLayerInRangeAndFindNearestLowerLayer(tmp_layers, i_next_z, middle_z)) == Short.MIN_VALUE)
-						return result.setH(-31);
-					if (!canSeeWallCheck(src_nearest_lower_layer, tmp_nearest_lower_layer, i_next_x > curr_x ? NSWE_ALL : NSWE_ALL, curr_z, air))
-						return result.setH(-32);
-					if (!canSeeWallCheck(tmp_nearest_lower_layer, dst_nearest_lower_layer, i_next_x > curr_x ? NSWE_ALL : NSWE_ALL, curr_z, air))
 						return result.setH(-33);
 				}
 			}
@@ -1201,7 +1098,7 @@ public class GeoEngine
 				
 				return z_nearest_lower != Integer.MIN_VALUE ? z_nearest_lower : z_nearest;
 			default:
-				log.severe("GeoEngine: Unknown blockType");
+				log.warning("GeoEngine: Unknown blockType");
 				return z;
 		}
 	}

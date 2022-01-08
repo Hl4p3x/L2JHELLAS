@@ -8,15 +8,15 @@ import java.util.logging.Logger;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
 import com.l2jhellas.gameserver.model.L2Object;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -406,7 +406,7 @@ public class AdminTeleport implements IAdminCommandHandler
 			
 			target.deleteMe();
 			spawn.stopRespawn();
-			SpawnTable.getInstance().deleteSpawn(spawn, true);
+			SpawnData.getInstance().deleteSpawn(spawn, true);
 			
 			try
 			{
@@ -420,7 +420,7 @@ public class AdminTeleport implements IAdminCommandHandler
 				spawn.setAmount(1);
 				spawn.setHeading(activeChar.getHeading());
 				spawn.setRespawnDelay(respawnTime);
-				SpawnTable.getInstance().addNewSpawn(spawn, true);
+				SpawnData.getInstance().addNewSpawn(spawn, true);
 				spawn.init();
 				
 				SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.S1_S2);

@@ -16,6 +16,11 @@ public class MathUtil
 		return (numToTest > max) ? max : ((numToTest < min) ? min : numToTest);
 	}
 	
+	public static int getMaxOrDefault(int numToTest, int min, int max)
+	{
+		return (numToTest > max) ? max : ((numToTest < min) ? max : numToTest);
+	}
+
 	public static double calculateAngleFrom(L2Object obj1, L2Object obj2)
 	{
 		return calculateAngleFrom(obj1.getX(), obj1.getY(), obj2.getX(), obj2.getY());

@@ -111,7 +111,7 @@ public class ItemsOnGroundManager
 					if (!Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
 					{
 						if (rs.getLong(8) > -1 && Config.AUTODESTROY_ITEM_AFTER > 0)
-								ItemsAutoDestroy.getInstance().addItem(item);
+								ItemsAutoDestroy.getInstance().addItem(item , item.isHerb());
 					}
 				}
 			}

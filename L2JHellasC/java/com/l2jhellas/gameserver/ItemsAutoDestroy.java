@@ -9,7 +9,11 @@ import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 public class ItemsAutoDestroy
 {
 	private final Set<L2ItemInstance> _items = ConcurrentHashMap.newKeySet();
-
+	private final Set<L2ItemInstance> _herbs = ConcurrentHashMap.newKeySet();
+	
+	//run every 2 minutes
+	private final int herbstime = 2 * 60 * 1000;
+	
 	protected ItemsAutoDestroy()
 	{
 		
@@ -19,12 +23,26 @@ public class ItemsAutoDestroy
 	{
 		if (Config.AUTODESTROY_ITEM_AFTER > 0)
 			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::removeItems,Config.AUTODESTROY_ITEM_AFTER,Config.AUTODESTROY_ITEM_AFTER);
+		
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(this::removeHerbs,herbstime,herbstime);
 	}
 	
-	public void addItem(L2ItemInstance item)
+	public void addItem(L2ItemInstance item , boolean herb)
 	{
 		item.setDropTime(System.currentTimeMillis());
-		_items.add(item);
+		
+		if(herb)
+			_herbs.add(item);
+		else		
+			_items.add(item);
+	}
+	
+	public void removeHerbs()
+	{
+		if (_herbs.isEmpty())
+			return;
+		
+		_herbs.removeIf(item -> item.canBeRemoved());
 	}
 	
 	public void removeItems()

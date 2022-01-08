@@ -17,6 +17,7 @@ import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXParseException;
 
 import com.PackRoot;
+import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.templates.StatsSet;
 import com.l2jhellas.util.filters.file.XMLFilter;
 
@@ -66,6 +67,11 @@ public interface DocumentParser
 			e.printStackTrace();
 			return;
 		}
+	}
+	
+	public static boolean isNode(Node node)
+	{
+		return node.getNodeType() == Node.ELEMENT_NODE;
 	}
 	
 	default boolean parseDirectory(File file)
@@ -380,6 +386,18 @@ public interface DocumentParser
 				action.accept(targetNode);
 			}
 		}
+	}
+	
+	default Location parseLoc(String s)
+	{
+		String[] xyzh = s.split("[\\s,;]+");
+		if (xyzh.length < 3)
+			throw new IllegalArgumentException("SpawnData : Can't parse location from string: " + s);
+		int x = Integer.parseInt(xyzh[0]);
+		int y = Integer.parseInt(xyzh[1]);
+		int z = Integer.parseInt(xyzh[2]);
+		int h = xyzh.length < 4 ? 0 : Integer.parseInt(xyzh[3]);
+		return new Location(x, y, z, h);
 	}
 	
 	static class XMLErrorHandler implements ErrorHandler

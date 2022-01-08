@@ -200,6 +200,7 @@ public class MinionList
 		else
 			newY = master.getY() - newY + minRadius;
 		
+		minion.setSpawn(master.getSpawn());
 		minion.spawnMe(newX, newY, master.getZ());
 
 		return minion;

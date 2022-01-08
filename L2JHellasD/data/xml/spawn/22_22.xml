@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[giran11_npc2222_tk01]" event_name="[lotto_manager]">
+		<npc id="30990" count="1" respawn="60" pos="83331 147905 -3400 16700" />	
+	</spawn>
+	<spawn name="[dion13_2222_01]">
+		<territory>	
+			<location x="65653" y="140593" minz="-3796" maxz="-2996" />
+			<location x="70132" y="141486" minz="-3796" maxz="-2996" />
+			<location x="70297" y="144673" minz="-3796" maxz="-2996" />
+			<location x="65639" y="145754" minz="-3796" maxz="-2996" />
+		</territory>
+		<npc id="20944" count="5" respawn="45" />	
+		<npc id="20941" count="5" respawn="45" />	
+	</spawn>
+	<spawn name="[dion13_2222_02]">
+		<territory>	
+			<location x="65647" y="145871" minz="-3796" maxz="-2996" />
+			<location x="67633" y="145307" minz="-3796" maxz="-2996" />
+			<location x="66515" y="149891" minz="-3796" maxz="-2996" />
+			<location x="65655" y="150018" minz="-3796" maxz="-2996" />
+		</territory>
+		<npc id="20944" count="2" respawn="45" />	
+		<npc id="20941" count="2" respawn="45" />	
+	</spawn>
+	<spawn name="[dion13_2222_03]">
+		<territory>	
+			<location x="65640" y="150135" minz="-3796" maxz="-2996" />
+			<location x="66531" y="149992" minz="-3796" maxz="-2996" />
+			<location x="67559" y="151048" minz="-3796" maxz="-2996" />
+			<location x="65625" y="154132" minz="-3796" maxz="-2996" />
+		</territory>
+		<npc id="20944" count="2" respawn="45" />	
+		<npc id="20941" count="1" respawn="45" />	
+	</spawn>
+	<spawn name="[dion13_2222_04]">
+		<territory>	
+			<location x="65694" y="155668" minz="-3796" maxz="-2996" />
+			<location x="68513" y="155405" minz="-3796" maxz="-2996" />
+			<location x="69046" y="159913" minz="-3796" maxz="-2996" />
+			<location x="65694" y="161414" minz="-3796" maxz="-2996" />
+		</territory>
+		<npc id="20944" count="6" respawn="45" />	
+		<npc id="20941" count="4" respawn="45" />	
+	</spawn>
+	<spawn name="[giran01_mb2222_01]">
+		<territory>	
+			<location x="87716" y="140240" minz="-3560" maxz="-2960" />
+			<location x="88636" y="139892" minz="-3560" maxz="-2960" />
+			<location x="89640" y="140844" minz="-3560" maxz="-2960" />
+			<location x="88840" y="141224" minz="-3560" maxz="-2960" />
+			<location x="87936" y="141032" minz="-3560" maxz="-2960" />
+		</territory>
+		<npc id="25082" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_01]">
+		<npc id="30081" count="1" respawn="60" pos="80518 147922 -3506 32768" />	
+		<npc id="30082" count="1" respawn="60" pos="80518 147873 -3506 32768" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_02]">
+		<npc id="30084" count="1" respawn="60" pos="79747 146492 -3518 16384" />	
+		<npc id="30085" count="1" respawn="60" pos="79801 146493 -3518 16384" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_03]">
+		<npc id="30087" count="1" respawn="60" pos="79711 150788 -3520 49152" />	
+		<npc id="30088" count="1" respawn="60" pos="79654 150788 -3520 49152" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_04]">
+		<npc id="30093" count="1" respawn="60" pos="83305 150521 -3514 32768" />	
+		<npc id="30094" count="1" respawn="60" pos="83317 150821 -3514 32768" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_05]">
+		<npc id="30511" count="1" respawn="60" pos="83263 146667 -3464 32768" />	
+		<npc id="30103" count="1" respawn="60" pos="83264 146602 -3464 32768" />	
+		<npc id="30104" count="1" respawn="60" pos="83263 146736 -3464 32768" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_06]">
+		<npc id="30512" count="1" respawn="60" pos="77659 148089 -3595 16384" />	
+		<npc id="30300" count="1" respawn="60" pos="77458 148169 -3595 0" />	
+		<npc id="30471" count="1" respawn="60" pos="77712 148288 -3595 28672" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_07]">
+		<npc id="30115" count="1" respawn="60" pos="85823 153248 -3494 49152" />	
+		<npc id="30110" count="1" respawn="60" pos="85289 153341 -3494 57344" />	
+		<npc id="30111" count="1" respawn="60" pos="86359 152970 -3494 24576" />	
+		<npc id="30112" count="1" respawn="60" pos="86362 153337 -3494 40960" />	
+		<npc id="30113" count="1" respawn="60" pos="85253 153153 -3494 0" />	
+		<npc id="30114" count="1" respawn="60" pos="85297 152963 -3494 8192" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_08]">
+		<npc id="30829" count="1" respawn="60" pos="81100 145840 -3531 32768" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_09]">
+		<npc id="30756" count="1" respawn="60" pos="84521 146372 -3404 16384" />	
+		<npc id="30753" count="1" respawn="60" pos="81296 149728 -3469 49152" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_10]">
+		<npc id="30120" count="1" respawn="60" pos="87058 148634 -3392 32768" />	
+		<npc id="30116" count="1" respawn="60" pos="86912 148802 -3392 40960" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_11]">
+		<npc id="30118" count="1" respawn="60" pos="86485 148384 -3392 16384" />	
+		<npc id="30117" count="1" respawn="60" pos="86472 148848 -3392 49152" />	
+		<npc id="30473" count="1" respawn="60" pos="85829 148365 -3392 16384" />	
+		<npc id="30119" count="1" respawn="60" pos="85828 148894 -3392 49152" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_12]">
+		<npc id="30108" count="1" respawn="60" pos="85055 146560 -3399 32768" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_13]">
+		<npc id="30109" count="1" respawn="60" pos="85655 146471 -3399 32768" />	
+		<npc id="30105" count="1" respawn="60" pos="85505 146208 -3399 16384" />	
+		<npc id="30107" count="1" respawn="60" pos="85502 146752 -3399 49152" />	
+		<npc id="30106" count="1" respawn="60" pos="85234 146634 -3399 0" />	
+		<npc id="30472" count="1" respawn="60" pos="85231 146328 -3399 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_14]">
+		<npc id="30645" count="1" respawn="60" pos="84274 143740 -3403 32768" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_15]">
+		<npc id="30624" count="1" respawn="60" pos="79253 147049 -3529 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_16]">
+		<npc id="30614" count="1" respawn="60" pos="87509 149655 -3402 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_17]">
+		<npc id="30090" count="1" respawn="60" pos="80511 149183 -3508 32768" />	
+		<npc id="30091" count="1" respawn="60" pos="80510 149250 -3508 32768" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_18]">
+		<npc id="30474" count="1" respawn="60" pos="79059 149457 -3596 41500" />	
+		<npc id="30475" count="1" respawn="60" pos="78766 149239 -3596 16384" />	
+		<npc id="30476" count="1" respawn="60" pos="78928 149041 -3596 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_19]">
+		<npc id="30097" count="1" respawn="60" pos="79599 145522 -3494 0" />	
+		<npc id="30098" count="1" respawn="60" pos="79599 145457 -3494 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_20]">
+		<npc id="30128" count="1" respawn="60" pos="90498 147535 -3528 0" />	
+		<npc id="30478" count="1" respawn="60" pos="90501 147180 -3530 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_21]">
+		<npc id="30126" count="1" respawn="60" pos="84064 141438 -3526 49152" />	
+		<npc id="30125" count="1" respawn="60" pos="83705 141439 -3530 49152" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_22]">
+		<npc id="30123" count="1" respawn="60" pos="81424 143472 -3529 49152" />	
+		<npc id="30124" count="1" respawn="60" pos="81616 143472 -3529 49152" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_23]">
+		<npc id="30452" count="1" respawn="60" pos="77026 148813 -3598 32768" />	
+		<npc id="30477" count="1" respawn="60" pos="77029 148447 -3599 32768" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_24]">
+		<npc id="30121" count="1" respawn="60" pos="81436 152950 -3532 16384" />	
+		<npc id="30122" count="1" respawn="60" pos="81642 152955 -3526 16384" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_25]">
+		<npc id="30083" count="1" respawn="60" pos="80329 145482 -3533 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_26]">
+		<npc id="30086" count="1" respawn="60" pos="80752 146400 -3533 16384" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_27]">
+		<npc id="30092" count="1" respawn="60" pos="79248 149552 -3531 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_28]">
+		<npc id="30095" count="1" respawn="60" pos="82405 149905 -3520 16384" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_29]">
+		<npc id="30080" count="1" respawn="60" pos="83396 147904 -3404 16384" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_30]">
+		<npc id="31049" count="1" respawn="60" pos="83264 150176 -3520 24576" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_31]">
+		<npc id="35187" count="1" respawn="60" pos="81936 149584 -3472 36864" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_32]">
+		<npc id="35187" count="1" respawn="60" pos="79296 148128 -3536 53248" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_33]">
+		<npc id="35187" count="1" respawn="60" pos="80544 152288 -3536 24576" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_34]">
+		<npc id="31081" count="1" respawn="60" pos="83369 149273 -3400 32500" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_35]">
+		<npc id="31088" count="1" respawn="60" pos="81623 148606 -3464 32500" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_37]">
+		<npc id="35454" count="1" respawn="60" pos="81776 145200 -3529 32000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_38]">
+		<npc id="35453" count="1" respawn="60" pos="81876 145392 -3520 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_39]">
+		<npc id="35456" count="1" respawn="60" pos="83680 145456 -3408 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_40]">
+		<npc id="35455" count="1" respawn="60" pos="83568 145264 -3388 32000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_41]">
+		<npc id="35452" count="1" respawn="60" pos="78448 148400 -3600 16000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_42]">
+		<npc id="35451" count="1" respawn="60" pos="78652 148280 -3580 48000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_43]">
+		<npc id="35458" count="1" respawn="60" pos="81264 151728 -3536 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_44]">
+		<npc id="35457" count="1" respawn="60" pos="81133 151537 -3512 32000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_45]">
+		<npc id="35460" count="1" respawn="60" pos="81808 151776 -3536 32000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_46]">
+		<npc id="35459" count="1" respawn="60" pos="81920 151968 -3520 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_47]">
+		<npc id="30513" count="1" respawn="60" pos="80420 144499 -3540 0" />	
+		<npc id="30515" count="1" respawn="60" pos="80459 144592 -3540 0" />	
+		<npc id="30514" count="1" respawn="60" pos="80456 144376 -3540 0" />	
+		<npc id="31428" count="1" respawn="60" pos="80424 144456 -3540 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_48]">
+		<npc id="31420" count="1" respawn="60" pos="85904 152896 -3494 16500" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_49]">
+		<npc id="31419" count="1" respawn="60" pos="84576 148528 -3400 0" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_50]">
+		<npc id="31435" count="1" respawn="60" pos="77652 148328 -3600 48000" />	
+		<npc id="31442" count="1" respawn="60" pos="77446 148302 -3600 58000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_51]">
+		<npc id="31572" count="1" respawn="60" pos="80512 147712 -3502 32000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_52]">
+		<npc id="31688" count="1" respawn="60" pos="82053 147526 -3464 16500" />	
+		<npc id="31690" count="1" respawn="60" pos="82118 147524 -3464 16500" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_53]">
+		<npc id="31804" count="1" respawn="60" pos="88384 147176 -3408 33000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_54]">
+		<npc id="31805" count="1" respawn="60" pos="82840 147796 -3472 16500" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_55]">
+		<npc id="31806" count="1" respawn="60" pos="83680 143616 -3408 16500" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_56]">
+		<npc id="31807" count="1" respawn="60" pos="82768 146320 -3536 33000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_57]">
+		<npc id="31808" count="1" respawn="60" pos="77424 148432 -3600 16500" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_58]">
+		<npc id="31809" count="1" respawn="60" pos="81660 152696 -3536 49000" />	
+	</spawn>
+	<spawn name="[giran11_npc2222_59]">
+		<npc id="30767" count="1" respawn="60" pos="81424 149728 -3472 49000" />	
+	</spawn>
+	<spawn name="[giran06_2222_01]">
+		<territory>	
+			<location x="70944" y="131260" minz="-3720" maxz="-2920" />
+			<location x="75076" y="131212" minz="-3720" maxz="-2920" />
+			<location x="74152" y="134412" minz="-3720" maxz="-2920" />
+			<location x="72592" y="133828" minz="-3720" maxz="-2920" />
+		</territory>
+		<npc id="20199" count="2" respawn="33" />	
+		<npc id="20267" count="3" respawn="33" />	
+		<npc id="20268" count="2" respawn="33" />	
+	</spawn>
+	<spawn name="[giran06_2222_02]">
+		<territory>	
+			<location x="75060" y="131224" minz="-3728" maxz="-3128" />
+			<location x="78232" y="131232" minz="-3728" maxz="-3128" />
+			<location x="76840" y="133124" minz="-3728" maxz="-3128" />
+			<location x="74752" y="132472" minz="-3728" maxz="-3128" />
+		</territory>
+		<npc id="20199" count="2" respawn="33" />	
+		<npc id="20267" count="1" respawn="33" />	
+		<npc id="20268" count="2" respawn="33" />	
+	</spawn>
+	<spawn name="[giran06_2222_03]">
+		<territory>	
+			<location x="88284" y="131212" minz="-3768" maxz="-2968" />
+			<location x="91352" y="131240" minz="-3768" maxz="-2968" />
+			<location x="90252" y="133484" minz="-3768" maxz="-2968" />
+			<location x="88708" y="133620" minz="-3768" maxz="-2968" />
+		</territory>
+		<npc id="20271" count="1" respawn="33" />	
+		<npc id="20269" count="2" respawn="33" />	
+		<npc id="20270" count="2" respawn="33" />	
+	</spawn>
+	<spawn name="[giran06_2222_04]">
+		<territory>	
+			<location x="91436" y="131228" minz="-3700" maxz="-3100" />
+			<location x="95288" y="131196" minz="-3700" maxz="-3100" />
+			<location x="94504" y="133400" minz="-3700" maxz="-3100" />
+			<location x="90596" y="133092" minz="-3700" maxz="-3100" />
+		</territory>
+		<npc id="20199" count="2" respawn="33" />	
+		<npc id="20267" count="3" respawn="33" />	
+		<npc id="20268" count="2" respawn="33" />	
+	</spawn>
+	<spawn name="[giran16_tb2222_17]" event_name="[treasure_box]">
+		<territory>	
+			<location x="70944" y="131260" minz="-3720" maxz="-2920" />
+			<location x="75076" y="131212" minz="-3720" maxz="-2920" />
+			<location x="74152" y="134412" minz="-3720" maxz="-2920" />
+			<location x="72592" y="133828" minz="-3720" maxz="-2920" />
+		</territory>
+		<npc id="18269" count="1" respawn="60" />	
+		<npc id="21805" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[giran16_tb2222_02]" event_name="[treasure_box]">
+		<territory>	
+			<location x="75160" y="131224" minz="-3728" maxz="-3128" />
+			<location x="78232" y="131232" minz="-3728" maxz="-3128" />
+			<location x="76840" y="133124" minz="-3728" maxz="-3128" />
+			<location x="74752" y="132472" minz="-3728" maxz="-3128" />
+		</territory>
+		<npc id="18269" count="1" respawn="60" />	
+		<npc id="21805" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[giran16_tb2222_03]" event_name="[treasure_box]">
+		<territory>	
+			<location x="88284" y="131212" minz="-3768" maxz="-2968" />
+			<location x="91352" y="131240" minz="-3768" maxz="-2968" />
+			<location x="90252" y="133484" minz="-3768" maxz="-2968" />
+			<location x="88708" y="133620" minz="-3768" maxz="-2968" />
+		</territory>
+		<npc id="18269" count="1" respawn="60" />	
+		<npc id="21805" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[giran16_tb2222_04]" event_name="[treasure_box]">
+		<territory>	
+			<location x="91436" y="131228" minz="-3700" maxz="-3100" />
+			<location x="95288" y="131196" minz="-3700" maxz="-3100" />
+			<location x="94504" y="133400" minz="-3700" maxz="-3100" />
+			<location x="90596" y="133092" minz="-3700" maxz="-3100" />
+		</territory>
+		<npc id="18269" count="1" respawn="60" />	
+		<npc id="21805" count="1" respawn="60" />	
+	</spawn>
+
+</list>

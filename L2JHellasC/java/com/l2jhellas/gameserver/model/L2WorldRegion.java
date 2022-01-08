@@ -12,11 +12,12 @@ import java.util.logging.Logger;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.ai.CtrlIntention;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
 import com.l2jhellas.gameserver.model.actor.L2Attackable;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.model.zone.L2ZoneType;
 
 public final class L2WorldRegion
@@ -208,7 +209,7 @@ public final class L2WorldRegion
 				if (spawn != null)
 				{
 					spawn.stopRespawn();
-					SpawnTable.getInstance().deleteSpawn(spawn, false);
+					SpawnData.getInstance().deleteSpawn(spawn, false);
 				}
 			}
 		}

@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.StringTokenizer;
 
-import Extensions.IpCatcher;
-
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.LoginServerThread;
 import com.l2jhellas.gameserver.communitybbs.Manager.RegionBBSManager;
@@ -28,9 +26,7 @@ public class AdminBan implements IAdminCommandHandler
 		"admin_unban_acc",
 		"admin_unban_char",
 		"admin_jail",
-		"admin_unjail",
-		"admin_permaban",
-		"admin_removeperma"
+		"admin_unjail"
 	};
 	
 	@Override
@@ -181,38 +177,6 @@ public class AdminBan implements IAdminCommandHandler
 			}
 			else
 				unjailOfflinePlayer(activeChar, player);
-		}
-		else if (command.startsWith("admin_permaban"))
-		{
-			if (targetPlayer == null && player.isEmpty())
-			{
-				activeChar.sendMessage("Usage: //permaban <char_name> (if none, target char is banned)");
-				return false;
-			}
-			final IpCatcher ipc = new IpCatcher();
-			if (targetPlayer != null && !targetPlayer.isGM())
-			{
-				ipc.addIp(targetPlayer);
-				activeChar.sendMessage(targetPlayer.getName() + " banned permanently");
-				targetPlayer.sendMessage("You are banned permanently from " + activeChar.getName() + "!");
-				targetPlayer.sendMessage("if you will log out you won't be able to log in again!server gave you a opportunity to stay and ask for forgiveness!");
-				// targetPlayer.logout();
-			}
-		}
-		else if (command.startsWith("admin_removeperma"))
-		{
-			if (targetPlayer == null && player.isEmpty())
-			{
-				activeChar.sendMessage("Usage: //removeperma <char_name> (if none, target char is unbanned)");
-				return false;
-			}
-			final IpCatcher ipc = new IpCatcher();
-			if (targetPlayer != null)
-			{
-				ipc.removeIp(targetPlayer);
-				activeChar.sendMessage(targetPlayer.getName() + " permanently ban has been removed!");
-				targetPlayer.sendMessage("Your permanently ban has been removed from " + activeChar.getName() + "!");
-			}
 		}
 		return true;
 	}

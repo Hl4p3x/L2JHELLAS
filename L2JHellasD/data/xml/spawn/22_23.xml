@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[innadril03_mb2223_01]">
+		<territory>	
+			<location x="81824" y="183268" minz="-3740" maxz="-3140" />
+			<location x="82868" y="182768" minz="-3740" maxz="-3140" />
+			<location x="83964" y="183136" minz="-3740" maxz="-3140" />
+			<location x="82856" y="183880" minz="-3740" maxz="-3140" />
+		</territory>
+		<npc id="25487" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[innadril03_mb2223_02]">
+		<territory>	
+			<location x="75732" y="193456" minz="-3808" maxz="-3208" />
+			<location x="76704" y="192484" minz="-3808" maxz="-3208" />
+			<location x="77236" y="193168" minz="-3808" maxz="-3208" />
+			<location x="76172" y="193804" minz="-3808" maxz="-3208" />
+		</territory>
+		<npc id="25211" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[innadril03_mb2223_03]">
+		<territory>	
+			<location x="87780" y="175876" minz="-3612" maxz="-3012" />
+			<location x="88848" y="175804" minz="-3612" maxz="-3012" />
+			<location x="88224" y="176832" minz="-3612" maxz="-3012" />
+			<location x="87556" y="176536" minz="-3612" maxz="-3012" />
+		</territory>
+		<npc id="25188" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[innadril03_mb2223_04]">
+		<territory>	
+			<location x="87672" y="165868" minz="-3788" maxz="-3388" />
+			<location x="88524" y="166120" minz="-3788" maxz="-3388" />
+			<location x="88608" y="166728" minz="-3788" maxz="-3388" />
+			<location x="87768" y="166744" minz="-3788" maxz="-3388" />
+		</territory>
+		<npc id="25185" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[dion01_qm2223_01]">
+		<territory>	
+			<location x="67572" y="166920" minz="-3560" maxz="-3160" />
+			<location x="69300" y="165652" minz="-3560" maxz="-3160" />
+			<location x="70464" y="168184" minz="-3560" maxz="-3160" />
+			<location x="67880" y="169416" minz="-3560" maxz="-3160" />
+		</territory>
+		<npc id="20781" count="3" respawn="180" />	
+	</spawn>
+	<spawn name="[giran01_qm2223_01]">
+		<territory>	
+			<location x="75020" y="165688" minz="-3684" maxz="-3284" />
+			<location x="75892" y="165920" minz="-3684" maxz="-3284" />
+			<location x="75932" y="166212" minz="-3684" maxz="-3284" />
+			<location x="74872" y="166096" minz="-3684" maxz="-3284" />
+		</territory>
+		<npc id="27097" count="3" respawn="180" />	
+	</spawn>
+	<spawn name="[innadril03_2223_07]">
+		<territory>	
+			<location x="83979" y="175112" minz="-3851" maxz="-3251" />
+			<location x="87985" y="177447" minz="-3851" maxz="-3251" />
+			<location x="85979" y="179398" minz="-3851" maxz="-3251" />
+			<location x="83946" y="177584" minz="-3851" maxz="-3251" />
+		</territory>
+		<npc id="20783" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21638" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="20784" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="3" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_08]">
+		<territory>	
+			<location x="86180" y="173791" minz="-3826" maxz="-3426" />
+			<location x="88480" y="174476" minz="-3826" maxz="-3426" />
+			<location x="87699" y="177128" minz="-3826" maxz="-3426" />
+			<location x="84267" y="175153" minz="-3826" maxz="-3426" />
+		</territory>
+		<npc id="20783" count="6" respawn="25" respawn_rand="10" />	
+		<npc id="21638" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="20784" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="1" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_09]">
+		<territory>	
+			<location x="87008" y="171570" minz="-3852" maxz="-3352" />
+			<location x="89212" y="173244" minz="-3852" maxz="-3352" />
+			<location x="88506" y="174416" minz="-3852" maxz="-3352" />
+			<location x="86215" y="173747" minz="-3852" maxz="-3352" />
+		</territory>
+		<npc id="20783" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21638" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="20784" count="1" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_10]">
+		<territory>	
+			<location x="89117" y="169838" minz="-3832" maxz="-3232" />
+			<location x="90325" y="170779" minz="-3832" maxz="-3232" />
+			<location x="89247" y="173213" minz="-3832" maxz="-3232" />
+			<location x="87034" y="171532" minz="-3832" maxz="-3232" />
+		</territory>
+		<npc id="20783" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21638" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="20784" count="1" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_11]">
+		<territory>	
+			<location x="90427" y="170739" minz="-3858" maxz="-3358" />
+			<location x="93181" y="170063" minz="-3858" maxz="-3358" />
+			<location x="93832" y="172414" minz="-3858" maxz="-3358" />
+			<location x="91757" y="173561" minz="-3858" maxz="-3358" />
+			<location x="89664" y="172479" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="20783" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21638" count="8" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_12]">
+		<territory>	
+			<location x="89678" y="172591" minz="-3858" maxz="-3058" />
+			<location x="91883" y="173685" minz="-3858" maxz="-3058" />
+			<location x="91663" y="175809" minz="-3858" maxz="-3058" />
+			<location x="88604" y="174429" minz="-3858" maxz="-3058" />
+		</territory>
+		<npc id="20783" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21638" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="20784" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="2" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_13]">
+		<territory>	
+			<location x="88559" y="174510" minz="-3858" maxz="-3058" />
+			<location x="91656" y="175880" minz="-3858" maxz="-3058" />
+			<location x="91366" y="178955" minz="-3858" maxz="-3058" />
+			<location x="87930" y="176732" minz="-3858" maxz="-3058" />
+		</territory>
+		<npc id="20783" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21638" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="20784" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="3" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_14]">
+		<territory>	
+			<location x="88106" y="177491" minz="-3858" maxz="-3058" />
+			<location x="91621" y="179679" minz="-3858" maxz="-3058" />
+			<location x="89686" y="181072" minz="-3858" maxz="-3058" />
+			<location x="86057" y="179457" minz="-3858" maxz="-3058" />
+		</territory>
+		<npc id="20783" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21638" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="20784" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="5" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_06]">
+		<territory>	
+			<location x="84135" y="177885" minz="-3851" maxz="-3151" />
+			<location x="85931" y="179509" minz="-3851" maxz="-3151" />
+			<location x="83245" y="182584" minz="-3851" maxz="-3151" />
+			<location x="81678" y="180675" minz="-3851" maxz="-3151" />
+		</territory>
+		<npc id="20784" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="20785" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="3" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_15]">
+		<territory>	
+			<location x="86043" y="179582" minz="-3858" maxz="-3258" />
+			<location x="88295" y="180662" minz="-3858" maxz="-3258" />
+			<location x="85429" y="184440" minz="-3858" maxz="-3258" />
+			<location x="83421" y="182615" minz="-3858" maxz="-3258" />
+		</territory>
+		<npc id="20784" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="20785" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="5" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_32s]">
+		<territory>	
+			<location x="86835" y="180812" minz="-3851" maxz="-3351" />
+			<location x="86718" y="182234" minz="-3851" maxz="-3351" />
+			<location x="85721" y="183385" minz="-3851" maxz="-3351" />
+			<location x="84626" y="182273" minz="-3851" maxz="-3351" />
+		</territory>
+		<npc id="21034" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="2" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_16]">
+		<territory>	
+			<location x="88431" y="180662" minz="-3858" maxz="-3258" />
+			<location x="89608" y="181147" minz="-3858" maxz="-3258" />
+			<location x="90685" y="183645" minz="-3858" maxz="-3258" />
+			<location x="88409" y="184694" minz="-3858" maxz="-3258" />
+			<location x="85977" y="183927" minz="-3858" maxz="-3258" />
+		</territory>
+		<npc id="20785" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21034" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="3" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_01]">
+		<territory>	
+			<location x="71898" y="182971" minz="-3708" maxz="-2608" />
+			<location x="74381" y="182516" minz="-3708" maxz="-2608" />
+			<location x="75031" y="185252" minz="-3708" maxz="-2608" />
+			<location x="72509" y="186288" minz="-3708" maxz="-2608" />
+			<location x="70791" y="184676" minz="-3708" maxz="-2608" />
+		</territory>
+		<npc id="20784" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="20785" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="5" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_02]">
+		<territory>	
+			<location x="72543" y="186381" minz="-3825" maxz="-2725" />
+			<location x="75121" y="185334" minz="-3825" maxz="-2725" />
+			<location x="76015" y="188717" minz="-3825" maxz="-2725" />
+			<location x="74404" y="189628" minz="-3825" maxz="-2725" />
+			<location x="72069" y="188516" minz="-3825" maxz="-2725" />
+		</territory>
+		<npc id="20785" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21034" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="5" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_03]">
+		<territory>	
+			<location x="78188" y="187653" minz="-3832" maxz="-2632" />
+			<location x="79462" y="189380" minz="-3832" maxz="-2632" />
+			<location x="78748" y="191326" minz="-3832" maxz="-2632" />
+			<location x="76783" y="191234" minz="-3832" maxz="-2632" />
+			<location x="74909" y="189386" minz="-3832" maxz="-2632" />
+		</territory>
+		<npc id="20785" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21034" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="5" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_04]">
+		<territory>	
+			<location x="74666" y="183235" minz="-3827" maxz="-2827" />
+			<location x="78643" y="183125" minz="-3827" maxz="-2827" />
+			<location x="79435" y="185271" minz="-3827" maxz="-2827" />
+			<location x="78229" y="187533" minz="-3827" maxz="-2827" />
+			<location x="76094" y="188672" minz="-3827" maxz="-2827" />
+		</territory>
+		<npc id="20784" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="20785" count="6" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="5" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_30s]">
+		<territory>	
+			<location x="77251" y="184578" minz="-3889" maxz="-3289" />
+			<location x="78483" y="185927" minz="-3889" maxz="-3289" />
+			<location x="76727" y="187283" minz="-3889" maxz="-3289" />
+			<location x="75502" y="185054" minz="-3889" maxz="-3289" />
+		</territory>
+		<npc id="20784" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="20785" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="1" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_05]">
+		<territory>	
+			<location x="78496" y="180900" minz="-3851" maxz="-3151" />
+			<location x="81584" y="180740" minz="-3851" maxz="-3151" />
+			<location x="83087" y="182623" minz="-3851" maxz="-3151" />
+			<location x="79505" y="185210" minz="-3851" maxz="-3151" />
+			<location x="78766" y="183107" minz="-3851" maxz="-3151" />
+		</territory>
+		<npc id="20784" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="6" respawn="25" respawn_rand="10" />	
+		<npc id="20785" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="2" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_31s]">
+		<territory>	
+			<location x="79724" y="182019" minz="-3849" maxz="-3449" />
+			<location x="81085" y="183916" minz="-3849" maxz="-3449" />
+			<location x="79828" y="184674" minz="-3849" maxz="-3449" />
+			<location x="78964" y="183076" minz="-3849" maxz="-3449" />
+		</territory>
+		<npc id="20784" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21639" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="20785" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="1" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_17]">
+		<territory>	
+			<location x="83179" y="182702" minz="-3858" maxz="-3458" />
+			<location x="85369" y="184509" minz="-3858" maxz="-3458" />
+			<location x="83234" y="186671" minz="-3858" maxz="-3458" />
+			<location x="79975" y="185092" minz="-3858" maxz="-3458" />
+		</territory>
+		<npc id="20785" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21640" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21034" count="6" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="6" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_24]">
+		<territory>	
+			<location x="79864" y="185269" minz="-3858" maxz="-3358" />
+			<location x="83082" y="186808" minz="-3858" maxz="-3358" />
+			<location x="80212" y="189665" minz="-3858" maxz="-3358" />
+			<location x="79034" y="188388" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="21034" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21642" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21643" count="2" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_23]">
+		<territory>	
+			<location x="83320" y="186841" minz="-3858" maxz="-3358" />
+			<location x="86405" y="189543" minz="-3858" maxz="-3358" />
+			<location x="83352" y="191165" minz="-3858" maxz="-3358" />
+			<location x="80195" y="189874" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="21034" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21642" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21643" count="5" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_33s]">
+		<territory>	
+			<location x="83594" y="188192" minz="-3847" maxz="-3447" />
+			<location x="84629" y="189154" minz="-3847" maxz="-3447" />
+			<location x="82909" y="190467" minz="-3847" maxz="-3447" />
+			<location x="81769" y="188999" minz="-3847" maxz="-3447" />
+		</territory>
+		<npc id="21642" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21643" count="2" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_18]">
+		<territory>	
+			<location x="85891" y="184137" minz="-3858" maxz="-3358" />
+			<location x="88441" y="184879" minz="-3858" maxz="-3358" />
+			<location x="87932" y="186897" minz="-3858" maxz="-3358" />
+			<location x="85153" y="188156" minz="-3858" maxz="-3358" />
+			<location x="83328" y="186734" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="21034" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21642" count="7" respawn="25" respawn_rand="10" />	
+		<npc id="21643" count="3" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_25]">
+		<territory>	
+			<location x="79410" y="189736" minz="-3858" maxz="-3358" />
+			<location x="83273" y="191230" minz="-3858" maxz="-3358" />
+			<location x="79896" y="192547" minz="-3858" maxz="-3358" />
+			<location x="78844" y="191557" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="21034" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21641" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21642" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21643" count="4" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_26]">
+		<territory>	
+			<location x="79185" y="192228" minz="-3898" maxz="-3098" />
+			<location x="79254" y="193415" minz="-3898" maxz="-3098" />
+			<location x="77706" y="194657" minz="-3898" maxz="-3098" />
+			<location x="75302" y="193829" minz="-3898" maxz="-3098" />
+			<location x="76190" y="192082" minz="-3898" maxz="-3098" />
+			<location x="78017" y="191578" minz="-3898" maxz="-3098" />
+		</territory>
+		<npc id="21642" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21643" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="20786" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="4" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_27]">
+		<territory>	
+			<location x="83357" y="191275" minz="-3858" maxz="-3058" />
+			<location x="85100" y="195187" minz="-3858" maxz="-3058" />
+			<location x="83460" y="196021" minz="-3858" maxz="-3058" />
+			<location x="78753" y="194659" minz="-3858" maxz="-3058" />
+			<location x="79911" y="192605" minz="-3858" maxz="-3058" />
+		</territory>
+		<npc id="20786" count="9" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="20787" count="8" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="2" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_34s]">
+		<territory>	
+			<location x="83625" y="192278" minz="-3829" maxz="-3329" />
+			<location x="84329" y="193950" minz="-3829" maxz="-3329" />
+			<location x="80951" y="193237" minz="-3829" maxz="-3329" />
+			<location x="82187" y="191905" minz="-3829" maxz="-3329" />
+		</territory>
+		<npc id="20787" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="1" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_19]">
+		<territory>	
+			<location x="90722" y="183773" minz="-3858" maxz="-3358" />
+			<location x="92325" y="184682" minz="-3858" maxz="-3358" />
+			<location x="91069" y="187133" minz="-3858" maxz="-3358" />
+			<location x="88043" y="186859" minz="-3858" maxz="-3358" />
+			<location x="88519" y="184810" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="21642" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21643" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="20786" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="6" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_20]">
+		<territory>	
+			<location x="93292" y="185483" minz="-3858" maxz="-3358" />
+			<location x="94560" y="186128" minz="-3858" maxz="-3358" />
+			<location x="94490" y="188277" minz="-3858" maxz="-3358" />
+			<location x="91174" y="187181" minz="-3858" maxz="-3358" />
+			<location x="91970" y="185653" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="20786" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="20787" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="2" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_21]">
+		<territory>	
+			<location x="91193" y="187342" minz="-3858" maxz="-3358" />
+			<location x="94522" y="188419" minz="-3858" maxz="-3358" />
+			<location x="94464" y="190632" minz="-3858" maxz="-3358" />
+			<location x="93405" y="192561" minz="-3858" maxz="-3358" />
+			<location x="91117" y="191873" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="20786" count="6" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="2" respawn="25" respawn_rand="10" />	
+		<npc id="20787" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="6" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_22]">
+		<territory>	
+			<location x="88017" y="186993" minz="-3858" maxz="-3358" />
+			<location x="91086" y="187313" minz="-3858" maxz="-3358" />
+			<location x="91039" y="191856" minz="-3858" maxz="-3358" />
+			<location x="88135" y="190988" minz="-3858" maxz="-3358" />
+			<location x="85222" y="188211" minz="-3858" maxz="-3358" />
+		</territory>
+		<npc id="20786" count="4" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="10" respawn="25" respawn_rand="10" />	
+		<npc id="20787" count="9" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="4" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_35s]">
+		<territory>	
+			<location x="87399" y="188378" minz="-3872" maxz="-3372" />
+			<location x="89637" y="189298" minz="-3872" maxz="-3372" />
+			<location x="89531" y="190375" minz="-3872" maxz="-3372" />
+			<location x="86971" y="189137" minz="-3872" maxz="-3372" />
+		</territory>
+		<npc id="20787" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="3" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_28]">
+		<territory>	
+			<location x="86516" y="189603" minz="-3858" maxz="-3058" />
+			<location x="88115" y="191061" minz="-3858" maxz="-3058" />
+			<location x="85176" y="195138" minz="-3858" maxz="-3058" />
+			<location x="83443" y="191255" minz="-3858" maxz="-3058" />
+		</territory>
+		<npc id="20786" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="20787" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="9" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_29]">
+		<territory>	
+			<location x="88240" y="191095" minz="-3858" maxz="-3058" />
+			<location x="93284" y="192658" minz="-3858" maxz="-3058" />
+			<location x="90524" y="195551" minz="-3858" maxz="-3058" />
+			<location x="88321" y="195800" minz="-3858" maxz="-3058" />
+			<location x="85234" y="195181" minz="-3858" maxz="-3058" />
+		</territory>
+		<npc id="20786" count="7" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="20787" count="5" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="6" respawn="25" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[innadril03_2223_36s]">
+		<territory>	
+			<location x="89417" y="191734" minz="-3872" maxz="-3372" />
+			<location x="91211" y="192898" minz="-3872" maxz="-3372" />
+			<location x="88962" y="194381" minz="-3872" maxz="-3372" />
+			<location x="87566" y="192495" minz="-3872" maxz="-3372" />
+		</territory>
+		<npc id="20786" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="21644" count="1" respawn="25" respawn_rand="10" />	
+		<npc id="20787" count="3" respawn="25" respawn_rand="10" />	
+		<npc id="21645" count="2" respawn="25" respawn_rand="10" />	
+	</spawn>
+
+</list>

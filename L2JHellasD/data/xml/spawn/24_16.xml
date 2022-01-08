@@ -1,0 +1,1944 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[godard_castle2416_0201]" event_name="[godard_castle2416_0201]">
+		<npc id="35340" count="1" respawn="10800" pos="147134 -45144 -1352 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="147218 -45144 -1352 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="147105 -45263 -1352 31296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147117 -45180 -1352 31296" />	
+		<npc id="35340" count="1" respawn="10800" pos="147111 -45221 -1352 31296" />	
+		<npc id="35340" count="1" respawn="10800" pos="147241 -45225 -1352 1424" />	
+		<npc id="35351" count="1" respawn="10800" pos="147247 -45267 -1352 1424" />	
+		<npc id="35351" count="1" respawn="10800" pos="147236 -45184 -1352 1424" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0202]" event_name="[godard_castle2416_0202]">
+		<npc id="35351" count="1" respawn="10800" pos="147714 -45140 -1352 16416" />	
+		<npc id="35340" count="1" respawn="10800" pos="147797 -45140 -1352 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="147684 -45258 -1352 31296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147696 -45176 -1352 31296" />	
+		<npc id="35340" count="1" respawn="10800" pos="147690 -45217 -1352 31296" />	
+		<npc id="35340" count="1" respawn="10800" pos="147820 -45221 -1352 1424" />	
+		<npc id="35351" count="1" respawn="10800" pos="147826 -45262 -1352 1424" />	
+		<npc id="35351" count="1" respawn="10800" pos="147815 -45179 -1352 1424" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0301]" event_name="[godard_castle2416_0301]">
+		<npc id="35351" count="1" respawn="10800" pos="147315 -45496 -2082 16296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147353 -45496 -2082 16296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147391 -45496 -2082 16296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147427 -45496 -2082 16296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147463 -45496 -2082 16296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147500 -45497 -2082 16296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147537 -45497 -2082 16296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147574 -45497 -2082 16296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147611 -45496 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147316 -45424 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147352 -45425 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147389 -45425 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147425 -45426 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147462 -45425 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147500 -45424 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147536 -45424 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147573 -45424 -2082 16296" />	
+		<npc id="35343" count="1" respawn="10800" pos="147608 -45425 -2082 16296" />	
+		<npc id="35339" count="1" respawn="10800" pos="147461 -45371 -2082 16296" />	
+		<npc id="35350" count="1" respawn="10800" pos="147423 -45372 -2082 16296" />	
+		<npc id="35350" count="1" respawn="10800" pos="147387 -45373 -2082 16296" />	
+		<npc id="35350" count="1" respawn="10800" pos="147316 -45372 -2082 16296" />	
+		<npc id="35350" count="1" respawn="10800" pos="147350 -45372 -2082 16296" />	
+		<npc id="35350" count="1" respawn="10800" pos="147606 -45373 -2082 16296" />	
+		<npc id="35350" count="1" respawn="10800" pos="147570 -45374 -2082 16296" />	
+		<npc id="35350" count="1" respawn="10800" pos="147499 -45373 -2082 16296" />	
+		<npc id="35350" count="1" respawn="10800" pos="147533 -45373 -2082 16296" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0303]" event_name="[godard_castle2416_0303]">
+		<npc id="35350" count="1" respawn="10800" pos="147465 -45619 -2082 16352" />	
+		<npc id="35350" count="1" respawn="10800" pos="147426 -45619 -2082 16352" />	
+		<npc id="35350" count="1" respawn="10800" pos="147390 -45619 -2082 16352" />	
+		<npc id="35350" count="1" respawn="10800" pos="147356 -45620 -2082 16352" />	
+		<npc id="35350" count="1" respawn="10800" pos="147320 -45620 -2082 16352" />	
+		<npc id="35350" count="1" respawn="10800" pos="147609 -45619 -2082 16352" />	
+		<npc id="35350" count="1" respawn="10800" pos="147573 -45619 -2082 16352" />	
+		<npc id="35350" count="1" respawn="10800" pos="147539 -45619 -2082 16352" />	
+		<npc id="35350" count="1" respawn="10800" pos="147503 -45620 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147464 -45674 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147429 -45674 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147394 -45674 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147359 -45674 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147320 -45675 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147610 -45675 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147575 -45675 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147539 -45676 -2082 16352" />	
+		<npc id="35343" count="1" respawn="10800" pos="147501 -45675 -2082 16352" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0401]" event_name="[godard_castle2416_0401]">
+		<npc id="35350" count="1" respawn="10800" pos="147167 -45677 -2082 -64" />	
+		<npc id="35350" count="1" respawn="10800" pos="147159 -45707 -2082 -64" />	
+		<npc id="35350" count="1" respawn="10800" pos="147167 -45735 -2082 -64" />	
+		<npc id="35350" count="1" respawn="10800" pos="147158 -45765 -2082 -48" />	
+		<npc id="35339" count="1" respawn="10800" pos="147167 -45795 -2082 -64" />	
+		<npc id="35350" count="1" respawn="10800" pos="147157 -45825 -2082 -32" />	
+		<npc id="35350" count="1" respawn="10800" pos="147168 -45852 -2082 -64" />	
+		<npc id="35350" count="1" respawn="10800" pos="147157 -45881 -2082 -64" />	
+		<npc id="35350" count="1" respawn="10800" pos="147168 -45910 -2082 -64" />	
+		<npc id="35351" count="1" respawn="10800" pos="147111 -45679 -2082 -64" />	
+		<npc id="35351" count="1" respawn="10800" pos="147103 -45708 -2082 -64" />	
+		<npc id="35351" count="1" respawn="10800" pos="147111 -45737 -2082 -64" />	
+		<npc id="35351" count="1" respawn="10800" pos="147102 -45766 -2082 -48" />	
+		<npc id="35351" count="1" respawn="10800" pos="147110 -45796 -2082 -64" />	
+		<npc id="35351" count="1" respawn="10800" pos="147101 -45826 -2082 -32" />	
+		<npc id="35351" count="1" respawn="10800" pos="147112 -45853 -2082 -64" />	
+		<npc id="35351" count="1" respawn="10800" pos="147100 -45883 -2082 -64" />	
+		<npc id="35351" count="1" respawn="10800" pos="147111 -45911 -2082 -64" />	
+		<npc id="35341" count="1" respawn="10800" pos="147051 -45793 -2082 -64" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0402]" event_name="[godard_castle2416_0402]">
+		<npc id="35350" count="1" respawn="10800" pos="147771 -45678 -2082 32768" />	
+		<npc id="35350" count="1" respawn="10800" pos="147779 -45706 -2082 32768" />	
+		<npc id="35350" count="1" respawn="10800" pos="147771 -45735 -2082 32768" />	
+		<npc id="35350" count="1" respawn="10800" pos="147779 -45764 -2082 32768" />	
+		<npc id="35350" count="1" respawn="10800" pos="147772 -45794 -2082 32768" />	
+		<npc id="35350" count="1" respawn="10800" pos="147780 -45823 -2082 32768" />	
+		<npc id="35350" count="1" respawn="10800" pos="147772 -45852 -2082 32768" />	
+		<npc id="35350" count="1" respawn="10800" pos="147778 -45881 -2082 32768" />	
+		<npc id="35350" count="1" respawn="10800" pos="147772 -45911 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147823 -45678 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147831 -45706 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147823 -45735 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147831 -45764 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147824 -45794 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147832 -45823 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147824 -45852 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147830 -45881 -2082 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="147824 -45910 -2082 32768" />	
+		<npc id="35341" count="1" respawn="10800" pos="147898 -45793 -2082 32768" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0501]" event_name="[godard_castle2416_0501]">
+		<npc id="35351" count="1" respawn="10800" pos="146697 -45659 -1744 18936" />	
+		<npc id="35351" count="1" respawn="10800" pos="146731 -45650 -1744 18936" />	
+		<npc id="35340" count="1" respawn="10800" pos="146766 -45641 -1744 18936" />	
+		<npc id="35351" count="1" respawn="10800" pos="146839 -45622 -1744 18936" />	
+		<npc id="35351" count="1" respawn="10800" pos="146769 -45706 -1744 52040" />	
+		<npc id="35340" count="1" respawn="10800" pos="146801 -45632 -1744 18936" />	
+		<npc id="35351" count="1" respawn="10800" pos="146875 -45612 -1744 18936" />	
+		<npc id="35351" count="1" respawn="10800" pos="146912 -45603 -1744 18936" />	
+		<npc id="35351" count="1" respawn="10800" pos="146733 -45719 -1744 52040" />	
+		<npc id="35351" count="1" respawn="10800" pos="146697 -45731 -1744 52040" />	
+		<npc id="35351" count="1" respawn="10800" pos="146658 -45742 -1744 52040" />	
+		<npc id="35341" count="1" respawn="10800" pos="146620 -45752 -1744 52040" />	
+		<npc id="35351" count="1" respawn="10800" pos="146581 -45764 -1744 52040" />	
+		<npc id="35351" count="1" respawn="10800" pos="146543 -45774 -1744 52040" />	
+		<npc id="35351" count="1" respawn="10800" pos="146506 -45785 -1744 52040" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0502]" event_name="[godard_castle2416_0502]">
+		<npc id="35351" count="1" respawn="10800" pos="148004 -45603 -1744 13712" />	
+		<npc id="35351" count="1" respawn="10800" pos="148039 -45612 -1744 13712" />	
+		<npc id="35351" count="1" respawn="10800" pos="148074 -45620 -1744 13712" />	
+		<npc id="35340" count="1" respawn="10800" pos="148109 -45629 -1744 13712" />	
+		<npc id="35351" count="1" respawn="10800" pos="148181 -45648 -1744 13712" />	
+		<npc id="35340" count="1" respawn="10800" pos="148143 -45638 -1744 13712" />	
+		<npc id="35351" count="1" respawn="10800" pos="148219 -45656 -1744 13712" />	
+		<npc id="35351" count="1" respawn="10800" pos="148433 -45784 -1744 46376" />	
+		<npc id="35351" count="1" respawn="10800" pos="148395 -45776 -1744 46376" />	
+		<npc id="35351" count="1" respawn="10800" pos="148356 -45765 -1744 46376" />	
+		<npc id="35341" count="1" respawn="10800" pos="148318 -45755 -1744 46376" />	
+		<npc id="35351" count="1" respawn="10800" pos="148279 -45744 -1744 46376" />	
+		<npc id="35351" count="1" respawn="10800" pos="148241 -45733 -1744 46376" />	
+		<npc id="35351" count="1" respawn="10800" pos="148204 -45723 -1744 46376" />	
+		<npc id="35351" count="1" respawn="10800" pos="148165 -45712 -1744 46376" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0601]" event_name="[godard_castle2416_0601]">
+		<npc id="35351" count="1" respawn="10800" pos="146305 -45571 -1744 19960" />	
+		<npc id="35340" count="1" respawn="10800" pos="146373 -45544 -1744 19960" />	
+		<npc id="35351" count="1" respawn="10800" pos="146400 -45568 -1744 4744" />	
+		<npc id="35340" count="1" respawn="10800" pos="146419 -45600 -1744 4744" />	
+		<npc id="35351" count="1" respawn="10800" pos="146435 -45633 -1744 4352" />	
+		<npc id="35351" count="1" respawn="10800" pos="146317 -45678 -1744 34888" />	
+		<npc id="35340" count="1" respawn="10800" pos="146310 -45642 -1744 34496" />	
+		<npc id="35351" count="1" respawn="10800" pos="146302 -45605 -1744 34496" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0602]" event_name="[godard_castle2416_0602]">
+		<npc id="35340" count="1" respawn="10800" pos="148552 -45546 -1744 12832" />	
+		<npc id="35351" count="1" respawn="10800" pos="148621 -45569 -1744 12832" />	
+		<npc id="35351" count="1" respawn="10800" pos="148628 -45604 -1744 -2384" />	
+		<npc id="35340" count="1" respawn="10800" pos="148622 -45642 -1744 -2384" />	
+		<npc id="35351" count="1" respawn="10800" pos="148613 -45677 -1744 -2776" />	
+		<npc id="35351" count="1" respawn="10800" pos="148493 -45638 -1744 27760" />	
+		<npc id="35340" count="1" respawn="10800" pos="148511 -45605 -1744 27368" />	
+		<npc id="35351" count="1" respawn="10800" pos="148528 -45571 -1744 27368" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0701]" event_name="[godard_castle2416_0701]">
+		<npc id="35351" count="1" respawn="10800" pos="145387 -45445 -1700 6128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145517 -45613 -1700 6128" />	
+		<npc id="35340" count="1" respawn="10800" pos="145554 -45665 -1700 5672" />	
+		<npc id="35351" count="1" respawn="10800" pos="145432 -45503 -1700 6128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145473 -45560 -1700 6128" />	
+		<npc id="35340" count="1" respawn="10800" pos="145591 -45718 -1700 6128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145632 -45775 -1700 6128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145672 -45828 -1700 6128" />	
+		<npc id="35340" count="1" respawn="10800" pos="145464 -45730 -1700 39264" />	
+		<npc id="35340" count="1" respawn="10800" pos="145499 -45783 -1700 39264" />	
+		<npc id="35351" count="1" respawn="10800" pos="145535 -45836 -1700 39264" />	
+		<npc id="35351" count="1" respawn="10800" pos="145566 -45883 -1700 39264" />	
+		<npc id="35351" count="1" respawn="10800" pos="145430 -45680 -1700 39264" />	
+		<npc id="35351" count="1" respawn="10800" pos="145394 -45627 -1700 39264" />	
+		<npc id="35351" count="1" respawn="10800" pos="145356 -45570 -1700 39264" />	
+		<npc id="35351" count="1" respawn="10800" pos="145322 -45516 -1700 39264" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0702]" event_name="[godard_castle2416_0702]">
+		<npc id="35351" count="1" respawn="10800" pos="149607 -45516 -1744 -6640" />	
+		<npc id="35351" count="1" respawn="10800" pos="149493 -45695 -1744 -6640" />	
+		<npc id="35340" count="1" respawn="10800" pos="149456 -45747 -1744 -7096" />	
+		<npc id="35351" count="1" respawn="10800" pos="149567 -45577 -1744 -6640" />	
+		<npc id="35351" count="1" respawn="10800" pos="149528 -45635 -1744 -6640" />	
+		<npc id="35340" count="1" respawn="10800" pos="149419 -45800 -1744 -6640" />	
+		<npc id="35351" count="1" respawn="10800" pos="149379 -45858 -1744 -6640" />	
+		<npc id="35351" count="1" respawn="10800" pos="149343 -45914 -1744 -6640" />	
+		<npc id="35340" count="1" respawn="10800" pos="149365 -45685 -1744 26496" />	
+		<npc id="35340" count="1" respawn="10800" pos="149326 -45736 -1744 26496" />	
+		<npc id="35351" count="1" respawn="10800" pos="149289 -45787 -1744 26496" />	
+		<npc id="35351" count="1" respawn="10800" pos="149256 -45833 -1744 26496" />	
+		<npc id="35351" count="1" respawn="10800" pos="149400 -45636 -1744 26496" />	
+		<npc id="35351" count="1" respawn="10800" pos="149437 -45584 -1744 26496" />	
+		<npc id="35351" count="1" respawn="10800" pos="149478 -45528 -1744 26496" />	
+		<npc id="35351" count="1" respawn="10800" pos="149517 -45479 -1744 26496" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0801]" event_name="[godard_castle2416_0801]">
+		<npc id="35351" count="1" respawn="10800" pos="144645 -47090 -1744 27912" />	
+		<npc id="35340" count="1" respawn="10800" pos="144676 -47024 -1744 27912" />	
+		<npc id="35351" count="1" respawn="10800" pos="144711 -47022 -1744 12696" />	
+		<npc id="35340" count="1" respawn="10800" pos="144748 -47033 -1744 12696" />	
+		<npc id="35351" count="1" respawn="10800" pos="144782 -47046 -1744 12304" />	
+		<npc id="35351" count="1" respawn="10800" pos="144728 -47160 -1744 42840" />	
+		<npc id="35340" count="1" respawn="10800" pos="144698 -47139 -1744 42448" />	
+		<npc id="35351" count="1" respawn="10800" pos="144666 -47117 -1744 42448" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0802]" event_name="[godard_castle2416_0802]">
+		<npc id="35340" count="1" respawn="10800" pos="150254 -47023 -1744 4736" />	
+		<npc id="35351" count="1" respawn="10800" pos="150288 -47087 -1744 4736" />	
+		<npc id="35351" count="1" respawn="10800" pos="150268 -47117 -1744 -10480" />	
+		<npc id="35340" count="1" respawn="10800" pos="150238 -47139 -1744 -10480" />	
+		<npc id="35351" count="1" respawn="10800" pos="150206 -47159 -1744 -10872" />	
+		<npc id="35351" count="1" respawn="10800" pos="150148 -47047 -1744 19664" />	
+		<npc id="35340" count="1" respawn="10800" pos="150184 -47036 -1744 19272" />	
+		<npc id="35351" count="1" respawn="10800" pos="150220 -47023 -1744 19272" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0901]" event_name="[godard_castle2416_0901]">
+		<npc id="35351" count="1" respawn="10800" pos="144383 -47805 -1744 29552" />	
+		<npc id="35340" count="1" respawn="10800" pos="144403 -47735 -1744 29552" />	
+		<npc id="35351" count="1" respawn="10800" pos="144439 -47728 -1744 14336" />	
+		<npc id="35340" count="1" respawn="10800" pos="144476 -47732 -1744 14336" />	
+		<npc id="35351" count="1" respawn="10800" pos="144512 -47740 -1744 13944" />	
+		<npc id="35351" count="1" respawn="10800" pos="144476 -47861 -1744 44480" />	
+		<npc id="35340" count="1" respawn="10800" pos="144443 -47845 -1744 44088" />	
+		<npc id="35351" count="1" respawn="10800" pos="144409 -47828 -1744 44088" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0902]" event_name="[godard_castle2416_0902]">
+		<npc id="35340" count="1" respawn="10800" pos="150525 -47733 -1744 2960" />	
+		<npc id="35351" count="1" respawn="10800" pos="150547 -47803 -1744 2960" />	
+		<npc id="35351" count="1" respawn="10800" pos="150522 -47829 -1744 -12256" />	
+		<npc id="35340" count="1" respawn="10800" pos="150488 -47846 -1744 -12256" />	
+		<npc id="35351" count="1" respawn="10800" pos="150454 -47860 -1744 -12648" />	
+		<npc id="35351" count="1" respawn="10800" pos="150416 -47739 -1744 17888" />	
+		<npc id="35340" count="1" respawn="10800" pos="150453 -47734 -1744 17496" />	
+		<npc id="35351" count="1" respawn="10800" pos="150491 -47728 -1744 17496" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1001]" event_name="[godard_castle2416_1001]">
+		<npc id="35350" count="1" respawn="10800" pos="145615 -48338 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145616 -48300 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145616 -48263 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145615 -48226 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145615 -48188 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145615 -48149 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145662 -48338 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145662 -48299 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145662 -48262 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145661 -48225 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145661 -48187 -2381 32744" />	
+		<npc id="35350" count="1" respawn="10800" pos="145661 -48149 -2381 32744" />	
+		<npc id="35343" count="1" respawn="10800" pos="145721 -48338 -2381 32744" />	
+		<npc id="35343" count="1" respawn="10800" pos="145721 -48299 -2381 32744" />	
+		<npc id="35343" count="1" respawn="10800" pos="145721 -48262 -2381 32744" />	
+		<npc id="35343" count="1" respawn="10800" pos="145720 -48225 -2381 32744" />	
+		<npc id="35343" count="1" respawn="10800" pos="145720 -48187 -2381 32744" />	
+		<npc id="35343" count="1" respawn="10800" pos="145720 -48148 -2381 32744" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1002]" event_name="[godard_castle2416_1002]">
+		<npc id="35350" count="1" respawn="10800" pos="149318 -48143 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149319 -48181 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149320 -48222 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149320 -48262 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149319 -48300 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149319 -48341 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149274 -48144 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149274 -48182 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149275 -48223 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149275 -48263 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149274 -48301 -2381 0" />	
+		<npc id="35350" count="1" respawn="10800" pos="149274 -48342 -2381 0" />	
+		<npc id="35343" count="1" respawn="10800" pos="149178 -48139 -2381 0" />	
+		<npc id="35343" count="1" respawn="10800" pos="149178 -48178 -2381 0" />	
+		<npc id="35343" count="1" respawn="10800" pos="149179 -48218 -2381 0" />	
+		<npc id="35343" count="1" respawn="10800" pos="149180 -48258 -2381 0" />	
+		<npc id="35343" count="1" respawn="10800" pos="149179 -48296 -2381 0" />	
+		<npc id="35343" count="1" respawn="10800" pos="149178 -48338 -2381 0" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1101]" event_name="[godard_castle2416_1101]">
+		<npc id="35343" count="1" respawn="10800" pos="145886 -47792 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145900 -47763 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145872 -47822 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145914 -47734 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145866 -47780 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145880 -47751 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145852 -47809 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145894 -47721 -1604 28152" />	
+		<npc id="35350" count="1" respawn="10800" pos="145778 -47743 -1604 28152" />	
+		<npc id="35350" count="1" respawn="10800" pos="145793 -47713 -1604 28152" />	
+		<npc id="35339" count="1" respawn="10800" pos="145805 -47736 -1604 28152" />	
+		<npc id="35350" count="1" respawn="10800" pos="145828 -47693 -1604 28152" />	
+		<npc id="35350" count="1" respawn="10800" pos="145787 -47781 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145846 -47771 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145860 -47742 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145831 -47800 -1604 28152" />	
+		<npc id="35343" count="1" respawn="10800" pos="145873 -47712 -1604 28152" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1102]" event_name="[godard_castle2416_1102]">
+		<npc id="35343" count="1" respawn="10800" pos="149027 -47763 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149042 -47793 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149014 -47733 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149056 -47821 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149050 -47756 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149064 -47785 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149036 -47726 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149078 -47814 -1604 4672" />	
+		<npc id="35350" count="1" respawn="10800" pos="149134 -47710 -1604 4672" />	
+		<npc id="35350" count="1" respawn="10800" pos="149148 -47741 -1604 4672" />	
+		<npc id="35339" count="1" respawn="10800" pos="149123 -47736 -1604 4672" />	
+		<npc id="35350" count="1" respawn="10800" pos="149141 -47780 -1604 4672" />	
+		<npc id="35350" count="1" respawn="10800" pos="149099 -47693 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149070 -47745 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149084 -47774 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149056 -47715 -1604 4672" />	
+		<npc id="35343" count="1" respawn="10800" pos="149098 -47803 -1604 4672" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1201]" event_name="[godard_castle2416_1201]">
+		<npc id="35351" count="1" respawn="10800" pos="145995 -47693 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="146011 -47662 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="146019 -47707 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="146036 -47676 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="146047 -47721 -1608 28128" />	
+		<npc id="35340" count="1" respawn="10800" pos="146064 -47690 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145876 -47941 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145893 -47910 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145896 -47950 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145913 -47918 -1608 28128" />	
+		<npc id="35340" count="1" respawn="10800" pos="145921 -47961 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145938 -47930 -1608 28128" />	
+		<npc id="35340" count="1" respawn="10800" pos="145949 -47972 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="145966 -47941 -1608 28128" />	
+		<npc id="35351" count="1" respawn="10800" pos="146077 -47736 -1608 28128" />	
+		<npc id="35340" count="1" respawn="10800" pos="146093 -47705 -1608 28128" />	
+		<npc id="35341" count="1" respawn="10800" pos="146082 -47657 -1608 28128" />	
+		<npc id="35341" count="1" respawn="10800" pos="145905 -48000 -1608 28128" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1202]" event_name="[godard_castle2416_1202]">
+		<npc id="35351" count="1" respawn="10800" pos="149033 -47903 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="149047 -47934 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="149002 -47915 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="149016 -47947 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="148977 -47927 -1608 4424" />	
+		<npc id="35340" count="1" respawn="10800" pos="148960 -47977 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="148913 -47956 -1608 4424" />	
+		<npc id="35340" count="1" respawn="10800" pos="148929 -47988 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="148923 -47672 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="148937 -47700 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="148900 -47682 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="148915 -47712 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="148868 -47694 -1608 4424" />	
+		<npc id="35351" count="1" respawn="10800" pos="148882 -47725 -1608 4424" />	
+		<npc id="35340" count="1" respawn="10800" pos="148831 -47711 -1608 4424" />	
+		<npc id="35340" count="1" respawn="10800" pos="148788 -47729 -1608 4424" />	
+		<npc id="35341" count="1" respawn="10800" pos="148974 -48007 -1608 4424" />	
+		<npc id="35341" count="1" respawn="10800" pos="148815 -47680 -1608 4424" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1301]" event_name="[godard_castle2416_1301]">
+		<npc id="35351" count="1" respawn="10800" pos="146467 -47149 -1608 21928" />	
+		<npc id="35351" count="1" respawn="10800" pos="146648 -47035 -1608 21928" />	
+		<npc id="35351" count="1" respawn="10800" pos="146585 -47075 -1608 21928" />	
+		<npc id="35351" count="1" respawn="10800" pos="146527 -47110 -1608 21928" />	
+		<npc id="35351" count="1" respawn="10800" pos="146503 -47138 -1608 53248" />	
+		<npc id="35351" count="1" respawn="10800" pos="146684 -47023 -1608 53248" />	
+		<npc id="35351" count="1" respawn="10800" pos="146621 -47063 -1608 53248" />	
+		<npc id="35351" count="1" respawn="10800" pos="146563 -47099 -1608 53248" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1302]" event_name="[godard_castle2416_1302]">
+		<npc id="35351" count="1" respawn="10800" pos="148292 -47048 -1608 10752" />	
+		<npc id="35351" count="1" respawn="10800" pos="148348 -47080 -1608 10752" />	
+		<npc id="35351" count="1" respawn="10800" pos="148409 -47118 -1608 10752" />	
+		<npc id="35351" count="1" respawn="10800" pos="148461 -47152 -1608 10752" />	
+		<npc id="35351" count="1" respawn="10800" pos="148262 -47032 -1608 45056" />	
+		<npc id="35351" count="1" respawn="10800" pos="148319 -47065 -1608 45056" />	
+		<npc id="35351" count="1" respawn="10800" pos="148380 -47103 -1608 45056" />	
+		<npc id="35351" count="1" respawn="10800" pos="148432 -47136 -1608 45056" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1401]" event_name="[godard_castle2416_1401]">
+		<npc id="35350" count="1" respawn="10800" pos="146652 -47383 -1613 53248" />	
+		<npc id="35350" count="1" respawn="10800" pos="146686 -47362 -1613 53248" />	
+		<npc id="35350" count="1" respawn="10800" pos="146721 -47339 -1613 53248" />	
+		<npc id="35350" count="1" respawn="10800" pos="146790 -47295 -1613 53248" />	
+		<npc id="35350" count="1" respawn="10800" pos="146754 -47318 -1613 53248" />	
+		<npc id="35343" count="1" respawn="10800" pos="146681 -47428 -1613 53248" />	
+		<npc id="35343" count="1" respawn="10800" pos="146716 -47407 -1613 53248" />	
+		<npc id="35343" count="1" respawn="10800" pos="146750 -47384 -1613 53248" />	
+		<npc id="35343" count="1" respawn="10800" pos="146819 -47340 -1613 53248" />	
+		<npc id="35343" count="1" respawn="10800" pos="146783 -47363 -1613 53248" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1402]" event_name="[godard_castle2416_1402]">
+		<npc id="35350" count="1" respawn="10800" pos="148136 -47292 -1613 45056" />	
+		<npc id="35350" count="1" respawn="10800" pos="148175 -47313 -1613 45056" />	
+		<npc id="35350" count="1" respawn="10800" pos="148215 -47335 -1613 45056" />	
+		<npc id="35350" count="1" respawn="10800" pos="148251 -47357 -1613 45056" />	
+		<npc id="35350" count="1" respawn="10800" pos="148284 -47378 -1613 45056" />	
+		<npc id="35343" count="1" respawn="10800" pos="148114 -47328 -1613 45056" />	
+		<npc id="35343" count="1" respawn="10800" pos="148152 -47348 -1613 45056" />	
+		<npc id="35343" count="1" respawn="10800" pos="148193 -47371 -1613 45056" />	
+		<npc id="35343" count="1" respawn="10800" pos="148228 -47393 -1613 45056" />	
+		<npc id="35343" count="1" respawn="10800" pos="148262 -47414 -1613 45056" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1501]" event_name="[godard_castle2416_1501]">
+		<npc id="35350" count="1" respawn="10800" pos="147101 -50056 -2128 30048" />	
+		<npc id="35350" count="1" respawn="10800" pos="147111 -50022 -2128 30048" />	
+		<npc id="35350" count="1" respawn="10800" pos="147119 -49988 -2128 30048" />	
+		<npc id="35350" count="1" respawn="10800" pos="147127 -49956 -2128 30048" />	
+		<npc id="35350" count="1" respawn="10800" pos="147137 -49923 -2128 30048" />	
+		<npc id="35350" count="1" respawn="10800" pos="147144 -49894 -2128 30048" />	
+		<npc id="35350" count="1" respawn="10800" pos="147153 -49860 -2128 30048" />	
+		<npc id="35343" count="1" respawn="10800" pos="147132 -50052 -2128 30048" />	
+		<npc id="35343" count="1" respawn="10800" pos="147141 -50017 -2128 30048" />	
+		<npc id="35343" count="1" respawn="10800" pos="147150 -49983 -2128 30048" />	
+		<npc id="35343" count="1" respawn="10800" pos="147158 -49951 -2128 30048" />	
+		<npc id="35343" count="1" respawn="10800" pos="147168 -49918 -2128 30048" />	
+		<npc id="35343" count="1" respawn="10800" pos="147175 -49889 -2128 30048" />	
+		<npc id="35343" count="1" respawn="10800" pos="147184 -49855 -2128 30048" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1502]" event_name="[godard_castle2416_1502]">
+		<npc id="35350" count="1" respawn="10800" pos="147782 -49845 -2128 68248" />	
+		<npc id="35350" count="1" respawn="10800" pos="147791 -49879 -2128 68248" />	
+		<npc id="35350" count="1" respawn="10800" pos="147801 -49913 -2128 68248" />	
+		<npc id="35350" count="1" respawn="10800" pos="147809 -49945 -2128 68248" />	
+		<npc id="35350" count="1" respawn="10800" pos="147817 -49978 -2128 68248" />	
+		<npc id="35350" count="1" respawn="10800" pos="147826 -50007 -2128 68248" />	
+		<npc id="35350" count="1" respawn="10800" pos="147835 -50041 -2128 68248" />	
+		<npc id="35343" count="1" respawn="10800" pos="147750 -49842 -2128 68248" />	
+		<npc id="35343" count="1" respawn="10800" pos="147760 -49877 -2128 68248" />	
+		<npc id="35343" count="1" respawn="10800" pos="147769 -49911 -2128 68248" />	
+		<npc id="35343" count="1" respawn="10800" pos="147777 -49943 -2128 68248" />	
+		<npc id="35343" count="1" respawn="10800" pos="147785 -49975 -2128 68248" />	
+		<npc id="35343" count="1" respawn="10800" pos="147794 -50005 -2128 68248" />	
+		<npc id="35343" count="1" respawn="10800" pos="147803 -50038 -2128 68248" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1601]" event_name="[godard_castle2416_1601]">
+		<npc id="35351" count="1" respawn="10800" pos="146896 -49631 -2125 43520" />	
+		<npc id="35351" count="1" respawn="10800" pos="146934 -49653 -2125 43520" />	
+		<npc id="35351" count="1" respawn="10800" pos="146971 -49674 -2125 43520" />	
+		<npc id="35351" count="1" respawn="10800" pos="147006 -49695 -2125 43520" />	
+		<npc id="35351" count="1" respawn="10800" pos="147041 -49715 -2125 43520" />	
+		<npc id="35351" count="1" respawn="10800" pos="147081 -49736 -2125 43520" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1602]" event_name="[godard_castle2416_1602]">
+		<npc id="35351" count="1" respawn="10800" pos="147863 -49743 -2125 54616" />	
+		<npc id="35351" count="1" respawn="10800" pos="147900 -49720 -2125 54616" />	
+		<npc id="35351" count="1" respawn="10800" pos="147937 -49698 -2125 54616" />	
+		<npc id="35351" count="1" respawn="10800" pos="147973 -49677 -2125 54616" />	
+		<npc id="35351" count="1" respawn="10800" pos="148007 -49656 -2125 54616" />	
+		<npc id="35351" count="1" respawn="10800" pos="148044 -49632 -2125 54616" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1701]" event_name="[godard_castle2416_1701]">
+		<npc id="35350" count="1" respawn="10800" pos="145837 -50098 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="145869 -50098 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="145900 -50098 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="145931 -50098 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="145963 -50098 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="145994 -50098 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="146026 -50098 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="146057 -50098 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="145852 -50136 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="145884 -50136 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="145915 -50136 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="145946 -50136 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="145978 -50136 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="146010 -50136 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="146041 -50136 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="146072 -50136 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="145850 -50177 -1601 16312" />	
+		<npc id="35341" count="1" respawn="10800" pos="145882 -50177 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="145913 -50177 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="145944 -50177 -1601 16312" />	
+		<npc id="35326" count="1" respawn="10800" pos="145976 -50177 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="146007 -50177 -1601 16312" />	
+		<npc id="35341" count="1" respawn="10800" pos="146039 -50177 -1601 16312" />	
+		<npc id="35325" count="1" respawn="10800" pos="146070 -50177 -1601 16312" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1702]" event_name="[godard_castle2416_1702]">
+		<npc id="35350" count="1" respawn="10800" pos="148877 -50096 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="148909 -50096 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="148940 -50096 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="148971 -50096 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="149003 -50096 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="149034 -50096 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="149066 -50096 -1601 16312" />	
+		<npc id="35350" count="1" respawn="10800" pos="149097 -50096 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="148862 -50132 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="148894 -50132 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="148925 -50132 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="148956 -50132 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="148988 -50132 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="149020 -50132 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="149051 -50132 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="149082 -50132 -1601 16312" />	
+		<npc id="35324" count="1" respawn="120" pos="148860 -50174 -1601 16312" />	
+		<npc id="35341" count="1" respawn="120" pos="148892 -50174 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="148923 -50174 -1601 16312" />	
+		<npc id="35326" count="1" respawn="120" pos="148954 -50174 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="148986 -50174 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="149017 -50174 -1601 16312" />	
+		<npc id="35341" count="1" respawn="120" pos="149049 -50174 -1601 16312" />	
+		<npc id="35343" count="1" respawn="10800" pos="149080 -50174 -1601 16312" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1801]" event_name="[godard_castle2416_1801]">
+		<npc id="35330" count="1" respawn="120" pos="145969 -50642 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="146017 -50642 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="146068 -50642 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="146117 -50642 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="146168 -50642 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="146217 -50642 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="146268 -50642 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="146316 -50642 -1601 16312" />	
+		<npc id="35326" count="1" respawn="120" pos="145965 -50678 -1601 16312" />	
+		<npc id="35327" count="1" respawn="120" pos="146014 -50678 -1601 16312" />	
+		<npc id="35328" count="1" respawn="120" pos="146065 -50678 -1601 16312" />	
+		<npc id="35328" count="1" respawn="120" pos="146113 -50678 -1601 16312" />	
+		<npc id="35328" count="1" respawn="120" pos="146164 -50678 -1601 16312" />	
+		<npc id="35328" count="1" respawn="120" pos="146213 -50678 -1601 16312" />	
+		<npc id="35327" count="1" respawn="120" pos="146264 -50678 -1601 16312" />	
+		<npc id="35326" count="1" respawn="120" pos="146313 -50678 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="146443 -50721 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="146492 -50721 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="146543 -50721 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="146592 -50721 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="146643 -50721 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="146691 -50721 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="146742 -50721 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="146791 -50721 -1601 16312" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1802]" event_name="[godard_castle2416_1802]">
+		<npc id="35330" count="1" respawn="120" pos="148660 -50692 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="148709 -50692 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="148759 -50692 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="148808 -50692 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="148859 -50692 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="148908 -50692 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="148959 -50692 -1601 16312" />	
+		<npc id="35330" count="1" respawn="120" pos="149008 -50692 -1601 16312" />	
+		<npc id="35326" count="1" respawn="120" pos="148656 -50728 -1601 16312" />	
+		<npc id="35327" count="1" respawn="120" pos="148705 -50728 -1601 16312" />	
+		<npc id="35328" count="1" respawn="120" pos="148756 -50728 -1601 16312" />	
+		<npc id="35328" count="1" respawn="120" pos="148805 -50728 -1601 16312" />	
+		<npc id="35328" count="1" respawn="120" pos="148856 -50728 -1601 16312" />	
+		<npc id="35328" count="1" respawn="120" pos="148904 -50728 -1601 16312" />	
+		<npc id="35327" count="1" respawn="120" pos="148955 -50728 -1601 16312" />	
+		<npc id="35326" count="1" respawn="120" pos="149004 -50728 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="148144 -50736 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="148193 -50736 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="148244 -50736 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="148293 -50736 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="148344 -50736 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="148392 -50736 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="148443 -50736 -1601 16312" />	
+		<npc id="35351" count="1" respawn="120" pos="148492 -50736 -1601 16312" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1901]" event_name="[godard_castle2416_1901]">
+		<npc id="35340" count="1" respawn="10800" pos="145779 -50371 -1344 0" />	
+		<npc id="35351" count="1" respawn="10800" pos="145779 -50325 -1344 0" />	
+		<npc id="35341" count="1" respawn="10800" pos="145778 -50281 -1344 0" />	
+		<npc id="35351" count="1" respawn="10800" pos="145779 -50419 -1344 0" />	
+		<npc id="35351" count="1" respawn="10800" pos="145778 -50469 -1344 0" />	
+		<npc id="35351" count="1" respawn="10800" pos="145778 -50606 -1344 0" />	
+		<npc id="35351" count="1" respawn="10800" pos="145777 -50561 -1344 0" />	
+		<npc id="35351" count="1" respawn="10800" pos="145778 -50513 -1344 0" />	
+	</spawn>
+	<spawn name="[godard_castle2416_1902]" event_name="[godard_castle2416_1902]">
+		<npc id="35340" count="1" respawn="10800" pos="149150 -50389 -1344 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="149150 -50344 -1344 32768" />	
+		<npc id="35341" count="1" respawn="10800" pos="149150 -50299 -1344 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="149150 -50437 -1344 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="149150 -50488 -1344 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="149150 -50624 -1344 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="149150 -50579 -1344 32768" />	
+		<npc id="35351" count="1" respawn="10800" pos="149150 -50531 -1344 32768" />	
+	</spawn>
+	<spawn name="[godard_castle2416_2001]" event_name="[godard_castle2416_2001]">
+		<npc id="35340" count="1" respawn="10800" pos="146188 -50876 -1344 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="146243 -50876 -1344 16416" />	
+		<npc id="35341" count="1" respawn="10800" pos="146363 -50876 -1344 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="146302 -50876 -1344 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="146423 -50876 -1344 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="146480 -50876 -1344 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="146590 -50876 -1344 16416" />	
+		<npc id="35340" count="1" respawn="10800" pos="146533 -50876 -1344 16416" />	
+	</spawn>
+	<spawn name="[godard_castle2416_2002]" event_name="[godard_castle2416_2002]">
+		<npc id="35340" count="1" respawn="10800" pos="148317 -50871 -1341 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="148372 -50871 -1341 16416" />	
+		<npc id="35341" count="1" respawn="10800" pos="148491 -50871 -1341 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="148430 -50871 -1341 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="148551 -50871 -1341 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="148608 -50871 -1341 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="148719 -50871 -1341 16416" />	
+		<npc id="35340" count="1" respawn="10800" pos="148661 -50871 -1341 16416" />	
+	</spawn>
+	<spawn name="[godard_castle2416_2101]" event_name="[godard_castle2416_2101]">
+		<npc id="35351" count="1" respawn="10800" pos="146413 -50047 -1341 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="146473 -50048 -1341 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="146527 -50048 -1341 49152" />	
+		<npc id="35340" count="1" respawn="10800" pos="146642 -50049 -1341 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="146585 -50048 -1341 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="146755 -50050 -1341 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="146697 -50050 -1341 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="146809 -50051 -1341 49152" />	
+	</spawn>
+	<spawn name="[godard_castle2416_2102]" event_name="[godard_castle2416_2102]">
+		<npc id="35351" count="1" respawn="10800" pos="148155 -50045 -1344 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="148215 -50045 -1344 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="148269 -50046 -1344 49152" />	
+		<npc id="35340" count="1" respawn="10800" pos="148384 -50046 -1344 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="148328 -50046 -1344 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="148497 -50048 -1344 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="148439 -50047 -1344 49152" />	
+		<npc id="35351" count="1" respawn="10800" pos="148552 -50048 -1344 49152" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0201]" event_name="[godard_castle2416_0201]">
+		<npc id="35340" count="1" respawn="10800" pos="147134 -45144 -1352 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="147218 -45144 -1352 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="147105 -45263 -1352 31296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147117 -45180 -1352 31296" />	
+		<npc id="35340" count="1" respawn="10800" pos="147111 -45221 -1352 31296" />	
+		<npc id="35340" count="1" respawn="10800" pos="147241 -45225 -1352 1424" />	
+		<npc id="35351" count="1" respawn="10800" pos="147247 -45267 -1352 1424" />	
+		<npc id="35351" count="1" respawn="10800" pos="147236 -45184 -1352 1424" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0202]" event_name="[godard_castle2416_0202]">
+		<npc id="35351" count="1" respawn="10800" pos="147714 -45140 -1352 16416" />	
+		<npc id="35340" count="1" respawn="10800" pos="147797 -45140 -1352 16416" />	
+		<npc id="35351" count="1" respawn="10800" pos="147684 -45258 -1352 31296" />	
+		<npc id="35351" count="1" respawn="10800" pos="147696 -45176 -1352 31296" />	
+		<npc id="35340" count="1" respawn="10800" pos="147690 -45217 -1352 31296" />	
+		<npc id="35340" count="1" respawn="10800" pos="147820 -45221 -1352 1424" />	
+		<npc id="35351" count="1" respawn="10800" pos="147826 -45262 -1352 1424" />	
+		<npc id="35351" count="1" respawn="10800" pos="147815 -45179 -1352 1424" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0601]" event_name="[godard_castle2416_0601]">
+		<npc id="35351" count="1" respawn="10800" pos="146305 -45571 -1744 19960" />	
+		<npc id="35340" count="1" respawn="10800" pos="146373 -45544 -1744 19960" />	
+		<npc id="35351" count="1" respawn="10800" pos="146400 -45568 -1744 4744" />	
+		<npc id="35340" count="1" respawn="10800" pos="146419 -45600 -1744 4744" />	
+		<npc id="35351" count="1" respawn="10800" pos="146435 -45633 -1744 4352" />	
+		<npc id="35351" count="1" respawn="10800" pos="146317 -45678 -1744 34888" />	
+		<npc id="35340" count="1" respawn="10800" pos="146310 -45642 -1744 34496" />	
+		<npc id="35351" count="1" respawn="10800" pos="146302 -45605 -1744 34496" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0602]" event_name="[godard_castle2416_0602]">
+		<npc id="35340" count="1" respawn="10800" pos="148552 -45546 -1744 12832" />	
+		<npc id="35351" count="1" respawn="10800" pos="148621 -45569 -1744 12832" />	
+		<npc id="35351" count="1" respawn="10800" pos="148628 -45604 -1744 -2384" />	
+		<npc id="35340" count="1" respawn="10800" pos="148622 -45642 -1744 -2384" />	
+		<npc id="35351" count="1" respawn="10800" pos="148613 -45677 -1744 -2776" />	
+		<npc id="35351" count="1" respawn="10800" pos="148493 -45638 -1744 27760" />	
+		<npc id="35340" count="1" respawn="10800" pos="148511 -45605 -1744 27368" />	
+		<npc id="35351" count="1" respawn="10800" pos="148528 -45571 -1744 27368" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0801]" event_name="[godard_castle2416_0801]">
+		<npc id="35351" count="1" respawn="10800" pos="144645 -47090 -1744 27912" />	
+		<npc id="35340" count="1" respawn="10800" pos="144676 -47024 -1744 27912" />	
+		<npc id="35351" count="1" respawn="10800" pos="144711 -47022 -1744 12696" />	
+		<npc id="35340" count="1" respawn="10800" pos="144748 -47033 -1744 12696" />	
+		<npc id="35351" count="1" respawn="10800" pos="144782 -47046 -1744 12304" />	
+		<npc id="35351" count="1" respawn="10800" pos="144728 -47160 -1744 42840" />	
+		<npc id="35340" count="1" respawn="10800" pos="144698 -47139 -1744 42448" />	
+		<npc id="35351" count="1" respawn="10800" pos="144666 -47117 -1744 42448" />	
+	</spawn>
+	<spawn name="[godard_castle2416_0802]" event_name="[godard_castle2416_0802]">
+		<npc id="35340" count="1" respawn="10800" pos="150254 -47023 -1744 4736" />	
+		<npc id="35351" count="1" respawn="10800" pos="150288 -47087 -1744 4736" />	
+		<npc id="35351" count="1" respawn="10800" pos="150268 -47117 -1744 -10480" />	
+		<npc id="35340" count="1" respawn="10800" pos="150238 -47139 -1744 -10480" />	
+		<npc id="35351" count="1" respawn="10800" pos="150206 -47159 -1744 -10872" />	
+		<npc id="35351" count="1" respawn="10800" pos="150148 -47047 -1744 19664" />	
+		<npc id="35340" count="1" respawn="10800" pos="150184 -47036 -1744 19272" />	
+		<npc id="35351" count="1" respawn="10800" pos="150220 -47023 -1744 19272" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_tk01]" event_name="[lotto_manager]">
+		<npc id="30990" count="1" respawn="60" pos="147908 -55221 -2728 48000" />	
+	</spawn>
+	<spawn name="[raidboss_gordon_2416_goddard]">
+		<npc id="29095" count="1" respawn="64800" respawn_rand="43200" pos="147408 -43552 -2296 0" >	
+			<ai_params>
+				<set name="moveroute" val="gordon" />
+			</ai_params>
+		</npc>
+	</spawn>
+	<spawn name="[godard03_npc2416_04]">
+		<npc id="35367" count="1" respawn="60" pos="154208 -51648 -2992 0" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_01]">
+		<npc id="35363" count="1" respawn="60" pos="147408 -49296 -2120 16500" />	
+	</spawn>
+	<spawn name="[court_magician_goddard]">
+		<npc id="35654" count="1" respawn="60" pos="147800 -48869 -2272 16384" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_02]">
+		<npc id="35365" count="1" respawn="60" pos="147696 -49312 -2275 16500" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_03]">
+		<npc id="35364" count="1" respawn="60" pos="147470 -49083 -503 16500" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_05]">
+		<npc id="35356" count="1" respawn="60" pos="147808 -45328 -2083 16000" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_06]">
+		<npc id="35356" count="1" respawn="60" pos="147264 -45632 -2083 48500" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_07]" event_name="[godard03_npc2416_07]">
+		<npc id="35355" count="1" respawn="60" pos="147456 -46448 -963 49000" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_08]">
+		<npc id="35361" count="1" respawn="60" pos="146992 -48896 -2638 16000" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_09]">
+		<npc id="35362" count="1" respawn="60" pos="147952 -48912 -2638 16000" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_10]">
+		<npc id="35359" count="1" respawn="60" pos="148612 -49004 -688 16000" />	
+		<npc id="35359" count="1" respawn="60" pos="148664 -49168 -672 48000" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_11]">
+		<npc id="35360" count="1" respawn="60" pos="146312 -49004 -688 16000" />	
+		<npc id="35360" count="1" respawn="60" pos="146280 -49180 -672 48000" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_12]">
+		<npc id="35358" count="1" respawn="60" pos="149272 -48088 -2382 0" />	
+		<npc id="35358" count="1" respawn="60" pos="149024 -48080 -2382 33000" />	
+	</spawn>
+	<spawn name="[godard03_npc2416_13]">
+		<npc id="35357" count="1" respawn="60" pos="145640 -48096 -2382 32000" />	
+		<npc id="35357" count="1" respawn="60" pos="145904 -48096 -2382 0" />	
+	</spawn>
+	<spawn name="[godard04_npc2416_101]">
+		<npc id="31640" count="1" respawn="60" pos="160082 -47862 -3678 5000" />	
+	</spawn>
+	<spawn name="[godard04_npc2416_102]">
+		<npc id="31641" count="1" respawn="60" pos="147408 -64016 -3430 49000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_01]">
+		<npc id="31257" count="1" respawn="60" pos="148975 -58919 -2965 22000" />	
+		<npc id="31258" count="1" respawn="60" pos="149012 -58894 -2965 22000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_02]">
+		<npc id="31256" count="1" respawn="60" pos="148832 -58960 -2965 22000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_03]">
+		<npc id="31259" count="1" respawn="60" pos="149152 -58776 -2961 31000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_04]">
+		<npc id="31267" count="1" respawn="60" pos="146440 -57500 -2965 43000" />	
+		<npc id="31268" count="1" respawn="60" pos="146412 -57484 -2965 43000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_05]">
+		<npc id="31269" count="1" respawn="60" pos="146528 -57936 -2965 22000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_06]">
+		<npc id="31270" count="1" respawn="60" pos="146172 -57380 -2965 54000" />	
+		<npc id="31600" count="1" respawn="60" pos="146228 -57400 -2965 44000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_08]">
+		<npc id="31287" count="1" respawn="60" pos="145168 -54880 -2965 28000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_07]">
+		<npc id="31285" count="1" respawn="60" pos="145080 -54592 -2965 45000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_09]">
+		<npc id="31286" count="1" respawn="60" pos="144808 -54732 -2965 62000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_10]">
+		<npc id="31271" count="1" respawn="60" pos="146396 -58696 -2976 60000" />	
+		<npc id="31272" count="1" respawn="60" pos="146432 -58784 -2976 0" />	
+		<npc id="31583" count="1" respawn="60" pos="146428 -58880 -2976 28000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_11]">
+		<npc id="31273" count="1" respawn="60" pos="146580 -58752 -2973 45000" />	
+		<npc id="31587" count="1" respawn="60" pos="146628 -58776 -2972 45000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_12]">
+		<npc id="31274" count="1" respawn="60" pos="146688 -59008 -2972 12000" />	
+		<npc id="31597" count="1" respawn="60" pos="146624 -58976 -2972 12000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_13]">
+		<npc id="31279" count="1" respawn="60" pos="147712 -52688 -2731 49000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_14]">
+		<npc id="31280" count="1" respawn="60" pos="148048 -52416 -2736 49000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_15]">
+		<npc id="31281" count="1" respawn="60" pos="147376 -52416 -2736 49000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_16]">
+		<npc id="31755" count="1" respawn="60" pos="146553 -52608 -2760 49500" />	
+		<npc id="31282" count="1" respawn="60" pos="146688 -52576 -2736 49500" />	
+		<npc id="31283" count="1" respawn="60" pos="146416 -52564 -2736 49500" />	
+		<npc id="31585" count="1" respawn="60" pos="146688 -52592 -2736 16000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_17]">
+		<npc id="31284" count="1" respawn="60" pos="147840 -53872 -2731 17000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_18]">
+		<npc id="31276" count="1" respawn="60" pos="148880 -52608 -2736 49500" />	
+		<npc id="31277" count="1" respawn="60" pos="149008 -52560 -2736 49500" />	
+		<npc id="31278" count="1" respawn="60" pos="148736 -52560 -2736 49500" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_19]">
+		<npc id="31275" count="1" respawn="60" pos="147966 -55228 -2728 48000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_21]">
+		<npc id="31292" count="1" respawn="60" pos="149216 -56544 -2779 27000" />	
+		<npc id="31293" count="1" respawn="60" pos="149360 -56336 -2779 27000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_22]">
+		<npc id="31294" count="1" respawn="60" pos="144584 -57904 -2982 32000" />	
+		<npc id="31295" count="1" respawn="60" pos="144364 -57580 -2982 44000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_23]">
+		<npc id="31296" count="1" respawn="60" pos="147920 -59424 -2982 45000" />	
+		<npc id="31297" count="1" respawn="60" pos="147504 -59424 -2982 53000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_24]">
+		<npc id="31298" count="1" respawn="60" pos="151060 -57576 -2982 53000" />	
+		<npc id="31299" count="1" respawn="60" pos="150832 -57904 -2982 0" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_25]">
+		<npc id="31260" count="1" respawn="60" pos="149380 -57590 -2966 32000" />	
+		<npc id="31262" count="1" respawn="60" pos="149372 -57552 -2966 32000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_26]">
+		<npc id="31261" count="1" respawn="60" pos="149232 -57680 -2966 22000" />	
+		<npc id="31579" count="1" respawn="60" pos="149278 -57653 -2968 22000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_27]">
+		<npc id="31263" count="1" respawn="60" pos="149312 -57360 -2966 40000" />	
+		<npc id="31584" count="1" respawn="60" pos="149352 -57452 -2966 6000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_28]">
+		<npc id="31264" count="1" respawn="60" pos="149008 -57696 -2966 5000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_29]">
+		<npc id="31265" count="1" respawn="60" pos="148928 -58400 -2979 20000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_31]">
+		<npc id="35468" count="1" respawn="60" pos="148912 -55568 -2779 32000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_32]">
+		<npc id="35467" count="1" respawn="60" pos="149024 -55456 -2765 0" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_33]">
+		<npc id="35466" count="1" respawn="60" pos="148224 -56496 -2779 21000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_34]">
+		<npc id="35465" count="1" respawn="60" pos="148381 -56525 -2760 54000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_35]">
+		<npc id="35464" count="1" respawn="60" pos="147072 -56416 -2779 11500" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_36]">
+		<npc id="35463" count="1" respawn="60" pos="147134 -56576 -2760 44000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_37]">
+		<npc id="35462" count="1" respawn="60" pos="146488 -55432 -2779 1000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_38]">
+		<npc id="35461" count="1" respawn="60" pos="146416 -55568 -2765 32000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_39]">
+		<npc id="31608" count="1" respawn="60" pos="146560 -53632 -2736 16000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_40]">
+		<npc id="31588" count="1" respawn="60" pos="149488 -57152 -2979 57000" />	
+		<npc id="31700" count="1" respawn="60" pos="149536 -57136 -2979 35000" />	
+		<npc id="31701" count="1" respawn="60" pos="149528 -57180 -2979 27000" />	
+		<npc id="31702" count="1" respawn="60" pos="149492 -57200 -2979 18000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_41]">
+		<npc id="31693" count="1" respawn="60" pos="149888 -56624 -2979 59000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_42]">
+		<npc id="31692" count="1" respawn="60" pos="148256 -55504 -2779 60000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_43]">
+		<npc id="31288" count="1" respawn="60" pos="144204 -55780 -2965 2000" />	
+		<npc id="31289" count="1" respawn="60" pos="144228 -55720 -2965 60000" />	
+		<npc id="31290" count="1" respawn="60" pos="144256 -55824 -2965 8000" />	
+		<npc id="31291" count="1" respawn="60" pos="144252 -55584 -2965 51000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_44]">
+		<npc id="31589" count="1" respawn="60" pos="144340 -55752 -2965 35000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_45]">
+		<npc id="35366" count="1" respawn="60" pos="145704 -57104 -2979 39000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_46]">
+		<npc id="31674" count="1" respawn="60" pos="150012 -56808 -2979 59000" />	
+		<npc id="31674" count="1" respawn="60" pos="149864 -57020 -2979 59000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_47]">
+		<npc id="31674" count="1" respawn="60" pos="147824 -58016 -2979 49000" />	
+		<npc id="31674" count="1" respawn="60" pos="147600 -58012 -2979 49000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_48]">
+		<npc id="31674" count="1" respawn="60" pos="145464 -56776 -2979 39000" />	
+		<npc id="31674" count="1" respawn="60" pos="145616 -56976 -2979 39000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_49]">
+		<npc id="31673" count="1" respawn="60" pos="143280 -58800 -3462 39000" />	
+		<npc id="31673" count="1" respawn="60" pos="143072 -58496 -3446 39000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_50]">
+		<npc id="31673" count="1" respawn="60" pos="147900 -61196 -3513 49000" />	
+		<npc id="31673" count="1" respawn="60" pos="147492 -61188 -3504 49000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_51]">
+		<npc id="31673" count="1" respawn="60" pos="152432 -58576 -3487 59000" />	
+		<npc id="31673" count="1" respawn="60" pos="152192 -58864 -3484 59000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_52]">
+		<npc id="31691" count="1" respawn="60" pos="148784 -53008 -2736 0" />	
+		<npc id="31691" count="1" respawn="60" pos="148976 -53008 -2736 0" />	
+		<npc id="31691" count="1" respawn="60" pos="148784 -53264 -2736 0" />	
+		<npc id="31691" count="1" respawn="60" pos="148976 -53264 -2736 0" />	
+		<npc id="31691" count="1" respawn="60" pos="148976 -53456 -2736 0" />	
+		<npc id="31691" count="1" respawn="60" pos="148784 -53456 -2736 0" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_54]">
+		<npc id="31740" count="1" respawn="60" pos="150144 -57920 -2979 24000" />	
+		<npc id="31741" count="1" respawn="60" pos="150208 -57872 -2979 26000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_55]">
+		<npc id="31688" count="1" respawn="60" pos="147472 -55232 -2736 49000" />	
+		<npc id="31690" count="1" respawn="60" pos="147408 -55232 -2736 49000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_56]">
+		<npc id="31837" count="1" respawn="60" pos="144604 -57124 -2979 0" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_57]">
+		<npc id="31838" count="1" respawn="60" pos="146856 -56424 -2779 26000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_58]">
+		<npc id="31991" count="1" respawn="60" pos="148548 -56376 -2779 5000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_59]">
+		<npc id="31840" count="1" respawn="60" pos="147556 -57828 -2979 49000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_60]">
+		<npc id="31841" count="1" respawn="60" pos="150748 -57372 -2979 28000" />	
+	</spawn>
+	<spawn name="[godard02_npc2416_61]">
+		<npc id="30767" count="1" respawn="60" pos="149272 -55888 -2779 48000" />	
+	</spawn>
+	<spawn name="[godard04_2416_01]">
+		<territory>	
+			<location x="155863" y="-44042" minz="-3820" maxz="-3620" />
+			<location x="156555" y="-43514" minz="-3820" maxz="-3620" />
+			<location x="156507" y="-42426" minz="-3820" maxz="-3620" />
+			<location x="154603" y="-42186" minz="-3820" maxz="-3620" />
+		</territory>
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21275" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21276" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_02]">
+		<territory>	
+			<location x="155325" y="-44925" minz="-3832" maxz="-3532" />
+			<location x="155809" y="-44057" minz="-3832" maxz="-3532" />
+			<location x="154781" y="-42517" minz="-3832" maxz="-3532" />
+			<location x="153861" y="-43149" minz="-3832" maxz="-3532" />
+			<location x="153901" y="-43925" minz="-3832" maxz="-3532" />
+		</territory>
+		<npc id="21276" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_03]">
+		<territory>	
+			<location x="153448" y="-45046" minz="-3817" maxz="-3617" />
+			<location x="155160" y="-45746" minz="-3817" maxz="-3617" />
+			<location x="155348" y="-44946" minz="-3817" maxz="-3617" />
+			<location x="153892" y="-43922" minz="-3817" maxz="-3617" />
+			<location x="153156" y="-44530" minz="-3817" maxz="-3617" />
+		</territory>
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_04]">
+		<territory>	
+			<location x="153779" y="-46446" minz="-3901" maxz="-3701" />
+			<location x="154375" y="-46582" minz="-3901" maxz="-3701" />
+			<location x="155155" y="-45750" minz="-3901" maxz="-3701" />
+			<location x="153927" y="-45250" minz="-3901" maxz="-3701" />
+		</territory>
+		<npc id="21275" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_05]">
+		<territory>	
+			<location x="153960" y="-48228" minz="-3874" maxz="-3674" />
+			<location x="155348" y="-48256" minz="-3874" maxz="-3674" />
+			<location x="154524" y="-46656" minz="-3874" maxz="-3674" />
+			<location x="153928" y="-46532" minz="-3874" maxz="-3674" />
+		</territory>
+		<npc id="21275" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_06]">
+		<territory>	
+			<location x="155357" y="-48244" minz="-3871" maxz="-3671" />
+			<location x="155753" y="-47888" minz="-3871" maxz="-3671" />
+			<location x="156065" y="-47108" minz="-3871" maxz="-3671" />
+			<location x="154693" y="-46940" minz="-3871" maxz="-3671" />
+		</territory>
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21276" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_07]">
+		<territory>	
+			<location x="155632" y="-47047" minz="-3846" maxz="-3646" />
+			<location x="156056" y="-47107" minz="-3846" maxz="-3646" />
+			<location x="156460" y="-46679" minz="-3846" maxz="-3646" />
+			<location x="156612" y="-46139" minz="-3846" maxz="-3646" />
+			<location x="155820" y="-46119" minz="-3846" maxz="-3646" />
+		</territory>
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21275" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_08]">
+		<territory>	
+			<location x="155926" y="-46042" minz="-3839" maxz="-3489" />
+			<location x="156666" y="-46070" minz="-3839" maxz="-3489" />
+			<location x="156938" y="-45634" minz="-3839" maxz="-3489" />
+			<location x="155950" y="-44858" minz="-3839" maxz="-3489" />
+			<location x="155634" y="-45714" minz="-3839" maxz="-3489" />
+		</territory>
+		<npc id="21276" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21275" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_09]">
+		<territory>	
+			<location x="158334" y="-47705" minz="-3530" maxz="-3230" />
+			<location x="159310" y="-47157" minz="-3530" maxz="-3230" />
+			<location x="158954" y="-46433" minz="-3530" maxz="-3230" />
+			<location x="157438" y="-45665" minz="-3530" maxz="-3230" />
+			<location x="157054" y="-46777" minz="-3530" maxz="-3230" />
+		</territory>
+		<npc id="21275" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_10]">
+		<territory>	
+			<location x="156612" y="-49272" minz="-3374" maxz="-3074" />
+			<location x="157652" y="-49032" minz="-3374" maxz="-3074" />
+			<location x="158308" y="-47700" minz="-3374" maxz="-3074" />
+			<location x="157048" y="-46812" minz="-3374" maxz="-3074" />
+			<location x="156028" y="-48892" minz="-3374" maxz="-3074" />
+		</territory>
+		<npc id="21276" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_11]">
+		<territory>	
+			<location x="156645" y="-49766" minz="-3241" maxz="-3041" />
+			<location x="157897" y="-49838" minz="-3241" maxz="-3041" />
+			<location x="157653" y="-49086" minz="-3241" maxz="-3041" />
+			<location x="156669" y="-49318" minz="-3241" maxz="-3041" />
+		</territory>
+		<npc id="21276" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_12]">
+		<territory>	
+			<location x="154880" y="-49132" minz="-3877" maxz="-3477" />
+			<location x="155492" y="-48952" minz="-3877" maxz="-3477" />
+			<location x="155500" y="-48252" minz="-3877" maxz="-3477" />
+			<location x="154732" y="-48268" minz="-3877" maxz="-3477" />
+			<location x="154680" y="-48856" minz="-3877" maxz="-3477" />
+		</territory>
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_13]">
+		<territory>	
+			<location x="155518" y="-49861" minz="-3591" maxz="-3191" />
+			<location x="156150" y="-49749" minz="-3591" maxz="-3191" />
+			<location x="155586" y="-48949" minz="-3591" maxz="-3191" />
+			<location x="154914" y="-49145" minz="-3591" maxz="-3191" />
+			<location x="155214" y="-49641" minz="-3591" maxz="-3191" />
+		</territory>
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_14]">
+		<territory>	
+			<location x="155676" y="-51488" minz="-3258" maxz="-2858" />
+			<location x="158272" y="-51064" minz="-3258" maxz="-2858" />
+			<location x="157884" y="-49896" minz="-3258" maxz="-2858" />
+			<location x="156500" y="-49836" minz="-3258" maxz="-2858" />
+			<location x="155428" y="-50076" minz="-3258" maxz="-2858" />
+		</territory>
+		<npc id="21276" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21275" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_15]">
+		<territory>	
+			<location x="157754" y="-53269" minz="-3050" maxz="-2750" />
+			<location x="158330" y="-52265" minz="-3050" maxz="-2750" />
+			<location x="158214" y="-51089" minz="-3050" maxz="-2750" />
+			<location x="157002" y="-51273" minz="-3050" maxz="-2750" />
+		</territory>
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21277" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_16]">
+		<territory>	
+			<location x="155691" y="-53140" minz="-2999" maxz="-2699" />
+			<location x="157703" y="-53224" minz="-2999" maxz="-2699" />
+			<location x="156987" y="-51284" minz="-2999" maxz="-2699" />
+			<location x="155683" y="-51488" minz="-2999" maxz="-2699" />
+		</territory>
+		<npc id="21274" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21276" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_17]">
+		<territory>	
+			<location x="154655" y="-57042" minz="-3270" maxz="-3070" />
+			<location x="156127" y="-56498" minz="-3270" maxz="-3070" />
+			<location x="156355" y="-54762" minz="-3270" maxz="-3070" />
+			<location x="154603" y="-54910" minz="-3270" maxz="-3070" />
+		</territory>
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_18]">
+		<territory>	
+			<location x="156141" y="-56491" minz="-3254" maxz="-2954" />
+			<location x="158073" y="-55195" minz="-3254" maxz="-2954" />
+			<location x="157197" y="-54731" minz="-3254" maxz="-2954" />
+			<location x="156365" y="-54783" minz="-3254" maxz="-2954" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_19]">
+		<territory>	
+			<location x="156995" y="-58258" minz="-3290" maxz="-2990" />
+			<location x="158243" y="-58442" minz="-3290" maxz="-2990" />
+			<location x="158999" y="-56214" minz="-3290" maxz="-2990" />
+			<location x="158067" y="-55230" minz="-3290" maxz="-2990" />
+			<location x="156131" y="-56510" minz="-3290" maxz="-2990" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_20]">
+		<territory>	
+			<location x="158258" y="-58452" minz="-3250" maxz="-2950" />
+			<location x="159706" y="-58596" minz="-3250" maxz="-2950" />
+			<location x="159978" y="-57864" minz="-3250" maxz="-2950" />
+			<location x="159346" y="-57364" minz="-3250" maxz="-2950" />
+			<location x="158654" y="-57272" minz="-3250" maxz="-2950" />
+		</territory>
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_21]">
+		<territory>	
+			<location x="154776" y="-58270" minz="-3393" maxz="-2993" />
+			<location x="156672" y="-57630" minz="-3393" maxz="-2993" />
+			<location x="156128" y="-56514" minz="-3393" maxz="-2993" />
+			<location x="154652" y="-57046" minz="-3393" maxz="-2993" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_22]">
+		<territory>	
+			<location x="153932" y="-58187" minz="-3473" maxz="-3073" />
+			<location x="154780" y="-58287" minz="-3473" maxz="-3073" />
+			<location x="154604" y="-56479" minz="-3473" maxz="-3073" />
+			<location x="153748" y="-57475" minz="-3473" maxz="-3073" />
+		</territory>
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_24]">
+		<territory>	
+			<location x="151025" y="-61991" minz="-3368" maxz="-2968" />
+			<location x="152865" y="-60567" minz="-3368" maxz="-2968" />
+			<location x="152597" y="-60127" minz="-3368" maxz="-2968" />
+			<location x="150989" y="-61431" minz="-3368" maxz="-2968" />
+		</territory>
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_25]">
+		<territory>	
+			<location x="151939" y="-62192" minz="-3234" maxz="-2834" />
+			<location x="152499" y="-61836" minz="-3234" maxz="-2834" />
+			<location x="152635" y="-60748" minz="-3234" maxz="-2834" />
+			<location x="151743" y="-61460" minz="-3234" maxz="-2834" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_26]">
+		<territory>	
+			<location x="151602" y="-63191" minz="-3427" maxz="-3027" />
+			<location x="151930" y="-62191" minz="-3427" maxz="-3027" />
+			<location x="151730" y="-61443" minz="-3427" maxz="-3027" />
+			<location x="151042" y="-61999" minz="-3427" maxz="-3027" />
+		</territory>
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_27]">
+		<territory>	
+			<location x="151257" y="-63641" minz="-3480" maxz="-3280" />
+			<location x="151569" y="-63201" minz="-3480" maxz="-3280" />
+			<location x="151217" y="-62433" minz="-3480" maxz="-3280" />
+			<location x="150793" y="-62893" minz="-3480" maxz="-3280" />
+		</territory>
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_28]">
+		<territory>	
+			<location x="150078" y="-63754" minz="-3490" maxz="-3290" />
+			<location x="151234" y="-63650" minz="-3490" maxz="-3290" />
+			<location x="150770" y="-62906" minz="-3490" maxz="-3290" />
+			<location x="150470" y="-62886" minz="-3490" maxz="-3290" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_29]">
+		<territory>	
+			<location x="149584" y="-63982" minz="-3462" maxz="-3262" />
+			<location x="150032" y="-63734" minz="-3462" maxz="-3262" />
+			<location x="150408" y="-62918" minz="-3462" maxz="-3262" />
+			<location x="149368" y="-62714" minz="-3462" maxz="-3262" />
+		</territory>
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_30]">
+		<territory>	
+			<location x="148160" y="-64119" minz="-3391" maxz="-3091" />
+			<location x="149548" y="-63911" minz="-3391" maxz="-3091" />
+			<location x="149356" y="-62743" minz="-3391" maxz="-3091" />
+			<location x="148196" y="-62811" minz="-3391" maxz="-3091" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_31]">
+		<territory>	
+			<location x="145137" y="-64190" minz="-3526" maxz="-3126" />
+			<location x="146853" y="-64062" minz="-3526" maxz="-3126" />
+			<location x="147233" y="-62442" minz="-3526" maxz="-3126" />
+			<location x="145557" y="-62442" minz="-3526" maxz="-3126" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21280" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_32]">
+		<territory>	
+			<location x="144626" y="-63984" minz="-3477" maxz="-3277" />
+			<location x="145134" y="-64208" minz="-3477" maxz="-3277" />
+			<location x="145534" y="-62468" minz="-3477" maxz="-3277" />
+			<location x="144406" y="-62296" minz="-3477" maxz="-3277" />
+			<location x="144338" y="-63592" minz="-3477" maxz="-3277" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21281" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_33]">
+		<territory>	
+			<location x="142854" y="-62869" minz="-3495" maxz="-3295" />
+			<location x="144322" y="-63813" minz="-3495" maxz="-3295" />
+			<location x="144398" y="-62277" minz="-3495" maxz="-3295" />
+			<location x="143446" y="-61829" minz="-3495" maxz="-3295" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21279" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_34]">
+		<territory>	
+			<location x="143050" y="-62513" minz="-3400" maxz="-3200" />
+			<location x="143446" y="-61825" minz="-3400" maxz="-3200" />
+			<location x="142782" y="-61137" minz="-3400" maxz="-3200" />
+			<location x="142434" y="-61545" minz="-3400" maxz="-3200" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_35]">
+		<territory>	
+			<location x="143433" y="-61776" minz="-3410" maxz="-3110" />
+			<location x="144353" y="-62212" minz="-3410" maxz="-3110" />
+			<location x="143837" y="-61076" minz="-3410" maxz="-3110" />
+			<location x="143169" y="-60608" minz="-3410" maxz="-3110" />
+			<location x="142789" y="-61128" minz="-3410" maxz="-3110" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21278" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_36]">
+		<territory>	
+			<location x="142462" y="-61503" minz="-3290" maxz="-3090" />
+			<location x="143174" y="-60594" minz="-3290" maxz="-3090" />
+			<location x="142683" y="-60247" minz="-3290" maxz="-3090" />
+			<location x="141885" y="-61303" minz="-3290" maxz="-3090" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_37]">
+		<territory>	
+			<location x="141596" y="-60798" minz="-3377" maxz="-3077" />
+			<location x="141880" y="-61309" minz="-3377" maxz="-3077" />
+			<location x="142676" y="-60234" minz="-3377" maxz="-3077" />
+			<location x="142165" y="-60255" minz="-3377" maxz="-3077" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_38]">
+		<territory>	
+			<location x="141591" y="-60764" minz="-3390" maxz="-3190" />
+			<location x="142171" y="-60208" minz="-3390" maxz="-3190" />
+			<location x="141853" y="-59832" minz="-3390" maxz="-3190" />
+			<location x="141212" y="-60257" minz="-3390" maxz="-3190" />
+		</territory>
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_39]">
+		<territory>	
+			<location x="141348" y="-59224" minz="-3359" maxz="-3059" />
+			<location x="142139" y="-60143" minz="-3359" maxz="-3059" />
+			<location x="142577" y="-59563" minz="-3359" maxz="-3059" />
+			<location x="142530" y="-59156" minz="-3359" maxz="-3059" />
+		</territory>
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_40]">
+		<territory>	
+			<location x="141281" y="-60189" minz="-3406" maxz="-3206" />
+			<location x="141825" y="-59825" minz="-3406" maxz="-3206" />
+			<location x="141313" y="-59221" minz="-3406" maxz="-3206" />
+			<location x="140681" y="-59389" minz="-3406" maxz="-3206" />
+			<location x="140757" y="-60169" minz="-3406" maxz="-3206" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_41]">
+		<territory>	
+			<location x="141114" y="-58323" minz="-3219" maxz="-3019" />
+			<location x="141502" y="-58239" minz="-3219" maxz="-3019" />
+			<location x="141442" y="-57803" minz="-3219" maxz="-3019" />
+			<location x="140730" y="-58095" minz="-3219" maxz="-3019" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_42]">
+		<territory>	
+			<location x="140736" y="-58090" minz="-3214" maxz="-2914" />
+			<location x="141428" y="-57798" minz="-3214" maxz="-2914" />
+			<location x="141336" y="-57418" minz="-3214" maxz="-2914" />
+			<location x="139864" y="-57502" minz="-3214" maxz="-2914" />
+			<location x="140372" y="-58066" minz="-3214" maxz="-2914" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_43]">
+		<territory>	
+			<location x="139899" y="-57487" minz="-3101" maxz="-2801" />
+			<location x="141231" y="-57411" minz="-3101" maxz="-2801" />
+			<location x="140927" y="-56931" minz="-3101" maxz="-2801" />
+			<location x="140727" y="-56863" minz="-3101" maxz="-2801" />
+		</territory>
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_44]">
+		<territory>	
+			<location x="139863" y="-59037" minz="-3435" maxz="-3135" />
+			<location x="140979" y="-58577" minz="-3435" maxz="-3135" />
+			<location x="140731" y="-58109" minz="-3435" maxz="-3135" />
+			<location x="140387" y="-58073" minz="-3435" maxz="-3135" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_45]">
+		<territory>	
+			<location x="138991" y="-58370" minz="-3517" maxz="-3217" />
+			<location x="139847" y="-59046" minz="-3517" maxz="-3217" />
+			<location x="140319" y="-58170" minz="-3517" maxz="-3217" />
+			<location x="139423" y="-58022" minz="-3517" maxz="-3217" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_46]">
+		<territory>	
+			<location x="139004" y="-58385" minz="-3599" maxz="-3399" />
+			<location x="139436" y="-58021" minz="-3599" maxz="-3399" />
+			<location x="138716" y="-57025" minz="-3599" maxz="-3399" />
+			<location x="138440" y="-57201" minz="-3599" maxz="-3399" />
+		</territory>
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_47]">
+		<territory>	
+			<location x="138716" y="-57039" minz="-3542" maxz="-3242" />
+			<location x="139100" y="-57547" minz="-3542" maxz="-3242" />
+			<location x="139744" y="-56543" minz="-3542" maxz="-3242" />
+			<location x="139616" y="-56155" minz="-3542" maxz="-3242" />
+		</territory>
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_48]">
+		<territory>	
+			<location x="138416" y="-56804" minz="-3564" maxz="-3164" />
+			<location x="139392" y="-55792" minz="-3564" maxz="-3164" />
+			<location x="138720" y="-54816" minz="-3564" maxz="-3164" />
+			<location x="137004" y="-55064" minz="-3564" maxz="-3164" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_49]">
+		<territory>	
+			<location x="137239" y="-54979" minz="-3417" maxz="-2817" />
+			<location x="138703" y="-54799" minz="-3417" maxz="-2817" />
+			<location x="139291" y="-52995" minz="-3417" maxz="-2817" />
+			<location x="137851" y="-52999" minz="-3417" maxz="-2817" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_50]">
+		<territory>	
+			<location x="138174" y="-52973" minz="-3047" maxz="-2647" />
+			<location x="139282" y="-52985" minz="-3047" maxz="-2647" />
+			<location x="139546" y="-52629" minz="-3047" maxz="-2647" />
+			<location x="139410" y="-51981" minz="-3047" maxz="-2647" />
+			<location x="138870" y="-51185" minz="-3047" maxz="-2647" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_51]">
+		<territory>	
+			<location x="137644" y="-51076" minz="-2868" maxz="-2668" />
+			<location x="138556" y="-51960" minz="-2868" maxz="-2668" />
+			<location x="138852" y="-51184" minz="-2868" maxz="-2668" />
+			<location x="138932" y="-50616" minz="-2868" maxz="-2668" />
+		</territory>
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_52]">
+		<territory>	
+			<location x="137491" y="-51989" minz="-3018" maxz="-2718" />
+			<location x="138259" y="-51701" minz="-3018" maxz="-2718" />
+			<location x="137635" y="-51105" minz="-3018" maxz="-2718" />
+			<location x="137295" y="-51457" minz="-3018" maxz="-2718" />
+		</territory>
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_53]">
+		<territory>	
+			<location x="135830" y="-52326" minz="-3240" maxz="-2840" />
+			<location x="137810" y="-52962" minz="-3240" maxz="-2840" />
+			<location x="137298" y="-51466" minz="-3240" maxz="-2840" />
+			<location x="136098" y="-51446" minz="-3240" maxz="-2840" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_54]">
+		<territory>	
+			<location x="135526" y="-54496" minz="-3367" maxz="-2967" />
+			<location x="137366" y="-54712" minz="-3367" maxz="-2967" />
+			<location x="137842" y="-52980" minz="-3367" maxz="-2967" />
+			<location x="135802" y="-52304" minz="-3367" maxz="-2967" />
+			<location x="135030" y="-53776" minz="-3367" maxz="-2967" />
+		</territory>
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_55]">
+		<territory>	
+			<location x="133654" y="-53277" minz="-3600" maxz="-3050" />
+			<location x="135022" y="-53805" minz="-3600" maxz="-3050" />
+			<location x="136050" y="-51669" minz="-3600" maxz="-3050" />
+			<location x="134134" y="-51241" minz="-3600" maxz="-3050" />
+			<location x="133450" y="-52385" minz="-3600" maxz="-3050" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_56]">
+		<territory>	
+			<location x="134147" y="-51246" minz="-3581" maxz="-3381" />
+			<location x="135007" y="-51450" minz="-3581" maxz="-3381" />
+			<location x="135287" y="-51030" minz="-3581" maxz="-3381" />
+			<location x="134615" y="-49862" minz="-3581" maxz="-3381" />
+			<location x="134155" y="-49890" minz="-3581" maxz="-3381" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_57]">
+		<territory>	
+			<location x="134139" y="-49901" minz="-3604" maxz="-3304" />
+			<location x="134583" y="-49865" minz="-3604" maxz="-3304" />
+			<location x="133759" y="-48161" minz="-3604" maxz="-3304" />
+			<location x="133167" y="-48533" minz="-3604" maxz="-3304" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_58]">
+		<territory>	
+			<location x="133582" y="-48129" minz="-3419" maxz="-3019" />
+			<location x="134254" y="-48301" minz="-3419" maxz="-3019" />
+			<location x="134978" y="-46725" minz="-3419" maxz="-3019" />
+			<location x="133106" y="-46857" minz="-3419" maxz="-3019" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_59]">
+		<territory>	
+			<location x="133699" y="-46784" minz="-3148" maxz="-2348" />
+			<location x="135375" y="-46672" minz="-3148" maxz="-2348" />
+			<location x="136163" y="-44956" minz="-3148" maxz="-2348" />
+			<location x="134467" y="-44500" minz="-3148" maxz="-2348" />
+			<location x="132911" y="-45696" minz="-3148" maxz="-2348" />
+		</territory>
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_60]">
+		<territory>	
+			<location x="134745" y="-44584" minz="-2748" maxz="-2348" />
+			<location x="135573" y="-44792" minz="-2748" maxz="-2348" />
+			<location x="136325" y="-43672" minz="-2748" maxz="-2348" />
+			<location x="134381" y="-43412" minz="-2748" maxz="-2348" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_61]">
+		<territory>	
+			<location x="139832" y="-60247" minz="-3409" maxz="-3209" />
+			<location x="140724" y="-60171" minz="-3409" maxz="-3209" />
+			<location x="140668" y="-59371" minz="-3409" maxz="-3209" />
+			<location x="139540" y="-59487" minz="-3409" maxz="-3209" />
+			<location x="139352" y="-60007" minz="-3409" maxz="-3209" />
+		</territory>
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_62]">
+		<territory>	
+			<location x="137208" y="-59842" minz="-3524" maxz="-3224" />
+			<location x="138316" y="-60194" minz="-3524" maxz="-3224" />
+			<location x="139344" y="-59986" minz="-3524" maxz="-3224" />
+			<location x="139528" y="-59482" minz="-3524" maxz="-3224" />
+			<location x="138428" y="-58322" minz="-3524" maxz="-3224" />
+			<location x="137068" y="-58590" minz="-3524" maxz="-3224" />
+		</territory>
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_63]">
+		<territory>	
+			<location x="137396" y="-58521" minz="-3565" maxz="-3265" />
+			<location x="138396" y="-58317" minz="-3565" maxz="-3265" />
+			<location x="137324" y="-56357" minz="-3565" maxz="-3265" />
+			<location x="137236" y="-57073" minz="-3565" maxz="-3265" />
+		</territory>
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_64]">
+		<territory>	
+			<location x="135413" y="-61500" minz="-3515" maxz="-3115" />
+			<location x="136773" y="-60064" minz="-3515" maxz="-3115" />
+			<location x="136713" y="-59264" minz="-3515" maxz="-3115" />
+			<location x="135349" y="-59076" minz="-3515" maxz="-3115" />
+		</territory>
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_65]">
+		<territory>	
+			<location x="135378" y="-61552" minz="-3515" maxz="-3065" />
+			<location x="135330" y="-59084" minz="-3515" maxz="-3065" />
+			<location x="134018" y="-58468" minz="-3515" maxz="-3065" />
+			<location x="133646" y="-59800" minz="-3515" maxz="-3065" />
+			<location x="133898" y="-60728" minz="-3515" maxz="-3065" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_66]">
+		<territory>	
+			<location x="135311" y="-59010" minz="-3197" maxz="-2797" />
+			<location x="136667" y="-59150" minz="-3197" maxz="-2797" />
+			<location x="136663" y="-57794" minz="-3197" maxz="-2797" />
+			<location x="136191" y="-57318" minz="-3197" maxz="-2797" />
+			<location x="134595" y="-57582" minz="-3197" maxz="-2797" />
+			<location x="134075" y="-58446" minz="-3197" maxz="-2797" />
+		</territory>
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_67]">
+		<territory>	
+			<location x="134582" y="-57579" minz="-3295" maxz="-2995" />
+			<location x="134986" y="-57523" minz="-3295" maxz="-2995" />
+			<location x="135634" y="-56763" minz="-3295" maxz="-2995" />
+			<location x="135286" y="-56203" minz="-3295" maxz="-2995" />
+			<location x="134558" y="-56503" minz="-3295" maxz="-2995" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_68]">
+		<territory>	
+			<location x="135624" y="-56751" minz="-3498" maxz="-3048" />
+			<location x="137236" y="-56891" minz="-3498" maxz="-3048" />
+			<location x="137292" y="-56367" minz="-3498" maxz="-3048" />
+			<location x="136976" y="-55911" minz="-3498" maxz="-3048" />
+			<location x="134880" y="-54915" minz="-3498" maxz="-3048" />
+			<location x="134812" y="-55431" minz="-3498" maxz="-3048" />
+		</territory>
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_69]">
+		<territory>	
+			<location x="133655" y="-54882" minz="-3489" maxz="-3289" />
+			<location x="134851" y="-54918" minz="-3489" maxz="-3289" />
+			<location x="133387" y="-53778" minz="-3489" maxz="-3289" />
+			<location x="133395" y="-54754" minz="-3489" maxz="-3289" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_70]">
+		<territory>	
+			<location x="131756" y="-53142" minz="-3668" maxz="-3368" />
+			<location x="132620" y="-54102" minz="-3668" maxz="-3368" />
+			<location x="133380" y="-53786" minz="-3668" maxz="-3368" />
+			<location x="132868" y="-53050" minz="-3668" maxz="-3368" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_71]">
+		<territory>	
+			<location x="131740" y="-53141" minz="-3756" maxz="-3356" />
+			<location x="132872" y="-53049" minz="-3756" maxz="-3356" />
+			<location x="132920" y="-52033" minz="-3756" maxz="-3356" />
+			<location x="132296" y="-51573" minz="-3756" maxz="-3356" />
+		</territory>
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_72]">
+		<territory>	
+			<location x="131835" y="-51224" minz="-3789" maxz="-3589" />
+			<location x="132895" y="-52016" minz="-3789" maxz="-3589" />
+			<location x="133295" y="-51376" minz="-3789" maxz="-3589" />
+			<location x="132123" y="-50672" minz="-3789" maxz="-3589" />
+		</territory>
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_73]">
+		<territory>	
+			<location x="131088" y="-53248" minz="-3738" maxz="-3338" />
+			<location x="131592" y="-53532" minz="-3738" maxz="-3338" />
+			<location x="132296" y="-51576" minz="-3738" maxz="-3338" />
+			<location x="131824" y="-51232" minz="-3738" maxz="-3338" />
+			<location x="131080" y="-52348" minz="-3738" maxz="-3338" />
+		</territory>
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_74]">
+		<territory>	
+			<location x="132330" y="-54836" minz="-3616" maxz="-3316" />
+			<location x="132734" y="-54688" minz="-3616" maxz="-3316" />
+			<location x="132750" y="-54268" minz="-3616" maxz="-3316" />
+			<location x="131746" y="-53140" minz="-3616" maxz="-3316" />
+			<location x="131598" y="-53524" minz="-3616" maxz="-3316" />
+			<location x="131802" y="-54260" minz="-3616" maxz="-3316" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_75]">
+		<territory>	
+			<location x="133353" y="-55781" minz="-3492" maxz="-3092" />
+			<location x="133369" y="-54753" minz="-3492" maxz="-3092" />
+			<location x="132733" y="-54697" minz="-3492" maxz="-3092" />
+			<location x="132349" y="-54845" minz="-3492" maxz="-3092" />
+			<location x="132169" y="-55669" minz="-3492" maxz="-3092" />
+		</territory>
+		<npc id="21284" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_76]">
+		<territory>	
+			<location x="131804" y="-56361" minz="-3245" maxz="-3045" />
+			<location x="132704" y="-56261" minz="-3245" maxz="-3045" />
+			<location x="133008" y="-55765" minz="-3245" maxz="-3045" />
+			<location x="132028" y="-55669" minz="-3245" maxz="-3045" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21282" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_77]">
+		<territory>	
+			<location x="131932" y="-56377" minz="-3106" maxz="-2806" />
+			<location x="132036" y="-56781" minz="-3106" maxz="-2806" />
+			<location x="132788" y="-56817" minz="-3106" maxz="-2806" />
+			<location x="132684" y="-56293" minz="-3106" maxz="-2806" />
+		</territory>
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21285" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_78]">
+		<territory>	
+			<location x="131804" y="-57694" minz="-3073" maxz="-2773" />
+			<location x="132200" y="-58018" minz="-3073" maxz="-2773" />
+			<location x="132672" y="-56818" minz="-3073" maxz="-2773" />
+			<location x="132024" y="-56790" minz="-3073" maxz="-2773" />
+		</territory>
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21283" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_79]">
+		<territory>	
+			<location x="133367" y="-55775" minz="-3395" maxz="-3195" />
+			<location x="133911" y="-55747" minz="-3395" maxz="-3195" />
+			<location x="133651" y="-54891" minz="-3395" maxz="-3195" />
+			<location x="133383" y="-54763" minz="-3395" maxz="-3195" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_80]">
+		<territory>	
+			<location x="134572" y="-56992" minz="-3260" maxz="-3060" />
+			<location x="134564" y="-56540" minz="-3260" maxz="-3060" />
+			<location x="133840" y="-55788" minz="-3260" maxz="-3060" />
+			<location x="133424" y="-55800" minz="-3260" maxz="-3060" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_81]">
+		<territory>	
+			<location x="135363" y="-46750" minz="-3097" maxz="-2397" />
+			<location x="137231" y="-46846" minz="-3097" maxz="-2397" />
+			<location x="138123" y="-46378" minz="-3097" maxz="-2397" />
+			<location x="136187" y="-44974" minz="-3097" maxz="-2397" />
+		</territory>
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_82]">
+		<territory>	
+			<location x="134932" y="-49019" minz="-3282" maxz="-2982" />
+			<location x="136344" y="-48127" minz="-3282" maxz="-2982" />
+			<location x="136560" y="-46863" minz="-3282" maxz="-2982" />
+			<location x="134988" y="-46767" minz="-3282" maxz="-2982" />
+			<location x="134272" y="-48303" minz="-3282" maxz="-2982" />
+		</territory>
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_83]">
+		<territory>	
+			<location x="135338" y="-48781" minz="-3306" maxz="-3106" />
+			<location x="135838" y="-49353" minz="-3306" maxz="-3106" />
+			<location x="137246" y="-48673" minz="-3306" maxz="-3106" />
+			<location x="136358" y="-48125" minz="-3306" maxz="-3106" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_84]">
+		<territory>	
+			<location x="137064" y="-50577" minz="-3385" maxz="-3135" />
+			<location x="137504" y="-49793" minz="-3385" maxz="-3135" />
+			<location x="137244" y="-48677" minz="-3385" maxz="-3135" />
+			<location x="135284" y="-49649" minz="-3385" maxz="-3135" />
+			<location x="135796" y="-50973" minz="-3385" maxz="-3135" />
+		</territory>
+		<npc id="21286" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_85]">
+		<territory>	
+			<location x="137529" y="-49792" minz="-3388" maxz="-2988" />
+			<location x="138497" y="-49860" minz="-3388" maxz="-2988" />
+			<location x="138825" y="-49324" minz="-3388" maxz="-2988" />
+			<location x="137977" y="-47628" minz="-3388" maxz="-2988" />
+			<location x="137213" y="-48500" minz="-3388" maxz="-2988" />
+		</territory>
+		<npc id="21288" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_86]">
+		<territory>	
+			<location x="138235" y="-48035" minz="-3096" maxz="-2796" />
+			<location x="139091" y="-47131" minz="-3096" maxz="-2796" />
+			<location x="138135" y="-46359" minz="-3096" maxz="-2796" />
+			<location x="137531" y="-46751" minz="-3096" maxz="-2796" />
+		</territory>
+		<npc id="21287" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21290" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21293" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[godard04_2416_87]">
+		<territory>	
+			<location x="136364" y="-48115" minz="-3209" maxz="-3009" />
+			<location x="137132" y="-48595" minz="-3209" maxz="-3009" />
+			<location x="137772" y="-47875" minz="-3209" maxz="-3009" />
+			<location x="137600" y="-46919" minz="-3209" maxz="-3009" />
+			<location x="136588" y="-46863" minz="-3209" maxz="-3009" />
+		</territory>
+		<npc id="21289" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21291" count="1" respawn="40" respawn_rand="10" />	
+		<npc id="21292" count="1" respawn="40" respawn_rand="10" />	
+	</spawn>
+
+</list>

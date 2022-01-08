@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[lyonn08_1914_06]">
+		<territory>	
+			<location x="-25500" y="-111024" minz="-2232" maxz="-1282" />
+			<location x="-24464" y="-111120" minz="-2232" maxz="-1282" />
+			<location x="-24492" y="-108280" minz="-2232" maxz="-1282" />
+			<location x="-25940" y="-107624" minz="-2232" maxz="-1282" />
+			<location x="-26220" y="-109900" minz="-2232" maxz="-1282" />
+		</territory>
+		<npc id="20316" count="3" respawn="21" />	
+		<npc id="20143" count="4" respawn="21" />	
+		<npc id="20320" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_01]">
+		<territory>	
+			<location x="-31428" y="-127472" minz="-1392" maxz="-992" />
+			<location x="-29104" y="-128572" minz="-1392" maxz="-992" />
+			<location x="-27104" y="-128344" minz="-1392" maxz="-992" />
+			<location x="-31364" y="-125524" minz="-1392" maxz="-992" />
+		</territory>
+		<npc id="20312" count="1" respawn="21" />	
+		<npc id="20365" count="2" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_02]">
+		<territory>	
+			<location x="-26512" y="-130916" minz="-1180" maxz="-480" />
+			<location x="-21344" y="-130920" minz="-1180" maxz="-480" />
+			<location x="-21520" y="-130424" minz="-1180" maxz="-480" />
+			<location x="-24656" y="-128684" minz="-1180" maxz="-480" />
+			<location x="-27008" y="-128400" minz="-1180" maxz="-480" />
+			<location x="-27796" y="-128556" minz="-1180" maxz="-480" />
+		</territory>
+		<npc id="20312" count="3" respawn="21" />	
+		<npc id="20365" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_03]">
+		<territory>	
+			<location x="-29420" y="-125668" minz="-2592" maxz="-1842" />
+			<location x="-27504" y="-126336" minz="-2592" maxz="-1842" />
+			<location x="-25932" y="-123680" minz="-2592" maxz="-1842" />
+			<location x="-29356" y="-122896" minz="-2592" maxz="-1842" />
+			<location x="-31624" y="-124464" minz="-2592" maxz="-1842" />
+		</territory>
+		<npc id="20312" count="5" respawn="21" />	
+		<npc id="20365" count="5" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_04]">
+		<territory>	
+			<location x="-29212" y="-122716" minz="-2248" maxz="-1448" />
+			<location x="-25836" y="-123004" minz="-2248" maxz="-1448" />
+			<location x="-23084" y="-120028" minz="-2248" maxz="-1448" />
+			<location x="-23232" y="-119048" minz="-2248" maxz="-1448" />
+			<location x="-24896" y="-117084" minz="-2248" maxz="-1448" />
+			<location x="-28208" y="-116392" minz="-2248" maxz="-1448" />
+			<location x="-29352" y="-119996" minz="-2248" maxz="-1448" />
+		</territory>
+		<npc id="20365" count="6" respawn="21" />	
+		<npc id="20363" count="6" respawn="21" />	
+		<npc id="20426" count="6" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_05]">
+		<territory>	
+			<location x="-28152" y="-116252" minz="-2532" maxz="-1682" />
+			<location x="-24752" y="-116856" minz="-2532" maxz="-1682" />
+			<location x="-24384" y="-112600" minz="-2532" maxz="-1682" />
+			<location x="-26772" y="-110272" minz="-2532" maxz="-1682" />
+		</territory>
+		<npc id="20365" count="4" respawn="21" />	
+		<npc id="20363" count="4" respawn="21" />	
+		<npc id="20426" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_06]">
+		<territory>	
+			<location x="-25500" y="-111024" minz="-2232" maxz="-1282" />
+			<location x="-24464" y="-111120" minz="-2232" maxz="-1282" />
+			<location x="-24492" y="-108280" minz="-2232" maxz="-1282" />
+			<location x="-25940" y="-107624" minz="-2232" maxz="-1282" />
+			<location x="-26220" y="-109900" minz="-2232" maxz="-1282" />
+		</territory>
+		<npc id="20365" count="2" respawn="21" />	
+		<npc id="20363" count="3" respawn="21" />	
+		<npc id="20426" count="2" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_07]">
+		<territory>	
+			<location x="-29712" y="-103956" minz="-3216" maxz="-2966" />
+			<location x="-28700" y="-104024" minz="-3216" maxz="-2966" />
+			<location x="-27196" y="-101524" minz="-3216" maxz="-2966" />
+			<location x="-27948" y="-100984" minz="-3216" maxz="-2966" />
+			<location x="-28900" y="-101036" minz="-3216" maxz="-2966" />
+			<location x="-29928" y="-102116" minz="-3216" maxz="-2966" />
+			<location x="-30180" y="-102992" minz="-3216" maxz="-2966" />
+		</territory>
+		<npc id="20365" count="3" respawn="21" />	
+		<npc id="20363" count="3" respawn="21" />	
+		<npc id="20426" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_08]">
+		<territory>	
+			<location x="-32664" y="-102604" minz="-3048" maxz="-2348" />
+			<location x="-31104" y="-103592" minz="-3048" maxz="-2348" />
+			<location x="-30176" y="-101164" minz="-3048" maxz="-2348" />
+			<location x="-31392" y="-100808" minz="-3048" maxz="-2348" />
+			<location x="-32636" y="-101460" minz="-3048" maxz="-2348" />
+		</territory>
+		<npc id="20312" count="2" respawn="21" />	
+		<npc id="20365" count="2" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_09]">
+		<territory>	
+			<location x="-27724" y="-100308" minz="-2796" maxz="-2196" />
+			<location x="-26264" y="-101608" minz="-2796" maxz="-2196" />
+			<location x="-23440" y="-98604" minz="-2796" maxz="-2196" />
+			<location x="-27644" y="-98624" minz="-2796" maxz="-2196" />
+		</territory>
+		<npc id="20365" count="3" respawn="21" />	
+		<npc id="20363" count="3" respawn="21" />	
+		<npc id="20426" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_10]">
+		<territory>	
+			<location x="-29760" y="-100572" minz="-2900" maxz="-2500" />
+			<location x="-27776" y="-100316" minz="-2900" maxz="-2500" />
+			<location x="-27756" y="-98632" minz="-2900" maxz="-2500" />
+			<location x="-29204" y="-98616" minz="-2900" maxz="-2500" />
+		</territory>
+		<npc id="20365" count="2" respawn="21" />	
+		<npc id="20363" count="2" respawn="21" />	
+		<npc id="20426" count="2" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_11]">
+		<territory>	
+			<location x="-27084" y="-127172" minz="-3064" maxz="-2064" />
+			<location x="-22316" y="-127464" minz="-3064" maxz="-2064" />
+			<location x="-20188" y="-124508" minz="-3064" maxz="-2064" />
+			<location x="-21536" y="-120900" minz="-3064" maxz="-2064" />
+			<location x="-23536" y="-121256" minz="-3064" maxz="-2064" />
+			<location x="-25572" y="-123824" minz="-3064" maxz="-2064" />
+		</territory>
+		<npc id="20365" count="6" respawn="21" />	
+		<npc id="20363" count="6" respawn="21" />	
+		<npc id="20426" count="6" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_12]">
+		<territory>	
+			<location x="-20188" y="-130892" minz="-2412" maxz="-1762" />
+			<location x="-15620" y="-130892" minz="-2412" maxz="-1762" />
+			<location x="-18668" y="-128052" minz="-2412" maxz="-1762" />
+			<location x="-20308" y="-127648" minz="-2412" maxz="-1762" />
+		</territory>
+		<npc id="20426" count="3" respawn="21" />	
+		<npc id="20316" count="4" respawn="21" />	
+		<npc id="20143" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_13]">
+		<territory>	
+			<location x="-14692" y="-130916" minz="-3052" maxz="-2502" />
+			<location x="-10292" y="-130892" minz="-3052" maxz="-2502" />
+			<location x="-10464" y="-129804" minz="-3052" maxz="-2502" />
+			<location x="-17500" y="-127804" minz="-3052" maxz="-2502" />
+		</territory>
+		<npc id="20316" count="4" respawn="21" />	
+		<npc id="20143" count="4" respawn="21" />	
+		<npc id="20320" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_14]">
+		<territory>	
+			<location x="-18640" y="-102200" minz="-2232" maxz="-1632" />
+			<location x="-16708" y="-101868" minz="-2232" maxz="-1632" />
+			<location x="-16580" y="-100684" minz="-2232" maxz="-1632" />
+			<location x="-18308" y="-99944" minz="-2232" maxz="-1632" />
+			<location x="-19620" y="-99944" minz="-2232" maxz="-1632" />
+			<location x="-19252" y="-101548" minz="-2232" maxz="-1632" />
+		</territory>
+		<npc id="20363" count="4" respawn="21" />	
+		<npc id="20426" count="4" respawn="21" />	
+		<npc id="20313" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_15]">
+		<territory>	
+			<location x="-22556" y="-118584" minz="-3076" maxz="-2676" />
+			<location x="-21560" y="-118612" minz="-3076" maxz="-2676" />
+			<location x="-20328" y="-117280" minz="-3076" maxz="-2676" />
+			<location x="-19784" y="-114864" minz="-3076" maxz="-2676" />
+			<location x="-20428" y="-114016" minz="-3076" maxz="-2676" />
+			<location x="-22116" y="-114004" minz="-3076" maxz="-2676" />
+			<location x="-23496" y="-115352" minz="-3076" maxz="-2676" />
+			<location x="-23820" y="-117020" minz="-3076" maxz="-2676" />
+		</territory>
+		<npc id="20363" count="4" respawn="21" />	
+		<npc id="20426" count="4" respawn="21" />	
+		<npc id="20316" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_16]">
+		<territory>	
+			<location x="-21376" y="-108112" minz="-2340" maxz="-1040" />
+			<location x="-18580" y="-105412" minz="-2340" maxz="-1040" />
+			<location x="-21480" y="-102904" minz="-2340" maxz="-1040" />
+			<location x="-24000" y="-103524" minz="-2340" maxz="-1040" />
+		</territory>
+		<npc id="20313" count="4" respawn="21" />	
+		<npc id="20143" count="4" respawn="21" />	
+		<npc id="20320" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_17]">
+		<territory>	
+			<location x="-19564" y="-104300" minz="-1704" maxz="-404" />
+			<location x="-15932" y="-105040" minz="-1704" maxz="-404" />
+			<location x="-13876" y="-103252" minz="-1704" maxz="-404" />
+			<location x="-15856" y="-102564" minz="-1704" maxz="-404" />
+		</territory>
+		<npc id="20320" count="3" respawn="21" />	
+		<npc id="20333" count="2" respawn="21" />	
+		<npc id="20428" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_19]">
+		<territory>	
+			<location x="-15088" y="-117452" minz="-2552" maxz="-1852" />
+			<location x="-12724" y="-117536" minz="-2552" maxz="-1852" />
+			<location x="-10944" y="-116928" minz="-2552" maxz="-1852" />
+			<location x="-10812" y="-115636" minz="-2552" maxz="-1852" />
+			<location x="-13088" y="-113756" minz="-2552" maxz="-1852" />
+			<location x="-14780" y="-115340" minz="-2552" maxz="-1852" />
+		</territory>
+		<npc id="20320" count="3" respawn="21" />	
+		<npc id="20333" count="4" respawn="21" />	
+		<npc id="20428" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_20]">
+		<territory>	
+			<location x="-19896" y="-118192" minz="-2652" maxz="-1952" />
+			<location x="-15896" y="-119276" minz="-2652" maxz="-1952" />
+			<location x="-15200" y="-117424" minz="-2652" maxz="-1952" />
+			<location x="-14936" y="-115340" minz="-2652" maxz="-1952" />
+			<location x="-19392" y="-115764" minz="-2652" maxz="-1952" />
+		</territory>
+		<npc id="20320" count="4" respawn="21" />	
+		<npc id="20333" count="4" respawn="21" />	
+		<npc id="20428" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_21]">
+		<territory>	
+			<location x="-19460" y="-123984" minz="-2552" maxz="-1952" />
+			<location x="-13832" y="-123220" minz="-2552" maxz="-1952" />
+			<location x="-15808" y="-119432" minz="-2552" maxz="-1952" />
+			<location x="-20592" y="-118752" minz="-2552" maxz="-1952" />
+			<location x="-20776" y="-120536" minz="-2552" maxz="-1952" />
+		</territory>
+		<npc id="20320" count="6" respawn="21" />	
+		<npc id="20333" count="6" respawn="21" />	
+		<npc id="20428" count="6" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_22]">
+		<territory>	
+			<location x="-17044" y="-126540" minz="-2492" maxz="-1492" />
+			<location x="-13328" y="-127964" minz="-2492" maxz="-1492" />
+			<location x="-12732" y="-126488" minz="-2492" maxz="-1492" />
+			<location x="-14080" y="-123448" minz="-2492" maxz="-1492" />
+			<location x="-18552" y="-124076" minz="-2492" maxz="-1492" />
+		</territory>
+		<npc id="20316" count="5" respawn="21" />	
+		<npc id="20143" count="5" respawn="21" />	
+		<npc id="20320" count="5" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_30]">
+		<territory>	
+			<location x="-24440" y="-121172" minz="-2252" maxz="-1752" />
+			<location x="-23420" y="-120048" minz="-2252" maxz="-1752" />
+			<location x="-24592" y="-118656" minz="-2252" maxz="-1752" />
+			<location x="-26444" y="-118628" minz="-2252" maxz="-1752" />
+			<location x="-26280" y="-120676" minz="-2252" maxz="-1752" />
+		</territory>
+		<npc id="20363" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_31]">
+		<territory>	
+			<location x="-23980" y="-125872" minz="-3036" maxz="-2236" />
+			<location x="-22244" y="-125880" minz="-3036" maxz="-2236" />
+			<location x="-21332" y="-124492" minz="-3036" maxz="-2236" />
+			<location x="-21928" y="-122688" minz="-3036" maxz="-2236" />
+			<location x="-24208" y="-124208" minz="-3036" maxz="-2236" />
+		</territory>
+		<npc id="20363" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_32]">
+		<territory>	
+			<location x="-21876" y="-117392" minz="-3080" maxz="-2680" />
+			<location x="-21084" y="-117284" minz="-3080" maxz="-2680" />
+			<location x="-20656" y="-116660" minz="-3080" maxz="-2680" />
+			<location x="-20500" y="-115928" minz="-3080" maxz="-2680" />
+			<location x="-20620" y="-115300" minz="-3080" maxz="-2680" />
+			<location x="-21484" y="-114868" minz="-3080" maxz="-2680" />
+			<location x="-22816" y="-115608" minz="-3080" maxz="-2680" />
+			<location x="-22996" y="-116640" minz="-3080" maxz="-2680" />
+			<location x="-22608" y="-117092" minz="-3080" maxz="-2680" />
+		</territory>
+		<npc id="20363" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_33]">
+		<territory>	
+			<location x="-21240" y="-106496" minz="-2100" maxz="-1300" />
+			<location x="-20200" y="-105428" minz="-2100" maxz="-1300" />
+			<location x="-20808" y="-104204" minz="-2100" maxz="-1300" />
+			<location x="-22132" y="-103864" minz="-2100" maxz="-1300" />
+			<location x="-22412" y="-105196" minz="-2100" maxz="-1300" />
+		</territory>
+		<npc id="20333" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_34]">
+		<territory>	
+			<location x="-16164" y="-111300" minz="-2436" maxz="-1836" />
+			<location x="-14532" y="-111032" minz="-2436" maxz="-1836" />
+			<location x="-14100" y="-109488" minz="-2436" maxz="-1836" />
+			<location x="-16052" y="-109064" minz="-2436" maxz="-1836" />
+			<location x="-16980" y="-110004" minz="-2436" maxz="-1836" />
+			<location x="-16996" y="-110868" minz="-2436" maxz="-1836" />
+		</territory>
+		<npc id="20333" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_35]">
+		<territory>	
+			<location x="-19200" y="-109516" minz="-2352" maxz="-1852" />
+			<location x="-17364" y="-108516" minz="-2352" maxz="-1852" />
+			<location x="-18556" y="-106612" minz="-2352" maxz="-1852" />
+			<location x="-20896" y="-108308" minz="-2352" maxz="-1852" />
+		</territory>
+		<npc id="20333" count="3" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn08_1914_36]">
+		<territory>	
+			<location x="-17660" y="-122644" minz="-2412" maxz="-1912" />
+			<location x="-15884" y="-122448" minz="-2412" maxz="-1912" />
+			<location x="-16568" y="-119984" minz="-2412" maxz="-1912" />
+			<location x="-18584" y="-119224" minz="-2412" maxz="-1912" />
+			<location x="-19144" y="-120424" minz="-2412" maxz="-1912" />
+			<location x="-19108" y="-121664" minz="-2412" maxz="-1912" />
+		</territory>
+		<npc id="20363" count="4" respawn="21" />	
+	</spawn>
+	<spawn name="[lyonn09_1914_23]">
+		<territory>	
+			<location x="-4284" y="-104428" minz="-3020" maxz="-2020" />
+			<location x="-268" y="-104080" minz="-3020" maxz="-2020" />
+			<location x="-216" y="-98600" minz="-3020" maxz="-2020" />
+			<location x="-4096" y="-98680" minz="-3020" maxz="-2020" />
+			<location x="-4996" y="-101508" minz="-3020" maxz="-2020" />
+		</territory>
+		<npc id="21119" count="6" respawn="15" />	
+		<npc id="21120" count="6" respawn="15" />	
+		<npc id="21121" count="6" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_1914_24]">
+		<territory>	
+			<location x="-4104" y="-111884" minz="-2820" maxz="-2320" />
+			<location x="-292" y="-112836" minz="-2820" maxz="-2320" />
+			<location x="-344" y="-104192" minz="-2820" maxz="-2320" />
+			<location x="-4112" y="-104484" minz="-2820" maxz="-2320" />
+			<location x="-4744" y="-109744" minz="-2820" maxz="-2320" />
+		</territory>
+		<npc id="21119" count="7" respawn="15" />	
+		<npc id="21120" count="7" respawn="15" />	
+		<npc id="21121" count="7" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_1914_25]">
+		<territory>	
+			<location x="-4652" y="-114732" minz="-3628" maxz="-3228" />
+			<location x="-264" y="-115416" minz="-3628" maxz="-3228" />
+			<location x="-328" y="-114576" minz="-3628" maxz="-3228" />
+			<location x="-2512" y="-113624" minz="-3628" maxz="-3228" />
+		</territory>
+		<npc id="21257" count="2" respawn="15" />	
+		<npc id="21117" count="2" respawn="15" />	
+		<npc id="21118" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_1914_26]">
+		<territory>	
+			<location x="-2868" y="-118668" minz="-2976" maxz="-2276" />
+			<location x="-324" y="-118600" minz="-2976" maxz="-2276" />
+			<location x="-296" y="-117164" minz="-2976" maxz="-2276" />
+			<location x="-4216" y="-117052" minz="-2976" maxz="-2276" />
+		</territory>
+		<npc id="21257" count="2" respawn="15" />	
+		<npc id="21117" count="2" respawn="15" />	
+		<npc id="21118" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_1914_27]">
+		<territory>	
+			<location x="-4644" y="-123488" minz="-3052" maxz="-2152" />
+			<location x="-388" y="-124068" minz="-3052" maxz="-2152" />
+			<location x="-440" y="-119488" minz="-3052" maxz="-2152" />
+			<location x="-3824" y="-119084" minz="-3052" maxz="-2152" />
+		</territory>
+		<npc id="20479" count="4" respawn="15" />	
+		<npc id="20476" count="5" respawn="15" />	
+		<npc id="20478" count="5" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_1914_28]">
+		<territory>	
+			<location x="-3432" y="-129244" minz="-3372" maxz="-2472" />
+			<location x="-416" y="-127604" minz="-3372" maxz="-2472" />
+			<location x="-396" y="-124124" minz="-3372" maxz="-2472" />
+			<location x="-4656" y="-123496" minz="-3372" maxz="-2472" />
+			<location x="-5608" y="-124820" minz="-3372" maxz="-2472" />
+			<location x="-5400" y="-127416" minz="-3372" maxz="-2472" />
+		</territory>
+		<npc id="20364" count="5" respawn="15" />	
+		<npc id="20474" count="6" respawn="15" />	
+		<npc id="20479" count="6" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn09_1914_29]">
+		<territory>	
+			<location x="-7220" y="-130924" minz="-3216" maxz="-2616" />
+			<location x="-4208" y="-130884" minz="-3216" maxz="-2616" />
+			<location x="-3544" y="-129424" minz="-3216" maxz="-2616" />
+			<location x="-5396" y="-127676" minz="-3216" maxz="-2616" />
+		</territory>
+		<npc id="20333" count="3" respawn="15" />	
+		<npc id="20428" count="2" respawn="15" />	
+		<npc id="20364" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[lyonn08_mb1914_01]">
+		<territory>	
+			<location x="-18956" y="-101456" minz="-2180" maxz="-1580" />
+			<location x="-18396" y="-102168" minz="-2180" maxz="-1580" />
+			<location x="-16700" y="-101804" minz="-2180" maxz="-1580" />
+			<location x="-17236" y="-100672" minz="-2180" maxz="-1580" />
+			<location x="-18976" y="-100268" minz="-2180" maxz="-1580" />
+		</territory>
+		<npc id="25426" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[lyonn01_npc1914_g01]">
+		<npc id="31036" count="1" respawn="60" pos="-17536 -121344 -2128 0" />	
+		<npc id="31036" count="1" respawn="60" pos="-14848 -124704 -2000 0" />	
+	</spawn>
+	<spawn name="[lyonn01_npc1914_g02]">
+		<npc id="31036" count="1" respawn="60" pos="-13936 -115568 -2304 0" />	
+	</spawn>
+	<spawn name="[lyonn01_npc1914_g03]">
+		<npc id="31036" count="1" respawn="60" pos="-16992 -108176 -2336 0" />	
+	</spawn>
+	<spawn name="[lyonn01_npc1914_g04]">
+		<npc id="31036" count="1" respawn="60" pos="-26048 -116768 -2203 0" />	
+	</spawn>
+	<spawn name="[lyonn01_npc1914_g05]">
+		<npc id="31036" count="1" respawn="60" pos="-23872 -124560 -2816 0" />	
+	</spawn>
+	<spawn name="[lyonn01_npc1914_g06]">
+		<npc id="31036" count="1" respawn="60" pos="-2512 -125072 -2880 0" />	
+	</spawn>
+	<spawn name="[lyonn01_npc1914_g07]">
+		<npc id="31036" count="1" respawn="60" pos="-2352 -103616 -2688 0" />	
+		<npc id="31036" count="1" respawn="60" pos="-2128 -109360 -2768 0" />	
+	</spawn>
+
+</list>

@@ -50,12 +50,11 @@ public class L2OlympiadStadiumZone extends L2SpawnZone
 		character.setInsideZone(ZoneId.NO_SUMMON_FRIEND, true);
 		character.setInsideZone(ZoneId.NO_RESTART, true);
 		
-
 		if (character.isPlayer())
 		{
 			final OlympiadGameTask OlyTask = OlympiadGameManager.getInstance().getOlympiadTask(character.getActingPlayer().getOlympiadGameId());
 			
-			if (OlyTask == null)
+			if (OlyTask == null || OlyTask.getGame() == null)
 				return;
 			
 			character.setInsideZone(ZoneId.PVP, true);

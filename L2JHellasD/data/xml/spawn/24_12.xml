@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[schttgart09_2412_01]">
+		<territory>	
+			<location x="131200" y="-196540" minz="-3692" maxz="-3292" />
+			<location x="134596" y="-196544" minz="-3692" maxz="-3292" />
+			<location x="134496" y="-195808" minz="-3692" maxz="-3292" />
+			<location x="133852" y="-195120" minz="-3692" maxz="-3292" />
+			<location x="131168" y="-193976" minz="-3692" maxz="-3292" />
+		</territory>
+		<npc id="20521" count="3" respawn="20" />	
+		<npc id="20323" count="2" respawn="20" />	
+		<npc id="20526" count="2" respawn="20" />	
+	</spawn>
+	<spawn name="[schttgart09_2412_02]">
+		<territory>	
+			<location x="136280" y="-196344" minz="-3660" maxz="-2810" />
+			<location x="141644" y="-196444" minz="-3660" maxz="-2810" />
+			<location x="139620" y="-192356" minz="-3660" maxz="-2810" />
+			<location x="138340" y="-192320" minz="-3660" maxz="-2810" />
+		</territory>
+		<npc id="20521" count="2" respawn="20" />	
+		<npc id="20323" count="3" respawn="20" />	
+		<npc id="20526" count="3" respawn="20" />	
+	</spawn>
+	<spawn name="[schttgart09_2411_03]">
+		<territory>	
+			<location x="136272" y="-195116" minz="-3696" maxz="-2446" />
+			<location x="138420" y="-192304" minz="-3696" maxz="-2446" />
+			<location x="137232" y="-189764" minz="-3696" maxz="-2446" />
+			<location x="135632" y="-188612" minz="-3696" maxz="-2446" />
+			<location x="134512" y="-188772" minz="-3696" maxz="-2446" />
+			<location x="133588" y="-191932" minz="-3696" maxz="-2446" />
+		</territory>
+		<npc id="20521" count="3" respawn="20" />	
+		<npc id="20323" count="3" respawn="20" />	
+		<npc id="20526" count="3" respawn="20" />	
+	</spawn>
+	<spawn name="[schttgart09_2411_04]">
+		<territory>	
+			<location x="139684" y="-192352" minz="-3068" maxz="-1418" />
+			<location x="141332" y="-189636" minz="-3068" maxz="-1418" />
+			<location x="140472" y="-187800" minz="-3068" maxz="-1418" />
+			<location x="138136" y="-188316" minz="-3068" maxz="-1418" />
+			<location x="137640" y="-189356" minz="-3068" maxz="-1418" />
+			<location x="138448" y="-192132" minz="-3068" maxz="-1418" />
+		</territory>
+		<npc id="20521" count="3" respawn="20" />	
+		<npc id="20323" count="3" respawn="20" />	
+		<npc id="20526" count="2" respawn="20" />	
+	</spawn>
+	<spawn name="[schttgart09_2412_05]">
+		<territory>	
+			<location x="134320" y="-188684" minz="-3284" maxz="-2684" />
+			<location x="135748" y="-188472" minz="-3284" maxz="-2684" />
+			<location x="134760" y="-186068" minz="-3284" maxz="-2684" />
+			<location x="133840" y="-186924" minz="-3284" maxz="-2684" />
+		</territory>
+		<npc id="20521" count="2" respawn="20" />	
+	</spawn>
+	<spawn name="[schttgart09_2412_06]">
+		<territory>	
+			<location x="136468" y="-188148" minz="-2688" maxz="-1488" />
+			<location x="139464" y="-186372" minz="-2688" maxz="-1488" />
+			<location x="138836" y="-184752" minz="-2688" maxz="-1488" />
+			<location x="135812" y="-185376" minz="-2688" maxz="-1488" />
+		</territory>
+		<npc id="20521" count="1" respawn="20" />	
+		<npc id="20323" count="2" respawn="20" />	
+	</spawn>
+	<spawn name="[schttgart09_2412_07]">
+		<territory>	
+			<location x="134584" y="-185140" minz="-2984" maxz="-1484" />
+			<location x="138376" y="-184440" minz="-2984" maxz="-1484" />
+			<location x="136544" y="-181584" minz="-2984" maxz="-1484" />
+			<location x="134400" y="-181080" minz="-2984" maxz="-1484" />
+		</territory>
+		<npc id="20323" count="1" respawn="20" />	
+		<npc id="20526" count="2" respawn="20" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_01]">
+		<territory>	
+			<location x="136277" y="-174803" minz="-1820" maxz="-1620" />
+			<location x="137590" y="-174370" minz="-1820" maxz="-1620" />
+			<location x="137405" y="-172006" minz="-1820" maxz="-1620" />
+			<location x="135782" y="-171635" minz="-1820" maxz="-1620" />
+			<location x="135573" y="-173713" minz="-1820" maxz="-1620" />
+		</territory>
+		<npc id="20331" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20330" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20425" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20540" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20346" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20423" count="1" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_02]">
+		<territory>	
+			<location x="139743" y="-172257" minz="-1828" maxz="-1628" />
+			<location x="142942" y="-172968" minz="-1828" maxz="-1628" />
+			<location x="144921" y="-172057" minz="-1828" maxz="-1628" />
+			<location x="145247" y="-169459" minz="-1828" maxz="-1628" />
+			<location x="143089" y="-168694" minz="-1828" maxz="-1628" />
+			<location x="139936" y="-169157" minz="-1828" maxz="-1628" />
+		</territory>
+		<npc id="20331" count="5" respawn="34" respawn_rand="15" />	
+		<npc id="20330" count="6" respawn="34" respawn_rand="15" />	
+		<npc id="20425" count="5" respawn="34" respawn_rand="15" />	
+		<npc id="20540" count="5" respawn="34" respawn_rand="15" />	
+		<npc id="20346" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20423" count="2" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_03]">
+		<territory>	
+			<location x="144242" y="-175991" minz="-1572" maxz="-1372" />
+			<location x="146205" y="-176301" minz="-1572" maxz="-1372" />
+			<location x="147194" y="-175884" minz="-1572" maxz="-1372" />
+			<location x="146747" y="-174369" minz="-1572" maxz="-1372" />
+			<location x="144466" y="-174191" minz="-1572" maxz="-1372" />
+			<location x="144033" y="-175335" minz="-1572" maxz="-1372" />
+		</territory>
+		<npc id="20423" count="1" respawn="34" respawn_rand="15" />	
+		<npc id="20449" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20435" count="4" respawn="34" respawn_rand="15" />	
+		<npc id="20389" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20422" count="4" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_04]">
+		<territory>	
+			<location x="148639" y="-171050" minz="328" maxz="528" />
+			<location x="150861" y="-171333" minz="328" maxz="528" />
+			<location x="151184" y="-169637" minz="328" maxz="528" />
+			<location x="149124" y="-169152" minz="328" maxz="528" />
+			<location x="148133" y="-169576" minz="328" maxz="528" />
+			<location x="148092" y="-170506" minz="328" maxz="528" />
+		</territory>
+		<npc id="20423" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20449" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20435" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20389" count="4" respawn="34" respawn_rand="15" />	
+		<npc id="20422" count="3" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_05]">
+		<territory>	
+			<location x="142568" y="-169588" minz="332" maxz="532" />
+			<location x="145625" y="-169588" minz="332" maxz="532" />
+			<location x="145625" y="-169388" minz="332" maxz="532" />
+			<location x="142568" y="-169388" minz="332" maxz="532" />
+		</territory>
+		<npc id="20389" count="4" respawn="34" respawn_rand="15" />	
+		<npc id="20422" count="3" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_06]">
+		<territory>	
+			<location x="142685" y="-169924" minz="328" maxz="528" />
+			<location x="145527" y="-169924" minz="328" maxz="528" />
+			<location x="145527" y="-169724" minz="328" maxz="528" />
+			<location x="142685" y="-169724" minz="328" maxz="528" />
+		</territory>
+		<npc id="20389" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20422" count="4" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_07]">
+		<territory>	
+			<location x="142234" y="-172875" minz="336" maxz="536" />
+			<location x="142434" y="-172875" minz="336" maxz="536" />
+			<location x="142434" y="-170371" minz="336" maxz="536" />
+			<location x="142234" y="-170371" minz="336" maxz="536" />
+		</territory>
+		<npc id="20449" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20435" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20389" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20422" count="1" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_08]">
+		<territory>	
+			<location x="141930" y="-172883" minz="328" maxz="528" />
+			<location x="142130" y="-172883" minz="328" maxz="528" />
+			<location x="142100" y="-170379" minz="328" maxz="528" />
+			<location x="141900" y="-170379" minz="328" maxz="528" />
+		</territory>
+		<npc id="20423" count="1" respawn="34" respawn_rand="15" />	
+		<npc id="20449" count="1" respawn="34" respawn_rand="15" />	
+		<npc id="20435" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20389" count="1" respawn="34" respawn_rand="15" />	
+		<npc id="20422" count="2" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_09]">
+		<territory>	
+			<location x="141569" y="-178235" minz="324" maxz="524" />
+			<location x="142691" y="-178543" minz="324" maxz="524" />
+			<location x="144411" y="-178558" minz="324" maxz="524" />
+			<location x="144519" y="-177267" minz="324" maxz="524" />
+			<location x="143574" y="-176661" minz="324" maxz="524" />
+			<location x="141884" y="-176599" minz="324" maxz="524" />
+		</territory>
+		<npc id="20541" count="4" respawn="34" respawn_rand="15" />	
+		<npc id="20483" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20390" count="4" respawn="34" respawn_rand="15" />	
+		<npc id="20511" count="3" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_10]">
+		<territory>	
+			<location x="146795" y="-174558" minz="2216" maxz="2416" />
+			<location x="148316" y="-174496" minz="2216" maxz="2416" />
+			<location x="148623" y="-172945" minz="2216" maxz="2416" />
+			<location x="148454" y="-172084" minz="2216" maxz="2416" />
+			<location x="147755" y="-170525" minz="2216" maxz="2416" />
+			<location x="146403" y="-170556" minz="2216" maxz="2416" />
+		</territory>
+		<npc id="20541" count="5" respawn="34" respawn_rand="15" />	
+		<npc id="20483" count="6" respawn="34" respawn_rand="15" />	
+		<npc id="20390" count="5" respawn="34" respawn_rand="15" />	
+		<npc id="20511" count="6" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_11]">
+		<territory>	
+			<location x="146808" y="-169052" minz="1976" maxz="2376" />
+			<location x="148176" y="-170219" minz="1976" maxz="2376" />
+			<location x="150080" y="-169559" minz="1976" maxz="2376" />
+			<location x="150249" y="-168237" minz="1976" maxz="2376" />
+			<location x="149089" y="-167907" minz="1976" maxz="2376" />
+			<location x="147338" y="-168215" minz="1976" maxz="2376" />
+		</territory>
+		<npc id="20541" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20483" count="4" respawn="34" respawn_rand="15" />	
+		<npc id="20390" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20511" count="4" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_12]">
+		<territory>	
+			<location x="147232" y="-177888" minz="68" maxz="268" />
+			<location x="148354" y="-178000" minz="68" maxz="268" />
+			<location x="148704" y="-177386" minz="68" maxz="268" />
+			<location x="148695" y="-176766" minz="68" maxz="268" />
+			<location x="148270" y="-176373" minz="68" maxz="268" />
+			<location x="147475" y="-176484" minz="68" maxz="268" />
+		</territory>
+		<npc id="20541" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20483" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20390" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20511" count="3" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart05_2412_13]">
+		<territory>	
+			<location x="150799" y="-175582" minz="-1836" maxz="-1636" />
+			<location x="152049" y="-175439" minz="-1836" maxz="-1636" />
+			<location x="152271" y="-174619" minz="-1836" maxz="-1636" />
+			<location x="151912" y="-174030" minz="-1836" maxz="-1636" />
+			<location x="151297" y="-174019" minz="-1836" maxz="-1636" />
+			<location x="150915" y="-174226" minz="-1836" maxz="-1636" />
+		</territory>
+		<npc id="20541" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20483" count="3" respawn="34" respawn_rand="15" />	
+		<npc id="20390" count="2" respawn="34" respawn_rand="15" />	
+		<npc id="20511" count="3" respawn="34" respawn_rand="15" />	
+	</spawn>
+	<spawn name="[schuttgart01_npc2412_g01]">
+		<npc id="31035" count="1" respawn="60" pos="139264 -194720 -3177 0" />	
+		<npc id="31035" count="1" respawn="60" pos="135904 -191280 -3072 0" />	
+	</spawn>
+	<spawn name="[schuttgart01_npc2412_g02]">
+		<npc id="31035" count="1" respawn="60" pos="137008 -184720 -2128 0" />	
+	</spawn>
+
+</list>

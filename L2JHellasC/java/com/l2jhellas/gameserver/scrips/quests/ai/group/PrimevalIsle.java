@@ -1,7 +1,6 @@
 package com.l2jhellas.gameserver.scrips.quests.ai.group;
 
 import com.l2jhellas.gameserver.ai.CtrlEvent;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.model.L2Skill;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Attackable;
@@ -10,6 +9,7 @@ import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.scrips.quests.ai.AbstractNpcAI;
 import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.util.Util;
@@ -39,7 +39,7 @@ public class PrimevalIsle extends AbstractNpcAI
 	{
 		super(PrimevalIsle.class.getSimpleName(), "ai/group");
 		
-		SpawnTable.getInstance().forEachSpawn(sp ->
+		SpawnData.getInstance().forEachSpawn(sp ->
 		{
 			if (sp != null && Util.contains(MOBIDS, sp.getNpcid()) && sp.getLastSpawn() != null && sp.getLastSpawn() instanceof L2Attackable)
 				((L2Attackable) sp.getLastSpawn()).seeThroughSilentMove(true);

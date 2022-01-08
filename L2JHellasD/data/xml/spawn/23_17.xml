@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[oren31_2317_01]">
+		<territory>	
+			<location x="98444" y="-22300" minz="-3208" maxz="-2808" />
+			<location x="100328" y="-21528" minz="-3208" maxz="-2808" />
+			<location x="102040" y="-19108" minz="-3208" maxz="-2808" />
+			<location x="100120" y="-17252" minz="-3208" maxz="-2808" />
+			<location x="98460" y="-16908" minz="-3208" maxz="-2808" />
+		</territory>
+		<npc id="20161" count="5" respawn="41" respawn_rand="5" />	
+		<npc id="20575" count="5" respawn="41" respawn_rand="5" />	
+		<npc id="20576" count="6" respawn="41" respawn_rand="5" />	
+		<npc id="21261" count="1" respawn="41" respawn_rand="5" />	
+	</spawn>
+	<spawn name="[oren31_2317_02]">
+		<territory>	
+			<location x="100740" y="-15884" minz="-3468" maxz="-2968" />
+			<location x="102008" y="-13912" minz="-3468" maxz="-2968" />
+			<location x="100856" y="-11412" minz="-3468" maxz="-2968" />
+			<location x="98512" y="-9580" minz="-3468" maxz="-2968" />
+			<location x="98480" y="-14224" minz="-3468" maxz="-2968" />
+		</territory>
+		<npc id="20161" count="3" respawn="41" respawn_rand="5" />	
+		<npc id="20575" count="3" respawn="41" respawn_rand="5" />	
+		<npc id="20241" count="4" respawn="41" respawn_rand="5" />	
+		<npc id="21261" count="1" respawn="41" respawn_rand="5" />	
+	</spawn>
+	<spawn name="[oren31_2317_02s]">
+		<territory>	
+			<location x="100080" y="-15144" minz="-3472" maxz="-3072" />
+			<location x="101348" y="-14300" minz="-3472" maxz="-3072" />
+			<location x="100832" y="-11864" minz="-3472" maxz="-3072" />
+			<location x="99724" y="-12616" minz="-3472" maxz="-3072" />
+		</territory>
+		<npc id="20576" count="3" respawn="41" respawn_rand="5" />	
+		<npc id="20241" count="2" respawn="41" respawn_rand="5" />	
+	</spawn>
+	<spawn name="[oren31_2317_03]">
+		<territory>	
+			<location x="102008" y="-13888" minz="-3392" maxz="-2692" />
+			<location x="104392" y="-11652" minz="-3392" maxz="-2692" />
+			<location x="104408" y="-10196" minz="-3392" maxz="-2692" />
+			<location x="102868" y="-9900" minz="-3392" maxz="-2692" />
+			<location x="100960" y="-11428" minz="-3392" maxz="-2692" />
+		</territory>
+		<npc id="20575" count="5" respawn="41" respawn_rand="5" />	
+		<npc id="20576" count="6" respawn="41" respawn_rand="5" />	
+		<npc id="21261" count="1" respawn="41" respawn_rand="5" />	
+	</spawn>
+	<spawn name="[oren31_2317_04]">
+		<territory>	
+			<location x="102848" y="-9896" minz="-3296" maxz="-2696" />
+			<location x="104420" y="-10188" minz="-3296" maxz="-2696" />
+			<location x="102632" y="-7164" minz="-3296" maxz="-2696" />
+			<location x="101056" y="-7208" minz="-3296" maxz="-2696" />
+		</territory>
+		<npc id="20241" count="4" respawn="41" respawn_rand="5" />	
+		<npc id="20576" count="5" respawn="41" respawn_rand="5" />	
+		<npc id="21261" count="1" respawn="41" respawn_rand="5" />	
+	</spawn>
+	<spawn name="[oren31_2317_05]">
+		<territory>	
+			<location x="100940" y="-11396" minz="-3484" maxz="-2984" />
+			<location x="102884" y="-9924" minz="-3484" maxz="-2984" />
+			<location x="101012" y="-7196" minz="-3484" maxz="-2984" />
+			<location x="98516" y="-9572" minz="-3484" maxz="-2984" />
+		</territory>
+		<npc id="20161" count="2" respawn="41" respawn_rand="5" />	
+		<npc id="20575" count="2" respawn="41" respawn_rand="5" />	
+		<npc id="20241" count="2" respawn="41" respawn_rand="5" />	
+		<npc id="21261" count="1" respawn="41" respawn_rand="5" />	
+	</spawn>
+	<spawn name="[oren31_2317_05s]">
+		<territory>	
+			<location x="100220" y="-8420" minz="-3492" maxz="-3092" />
+			<location x="100560" y="-10572" minz="-3492" maxz="-3092" />
+			<location x="102136" y="-10212" minz="-3492" maxz="-3092" />
+			<location x="100988" y="-7888" minz="-3492" maxz="-3092" />
+		</territory>
+		<npc id="20575" count="2" respawn="41" respawn_rand="5" />	
+		<npc id="20576" count="3" respawn="41" respawn_rand="5" />	
+	</spawn>
+	<spawn name="[oren31_2317_06]">
+		<territory>	
+			<location x="98500" y="-9560" minz="-3620" maxz="-3220" />
+			<location x="101016" y="-7168" minz="-3620" maxz="-3220" />
+			<location x="100604" y="-4804" minz="-3620" maxz="-3220" />
+			<location x="98504" y="-6416" minz="-3620" maxz="-3220" />
+		</territory>
+		<npc id="20575" count="3" respawn="41" respawn_rand="5" />	
+		<npc id="20576" count="3" respawn="41" respawn_rand="5" />	
+		<npc id="20241" count="3" respawn="41" respawn_rand="5" />	
+		<npc id="21261" count="1" respawn="41" respawn_rand="5" />	
+	</spawn>
+	<spawn name="[aden21_2317_08]">
+		<territory>	
+			<location x="107196" y="-2376" minz="-3804" maxz="-3104" />
+			<location x="109720" y="-2056" minz="-3804" maxz="-3104" />
+			<location x="111072" y="-416" minz="-3804" maxz="-3104" />
+			<location x="105516" y="-356" minz="-3804" maxz="-3104" />
+		</territory>
+		<npc id="20956" count="3" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_09]">
+		<territory>	
+			<location x="110088" y="-1580" minz="-4008" maxz="-3508" />
+			<location x="115112" y="-1520" minz="-4008" maxz="-3508" />
+			<location x="114804" y="-280" minz="-4008" maxz="-3508" />
+			<location x="111060" y="-404" minz="-4008" maxz="-3508" />
+		</territory>
+		<npc id="20956" count="3" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_10]">
+		<territory>	
+			<location x="115144" y="-1512" minz="-3892" maxz="-3492" />
+			<location x="117840" y="-2588" minz="-3892" maxz="-3492" />
+			<location x="119344" y="-368" minz="-3892" maxz="-3492" />
+			<location x="114836" y="-332" minz="-3892" maxz="-3492" />
+		</territory>
+		<npc id="20956" count="3" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_11]">
+		<territory>	
+			<location x="118952" y="-4504" minz="-4100" maxz="-3200" />
+			<location x="120612" y="-4952" minz="-4100" maxz="-3200" />
+			<location x="122356" y="-444" minz="-4100" maxz="-3200" />
+			<location x="119372" y="-392" minz="-4100" maxz="-3200" />
+			<location x="117856" y="-2632" minz="-4100" maxz="-3200" />
+		</territory>
+		<npc id="20956" count="2" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="1" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_11s]">
+		<territory>	
+			<location x="118544" y="-2648" minz="-3892" maxz="-3492" />
+			<location x="120260" y="-3540" minz="-3892" maxz="-3492" />
+			<location x="120544" y="-732" minz="-3892" maxz="-3492" />
+			<location x="119456" y="-608" minz="-3892" maxz="-3492" />
+		</territory>
+		<npc id="20956" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_12]">
+		<territory>	
+			<location x="120696" y="-4916" minz="-3876" maxz="-2976" />
+			<location x="122176" y="-5392" minz="-3876" maxz="-2976" />
+			<location x="123396" y="-2736" minz="-3876" maxz="-2976" />
+			<location x="122284" y="-644" minz="-3876" maxz="-2976" />
+		</territory>
+		<npc id="20956" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_13]">
+		<territory>	
+			<location x="122280" y="-5120" minz="-3832" maxz="-2932" />
+			<location x="124432" y="-6468" minz="-3832" maxz="-2932" />
+			<location x="125172" y="-3724" minz="-3832" maxz="-2932" />
+			<location x="123412" y="-2760" minz="-3832" maxz="-2932" />
+		</territory>
+		<npc id="20956" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_14]">
+		<territory>	
+			<location x="126012" y="-2848" minz="-2772" maxz="-1872" />
+			<location x="127032" y="-2084" minz="-2772" maxz="-1872" />
+			<location x="127176" y="-492" minz="-2772" maxz="-1872" />
+			<location x="125740" y="-308" minz="-2772" maxz="-1872" />
+			<location x="124092" y="-996" minz="-2772" maxz="-1872" />
+		</territory>
+		<npc id="20963" count="2" respawn="37" respawn_rand="10" />	
+		<npc id="20959" count="1" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_15]">
+		<territory>	
+			<location x="127732" y="-3684" minz="-2956" maxz="-1956" />
+			<location x="130308" y="-4796" minz="-2956" maxz="-1956" />
+			<location x="129412" y="-1052" minz="-2956" maxz="-1956" />
+			<location x="127068" y="-2128" minz="-2956" maxz="-1956" />
+		</territory>
+		<npc id="20963" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20959" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_16]">
+		<territory>	
+			<location x="130128" y="-6580" minz="-3472" maxz="-2472" />
+			<location x="130360" y="-4892" minz="-3472" maxz="-2472" />
+			<location x="127656" y="-3760" minz="-3472" maxz="-2472" />
+			<location x="126192" y="-4744" minz="-3472" maxz="-2472" />
+			<location x="126880" y="-6088" minz="-3472" maxz="-2472" />
+		</territory>
+		<npc id="20963" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20959" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_17]">
+		<territory>	
+			<location x="128400" y="-10344" minz="-3772" maxz="-3572" />
+			<location x="130796" y="-11180" minz="-3772" maxz="-3572" />
+			<location x="130752" y="-9100" minz="-3772" maxz="-3572" />
+			<location x="127632" y="-7708" minz="-3772" maxz="-3572" />
+			<location x="126908" y="-8824" minz="-3772" maxz="-3572" />
+		</territory>
+		<npc id="20963" count="2" respawn="37" respawn_rand="10" />	
+		<npc id="20959" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_18]">
+		<territory>	
+			<location x="127544" y="-13308" minz="-3852" maxz="-3552" />
+			<location x="130800" y="-13504" minz="-3852" maxz="-3552" />
+			<location x="130740" y="-11212" minz="-3852" maxz="-3552" />
+			<location x="128376" y="-10380" minz="-3852" maxz="-3552" />
+			<location x="126412" y="-10592" minz="-3852" maxz="-3552" />
+		</territory>
+		<npc id="20963" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20959" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_18s]">
+		<territory>	
+			<location x="127960" y="-11872" minz="-3792" maxz="-3592" />
+			<location x="129176" y="-12456" minz="-3792" maxz="-3592" />
+			<location x="129652" y="-11288" minz="-3792" maxz="-3592" />
+			<location x="128240" y="-10736" minz="-3792" maxz="-3592" />
+		</territory>
+		<npc id="20959" count="1" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_20]">
+		<territory>	
+			<location x="124120" y="-7812" minz="-3908" maxz="-3208" />
+			<location x="125312" y="-10592" minz="-3908" maxz="-3208" />
+			<location x="125744" y="-10572" minz="-3908" maxz="-3208" />
+			<location x="125948" y="-8104" minz="-3908" maxz="-3208" />
+		</territory>
+		<npc id="20963" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20959" count="1" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_21]">
+		<territory>	
+			<location x="119140" y="-9600" minz="-3484" maxz="-2984" />
+			<location x="120500" y="-8996" minz="-3484" maxz="-2984" />
+			<location x="121508" y="-6688" minz="-3484" maxz="-2984" />
+			<location x="120236" y="-6580" minz="-3484" maxz="-2984" />
+			<location x="119324" y="-7388" minz="-3484" maxz="-2984" />
+		</territory>
+		<npc id="20956" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_22]">
+		<territory>	
+			<location x="118208" y="-10112" minz="-3336" maxz="-3036" />
+			<location x="119108" y="-9596" minz="-3336" maxz="-3036" />
+			<location x="119184" y="-8468" minz="-3336" maxz="-3036" />
+			<location x="117180" y="-8564" minz="-3336" maxz="-3036" />
+			<location x="116840" y="-10268" minz="-3336" maxz="-3036" />
+		</territory>
+		<npc id="20956" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="1" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_23]">
+		<territory>	
+			<location x="118428" y="-8156" minz="-3664" maxz="-3364" />
+			<location x="119704" y="-7008" minz="-3664" maxz="-3364" />
+			<location x="118980" y="-6692" minz="-3664" maxz="-3364" />
+			<location x="117380" y="-7060" minz="-3664" maxz="-3364" />
+			<location x="117024" y="-8164" minz="-3664" maxz="-3364" />
+		</territory>
+		<npc id="20956" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="1" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_24]">
+		<territory>	
+			<location x="116096" y="-8048" minz="-3536" maxz="-3336" />
+			<location x="116976" y="-6572" minz="-3536" maxz="-3336" />
+			<location x="116928" y="-5044" minz="-3536" maxz="-3336" />
+			<location x="116216" y="-4336" minz="-3536" maxz="-3336" />
+			<location x="114840" y="-4360" minz="-3536" maxz="-3336" />
+			<location x="113876" y="-5936" minz="-3536" maxz="-3336" />
+		</territory>
+		<npc id="20956" count="1" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="2" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[aden21_2317_25]">
+		<territory>	
+			<location x="113872" y="-5892" minz="-3884" maxz="-3084" />
+			<location x="114756" y="-4500" minz="-3884" maxz="-3084" />
+			<location x="113384" y="-2896" minz="-3884" maxz="-3084" />
+			<location x="111164" y="-2948" minz="-3884" maxz="-3084" />
+		</territory>
+		<npc id="20956" count="2" respawn="37" respawn_rand="10" />	
+		<npc id="20963" count="1" respawn="37" respawn_rand="10" />	
+	</spawn>
+	<spawn name="[oren01_mb2317_01]">
+		<territory>	
+			<location x="103236" y="-3448" minz="-3536" maxz="-2936" />
+			<location x="103888" y="-4392" minz="-3536" maxz="-2936" />
+			<location x="104936" y="-4316" minz="-3536" maxz="-2936" />
+			<location x="104944" y="-3120" minz="-3536" maxz="-2936" />
+			<location x="103744" y="-2792" minz="-3536" maxz="-2936" />
+		</territory>
+		<npc id="25226" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[oren32_mb2317_02]">
+		<territory>	
+			<location x="116972" y="-9320" minz="-3320" maxz="-2720" />
+			<location x="117828" y="-9476" minz="-3320" maxz="-2720" />
+			<location x="118604" y="-9052" minz="-3320" maxz="-2720" />
+			<location x="118240" y="-8740" minz="-3320" maxz="-2720" />
+			<location x="117712" y="-8660" minz="-3320" maxz="-2720" />
+			<location x="117072" y="-8876" minz="-3320" maxz="-2720" />
+		</territory>
+		<npc id="25051" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[aden42_mb2317_01]">
+		<territory>	
+			<location x="103168" y="-17004" minz="-2036" maxz="-1436" />
+			<location x="104412" y="-17984" minz="-2036" maxz="-1436" />
+			<location x="104900" y="-16224" minz="-2036" maxz="-1436" />
+			<location x="103728" y="-15996" minz="-2036" maxz="-1436" />
+		</territory>
+		<npc id="25434" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[aden26_mb2517_02]">
+		<territory>	
+			<location x="127403" y="-13899" minz="-3740" maxz="-3120" />
+			<location x="128403" y="-13899" minz="-3740" maxz="-3120" />
+			<location x="128403" y="-12899" minz="-3740" maxz="-3120" />
+			<location x="127403" y="-12899" minz="-3740" maxz="-3120" />
+		</territory>
+		<npc id="25248" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[godard01_mb2317_01]">
+		<territory>	
+			<location x="123396" y="-24700" minz="-3604" maxz="-3004" />
+			<location x="124404" y="-23812" minz="-3604" maxz="-3004" />
+			<location x="123700" y="-22728" minz="-3604" maxz="-3004" />
+			<location x="122440" y="-23292" minz="-3604" maxz="-3004" />
+		</territory>
+		<npc id="25269" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_01]">
+		<npc id="31675" count="1" respawn="60" pos="113824 -17936 -1873 26000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_02]">
+		<npc id="31679" count="1" respawn="60" pos="114276 -17964 -1855 60000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_03]">
+		<npc id="31677" count="1" respawn="60" pos="113504 -17856 -1876 20000" />	
+		<npc id="31677" count="1" respawn="60" pos="113760 -17456 -1824 31000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_04]">
+		<npc id="31681" count="1" respawn="60" pos="114656 -17824 -1856 53000" />	
+		<npc id="31681" count="1" respawn="60" pos="114432 -18272 -1840 2000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_05]">
+		<npc id="31681" count="1" respawn="60" pos="118964 -19340 -2815 60000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_06]">
+		<npc id="31681" count="1" respawn="60" pos="118604 -20412 -2832 0" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_07]">
+		<npc id="31681" count="1" respawn="60" pos="116942 -19646 -2451 60000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_08]">
+		<npc id="31681" count="1" respawn="60" pos="118912 -19584 -3024 50000" />	
+		<npc id="31681" count="1" respawn="60" pos="118816 -19536 -2992 50000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_09]">
+		<npc id="31681" count="1" respawn="60" pos="118800 -20096 -3036 3000" />	
+		<npc id="31681" count="1" respawn="60" pos="118704 -20048 -3016 3000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_10]">
+		<npc id="31677" count="1" respawn="60" pos="110916 -10560 -1996 22500" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_11]">
+		<npc id="31677" count="1" respawn="60" pos="109799 -10906 -1464 19000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_12]">
+		<npc id="31677" count="1" respawn="60" pos="110400 -10700 -1771 19500" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_13]">
+		<npc id="31677" count="1" respawn="60" pos="111328 -10236 -1696 23000" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_14]">
+		<npc id="31677" count="1" respawn="60" pos="111396 -11396 -1824 21500" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_15]">
+		<npc id="31677" count="1" respawn="60" pos="110560 -11520 -1824 12288" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_16]">
+		<npc id="31677" count="1" respawn="60" pos="112132 -14560 -1872 28672" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_17]">
+		<npc id="31677" count="1" respawn="60" pos="112032 -15788 -1872 0" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_18]">
+		<npc id="31677" count="1" respawn="60" pos="111888 -17792 -1805 16384" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_19]">
+		<npc id="31677" count="1" respawn="60" pos="112816 -17856 -1872 26000" />	
+		<npc id="31677" count="1" respawn="60" pos="112740 -17944 -1872 20480" />	
+		<npc id="31677" count="1" respawn="60" pos="112668 -17960 -1868 20480" />	
+	</spawn>
+	<spawn name="[aden17_npc2317_20]">
+		<npc id="31677" count="1" respawn="60" pos="111468 -12224 -1856 20480" />	
+	</spawn>
+	<spawn name="[godard01_npc2317_01]">
+		<npc id="31651" count="1" respawn="60" pos="119472 -28688 -3776 7000" />	
+	</spawn>
+
+</list>

@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[oren04_2019_01]">
+		<territory>	
+			<location x="30412" y="46964" minz="-3820" maxz="-3520" />
+			<location x="32568" y="45176" minz="-3820" maxz="-3520" />
+			<location x="32488" y="51732" minz="-3820" maxz="-3520" />
+			<location x="29832" y="50956" minz="-3820" maxz="-3520" />
+			<location x="29284" y="49260" minz="-3820" maxz="-3520" />
+		</territory>
+		<npc id="20473" count="4" respawn="15" />	
+		<npc id="20509" count="5" respawn="15" />	
+		<npc id="20471" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_02]">
+		<territory>	
+			<location x="24708" y="48192" minz="-3760" maxz="-3360" />
+			<location x="29288" y="49288" minz="-3760" maxz="-3360" />
+			<location x="29812" y="50876" minz="-3760" maxz="-3360" />
+			<location x="26996" y="53284" minz="-3760" maxz="-3360" />
+			<location x="23660" y="53552" minz="-3760" maxz="-3360" />
+			<location x="22228" y="49220" minz="-3760" maxz="-3360" />
+		</territory>
+		<npc id="20473" count="6" respawn="15" />	
+		<npc id="20013" count="4" respawn="15" />	
+		<npc id="20472" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_02s]">
+		<territory>	
+			<location x="23468" y="49748" minz="-3621" maxz="-3321" />
+			<location x="25588" y="50092" minz="-3621" maxz="-3321" />
+			<location x="26440" y="51980" minz="-3621" maxz="-3321" />
+			<location x="24172" y="51904" minz="-3621" maxz="-3321" />
+		</territory>
+		<npc id="20013" count="1" respawn="15" />	
+		<npc id="20472" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_03]">
+		<territory>	
+			<location x="22100" y="42756" minz="-3744" maxz="-3444" />
+			<location x="24808" y="44356" minz="-3744" maxz="-3444" />
+			<location x="24660" y="48212" minz="-3744" maxz="-3444" />
+			<location x="21160" y="49704" minz="-3744" maxz="-3444" />
+			<location x="19580" y="45916" minz="-3744" maxz="-3444" />
+		</territory>
+		<npc id="20473" count="5" respawn="15" />	
+		<npc id="20013" count="4" respawn="15" />	
+		<npc id="20472" count="5" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_03s]">
+		<territory>	
+			<location x="22492" y="45432" minz="-3728" maxz="-3528" />
+			<location x="23736" y="46732" minz="-3728" maxz="-3528" />
+			<location x="22692" y="48136" minz="-3728" maxz="-3528" />
+			<location x="21628" y="46656" minz="-3728" maxz="-3528" />
+		</territory>
+		<npc id="20013" count="1" respawn="15" />	
+		<npc id="20472" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_04]">
+		<territory>	
+			<location x="23396" y="39656" minz="-3790" maxz="-3390" />
+			<location x="28404" y="38044" minz="-3790" maxz="-3390" />
+			<location x="28488" y="41268" minz="-3790" maxz="-3390" />
+			<location x="24792" y="44356" minz="-3790" maxz="-3390" />
+			<location x="22128" y="42740" minz="-3790" maxz="-3390" />
+		</territory>
+		<npc id="20473" count="3" respawn="15" />	
+		<npc id="20509" count="4" respawn="15" />	
+		<npc id="20471" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_04s]">
+		<territory>	
+			<location x="23568" y="40296" minz="-3766" maxz="-3566" />
+			<location x="25172" y="39704" minz="-3766" maxz="-3566" />
+			<location x="26256" y="41092" minz="-3766" maxz="-3566" />
+			<location x="25228" y="42416" minz="-3766" maxz="-3566" />
+			<location x="23524" y="41876" minz="-3766" maxz="-3566" />
+		</territory>
+		<npc id="20473" count="2" respawn="15" />	
+		<npc id="20509" count="2" respawn="15" />	
+		<npc id="20472" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_05]">
+		<territory>	
+			<location x="22808" y="35448" minz="-3784" maxz="-3484" />
+			<location x="26340" y="35500" minz="-3784" maxz="-3484" />
+			<location x="28408" y="38012" minz="-3784" maxz="-3484" />
+			<location x="23360" y="39672" minz="-3784" maxz="-3484" />
+			<location x="21532" y="37788" minz="-3784" maxz="-3484" />
+		</territory>
+		<npc id="20469" count="3" respawn="15" />	
+		<npc id="20509" count="4" respawn="15" />	
+		<npc id="20471" count="5" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_05s]">
+		<territory>	
+			<location x="23220" y="36860" minz="-3776" maxz="-3476" />
+			<location x="24936" y="36696" minz="-3776" maxz="-3476" />
+			<location x="25192" y="37652" minz="-3776" maxz="-3476" />
+			<location x="22864" y="38776" minz="-3776" maxz="-3476" />
+		</territory>
+		<npc id="20509" count="2" respawn="15" />	
+		<npc id="20471" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_06]">
+		<territory>	
+			<location x="17196" y="40220" minz="-3768" maxz="-3468" />
+			<location x="21452" y="37792" minz="-3768" maxz="-3468" />
+			<location x="23388" y="39708" minz="-3768" maxz="-3468" />
+			<location x="22100" y="42744" minz="-3768" maxz="-3468" />
+			<location x="17224" y="41256" minz="-3768" maxz="-3468" />
+		</territory>
+		<npc id="20473" count="4" respawn="15" />	
+		<npc id="20509" count="4" respawn="15" />	
+		<npc id="20472" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_06s]">
+		<territory>	
+			<location x="21272" y="38588" minz="-3780" maxz="-3580" />
+			<location x="22348" y="39804" minz="-3780" maxz="-3580" />
+			<location x="21764" y="41056" minz="-3780" maxz="-3580" />
+			<location x="19984" y="40536" minz="-3780" maxz="-3580" />
+		</territory>
+		<npc id="20473" count="1" respawn="15" />	
+		<npc id="20509" count="1" respawn="15" />	
+		<npc id="20471" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_07]">
+		<territory>	
+			<location x="16564" y="42492" minz="-3768" maxz="-3568" />
+			<location x="17236" y="41280" minz="-3768" maxz="-3568" />
+			<location x="22060" y="42780" minz="-3768" maxz="-3568" />
+			<location x="19560" y="45904" minz="-3768" maxz="-3568" />
+		</territory>
+		<npc id="20473" count="2" respawn="15" />	
+		<npc id="20013" count="2" respawn="15" />	
+		<npc id="20472" count="3" respawn="15" />	
+		<npc id="20509" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_07s]">
+		<territory>	
+			<location x="18060" y="42996" minz="-3772" maxz="-3572" />
+			<location x="18964" y="42428" minz="-3772" maxz="-3572" />
+			<location x="20436" y="43088" minz="-3772" maxz="-3572" />
+			<location x="19040" y="44252" minz="-3772" maxz="-3572" />
+		</territory>
+		<npc id="20473" count="1" respawn="15" />	
+		<npc id="20013" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_08]">
+		<territory>	
+			<location x="19556" y="45892" minz="-3784" maxz="-3534" />
+			<location x="16660" y="42540" minz="-3784" maxz="-3534" />
+			<location x="15300" y="42092" minz="-3784" maxz="-3534" />
+			<location x="14240" y="44720" minz="-3784" maxz="-3534" />
+			<location x="15880" y="47620" minz="-3784" maxz="-3534" />
+			<location x="21168" y="49744" minz="-3784" maxz="-3534" />
+		</territory>
+		<npc id="20019" count="4" respawn="15" />	
+		<npc id="20013" count="3" respawn="15" />	
+		<npc id="20472" count="6" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_08s]">
+		<territory>	
+			<location x="16536" y="44676" minz="-3764" maxz="-3364" />
+			<location x="18188" y="45872" minz="-3764" maxz="-3364" />
+			<location x="17952" y="47556" minz="-3764" maxz="-3364" />
+			<location x="16056" y="46308" minz="-3764" maxz="-3364" />
+		</territory>
+		<npc id="20013" count="1" respawn="15" />	
+		<npc id="20472" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_09]">
+		<territory>	
+			<location x="15888" y="47640" minz="-3804" maxz="-3604" />
+			<location x="19988" y="49284" minz="-3804" maxz="-3604" />
+			<location x="19172" y="51720" minz="-3804" maxz="-3604" />
+			<location x="15188" y="50072" minz="-3804" maxz="-3604" />
+		</territory>
+		<npc id="20019" count="3" respawn="15" />	
+		<npc id="20013" count="3" respawn="15" />	
+		<npc id="20472" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_10]">
+		<territory>	
+			<location x="15196" y="50020" minz="-3804" maxz="-3504" />
+			<location x="20712" y="52396" minz="-3804" maxz="-3504" />
+			<location x="22032" y="54148" minz="-3804" maxz="-3504" />
+			<location x="13700" y="54884" minz="-3804" maxz="-3504" />
+			<location x="12552" y="53080" minz="-3804" maxz="-3504" />
+			<location x="13200" y="51224" minz="-3804" maxz="-3504" />
+		</territory>
+		<npc id="20019" count="4" respawn="15" />	
+		<npc id="20013" count="4" respawn="15" />	
+		<npc id="20472" count="6" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_10s]">
+		<territory>	
+			<location x="14508" y="51192" minz="-3728" maxz="-3428" />
+			<location x="16772" y="51340" minz="-3728" maxz="-3428" />
+			<location x="17776" y="53036" minz="-3728" maxz="-3428" />
+			<location x="15304" y="53352" minz="-3728" maxz="-3428" />
+		</territory>
+		<npc id="20019" count="1" respawn="15" />	
+		<npc id="20460" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_11]">
+		<territory>	
+			<location x="9728" y="53812" minz="-3744" maxz="-3344" />
+			<location x="12460" y="53076" minz="-3744" maxz="-3344" />
+			<location x="14072" y="55428" minz="-3744" maxz="-3344" />
+			<location x="11040" y="59600" minz="-3744" maxz="-3344" />
+			<location x="8452" y="58332" minz="-3744" maxz="-3344" />
+		</territory>
+		<npc id="20019" count="4" respawn="15" />	
+		<npc id="20460" count="4" respawn="15" />	
+		<npc id="20308" count="5" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_11s]">
+		<territory>	
+			<location x="9892" y="54772" minz="-3712" maxz="-3412" />
+			<location x="11104" y="53684" minz="-3712" maxz="-3412" />
+			<location x="12000" y="54848" minz="-3712" maxz="-3412" />
+			<location x="10868" y="56616" minz="-3712" maxz="-3412" />
+		</territory>
+		<npc id="20019" count="1" respawn="15" />	
+		<npc id="20460" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_12]">
+		<territory>	
+			<location x="2780" y="59360" minz="-3700" maxz="-3300" />
+			<location x="6188" y="57296" minz="-3700" maxz="-3300" />
+			<location x="11072" y="59652" minz="-3700" maxz="-3300" />
+			<location x="6224" y="63080" minz="-3700" maxz="-3300" />
+		</territory>
+		<npc id="20036" count="4" respawn="15" />	
+		<npc id="20466" count="4" respawn="15" />	
+		<npc id="20308" count="5" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_12s]">
+		<territory>	
+			<location x="4508" y="59844" minz="-3716" maxz="-3516" />
+			<location x="6308" y="58356" minz="-3716" maxz="-3516" />
+			<location x="7456" y="60412" minz="-3716" maxz="-3516" />
+			<location x="6108" y="61564" minz="-3716" maxz="-3516" />
+		</territory>
+		<npc id="20036" count="1" respawn="15" />	
+		<npc id="20466" count="1" respawn="15" />	
+		<npc id="20308" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_13]">
+		<territory>	
+			<location x="1100" y="58420" minz="-3824" maxz="-3224" />
+			<location x="2836" y="59352" minz="-3824" maxz="-3224" />
+			<location x="6260" y="63148" minz="-3824" maxz="-3224" />
+			<location x="5016" y="65312" minz="-3824" maxz="-3224" />
+			<location x="708" y="65312" minz="-3824" maxz="-3224" />
+		</territory>
+		<npc id="20036" count="4" respawn="15" />	
+		<npc id="20466" count="7" respawn="15" />	
+		<npc id="20044" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_13s]">
+		<territory>	
+			<location x="2540" y="61064" minz="-3684" maxz="-3384" />
+			<location x="3660" y="61780" minz="-3684" maxz="-3384" />
+			<location x="3640" y="63484" minz="-3684" maxz="-3384" />
+			<location x="1720" y="62940" minz="-3684" maxz="-3384" />
+		</territory>
+		<npc id="20466" count="1" respawn="15" />	
+		<npc id="20044" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_14]">
+		<territory>	
+			<location x="6352" y="55148" minz="-3792" maxz="-3192" />
+			<location x="6140" y="57332" minz="-3792" maxz="-3192" />
+			<location x="2832" y="59312" minz="-3792" maxz="-3192" />
+			<location x="1072" y="58400" minz="-3792" maxz="-3192" />
+			<location x="1696" y="55320" minz="-3792" maxz="-3192" />
+			<location x="3428" y="52980" minz="-3792" maxz="-3192" />
+		</territory>
+		<npc id="20036" count="5" respawn="15" />	
+		<npc id="20466" count="3" respawn="15" />	
+		<npc id="20308" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_14s]">
+		<territory>	
+			<location x="3852" y="55056" minz="-3640" maxz="-3340" />
+			<location x="4628" y="55308" minz="-3640" maxz="-3340" />
+			<location x="4716" y="56732" minz="-3640" maxz="-3340" />
+			<location x="3360" y="56768" minz="-3640" maxz="-3340" />
+			<location x="2916" y="55960" minz="-3640" maxz="-3340" />
+		</territory>
+		<npc id="20036" count="1" respawn="15" />	
+		<npc id="20466" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_15]">
+		<territory>	
+			<location x="6464" y="49776" minz="-3776" maxz="-3376" />
+			<location x="10336" y="52268" minz="-3776" maxz="-3376" />
+			<location x="5956" y="54748" minz="-3776" maxz="-3376" />
+			<location x="3424" y="52924" minz="-3776" maxz="-3376" />
+		</territory>
+		<npc id="20019" count="5" respawn="15" />	
+		<npc id="20460" count="2" respawn="15" />	
+		<npc id="20308" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_15s]">
+		<territory>	
+			<location x="5484" y="52472" minz="-3764" maxz="-3464" />
+			<location x="7124" y="51316" minz="-3764" maxz="-3464" />
+			<location x="9028" y="52224" minz="-3764" maxz="-3464" />
+			<location x="6924" y="53820" minz="-3764" maxz="-3464" />
+		</territory>
+		<npc id="20019" count="1" respawn="15" />	
+		<npc id="20460" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_16]">
+		<territory>	
+			<location x="10056" y="46604" minz="-3784" maxz="-3484" />
+			<location x="11616" y="48148" minz="-3784" maxz="-3484" />
+			<location x="10756" y="52484" minz="-3784" maxz="-3484" />
+			<location x="6492" y="49696" minz="-3784" maxz="-3484" />
+		</territory>
+		<npc id="20019" count="4" respawn="15" />	
+		<npc id="20013" count="3" respawn="15" />	
+		<npc id="20460" count="5" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_16s]">
+		<territory>	
+			<location x="9388" y="48492" minz="-3784" maxz="-3584" />
+			<location x="10436" y="49160" minz="-3784" maxz="-3584" />
+			<location x="10492" y="50664" minz="-3784" maxz="-3584" />
+			<location x="8980" y="50620" minz="-3784" maxz="-3584" />
+		</territory>
+		<npc id="20019" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_17]">
+		<territory>	
+			<location x="12828" y="46232" minz="-3788" maxz="-3488" />
+			<location x="14452" y="48260" minz="-3788" maxz="-3488" />
+			<location x="13596" y="50068" minz="-3788" maxz="-3488" />
+			<location x="10068" y="46632" minz="-3788" maxz="-3488" />
+			<location x="10640" y="45128" minz="-3788" maxz="-3488" />
+		</territory>
+		<npc id="20019" count="3" respawn="15" />	
+		<npc id="20013" count="2" respawn="15" />	
+		<npc id="20472" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_18]">
+		<territory>	
+			<location x="24444" y="62088" minz="-3792" maxz="-3392" />
+			<location x="28100" y="60940" minz="-3792" maxz="-3392" />
+			<location x="29100" y="65300" minz="-3792" maxz="-3392" />
+			<location x="25144" y="65264" minz="-3792" maxz="-3392" />
+		</territory>
+		<npc id="20473" count="6" respawn="15" />	
+		<npc id="20472" count="5" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_18s]">
+		<territory>	
+			<location x="25128" y="63632" minz="-3724" maxz="-3524" />
+			<location x="26800" y="62196" minz="-3724" maxz="-3524" />
+			<location x="27776" y="63396" minz="-3724" maxz="-3524" />
+			<location x="26724" y="64908" minz="-3724" maxz="-3524" />
+		</territory>
+		<npc id="20509" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_19]">
+		<territory>	
+			<location x="23352" y="55320" minz="-3728" maxz="-3328" />
+			<location x="28100" y="60916" minz="-3728" maxz="-3328" />
+			<location x="24468" y="62076" minz="-3728" maxz="-3328" />
+			<location x="21428" y="58564" minz="-3728" maxz="-3328" />
+		</territory>
+		<npc id="20019" count="4" respawn="15" />	
+		<npc id="20013" count="3" respawn="15" />	
+		<npc id="20472" count="6" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_19s]">
+		<territory>	
+			<location x="23300" y="58256" minz="-3652" maxz="-3352" />
+			<location x="25180" y="58048" minz="-3652" maxz="-3352" />
+			<location x="26728" y="59872" minz="-3652" maxz="-3352" />
+			<location x="24956" y="60272" minz="-3652" maxz="-3352" />
+		</territory>
+		<npc id="20013" count="1" respawn="15" />	
+		<npc id="20472" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_20]">
+		<territory>	
+			<location x="15564" y="55744" minz="-3668" maxz="-3168" />
+			<location x="23220" y="55496" minz="-3668" maxz="-3168" />
+			<location x="21412" y="58540" minz="-3668" maxz="-3168" />
+			<location x="13952" y="58876" minz="-3668" maxz="-3168" />
+			<location x="12616" y="58324" minz="-3668" maxz="-3168" />
+		</territory>
+		<npc id="20019" count="4" respawn="15" />	
+		<npc id="20013" count="3" respawn="15" />	
+		<npc id="20472" count="4" respawn="15" />	
+		<npc id="20460" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_20s]">
+		<territory>	
+			<location x="18556" y="56248" minz="-3600" maxz="-3300" />
+			<location x="19584" y="57448" minz="-3600" maxz="-3300" />
+			<location x="17204" y="58464" minz="-3600" maxz="-3300" />
+			<location x="16180" y="56244" minz="-3600" maxz="-3300" />
+		</territory>
+		<npc id="20460" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_21]">
+		<territory>	
+			<location x="12588" y="58332" minz="-3676" maxz="-3276" />
+			<location x="13904" y="58872" minz="-3676" maxz="-3276" />
+			<location x="12968" y="61688" minz="-3676" maxz="-3276" />
+			<location x="11192" y="60712" minz="-3676" maxz="-3276" />
+		</territory>
+		<npc id="20019" count="3" respawn="15" />	
+		<npc id="20460" count="2" respawn="15" />	
+		<npc id="20308" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_22]">
+		<territory>	
+			<location x="7516" y="62884" minz="-3844" maxz="-3444" />
+			<location x="11188" y="60736" minz="-3844" maxz="-3444" />
+			<location x="12948" y="61712" minz="-3844" maxz="-3444" />
+			<location x="10568" y="65244" minz="-3844" maxz="-3444" />
+			<location x="5868" y="65212" minz="-3844" maxz="-3444" />
+		</territory>
+		<npc id="20036" count="5" respawn="15" />	
+		<npc id="20466" count="3" respawn="15" />	
+		<npc id="20308" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_22s]">
+		<territory>	
+			<location x="9200" y="62864" minz="-3756" maxz="-3456" />
+			<location x="10076" y="62928" minz="-3756" maxz="-3456" />
+			<location x="10280" y="63780" minz="-3756" maxz="-3456" />
+			<location x="9448" y="64308" minz="-3756" maxz="-3456" />
+			<location x="8876" y="63800" minz="-3756" maxz="-3456" />
+		</territory>
+		<npc id="20466" count="2" respawn="15" />	
+		<npc id="20308" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_23]">
+		<territory>	
+			<location x="28920" y="60188" minz="-3812" maxz="-3412" />
+			<location x="32524" y="58916" minz="-3812" maxz="-3412" />
+			<location x="32560" y="65280" minz="-3812" maxz="-3412" />
+			<location x="30040" y="65284" minz="-3812" maxz="-3412" />
+		</territory>
+		<npc id="20473" count="5" respawn="15" />	
+		<npc id="20509" count="4" respawn="15" />	
+		<npc id="20471" count="4" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_23s]">
+		<territory>	
+			<location x="30580" y="60492" minz="-3668" maxz="-3368" />
+			<location x="32244" y="60744" minz="-3668" maxz="-3368" />
+			<location x="31996" y="63084" minz="-3668" maxz="-3368" />
+			<location x="30360" y="63228" minz="-3668" maxz="-3368" />
+		</territory>
+		<npc id="20473" count="1" respawn="15" />	
+		<npc id="20471" count="1" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_24]">
+		<territory>	
+			<location x="29876" y="51948" minz="-3764" maxz="-3214" />
+			<location x="32476" y="52484" minz="-3764" maxz="-3214" />
+			<location x="32536" y="58928" minz="-3764" maxz="-3214" />
+			<location x="28432" y="60296" minz="-3764" maxz="-3214" />
+			<location x="24856" y="55652" minz="-3764" maxz="-3214" />
+		</territory>
+		<npc id="20473" count="7" respawn="15" />	
+		<npc id="20471" count="6" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_241s]">
+		<territory>	
+			<location x="26612" y="57152" minz="-3540" maxz="-3140" />
+			<location x="28340" y="56928" minz="-3540" maxz="-3140" />
+			<location x="29132" y="57744" minz="-3540" maxz="-3140" />
+			<location x="28316" y="59252" minz="-3540" maxz="-3140" />
+		</territory>
+		<npc id="20013" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_242s]">
+		<territory>	
+			<location x="27792" y="53568" minz="-3428" maxz="-3128" />
+			<location x="29972" y="53808" minz="-3428" maxz="-3128" />
+			<location x="27756" y="55240" minz="-3428" maxz="-3128" />
+			<location x="26708" y="55092" minz="-3428" maxz="-3128" />
+		</territory>
+		<npc id="20472" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren04_2019_243s]">
+		<territory>	
+			<location x="31116" y="54492" minz="-3672" maxz="-3372" />
+			<location x="32228" y="54768" minz="-3672" maxz="-3372" />
+			<location x="32228" y="58068" minz="-3672" maxz="-3372" />
+			<location x="31324" y="57548" minz="-3672" maxz="-3372" />
+		</territory>
+		<npc id="20509" count="3" respawn="15" />	
+	</spawn>
+	<spawn name="[oren01_qm2019_01]">
+		<territory>	
+			<location x="20920" y="41452" minz="-3760" maxz="-3360" />
+			<location x="27528" y="37580" minz="-3760" maxz="-3360" />
+			<location x="28824" y="40800" minz="-3760" maxz="-3360" />
+			<location x="25184" y="43884" minz="-3760" maxz="-3360" />
+			<location x="23028" y="44644" minz="-3760" maxz="-3360" />
+		</territory>
+		<npc id="27059" count="1" respawn="180" />	
+	</spawn>
+	<spawn name="[oren01_qm2019_04]">
+		<territory>	
+			<location x="21244" y="56736" minz="-3524" maxz="-3224" />
+			<location x="22848" y="55824" minz="-3524" maxz="-3224" />
+			<location x="24528" y="57672" minz="-3524" maxz="-3224" />
+			<location x="21888" y="59156" minz="-3524" maxz="-3224" />
+		</territory>
+		<npc id="27062" count="1" respawn="180" />	
+	</spawn>
+	<spawn name="[oren07_npc2019_gd01]">
+		<territory>	
+			<location x="188" y="32968" minz="-3808" maxz="-3408" />
+			<location x="5528" y="32892" minz="-3808" maxz="-3408" />
+			<location x="2876" y="35952" minz="-3808" maxz="-3408" />
+			<location x="196" y="36040" minz="-3808" maxz="-3408" />
+		</territory>
+		<npc id="31845" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren07_npc2019_gd02]">
+		<territory>	
+			<location x="324" y="36324" minz="-3760" maxz="-3260" />
+			<location x="2464" y="36224" minz="-3760" maxz="-3260" />
+			<location x="4104" y="38916" minz="-3760" maxz="-3260" />
+			<location x="1656" y="43668" minz="-3760" maxz="-3260" />
+			<location x="276" y="43764" minz="-3760" maxz="-3260" />
+		</territory>
+		<npc id="31845" count="2" respawn="15" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_001]">
+		<npc id="30980" count="1" respawn="60" pos="2908 44128 -2712 0" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_g01]">
+		<territory>	
+			<location x="24831" y="51119" minz="-3946" maxz="-2946" />
+			<location x="32299" y="46406" minz="-3946" maxz="-2946" />
+			<location x="32346" y="56829" minz="-3946" maxz="-2946" />
+			<location x="19185" y="59132" minz="-3946" maxz="-2946" />
+		</territory>
+		<npc id="31033" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_g02]">
+		<territory>	
+			<location x="22800" y="58922" minz="-3946" maxz="-2946" />
+			<location x="32357" y="57037" minz="-3946" maxz="-2946" />
+			<location x="32277" y="65139" minz="-3946" maxz="-2946" />
+			<location x="22134" y="65035" minz="-3946" maxz="-2946" />
+		</territory>
+		<npc id="31033" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_g03]">
+		<territory>	
+			<location x="16232" y="40600" minz="-3946" maxz="-2946" />
+			<location x="30368" y="34241" minz="-3946" maxz="-2946" />
+			<location x="28136" y="43588" minz="-3946" maxz="-2946" />
+			<location x="17296" y="42893" minz="-3946" maxz="-2946" />
+		</territory>
+		<npc id="31033" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_g04]">
+		<territory>	
+			<location x="15742" y="40489" minz="-3946" maxz="-2946" />
+			<location x="17744" y="43289" minz="-3946" maxz="-2946" />
+			<location x="12916" y="55041" minz="-3946" maxz="-2946" />
+			<location x="5241" y="53419" minz="-3946" maxz="-2946" />
+			<location x="8942" y="47196" minz="-3946" maxz="-2946" />
+		</territory>
+		<npc id="31033" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_g05]">
+		<territory>	
+			<location x="18438" y="43185" minz="-3946" maxz="-2946" />
+			<location x="24175" y="43622" minz="-3946" maxz="-2946" />
+			<location x="25868" y="49718" minz="-3946" maxz="-2946" />
+			<location x="18383" y="58647" minz="-3946" maxz="-2946" />
+			<location x="12925" y="55695" minz="-3946" maxz="-2946" />
+		</territory>
+		<npc id="31033" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_g06]">
+		<territory>	
+			<location x="2906" y="53252" minz="-3946" maxz="-2946" />
+			<location x="12463" y="55186" minz="-3946" maxz="-2946" />
+			<location x="15021" y="65144" minz="-3946" maxz="-2946" />
+			<location x="678" y="65126" minz="-3946" maxz="-2946" />
+		</territory>
+		<npc id="31033" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd01]">
+		<territory>	
+			<location x="31384" y="33580" minz="-3780" maxz="-3480" />
+			<location x="32520" y="33824" minz="-3780" maxz="-3480" />
+			<location x="32496" y="36848" minz="-3780" maxz="-3480" />
+			<location x="27992" y="37752" minz="-3780" maxz="-3480" />
+			<location x="26292" y="35428" minz="-3780" maxz="-3480" />
+			<location x="27704" y="34468" minz="-3780" maxz="-3480" />
+		</territory>
+		<npc id="31848" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd03]">
+		<territory>	
+			<location x="31032" y="46088" minz="-3788" maxz="-3138" />
+			<location x="32408" y="46608" minz="-3788" maxz="-3138" />
+			<location x="32404" y="51144" minz="-3788" maxz="-3138" />
+			<location x="29484" y="51188" minz="-3788" maxz="-3138" />
+			<location x="27420" y="49124" minz="-3788" maxz="-3138" />
+		</territory>
+		<npc id="31851" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd04]">
+		<territory>	
+			<location x="24620" y="48304" minz="-3732" maxz="-3282" />
+			<location x="27360" y="49132" minz="-3732" maxz="-3282" />
+			<location x="29352" y="51128" minz="-3732" maxz="-3282" />
+			<location x="27272" y="53028" minz="-3732" maxz="-3282" />
+			<location x="25760" y="53600" minz="-3732" maxz="-3282" />
+			<location x="22720" y="52016" minz="-3732" maxz="-3282" />
+			<location x="22376" y="49480" minz="-3732" maxz="-3282" />
+		</territory>
+		<npc id="31851" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd05]">
+		<territory>	
+			<location x="19828" y="45920" minz="-3756" maxz="-3306" />
+			<location x="25008" y="43944" minz="-3756" maxz="-3306" />
+			<location x="24556" y="48204" minz="-3756" maxz="-3306" />
+			<location x="22272" y="49504" minz="-3756" maxz="-3306" />
+			<location x="20928" y="49456" minz="-3756" maxz="-3306" />
+		</territory>
+		<npc id="31851" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd06]">
+		<territory>	
+			<location x="20920" y="41452" minz="-3760" maxz="-3360" />
+			<location x="27528" y="37580" minz="-3760" maxz="-3360" />
+			<location x="28824" y="40800" minz="-3760" maxz="-3360" />
+			<location x="25184" y="43884" minz="-3760" maxz="-3360" />
+			<location x="23028" y="44644" minz="-3760" maxz="-3360" />
+		</territory>
+		<npc id="31848" count="2" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd07]">
+		<territory>	
+			<location x="23692" y="35168" minz="-3780" maxz="-3480" />
+			<location x="26168" y="35520" minz="-3780" maxz="-3480" />
+			<location x="27652" y="37360" minz="-3780" maxz="-3480" />
+			<location x="20796" y="41364" minz="-3780" maxz="-3480" />
+			<location x="19360" y="39032" minz="-3780" maxz="-3480" />
+		</territory>
+		<npc id="31848" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd08]">
+		<territory>	
+			<location x="16308" y="42092" minz="-3880" maxz="-3480" />
+			<location x="19264" y="39228" minz="-3880" maxz="-3480" />
+			<location x="22932" y="44672" minz="-3880" maxz="-3480" />
+			<location x="19468" y="45708" minz="-3880" maxz="-3480" />
+		</territory>
+		<npc id="31848" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd09]">
+		<territory>	
+			<location x="14852" y="43152" minz="-3896" maxz="-3496" />
+			<location x="17012" y="43196" minz="-3896" maxz="-3496" />
+			<location x="19104" y="46332" minz="-3896" maxz="-3496" />
+			<location x="20056" y="49512" minz="-3896" maxz="-3496" />
+			<location x="16804" y="49856" minz="-3896" maxz="-3496" />
+			<location x="14120" y="45048" minz="-3896" maxz="-3496" />
+		</territory>
+		<npc id="31851" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd10]">
+		<territory>	
+			<location x="15372" y="50076" minz="-3792" maxz="-3392" />
+			<location x="19548" y="49648" minz="-3792" maxz="-3392" />
+			<location x="20296" y="54032" minz="-3792" maxz="-3392" />
+			<location x="14732" y="55092" minz="-3792" maxz="-3392" />
+			<location x="12328" y="52968" minz="-3792" maxz="-3392" />
+			<location x="13268" y="51184" minz="-3792" maxz="-3392" />
+		</territory>
+		<npc id="31851" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd13]">
+		<territory>	
+			<location x="968" y="57384" minz="-3752" maxz="-3102" />
+			<location x="6284" y="57464" minz="-3752" maxz="-3102" />
+			<location x="6300" y="62956" minz="-3752" maxz="-3102" />
+			<location x="4612" y="65108" minz="-3752" maxz="-3102" />
+			<location x="840" y="65084" minz="-3752" maxz="-3102" />
+		</territory>
+		<npc id="31851" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd15]">
+		<territory>	
+			<location x="8556" y="47740" minz="-3824" maxz="-3374" />
+			<location x="11616" y="50580" minz="-3824" maxz="-3374" />
+			<location x="11216" y="51764" minz="-3824" maxz="-3374" />
+			<location x="5988" y="54460" minz="-3824" maxz="-3374" />
+			<location x="4140" y="52600" minz="-3824" maxz="-3374" />
+		</territory>
+		<npc id="31851" count="1" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd17]">
+		<territory>	
+			<location x="29960" y="52768" minz="-3672" maxz="-3172" />
+			<location x="32368" y="53392" minz="-3672" maxz="-3172" />
+			<location x="32316" y="57764" minz="-3672" maxz="-3172" />
+			<location x="28432" y="59844" minz="-3672" maxz="-3172" />
+			<location x="24808" y="55412" minz="-3672" maxz="-3172" />
+		</territory>
+		<npc id="31848" count="2" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd18]">
+		<territory>	
+			<location x="28812" y="59908" minz="-3792" maxz="-3392" />
+			<location x="32340" y="57944" minz="-3792" maxz="-3392" />
+			<location x="32376" y="65068" minz="-3792" maxz="-3392" />
+			<location x="30104" y="65128" minz="-3792" maxz="-3392" />
+		</territory>
+		<npc id="31848" count="2" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd19]">
+		<territory>	
+			<location x="24500" y="61388" minz="-3776" maxz="-3226" />
+			<location x="27340" y="59852" minz="-3776" maxz="-3226" />
+			<location x="28968" y="62872" minz="-3776" maxz="-3226" />
+			<location x="29152" y="65088" minz="-3776" maxz="-3226" />
+			<location x="21928" y="65160" minz="-3776" maxz="-3226" />
+		</territory>
+		<npc id="31848" count="2" respawn="60" />	
+	</spawn>
+	<spawn name="[oren02_npc2019_gd20]">
+		<territory>	
+			<location x="18808" y="55952" minz="-3664" maxz="-3014" />
+			<location x="23172" y="54984" minz="-3664" maxz="-3014" />
+			<location x="26876" y="59864" minz="-3664" maxz="-3014" />
+			<location x="24464" y="61272" minz="-3664" maxz="-3014" />
+			<location x="18652" y="58272" minz="-3664" maxz="-3014" />
+		</territory>
+		<npc id="31851" count="1" respawn="60" />	
+	</spawn>
+
+</list>

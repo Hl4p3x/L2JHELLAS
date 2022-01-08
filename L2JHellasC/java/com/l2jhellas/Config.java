@@ -20,11 +20,12 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Logger;
 
+import com.l2jhellas.gameserver.geodata.PathFindBuffers;
+import com.l2jhellas.util.MathUtil;
+import com.l2jhellas.util.StringUtil;
+
 import Extensions.RankSystem.Rank;
 import Extensions.RankSystem.RankTable;
-
-import com.l2jhellas.gameserver.geodata.PathFindBuffers;
-import com.l2jhellas.util.StringUtil;
 
 public final class Config
 {
@@ -36,7 +37,7 @@ public final class Config
 	private static final String ALT_SETTINGS_FILE = "./config/Main/Altsettings.ini";
 	private static final String CLAN_CONFIG_FILE = "./config/Main/Clan.ini";
 	public static final String SIEGE_CONFIGURATION_FILE = "./config/Main/Siege.ini";
-	private static final String GEO_FILE = "./config/Main/Geodata.ini";
+	public static final String GEO_FILE = "./config/Main/Geodata.ini";
 	private static final String OPTIONS_FILE = "./config/Main/Options.ini";
 	private static final String SEVENSIGNS_FILE = "./config/Main/Sevensigns.ini";
 	
@@ -284,7 +285,6 @@ public final class Config
 	public static int MAX_PETITIONS_PENDING;
 					
 	public static boolean REMOVE_BUFFS_ON_DIE;
-	public static boolean ALLOW_POTS_IN_PVP;
 	public static boolean ALLOW_SOE_IN_PVP;
 	public static String KARMA_NONDROPPABLE_PET_ITEMS;
 	public static List<Integer> KARMA_LIST_NONDROPPABLE_PET_ITEMS = new ArrayList<>();
@@ -320,11 +320,6 @@ public final class Config
 	public static int DONATOR_NAME_COLOR;
 	public static boolean DONATOR_TITLE_COLOR_ENABLED;
 	public static int DONATOR_TITLE_COLOR;
-	public static boolean ALLOW_VIPTELEPORT_COMMAND;
-	public static int VIP_X;
-	public static int VIP_Y;
-	public static int VIP_Z;
-	public static String ABORT_RR;
 	public static boolean SPAWN_CHAR;
 	public static int SPAWN_X;
 	public static int SPAWN_Y;
@@ -509,14 +504,7 @@ public final class Config
 	public static boolean SHOW_NPC_CREST;
 	public static boolean ALLOW_CLASS_MASTER;
 	public static boolean ALLOW_REMOTE_CLASS_MASTER;
-	public static boolean PROTECTOR_PLAYER_PK;
-	public static boolean PROTECTOR_PLAYER_PVP;
-	public static int PROTECTOR_RADIUS_ACTION;
-	public static int PROTECTOR_SKILLID;
-	public static int PROTECTOR_SKILLLEVEL;
-	public static int PROTECTOR_SKILLTIME;
-	public static boolean SEND_MESSAGE;
-	public static String PROTECTOR_MESSAGE;
+	
 	public static int BUFFER_MAX_SCHEMES;
 	public static int BUFFER_STATIC_BUFF_COST;
 	public static List<Integer> AUTO_FIGHTER_SKILL_LIST;
@@ -604,7 +592,6 @@ public final class Config
 	public static boolean ALLOW_MANOR;
 	public static boolean ALLOW_NPC_WALKERS;
 
-	public static boolean GM_EDIT;
 	public static boolean ONLY_GM_ITEMS_FREE;
 	public static boolean RAID_DISABLE_CURSE;
 	public static String COMMUNITY_TYPE;
@@ -767,22 +754,30 @@ public final class Config
 	public static int AUGMENTATION_HIGH_GLOW_CHANCE;
 	public static int AUGMENTATION_TOP_GLOW_CHANCE;
 	
+	// Antharas
 	public static int Antharas_Wait_Time;
-	public static int Valakas_Wait_Time;
-	public static int Random_Of_Valakas_Spawn;
-	public static int Interval_Of_Baium_Spawn;
-	public static int Random_Of_Baium_Spawn;
 	public static int Interval_Of_Antharas_Spawn;
 	public static int Random_Of_Antharas_Spawn;
+	// Valakas
+	public static int Valakas_Wait_Time;
+	public static int Random_Of_Valakas_Spawn;
 	public static int Interval_Of_Valakas_Spawn;
+	// Baium
+	public static int Interval_Of_Baium_Spawn;
+	public static int Random_Of_Baium_Spawn;
+	// Core
 	public static int Interval_Of_Core_Spawn;
 	public static int Random_Of_Core_Spawn;
+	// Orfen
 	public static int Interval_Of_Orfen_Spawn;
 	public static int Random_Of_Orfen_Spawn;
+	// Queen Ant
 	public static int Interval_Of_QueenAnt_Spawn;
 	public static int Random_Of_QueenAnt_Spawn;
+	// Zaken
 	public static int Interval_Of_Zaken_Spawn;
 	public static int Random_Of_Zaken_Spawn;
+	// Sailren
 	public static int Interval_Of_Sailren_Spawn;
 	public static int Random_Of_Sailren_Spawn;
 	
@@ -850,7 +845,6 @@ public final class Config
 	public static boolean AUTO_CREATE_ACCOUNTS;
 	public static int IP_UPDATE_TIME;
 	public static boolean DEVELOPER;
-	public static boolean FORCE_GGAUTH;
 	public static boolean FLOOD_PROTECTION;
 	public static int FAST_CONNECTION_LIMIT;
 	public static int NORMAL_CONNECTION_TIME;
@@ -891,19 +885,7 @@ public final class Config
 	public static int HANDLER;
 	public static int MOVE_ACTION_TIME;
 	public static int ACTION_REQUEST_TIME;
-	
-	public static enum ObjectMapType
-	{
-		L2ObjectHashMap,
-		WorldObjectMap
-	}
-	
-	public static enum ObjectSetType
-	{
-		L2ObjectHashSet,
-		WorldObjectSet
-	}
-	
+
 	public static void load()
 	{
 		if (Server.serverMode == Server.MODE_GAMESERVER)
@@ -1153,7 +1135,6 @@ public final class Config
 			{
 				_log.severe(Config.class.getName() + ": Error while loading " + PVP_CONFIG_FILE + " settings!");
 			}
-			ALLOW_POTS_IN_PVP = Boolean.parseBoolean(PvPSettings.getProperty("AllowPotsInPvP", "True"));
 			ALLOW_SOE_IN_PVP = Boolean.parseBoolean(PvPSettings.getProperty("AllowSoEInPvP", "True"));
 			REMOVE_BUFFS_ON_DIE = Boolean.parseBoolean(PvPSettings.getProperty("RemoveBuffsOnDie", "True"));
 			KARMA_NONDROPPABLE_PET_ITEMS = PvPSettings.getProperty("ListOfPetItems", "2375,3500,3501,3502,4422,4423,4424,4425,6648,6649,6650");
@@ -1209,11 +1190,6 @@ public final class Config
 			DONATOR_NAME_COLOR = Integer.decode("0x" + L2JHellasSettings.getProperty("DonatorColorName", "00FFFF"));
 			DONATOR_TITLE_COLOR_ENABLED = Boolean.parseBoolean(L2JHellasSettings.getProperty("DonatorTitleColorEnabled", "False"));
 			DONATOR_TITLE_COLOR = Integer.decode("0x" + L2JHellasSettings.getProperty("DonatorColorTitle", "0000FF"));
-			ALLOW_VIPTELEPORT_COMMAND = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowVipTeleportCommand", "False"));
-			VIP_X = Integer.parseInt(L2JHellasSettings.getProperty("LocationX", "0"));
-			VIP_Y = Integer.parseInt(L2JHellasSettings.getProperty("LocationY", "0"));
-			VIP_Z = Integer.parseInt(L2JHellasSettings.getProperty("LocationZ", "0"));
-			ABORT_RR = L2JHellasSettings.getProperty("AbortRestart", "L2JHellas");
 			SPAWN_CHAR = Boolean.parseBoolean(L2JHellasSettings.getProperty("CustomSpawn", "False"));
 			SPAWN_X = Integer.parseInt(L2JHellasSettings.getProperty("SpawnX", "0"));
 			SPAWN_Y = Integer.parseInt(L2JHellasSettings.getProperty("SpawnY", "0"));
@@ -1864,14 +1840,6 @@ public final class Config
 			}
 			ENABLE_CACHE_INFO = Boolean.parseBoolean(CustomNpcSettings.getProperty("EnableCacheInfo", "False"));
 			SHOW_NPC_CREST = Boolean.parseBoolean(CustomNpcSettings.getProperty("ShowNpcCrest", "False"));
-			PROTECTOR_PLAYER_PK = Boolean.parseBoolean(CustomNpcSettings.getProperty("ProtectorPlayerPK", "false"));
-			PROTECTOR_PLAYER_PVP = Boolean.parseBoolean(CustomNpcSettings.getProperty("ProtectorPlayerPVP", "false"));
-			PROTECTOR_RADIUS_ACTION = Integer.parseInt(CustomNpcSettings.getProperty("ProtectorRadiusAction", "500"));
-			PROTECTOR_SKILLID = Integer.parseInt(CustomNpcSettings.getProperty("ProtectorSkillId", "1069"));
-			PROTECTOR_SKILLLEVEL = Integer.parseInt(CustomNpcSettings.getProperty("ProtectorSkillLevel", "42"));
-			PROTECTOR_SKILLTIME = Integer.parseInt(CustomNpcSettings.getProperty("ProtectorSkillTime", "800"));
-			SEND_MESSAGE = Boolean.parseBoolean(CustomNpcSettings.getProperty("SendMessage", "false"));
-			PROTECTOR_MESSAGE = CustomNpcSettings.getProperty("ProtectorMessage", "Protector, not spawnkilling here, go read the rules !!!");
 			BUFFER_MAX_SCHEMES = Integer.parseInt(CustomNpcSettings.getProperty("BufferMaxSchemesPerChar", "4"));
 			BUFFER_STATIC_BUFF_COST = Integer.parseInt(CustomNpcSettings.getProperty("BufferStaticCostPerBuff", "-1"));			
 			
@@ -1992,6 +1960,7 @@ public final class Config
 			BYPASS_VALIDATION = Boolean.valueOf(optionsSettings.getProperty("BypassValidation", "True"));
 			DELETE_DAYS = Integer.parseInt(optionsSettings.getProperty("DeleteCharAfterDays", "7"));
 			ALLOW_DISCARDITEM = Boolean.valueOf(optionsSettings.getProperty("AllowDiscardItem", "True"));
+
 			AUTODESTROY_ITEM_AFTER = Integer.parseInt(optionsSettings.getProperty("AutoDestroyDroppedItemAfter", "0"));
 			AUTODESTROY_ITEM_AFTER = AUTODESTROY_ITEM_AFTER * 60 * 1000;
 			
@@ -2033,7 +2002,6 @@ public final class Config
 			ALLOW_CURSED_WEAPONS = Boolean.valueOf(optionsSettings.getProperty("AllowCursedWeapons", "False"));
 			ALLOW_MANOR = Boolean.parseBoolean(optionsSettings.getProperty("AllowManor", "False"));
 			ALLOW_NPC_WALKERS = Boolean.valueOf(optionsSettings.getProperty("AllowNpcWalkers", "True"));
-			GM_EDIT = Boolean.valueOf(optionsSettings.getProperty("GMEdit", "False"));
 			ONLY_GM_ITEMS_FREE = Boolean.valueOf(optionsSettings.getProperty("OnlyGMItemsFree", "True"));
 			RAID_DISABLE_CURSE = Boolean.parseBoolean(optionsSettings.getProperty("DisableRaidCurse", "False"));
 			COMMUNITY_TYPE = optionsSettings.getProperty("CommunityType", "old").toLowerCase();
@@ -2233,88 +2201,59 @@ public final class Config
 			{
 				_log.severe(Config.class.getName() + ": Error while loading " + GRANDBOSS_CONFIG_FILE + " settings!");
 			}
-			Antharas_Wait_Time = Integer.parseInt(grandbossSettings.getProperty("AntharasWaitTime", "10"));
-			if (Antharas_Wait_Time < 3 || Antharas_Wait_Time > 60)
-			{
-				Antharas_Wait_Time = 10;
-			}
-			Valakas_Wait_Time = Integer.parseInt(grandbossSettings.getProperty("ValakasWaitTime", "30"));
-			Interval_Of_Valakas_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfValakasSpawn", "192"));
-			Random_Of_Valakas_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfValakasSpawn", "145"));
+			
+			Antharas_Wait_Time = Integer.parseInt(grandbossSettings.getProperty("AntharasWaitTime", "10"));			
+			Antharas_Wait_Time = MathUtil.limit(Antharas_Wait_Time, 3, 60);							
 			Antharas_Wait_Time = Antharas_Wait_Time * 60000;
+			
 			Interval_Of_Antharas_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfAntharasSpawn", "192"));
-			Interval_Of_Baium_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfBaiumSpawn", "121"));
-			Random_Of_Baium_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfBaiumSpawn", "8"));
-			if (Interval_Of_Antharas_Spawn < 1 || Interval_Of_Antharas_Spawn > 192)
-			{
-				Interval_Of_Antharas_Spawn = 192;
-			}
+			Interval_Of_Antharas_Spawn = MathUtil.getMaxOrDefault(Interval_Of_Antharas_Spawn, 1, 192);									
 			Interval_Of_Antharas_Spawn = Interval_Of_Antharas_Spawn * 3600000;
 			Random_Of_Antharas_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfAntharasSpawn", "145"));
-			if (Random_Of_Antharas_Spawn < 1 || Random_Of_Antharas_Spawn > 192)
-			{
-				Random_Of_Antharas_Spawn = 145;
-			}
+			Random_Of_Antharas_Spawn = MathUtil.getMaxOrDefault(Random_Of_Antharas_Spawn, 1 , 192);		
 			Random_Of_Antharas_Spawn = Random_Of_Antharas_Spawn * 3600000;
+			
+			Valakas_Wait_Time = Integer.parseInt(grandbossSettings.getProperty("ValakasWaitTime", "30"));
+			Valakas_Wait_Time = MathUtil.limit(Valakas_Wait_Time , 3 ,60);
+			Interval_Of_Valakas_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfValakasSpawn", "192"));			
+			Random_Of_Valakas_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfValakasSpawn", "145"));
+			
+			Interval_Of_Baium_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfBaiumSpawn", "121"));
+			Random_Of_Baium_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfBaiumSpawn", "8"));
+
 			Interval_Of_Core_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfCoreSpawn", "27"));
-			if (Interval_Of_Core_Spawn < 1 || Interval_Of_Core_Spawn > 192)
-			{
-				Interval_Of_Core_Spawn = 27;
-			}
-			Interval_Of_Core_Spawn = Interval_Of_Core_Spawn * 3600000;
+			Interval_Of_Core_Spawn = MathUtil.getMaxOrDefault(Interval_Of_Core_Spawn , 1 , 192);		
+			Interval_Of_Core_Spawn = Interval_Of_Core_Spawn * 3600000;			
 			Random_Of_Core_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfCoreSpawn", "47"));
-			if (Random_Of_Core_Spawn < 1 || Random_Of_Core_Spawn > 192)
-			{
-				Random_Of_Core_Spawn = 47;
-			}
+			Random_Of_Core_Spawn = MathUtil.getMaxOrDefault(Random_Of_Core_Spawn , 1, 192);		
 			Random_Of_Core_Spawn = Random_Of_Core_Spawn * 3600000;
+			
 			Interval_Of_Orfen_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfOrfenSpawn", "28"));
-			if (Interval_Of_Orfen_Spawn < 1 || Interval_Of_Orfen_Spawn > 192)
-			{
-				Interval_Of_Orfen_Spawn = 28;
-			}
-			Interval_Of_Orfen_Spawn = Interval_Of_Orfen_Spawn * 3600000;
+			Interval_Of_Orfen_Spawn = MathUtil.getMaxOrDefault(Interval_Of_Orfen_Spawn , 1, 192);
+			Interval_Of_Orfen_Spawn = Interval_Of_Orfen_Spawn * 3600000;			
 			Random_Of_Orfen_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfOrfenSpawn", "41"));
-			if (Random_Of_Orfen_Spawn < 1 || Random_Of_Orfen_Spawn > 192)
-			{
-				Random_Of_Orfen_Spawn = 41;
-			}
+			Random_Of_Orfen_Spawn = MathUtil.getMaxOrDefault(Random_Of_Orfen_Spawn , 1, 192);
 			Random_Of_Orfen_Spawn = Random_Of_Orfen_Spawn * 3600000;
+			
 			Interval_Of_QueenAnt_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfQueenAntSpawn", "19"));
-			if (Interval_Of_QueenAnt_Spawn < 1 || Interval_Of_QueenAnt_Spawn > 192)
-			{
-				Interval_Of_QueenAnt_Spawn = 19;
-			}
-			Interval_Of_QueenAnt_Spawn = Interval_Of_QueenAnt_Spawn * 3600000;
+			Interval_Of_QueenAnt_Spawn = MathUtil.getMaxOrDefault(Interval_Of_QueenAnt_Spawn , 1 , 192);
+			Interval_Of_QueenAnt_Spawn = Interval_Of_QueenAnt_Spawn * 3600000;		
 			Random_Of_QueenAnt_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfQueenAntSpawn", "35"));
-			if (Random_Of_QueenAnt_Spawn < 1 || Random_Of_QueenAnt_Spawn > 192)
-			{
-				Random_Of_QueenAnt_Spawn = 35;
-			}
+			Random_Of_QueenAnt_Spawn = MathUtil.getMaxOrDefault(Random_Of_QueenAnt_Spawn , 1 , 192);
 			Random_Of_QueenAnt_Spawn = Random_Of_QueenAnt_Spawn * 3600000;
+			
 			Interval_Of_Zaken_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfZakenSpawn", "19"));
-			if (Interval_Of_Zaken_Spawn < 1 || Interval_Of_Zaken_Spawn > 192)
-			{
-				Interval_Of_Zaken_Spawn = 19;
-			}
-			Interval_Of_Zaken_Spawn = Interval_Of_Zaken_Spawn * 3600000;
+			Interval_Of_Zaken_Spawn = MathUtil.getMaxOrDefault(Interval_Of_Zaken_Spawn , 1 , 192);
+			Interval_Of_Zaken_Spawn = Interval_Of_Zaken_Spawn * 3600000;			
 			Random_Of_Zaken_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfZakenSpawn", "35"));
-			if (Random_Of_Zaken_Spawn < 1 || Random_Of_Zaken_Spawn > 192)
-			{
-				Random_Of_Zaken_Spawn = 35;
-			}
+			Random_Of_Zaken_Spawn = MathUtil.getMaxOrDefault(Random_Of_Zaken_Spawn , 1 , 192);
 			Random_Of_Zaken_Spawn = Random_Of_Zaken_Spawn * 3600000;
-			Interval_Of_Sailren_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfSailrenSpawn", "12"));
-			if (Interval_Of_Sailren_Spawn < 1 || Interval_Of_Sailren_Spawn > 192)
-			{
-				Interval_Of_Sailren_Spawn = 12;
-			}
-			Interval_Of_Sailren_Spawn = Interval_Of_Sailren_Spawn * 3600000;
+			
+			Interval_Of_Sailren_Spawn = Integer.parseInt(grandbossSettings.getProperty("IntervalOfSailrenSpawn", "12"));			
+			Interval_Of_Sailren_Spawn = MathUtil.getMaxOrDefault(Interval_Of_Sailren_Spawn , 1 , 192);			
+			Interval_Of_Sailren_Spawn = Interval_Of_Sailren_Spawn * 3600000;		
 			Random_Of_Sailren_Spawn = Integer.parseInt(grandbossSettings.getProperty("RandomOfSailrenSpawn", "24"));
-			if (Random_Of_Sailren_Spawn < 1 || Random_Of_Sailren_Spawn > 192)
-			{
-				Random_Of_Sailren_Spawn = 24;
-			}
+			Random_Of_Sailren_Spawn = MathUtil.getMaxOrDefault(Random_Of_Sailren_Spawn , 1 , 192);
 			Random_Of_Sailren_Spawn = Random_Of_Sailren_Spawn * 3600000;
 			
 			Properties SevenSettings = new Properties();
@@ -2435,7 +2374,6 @@ public final class Config
 			DATABASE_MAX_CONNECTIONS = Integer.parseInt(serverSettings.getProperty("MaximumDbConnections", "10"));
 			SHOW_LICENCE = Boolean.parseBoolean(serverSettings.getProperty("ShowLicence", "True"));
 			IP_UPDATE_TIME = Integer.parseInt(serverSettings.getProperty("IpUpdateTime", "15"));
-			FORCE_GGAUTH = Boolean.parseBoolean(serverSettings.getProperty("ForceGGAuth", "False"));
 			AUTO_CREATE_ACCOUNTS = Boolean.parseBoolean(serverSettings.getProperty("AutoCreateAccounts", "False"));
 			FLOOD_PROTECTION = Boolean.parseBoolean(serverSettings.getProperty("EnableFloodProtection", "True"));
 			FAST_CONNECTION_LIMIT = Integer.parseInt(serverSettings.getProperty("FastConnectionLimit", "15"));
@@ -2558,6 +2496,7 @@ public final class Config
 				break;
 			case "AutoDestroyDroppedItemAfter":
 				AUTODESTROY_ITEM_AFTER = Integer.parseInt(pValue);
+				AUTODESTROY_ITEM_AFTER = AUTODESTROY_ITEM_AFTER * 60 * 1000;
 				break;
 			case "DestroyPlayerDroppedItem":
 				DESTROY_DROPPED_PLAYER_ITEM = Boolean.valueOf(pValue);
@@ -2872,9 +2811,6 @@ public final class Config
 			case "MaxMAtkSpeed":
 				MAX_MATK_SPEED = Integer.parseInt(pValue);
 				break;
-			case "AllowPotsInPvP":
-				ALLOW_POTS_IN_PVP = Boolean.parseBoolean(pValue);
-				break;
 			case "DisableGradePenalty":
 				DISABLE_GRADE_PENALTY = Boolean.valueOf(pValue);
 				break;
@@ -2946,9 +2882,6 @@ public final class Config
 				break;
 			case "WeddingDivorceCosts":
 				MOD_WEDDING_DIVORCE_COSTS = Integer.parseInt(pValue);
-				break;
-			case "AbortRestart":
-				ABORT_RR = (pValue);
 				break;
 			case "EnchantChanceWeapon":
 				ENCHANT_CHANCE_WEAPON = Integer.parseInt(pValue);

@@ -3,20 +3,20 @@ package com.l2jhellas.gameserver.datatables.sql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 import com.l2jhellas.Config;
-import com.l2jhellas.gameserver.datatables.xml.PetData;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public class PetNameTable
 {
 	private static Logger _log = Logger.getLogger(PetNameTable.class.getName());
 	
+	static String FIND_PETNAME = "SELECT name FROM pets WHERE name=?";
+
 	private static PetNameTable _instance;
 	
 	public static PetNameTable getInstance()
@@ -28,35 +28,21 @@ public class PetNameTable
 		return _instance;
 	}
 	
-	public boolean doesPetNameExist(String name, int petNpcId)
+	public boolean doesPetNameExist(String name)
 	{
-		boolean result = true;
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
-		PreparedStatement statement = con.prepareStatement("SELECT name FROM pets p, items i WHERE p.item_obj_id = i.object_id AND name=? AND i.item_id IN (?)"))
+		PreparedStatement ps = con.prepareStatement(FIND_PETNAME)) 
 		{
-			statement.setString(1, name);
-			
-			StringBuilder cond = new StringBuilder();
-			
-			if (!cond.toString().isEmpty())
-				cond.append(", ");
-			
-			cond.append(PetData.getPetItemsAsNpc(petNpcId));
-	
-			statement.setString(2, cond.toString());
-			
-			try(ResultSet rset = statement.executeQuery())
+			ps.setString(1, name);
+			try (ResultSet rs = ps.executeQuery()) 
 			{
-				result = rset.next();
+				return rs.next();
 			}
-		}
-		catch (SQLException e)
+		} catch (Exception ex) 
 		{
 			_log.warning(PetNameTable.class.getName() + ": could not check existing petname:");
-			if (Config.DEVELOPER)
-				e.printStackTrace();
 		}
-		return result;
+		return false;
 	}
 	
 	public boolean isValidPetName(String name)

@@ -37,8 +37,7 @@ public class NpcWalkerRoutesData implements DocumentParser
 	
 	@Override
 	public void parseDocument(Document doc)
-	{
-		
+	{		
 		Node n = doc.getFirstChild();
 		for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
 		{

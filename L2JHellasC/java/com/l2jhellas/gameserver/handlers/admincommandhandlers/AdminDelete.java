@@ -1,12 +1,12 @@
 package com.l2jhellas.gameserver.handlers.admincommandhandlers;
 
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
 import com.l2jhellas.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jhellas.gameserver.model.L2Object;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 
 public class AdminDelete implements IAdminCommandHandler
@@ -39,7 +39,7 @@ public class AdminDelete implements IAdminCommandHandler
 				if (RaidBossSpawnManager.getInstance().isDefined(spawn.getNpcid()))
 					RaidBossSpawnManager.getInstance().deleteSpawn(spawn, true);
 				else
-					SpawnTable.getInstance().deleteSpawn(spawn, true);
+					SpawnData.getInstance().deleteSpawn(spawn, true);
 				
 				spawn.getLastSpawn().deleteMe();
 			}

@@ -25,7 +25,6 @@ import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2ClanMember;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.L2Playable;
@@ -34,6 +33,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
 import com.l2jhellas.gameserver.model.zone.L2ZoneType;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
@@ -575,7 +575,7 @@ public class Quest
 				npcReply.setFile("./data/html/scripts/" + getDescr() + "/" + getName() + "/" + result);
 			
 			if (npc != null)
-				npcReply.replace("%objectId%", npc.getName());
+				npcReply.replace("%objectId%", npc.getObjectId());
 			
 			player.sendPacket(npcReply);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
@@ -586,7 +586,7 @@ public class Quest
 			npcReply.setHtml(result);
 			
 			if (npc != null)
-				npcReply.replace("%objectId%", npc.getName());
+				npcReply.replace("%objectId%", npc.getObjectId());
 			
 			player.sendPacket(npcReply);
 			player.sendPacket(ActionFailed.STATIC_PACKET);

@@ -818,6 +818,11 @@ public final class L2NpcTemplate extends L2CharTemplate
 		return race;
 	}
 	
+	public boolean isType(String checktype)
+	{
+		return type.equalsIgnoreCase(checktype);
+	}
+	
 	public boolean isCustom()
 	{
 		return npcId != idTemplate;
@@ -852,5 +857,4 @@ public final class L2NpcTemplate extends L2CharTemplate
 	{
 		return isQuestMonster;
 	}
-	
 }

@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[schutt_castle2416_0201]" event_name="[schutt_castle2416_0201]">
+		<npc id="35532" count="1" respawn="10800" pos="77219 -149202 379 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="77303 -149202 379 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="77190 -149317 379 33032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77202 -149234 379 33032" />	
+		<npc id="35532" count="1" respawn="10800" pos="77196 -149275 379 33032" />	
+		<npc id="35532" count="1" respawn="10800" pos="77326 -149279 379 3160" />	
+		<npc id="35543" count="1" respawn="10800" pos="77332 -149321 379 3160" />	
+		<npc id="35543" count="1" respawn="10800" pos="77321 -149238 379 3160" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0202]" event_name="[schutt_castle2416_0202]">
+		<npc id="35543" count="1" respawn="10800" pos="77799 -149202 379 18152" />	
+		<npc id="35532" count="1" respawn="10800" pos="77882 -149202 379 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="77769 -149312 379 33032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77781 -149230 379 33032" />	
+		<npc id="35532" count="1" respawn="10800" pos="77775 -149271 379 33032" />	
+		<npc id="35532" count="1" respawn="10800" pos="77905 -149275 379 3160" />	
+		<npc id="35543" count="1" respawn="10800" pos="77911 -149316 379 3160" />	
+		<npc id="35543" count="1" respawn="10800" pos="77900 -149233 379 3160" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0301]" event_name="[schutt_castle2416_0301]">
+		<npc id="35543" count="1" respawn="10800" pos="77400 -149550 -346 18032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77438 -149550 -346 18032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77476 -149550 -346 18032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77512 -149550 -346 18032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77548 -149550 -346 18032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77585 -149551 -346 18032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77622 -149551 -346 18032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77659 -149551 -346 18032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77696 -149550 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77401 -149478 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77437 -149479 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77474 -149479 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77510 -149480 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77547 -149479 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77585 -149478 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77621 -149478 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77658 -149478 -346 18032" />	
+		<npc id="35535" count="1" respawn="10800" pos="77693 -149479 -346 18032" />	
+		<npc id="35531" count="1" respawn="10800" pos="77546 -149425 -346 18032" />	
+		<npc id="35542" count="1" respawn="10800" pos="77508 -149426 -346 18032" />	
+		<npc id="35542" count="1" respawn="10800" pos="77472 -149427 -346 18032" />	
+		<npc id="35542" count="1" respawn="10800" pos="77401 -149426 -346 18032" />	
+		<npc id="35542" count="1" respawn="10800" pos="77435 -149426 -346 18032" />	
+		<npc id="35542" count="1" respawn="10800" pos="77691 -149427 -346 18032" />	
+		<npc id="35542" count="1" respawn="10800" pos="77655 -149428 -346 18032" />	
+		<npc id="35542" count="1" respawn="10800" pos="77584 -149427 -346 18032" />	
+		<npc id="35542" count="1" respawn="10800" pos="77618 -149427 -346 18032" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0303]" event_name="[schutt_castle2416_0303]">
+		<npc id="35542" count="1" respawn="10800" pos="77550 -149673 -346 18088" />	
+		<npc id="35542" count="1" respawn="10800" pos="77511 -149673 -346 18088" />	
+		<npc id="35542" count="1" respawn="10800" pos="77475 -149673 -346 18088" />	
+		<npc id="35542" count="1" respawn="10800" pos="77441 -149674 -346 18088" />	
+		<npc id="35542" count="1" respawn="10800" pos="77405 -149674 -346 18088" />	
+		<npc id="35542" count="1" respawn="10800" pos="77694 -149673 -346 18088" />	
+		<npc id="35542" count="1" respawn="10800" pos="77658 -149673 -346 18088" />	
+		<npc id="35542" count="1" respawn="10800" pos="77624 -149673 -346 18088" />	
+		<npc id="35542" count="1" respawn="10800" pos="77588 -149674 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77549 -149728 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77514 -149728 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77479 -149728 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77444 -149728 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77405 -149729 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77695 -149729 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77660 -149729 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77624 -149730 -346 18088" />	
+		<npc id="35535" count="1" respawn="10800" pos="77586 -149729 -346 18088" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0401]" event_name="[schutt_castle2416_0401]">
+		<npc id="35542" count="1" respawn="10800" pos="77252 -149731 -346 1672" />	
+		<npc id="35542" count="1" respawn="10800" pos="77244 -149761 -346 1672" />	
+		<npc id="35542" count="1" respawn="10800" pos="77252 -149789 -346 1672" />	
+		<npc id="35542" count="1" respawn="10800" pos="77243 -149819 -346 1688" />	
+		<npc id="35531" count="1" respawn="10800" pos="77252 -149849 -346 1672" />	
+		<npc id="35542" count="1" respawn="10800" pos="77242 -149879 -346 1704" />	
+		<npc id="35542" count="1" respawn="10800" pos="77253 -149906 -346 1672" />	
+		<npc id="35542" count="1" respawn="10800" pos="77242 -149935 -346 1672" />	
+		<npc id="35542" count="1" respawn="10800" pos="77253 -149964 -346 1672" />	
+		<npc id="35543" count="1" respawn="10800" pos="77196 -149733 -346 1672" />	
+		<npc id="35543" count="1" respawn="10800" pos="77188 -149762 -346 1672" />	
+		<npc id="35543" count="1" respawn="10800" pos="77196 -149791 -346 1672" />	
+		<npc id="35543" count="1" respawn="10800" pos="77187 -149820 -346 1688" />	
+		<npc id="35543" count="1" respawn="10800" pos="77195 -149850 -346 1672" />	
+		<npc id="35543" count="1" respawn="10800" pos="77186 -149880 -346 1704" />	
+		<npc id="35543" count="1" respawn="10800" pos="77197 -149907 -346 1672" />	
+		<npc id="35543" count="1" respawn="10800" pos="77185 -149937 -346 1672" />	
+		<npc id="35543" count="1" respawn="10800" pos="77196 -149965 -346 1672" />	
+		<npc id="35533" count="1" respawn="10800" pos="77136 -149847 -346 1672" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0402]" event_name="[schutt_castle2416_0402]">
+		<npc id="35542" count="1" respawn="10800" pos="77856 -149732 -346 34504" />	
+		<npc id="35542" count="1" respawn="10800" pos="77864 -149760 -346 34504" />	
+		<npc id="35542" count="1" respawn="10800" pos="77856 -149789 -346 34504" />	
+		<npc id="35542" count="1" respawn="10800" pos="77864 -149818 -346 34504" />	
+		<npc id="35542" count="1" respawn="10800" pos="77857 -149848 -346 34504" />	
+		<npc id="35542" count="1" respawn="10800" pos="77865 -149877 -346 34504" />	
+		<npc id="35542" count="1" respawn="10800" pos="77857 -149906 -346 34504" />	
+		<npc id="35542" count="1" respawn="10800" pos="77863 -149935 -346 34504" />	
+		<npc id="35542" count="1" respawn="10800" pos="77857 -149965 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77908 -149732 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77916 -149760 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77908 -149789 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77916 -149818 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77909 -149848 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77917 -149877 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77909 -149906 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77915 -149935 -346 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="77909 -149964 -346 34504" />	
+		<npc id="35533" count="1" respawn="10800" pos="77983 -149847 -346 34504" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0501]" event_name="[schutt_castle2416_0501]">
+		<npc id="35543" count="1" respawn="10800" pos="76782 -149713 -8 20672" />	
+		<npc id="35543" count="1" respawn="10800" pos="76816 -149704 -8 20672" />	
+		<npc id="35532" count="1" respawn="10800" pos="76851 -149695 -8 20672" />	
+		<npc id="35543" count="1" respawn="10800" pos="76924 -149676 -8 20672" />	
+		<npc id="35543" count="1" respawn="10800" pos="76854 -149760 -8 53776" />	
+		<npc id="35532" count="1" respawn="10800" pos="76886 -149686 -8 20672" />	
+		<npc id="35543" count="1" respawn="10800" pos="76960 -149666 -8 20672" />	
+		<npc id="35543" count="1" respawn="10800" pos="76997 -149657 -8 20672" />	
+		<npc id="35543" count="1" respawn="10800" pos="76818 -149773 -8 53776" />	
+		<npc id="35543" count="1" respawn="10800" pos="76782 -149785 -8 53776" />	
+		<npc id="35543" count="1" respawn="10800" pos="76743 -149796 -8 53776" />	
+		<npc id="35533" count="1" respawn="10800" pos="76705 -149806 -8 53776" />	
+		<npc id="35543" count="1" respawn="10800" pos="76666 -149818 -8 53776" />	
+		<npc id="35543" count="1" respawn="10800" pos="76628 -149828 -8 53776" />	
+		<npc id="35543" count="1" respawn="10800" pos="76591 -149839 -8 53776" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0502]" event_name="[schutt_castle2416_0502]">
+		<npc id="35543" count="1" respawn="10800" pos="78089 -149657 -8 15448" />	
+		<npc id="35543" count="1" respawn="10800" pos="78124 -149666 -8 15448" />	
+		<npc id="35543" count="1" respawn="10800" pos="78159 -149674 -8 15448" />	
+		<npc id="35532" count="1" respawn="10800" pos="78194 -149683 -8 15448" />	
+		<npc id="35543" count="1" respawn="10800" pos="78266 -149702 -8 15448" />	
+		<npc id="35532" count="1" respawn="10800" pos="78228 -149692 -8 15448" />	
+		<npc id="35543" count="1" respawn="10800" pos="78304 -149710 -8 15448" />	
+		<npc id="35543" count="1" respawn="10800" pos="78518 -149838 -8 48112" />	
+		<npc id="35543" count="1" respawn="10800" pos="78480 -149830 -8 48112" />	
+		<npc id="35543" count="1" respawn="10800" pos="78441 -149819 -8 48112" />	
+		<npc id="35533" count="1" respawn="10800" pos="78403 -149809 -8 48112" />	
+		<npc id="35543" count="1" respawn="10800" pos="78364 -149798 -8 48112" />	
+		<npc id="35543" count="1" respawn="10800" pos="78326 -149787 -8 48112" />	
+		<npc id="35543" count="1" respawn="10800" pos="78289 -149777 -8 48112" />	
+		<npc id="35543" count="1" respawn="10800" pos="78250 -149766 -8 48112" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0601]" event_name="[schutt_castle2416_0601]">
+		<npc id="35543" count="1" respawn="10800" pos="76390 -149625 -8 21696" />	
+		<npc id="35532" count="1" respawn="10800" pos="76458 -149598 -8 21696" />	
+		<npc id="35543" count="1" respawn="10800" pos="76485 -149622 -8 6480" />	
+		<npc id="35532" count="1" respawn="10800" pos="76504 -149654 -8 6480" />	
+		<npc id="35543" count="1" respawn="10800" pos="76520 -149687 -8 6088" />	
+		<npc id="35543" count="1" respawn="10800" pos="76402 -149732 -8 36624" />	
+		<npc id="35532" count="1" respawn="10800" pos="76395 -149696 -8 36232" />	
+		<npc id="35543" count="1" respawn="10800" pos="76387 -149659 -8 36232" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0602]" event_name="[schutt_castle2416_0602]">
+		<npc id="35532" count="1" respawn="10800" pos="78637 -149600 -8 14568" />	
+		<npc id="35543" count="1" respawn="10800" pos="78706 -149623 -8 14568" />	
+		<npc id="35543" count="1" respawn="10800" pos="78713 -149658 -8 -648" />	
+		<npc id="35532" count="1" respawn="10800" pos="78707 -149696 -8 -648" />	
+		<npc id="35543" count="1" respawn="10800" pos="78698 -149731 -8 -1040" />	
+		<npc id="35543" count="1" respawn="10800" pos="78578 -149692 -8 29496" />	
+		<npc id="35532" count="1" respawn="10800" pos="78596 -149659 -8 29104" />	
+		<npc id="35543" count="1" respawn="10800" pos="78613 -149625 -8 29104" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0701]" event_name="[schutt_castle2416_0701]">
+		<npc id="35543" count="1" respawn="10800" pos="75472 -149499 -8 7864" />	
+		<npc id="35543" count="1" respawn="10800" pos="75602 -149667 -8 7864" />	
+		<npc id="35532" count="1" respawn="10800" pos="75639 -149719 -8 7408" />	
+		<npc id="35543" count="1" respawn="10800" pos="75517 -149557 -8 7864" />	
+		<npc id="35543" count="1" respawn="10800" pos="75558 -149614 -8 7864" />	
+		<npc id="35532" count="1" respawn="10800" pos="75676 -149772 -8 7864" />	
+		<npc id="35543" count="1" respawn="10800" pos="75717 -149829 -8 7864" />	
+		<npc id="35543" count="1" respawn="10800" pos="75757 -149882 -8 7864" />	
+		<npc id="35532" count="1" respawn="10800" pos="75549 -149784 -8 41000" />	
+		<npc id="35532" count="1" respawn="10800" pos="75584 -149837 -8 41000" />	
+		<npc id="35543" count="1" respawn="10800" pos="75620 -149890 -8 41000" />	
+		<npc id="35543" count="1" respawn="10800" pos="75651 -149937 -8 41000" />	
+		<npc id="35543" count="1" respawn="10800" pos="75515 -149734 -8 41000" />	
+		<npc id="35543" count="1" respawn="10800" pos="75479 -149681 -8 41000" />	
+		<npc id="35543" count="1" respawn="10800" pos="75441 -149624 -8 41000" />	
+		<npc id="35543" count="1" respawn="10800" pos="75407 -149570 -8 41000" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0702]" event_name="[schutt_castle2416_0702]">
+		<npc id="35543" count="1" respawn="10800" pos="79692 -149570 -8 -4904" />	
+		<npc id="35543" count="1" respawn="10800" pos="79578 -149749 -8 -4904" />	
+		<npc id="35532" count="1" respawn="10800" pos="79541 -149801 -8 -5360" />	
+		<npc id="35543" count="1" respawn="10800" pos="79652 -149631 -8 -4904" />	
+		<npc id="35543" count="1" respawn="10800" pos="79613 -149689 -8 -4904" />	
+		<npc id="35532" count="1" respawn="10800" pos="79504 -149854 -8 -4904" />	
+		<npc id="35543" count="1" respawn="10800" pos="79464 -149912 -8 -4904" />	
+		<npc id="35543" count="1" respawn="10800" pos="79428 -149968 -8 -4904" />	
+		<npc id="35532" count="1" respawn="10800" pos="79450 -149739 -8 28232" />	
+		<npc id="35532" count="1" respawn="10800" pos="79411 -149790 -8 28232" />	
+		<npc id="35543" count="1" respawn="10800" pos="79374 -149841 -8 28232" />	
+		<npc id="35543" count="1" respawn="10800" pos="79341 -149887 -8 28232" />	
+		<npc id="35543" count="1" respawn="10800" pos="79485 -149690 -8 28232" />	
+		<npc id="35543" count="1" respawn="10800" pos="79522 -149638 -8 28232" />	
+		<npc id="35543" count="1" respawn="10800" pos="79563 -149582 -8 28232" />	
+		<npc id="35543" count="1" respawn="10800" pos="79602 -149533 -8 28232" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0801]" event_name="[schutt_castle2416_0801]">
+		<npc id="35543" count="1" respawn="10800" pos="74730 -151144 -8 29648" />	
+		<npc id="35532" count="1" respawn="10800" pos="74761 -151078 -8 29648" />	
+		<npc id="35543" count="1" respawn="10800" pos="74796 -151076 -8 14432" />	
+		<npc id="35532" count="1" respawn="10800" pos="74833 -151087 -8 14432" />	
+		<npc id="35543" count="1" respawn="10800" pos="74867 -151100 -8 14040" />	
+		<npc id="35543" count="1" respawn="10800" pos="74813 -151214 -8 44576" />	
+		<npc id="35532" count="1" respawn="10800" pos="74783 -151193 -8 44184" />	
+		<npc id="35543" count="1" respawn="10800" pos="74751 -151171 -8 44184" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0802]" event_name="[schutt_castle2416_0802]">
+		<npc id="35532" count="1" respawn="10800" pos="80339 -151077 -8 6472" />	
+		<npc id="35543" count="1" respawn="10800" pos="80373 -151141 -8 6472" />	
+		<npc id="35543" count="1" respawn="10800" pos="80353 -151171 -8 -8744" />	
+		<npc id="35532" count="1" respawn="10800" pos="80323 -151193 -8 -8744" />	
+		<npc id="35543" count="1" respawn="10800" pos="80291 -151213 -8 -9136" />	
+		<npc id="35543" count="1" respawn="10800" pos="80233 -151101 -8 21400" />	
+		<npc id="35532" count="1" respawn="10800" pos="80269 -151090 -8 21008" />	
+		<npc id="35543" count="1" respawn="10800" pos="80305 -151077 -8 21008" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0901]" event_name="[schutt_castle2416_0901]">
+		<npc id="35543" count="1" respawn="10800" pos="74468 -151859 -8 31288" />	
+		<npc id="35532" count="1" respawn="10800" pos="74488 -151789 -8 31288" />	
+		<npc id="35543" count="1" respawn="10800" pos="74524 -151782 -8 16072" />	
+		<npc id="35532" count="1" respawn="10800" pos="74561 -151786 -8 16072" />	
+		<npc id="35543" count="1" respawn="10800" pos="74597 -151794 -8 15680" />	
+		<npc id="35543" count="1" respawn="10800" pos="74561 -151915 -8 46216" />	
+		<npc id="35532" count="1" respawn="10800" pos="74528 -151899 -8 45824" />	
+		<npc id="35543" count="1" respawn="10800" pos="74494 -151882 -8 45824" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0902]" event_name="[schutt_castle2416_0902]">
+		<npc id="35532" count="1" respawn="10800" pos="80610 -151787 -8 4696" />	
+		<npc id="35543" count="1" respawn="10800" pos="80632 -151857 -8 4696" />	
+		<npc id="35543" count="1" respawn="10800" pos="80607 -151883 -8 -10520" />	
+		<npc id="35532" count="1" respawn="10800" pos="80573 -151900 -8 -10520" />	
+		<npc id="35543" count="1" respawn="10800" pos="80539 -151914 -8 -10912" />	
+		<npc id="35543" count="1" respawn="10800" pos="80501 -151793 -8 19624" />	
+		<npc id="35532" count="1" respawn="10800" pos="80538 -151788 -8 19232" />	
+		<npc id="35543" count="1" respawn="10800" pos="80576 -151782 -8 19232" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1001]" event_name="[schutt_castle2416_1001]">
+		<npc id="35542" count="1" respawn="10800" pos="75700 -152392 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75701 -152354 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75701 -152317 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75700 -152280 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75700 -152242 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75700 -152203 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75747 -152392 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75747 -152353 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75747 -152316 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75746 -152279 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75746 -152241 -645 34480" />	
+		<npc id="35542" count="1" respawn="10800" pos="75746 -152203 -645 34480" />	
+		<npc id="35535" count="1" respawn="10800" pos="75806 -152392 -645 34480" />	
+		<npc id="35535" count="1" respawn="10800" pos="75806 -152353 -645 34480" />	
+		<npc id="35535" count="1" respawn="10800" pos="75806 -152316 -645 34480" />	
+		<npc id="35535" count="1" respawn="10800" pos="75805 -152279 -645 34480" />	
+		<npc id="35535" count="1" respawn="10800" pos="75805 -152241 -645 34480" />	
+		<npc id="35535" count="1" respawn="10800" pos="75805 -152202 -645 34480" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1002]" event_name="[schutt_castle2416_1002]">
+		<npc id="35542" count="1" respawn="10800" pos="79403 -152197 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79404 -152235 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79405 -152276 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79405 -152316 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79404 -152354 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79404 -152395 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79359 -152198 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79359 -152236 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79360 -152277 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79360 -152317 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79359 -152355 -645 1736" />	
+		<npc id="35542" count="1" respawn="10800" pos="79359 -152396 -645 1736" />	
+		<npc id="35535" count="1" respawn="10800" pos="79263 -152193 -645 1736" />	
+		<npc id="35535" count="1" respawn="10800" pos="79263 -152232 -645 1736" />	
+		<npc id="35535" count="1" respawn="10800" pos="79264 -152272 -645 1736" />	
+		<npc id="35535" count="1" respawn="10800" pos="79265 -152312 -645 1736" />	
+		<npc id="35535" count="1" respawn="10800" pos="79264 -152350 -645 1736" />	
+		<npc id="35535" count="1" respawn="10800" pos="79263 -152392 -645 1736" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1101]" event_name="[schutt_castle2416_1101]">
+		<npc id="35535" count="1" respawn="10800" pos="75971 -151846 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75985 -151817 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75957 -151876 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75999 -151788 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75951 -151834 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75965 -151805 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75937 -151863 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75979 -151775 132 29888" />	
+		<npc id="35542" count="1" respawn="10800" pos="75863 -151797 132 29888" />	
+		<npc id="35542" count="1" respawn="10800" pos="75878 -151767 132 29888" />	
+		<npc id="35531" count="1" respawn="10800" pos="75890 -151790 132 29888" />	
+		<npc id="35542" count="1" respawn="10800" pos="75913 -151747 132 29888" />	
+		<npc id="35542" count="1" respawn="10800" pos="75872 -151835 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75931 -151825 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75945 -151796 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75916 -151854 132 29888" />	
+		<npc id="35535" count="1" respawn="10800" pos="75958 -151766 132 29888" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1102]" event_name="[schutt_castle2416_1102]">
+		<npc id="35535" count="1" respawn="10800" pos="79112 -151817 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79127 -151847 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79099 -151787 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79141 -151875 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79135 -151810 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79149 -151839 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79121 -151780 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79163 -151868 132 6408" />	
+		<npc id="35542" count="1" respawn="10800" pos="79219 -151764 132 6408" />	
+		<npc id="35542" count="1" respawn="10800" pos="79233 -151795 132 6408" />	
+		<npc id="35531" count="1" respawn="10800" pos="79208 -151790 132 6408" />	
+		<npc id="35542" count="1" respawn="10800" pos="79226 -151834 132 6408" />	
+		<npc id="35542" count="1" respawn="10800" pos="79184 -151747 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79155 -151799 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79169 -151828 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79141 -151769 132 6408" />	
+		<npc id="35535" count="1" respawn="10800" pos="79183 -151857 132 6408" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1201]" event_name="[schutt_castle2416_1201]">
+		<npc id="35543" count="1" respawn="10800" pos="76080 -151747 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="76096 -151716 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="76104 -151761 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="76121 -151730 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="76132 -151775 128 29864" />	
+		<npc id="35532" count="1" respawn="10800" pos="76149 -151744 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="75961 -151995 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="75978 -151964 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="75981 -152004 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="75998 -151972 128 29864" />	
+		<npc id="35532" count="1" respawn="10800" pos="76006 -152015 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="76023 -151984 128 29864" />	
+		<npc id="35532" count="1" respawn="10800" pos="76034 -152026 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="76051 -151995 128 29864" />	
+		<npc id="35543" count="1" respawn="10800" pos="76162 -151790 128 29864" />	
+		<npc id="35532" count="1" respawn="10800" pos="76178 -151759 128 29864" />	
+		<npc id="35533" count="1" respawn="10800" pos="76167 -151711 128 29864" />	
+		<npc id="35533" count="1" respawn="10800" pos="75990 -152054 128 29864" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1202]" event_name="[schutt_castle2416_1202]">
+		<npc id="35543" count="1" respawn="10800" pos="79118 -151957 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="79132 -151988 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="79087 -151969 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="79101 -152001 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="79062 -151981 128 6160" />	
+		<npc id="35532" count="1" respawn="10800" pos="79045 -152031 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="78998 -152010 128 6160" />	
+		<npc id="35532" count="1" respawn="10800" pos="79014 -152042 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="79008 -151726 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="79022 -151754 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="78985 -151736 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="79000 -151766 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="78953 -151748 128 6160" />	
+		<npc id="35543" count="1" respawn="10800" pos="78967 -151779 128 6160" />	
+		<npc id="35532" count="1" respawn="10800" pos="78916 -151765 128 6160" />	
+		<npc id="35532" count="1" respawn="10800" pos="78873 -151783 128 6160" />	
+		<npc id="35533" count="1" respawn="10800" pos="79059 -152061 128 6160" />	
+		<npc id="35533" count="1" respawn="10800" pos="78900 -151734 128 6160" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1301]" event_name="[schutt_castle2416_1301]">
+		<npc id="35543" count="1" respawn="10800" pos="76552 -151203 128 23664" />	
+		<npc id="35543" count="1" respawn="10800" pos="76733 -151089 128 23664" />	
+		<npc id="35543" count="1" respawn="10800" pos="76670 -151129 128 23664" />	
+		<npc id="35543" count="1" respawn="10800" pos="76612 -151164 128 23664" />	
+		<npc id="35543" count="1" respawn="10800" pos="76588 -151192 128 54984" />	
+		<npc id="35543" count="1" respawn="10800" pos="76769 -151077 128 54984" />	
+		<npc id="35543" count="1" respawn="10800" pos="76706 -151117 128 54984" />	
+		<npc id="35543" count="1" respawn="10800" pos="76648 -151153 128 54984" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1302]" event_name="[schutt_castle2416_1302]">
+		<npc id="35543" count="1" respawn="10800" pos="78377 -151102 128 12488" />	
+		<npc id="35543" count="1" respawn="10800" pos="78433 -151134 128 12488" />	
+		<npc id="35543" count="1" respawn="10800" pos="78494 -151172 128 12488" />	
+		<npc id="35543" count="1" respawn="10800" pos="78546 -151206 128 12488" />	
+		<npc id="35543" count="1" respawn="10800" pos="78347 -151086 128 46792" />	
+		<npc id="35543" count="1" respawn="10800" pos="78404 -151119 128 46792" />	
+		<npc id="35543" count="1" respawn="10800" pos="78465 -151157 128 46792" />	
+		<npc id="35543" count="1" respawn="10800" pos="78517 -151190 128 46792" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1401]" event_name="[schutt_castle2416_1401]">
+		<npc id="35542" count="1" respawn="10800" pos="76737 -151437 123 54984" />	
+		<npc id="35542" count="1" respawn="10800" pos="76771 -151416 123 54984" />	
+		<npc id="35542" count="1" respawn="10800" pos="76806 -151393 123 54984" />	
+		<npc id="35542" count="1" respawn="10800" pos="76875 -151349 123 54984" />	
+		<npc id="35542" count="1" respawn="10800" pos="76839 -151372 123 54984" />	
+		<npc id="35535" count="1" respawn="10800" pos="76766 -151482 123 54984" />	
+		<npc id="35535" count="1" respawn="10800" pos="76801 -151461 123 54984" />	
+		<npc id="35535" count="1" respawn="10800" pos="76835 -151438 123 54984" />	
+		<npc id="35535" count="1" respawn="10800" pos="76904 -151394 123 54984" />	
+		<npc id="35535" count="1" respawn="10800" pos="76868 -151417 123 54984" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1402]" event_name="[schutt_castle2416_1402]">
+		<npc id="35542" count="1" respawn="10800" pos="78221 -151346 123 46792" />	
+		<npc id="35542" count="1" respawn="10800" pos="78260 -151367 123 46792" />	
+		<npc id="35542" count="1" respawn="10800" pos="78300 -151389 123 46792" />	
+		<npc id="35542" count="1" respawn="10800" pos="78336 -151411 123 46792" />	
+		<npc id="35542" count="1" respawn="10800" pos="78369 -151432 123 46792" />	
+		<npc id="35535" count="1" respawn="10800" pos="78199 -151382 123 46792" />	
+		<npc id="35535" count="1" respawn="10800" pos="78237 -151402 123 46792" />	
+		<npc id="35535" count="1" respawn="10800" pos="78278 -151425 123 46792" />	
+		<npc id="35535" count="1" respawn="10800" pos="78313 -151447 123 46792" />	
+		<npc id="35535" count="1" respawn="10800" pos="78347 -151468 123 46792" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1501]" event_name="[schutt_castle2416_1501]">
+		<npc id="35542" count="1" respawn="10800" pos="77186 -154110 -392 31784" />	
+		<npc id="35542" count="1" respawn="10800" pos="77196 -154076 -392 31784" />	
+		<npc id="35542" count="1" respawn="10800" pos="77204 -154042 -392 31784" />	
+		<npc id="35542" count="1" respawn="10800" pos="77212 -154010 -392 31784" />	
+		<npc id="35542" count="1" respawn="10800" pos="77222 -153977 -392 31784" />	
+		<npc id="35542" count="1" respawn="10800" pos="77229 -153948 -392 31784" />	
+		<npc id="35542" count="1" respawn="10800" pos="77238 -153914 -392 31784" />	
+		<npc id="35535" count="1" respawn="10800" pos="77217 -154106 -392 31784" />	
+		<npc id="35535" count="1" respawn="10800" pos="77226 -154071 -392 31784" />	
+		<npc id="35535" count="1" respawn="10800" pos="77235 -154037 -392 31784" />	
+		<npc id="35535" count="1" respawn="10800" pos="77243 -154005 -392 31784" />	
+		<npc id="35535" count="1" respawn="10800" pos="77253 -153972 -392 31784" />	
+		<npc id="35535" count="1" respawn="10800" pos="77260 -153943 -392 31784" />	
+		<npc id="35535" count="1" respawn="10800" pos="77269 -153909 -392 31784" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1502]" event_name="[schutt_castle2416_1502]">
+		<npc id="35542" count="1" respawn="10800" pos="77867 -153899 -392 69984" />	
+		<npc id="35542" count="1" respawn="10800" pos="77876 -153933 -392 69984" />	
+		<npc id="35542" count="1" respawn="10800" pos="77886 -153967 -392 69984" />	
+		<npc id="35542" count="1" respawn="10800" pos="77894 -153999 -392 69984" />	
+		<npc id="35542" count="1" respawn="10800" pos="77902 -154032 -392 69984" />	
+		<npc id="35542" count="1" respawn="10800" pos="77911 -154061 -392 69984" />	
+		<npc id="35542" count="1" respawn="10800" pos="77920 -154095 -392 69984" />	
+		<npc id="35535" count="1" respawn="10800" pos="77835 -153896 -392 69984" />	
+		<npc id="35535" count="1" respawn="10800" pos="77845 -153931 -392 69984" />	
+		<npc id="35535" count="1" respawn="10800" pos="77854 -153965 -392 69984" />	
+		<npc id="35535" count="1" respawn="10800" pos="77862 -153997 -392 69984" />	
+		<npc id="35535" count="1" respawn="10800" pos="77870 -154029 -392 69984" />	
+		<npc id="35535" count="1" respawn="10800" pos="77879 -154059 -392 69984" />	
+		<npc id="35535" count="1" respawn="10800" pos="77888 -154092 -392 69984" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1601]" event_name="[schutt_castle2416_1601]">
+		<npc id="35543" count="1" respawn="10800" pos="76981 -153685 -389 45256" />	
+		<npc id="35543" count="1" respawn="10800" pos="77019 -153707 -389 45256" />	
+		<npc id="35543" count="1" respawn="10800" pos="77056 -153728 -389 45256" />	
+		<npc id="35543" count="1" respawn="10800" pos="77091 -153749 -389 45256" />	
+		<npc id="35543" count="1" respawn="10800" pos="77126 -153769 -389 45256" />	
+		<npc id="35543" count="1" respawn="10800" pos="77166 -153790 -389 45256" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1602]" event_name="[schutt_castle2416_1602]">
+		<npc id="35543" count="1" respawn="10800" pos="77948 -153797 -389 56352" />	
+		<npc id="35543" count="1" respawn="10800" pos="77985 -153774 -389 56352" />	
+		<npc id="35543" count="1" respawn="10800" pos="78022 -153752 -389 56352" />	
+		<npc id="35543" count="1" respawn="10800" pos="78058 -153731 -389 56352" />	
+		<npc id="35543" count="1" respawn="10800" pos="78092 -153710 -389 56352" />	
+		<npc id="35543" count="1" respawn="10800" pos="78129 -153686 -389 56352" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1701]" event_name="[schutt_castle2416_1701]">
+		<npc id="35542" count="1" respawn="10800" pos="75922 -154152 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="75954 -154152 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="75985 -154152 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="76016 -154152 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="76048 -154152 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="76079 -154152 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="76111 -154152 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="76142 -154152 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="75937 -154190 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="75969 -154190 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="76000 -154190 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="76031 -154190 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="76063 -154190 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="76095 -154190 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="76126 -154190 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="76157 -154190 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="75935 -154231 135 18048" />	
+		<npc id="35533" count="1" respawn="10800" pos="75967 -154231 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="75998 -154231 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="76029 -154231 135 18048" />	
+		<npc id="35518" count="1" respawn="10800" pos="76061 -154231 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="76092 -154231 135 18048" />	
+		<npc id="35533" count="1" respawn="10800" pos="76124 -154231 135 18048" />	
+		<npc id="35325" count="1" respawn="10800" pos="76155 -154231 135 18048" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1702]" event_name="[schutt_castle2416_1702]">
+		<npc id="35542" count="1" respawn="10800" pos="78962 -154150 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="78994 -154150 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="79025 -154150 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="79056 -154150 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="79088 -154150 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="79119 -154150 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="79151 -154150 135 18048" />	
+		<npc id="35542" count="1" respawn="10800" pos="79182 -154150 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="78947 -154186 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="78979 -154186 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79010 -154186 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79041 -154186 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79073 -154186 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79105 -154186 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79136 -154186 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79167 -154186 135 18048" />	
+		<npc id="35324" count="1" respawn="120" pos="78945 -154228 135 18048" />	
+		<npc id="35533" count="1" respawn="120" pos="78977 -154228 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79008 -154228 135 18048" />	
+		<npc id="35518" count="1" respawn="120" pos="79039 -154228 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79071 -154228 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79102 -154228 135 18048" />	
+		<npc id="35533" count="1" respawn="120" pos="79134 -154228 135 18048" />	
+		<npc id="35535" count="1" respawn="10800" pos="79165 -154228 135 18048" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1801]" event_name="[schutt_castle2416_1801]">
+		<npc id="35522" count="1" respawn="120" pos="76054 -154696 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="76102 -154696 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="76153 -154696 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="76202 -154696 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="76253 -154696 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="76302 -154696 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="76353 -154696 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="76401 -154696 135 18048" />	
+		<npc id="35518" count="1" respawn="120" pos="76050 -154732 135 18048" />	
+		<npc id="35519" count="1" respawn="120" pos="76099 -154732 135 18048" />	
+		<npc id="35520" count="1" respawn="120" pos="76150 -154732 135 18048" />	
+		<npc id="35520" count="1" respawn="120" pos="76198 -154732 135 18048" />	
+		<npc id="35520" count="1" respawn="120" pos="76249 -154732 135 18048" />	
+		<npc id="35520" count="1" respawn="120" pos="76298 -154732 135 18048" />	
+		<npc id="35519" count="1" respawn="120" pos="76349 -154732 135 18048" />	
+		<npc id="35518" count="1" respawn="120" pos="76398 -154732 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="76528 -154775 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="76577 -154775 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="76628 -154775 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="76677 -154775 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="76728 -154775 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="76776 -154775 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="76827 -154775 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="76876 -154775 135 18048" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1802]" event_name="[schutt_castle2416_1802]">
+		<npc id="35522" count="1" respawn="120" pos="78745 -154746 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="78794 -154746 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="78844 -154746 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="78893 -154746 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="78944 -154746 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="78993 -154746 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="79044 -154746 135 18048" />	
+		<npc id="35522" count="1" respawn="120" pos="79093 -154746 135 18048" />	
+		<npc id="35518" count="1" respawn="120" pos="78741 -154782 135 18048" />	
+		<npc id="35519" count="1" respawn="120" pos="78790 -154782 135 18048" />	
+		<npc id="35520" count="1" respawn="120" pos="78841 -154782 135 18048" />	
+		<npc id="35520" count="1" respawn="120" pos="78890 -154782 135 18048" />	
+		<npc id="35520" count="1" respawn="120" pos="78941 -154782 135 18048" />	
+		<npc id="35520" count="1" respawn="120" pos="78989 -154782 135 18048" />	
+		<npc id="35519" count="1" respawn="120" pos="79040 -154782 135 18048" />	
+		<npc id="35518" count="1" respawn="120" pos="79089 -154782 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="78229 -154790 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="78278 -154790 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="78329 -154790 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="78378 -154790 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="78429 -154790 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="78477 -154790 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="78528 -154790 135 18048" />	
+		<npc id="35543" count="1" respawn="120" pos="78577 -154790 135 18048" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1901]" event_name="[schutt_castle2416_1901]">
+		<npc id="35532" count="1" respawn="10800" pos="75864 -154425 395 1736" />	
+		<npc id="35543" count="1" respawn="10800" pos="75864 -154379 395 1736" />	
+		<npc id="35533" count="1" respawn="10800" pos="75863 -154335 395 1736" />	
+		<npc id="35543" count="1" respawn="10800" pos="75864 -154473 395 1736" />	
+		<npc id="35543" count="1" respawn="10800" pos="75863 -154523 395 1736" />	
+		<npc id="35543" count="1" respawn="10800" pos="75863 -154660 395 1736" />	
+		<npc id="35543" count="1" respawn="10800" pos="75862 -154615 395 1736" />	
+		<npc id="35543" count="1" respawn="10800" pos="75863 -154567 395 1736" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_1902]" event_name="[schutt_castle2416_1902]">
+		<npc id="35532" count="1" respawn="10800" pos="79235 -154443 395 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="79235 -154398 395 34504" />	
+		<npc id="35533" count="1" respawn="10800" pos="79235 -154353 395 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="79235 -154491 395 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="79235 -154542 395 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="79235 -154678 395 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="79235 -154633 395 34504" />	
+		<npc id="35543" count="1" respawn="10800" pos="79235 -154585 395 34504" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_2001]" event_name="[schutt_castle2416_2001]">
+		<npc id="35532" count="1" respawn="10800" pos="76273 -154930 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="76328 -154930 395 18152" />	
+		<npc id="35533" count="1" respawn="10800" pos="76448 -154930 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="76387 -154930 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="76508 -154930 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="76565 -154930 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="76675 -154930 395 18152" />	
+		<npc id="35532" count="1" respawn="10800" pos="76618 -154930 395 18152" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_2002]" event_name="[schutt_castle2416_2002]">
+		<npc id="35532" count="1" respawn="10800" pos="78402 -154925 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="78457 -154925 395 18152" />	
+		<npc id="35533" count="1" respawn="10800" pos="78576 -154925 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="78515 -154925 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="78636 -154925 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="78693 -154925 395 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="78804 -154925 395 18152" />	
+		<npc id="35532" count="1" respawn="10800" pos="78746 -154925 395 18152" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_2101]" event_name="[schutt_castle2416_2101]">
+		<npc id="35543" count="1" respawn="10800" pos="76498 -154101 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="76558 -154102 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="76612 -154102 395 50888" />	
+		<npc id="35532" count="1" respawn="10800" pos="76727 -154103 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="76670 -154102 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="76840 -154104 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="76782 -154104 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="76894 -154105 395 50888" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_2102]" event_name="[schutt_castle2416_2102]">
+		<npc id="35543" count="1" respawn="10800" pos="78240 -154099 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="78300 -154099 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="78354 -154100 395 50888" />	
+		<npc id="35532" count="1" respawn="10800" pos="78469 -154100 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="78413 -154100 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="78582 -154102 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="78524 -154101 395 50888" />	
+		<npc id="35543" count="1" respawn="10800" pos="78637 -154102 395 50888" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0201]" event_name="[schutt_castle2416_0201]">
+		<npc id="35532" count="1" respawn="10800" pos="77219 -149202 379 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="77303 -149202 379 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="77190 -149317 379 33032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77202 -149234 379 33032" />	
+		<npc id="35532" count="1" respawn="10800" pos="77196 -149275 379 33032" />	
+		<npc id="35532" count="1" respawn="10800" pos="77326 -149279 379 3160" />	
+		<npc id="35543" count="1" respawn="10800" pos="77332 -149321 379 3160" />	
+		<npc id="35543" count="1" respawn="10800" pos="77321 -149238 379 3160" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0202]" event_name="[schutt_castle2416_0202]">
+		<npc id="35543" count="1" respawn="10800" pos="77799 -149202 379 18152" />	
+		<npc id="35532" count="1" respawn="10800" pos="77882 -149202 379 18152" />	
+		<npc id="35543" count="1" respawn="10800" pos="77769 -149312 379 33032" />	
+		<npc id="35543" count="1" respawn="10800" pos="77781 -149230 379 33032" />	
+		<npc id="35532" count="1" respawn="10800" pos="77775 -149271 379 33032" />	
+		<npc id="35532" count="1" respawn="10800" pos="77905 -149275 379 3160" />	
+		<npc id="35543" count="1" respawn="10800" pos="77911 -149316 379 3160" />	
+		<npc id="35543" count="1" respawn="10800" pos="77900 -149233 379 3160" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0601]" event_name="[schutt_castle2416_0601]">
+		<npc id="35543" count="1" respawn="10800" pos="76390 -149625 -8 21696" />	
+		<npc id="35532" count="1" respawn="10800" pos="76458 -149598 -8 21696" />	
+		<npc id="35543" count="1" respawn="10800" pos="76485 -149622 -8 6480" />	
+		<npc id="35532" count="1" respawn="10800" pos="76504 -149654 -8 6480" />	
+		<npc id="35543" count="1" respawn="10800" pos="76520 -149687 -8 6088" />	
+		<npc id="35543" count="1" respawn="10800" pos="76402 -149732 -8 36624" />	
+		<npc id="35532" count="1" respawn="10800" pos="76395 -149696 -8 36232" />	
+		<npc id="35543" count="1" respawn="10800" pos="76387 -149659 -8 36232" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0602]" event_name="[schutt_castle2416_0602]">
+		<npc id="35532" count="1" respawn="10800" pos="78637 -149600 -8 14568" />	
+		<npc id="35543" count="1" respawn="10800" pos="78706 -149623 -8 14568" />	
+		<npc id="35543" count="1" respawn="10800" pos="78713 -149658 -8 -648" />	
+		<npc id="35532" count="1" respawn="10800" pos="78707 -149696 -8 -648" />	
+		<npc id="35543" count="1" respawn="10800" pos="78698 -149731 -8 -1040" />	
+		<npc id="35543" count="1" respawn="10800" pos="78578 -149692 -8 29496" />	
+		<npc id="35532" count="1" respawn="10800" pos="78596 -149659 -8 29104" />	
+		<npc id="35543" count="1" respawn="10800" pos="78613 -149625 -8 29104" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0801]" event_name="[schutt_castle2416_0801]">
+		<npc id="35543" count="1" respawn="10800" pos="74730 -151144 -8 29648" />	
+		<npc id="35532" count="1" respawn="10800" pos="74761 -151078 -8 29648" />	
+		<npc id="35543" count="1" respawn="10800" pos="74796 -151076 -8 14432" />	
+		<npc id="35532" count="1" respawn="10800" pos="74833 -151087 -8 14432" />	
+		<npc id="35543" count="1" respawn="10800" pos="74867 -151100 -8 14040" />	
+		<npc id="35543" count="1" respawn="10800" pos="74813 -151214 -8 44576" />	
+		<npc id="35532" count="1" respawn="10800" pos="74783 -151193 -8 44184" />	
+		<npc id="35543" count="1" respawn="10800" pos="74751 -151171 -8 44184" />	
+	</spawn>
+	<spawn name="[schutt_castle2416_0802]" event_name="[schutt_castle2416_0802]">
+		<npc id="35532" count="1" respawn="10800" pos="80339 -151077 -8 6472" />	
+		<npc id="35543" count="1" respawn="10800" pos="80373 -151141 -8 6472" />	
+		<npc id="35543" count="1" respawn="10800" pos="80353 -151171 -8 -8744" />	
+		<npc id="35532" count="1" respawn="10800" pos="80323 -151193 -8 -8744" />	
+		<npc id="35543" count="1" respawn="10800" pos="80291 -151213 -8 -9136" />	
+		<npc id="35543" count="1" respawn="10800" pos="80233 -151101 -8 21400" />	
+		<npc id="35532" count="1" respawn="10800" pos="80269 -151090 -8 21008" />	
+		<npc id="35543" count="1" respawn="10800" pos="80305 -151077 -8 21008" />	
+	</spawn>
+	<spawn name="[schoutgard_edwin]">
+		<npc id="32072" count="1" respawn="60" pos="84460 -144052 -1530 32768" />	
+	</spawn>
+	<spawn name="[schoutgard_linda]">
+		<npc id="32071" count="1" respawn="60" pos="84460 -144052 -1530 0" />	
+	</spawn>
+	<spawn name="[schoutgard_adolph]">
+		<npc id="32070" count="1" respawn="60" pos="84460 -144055 -1530 0" />	
+	</spawn>
+	<spawn name="[court_magician_schuttgart]">
+		<npc id="35656" count="1" respawn="60" pos="77904 -152913 -544 16384" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_01]">
+		<npc id="35555" count="1" respawn="60" pos="77493 -153350 -384 18236" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_02]">
+		<npc id="35557" count="1" respawn="60" pos="77797 -153356 -514 16500" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_03]">
+		<npc id="35556" count="1" respawn="60" pos="77555 -153137 1233 16500" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_05]">
+		<npc id="35548" count="1" respawn="60" pos="77893 -149382 -347 17736" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_06]">
+		<npc id="35548" count="1" respawn="60" pos="77349 -149686 -347 50236" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_07]" event_name="[schutt03_npc2416_07]">
+		<npc id="35547" count="1" respawn="60" pos="77541 -150502 773 50736" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_08]">
+		<npc id="35553" count="1" respawn="60" pos="77077 -152950 -902 17736" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_09]">
+		<npc id="35554" count="1" respawn="60" pos="78037 -152966 -902 17736" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_10]">
+		<npc id="35551" count="1" respawn="60" pos="78697 -153058 1048 17736" />	
+		<npc id="35551" count="1" respawn="60" pos="78749 -153222 1064 49736" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_11]">
+		<npc id="35552" count="1" respawn="60" pos="76397 -153058 1048 17736" />	
+		<npc id="35552" count="1" respawn="60" pos="76365 -153234 1064 49736" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_12]">
+		<npc id="35550" count="1" respawn="60" pos="79357 -152142 -646 1736" />	
+		<npc id="35550" count="1" respawn="60" pos="79109 -152134 -646 34736" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_13]">
+		<npc id="35549" count="1" respawn="60" pos="75725 -152150 -646 33736" />	
+		<npc id="35549" count="1" respawn="60" pos="75989 -152150 -646 1736" />	
+	</spawn>
+	<spawn name="[schutt03_npc2416_04]">
+		<npc id="35559" count="1" respawn="60" pos="75590 -145035 -1312 16384" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_0]">
+		<npc id="31973" count="1" respawn="60" pos="87238 -144817 -1291 49538" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_1]">
+		<npc id="31968" count="1" respawn="60" pos="87444 -146042 -1293 9673" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_2]">
+		<npc id="32095" count="1" respawn="60" pos="87282 -146057 -1293 13029" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_3]">
+		<npc id="31970" count="1" respawn="60" pos="86988 -146216 -1293 16222" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_4]">
+		<npc id="31969" count="1" respawn="60" pos="87721 -146230 -1293 15470" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_5]">
+		<npc id="31967" count="1" respawn="60" pos="86336 -145078 -1293 50056" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_6]">
+		<npc id="31965" count="1" respawn="60" pos="86238 -145065 -1293 49334" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_7]">
+		<npc id="32094" count="1" respawn="60" pos="86170 -145068 -1293 46596" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_8]">
+		<npc id="31966" count="1" respawn="60" pos="86058 -145067 -1293 49152" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_9]">
+		<npc id="31971" count="1" respawn="60" pos="88374 -145081 -1293 40960" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_10]">
+		<npc id="31972" count="1" respawn="60" pos="88660 -145083 -1293 49152" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_11]">
+		<npc id="32098" count="1" respawn="60" pos="88571 -145073 -1293 46596" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_12]">
+		<npc id="31996" count="1" respawn="60" pos="88470 -145080 -1293 49730" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_13]">
+		<npc id="31690" count="1" respawn="60" pos="87669 -143451 -1293 16211" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_14]">
+		<npc id="31688" count="1" respawn="60" pos="87597 -143439 -1293 16384" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_15]">
+		<npc id="31964" count="1" respawn="60" pos="87048 -143448 -1293 15584" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_16]" event_name="[lotto_manager]">
+		<npc id="30994" count="1" respawn="60" pos="87091 -143443 -1293 13029" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_17]">
+		<npc id="31734" count="1" respawn="60" pos="88223 -142349 -1343 60027" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_18]">
+		<npc id="35587" count="1" respawn="60" pos="88550 -143274 -1343 27132" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_19]">
+		<npc id="35586" count="1" respawn="60" pos="88664 -143140 -1327 27132" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_20]">
+		<npc id="35585" count="1" respawn="60" pos="87984 -142303 -1343 36736" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_21]">
+		<npc id="35584" count="1" respawn="60" pos="87933 -142144 -1327 36736" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_22]">
+		<npc id="35583" count="1" respawn="60" pos="86745 -142298 -1343 49152" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_23]">
+		<npc id="35582" count="1" respawn="60" pos="86799 -142137 -1327 49152" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_24]">
+		<npc id="35581" count="1" respawn="60" pos="86183 -143264 -1342 64055" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_25]">
+		<npc id="35580" count="1" respawn="60" pos="86043 -143130 -1327 64055" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_26]">
+		<npc id="31732" count="1" respawn="60" pos="86514 -142340 -1343 32768" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_27]">
+		<npc id="31982" count="1" respawn="60" pos="85714 -142369 -1342 59709" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_28]">
+		<npc id="31981" count="1" respawn="60" pos="85865 -142153 -1342 59402" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_29]">
+		<npc id="31674" count="1" respawn="60" pos="85232 -141729 -1542 27617" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_30]">
+		<npc id="31674" count="1" respawn="60" pos="85102 -141924 -1542 22518" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_31]">
+		<npc id="31738" count="1" respawn="60" pos="84521 -141191 -1542 57344" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_32]">
+		<npc id="31983" count="1" respawn="60" pos="84356 -140880 -1538 54303" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_33]">
+		<npc id="31984" count="1" respawn="60" pos="84467 -140710 -1538 59066" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_34]">
+		<npc id="31673" count="1" respawn="60" pos="82916 -139472 -2282 16384" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_35]">
+		<npc id="31673" count="1" respawn="60" pos="82697 -139744 -2280 23776" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_36]">
+		<npc id="31673" count="1" respawn="60" pos="87180 -137318 -2278 18107" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_37]">
+		<npc id="31673" count="1" respawn="60" pos="87549 -137319 -2278 14126" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_38]">
+		<npc id="31985" count="1" respawn="60" pos="87242 -139279 -1539 15816" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_39]">
+		<npc id="31986" count="1" respawn="60" pos="87474 -139275 -1538 18107" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_40]">
+		<npc id="31952" count="1" respawn="60" pos="85753 -141360 -1528 3853" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_41]">
+		<npc id="31951" count="1" respawn="60" pos="85659 -141181 -1528 58498" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_42]">
+		<npc id="31949" count="1" respawn="60" pos="85672 -141146 -1528 57344" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_43]">
+		<npc id="31950" count="1" respawn="60" pos="85779 -141100 -1528 54094" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_44]">
+		<npc id="31989" count="1" respawn="60" pos="85816 -141078 -1528 54682" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_45]">
+		<npc id="31953" count="1" respawn="60" pos="86031 -141035 -1528 36636" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_46]">
+		<npc id="31954" count="1" respawn="60" pos="86387 -140156 -1542 54278" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_48]">
+		<npc id="31948" count="1" respawn="60" pos="86144 -139800 -1527 60527" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_49]">
+		<npc id="31945" count="1" respawn="60" pos="86459 -139631 -1527 52453" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_50]">
+		<npc id="31946" count="1" respawn="60" pos="86307 -139661 -1520 51608" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_51]">
+		<npc id="31947" count="1" respawn="60" pos="86282 -139661 -1520 54339" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_52]">
+		<npc id="31674" count="1" respawn="60" pos="87241 -140691 -1542 15713" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_53]">
+		<npc id="31674" count="1" respawn="60" pos="87482 -140691 -1542 15345" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_54]">
+		<npc id="31733" count="1" respawn="60" pos="87130 -140754 -1542 15201" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_56]">
+		<npc id="31963" count="1" respawn="60" pos="88181 -139576 -1534 44098" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_57]">
+		<npc id="31962" count="1" respawn="60" pos="88271 -139797 -1534 11851" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_58]">
+		<npc id="31961" count="1" respawn="60" pos="88405 -139769 -1533 28800" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_59]">
+		<npc id="31960" count="1" respawn="60" pos="88467 -139841 -1533 19038" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_60]">
+		<npc id="32093" count="1" respawn="60" pos="88427 -139823 -1533 10590" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_61]">
+		<npc id="31990" count="1" respawn="60" pos="88447 -139675 -1533 48655" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_62]">
+		<npc id="31958" count="1" respawn="60" pos="88552 -140784 -1527 41872" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_63]">
+		<npc id="31959" count="1" respawn="60" pos="88904 -141324 -1527 19923" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_64]">
+		<npc id="31956" count="1" respawn="60" pos="88626 -141206 -1527 10796" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_65]">
+		<npc id="31957" count="1" respawn="60" pos="88663 -141231 -1527 10174" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_66]">
+		<npc id="31674" count="1" respawn="60" pos="89487 -141735 -1542 5795" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_67]">
+		<npc id="31674" count="1" respawn="60" pos="89633 -141922 -1542 2281" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_68]">
+		<npc id="31729" count="1" respawn="60" pos="90340 -141373 -1542 39084" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_69]">
+		<npc id="31987" count="1" respawn="60" pos="90268 -140687 -1538 63813" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_70]">
+		<npc id="31988" count="1" respawn="60" pos="90383 -140857 -1538 14232" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_71]">
+		<npc id="31673" count="1" respawn="60" pos="92062 -139702 -2313 5094" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_72]">
+		<npc id="31673" count="1" respawn="60" pos="91837 -139437 -2312 5165" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_73]">
+		<npc id="32096" count="1" respawn="60" pos="90582 -141999 -1527 33876" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_74]">
+		<npc id="31974" count="1" respawn="60" pos="90559 -141911 -1527 31288" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_75]">
+		<npc id="31976" count="1" respawn="60" pos="90388 -142185 -1527 18411" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_76]">
+		<npc id="31975" count="1" respawn="60" pos="90313 -141801 -1527 50410" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_77]">
+		<npc id="31977" count="1" respawn="60" pos="89959 -143257 -1527 1076" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_78]">
+		<npc id="31978" count="1" respawn="60" pos="90000 -143286 -1527 0" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_79]">
+		<npc id="31979" count="1" respawn="60" pos="89986 -143186 -1527 61002" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_80]">
+		<npc id="32097" count="1" respawn="60" pos="89964 -143221 -1527 61567" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_81]">
+		<npc id="32057" count="1" respawn="60" pos="90088 -143223 -1527 47769" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_82]">
+		<npc id="31980" count="1" respawn="60" pos="89939 -143454 -1527 9414" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_84]">
+		<npc id="32092" count="1" respawn="60" pos="88529 -140816 -1527 59899" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_85]">
+		<npc id="31997" count="1" respawn="60" pos="86795 -143128 -1341 21621" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_86]">
+		<npc id="31998" count="1" respawn="60" pos="85129 -142153 -1542 26997" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_88]">
+		<npc id="31691" count="1" respawn="60" pos="86318 -145200 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86318 -145330 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86318 -145460 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86318 -145590 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86318 -145720 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86129 -145200 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86129 -145330 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86129 -145460 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86129 -145590 -1293 0" />	
+		<npc id="31691" count="1" respawn="60" pos="86129 -145720 -1293 0" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_89]">
+		<npc id="35558" count="1" respawn="60" pos="89357 -141589 -1536 0" />	
+	</spawn>
+	<spawn name="[schuttgart01_npcxxxx_90]">
+		<npc id="30767" count="1" respawn="60" pos="85802 -142801 -1336 0" />	
+	</spawn>
+
+</list>

@@ -16,7 +16,6 @@ import com.l2jhellas.gameserver.engines.DocumentParser;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
-import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.zone.L2SpawnZone;
 import com.l2jhellas.gameserver.model.zone.L2ZoneType;
 import com.l2jhellas.gameserver.model.zone.ZoneRegion;
@@ -33,7 +32,6 @@ public class ZoneManager implements DocumentParser
 	
 	private final Map<Class<? extends L2ZoneType>, Map<Integer, ? extends L2ZoneType>> _classZones = new HashMap<>();
 	private int _lastDynamicId = 0;
-	private final List<L2ItemInstance> _debugItems = new ArrayList<>();
 	boolean reload = false;
 	
 	private final ZoneRegion[][] _zoneRegions = new ZoneRegion[L2World.REGIONS_X + 1][L2World.REGIONS_Y + 1];
@@ -398,19 +396,6 @@ public class ZoneManager implements DocumentParser
 				return ((L2OlympiadStadiumZone) temp);
 		}
 		return null;
-	}
-
-	public List<L2ItemInstance> getDebugItems()
-	{
-		return _debugItems;
-	}
-	
-	public void clearDebugItems()
-	{
-		for (L2ItemInstance item : _debugItems)
-			item.decayMe();
-		
-		_debugItems.clear();
 	}
 	
 	// public ZoneRegion getRegion(int x, int y)

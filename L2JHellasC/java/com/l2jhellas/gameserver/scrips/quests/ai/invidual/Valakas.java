@@ -24,7 +24,7 @@ import com.l2jhellas.gameserver.model.zone.type.L2BossZone;
 import com.l2jhellas.gameserver.network.serverpackets.SocialAction;
 import com.l2jhellas.gameserver.network.serverpackets.SpecialCamera;
 import com.l2jhellas.gameserver.scrips.quests.ai.AbstractNpcAI;
-import com.l2jhellas.gameserver.scrips.quests.ai.teleports.GrandBossTeleporters;
+import com.l2jhellas.gameserver.scrips.quests.ai.teleports.GrandBossTeleporter;
 import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.gameserver.templates.StatsSet;
 import com.l2jhellas.util.Util;
@@ -272,7 +272,7 @@ public class Valakas extends AbstractNpcAI
 				ZONE.broadcastPacket(new SpecialCamera(npc.getObjectId(), 750, 170, -10, 3400, 4000, 10, -15, 1, 0));
 			else if (event.equalsIgnoreCase("spawn_10"))
 			{
-				GrandBossManager.setBossStatus(VALAKAS, GrandBossTeleporters._valakasPlayersCount >= 300 ? FIGHTING : 1);
+				GrandBossManager.setBossStatus(VALAKAS, GrandBossTeleporter._valakasPlayersCount >= 300 ? FIGHTING : 1);
 				npc.setIsInvul(false);
 				
 				startQuestTimer("regen_task", 60000, npc, null, true);

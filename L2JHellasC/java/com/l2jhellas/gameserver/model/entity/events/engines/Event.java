@@ -8,7 +8,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.DoorData;
 import com.l2jhellas.gameserver.enums.Team;
 import com.l2jhellas.gameserver.enums.items.L2EtcItemType;
@@ -17,13 +16,14 @@ import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.model.L2Effect;
 import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
 import com.l2jhellas.gameserver.model.actor.instance.L2DoorInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.gameserver.network.serverpackets.ExShowScreenMessage;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
@@ -672,7 +672,7 @@ public abstract class Event
 			spawn.setLocy(yPos);
 			spawn.setLocz( zPos);
 			spawn.setRespawnDelay(1);
-			SpawnTable.getInstance().addNewSpawn(spawn, false);
+			SpawnData.getInstance().addNewSpawn(spawn, false);
 			spawn.doSpawn();
 			spawn.getLastSpawn().broadcastInfo();
 			return spawn;
@@ -761,7 +761,7 @@ public abstract class Event
 		
 		npcSpawn.getLastSpawn().deleteMe();
 		npcSpawn.stopRespawn();
-		SpawnTable.getInstance().deleteSpawn(npcSpawn, true);
+		SpawnData.getInstance().deleteSpawn(npcSpawn, true);
 	}
 	
 	public int numberOfTeams()

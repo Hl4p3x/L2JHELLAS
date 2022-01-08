@@ -16,14 +16,14 @@ import org.w3c.dom.Node;
 import com.PackRoot;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.engines.DocumentParser;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.entity.DimensionalRift;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.util.Rnd;
@@ -120,7 +120,7 @@ public class DimensionalRiftManager implements DocumentParser
 												spawnDat.setLocz(z);
 												spawnDat.setHeading(-1);
 												spawnDat.setRespawnDelay(delay);
-												SpawnTable.getInstance().addNewSpawn(spawnDat, false);
+												SpawnData.getInstance().addNewSpawn(spawnDat, false);
 												_rooms.get(type).get(roomId).getSpawns().add(spawnDat);
 											}
 										}

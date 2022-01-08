@@ -167,13 +167,9 @@ public final class Formulas
 		player.addStatFunc(FuncMaxHpMul.getInstance());
 		player.addStatFunc(FuncMaxCpMul.getInstance());
 		player.addStatFunc(FuncMaxMpMul.getInstance());
-		// cha.addStatFunc(FuncMultRegenResting.getInstance(Stats.REGENERATE_HP_RATE));
-		// cha.addStatFunc(FuncMultRegenResting.getInstance(Stats.REGENERATE_CP_RATE));
-		// cha.addStatFunc(FuncMultRegenResting.getInstance(Stats.REGENERATE_MP_RATE));
+
 		player.addStatFunc(FuncBowAtkRange.getInstance());
-		// cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.POWER_ATTACK));
-		// cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.POWER_DEFENCE));
-		// cha.addStatFunc(FuncMultLevelMod.getInstance(Stats.MAGIC_DEFENCE));
+
 		player.addStatFunc(FuncPAtkMod.getInstance());
 		player.addStatFunc(FuncMAtkMod.getInstance());
 		player.addStatFunc(FuncPDefMod.getInstance());

@@ -12,7 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
-import Extensions.IpCatcher;
 import Extensions.AchievmentsEngine.AchievementsManager;
 import Extensions.Balancer.BalanceLoad;
 import Extensions.RankSystem.RankLoader;
@@ -34,7 +33,6 @@ import com.l2jhellas.gameserver.datatables.sql.ClanTable;
 import com.l2jhellas.gameserver.datatables.sql.ItemTable;
 import com.l2jhellas.gameserver.datatables.sql.NpcBufferSkillIdsTable;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
 import com.l2jhellas.gameserver.datatables.xml.ArmorSetsData;
 import com.l2jhellas.gameserver.datatables.xml.AugmentationData;
@@ -83,7 +81,6 @@ import com.l2jhellas.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jhellas.gameserver.instancemanager.SiegeManager;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
 import com.l2jhellas.gameserver.model.AutoChatHandler;
-import com.l2jhellas.gameserver.model.AutoSpawnHandler;
 import com.l2jhellas.gameserver.model.L2Manor;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.group.party.PartyMatchRoomList;
@@ -93,6 +90,8 @@ import com.l2jhellas.gameserver.model.entity.events.engines.EventBuffer;
 import com.l2jhellas.gameserver.model.entity.events.engines.EventConfig;
 import com.l2jhellas.gameserver.model.entity.olympiad.Olympiad;
 import com.l2jhellas.gameserver.model.entity.olympiad.OlympiadGameManager;
+import com.l2jhellas.gameserver.model.spawn.AutoSpawnHandler;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.L2GameClient;
 import com.l2jhellas.gameserver.network.L2GamePacketHandler;
 import com.l2jhellas.gameserver.scrips.boats.BoatGiranTalking;
@@ -167,7 +166,7 @@ public class GameServer
 		
 		Util.printSection("Zone");
 		ZoneManager.getInstance();
-					
+
 		Util.printSection("Items");
 		ItemTable.getInstance();
 		ArmorSetsData.getInstance();
@@ -208,13 +207,12 @@ public class GameServer
 		AugmentationData.getInstance();
 
 		Util.printSection("Spawn");
-		SpawnTable.getInstance();
+		SpawnData.getInstance();
 		DayNightSpawnManager.getInstance().notifyChangeMode();
 		AutoSpawnHandler.getInstance();
 		FenceData.getInstance();
 		SevenSignsFestival.getInstance();
 		SevenSigns.getInstance().spawnSevenSignsNPC();// Spawn the Orators/Preachers if in the Seal Validation period.
-		DoorData.getInstance();
 	
 		Util.printSection("Economy");
 		TradeController.getInstance();
@@ -225,7 +223,8 @@ public class GameServer
 		SiegeManager.getInstance();
 		ClanHallManager.getInstance();
 		AuctionManager.getInstance();
-		
+		DoorData.getInstance();
+
 		Util.printSection("RaidBos");
 		RaidBossSpawnManager.getInstance();
 		GrandBossManager.getInstance();
@@ -285,7 +284,7 @@ public class GameServer
 			BoatRunePrimeval.load();
 			BoatTalkingGludin.load();
 		}
-		
+
 		Util.printSection("Customs");
 		RunCustoms();
 			
@@ -377,9 +376,7 @@ public class GameServer
 		
 		if (Config.MOD_ALLOW_WEDDING)
 			CoupleManager.getInstance();
-		
-		IpCatcher.ipsLoad();
-			
+
 		if (Config.ALLOW_FAKE_PLAYERS)
 		   FakePlayerManager.initialise();
 		else

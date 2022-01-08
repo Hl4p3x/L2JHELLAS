@@ -1384,7 +1384,7 @@ public class L2Attackable extends L2Npc
 				
 				// Add drop to auto destroy item task
 				if (Config.AUTODESTROY_ITEM_AFTER > 0 && !Config.LIST_PROTECTED_ITEMS.contains(item.getItemId()))
-					ItemsAutoDestroy.getInstance().addItem(ditem);
+					ItemsAutoDestroy.getInstance().addItem(ditem , ditem.isHerb());
 
 				ditem.setProtected(false);
 				

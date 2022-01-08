@@ -10,9 +10,9 @@ import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.entity.Castle;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
@@ -147,7 +147,6 @@ public class SiegeGuardManager
 						spawn1.setLocz(rs.getInt("z"));
 						spawn1.setHeading(rs.getInt("heading"));
 						spawn1.setRespawnDelay(rs.getInt("respawnDelay"));
-						spawn1.setLocation(0);
 						getSpawnedGuards(castle.getCastleId()).add(spawn1);
 					}
 					else

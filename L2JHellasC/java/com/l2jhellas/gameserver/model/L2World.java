@@ -585,6 +585,16 @@ public final class L2World
 		return players;
 	}
 	
+	public static boolean isOutOfWorld(int x, int y)
+	{
+		return isOutOfWorld(x, x, y, y);
+	}
+	
+	public static boolean isOutOfWorld(int minX, int maxX, int minY, int maxY)
+	{
+		return minX < WORLD_X_MIN || maxX > WORLD_X_MAX || minY < WORLD_Y_MIN || maxY > WORLD_Y_MAX;
+	}
+	
 	private static class SingletonHolder
 	{
 		protected static final L2World _instance = new L2World();

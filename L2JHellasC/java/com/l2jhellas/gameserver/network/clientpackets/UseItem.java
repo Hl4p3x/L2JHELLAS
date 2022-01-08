@@ -344,24 +344,38 @@ public final class UseItem extends L2GameClientPacket
 				
 			}
 			if (!Config.ALLOW_DAGGERS_WEAR_HEAVY)
+			{
 				if ((activeChar.getClassId().getId() == 93) || (activeChar.getClassId().getId() == 108) || (activeChar.getClassId().getId() == 101) || (activeChar.getClassId().getId() == 8) || (activeChar.getClassId().getId() == 23) || (activeChar.getClassId().getId() == 36))
 				{
 					if (item.getItemType() == L2ArmorType.HEAVY)
 					{
+						if(item.isEquipped())
+						{
+							activeChar.getInventory().unEquipItemInBodySlotAndRecord(item);
+							activeChar.sendPacket(new ItemList(activeChar ,false));
+						}
 						activeChar.sendPacket(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION);
 						return;
 					}
 				}
+			}
 			
 			if (!Config.ALLOW_ARCHERS_WEAR_HEAVY)
+			{
 				if ((activeChar.getClassId().getId() == 9) || (activeChar.getClassId().getId() == 92) || (activeChar.getClassId().getId() == 24) || (activeChar.getClassId().getId() == 102) || (activeChar.getClassId().getId() == 37) || (activeChar.getClassId().getId() == 109))
 				{
 					if (item.getItemType() == L2ArmorType.HEAVY)
 					{
+						if(item.isEquipped())
+						{
+							activeChar.getInventory().unEquipItemInBodySlotAndRecord(item);
+							activeChar.sendPacket(new ItemList(activeChar ,false));
+						}
 						activeChar.sendPacket(SystemMessageId.CANNOT_EQUIP_ITEM_DUE_TO_BAD_CONDITION);
 						return;
 					}
 				}
+			}
 			final int bodyPart = item.getItem().getBodyPart();
 			// Don't allow weapon/shield hero equipment during Olympiads
 			if (activeChar.isInOlympiadMode() && (bodyPart == L2Item.SLOT_LR_HAND || bodyPart == L2Item.SLOT_L_HAND || bodyPart == L2Item.SLOT_R_HAND) && ((item.getItemId() >= 6611 && item.getItemId() <= 6621) || (item.getItemId() == 6842)))

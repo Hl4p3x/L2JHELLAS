@@ -13,7 +13,6 @@ import com.l2jhellas.gameserver.ai.CtrlIntention;
 import com.l2jhellas.gameserver.cache.HtmCache;
 import com.l2jhellas.gameserver.datatables.sql.ClanTable;
 import com.l2jhellas.gameserver.datatables.sql.ItemTable;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
 import com.l2jhellas.gameserver.datatables.xml.HelperBuffData;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.datatables.xml.MultisellData;
@@ -32,7 +31,6 @@ import com.l2jhellas.gameserver.model.L2DropCategory;
 import com.l2jhellas.gameserver.model.L2DropData;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2Skill;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.MobGroupTable;
 import com.l2jhellas.gameserver.model.actor.instance.L2ControllableMobInstance;
@@ -54,10 +52,14 @@ import com.l2jhellas.gameserver.model.entity.olympiad.Olympiad;
 import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
 import com.l2jhellas.gameserver.model.quest.QuestState;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
+import com.l2jhellas.gameserver.model.spawn.SpawnTerritory;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
+import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
 import com.l2jhellas.gameserver.network.serverpackets.ExShowVariationCancelWindow;
 import com.l2jhellas.gameserver.network.serverpackets.ExShowVariationMakeWindow;
 import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
@@ -165,7 +167,7 @@ public class L2Npc extends L2Character
 			{
 				_oldSpawn.getLastSpawn().deleteMe();
 				_oldSpawn.stopRespawn();
-				SpawnTable.getInstance().deleteSpawn(_oldSpawn, false);
+				SpawnData.getInstance().deleteSpawn(_oldSpawn, false);
 			}
 			catch (Throwable t)
 			{
@@ -474,14 +476,18 @@ public class L2Npc extends L2Character
 		
 		if (player.getAccessLevel().isGm())
 		{		
-			if (!Config.ALT_GAME_VIEWNPC)
+			if (Config.ALT_GAME_VIEWNPC)
 			{
+				SpawnTerritory _territory = getSpawn().getTerritory();
+				String terrName = _territory != null ? _territory.getName() : "-";
+				
+
 				NpcHtmlMessage html = new NpcHtmlMessage(0);
 				StringBuilder html1 = new StringBuilder("<html><body><center><font color=\"LEVEL\">NPC Information</font></center>");
 				String className = getClass().getName().substring(43);
 				html1.append("<br>");
 
-				html1.append("Instance Type: " + className + "<br1>Faction: " + getFactionId() + "<br1>Location ID: " + (getSpawn() != null ? getSpawn().getLocation() : 0) + "<br1>");
+				html1.append("Instance Type: " + className + "<br1>Faction: " + getFactionId() + "<br1>EventName: " + (getSpawn() != null ? getSpawn().getEventName() : "-") + "<br1>");
 
 				if (this instanceof L2ControllableMobInstance)
 					html1.append("Mob Group: " + MobGroupTable.getInstance().getGroupForMob((L2ControllableMobInstance) this).getGroupId() + "<br>");
@@ -490,8 +496,13 @@ public class L2Npc extends L2Character
 
 				html1.append("<table border=\"0\" width=\"100%\">");
 				html1.append("<tr><td>Object ID</td><td>" + getObjectId() + "</td><td>NPC ID</td><td>" + getTemplate().npcId + "</td></tr>");
+				html1.append("<tr><td>Territory</td><td>" + terrName + "</td> "
+				+ ""+ "<td><button value=\"Visual\" action=\"bypass -h npc_" + getObjectId() + "_VisualZone" + "\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td>"
+				+ "<td><button value=\"Clear\" action=\"bypass -h npc_" + getObjectId() + "_VisualZone 1" + "\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
+			
 				html1.append("<tr><td>Coords</td><td>" + getX() + "," + getY() + "," + getZ() + "</td></tr>");			
 				html1.append("<tr><td>Level</td><td>" + getLevel() + "</td><td>Aggro</td><td>" + ((this instanceof L2Attackable) ? ((L2Attackable) this).getAggroRange() : 0) + "</td></tr>");
+
 				html1.append("</table><br>");
 
 				html1.append("<font color=\"LEVEL\">Combat</font>");
@@ -523,53 +534,6 @@ public class L2Npc extends L2Character
 				html.setHtml(html1.toString());
 				player.sendPacket(html);
 			}
-			else
-			{
-				NpcHtmlMessage html = new NpcHtmlMessage(0);
-				StringBuilder html1 = new StringBuilder("<html><body>");
-
-				html1.append("<br><center><font color=\"LEVEL\">[Combat Stats]</font></center>");
-				html1.append("<table border=0 width=\"100%\">");
-				html1.append("<tr><td>Max.HP</td><td>" + (int) (getMaxHp() / getStat().calcStat(Stats.MAX_HP, 1, this, null)) + "*" + (int) getStat().calcStat(Stats.MAX_HP, 1, this, null) + "</td><td>Max.MP</td><td>" + getMaxMp() + "</td></tr>");
-				html1.append("<tr><td>P.Atk.</td><td>" + getPAtk(null) + "</td><td>M.Atk.</td><td>" + getMAtk(null, null) + "</td></tr>");
-				html1.append("<tr><td>P.Def.</td><td>" + getPDef(null) + "</td><td>M.Def.</td><td>" + getMDef(null, null) + "</td></tr>");
-				html1.append("<tr><td>Accuracy</td><td>" + getAccuracy() + "</td><td>Evasion</td><td>" + getEvasionRate(null) + "</td></tr>");
-				html1.append("<tr><td>Critical</td><td>" + getCriticalHit(null, null) + "</td><td>Speed</td><td>" + getRunSpeed() + "</td></tr>");
-				html1.append("<tr><td>Atk.Speed</td><td>" + getPAtkSpd() + "</td><td>Cast.Speed</td><td>" + getMAtkSpd() + "</td></tr>");
-				html1.append("<tr><td>Race</td><td>" + getTemplate().race + "</td><td></td><td></td></tr>");
-				html1.append("</table>");
-
-				html1.append("<br><center><font color=\"LEVEL\">[Basic Stats]</font></center>");
-				html1.append("<table border=0 width=\"100%\">");
-				html1.append("<tr><td>STR</td><td>" + getSTR() + "</td><td>DEX</td><td>" + getDEX() + "</td><td>CON</td><td>" + getCON() + "</td></tr>");
-				html1.append("<tr><td>INT</td><td>" + getINT() + "</td><td>WIT</td><td>" + getWIT() + "</td><td>MEN</td><td>" + getMEN() + "</td></tr>");
-				html1.append("</table>");
-
-				html1.append("<tr><td><button value=\"Edit NPC\" action=\"bypass -h admin_edit_npc " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-				html1.append("<tr><td><button value=\"Show DropList\" action=\"bypass -h admin_show_droplist " + getTemplate().npcId + "\" width=100 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-				html1.append("<tr><td><button value=\"Show Skillist\" action=\"bypass -h admin_show_skilllist_npc " + getTemplate().npcId + "\" width=100 height=20 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-				html1.append("<tr><td align=center><button value=\"Kill\" action=\"bypass -h admin_kill\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-				html1.append("<tr><td align=center><button value=\"Delete\" action=\"bypass -h admin_delete\" width=40 height=15 back=\"sek.cbui94\" fore=\"sek.cbui92\"></td></tr>");
-
-				html1.append("<center><font color=\"LEVEL\">[Drop Info]</font></center>");
-				html1.append("<table border=1 width=\"100%\">");
-				html1.append("<tr><td><center>Item Name</center></td><td width=\"55\" valign=middle align=center><center>Category</center></td><td width=\"50\" valign=middle align=center><center>Chance</center></td></tr>");
-
-				if (getTemplate().getDropData() != null)
-					for (L2DropCategory cat : getTemplate().getDropData())
-						for (L2DropData drop : cat.getAllDrops())
-						{
-							String name = ItemTable.getInstance().getTemplate(drop.getItemId()).getItemName();
-							html1.append("<tr><td><font color=\"33EEEE\">" + name + "</font></td><td width=\"55\" valign=middle align=center>" + (drop.isQuestDrop() ? "<font color=\"FF6600\">Quest</font>" : (cat.isSweep() ? "<font color=\"LEVEL\">Sweep</font>" : "<font color=\"33FF77\">Drop</font>")) + "</td><td width=\"50\" valign=middle align=center>" + (drop.getChance() >= 10000 ? (double) drop.getChance() / 10000 : drop.getChance() < 10000 ? (double) drop.getChance() / 10000 : "N/A") + "%</td></tr>");
-						}
-
-				html1.append("</table>");
-				html1.append("</body></html>");
-
-				html.setHtml(html1.toString());
-				player.sendPacket(html);
-			}
-		
 		}
 		else if (Config.PLAYER_ALT_GAME_VIEWNPC)
 		{		
@@ -783,7 +747,7 @@ public class L2Npc extends L2Character
 			{
 				try
 				{
-					L2Spawn spawn = SpawnTable.getInstance().getSpawn(Integer.parseInt(command.substring(12).trim()));
+					L2Spawn spawn = SpawnData.getInstance().getSpawn(Integer.parseInt(command.substring(12).trim()));
 					
 					if (spawn != null)
 						player.sendPacket(new RadarControl(0, 1, spawn.getLocx(), spawn.getLocy(), spawn.getLocz()));
@@ -825,6 +789,35 @@ public class L2Npc extends L2Character
 				{
 					DimensionalRiftManager.getInstance().handleCheat(player, this);
 				}
+			}			
+			else if (command.startsWith("VisualZone") && player.isGM())
+			{
+				final ExServerPrimitive debug = player.getVisualDebugPacket("ZONE");
+				debug.reset();
+				
+				SpawnTerritory _terr = getSpawn().getTerritory();
+				if(_terr != null)
+				{					
+					_terr.visualizeZone(debug, player.getZ());
+					debug.sendTo(player);				
+				}
+				
+				int val = 0;
+				try
+				{
+					val = Integer.parseInt(command.substring(11));
+				}
+				catch (Exception ex)
+				{
+				}
+				
+				if(val == 1)
+				{
+					debug.reset();
+					debug.sendTo(player);	
+				}
+				
+				onActionShift(player);
 			}
 		}
 	}

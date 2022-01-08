@@ -99,6 +99,9 @@ public class MultiSellChoose extends L2GameClientPacket
 		if (merchant == null)
 			return;
 		
+		if (!player.isGM() && !player.isInsideRadius(merchant, 160, false, false))
+			return;
+		
 		MultiSellEntry entry = prepareEntry(merchant, templateEntry, applyTaxes, maintainEnchantment, enchantment);
 		
 		// Generate a list of distinct ingredients and counts in order to check if the correct item-counts

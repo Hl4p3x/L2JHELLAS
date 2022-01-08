@@ -830,11 +830,10 @@ public final class L2ItemInstance extends L2Object
 				e.printStackTrace();
 		}
 	}
-	
-	
+		
 	public boolean canBeRemoved()
 	{
-		final long autoDestroyTime = Config.AUTODESTROY_ITEM_AFTER == 0 ? 3600000 : Config.AUTODESTROY_ITEM_AFTER;	
+		final long autoDestroyTime = isHerb() ? 19600 : Config.AUTODESTROY_ITEM_AFTER <= 0 ? 3600000 : Config.AUTODESTROY_ITEM_AFTER;	
 		long curtime = System.currentTimeMillis();
 		
 	    if ((getDropTime() == 0) || (getLocation() != ItemLocation.VOID))

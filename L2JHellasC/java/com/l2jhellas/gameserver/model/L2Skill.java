@@ -278,7 +278,10 @@ public abstract class L2Skill
 	private final int _triggeredLevel;
 	private final boolean _bestow;
 	private final boolean _bestowed;
+	
 	protected ChanceCondition _chanceCondition = null;
+	private final String _chanceType;
+
 	private final int _forceId;
 	private final boolean _isHeroSkill; // If true the skill is a Hero Skill
 	private final boolean _isDebuff;
@@ -382,7 +385,9 @@ public abstract class L2Skill
 		_targetConsume = set.getInteger("targetConsumeCount", 0);
 		_targetConsumeId = set.getInteger("targetConsumeId", 0);
 		
-		if (_operateType == SkillOpType.OP_CHANCE)
+		_chanceType = set.getString("chanceType", "");
+
+		if (!_chanceType.isEmpty())
 			_chanceCondition = ChanceCondition.parse(set);
 		
 		_isHeroSkill = HeroSkills.isHeroSkill(_id);
@@ -779,10 +784,10 @@ public abstract class L2Skill
 	{
 		return _operateType == SkillOpType.OP_TOGGLE;
 	}
-	
-	public final boolean isChance()
+
+	public boolean isChance()
 	{
-		return _operateType == SkillOpType.OP_CHANCE;
+		return _chanceCondition != null;
 	}
 	
 	public ChanceCondition getChanceCondition()

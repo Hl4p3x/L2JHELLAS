@@ -1,14 +1,14 @@
 package com.l2jhellas.gameserver.scrips.quests.ai.invidual;
 
 import com.l2jhellas.gameserver.ai.CtrlIntention;
-import com.l2jhellas.gameserver.datatables.sql.SpawnTable;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Attackable;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.quest.QuestEventType;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
+import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.scrips.quests.ai.AbstractNpcAI;
 
 public class Gordon extends AbstractNpcAI
@@ -326,7 +326,7 @@ public class Gordon extends AbstractNpcAI
 	
 	public L2Npc findTemplate(int npcId)
 	{
-		L2Spawn spawn = SpawnTable.getInstance().getSpawn(npcId);
+		L2Spawn spawn = SpawnData.getInstance().getSpawn(npcId);
 		return spawn != null ? spawn.getLastSpawn() : null;
 	}
 	

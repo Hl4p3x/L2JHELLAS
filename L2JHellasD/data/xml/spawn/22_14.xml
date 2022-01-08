@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[raidboss_2214_dr_chaos_gigantic_golem]">
+		<territory>	
+			<location x="96324" y="-111270" minz="-3372" maxz="-2752" />
+			<location x="96724" y="-111270" minz="-3372" maxz="-2752" />
+			<location x="96724" y="-110870" minz="-3372" maxz="-2752" />
+			<location x="96324" y="-110870" minz="-3372" maxz="-2752" />
+		</territory>
+		<npc id="25512" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[raidboss_2214_darkness_shaman_baranka]">
+		<territory>	
+			<location x="73500" y="-102500" minz="-988" maxz="-368" />
+			<location x="74500" y="-102500" minz="-988" maxz="-368" />
+			<location x="74500" y="-101500" minz="-988" maxz="-368" />
+			<location x="73500" y="-101500" minz="-988" maxz="-368" />
+		</territory>
+		<npc id="25509" count="1" respawn="129600" respawn_rand="86400" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_0]">
+		<npc id="22046" count="1" respawn="60" pos="71162 -103748 -953 33903" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_1]">
+		<npc id="22047" count="1" respawn="60" pos="71862 -104246 -968 48756" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_2]">
+		<npc id="22049" count="1" respawn="60" pos="71621 -104849 -985 52699" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_3]">
+		<npc id="22046" count="1" respawn="60" pos="71891 -104947 -984 16384" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_4]">
+		<npc id="22046" count="1" respawn="60" pos="71617 -104980 -992 35486" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_5]">
+		<npc id="22049" count="1" respawn="60" pos="71346 -105338 -1026 55201" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_6]">
+		<npc id="22046" count="1" respawn="60" pos="71659 -105635 -1024 51891" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_7]">
+		<npc id="22049" count="1" respawn="60" pos="70141 -104989 -942 28651" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_8]">
+		<npc id="22049" count="1" respawn="60" pos="69214 -104866 -987 55751" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_9]">
+		<npc id="22046" count="1" respawn="60" pos="69900 -105603 -956 40411" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_10]">
+		<npc id="22047" count="1" respawn="60" pos="69391 -105953 -1064 46239" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_11]">
+		<npc id="22046" count="1" respawn="60" pos="69334 -106752 -1139 46360" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_12]">
+		<npc id="22049" count="1" respawn="60" pos="68426 -105303 -1139 38727" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_13]">
+		<npc id="22047" count="1" respawn="60" pos="68613 -105452 -1152 63274" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_14]">
+		<npc id="22046" count="1" respawn="60" pos="71178 -105788 -1058 1723" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_15]">
+		<npc id="22049" count="1" respawn="60" pos="71189 -106682 -1049 47639" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_16]">
+		<npc id="22049" count="1" respawn="60" pos="71095 -106913 -1066 49691" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_17]">
+		<npc id="22047" count="1" respawn="60" pos="70799 -106469 -1069 39495" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_18]">
+		<npc id="22046" count="1" respawn="60" pos="68295 -106317 -1154 26552" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_19]">
+		<npc id="22046" count="1" respawn="60" pos="68970 -107980 -1139 48028" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_20]">
+		<npc id="22047" count="1" respawn="60" pos="69065 -107952 -1136 7275" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_21]">
+		<npc id="22039" count="1" respawn="60" pos="68325 -107761 -1162 17569" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_22]">
+		<npc id="22039" count="1" respawn="60" pos="67867 -106897 -1162 17169" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_23]">
+		<npc id="22039" count="1" respawn="60" pos="67122 -107163 -1158 33836" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_24]">
+		<npc id="22046" count="1" respawn="60" pos="67209 -108412 -1192 54329" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_25]">
+		<npc id="22047" count="1" respawn="60" pos="66627 -108533 -1245 35808" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_26]">
+		<npc id="22049" count="1" respawn="60" pos="66670 -107636 -1149 21915" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_27]">
+		<npc id="22049" count="1" respawn="60" pos="66584 -106793 -1149 8955" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_28]">
+		<npc id="22049" count="1" respawn="60" pos="66812 -106468 -1147 6977" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_29]">
+		<npc id="22047" count="1" respawn="60" pos="66723 -106784 -1149 48351" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_45]">
+		<npc id="22046" count="1" respawn="60" pos="71202 -111687 -1668 61025" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_46]">
+		<npc id="22047" count="1" respawn="60" pos="69675 -111860 -1815 28166" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_47]">
+		<npc id="22047" count="1" respawn="60" pos="69556 -112104 -1838 44015" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_48]">
+		<npc id="22049" count="1" respawn="60" pos="69059 -112078 -1843 8950" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_49]">
+		<npc id="22046" count="1" respawn="60" pos="69606 -112700 -1741 50373" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_50]">
+		<npc id="22046" count="1" respawn="60" pos="69611 -113170 -1711 53336" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_51]">
+		<npc id="22047" count="1" respawn="60" pos="70012 -112800 -1739 3384" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_52]">
+		<npc id="22049" count="1" respawn="60" pos="69966 -113690 -1743 11995" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_53]">
+		<npc id="32016" count="1" respawn="60" pos="70255 -113759 -1739 48066" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_54]">
+		<npc id="22047" count="1" respawn="60" pos="70181 -114306 -1745 50649" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_55]">
+		<npc id="22046" count="1" respawn="60" pos="70936 -114290 -1739 65431" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_56]">
+		<npc id="22046" count="1" respawn="60" pos="71318 -113668 -1739 12020" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_57]">
+		<npc id="22046" count="1" respawn="60" pos="71395 -113044 -1739 15297" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_58]">
+		<npc id="22046" count="1" respawn="60" pos="71283 -112354 -1732 285" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_59]">
+		<npc id="22048" count="1" respawn="60" pos="71945 -114814 -1895 52432" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_60]">
+		<npc id="22049" count="1" respawn="60" pos="72333 -114794 -2013 10922" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_61]">
+		<npc id="22047" count="1" respawn="60" pos="72275 -114335 -1924 17495" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_62]">
+		<npc id="22047" count="1" respawn="60" pos="72587 -115649 -2247 58884" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_63]">
+		<npc id="22046" count="1" respawn="60" pos="73078 -116196 -2326 53133" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_64]">
+		<npc id="22046" count="1" respawn="60" pos="73528 -116408 -2251 52851" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_65]">
+		<npc id="22047" count="1" respawn="60" pos="73970 -116214 -2221 6999" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_66]">
+		<npc id="22047" count="1" respawn="60" pos="73706 -115868 -2245 22288" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_67]">
+		<npc id="22048" count="1" respawn="60" pos="74293 -116662 -2220 45403" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_68]">
+		<npc id="22041" count="1" respawn="60" pos="74134 -116919 -2220 34380" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_69]">
+		<npc id="22041" count="1" respawn="60" pos="74633 -117168 -2220 61212" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_70]">
+		<npc id="22041" count="1" respawn="60" pos="74713 -116841 -2220 14357" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_71]">
+		<npc id="22041" count="1" respawn="60" pos="74463 -116449 -2220 11635" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_72]">
+		<npc id="22041" count="1" respawn="60" pos="74369 -116753 -2220 43559" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_73]">
+		<npc id="22031" count="1" respawn="60" pos="74438 -116987 -2220 52185" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_74]">
+		<npc id="22031" count="1" respawn="60" pos="74476 -116556 -2220 11874" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_75]">
+		<npc id="22032" count="1" respawn="60" pos="74671 -116650 -2220 49876" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_76]">
+		<npc id="22032" count="1" respawn="60" pos="74077 -117178 -2220 41241" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_77]">
+		<npc id="22031" count="1" respawn="60" pos="70709 -117712 -2528 42805" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_78]">
+		<npc id="22031" count="1" respawn="60" pos="70078 -118787 -2528 43617" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_79]">
+		<npc id="22032" count="1" respawn="60" pos="70747 -118554 -2529 53514" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_80]">
+		<npc id="22033" count="1" respawn="60" pos="70709 -118724 -2528 41833" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_81]">
+		<npc id="22029" count="1" respawn="60" pos="69886 -118100 -2529 33174" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_82]">
+		<npc id="22033" count="1" respawn="60" pos="69527 -119087 -2529 56490" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_83]">
+		<npc id="22048" count="1" respawn="60" pos="70349 -117629 -2528 5245" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_84]">
+		<npc id="22047" count="1" respawn="60" pos="69454 -118353 -2529 42392" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_85]">
+		<npc id="22048" count="1" respawn="60" pos="69136 -117659 -2420 18372" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_86]">
+		<npc id="22047" count="1" respawn="60" pos="69060 -116915 -2180 48705" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_87]">
+		<npc id="22046" count="1" respawn="60" pos="68406 -117390 -2181 9802" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_88]">
+		<npc id="22033" count="1" respawn="60" pos="68197 -116874 -2173 21324" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_89]">
+		<npc id="22032" count="1" respawn="60" pos="68386 -116596 -2173 10027" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_90]">
+		<npc id="22032" count="1" respawn="60" pos="68375 -115543 -2174 12107" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_91]">
+		<npc id="22032" count="1" respawn="60" pos="67561 -115888 -2174 36123" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_92]">
+		<npc id="22038" count="1" respawn="60" pos="67422 -115858 -2173 38461" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_93]">
+		<npc id="22033" count="1" respawn="60" pos="67386 -116389 -2172 33976" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_94]">
+		<npc id="22031" count="1" respawn="60" pos="67403 -116455 -2172 51781" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_95]">
+		<npc id="22033" count="1" respawn="60" pos="67915 -116462 -2173 3466" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_96]">
+		<npc id="22047" count="1" respawn="60" pos="67713 -115145 -2174 15326" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_97]">
+		<npc id="22047" count="1" respawn="60" pos="67881 -113932 -2198 17970" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_98]">
+		<npc id="22046" count="1" respawn="60" pos="67599 -113036 -2206 51630" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_99]">
+		<npc id="22047" count="1" respawn="60" pos="67518 -112201 -2201 22819" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_100]">
+		<npc id="22046" count="1" respawn="60" pos="73041 -118424 -2538 12807" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_101]">
+		<npc id="22047" count="1" respawn="60" pos="75155 -118120 -2594 5415" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_102]">
+		<npc id="22047" count="1" respawn="60" pos="73816 -118946 -2607 37160" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_103]">
+		<npc id="22047" count="1" respawn="60" pos="73421 -118687 -2573 32586" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_104]">
+		<npc id="22048" count="1" respawn="60" pos="74631 -118684 -2636 1367" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_105]">
+		<npc id="22046" count="1" respawn="60" pos="76601 -121404 -3182 50977" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_106]">
+		<npc id="22046" count="1" respawn="60" pos="76493 -120742 -3057 14285" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_107]">
+		<npc id="22046" count="1" respawn="60" pos="75799 -121073 -3010 52472" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_108]">
+		<npc id="22046" count="1" respawn="60" pos="75368 -122002 -3029 47083" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_109]">
+		<npc id="22047" count="1" respawn="60" pos="75104 -122122 -3029 21221" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_110]">
+		<npc id="22047" count="1" respawn="60" pos="74517 -120558 -3029 22076" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_111]">
+		<npc id="22047" count="1" respawn="60" pos="73784 -120498 -3029 28426" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_112]">
+		<npc id="22031" count="1" respawn="60" pos="73333 -120994 -3029 50596" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_113]">
+		<npc id="22031" count="1" respawn="60" pos="74177 -121460 -3029 60013" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_114]">
+		<npc id="22033" count="1" respawn="60" pos="74183 -122169 -3029 11756" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_115]">
+		<npc id="22032" count="1" respawn="60" pos="73748 -121740 -3029 11255" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_116]">
+		<npc id="22034" count="1" respawn="60" pos="74938 -121908 -3029 9185" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_117]">
+		<npc id="22030" count="1" respawn="60" pos="74751 -121526 -3029 46414" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_118]">
+		<npc id="22031" count="1" respawn="60" pos="74721 -122378 -3029 58198" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_119]">
+		<npc id="22029" count="1" respawn="60" pos="74174 -120841 -3029 28959" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_120]">
+		<npc id="22032" count="1" respawn="60" pos="73584 -120921 -3029 58824" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_121]">
+		<npc id="22029" count="1" respawn="60" pos="75312 -121066 -3031 57968" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_122]">
+		<npc id="22048" count="1" respawn="60" pos="74781 -119365 -2732 14169" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_123]">
+		<npc id="22048" count="1" respawn="60" pos="73942 -120182 -3029 37819" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_124]">
+		<npc id="22047" count="1" respawn="60" pos="70111 -121770 -3185 46678" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_125]">
+		<npc id="22048" count="1" respawn="60" pos="70808 -121219 -3071 12973" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_126]">
+		<npc id="22045" count="1" respawn="60" pos="70400 -119996 -2661 8458" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_127]">
+		<npc id="22045" count="1" respawn="60" pos="69705 -120234 -2663 32019" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_128]">
+		<npc id="22045" count="1" respawn="60" pos="70986 -124170 -3159 6422" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_129]">
+		<npc id="22032" count="1" respawn="60" pos="71274 -125065 -3017 54923" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_130]">
+		<npc id="22031" count="1" respawn="60" pos="70060 -125819 -3017 39095" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_131]">
+		<npc id="22030" count="1" respawn="60" pos="70210 -125527 -3017 30356" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_132]">
+		<npc id="22029" count="1" respawn="60" pos="70135 -125514 -3017 52252" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_133]">
+		<npc id="22031" count="1" respawn="60" pos="71381 -125651 -3017 39095" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_134]">
+		<npc id="22032" count="1" respawn="60" pos="70759 -125428 -3017 56034" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_135]">
+		<npc id="22033" count="1" respawn="60" pos="70764 -126256 -3017 36274" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_136]">
+		<npc id="22030" count="1" respawn="60" pos="70896 -125730 -3017 5200" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_137]">
+		<npc id="22033" count="1" respawn="60" pos="70735 -124904 -3017 17876" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_138]">
+		<npc id="22047" count="1" respawn="60" pos="71664 -124518 -3141 65362" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_139]">
+		<npc id="22045" count="1" respawn="60" pos="72302 -125308 -3176 43161" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_140]">
+		<npc id="22047" count="1" respawn="60" pos="72631 -125968 -3282 56649" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_141]">
+		<npc id="22045" count="1" respawn="60" pos="71912 -126615 -3335 43122" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_142]">
+		<npc id="22048" count="1" respawn="60" pos="71502 -127001 -3402 40463" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_143]">
+		<npc id="22032" count="1" respawn="60" pos="71247 -126074 -3017 25487" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_144]">
+		<npc id="22047" count="1" respawn="60" pos="72673 -127406 -3548 62228" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_145]">
+		<npc id="22045" count="1" respawn="60" pos="72946 -127653 -3570 10251" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_146]">
+		<npc id="22047" count="1" respawn="60" pos="71909 -128388 -3373 31660" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_147]">
+		<npc id="22032" count="1" respawn="60" pos="71651 -128631 -3367 40347" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_148]">
+		<npc id="22033" count="1" respawn="60" pos="71694 -129209 -3367 49923" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_149]">
+		<npc id="22033" count="1" respawn="60" pos="71413 -128519 -3367 18011" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_150]">
+		<npc id="22033" count="1" respawn="60" pos="71744 -128355 -3369 59270" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_151]">
+		<npc id="22031" count="1" respawn="60" pos="71924 -128972 -3368 46347" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_152]">
+		<npc id="22031" count="1" respawn="60" pos="71114 -128948 -3367 28999" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_153]">
+		<npc id="22033" count="1" respawn="60" pos="71294 -129083 -3367 24123" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_154]">
+		<npc id="22045" count="1" respawn="60" pos="72043 -130282 -3351 40670" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_155]">
+		<npc id="22045" count="1" respawn="60" pos="72748 -130531 -3360 60540" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_156]">
+		<npc id="22047" count="1" respawn="60" pos="72978 -129972 -3538 16037" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_157]">
+		<npc id="22048" count="1" respawn="60" pos="72899 -130083 -3501 39920" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_158]">
+		<npc id="22045" count="1" respawn="60" pos="70939 -129637 -3447 27862" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_159]">
+		<npc id="22029" count="1" respawn="60" pos="71212 -128949 -3367 23034" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_160]">
+		<npc id="22047" count="1" respawn="60" pos="70260 -128541 -3410 25714" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_161]">
+		<npc id="22048" count="1" respawn="60" pos="70303 -128435 -3412 12365" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_162]">
+		<npc id="22045" count="1" respawn="60" pos="72698 -126138 -3323 9337" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_163]">
+		<npc id="22048" count="1" respawn="60" pos="72698 -126049 -3305 16384" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_164]">
+		<npc id="22032" count="1" respawn="60" pos="75339 -127161 -3152 42350" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_165]">
+		<npc id="22031" count="1" respawn="60" pos="75656 -127720 -3152 54752" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_166]">
+		<npc id="22029" count="1" respawn="60" pos="76157 -127109 -3152 3226" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_167]">
+		<npc id="22030" count="1" respawn="60" pos="76352 -127051 -3152 3016" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_168]">
+		<npc id="22032" count="1" respawn="60" pos="76598 -126831 -3153 4467" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_169]">
+		<npc id="22031" count="1" respawn="60" pos="76837 -127255 -3152 21980" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_170]">
+		<npc id="22048" count="1" respawn="60" pos="76524 -127704 -3152 39116" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_171]">
+		<npc id="22048" count="1" respawn="60" pos="75864 -127438 -3152 28992" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_172]">
+		<npc id="22047" count="1" respawn="60" pos="75525 -126910 -3152 20931" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_173]">
+		<npc id="22045" count="1" respawn="60" pos="75469 -127651 -3152 43219" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_174]">
+		<npc id="22033" count="1" respawn="60" pos="75586 -127980 -3152 58465" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_175]">
+		<npc id="22033" count="1" respawn="60" pos="76738 -127162 -3152 2997" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_176]">
+		<npc id="22047" count="1" respawn="60" pos="75680 -125790 -3356 21925" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_177]">
+		<npc id="22048" count="1" respawn="60" pos="75532 -125779 -3360 32615" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_178]">
+		<npc id="22045" count="1" respawn="60" pos="76476 -125452 -3370 5570" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_179]">
+		<npc id="22048" count="1" respawn="60" pos="76692 -125926 -3352 8037" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_180]">
+		<npc id="22047" count="1" respawn="60" pos="76902 -125792 -3357 64656" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_181]">
+		<npc id="22045" count="1" respawn="60" pos="76715 -126318 -3222 58441" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_182]">
+		<npc id="22045" count="1" respawn="60" pos="76432 -126339 -3185 35232" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_183]">
+		<npc id="22048" count="1" respawn="60" pos="76293 -126238 -3200 46168" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_184]">
+		<npc id="22048" count="1" respawn="60" pos="76130 -126780 -3152 40728" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_185]">
+		<npc id="22045" count="1" respawn="60" pos="76008 -128866 -3393 62528" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_186]">
+		<npc id="22048" count="1" respawn="60" pos="76450 -128853 -3366 762" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_187]">
+		<npc id="22047" count="1" respawn="60" pos="75745 -128925 -3416 39479" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_188]">
+		<npc id="22048" count="1" respawn="60" pos="74660 -129150 -3521 50924" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_189]">
+		<npc id="22048" count="1" respawn="60" pos="74774 -129429 -3529 52423" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_190]">
+		<npc id="22048" count="1" respawn="60" pos="74445 -129192 -3519 26375" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_191]">
+		<npc id="22047" count="1" respawn="60" pos="73240 -128988 -3604 62467" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_192]">
+		<npc id="22047" count="1" respawn="60" pos="73496 -129277 -3591 57514" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_193]">
+		<npc id="22047" count="1" respawn="60" pos="72154 -127058 -3489 20941" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_194]">
+		<npc id="22047" count="1" respawn="60" pos="70381 -127458 -3437 20548" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_195]">
+		<npc id="22048" count="1" respawn="60" pos="70463 -127283 -3443 11814" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_196]">
+		<npc id="22048" count="1" respawn="60" pos="70245 -127730 -3402 59734" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_197]">
+		<npc id="22048" count="1" respawn="60" pos="68954 -125900 -3310 25994" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_198]">
+		<npc id="22045" count="1" respawn="60" pos="68231 -124561 -3245 22553" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_199]">
+		<npc id="22047" count="1" respawn="60" pos="68186 -124304 -3224 18193" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_200]">
+		<npc id="22048" count="1" respawn="60" pos="68021 -123798 -3125 23882" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_201]">
+		<npc id="22048" count="1" respawn="60" pos="69252 -123238 -3163 32920" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_202]">
+		<npc id="22045" count="1" respawn="60" pos="69314 -124286 -3178 47518" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_203]">
+		<npc id="22045" count="1" respawn="60" pos="68639 -123663 -3121 4763" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_204]">
+		<npc id="22032" count="1" respawn="60" pos="67770 -122799 -2912 24473" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_205]">
+		<npc id="22031" count="1" respawn="60" pos="67319 -122698 -2912 24928" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_206]">
+		<npc id="22034" count="1" respawn="60" pos="68091 -121988 -2912 6085" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_207]">
+		<npc id="22032" count="1" respawn="60" pos="68177 -122026 -2912 61196" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_208]">
+		<npc id="22029" count="1" respawn="60" pos="68283 -122457 -2912 50608" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_209]">
+		<npc id="22029" count="1" respawn="60" pos="67503 -122327 -2912 29035" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_210]">
+		<npc id="22045" count="1" respawn="60" pos="68556 -122434 -2912 50478" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_211]">
+		<npc id="22032" count="1" respawn="60" pos="66924 -121932 -2910 28467" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_212]">
+		<npc id="22031" count="1" respawn="60" pos="66837 -122024 -2911 41251" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_213]">
+		<npc id="22034" count="1" respawn="60" pos="67701 -122160 -2912 21517" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_214]">
+		<npc id="22034" count="1" respawn="60" pos="66937 -122314 -2912 65176" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_215]">
+		<npc id="22034" count="1" respawn="60" pos="67493 -123118 -2917 0" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_216]">
+		<npc id="22031" count="1" respawn="60" pos="68095 -122974 -2913 4328" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_217]">
+		<npc id="22047" count="1" respawn="60" pos="69037 -122050 -3011 20900" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_218]">
+		<npc id="22047" count="1" respawn="60" pos="68158 -121122 -3015 45970" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_219]">
+		<npc id="22047" count="1" respawn="60" pos="67381 -120681 -3071 28503" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_220]">
+		<npc id="22046" count="1" respawn="60" pos="67621 -119668 -2914 18230" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_221]">
+		<npc id="22047" count="1" respawn="60" pos="68063 -119437 -2773 10292" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_222]">
+		<npc id="22047" count="1" respawn="60" pos="68289 -119710 -2825 61916" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_223]">
+		<npc id="22048" count="1" respawn="60" pos="69150 -119284 -2529 3022" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_224]">
+		<npc id="22031" count="1" respawn="60" pos="69080 -118825 -2529 18151" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_225]">
+		<npc id="22032" count="1" respawn="60" pos="70610 -119390 -2528 63082" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_226]">
+		<npc id="22032" count="1" respawn="60" pos="69762 -119413 -2529 44061" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_227]">
+		<npc id="22035" count="1" respawn="60" pos="69768 -119521 -2530 49730" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_228]">
+		<npc id="22035" count="1" respawn="60" pos="73426 -121728 -3029 49625" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_229]">
+		<npc id="22031" count="1" respawn="60" pos="73953 -122481 -3029 61868" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_230]">
+		<npc id="22032" count="1" respawn="60" pos="74158 -122532 -3029 62842" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_231]">
+		<npc id="22048" count="1" respawn="60" pos="68485 -120974 -3101 52988" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_232]">
+		<npc id="22048" count="1" respawn="60" pos="69145 -120950 -3116 40858" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_233]">
+		<npc id="22047" count="1" respawn="60" pos="69665 -122030 -3184 48353" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_234]">
+		<npc id="22045" count="1" respawn="60" pos="73011 -122914 -3280 361" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_235]">
+		<npc id="22047" count="1" respawn="60" pos="75640 -124208 -3252 14126" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_236]">
+		<npc id="22045" count="1" respawn="60" pos="75666 -122993 -3247 14977" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_237]">
+		<npc id="22048" count="1" respawn="60" pos="74759 -123194 -3183 29750" />	
+	</spawn>
+	<spawn name="[Den_of_Evil_238]">
+		<npc id="22047" count="1" respawn="60" pos="74592 -123675 -3298 43762" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_2]">
+		<npc id="22057" count="1" respawn="60" pos="89525 -118184 -3811 34914" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_3]">
+		<npc id="22057" count="1" respawn="60" pos="89304 -118703 -3805 47343" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_4]">
+		<npc id="22057" count="1" respawn="60" pos="89098 -119321 -3640 43266" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_5]">
+		<npc id="22057" count="1" respawn="60" pos="89134 -119261 -3655 10748" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_6]">
+		<npc id="22057" count="1" respawn="60" pos="88758 -118231 -3658 21017" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_7]">
+		<npc id="22057" count="1" respawn="60" pos="88252 -118830 -3683 42368" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_8]">
+		<npc id="22057" count="1" respawn="60" pos="87606 -118489 -3556 21921" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_9]">
+		<npc id="22057" count="1" respawn="60" pos="88524 -117667 -3395 3545" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_10]">
+		<npc id="22057" count="1" respawn="60" pos="89034 -117575 -3443 10646" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_11]">
+		<npc id="22051" count="1" respawn="60" pos="89098 -124602 -3842 2635" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_12]">
+		<npc id="22051" count="1" respawn="60" pos="88544 -124762 -3777 35700" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_13]">
+		<npc id="22051" count="1" respawn="60" pos="87830 -125027 -3742 34447" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_14]">
+		<npc id="22051" count="1" respawn="60" pos="87005 -125372 -3757 38003" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_15]">
+		<npc id="22051" count="1" respawn="60" pos="86709 -125763 -3779 44841" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_16]">
+		<npc id="22051" count="1" respawn="60" pos="87609 -125909 -3820 61137" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_17]">
+		<npc id="22051" count="1" respawn="60" pos="87238 -126346 -3833 56116" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_18]">
+		<npc id="22053" count="1" respawn="60" pos="93647 -122619 -4536 2945" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_19]">
+		<npc id="22054" count="1" respawn="60" pos="94931 -122130 -4545 1810" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_20]">
+		<npc id="22060" count="1" respawn="60" pos="94491 -120274 -4555 12066" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_21]">
+		<npc id="22060" count="1" respawn="60" pos="93576 -120023 -4553 30480" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_22]">
+		<npc id="22060" count="1" respawn="60" pos="94089 -121836 -4550 52113" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_23]">
+		<npc id="22055" count="1" respawn="60" pos="94936 -121543 -4547 65086" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_24]">
+		<npc id="22055" count="1" respawn="60" pos="93783 -122327 -4537 39639" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_25]">
+		<npc id="22055" count="1" respawn="60" pos="93049 -121132 -4555 26464" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_26]">
+		<npc id="22055" count="1" respawn="60" pos="93908 -120652 -4533 6353" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_27]">
+		<npc id="22055" count="1" respawn="60" pos="94959 -119866 -4541 2236" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_28]">
+		<npc id="22056" count="1" respawn="60" pos="94127 -120161 -4547 16828" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_29]">
+		<npc id="22056" count="1" respawn="60" pos="94224 -122202 -4533 58977" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_30]">
+		<npc id="22056" count="1" respawn="60" pos="95291 -122440 -4550 60246" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_31]">
+		<npc id="22056" count="1" respawn="60" pos="95623 -121397 -4566 8432" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_32]">
+		<npc id="22057" count="1" respawn="60" pos="95100 -121560 -4552 34616" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_33]">
+		<npc id="22057" count="1" respawn="60" pos="94301 -119962 -4555 15288" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_34]">
+		<npc id="22057" count="1" respawn="60" pos="93625 -120729 -4555 47733" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_35]">
+		<npc id="22057" count="1" respawn="60" pos="93968 -121829 -4549 54996" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_36]">
+		<npc id="22052" count="1" respawn="60" pos="90340 -126932 -4280 58930" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_37]">
+		<npc id="22052" count="1" respawn="60" pos="91504 -127738 -4275 58352" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_38]">
+		<npc id="22052" count="1" respawn="60" pos="91601 -128482 -4268 48186" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_39]">
+		<npc id="22052" count="1" respawn="60" pos="91009 -128536 -4281 23822" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_40]">
+		<npc id="22052" count="1" respawn="60" pos="92828 -127179 -4256 4867" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_41]">
+		<npc id="22050" count="1" respawn="60" pos="92191 -127710 -4259 51660" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_42]">
+		<npc id="22050" count="1" respawn="60" pos="92331 -126738 -4285 14760" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_43]">
+		<npc id="22050" count="1" respawn="60" pos="90967 -126736 -4264 34699" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_44]">
+		<npc id="22050" count="1" respawn="60" pos="90879 -127407 -4250 48414" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_45]">
+		<npc id="22054" count="1" respawn="60" pos="92775 -128041 -4285 1889" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_46]">
+		<npc id="22054" count="1" respawn="60" pos="92289 -127149 -4284 23858" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_47]">
+		<npc id="22054" count="1" respawn="60" pos="91203 -126897 -4265 47350" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_48]">
+		<npc id="22054" count="1" respawn="60" pos="91521 -128084 -4283 51210" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_49]">
+		<npc id="22051" count="1" respawn="60" pos="91842 -128029 -4267 6604" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_50]">
+		<npc id="22051" count="1" respawn="60" pos="92263 -128775 -4220 42569" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_51]">
+		<npc id="22051" count="1" respawn="60" pos="91021 -128385 -4280 64561" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_52]">
+		<npc id="22051" count="1" respawn="60" pos="91968 -127135 -4284 12066" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_53]">
+		<npc id="22051" count="1" respawn="60" pos="91598 -126345 -4252 14946" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_54]">
+		<npc id="22052" count="1" respawn="60" pos="86193 -123026 -4397 11548" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_55]">
+		<npc id="22052" count="1" respawn="60" pos="86624 -121908 -4360 11476" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_56]">
+		<npc id="22052" count="1" respawn="60" pos="86623 -120805 -4389 17598" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_57]">
+		<npc id="22052" count="1" respawn="60" pos="85905 -120259 -4377 34904" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_58]">
+		<npc id="22053" count="1" respawn="60" pos="85133 -120617 -4388 40426" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_59]">
+		<npc id="22053" count="1" respawn="60" pos="85990 -122087 -4397 61518" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_60]">
+		<npc id="22054" count="1" respawn="60" pos="87241 -122114 -4402 2585" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_61]">
+		<npc id="22054" count="1" respawn="60" pos="87383 -121247 -4349 19162" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_62]">
+		<npc id="22053" count="1" respawn="60" pos="86442 -120206 -4373 57995" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_63]">
+		<npc id="22051" count="1" respawn="60" pos="85577 -121148 -4389 41620" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_64]">
+		<npc id="22051" count="1" respawn="60" pos="85153 -122148 -4397 44902" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_65]">
+		<npc id="22051" count="1" respawn="60" pos="85978 -122457 -4393 62424" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_66]">
+		<npc id="22051" count="1" respawn="60" pos="86680 -122273 -4396 2665" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_67]">
+		<npc id="22051" count="1" respawn="60" pos="87250 -121741 -4390 8706" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_68]">
+		<npc id="22056" count="1" respawn="60" pos="87067 -120977 -4354 21013" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_69]">
+		<npc id="22056" count="1" respawn="60" pos="85486 -120699 -4363 32463" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_70]">
+		<npc id="22056" count="1" respawn="60" pos="85313 -121732 -4389 49465" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_71]">
+		<npc id="22056" count="1" respawn="60" pos="85643 -122505 -4386 54777" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_72]">
+		<npc id="22056" count="1" respawn="60" pos="86862 -122530 -4395 64717" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_73]">
+		<npc id="22075" count="1" respawn="60" pos="88214 -107153 -3327 3805" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_74]">
+		<npc id="22062" count="1" respawn="60" pos="87600 -107713 -3327 37604" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_75]">
+		<npc id="22074" count="1" respawn="60" pos="87931 -107324 -3327 62234" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_76]">
+		<npc id="22062" count="1" respawn="60" pos="87879 -107653 -3327 44409" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_77]">
+		<npc id="22075" count="1" respawn="60" pos="87452 -107507 -3327 35814" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_78]">
+		<npc id="22062" count="1" respawn="60" pos="87008 -105771 -3327 29026" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_79]">
+		<npc id="22062" count="1" respawn="60" pos="85539 -105278 -3327 30266" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_80]">
+		<npc id="22062" count="1" respawn="60" pos="84770 -105694 -3327 44290" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_81]">
+		<npc id="22053" count="1" respawn="60" pos="84729 -106465 -3327 49252" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_82]">
+		<npc id="22053" count="1" respawn="60" pos="85816 -106863 -3327 64818" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_83]">
+		<npc id="22053" count="1" respawn="60" pos="87007 -106305 -3327 8612" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_84]">
+		<npc id="22053" count="1" respawn="60" pos="86317 -105108 -3327 30984" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_85]">
+		<npc id="22060" count="1" respawn="60" pos="87046 -105250 -3327 56549" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_86]">
+		<npc id="22060" count="1" respawn="60" pos="86522 -106203 -3327 28597" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_87]">
+		<npc id="22060" count="1" respawn="60" pos="85608 -106276 -3327 31668" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_88]">
+		<npc id="22060" count="1" respawn="60" pos="85276 -105649 -3327 15811" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_89]">
+		<npc id="22060" count="1" respawn="60" pos="85481 -104858 -3327 7650" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_90]">
+		<npc id="22064" count="1" respawn="60" pos="86534 -105395 -3327 56304" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_91]">
+		<npc id="22064" count="1" respawn="60" pos="86524 -106593 -3327 47819" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_92]">
+		<npc id="22064" count="1" respawn="60" pos="85584 -107008 -3327 31085" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_93]">
+		<npc id="22064" count="1" respawn="60" pos="85174 -106450 -3327 18731" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_94]">
+		<npc id="22059" count="1" respawn="60" pos="85527 -105527 -3327 64365" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_95]">
+		<npc id="22059" count="1" respawn="60" pos="86499 -105787 -3327 54257" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_96]">
+		<npc id="22059" count="1" respawn="60" pos="85889 -106599 -3327 35402" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_97]">
+		<npc id="22062" count="1" respawn="60" pos="86088 -106496 -3327 59307" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_98]">
+		<npc id="22062" count="1" respawn="60" pos="87170 -105836 -3327 9618" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_99]">
+		<npc id="22062" count="1" respawn="60" pos="86390 -104851 -3327 28084" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_101]">
+		<npc id="22053" count="1" respawn="60" pos="89813 -109850 -3331 330" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_102]">
+		<npc id="22053" count="1" respawn="60" pos="90750 -110136 -3331 60340" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_103]">
+		<npc id="22062" count="1" respawn="60" pos="89944 -110264 -3331 30071" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_104]">
+		<npc id="22062" count="1" respawn="60" pos="89765 -109756 -3331 20015" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_105]">
+		<npc id="22064" count="1" respawn="60" pos="90342 -109830 -3331 64238" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_106]">
+		<npc id="22064" count="1" respawn="60" pos="90221 -110343 -3331 44392" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_107]">
+		<npc id="22059" count="1" respawn="60" pos="90222 -109822 -3331 17616" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_108]">
+		<npc id="22059" count="1" respawn="60" pos="89706 -110149 -3331 51161" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_109]">
+		<npc id="22053" count="1" respawn="60" pos="89576 -109972 -3331 17888" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_110]">
+		<npc id="22053" count="1" respawn="60" pos="90362 -109654 -3331 4333" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_111]">
+		<npc id="22062" count="1" respawn="60" pos="90546 -110464 -3331 9915" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_112]">
+		<npc id="22059" count="1" respawn="60" pos="90943 -110983 -3359 54483" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_113]">
+		<npc id="22054" count="1" respawn="60" pos="91072 -111073 -3367 47559" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_114]">
+		<npc id="22053" count="1" respawn="60" pos="91151 -110521 -3373 13589" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_115]">
+		<npc id="22064" count="1" respawn="60" pos="91177 -110139 -3360 14469" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_116]">
+		<npc id="22053" count="1" respawn="60" pos="91362 -109884 -3372 6850" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_117]">
+		<npc id="22053" count="1" respawn="60" pos="90898 -110295 -3332 44845" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_118]">
+		<npc id="22062" count="1" respawn="60" pos="91040 -109997 -3337 14487" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_120]">
+		<npc id="22074" count="1" respawn="60" pos="88184 -104735 -3327 23744" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_121]">
+		<npc id="22074" count="1" respawn="60" pos="87460 -104039 -3327 21162" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_122]">
+		<npc id="22075" count="1" respawn="60" pos="87418 -103647 -3327 14685" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_123]">
+		<npc id="22075" count="1" respawn="60" pos="87674 -104462 -3327 52382" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_124]">
+		<npc id="22062" count="1" respawn="60" pos="87898 -104504 -3327 6624" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_125]">
+		<npc id="22062" count="1" respawn="60" pos="87576 -104041 -3327 24226" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_126]">
+		<npc id="22077" count="1" respawn="60" pos="93195 -105836 -3327 3821" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_127]">
+		<npc id="22077" count="1" respawn="60" pos="94375 -105617 -3327 65310" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_128]">
+		<npc id="22063" count="1" respawn="60" pos="94865 -106084 -3327 54031" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_129]">
+		<npc id="22063" count="1" respawn="60" pos="94124 -106374 -3327 34271" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_130]">
+		<npc id="22065" count="1" respawn="60" pos="93796 -105517 -3327 13208" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_131]">
+		<npc id="22065" count="1" respawn="60" pos="94625 -105476 -3327 0" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_132]">
+		<npc id="22076" count="1" respawn="60" pos="94675 -106114 -3327 46749" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_133]">
+		<npc id="22076" count="1" respawn="60" pos="93721 -106283 -3327 32918" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_134]">
+		<npc id="22065" count="1" respawn="60" pos="94380 -106539 -3327 55737" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_135]">
+		<npc id="22065" count="1" respawn="60" pos="95008 -105313 -3327 12745" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_136]">
+		<npc id="22076" count="1" respawn="60" pos="94505 -105159 -3327 29609" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_137]">
+		<npc id="22076" count="1" respawn="60" pos="93310 -106210 -3327 42285" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_138]">
+		<npc id="22063" count="1" respawn="60" pos="94013 -107008 -3327 7485" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_139]">
+		<npc id="22063" count="1" respawn="60" pos="94783 -106599 -3327 4933" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_140]">
+		<npc id="22063" count="1" respawn="60" pos="95291 -105599 -3327 13322" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_141]">
+		<npc id="22077" count="1" respawn="60" pos="94166 -105164 -3327 11009" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_142]">
+		<npc id="22077" count="1" respawn="60" pos="93935 -106327 -3327 48011" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_143]">
+		<npc id="22074" count="1" respawn="60" pos="92061 -107138 -3327 54253" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_144]">
+		<npc id="22072" count="1" respawn="60" pos="92407 -107355 -3327 50987" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_145]">
+		<npc id="22062" count="1" respawn="60" pos="92526 -107716 -3327 57105" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_146]">
+		<npc id="22062" count="1" respawn="60" pos="92197 -107545 -3327 26148" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_147]">
+		<npc id="22074" count="1" respawn="60" pos="92184 -107288 -3327 16441" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_148]">
+		<npc id="22072" count="1" respawn="60" pos="92921 -108094 -3327 30908" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_149]">
+		<npc id="22074" count="1" respawn="60" pos="92234 -104599 -3327 11105" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_150]">
+		<npc id="22074" count="1" respawn="60" pos="92612 -104045 -3327 8434" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_151]">
+		<npc id="22062" count="1" respawn="60" pos="92580 -104308 -3327 47790" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_152]">
+		<npc id="22062" count="1" respawn="60" pos="92020 -104450 -3327 35393" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_153]">
+		<npc id="22072" count="1" respawn="60" pos="92372 -104138 -3327 8906" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_154]">
+		<npc id="22072" count="1" respawn="60" pos="92389 -104458 -3327 49705" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_155]">
+		<npc id="22074" count="1" respawn="60" pos="95482 -103919 -3327 54408" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_156]">
+		<npc id="22074" count="1" respawn="60" pos="96048 -104337 -3327 58509" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_157]">
+		<npc id="22062" count="1" respawn="60" pos="95822 -104354 -3327 33551" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_158]">
+		<npc id="22062" count="1" respawn="60" pos="95768 -103938 -3327 17731" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_159]">
+		<npc id="22072" count="1" respawn="60" pos="95987 -104094 -3327 62777" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_160]">
+		<npc id="22072" count="1" respawn="60" pos="95575 -104126 -3327 35911" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_161]">
+		<npc id="22074" count="1" respawn="60" pos="96313 -107130 -3327 38213" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_162]">
+		<npc id="22074" count="1" respawn="60" pos="95688 -107883 -3327 41572" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_163]">
+		<npc id="22062" count="1" respawn="60" pos="95747 -107353 -3327 15228" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_164]">
+		<npc id="22072" count="1" respawn="60" pos="96198 -107479 -3327 9896" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_165]">
+		<npc id="22062" count="1" respawn="60" pos="95442 -107720 -3327 35064" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_166]">
+		<npc id="22072" count="1" respawn="60" pos="95660 -107528 -3327 7532" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_167]">
+		<npc id="22074" count="1" respawn="60" pos="88971 -109543 -3327 41929" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_168]">
+		<npc id="22062" count="1" respawn="60" pos="88838 -109937 -3327 38489" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_169]">
+		<npc id="22074" count="1" respawn="60" pos="88574 -110113 -3327 41174" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_170]">
+		<npc id="22072" count="1" respawn="60" pos="88738 -109757 -3327 11882" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_171]">
+		<npc id="22072" count="1" respawn="60" pos="88943 -109247 -3327 12398" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_172]">
+		<npc id="22062" count="1" respawn="60" pos="89046 -108984 -3327 12491" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_177]">
+		<npc id="22056" count="1" respawn="60" pos="91460 -113203 -3310 58716" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_178]">
+		<npc id="22056" count="1" respawn="60" pos="91647 -113923 -3304 49185" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_179]">
+		<npc id="22058" count="1" respawn="60" pos="92198 -114163 -3323 42740" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_180]">
+		<npc id="22058" count="1" respawn="60" pos="91916 -114419 -3336 36641" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_181]">
+		<npc id="22055" count="1" respawn="60" pos="91626 -114631 -3354 62965" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_182]">
+		<npc id="22058" count="1" respawn="60" pos="91905 -114701 -3354 59087" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_183]">
+		<npc id="22056" count="1" respawn="60" pos="90864 -114175 -3337 30446" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_184]">
+		<npc id="22055" count="1" respawn="60" pos="90792 -113992 -3333 20294" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_185]">
+		<npc id="22058" count="1" respawn="60" pos="90807 -114650 -3349 59066" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_186]">
+		<npc id="22055" count="1" respawn="60" pos="89528 -113677 -3402 27794" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_187]">
+		<npc id="22058" count="1" respawn="60" pos="89358 -113442 -3397 3322" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_188]">
+		<npc id="22055" count="1" respawn="60" pos="89784 -112870 -3341 5637" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_189]">
+		<npc id="22057" count="1" respawn="60" pos="89984 -112526 -3359 12248" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_190]">
+		<npc id="22056" count="1" respawn="60" pos="90812 -113027 -3342 20204" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_191]">
+		<npc id="22058" count="1" respawn="60" pos="89053 -112766 -3359 37971" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_192]">
+		<npc id="22058" count="1" respawn="60" pos="88637 -113382 -3369 45109" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_193]">
+		<npc id="22057" count="1" respawn="60" pos="88439 -113759 -3256 38814" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_194]">
+		<npc id="22055" count="1" respawn="60" pos="88238 -114239 -3261 23250" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_195]">
+		<npc id="22058" count="1" respawn="60" pos="88536 -114538 -3337 57541" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_196]">
+		<npc id="22056" count="1" respawn="60" pos="88331 -114433 -3306 21333" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_197]">
+		<npc id="22056" count="1" respawn="60" pos="87553 -114205 -3115 54477" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_198]">
+		<npc id="22055" count="1" respawn="60" pos="86744 -113789 -3041 28110" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_199]">
+		<npc id="22057" count="1" respawn="60" pos="87152 -113733 -3103 43430" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_200]">
+		<npc id="22058" count="1" respawn="60" pos="86730 -113269 -2994 26353" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_201]">
+		<npc id="22056" count="1" respawn="60" pos="86624 -113027 -2968 44438" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_202]">
+		<npc id="22057" count="1" respawn="60" pos="87132 -112668 -3012 4568" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_203]">
+		<npc id="22058" count="1" respawn="60" pos="87535 -112693 -3130 23297" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_204]">
+		<npc id="22056" count="1" respawn="60" pos="87813 -112754 -3218 62070" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_205]">
+		<npc id="22055" count="1" respawn="60" pos="88443 -112403 -3302 65472" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_206]">
+		<npc id="22055" count="1" respawn="60" pos="87801 -111895 -3121 23378" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_207]">
+		<npc id="22056" count="1" respawn="60" pos="87553 -111705 -3046 13326" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_208]">
+		<npc id="22057" count="1" respawn="60" pos="87224 -111848 -2986 34904" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_209]">
+		<npc id="22058" count="1" respawn="60" pos="86862 -111578 -2951 23604" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_210]">
+		<npc id="22055" count="1" respawn="60" pos="87925 -111169 -3305 1135" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_211]">
+		<npc id="22056" count="1" respawn="60" pos="87581 -110215 -3314 18865" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_212]">
+		<npc id="22056" count="1" respawn="60" pos="87214 -109748 -3311 20795" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_213]">
+		<npc id="22057" count="1" respawn="60" pos="86925 -109517 -3314 25922" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_214]">
+		<npc id="22058" count="1" respawn="60" pos="86838 -110322 -3216 45428" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_215]">
+		<npc id="22056" count="1" respawn="60" pos="86132 -111924 -2830 41700" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_216]">
+		<npc id="22055" count="1" respawn="60" pos="85808 -112705 -2768 48324" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_217]">
+		<npc id="22056" count="1" respawn="60" pos="85747 -113330 -2774 49493" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_218]">
+		<npc id="22057" count="1" respawn="60" pos="86277 -115679 -3434 51434" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_219]">
+		<npc id="22056" count="1" respawn="60" pos="86809 -116278 -3441 53385" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_220]">
+		<npc id="22055" count="1" respawn="60" pos="87431 -117037 -3473 55336" />	
+	</spawn>
+	<spawn name="[PavelRuins_ArchaicL_221]">
+		<npc id="22057" count="1" respawn="60" pos="87704 -116621 -3467 15720" />	
+	</spawn>
+	<spawn name="[schuttgart14_npc2214_34]">
+		<npc id="32042" count="1" respawn="60" pos="90052 -109895 -3328 51700" />	
+	</spawn>
+	<spawn name="[schuttgart14_npc2214_44]">
+		<npc id="32032" count="1" respawn="60" pos="96341 -110891 -3337 43000" />	
+		<npc id="32045" count="1" respawn="60" pos="96313 -110455 -3340 50600" />	
+		<npc id="32050" count="1" respawn="60" pos="96848 -111076 -3344 36864" />	
+	</spawn>
+	<spawn name="[schuttgart14_npc2214_58]">
+		<npc id="32043" count="1" respawn="60" pos="94092 -105804 -3329 57100" />	
+	</spawn>
+	<spawn name="[schuttgart14_npc2214_73]">
+		<npc id="32044" count="1" respawn="60" pos="86101 -105818 -3338 40960" />	
+	</spawn>
+	<spawn name="[schuttgart14_npc2214_76]">
+		<npc id="32047" count="1" respawn="60" pos="97014 -110618 -3293 45056" />	
+	</spawn>
+	<spawn name="[schuttgart14_npc2214_77]">
+		<npc id="32046" count="1" respawn="60" pos="90336 -107264 -3323 57344" />	
+	</spawn>
+	<spawn name="[schuttgart14_npc2214_78]">
+		<npc id="32041" count="1" respawn="60" pos="91374 -116884 -3920 54750" />	
+		<npc id="32069" count="1" respawn="60" pos="91316 -116927 -3920 55000" />	
+	</spawn>
+
+</list>

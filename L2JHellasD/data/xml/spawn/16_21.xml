@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn name="[gludio15_1621_01]">
+		<territory>	
+			<location x="-99708" y="100418" minz="-3692" maxz="-2992" />
+			<location x="-98553" y="100158" minz="-3692" maxz="-2992" />
+			<location x="-98637" y="104050" minz="-3692" maxz="-2992" />
+			<location x="-101237" y="103989" minz="-3692" maxz="-2992" />
+		</territory>
+		<npc id="20498" count="2" respawn="60" respawn_rand="20" />	
+		<npc id="20497" count="2" respawn="60" respawn_rand="20" />	
+		<npc id="20501" count="1" respawn="60" respawn_rand="20" />	
+		<npc id="20495" count="1" respawn="60" respawn_rand="20" />	
+	</spawn>
+	<spawn name="[gludio15_1621_02]">
+		<territory>	
+			<location x="-100403" y="104743" minz="-3715" maxz="-3015" />
+			<location x="-98598" y="104208" minz="-3715" maxz="-3015" />
+			<location x="-98544" y="109423" minz="-3715" maxz="-3015" />
+			<location x="-100571" y="106885" minz="-3715" maxz="-3015" />
+		</territory>
+		<npc id="20498" count="2" respawn="60" respawn_rand="20" />	
+		<npc id="20497" count="2" respawn="60" respawn_rand="20" />	
+		<npc id="20501" count="2" respawn="60" respawn_rand="20" />	
+	</spawn>
+
+</list>

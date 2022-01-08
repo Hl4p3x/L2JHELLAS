@@ -13,6 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -33,13 +34,13 @@ import com.l2jhellas.gameserver.model.L2ClanMember;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2SiegeClan;
 import com.l2jhellas.gameserver.model.L2SiegeClan.SiegeClanType;
-import com.l2jhellas.gameserver.model.L2Spawn;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2ArtefactInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2ControlTowerInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.spawn.L2Spawn;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.SiegeInfo;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
@@ -53,6 +54,8 @@ public class Siege
 	private final SimpleDateFormat fmt = new SimpleDateFormat("H:mm.");
 	protected static final Logger _log = Logger.getLogger(Siege.class.getName());
 	
+	protected ScheduledFuture<?> _siegeTask;
+	
 	public static enum TeleportWhoType
 	{
 		All,
@@ -61,105 +64,65 @@ public class Siege
 		Owner,
 		Spectator
 	}
-		
-	public class ScheduleEndSiegeTask implements Runnable
+
+	public void EndSiegeTask(Castle pCastle)
 	{
-		private final Castle _castleInst;
-		
-		public ScheduleEndSiegeTask(Castle pCastle)
+		long timeRemaining = _siegeEndDate.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
+		if (timeRemaining > 3600000)
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> EndSiegeTask(pCastle), timeRemaining - 3600000); // Prepare task for 1 hr left.
+		else if ((timeRemaining <= 3600000) && (timeRemaining > 600000))
 		{
-			_castleInst = pCastle;
+			announceToPlayer(Math.round(timeRemaining / 60000) + " minute(s) until " + pCastle.getName() + " siege conclusion.", true);
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> EndSiegeTask(pCastle), timeRemaining - 600000); // Prepare task for 10 minute left.
 		}
-		
-		@Override
-		public void run()
+		else if ((timeRemaining <= 600000) && (timeRemaining > 300000))
 		{
-			if (!getIsInProgress())
-				return;
-			
-			try
-			{
-				long timeRemaining = _siegeEndDate.getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
-				if (timeRemaining > 3600000)
-				{
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndSiegeTask(_castleInst), timeRemaining - 3600000); // Prepare task for 1 hr left.
-				}
-				else if ((timeRemaining <= 3600000) && (timeRemaining > 600000))
-				{
-					announceToPlayer(Math.round(timeRemaining / 60000) + " minute(s) until " + getCastle().getName() + " siege conclusion.", true);
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndSiegeTask(_castleInst), timeRemaining - 600000); // Prepare task for 10 minute left.
-				}
-				else if ((timeRemaining <= 600000) && (timeRemaining > 300000))
-				{
-					announceToPlayer(Math.round(timeRemaining / 60000) + " minute(s) until " + getCastle().getName() + " siege conclusion.", true);
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndSiegeTask(_castleInst), timeRemaining - 300000); // Prepare task for 5 minute left.
-				}
-				else if ((timeRemaining <= 300000) && (timeRemaining > 10000))
-				{
-					announceToPlayer(Math.round(timeRemaining / 60000) + " minute(s) until " + getCastle().getName() + " siege conclusion.", true);
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndSiegeTask(_castleInst), timeRemaining - 10000); // Prepare task for 10 seconds count down
-				}
-				else if ((timeRemaining <= 10000) && (timeRemaining > 0))
-				{
-					announceToPlayer(getCastle().getName() + " siege " + Math.round(timeRemaining / 1000) + " second(s) left!", true);
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndSiegeTask(_castleInst), timeRemaining); // Prepare task for second count down
-				}
-				else
-				{
-					_castleInst.getSiege().endSiege();
-				}
-			}
-			catch (Throwable t)
-			{
-				
-			}
+			announceToPlayer(Math.round(timeRemaining / 60000) + " minute(s) until " + pCastle.getName() + " siege conclusion.", true);
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> EndSiegeTask(pCastle), timeRemaining - 300000); // Prepare task for 5 minute left.
 		}
+		else if ((timeRemaining <= 300000) && (timeRemaining > 10000))
+		{
+			announceToPlayer(Math.round(timeRemaining / 60000) + " minute(s) until " + pCastle.getName() + " siege conclusion.", true);
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> EndSiegeTask(pCastle), timeRemaining - 10000); // Prepare task for 10 seconds count down
+		}
+		else if ((timeRemaining <= 10000) && (timeRemaining > 0))
+		{
+			announceToPlayer(pCastle.getName() + " siege " + Math.round(timeRemaining / 1000) + " second(s) left!", true);
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> EndSiegeTask(pCastle), timeRemaining); // Prepare task for second count down
+		}
+		else
+			pCastle.getSiege().endSiege();
+	}
+
+	public void StartSiegeTask(Castle pCastle)
+	{
+		_siegeTask.cancel(false);
+
+		if (getIsInProgress())
+			return;
+
+		long timeRemaining = pCastle.getSiegeDate().getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
+		if (timeRemaining > 86400000)
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartSiegeTask(pCastle),timeRemaining - 86400000);
+		else if ((timeRemaining <= 86400000) && (timeRemaining > 13600000))
+		{
+			announceToPlayer("The registration term for " + pCastle.getName() + " has ended.", false);
+			_isRegistrationOver = true;
+			clearSiegeWaitingClan();
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartSiegeTask(pCastle),timeRemaining - 13600000);// Prepare task for 1 hr left before siege
+		}
+		else if ((timeRemaining <= 13600000) && (timeRemaining > 600000))
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartSiegeTask(pCastle), timeRemaining - 600000); // Prepare task for 10 minute left.
+		else if ((timeRemaining <= 600000) && (timeRemaining > 300000))
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartSiegeTask(pCastle), timeRemaining - 300000); // Prepare task for 5 minute left.
+		else if ((timeRemaining <= 300000) && (timeRemaining > 10000))
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartSiegeTask(pCastle), timeRemaining - 10000); // Prepare task for 10 seconds count down
+		else if ((timeRemaining <= 10000) && (timeRemaining > 0))
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartSiegeTask(pCastle), timeRemaining); // Prepare task for second count down
+		else
+			pCastle.getSiege().startSiege();
 	}
 	
-	public class ScheduleStartSiegeTask implements Runnable
-	{
-		private final Castle _castleInst;
-		
-		public ScheduleStartSiegeTask(Castle pCastle)
-		{
-			_castleInst = pCastle;
-		}
-		
-		@Override
-		public void run()
-		{
-			if (getIsInProgress())
-				return;
-			
-			try
-			{
-				long timeRemaining = getSiegeDate().getTimeInMillis() - Calendar.getInstance().getTimeInMillis();
-				if (timeRemaining > 86400000)
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartSiegeTask(_castleInst), timeRemaining - 86400000); // Prepare task for 24 before siege start to
-				else if ((timeRemaining <= 86400000) && (timeRemaining > 13600000))
-				{
-					announceToPlayer("The registration term for " + getCastle().getName() + " has ended.", false);
-					_isRegistrationOver = true;
-					clearSiegeWaitingClan();
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartSiegeTask(_castleInst), timeRemaining - 13600000); // Prepare task for 1 hr left before siege
-				}
-				else if ((timeRemaining <= 13600000) && (timeRemaining > 600000))
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartSiegeTask(_castleInst), timeRemaining - 600000); // Prepare task for 10 minute left.
-				else if ((timeRemaining <= 600000) && (timeRemaining > 300000))
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartSiegeTask(_castleInst), timeRemaining - 300000); // Prepare task for 5 minute left.
-				else if ((timeRemaining <= 300000) && (timeRemaining > 10000))
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartSiegeTask(_castleInst), timeRemaining - 10000); // Prepare task for 10 seconds count down
-				else if ((timeRemaining <= 10000) && (timeRemaining > 0))
-					ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleStartSiegeTask(_castleInst), timeRemaining); // Prepare task for second count down
-				else
-					_castleInst.getSiege().startSiege();
-			}
-			catch (Throwable t)
-			{
-				
-			}
-		}
-	}
 	
 	// Attacker and Defender
 	private final List<L2SiegeClan> _attackerClans = new ArrayList<>(); // L2SiegeClan
@@ -400,8 +363,9 @@ public class Siege
 			// Schedule a task to prepare auto siege end
 			_siegeEndDate = Calendar.getInstance();
 			_siegeEndDate.add(Calendar.MINUTE, SiegeManager.getInstance().getSiegeLength());
-			ThreadPoolManager.getInstance().scheduleGeneral(new ScheduleEndSiegeTask(getCastle()), 1000); // Prepare auto end task
 			
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> EndSiegeTask(getCastle()), 1000); // Prepare auto end task
+
             Broadcast.toAllOnlinePlayers(Sound.SIEGE_SOUND_START.getPacket());
 
 			announceToPlayer("The siege of " + getCastle().getName() + " has started!", false);
@@ -515,17 +479,19 @@ public class Siege
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			PreparedStatement statement = con.prepareStatement("DELETE FROM siege_clans WHERE castle_id=?");
-			statement.setInt(1, getCastle().getCastleId());
-			statement.execute();
-			statement.close();
-			
+			try (PreparedStatement ps = con.prepareStatement("DELETE FROM siege_clans WHERE castle_id=?"))
+			{
+				ps.setInt(1, getCastle().getCastleId());
+				ps.execute();
+			}
+
 			if (getCastle().getOwnerId() > 0)
 			{
-				PreparedStatement statement2 = con.prepareStatement("DELETE FROM siege_clans WHERE clan_id=?");
-				statement2.setInt(1, getCastle().getOwnerId());
-				statement2.execute();
-				statement2.close();
+				try (PreparedStatement ps = con.prepareStatement("DELETE FROM siege_clans WHERE clan_id=?"))
+				{
+					ps.setInt(1, getCastle().getOwnerId());
+					ps.execute();
+				}
 			}
 			
 			getAttackerClans().clear();
@@ -542,13 +508,11 @@ public class Siege
 	
 	public void clearSiegeWaitingClan()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement ps = con.prepareStatement("DELETE FROM siege_clans WHERE castle_id=? and type = 2"))
 		{
-			PreparedStatement statement = con.prepareStatement("DELETE FROM siege_clans WHERE castle_id=? and type = 2");
-			statement.setInt(1, getCastle().getCastleId());
-			statement.execute();
-			statement.close();
-			
+			ps.setInt(1, getCastle().getCastleId());
+			ps.execute();			
 			getDefenderWaitingClans().clear();
 		}
 		catch (SQLException e)
@@ -617,8 +581,7 @@ public class Siege
 	}
 	
 	public void registerAttacker(L2PcInstance player, boolean force)
-	{
-		
+	{		
 		if (player.getClan() == null)
 			return;
 		int allyId = 0;
@@ -654,14 +617,12 @@ public class Siege
 		if (clanId <= 0)
 			return;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement ps = con.prepareStatement("DELETE FROM siege_clans WHERE castle_id=? AND clan_id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("DELETE FROM siege_clans WHERE castle_id=? AND clan_id=?");
-			statement.setInt(1, getCastle().getCastleId());
-			statement.setInt(2, clanId);
-			statement.execute();
-			statement.close();
-			
+			ps.setInt(1, getCastle().getCastleId());
+			ps.setInt(2, clanId);
+			ps.execute();
 			loadSiegeClan();
 		}
 		catch (Exception e)
@@ -697,8 +658,11 @@ public class Siege
 			_siegeRegistrationEndDate.setTimeInMillis(getCastle().getSiegeDate().getTimeInMillis());
 			_siegeRegistrationEndDate.add(Calendar.DAY_OF_MONTH, -1);
 
-			// Schedule siege auto start
-			ThreadPoolManager.getInstance().scheduleGeneral(new Siege.ScheduleStartSiegeTask(getCastle()), 1000);
+			if (_siegeTask != null)
+				_siegeTask.cancel(false);
+			
+			// Schedule siege auto start			
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartSiegeTask(getCastle()),1000);
 		}
 	}
 	
@@ -780,37 +744,34 @@ public class Siege
 
 	private void loadSiegeClan()
 	{
+		getAttackerClans().clear();
+		getDefenderClans().clear();
+		getDefenderWaitingClans().clear();
+		
+		// Add castle owner as defender (add owner first so that they are on the top of the defender list)
+		if (getCastle().getOwnerId() > 0)
+			addDefender(getCastle().getOwnerId(), SiegeClanType.OWNER);
+		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			getAttackerClans().clear();
-			getDefenderClans().clear();
-			getDefenderWaitingClans().clear();
-			
-			// Add castle owner as defender (add owner first so that they are on the top of the defender list)
-			if (getCastle().getOwnerId() > 0)
-				addDefender(getCastle().getOwnerId(), SiegeClanType.OWNER);
-			
-			PreparedStatement statement = null;
-			ResultSet rs = null;
-			
-			statement = con.prepareStatement("SELECT clan_id,type FROM siege_clans WHERE castle_id=?");
-			statement.setInt(1, getCastle().getCastleId());
-			rs = statement.executeQuery();
-			
-			int typeId;
-			while (rs.next())
-			{
-				typeId = rs.getInt("type");
-				if (typeId == 0)
-					addDefender(rs.getInt("clan_id"));
-				else if (typeId == 1)
-					addAttacker(rs.getInt("clan_id"));
-				else if (typeId == 2)
-					addDefenderWaiting(rs.getInt("clan_id"));
+			try (PreparedStatement ps = con.prepareStatement("SELECT clan_id,type FROM siege_clans WHERE castle_id=?"))
+			{			
+				ps.setInt(1, getCastle().getCastleId());
+				
+				try (ResultSet rs = ps.executeQuery())
+				{
+					while (rs.next())
+					{
+						int typeId = rs.getInt("type");
+						if (typeId == 0)
+							addDefender(rs.getInt("clan_id"));
+						else if (typeId == 1)
+							addAttacker(rs.getInt("clan_id"));
+						else if (typeId == 2)
+							addDefenderWaiting(rs.getInt("clan_id"));
+					}
+				}
 			}
-			
-			rs.close();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -884,15 +845,19 @@ public class Siege
 	}
 	
 	public void saveSiegeDate()
-	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+	{		
+		if (_siegeTask != null)
 		{
-			PreparedStatement statement = con.prepareStatement("UPDATE castle SET siegeDate=? WHERE id=?");
-			statement.setLong(1, getSiegeDate().getTimeInMillis());
-			statement.setInt(2, getCastle().getCastleId());
-			statement.execute();
-			
-			statement.close();
+			_siegeTask.cancel(false);
+			_siegeTask = ThreadPoolManager.getInstance().scheduleGeneral(() -> StartSiegeTask(getCastle()),1000);
+		}
+		
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+				PreparedStatement ps = con.prepareStatement("UPDATE castle SET siegeDate=? WHERE id=?"))
+		{
+			ps.setLong(1, getSiegeDate().getTimeInMillis());
+			ps.setInt(2, getCastle().getCastleId());
+			ps.execute();
 		}
 		catch (Exception e)
 		{
@@ -907,32 +872,35 @@ public class Siege
 		if (clan.hasCastle() > 0)
 			return;
 		
+		if ((typeId == 0) || (typeId == 2) || (typeId == -1))
+		{
+			if (getDefenderClans().size() + getDefenderWaitingClans().size() >= SiegeManager.getInstance().getDefenderMaxClans())
+				return;
+			else if (getAttackerClans().size() >= SiegeManager.getInstance().getAttackerMaxClans())
+				return;
+		}
+		
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			if ((typeId == 0) || (typeId == 2) || (typeId == -1))
-				if (getDefenderClans().size() + getDefenderWaitingClans().size() >= SiegeManager.getInstance().getDefenderMaxClans())
-					return;
-				else if (getAttackerClans().size() >= SiegeManager.getInstance().getAttackerMaxClans())
-					return;
-			
-			PreparedStatement statement;
 			if (!isUpdateRegistration)
 			{
-				statement = con.prepareStatement("INSERT INTO siege_clans (clan_id,castle_id,type,castle_owner) VALUES (?,?,?,0)");
-				statement.setInt(1, clan.getClanId());
-				statement.setInt(2, getCastle().getCastleId());
-				statement.setInt(3, typeId);
-				statement.execute();
-				statement.close();
+				try (PreparedStatement ps = con.prepareStatement("INSERT INTO siege_clans (clan_id,castle_id,type,castle_owner) VALUES (?,?,?,0)"))
+				{
+					ps.setInt(1, clan.getClanId());
+					ps.setInt(2, getCastle().getCastleId());
+					ps.setInt(3, typeId);
+					ps.execute();
+				}
 			}
 			else
 			{
-				statement = con.prepareStatement("UPDATE siege_clans SET type=? WHERE castle_id=? AND clan_id=?");
-				statement.setInt(1, typeId);
-				statement.setInt(2, getCastle().getCastleId());
-				statement.setInt(3, clan.getClanId());
-				statement.execute();
-				statement.close();
+				try (PreparedStatement ps = con.prepareStatement("UPDATE siege_clans SET type=? WHERE castle_id=? AND clan_id=?"))
+				{
+					ps.setInt(1, typeId);
+					ps.setInt(2, getCastle().getCastleId());
+					ps.setInt(3, clan.getClanId());
+					ps.execute();
+				}
 			}
 			
 			if (typeId == 0 || typeId == -1)
