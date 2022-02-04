@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[oren25_1720_01]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_01]">
 		<territory>	
 			<location x="-72971" y="71980" minz="-3449" maxz="-2749" />
 			<location x="-69433" y="72769" minz="-3449" maxz="-2749" />
@@ -12,7 +12,7 @@
 		<npc id="20418" count="3" respawn="20" />	
 		<npc id="20043" count="5" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_02]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_02]">
 		<territory>	
 			<location x="-67178" y="72322" minz="-3457" maxz="-2957" />
 			<location x="-65868" y="72079" minz="-3457" maxz="-2957" />
@@ -21,7 +21,7 @@
 		</territory>
 		<npc id="20038" count="4" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_03]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_03]">
 		<territory>	
 			<location x="-69696" y="74759" minz="-3468" maxz="-2968" />
 			<location x="-65783" y="75529" minz="-3468" maxz="-2968" />
@@ -30,7 +30,7 @@
 		</territory>
 		<npc id="20038" count="4" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_04]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_04]">
 		<territory>	
 			<location x="-69594" y="76157" minz="-3513" maxz="-2913" />
 			<location x="-67479" y="78773" minz="-3513" maxz="-2913" />
@@ -41,7 +41,7 @@
 		<npc id="20043" count="4" respawn="20" />	
 		<npc id="20776" count="4" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_05]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_05]">
 		<territory>	
 			<location x="-73697" y="77167" minz="-3513" maxz="-2913" />
 			<location x="-71857" y="79229" minz="-3513" maxz="-2913" />
@@ -52,7 +52,7 @@
 		<npc id="20418" count="5" respawn="20" />	
 		<npc id="20043" count="5" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_06]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_06]">
 		<territory>	
 			<location x="-67433" y="78941" minz="-3748" maxz="-3048" />
 			<location x="-65769" y="78980" minz="-3748" maxz="-3048" />
@@ -63,7 +63,7 @@
 		<npc id="20043" count="8" respawn="20" />	
 		<npc id="20776" count="6" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_07s]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_07s]">
 		<territory>	
 			<location x="-73349" y="73339" minz="-3457" maxz="-2957" />
 			<location x="-71068" y="73354" minz="-3457" maxz="-2957" />
@@ -72,7 +72,7 @@
 		</territory>
 		<npc id="20418" count="3" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_08s]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_08s]">
 		<territory>	
 			<location x="-74214" y="78798" minz="-3523" maxz="-3023" />
 			<location x="-72582" y="79463" minz="-3523" maxz="-3023" />
@@ -81,7 +81,7 @@
 		</territory>
 		<npc id="20776" count="3" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_09s]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_09s]">
 		<territory>	
 			<location x="-74849" y="81770" minz="-3567" maxz="-3067" />
 			<location x="-72818" y="82435" minz="-3567" maxz="-3067" />
@@ -90,7 +90,7 @@
 		</territory>
 		<npc id="20776" count="2" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_10s]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_10s]">
 		<territory>	
 			<location x="-68516" y="86126" minz="-3730" maxz="-3030" />
 			<location x="-66340" y="85729" minz="-3730" maxz="-3030" />
@@ -99,7 +99,7 @@
 		</territory>
 		<npc id="20043" count="3" respawn="20" />	
 	</spawn>
-	<spawn name="[oren25_1720_11s]">
+	<spawn spawn_bydefault="true"  name="[oren25_1720_11s]">
 		<territory>	
 			<location x="-68598" y="80398" minz="-3507" maxz="-3007" />
 			<location x="-66421" y="80001" minz="-3507" maxz="-3007" />
@@ -108,10 +108,10 @@
 		</territory>
 		<npc id="20776" count="3" respawn="20" />	
 	</spawn>
-	<spawn name="[gludio01_qm1720_01]">
+	<spawn spawn_bydefault="true"  name="[gludio01_qm1720_01]">
 		<npc id="27165" count="1" respawn="180" pos="-81247 75607 -3360 0" />	
 	</spawn>
-	<spawn name="[oren01_qm1720_01]">
+	<spawn spawn_bydefault="true"  name="[oren01_qm1720_01]">
 		<territory>	
 			<location x="-75020" y="81880" minz="-3496" maxz="-3096" />
 			<location x="-73764" y="81816" minz="-3496" maxz="-3096" />
@@ -120,22 +120,22 @@
 		</territory>
 		<npc id="27054" count="10" respawn="35" />	
 	</spawn>
-	<spawn name="[ssqe2_npc1720_01]">
+	<spawn spawn_bydefault="true"  name="[ssqe2_npc1720_01]">
 		<npc id="31137" count="1" respawn="60" pos="-80208 87120 -5153 49000" />	
 	</spawn>
-	<spawn name="[ssqe2_npc1720_02]">
+	<spawn spawn_bydefault="true"  name="[ssqe2_npc1720_02]">
 		<npc id="31138" count="1" respawn="60" pos="-77200 87728 -5153 49000" />	
 	</spawn>
-	<spawn name="[ssqe2_npc1720_03]">
+	<spawn spawn_bydefault="true"  name="[ssqe2_npc1720_03]">
 		<npc id="31139" count="1" respawn="60" pos="-76096 87136 -5153 32500" />	
 	</spawn>
-	<spawn name="[ssqe2_npc1720_04]">
+	<spawn spawn_bydefault="true"  name="[ssqe2_npc1720_04]">
 		<npc id="31140" count="1" respawn="60" pos="-76944 86544 -5153 16500" />	
 	</spawn>
-	<spawn name="[ssqe2_npc1720_05]">
+	<spawn spawn_bydefault="true"  name="[ssqe2_npc1720_05]">
 		<npc id="31141" count="1" respawn="60" pos="-79968 85936 -5153 16500" />	
 	</spawn>
-	<spawn name="[gludio20_1720_01]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_01]">
 		<territory>	
 			<location x="-85396" y="77059" minz="-3468" maxz="-2768" />
 			<location x="-82576" y="78607" minz="-3468" maxz="-2768" />
@@ -145,7 +145,7 @@
 		<npc id="21026" count="6" respawn="26" />	
 		<npc id="20078" count="8" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_02]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_02]">
 		<territory>	
 			<location x="-86565" y="80140" minz="-3404" maxz="-2604" />
 			<location x="-84055" y="80386" minz="-3404" maxz="-2604" />
@@ -156,7 +156,7 @@
 		<npc id="21026" count="8" respawn="26" />	
 		<npc id="20078" count="7" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_03]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_03]">
 		<territory>	
 			<location x="-84976" y="83589" minz="-3628" maxz="-2928" />
 			<location x="-81851" y="81857" minz="-3628" maxz="-2928" />
@@ -166,7 +166,7 @@
 		<npc id="21025" count="9" respawn="26" />	
 		<npc id="21026" count="9" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_04]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_04]">
 		<territory>	
 			<location x="-83120" y="86429" minz="-3807" maxz="-3107" />
 			<location x="-80061" y="87494" minz="-3807" maxz="-3107" />
@@ -177,7 +177,7 @@
 		<npc id="21025" count="6" respawn="26" />	
 		<npc id="21026" count="3" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_05]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_05]">
 		<territory>	
 			<location x="-87819" y="83186" minz="-3578" maxz="-2678" />
 			<location x="-84760" y="84250" minz="-3578" maxz="-2678" />
@@ -187,7 +187,7 @@
 		<npc id="21025" count="7" respawn="26" />	
 		<npc id="21026" count="7" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_06]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_06]">
 		<territory>	
 			<location x="-89487" y="87115" minz="-3649" maxz="-2849" />
 			<location x="-84093" y="87998" minz="-3649" maxz="-2849" />
@@ -197,7 +197,7 @@
 		<npc id="21024" count="9" respawn="26" />	
 		<npc id="21025" count="9" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_07]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_07]">
 		<territory>	
 			<location x="-92087" y="87486" minz="-3649" maxz="-2849" />
 			<location x="-89632" y="87343" minz="-3649" maxz="-2849" />
@@ -208,7 +208,7 @@
 		<npc id="21024" count="8" respawn="26" />	
 		<npc id="21025" count="7" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_08]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_08]">
 		<territory>	
 			<location x="-93901" y="90791" minz="-3664" maxz="-2864" />
 			<location x="-90477" y="92238" minz="-3664" maxz="-2864" />
@@ -218,7 +218,7 @@
 		<npc id="21023" count="8" respawn="26" />	
 		<npc id="21024" count="6" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_09]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_09]">
 		<territory>	
 			<location x="-80102" y="88181" minz="-3806" maxz="-3006" />
 			<location x="-72603" y="93682" minz="-3806" maxz="-3006" />
@@ -229,7 +229,7 @@
 		<npc id="21024" count="6" respawn="26" />	
 		<npc id="21025" count="3" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_10]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_10]">
 		<territory>	
 			<location x="-72256" y="93591" minz="-3817" maxz="-3217" />
 			<location x="-65929" y="97881" minz="-3817" maxz="-3217" />
@@ -239,7 +239,7 @@
 		<npc id="21023" count="7" respawn="26" />	
 		<npc id="21024" count="7" respawn="26" />	
 	</spawn>
-	<spawn name="[gludio20_1720_11s]">
+	<spawn spawn_bydefault="true"  name="[gludio20_1720_11s]">
 		<territory>	
 			<location x="-77642" y="90973" minz="-3807" maxz="-3307" />
 			<location x="-74177" y="93006" minz="-3807" maxz="-3307" />

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-    <spawn name="[rune14_npc1916_01]">
+    <spawn spawn_bydefault="true"  name="[rune14_npc1916_01]">
         <npc id="32039" count="1" respawn="60" pos="-11995 -35905 -10856 32496" />	
     </spawn>
-    <spawn name="[rune14_npc1916_02]">
+    <spawn spawn_bydefault="true"  name="[rune14_npc1916_02]">
         <npc id="32034" count="1" respawn="60" pos="-15928 -36621 -10688 16384" />	
     </spawn>
-    <spawn name="[rune14_npc1916_03]">
+    <spawn spawn_bydefault="true"  name="[rune14_npc1916_03]">
         <npc id="32035" count="1" respawn="60" pos="-16650 -36889 -10724 49152" />	
     </spawn>
-    <spawn name="[rune14_npc1916_04]">
+    <spawn spawn_bydefault="true"  name="[rune14_npc1916_04]">
         <npc id="32036" count="1" respawn="60" pos="-15856 -43824 -10688 16384" />	
     </spawn>
-    <spawn name="[rune14_npc1916_05]">
+    <spawn spawn_bydefault="true"  name="[rune14_npc1916_05]">
         <npc id="32037" count="1" respawn="60" pos="-16625 -44292 -10724 49152" />	
     </spawn>
-    <spawn name="[rune14_1916_rb01]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb01]">
         <npc id="22142" count="1" respawn="30" respawn_rand="20" pos="-19992 -37953 -10761 0" />	
     </spawn>
-    <spawn name="[rune14_1916_01]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_01]">
         <territory>	
             <location x="-20536" y="-38219" minz="-10801" maxz="-10501" />
             <location x="-19470" y="-38222" minz="-10801" maxz="-10501" />
@@ -30,10 +30,10 @@
         <npc id="22141" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22139" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb02]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb02]">
         <npc id="22143" count="1" respawn="30" respawn_rand="20" pos="-23024 -37952 -10954 0" />	
     </spawn>
-    <spawn name="[rune14_1916_02]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_02]">
         <territory>	
             <location x="-23568" y="-38236" minz="-10988" maxz="-10738" />
             <location x="-22478" y="-38237" minz="-10988" maxz="-10738" />
@@ -44,10 +44,10 @@
         <npc id="22145" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22142" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb03]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb03]">
         <npc id="22142" count="1" respawn="30" respawn_rand="20" pos="-19989 -39813 -10761 0" />	
     </spawn>
-    <spawn name="[rune14_1916_03]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_03]">
         <territory>	
             <location x="-20537" y="-40099" minz="-10801" maxz="-10451" />
             <location x="-19433" y="-40099" minz="-10801" maxz="-10451" />
@@ -58,10 +58,10 @@
         <npc id="22141" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22139" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb04]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb04]">
         <npc id="22143" count="1" respawn="30" respawn_rand="20" pos="-23021 -39822 -10954 0" />	
     </spawn>
-    <spawn name="[rune14_1916_04]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_04]">
         <territory>	
             <location x="-23571" y="-40101" minz="-10981" maxz="-10731" />
             <location x="-22472" y="-40104" minz="-10981" maxz="-10731" />
@@ -72,10 +72,10 @@
         <npc id="22145" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22142" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb05]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb05]">
         <npc id="22142" count="1" respawn="30" respawn_rand="20" pos="-19986 -41702 -10761 0" />	
     </spawn>
-    <spawn name="[rune14_1916_05]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_05]">
         <territory>	
             <location x="-20533" y="-41978" minz="-10801" maxz="-10451" />
             <location x="-19440" y="-41990" minz="-10801" maxz="-10451" />
@@ -86,10 +86,10 @@
         <npc id="22141" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22139" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb06]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb06]">
         <npc id="22143" count="1" respawn="30" respawn_rand="20" pos="-23024 -41693 -10954 0" />	
     </spawn>
-    <spawn name="[rune14_1916_06]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_06]">
         <territory>	
             <location x="-23571" y="-41977" minz="-10997" maxz="-10747" />
             <location x="-22469" y="-41980" minz="-10997" maxz="-10747" />
@@ -100,10 +100,10 @@
         <npc id="22145" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22142" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb07]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb07]">
         <npc id="22142" count="1" respawn="30" respawn_rand="20" pos="-19992 -43562 -10761 0" />	
     </spawn>
-    <spawn name="[rune14_1916_07]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_07]">
         <territory>	
             <location x="-20532" y="-43837" minz="-10801" maxz="-10451" />
             <location x="-19443" y="-43838" minz="-10801" maxz="-10451" />
@@ -114,10 +114,10 @@
         <npc id="22141" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22139" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb08]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb08]">
         <npc id="22143" count="1" respawn="30" respawn_rand="20" pos="-23022 -43556 -10954 0" />	
     </spawn>
-    <spawn name="[rune14_1916_08]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_08]">
         <territory>	
             <location x="-23567" y="-43834" minz="-10981" maxz="-10731" />
             <location x="-22474" y="-43839" minz="-10981" maxz="-10731" />
@@ -128,10 +128,10 @@
         <npc id="22145" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22142" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb09]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb09]">
         <npc id="22142" count="1" respawn="30" respawn_rand="20" pos="-12735 -37938 -10761 0" />	
     </spawn>
-    <spawn name="[rune14_1916_09]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_09]">
         <territory>	
             <location x="-13280" y="-38221" minz="-10801" maxz="-10451" />
             <location x="-12178" y="-38227" minz="-10801" maxz="-10451" />
@@ -142,10 +142,10 @@
         <npc id="22141" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22139" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb10]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb10]">
         <npc id="22143" count="1" respawn="30" respawn_rand="20" pos="-9708 -37943 -10954 0" />	
     </spawn>
-    <spawn name="[rune14_1916_10]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_10]">
         <territory>	
             <location x="-10239" y="-38207" minz="-10997" maxz="-10647" />
             <location x="-9171" y="-38208" minz="-10997" maxz="-10647" />
@@ -156,10 +156,10 @@
         <npc id="22145" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22142" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb11]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb11]">
         <npc id="22142" count="1" respawn="30" respawn_rand="20" pos="-12737 -39810 -10761 0" />	
     </spawn>
-    <spawn name="[rune14_1916_11]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_11]">
         <territory>	
             <location x="-13283" y="-40090" minz="-10801" maxz="-10451" />
             <location x="-12190" y="-40096" minz="-10801" maxz="-10451" />
@@ -170,10 +170,10 @@
         <npc id="22141" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22139" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb12]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb12]">
         <npc id="22143" count="1" respawn="30" respawn_rand="20" pos="-9707 -39820 -10954 0" />	
     </spawn>
-    <spawn name="[rune14_1916_12]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_12]">
         <territory>	
             <location x="-10209" y="-40060" minz="-10997" maxz="-10647" />
             <location x="-9186" y="-40059" minz="-10997" maxz="-10647" />
@@ -184,10 +184,10 @@
         <npc id="22145" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22142" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb13]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb13]">
         <npc id="22142" count="1" respawn="30" respawn_rand="20" pos="-12736 -41694 -10760 0" />	
     </spawn>
-    <spawn name="[rune14_1916_13]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_13]">
         <territory>	
             <location x="-13283" y="-41969" minz="-10801" maxz="-10451" />
             <location x="-12186" y="-41975" minz="-10801" maxz="-10451" />
@@ -198,10 +198,10 @@
         <npc id="22141" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22139" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb14]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb14]">
         <npc id="22143" count="1" respawn="30" respawn_rand="20" pos="-9708 -41687 -10954 0" />	
     </spawn>
-    <spawn name="[rune14_1916_14]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_14]">
         <territory>	
             <location x="-10222" y="-41941" minz="-10997" maxz="-10647" />
             <location x="-9176" y="-41944" minz="-10997" maxz="-10647" />
@@ -212,10 +212,10 @@
         <npc id="22145" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22142" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb15]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb15]">
         <npc id="22142" count="1" respawn="30" respawn_rand="20" pos="-12739 -43552 -10761 0" />	
     </spawn>
-    <spawn name="[rune14_1916_15]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_15]">
         <territory>	
             <location x="-13271" y="-43814" minz="-10801" maxz="-10451" />
             <location x="-12213" y="-43811" minz="-10801" maxz="-10451" />
@@ -226,10 +226,10 @@
         <npc id="22141" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22139" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_rb16]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_rb16]">
         <npc id="22143" count="1" respawn="30" respawn_rand="20" pos="-9708 -43545 -10954 0" />	
     </spawn>
-    <spawn name="[rune14_1916_16]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_16]">
         <territory>	
             <location x="-10244" y="-43813" minz="-10997" maxz="-10697" />
             <location x="-9168" y="-43815" minz="-10997" maxz="-10697" />
@@ -240,7 +240,7 @@
         <npc id="22145" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22142" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_17]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_17]">
         <territory>	
             <location x="-17989" y="-45575" minz="-10784" maxz="-10434" />
             <location x="-17076" y="-45573" minz="-10784" maxz="-10434" />
@@ -251,7 +251,7 @@
         <npc id="22147" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22149" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_17]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_17]">
         <territory>	
             <location x="-17989" y="-45575" minz="-10784" maxz="-10434" />
             <location x="-17076" y="-45573" minz="-10784" maxz="-10434" />
@@ -261,7 +261,7 @@
         <npc id="22149" count="2" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_18]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_18]">
         <territory>	
             <location x="-19611" y="-45842" minz="-10774" maxz="-10424" />
             <location x="-18561" y="-45843" minz="-10774" maxz="-10424" />
@@ -272,7 +272,7 @@
         <npc id="22142" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22147" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_18]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_18]">
         <territory>	
             <location x="-19611" y="-45842" minz="-10774" maxz="-10424" />
             <location x="-18561" y="-45843" minz="-10774" maxz="-10424" />
@@ -282,7 +282,7 @@
         <npc id="22147" count="2" />	
         <npc id="22148" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_19]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_19]">
         <territory>	
             <location x="-21009" y="-45601" minz="-10774" maxz="-10424" />
             <location x="-20116" y="-45601" minz="-10774" maxz="-10424" />
@@ -293,7 +293,7 @@
         <npc id="22147" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22150" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_19]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_19]">
         <territory>	
             <location x="-21009" y="-45601" minz="-10774" maxz="-10424" />
             <location x="-20116" y="-45601" minz="-10774" maxz="-10424" />
@@ -303,7 +303,7 @@
         <npc id="22148" count="2" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_20]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_20]">
         <territory>	
             <location x="-15806" y="-45600" minz="-10767" maxz="-10417" />
             <location x="-14757" y="-45602" minz="-10767" maxz="-10417" />
@@ -314,7 +314,7 @@
         <npc id="22147" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22149" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_20]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_20]">
         <territory>	
             <location x="-15806" y="-45600" minz="-10767" maxz="-10417" />
             <location x="-14757" y="-45602" minz="-10767" maxz="-10417" />
@@ -324,7 +324,7 @@
         <npc id="22149" count="2" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_21]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_21]">
         <territory>	
             <location x="-14241" y="-45836" minz="-10774" maxz="-10424" />
             <location x="-13191" y="-45838" minz="-10774" maxz="-10424" />
@@ -335,7 +335,7 @@
         <npc id="22142" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22147" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_21]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_21]">
         <territory>	
             <location x="-14241" y="-45836" minz="-10774" maxz="-10424" />
             <location x="-13191" y="-45838" minz="-10774" maxz="-10424" />
@@ -345,7 +345,7 @@
         <npc id="22147" count="2" />	
         <npc id="22148" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_22]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_22]">
         <territory>	
             <location x="-12641" y="-45667" minz="-10774" maxz="-10424" />
             <location x="-11760" y="-45670" minz="-10774" maxz="-10424" />
@@ -356,7 +356,7 @@
         <npc id="22147" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22150" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_22]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_22]">
         <territory>	
             <location x="-12641" y="-45667" minz="-10774" maxz="-10424" />
             <location x="-11760" y="-45670" minz="-10774" maxz="-10424" />
@@ -366,7 +366,7 @@
         <npc id="22148" count="2" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_23]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_23]">
         <territory>	
             <location x="-18026" y="-47606" minz="-10878" maxz="-10528" />
             <location x="-16976" y="-47608" minz="-10878" maxz="-10528" />
@@ -377,7 +377,7 @@
         <npc id="22147" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22149" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_23]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_23]">
         <territory>	
             <location x="-18026" y="-47606" minz="-10878" maxz="-10528" />
             <location x="-16976" y="-47608" minz="-10878" maxz="-10528" />
@@ -387,7 +387,7 @@
         <npc id="22149" count="2" respawn="60" respawn_rand="20" />	
         <npc id="22150" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_24]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_24]">
         <territory>	
             <location x="-19681" y="-47902" minz="-10885" maxz="-10535" />
             <location x="-18631" y="-47904" minz="-10885" maxz="-10535" />
@@ -398,7 +398,7 @@
         <npc id="22142" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22147" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_24]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_24]">
         <territory>	
             <location x="-19681" y="-47902" minz="-10885" maxz="-10535" />
             <location x="-18631" y="-47904" minz="-10885" maxz="-10535" />
@@ -408,7 +408,7 @@
         <npc id="22147" count="2" />	
         <npc id="22148" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_25]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_25]">
         <territory>	
             <location x="-21009" y="-47637" minz="-10885" maxz="-10535" />
             <location x="-20111" y="-47636" minz="-10885" maxz="-10535" />
@@ -419,7 +419,7 @@
         <npc id="22147" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22150" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_25]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_25]">
         <territory>	
             <location x="-21009" y="-47637" minz="-10885" maxz="-10535" />
             <location x="-20111" y="-47636" minz="-10885" maxz="-10535" />
@@ -429,7 +429,7 @@
         <npc id="22148" count="2" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_26]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_26]">
         <territory>	
             <location x="-15815" y="-47600" minz="-10875" maxz="-10525" />
             <location x="-14765" y="-47602" minz="-10875" maxz="-10525" />
@@ -440,7 +440,7 @@
         <npc id="22147" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22149" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_26]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_26]">
         <territory>	
             <location x="-15815" y="-47600" minz="-10875" maxz="-10525" />
             <location x="-14765" y="-47602" minz="-10875" maxz="-10525" />
@@ -450,7 +450,7 @@
         <npc id="22149" count="2" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_27]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_27]">
         <territory>	
             <location x="-14238" y="-47902" minz="-10882" maxz="-10532" />
             <location x="-13188" y="-47904" minz="-10882" maxz="-10532" />
@@ -461,7 +461,7 @@
         <npc id="22142" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22147" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_27]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_27]">
         <territory>	
             <location x="-14238" y="-47902" minz="-10882" maxz="-10532" />
             <location x="-13188" y="-47904" minz="-10882" maxz="-10532" />
@@ -471,7 +471,7 @@
         <npc id="22147" count="2" />	
         <npc id="22148" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_28]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_28]">
         <territory>	
             <location x="-12649" y="-47667" minz="-10882" maxz="-10532" />
             <location x="-11768" y="-47668" minz="-10882" maxz="-10532" />
@@ -482,7 +482,7 @@
         <npc id="22147" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22150" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_28]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_28]">
         <territory>	
             <location x="-12649" y="-47667" minz="-10882" maxz="-10532" />
             <location x="-11768" y="-47668" minz="-10882" maxz="-10532" />
@@ -492,7 +492,7 @@
         <npc id="22148" count="2" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_29]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_29]">
         <territory>	
             <location x="-18002" y="-49655" minz="-10961" maxz="-10611" />
             <location x="-17077" y="-49650" minz="-10961" maxz="-10611" />
@@ -503,7 +503,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_29]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_29]">
         <territory>	
             <location x="-18002" y="-49655" minz="-10961" maxz="-10611" />
             <location x="-17077" y="-49650" minz="-10961" maxz="-10611" />
@@ -513,7 +513,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_29]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_29]">
         <territory>	
             <location x="-18002" y="-49655" minz="-10961" maxz="-10611" />
             <location x="-17077" y="-49650" minz="-10961" maxz="-10611" />
@@ -522,7 +522,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_30]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_30]">
         <territory>	
             <location x="-19625" y="-49949" minz="-10968" maxz="-10618" />
             <location x="-18576" y="-49951" minz="-10968" maxz="-10618" />
@@ -533,7 +533,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_30]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_30]">
         <territory>	
             <location x="-19625" y="-49949" minz="-10968" maxz="-10618" />
             <location x="-18576" y="-49951" minz="-10968" maxz="-10618" />
@@ -543,7 +543,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_30]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_30]">
         <territory>	
             <location x="-19625" y="-49949" minz="-10968" maxz="-10618" />
             <location x="-18576" y="-49951" minz="-10968" maxz="-10618" />
@@ -552,7 +552,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_31]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_31]">
         <territory>	
             <location x="-21002" y="-49661" minz="-10968" maxz="-10618" />
             <location x="-20119" y="-49663" minz="-10968" maxz="-10618" />
@@ -563,7 +563,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_31]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_31]">
         <territory>	
             <location x="-21002" y="-49661" minz="-10968" maxz="-10618" />
             <location x="-20119" y="-49663" minz="-10968" maxz="-10618" />
@@ -573,7 +573,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_31]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_31]">
         <territory>	
             <location x="-21002" y="-49661" minz="-10968" maxz="-10618" />
             <location x="-20119" y="-49663" minz="-10968" maxz="-10618" />
@@ -582,7 +582,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_32]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_32]">
         <territory>	
             <location x="-15564" y="-49623" minz="-10958" maxz="-10608" />
             <location x="-14693" y="-49625" minz="-10958" maxz="-10608" />
@@ -593,7 +593,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_32]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_32]">
         <territory>	
             <location x="-15564" y="-49623" minz="-10958" maxz="-10608" />
             <location x="-14693" y="-49625" minz="-10958" maxz="-10608" />
@@ -603,7 +603,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_32]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_32]">
         <territory>	
             <location x="-15564" y="-49623" minz="-10958" maxz="-10608" />
             <location x="-14693" y="-49625" minz="-10958" maxz="-10608" />
@@ -612,7 +612,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_33]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_33]">
         <territory>	
             <location x="-14241" y="-49938" minz="-10965" maxz="-10615" />
             <location x="-13192" y="-49940" minz="-10965" maxz="-10615" />
@@ -623,7 +623,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_33]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_33]">
         <territory>	
             <location x="-14241" y="-49938" minz="-10965" maxz="-10615" />
             <location x="-13192" y="-49940" minz="-10965" maxz="-10615" />
@@ -633,7 +633,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_33]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_33]">
         <territory>	
             <location x="-14241" y="-49938" minz="-10965" maxz="-10615" />
             <location x="-13192" y="-49940" minz="-10965" maxz="-10615" />
@@ -642,7 +642,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_34]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_34]">
         <territory>	
             <location x="-12651" y="-49690" minz="-10965" maxz="-10615" />
             <location x="-11764" y="-49684" minz="-10965" maxz="-10615" />
@@ -653,7 +653,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_34]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_34]">
         <territory>	
             <location x="-12651" y="-49690" minz="-10965" maxz="-10615" />
             <location x="-11764" y="-49684" minz="-10965" maxz="-10615" />
@@ -663,7 +663,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_34]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_34]">
         <territory>	
             <location x="-12651" y="-49690" minz="-10965" maxz="-10615" />
             <location x="-11764" y="-49684" minz="-10965" maxz="-10615" />
@@ -672,7 +672,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_35]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_35]">
         <territory>	
             <location x="-19538" y="-51961" minz="-11075" maxz="-10725" />
             <location x="-18488" y="-51963" minz="-11075" maxz="-10725" />
@@ -683,7 +683,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_35]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_35]">
         <territory>	
             <location x="-19538" y="-51961" minz="-11075" maxz="-10725" />
             <location x="-18488" y="-51963" minz="-11075" maxz="-10725" />
@@ -693,7 +693,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_35]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_35]">
         <territory>	
             <location x="-19538" y="-51961" minz="-11075" maxz="-10725" />
             <location x="-18488" y="-51963" minz="-11075" maxz="-10725" />
@@ -702,7 +702,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_36]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_36]">
         <territory>	
             <location x="-21012" y="-51687" minz="-11075" maxz="-10725" />
             <location x="-20106" y="-51687" minz="-11075" maxz="-10725" />
@@ -713,7 +713,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_36]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_36]">
         <territory>	
             <location x="-21012" y="-51687" minz="-11075" maxz="-10725" />
             <location x="-20106" y="-51687" minz="-11075" maxz="-10725" />
@@ -723,7 +723,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_36]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_36]">
         <territory>	
             <location x="-21012" y="-51687" minz="-11075" maxz="-10725" />
             <location x="-20106" y="-51687" minz="-11075" maxz="-10725" />
@@ -732,7 +732,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_37]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_37]">
         <territory>	
             <location x="-14303" y="-51996" minz="-11062" maxz="-10712" />
             <location x="-13253" y="-51998" minz="-11062" maxz="-10712" />
@@ -743,7 +743,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_37]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_37]">
         <territory>	
             <location x="-14303" y="-51996" minz="-11062" maxz="-10712" />
             <location x="-13253" y="-51998" minz="-11062" maxz="-10712" />
@@ -753,7 +753,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_37]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_37]">
         <territory>	
             <location x="-14303" y="-51996" minz="-11062" maxz="-10712" />
             <location x="-13253" y="-51998" minz="-11062" maxz="-10712" />
@@ -762,7 +762,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_38]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_38]">
         <territory>	
             <location x="-12642" y="-51771" minz="-11064" maxz="-10714" />
             <location x="-11763" y="-51768" minz="-11064" maxz="-10714" />
@@ -773,7 +773,7 @@
         <npc id="22152" count="3" respawn="60" respawn_rand="20" />	
         <npc id="22153" count="2" respawn="60" respawn_rand="20" />	
     </spawn>
-    <spawn name="[rune14_1916_38]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_38]">
         <territory>	
             <location x="-12642" y="-51771" minz="-11064" maxz="-10714" />
             <location x="-11763" y="-51768" minz="-11064" maxz="-10714" />
@@ -783,7 +783,7 @@
         <npc id="22152" count="4" />	
         <npc id="22150" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_38]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_38]">
         <territory>	
             <location x="-12642" y="-51771" minz="-11064" maxz="-10714" />
             <location x="-11763" y="-51768" minz="-11064" maxz="-10714" />
@@ -792,7 +792,7 @@
         </territory>
         <npc id="22154" count="2" respawn="600" respawn_rand="400" />	
     </spawn>
-    <spawn name="[rune14_1916_39]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_39]">
         <territory>	
             <location x="-20580" y="-52990" minz="-10974" maxz="-10674" />
             <location x="-19621" y="-52991" minz="-10974" maxz="-10674" />
@@ -802,7 +802,7 @@
         <npc id="22155" count="1" respawn="100" respawn_rand="40" />	
         <npc id="22154" count="1" respawn="420" respawn_rand="220" />	
     </spawn>
-    <spawn name="[rune14_1916_39]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_39]">
         <territory>	
             <location x="-20580" y="-52990" minz="-10974" maxz="-10674" />
             <location x="-19621" y="-52991" minz="-10974" maxz="-10674" />
@@ -813,7 +813,7 @@
         <npc id="22150" count="2" />	
         <npc id="22147" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_40]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_40]">
         <territory>	
             <location x="-20601" y="-54679" minz="-11170" maxz="-10870" />
             <location x="-19642" y="-54680" minz="-11170" maxz="-10870" />
@@ -823,7 +823,7 @@
         <npc id="22155" count="1" respawn="100" respawn_rand="40" />	
         <npc id="22154" count="1" respawn="420" respawn_rand="220" />	
     </spawn>
-    <spawn name="[rune14_1916_40]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_40]">
         <territory>	
             <location x="-20601" y="-54679" minz="-11170" maxz="-10870" />
             <location x="-19642" y="-54680" minz="-11170" maxz="-10870" />
@@ -834,7 +834,7 @@
         <npc id="22152" count="2" />	
         <npc id="22153" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_41]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_41]">
         <territory>	
             <location x="-13173" y="-52984" minz="-10974" maxz="-10674" />
             <location x="-12214" y="-52985" minz="-10974" maxz="-10674" />
@@ -844,7 +844,7 @@
         <npc id="22155" count="1" respawn="100" respawn_rand="40" />	
         <npc id="22154" count="1" respawn="420" respawn_rand="220" />	
     </spawn>
-    <spawn name="[rune14_1916_41]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_41]">
         <territory>	
             <location x="-13173" y="-52984" minz="-10974" maxz="-10674" />
             <location x="-12214" y="-52985" minz="-10974" maxz="-10674" />
@@ -855,7 +855,7 @@
         <npc id="22150" count="2" />	
         <npc id="22147" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_42]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_42]">
         <territory>	
             <location x="-13123" y="-54687" minz="-11170" maxz="-10870" />
             <location x="-12164" y="-54688" minz="-11170" maxz="-10870" />
@@ -865,7 +865,7 @@
         <npc id="22155" count="1" respawn="100" respawn_rand="40" />	
         <npc id="22154" count="1" respawn="420" respawn_rand="220" />	
     </spawn>
-    <spawn name="[rune14_1916_42]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_42]">
         <territory>	
             <location x="-13123" y="-54687" minz="-11170" maxz="-10870" />
             <location x="-12164" y="-54688" minz="-11170" maxz="-10870" />
@@ -876,7 +876,7 @@
         <npc id="22152" count="2" />	
         <npc id="22153" count="2" />	
     </spawn>
-    <spawn name="[rune14_1916_43]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_43]">
         <territory>	
             <location x="-17720" y="-54900" minz="-11627" maxz="-11277" />
             <location x="-16402" y="-54902" minz="-11627" maxz="-11277" />
@@ -890,7 +890,7 @@
         <npc id="22167" count="1" respawn="90" respawn_rand="40" />	
         <npc id="22171" count="1" respawn="90" respawn_rand="40" />	
     </spawn>
-    <spawn name="[rune14_1916_48]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_48]">
         <territory>	
             <location x="-18116" y="-57241" minz="-10890" maxz="-10590" />
             <location x="-14637" y="-57250" minz="-10890" maxz="-10590" />
@@ -903,7 +903,7 @@
         <npc id="22159" count="2" respawn="90" respawn_rand="50" />	
         <npc id="22163" count="2" respawn="90" respawn_rand="50" />	
     </spawn>
-    <spawn name="[rune14_1916_75]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_75]">
         <territory>	
             <location x="-17768" y="-42146" minz="-10768" maxz="-10418" />
             <location x="-14964" y="-42091" minz="-10768" maxz="-10418" />
@@ -913,7 +913,7 @@
         <npc id="22140" count="3" respawn="1800" respawn_rand="600" />	
         <npc id="22149" count="3" respawn="1800" respawn_rand="600" />	
     </spawn>
-    <spawn name="[rune14_1916_51]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_51]">
         <territory>	
             <location x="-18857" y="-38081" minz="-10771" maxz="-10421" />
             <location x="-17661" y="-38081" minz="-10771" maxz="-10421" />
@@ -922,7 +922,7 @@
         </territory>
         <npc id="22140" count="3" respawn="800" respawn_rand="200" />	
     </spawn>
-    <spawn name="[rune14_1916_62]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_62]">
         <territory>	
             <location x="-18817" y="-43681" minz="-10766" maxz="-10466" />
             <location x="-17655" y="-43681" minz="-10766" maxz="-10466" />
@@ -931,7 +931,7 @@
         </territory>
         <npc id="22140" count="3" respawn="800" respawn_rand="200" />	
     </spawn>
-    <spawn name="[rune14_1916_63]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_63]">
         <territory>	
             <location x="-14976" y="-43684" minz="-10766" maxz="-10466" />
             <location x="-13815" y="-43684" minz="-10766" maxz="-10466" />
@@ -940,7 +940,7 @@
         </territory>
         <npc id="22140" count="3" respawn="800" respawn_rand="200" />	
     </spawn>
-    <spawn name="[rune14_1916_64]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_64]">
         <territory>	
             <location x="-15013" y="-38073" minz="-10771" maxz="-10421" />
             <location x="-13817" y="-38073" minz="-10771" maxz="-10421" />
@@ -949,127 +949,127 @@
         </territory>
         <npc id="22140" count="3" respawn="800" respawn_rand="200" />	
     </spawn>
-    <spawn name="[rune14_1916_52]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_52]">
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21520 -37855 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21520 -37920 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21520 -37984 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21520 -38052 -10804 0" />	
     </spawn>
-    <spawn name="[rune14_1916_53]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_53]">
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21520 -39721 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21520 -39787 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21520 -39853 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21520 -39918 -10804 0" />	
     </spawn>
-    <spawn name="[rune14_1916_54]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_54]">
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21536 -41590 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21536 -41656 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21536 -41720 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21536 -41783 -10804 0" />	
     </spawn>
-    <spawn name="[rune14_1916_55]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_55]">
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21522 -43457 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21522 -43526 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21522 -43588 -10804 0" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-21522 -43656 -10804 0" />	
     </spawn>
-    <spawn name="[rune14_1916_56]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_56]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-20495 -42600 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-20429 -42600 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-20362 -42599 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-20297 -42598 -10716 16384" />	
     </spawn>
-    <spawn name="[rune14_1916_57]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_57]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-19681 -40745 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-19613 -40745 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-19550 -40744 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-19486 -40743 -10716 16384" />	
     </spawn>
-    <spawn name="[rune14_1916_58]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_58]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-20494 -38893 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-20428 -38893 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-20363 -38892 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-20296 -38891 -10716 16384" />	
     </spawn>
-    <spawn name="[rune14_1916_59]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_59]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-23231 -38893 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-23166 -38892 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-23099 -38891 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-23031 -38891 -10911 49264" />	
     </spawn>
-    <spawn name="[rune14_1916_60]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_60]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-22519 -40750 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-22453 -40750 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-22385 -40749 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-22320 -40748 -10911 49264" />	
     </spawn>
-    <spawn name="[rune14_1916_61]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_61]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-23228 -42602 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-23163 -42601 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-23094 -42600 -10911 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-23027 -42600 -10911 49264" />	
     </spawn>
-    <spawn name="[rune14_1916_65]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_65]">
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11196 -37849 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11196 -37914 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11196 -37981 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11196 -38048 -10818 32768" />	
     </spawn>
-    <spawn name="[rune14_1916_66]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_66]">
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11195 -39717 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11195 -39783 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11195 -39847 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11195 -39917 -10818 32768" />	
     </spawn>
-    <spawn name="[rune14_1916_67]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_67]">
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11197 -41589 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11197 -41654 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11197 -41720 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11197 -41786 -10818 32768" />	
     </spawn>
-    <spawn name="[rune14_1916_68]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_68]">
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11200 -43454 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11200 -43520 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11200 -43587 -10818 32768" />	
         <npc id="22194" count="1" respawn="90" respawn_rand="40" pos="-11200 -43652 -10818 32768" />	
     </spawn>
-    <spawn name="[rune14_1916_69]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_69]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-12441 -42594 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-12376 -42593 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-12311 -42593 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-12248 -42592 -10716 16384" />	
     </spawn>
-    <spawn name="[rune14_1916_70]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_70]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-9693 -42612 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-9626 -42611 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-9559 -42610 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-9495 -42610 -10909 49264" />	
     </spawn>
-    <spawn name="[rune14_1916_71]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_71]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-13241 -40727 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-13174 -40727 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-13106 -40726 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-13041 -40726 -10716 16384" />	
     </spawn>
-    <spawn name="[rune14_1916_72]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_72]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-10409 -40756 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-10344 -40755 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-10279 -40754 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-10213 -40754 -10909 49264" />	
     </spawn>
-    <spawn name="[rune14_1916_73]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_73]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-12429 -38897 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-12363 -38896 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-12296 -38895 -10716 16384" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-12230 -38895 -10716 16384" />	
     </spawn>
-    <spawn name="[rune14_1916_74]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_74]">
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-9689 -38907 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-9624 -38907 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-9558 -38906 -10909 49264" />	
         <npc id="22137" count="1" respawn="90" respawn_rand="40" pos="-9491 -38905 -10909 49264" />	
     </spawn>
-    <spawn name="[rune14_1916_77]">
+    <spawn spawn_bydefault="true"  name="[rune14_1916_77]">
         <npc id="22138" count="1" respawn="90" respawn_rand="40" pos="-19888 -45547 -10720 32768" />	
         <npc id="22138" count="1" respawn="90" respawn_rand="40" pos="-19888 -45619 -10720 32768" />	
         <npc id="22138" count="1" respawn="90" respawn_rand="40" pos="-19888 -45691 -10720 32768" />	
@@ -1143,16 +1143,16 @@
         <npc id="22138" count="1" respawn="90" respawn_rand="40" pos="-14466 -50684 -11008 32768" />	
         <npc id="22138" count="1" respawn="90" respawn_rand="40" pos="-14466 -50759 -11008 32768" />	
     </spawn>
-    <spawn name="[rune14_mb1916_02]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_02]">
         <npc id="32068" count="1" respawn="90" pos="-16395 -54055 -10439 15992" />	
     </spawn>
-    <spawn name="[rune14_mb1916_03]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_03]">
         <npc id="32051" count="1" respawn="90" pos="-17248 -54832 -10424 16384" />	
         <npc id="32051" count="1" respawn="90" pos="-15547 -54835 -10424 16384" />	
         <npc id="32051" count="1" respawn="90" pos="-18116 -54831 -10579 16384" />	
         <npc id="32051" count="1" respawn="90" pos="-14645 -54836 -10577 16384" />	
     </spawn>
-    <spawn name="[rune14_mb1916_03]" event_name="[guard_of_andreas]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_03]" event_name="[guard_of_andreas]">
         <npc id="32038" count="1" respawn="90" pos="-16384 -53197 -10439 15992" />
         <npc id="22175" count="1" respawn="90" pos="-18008 -53394 -10594 16384" />	
         <npc id="22175" count="1" respawn="90" pos="-17653 -53399 -10594 16384" />	
@@ -1245,12 +1245,12 @@
         <npc id="22176" count="1" respawn="90" pos="-16291 -48391 -10918 16384" />	
         <npc id="22176" count="1" respawn="90" pos="-16473 -48391 -10918 16384" />	
     </spawn>
-    <spawn name="[rune14_mb1916_11]" event_name="[guard_of_andreas]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_11]" event_name="[guard_of_andreas]">
         <npc id="22191" count="1" respawn="90" pos="-16385 -53268 -10439 15992" />	
         <npc id="22192" count="1" respawn="90" pos="-16385 -53268 -10439 15992" />	
         <npc id="22193" count="1" respawn="90" pos="-16385 -53268 -10439 15992" />	
     </spawn>
-    <spawn name="[rune14_mb1916_12]" event_name="[guard_of_andreas]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_12]" event_name="[guard_of_andreas]">
         <territory>	
             <location x="-18174" y="-54844" minz="-10643" maxz="-10243" />
             <location x="-14609" y="-54852" minz="-10643" maxz="-10243" />
@@ -1268,17 +1268,17 @@
         <npc id="22192" count="1" respawn="90" pos="-17150 -54046 -10439 15992" />	
         <npc id="22193" count="1" respawn="90" />	
     </spawn>
-    <spawn name="[rune14_mb1916_13]" event_name="[guard_of_andreas]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_13]" event_name="[guard_of_andreas]">
         <npc id="22191" count="1" respawn="90" pos="-15690 -54030 -10439 15992" />	
         <npc id="22192" count="1" respawn="90" pos="-15690 -54030 -10439 15992" />	
         <npc id="22193" count="1" respawn="90" pos="-15690 -54030 -10439 15992" />	
     </spawn>
-    <spawn name="[rune14_mb1916_11]" event_name="[guard_of_andreas]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_11]" event_name="[guard_of_andreas]">
         <npc id="22191" count="1" respawn="90" pos="-16385 -53268 -10439 15992" />	
         <npc id="22192" count="1" respawn="90" pos="-16385 -53268 -10439 15992" />	
         <npc id="22193" count="1" respawn="90" pos="-16385 -53268 -10439 15992" />	
     </spawn>
-    <spawn name="[rune14_mb1916_12]" event_name="[guard_of_andreas]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_12]" event_name="[guard_of_andreas]">
         <territory>	
             <location x="-18174" y="-54844" minz="-10643" maxz="-10243" />
             <location x="-14609" y="-54852" minz="-10643" maxz="-10243" />
@@ -1296,7 +1296,7 @@
         <npc id="22192" count="1" respawn="90" pos="-17150 -54046 -10439 15992" />	
         <npc id="22193" count="1" respawn="90" />	
     </spawn>
-    <spawn name="[rune14_mb1916_13]" event_name="[guard_of_andreas]">
+    <spawn spawn_bydefault="true"  name="[rune14_mb1916_13]" event_name="[guard_of_andreas]">
         <npc id="22191" count="1" respawn="90" pos="-15690 -54030 -10439 15992" />	
         <npc id="22192" count="1" respawn="90" pos="-15690 -54030 -10439 15992" />	
         <npc id="22193" count="1" respawn="90" pos="-15690 -54030 -10439 15992" />	

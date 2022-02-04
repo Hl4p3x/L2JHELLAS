@@ -303,7 +303,7 @@ public class RecipeController
 				return;
 			}
 			
-			if (_player.isOnline() == 0 || _target.isOnline() == 0)
+			if (!_player.isOnline() || !_target.isOnline())
 			{
 				abort();
 				return;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[innadrile_chamberlain_etc]">
+	<spawn spawn_bydefault="true"  name="[innadrile_chamberlain_etc]">
 		<npc id="35653" count="1" respawn="60" pos="115907 249624 -768 49152" />	
 		<npc id="35316" count="1" respawn="60" pos="116123 249702 -762 49152" />	
 		<npc id="35320" count="1" respawn="60" pos="117136 241763 -1280 49152" />	
@@ -10,10 +10,10 @@
 		<npc id="35313" count="1" respawn="10800" pos="116190 247827 -750 49152" />	
 		<npc id="35313" count="1" respawn="10800" pos="116256 248182 -790 0" />	
 	</spawn>
-	<spawn name="[innadrile_m_teleporter]" event_name="[innadrile_m_teleporter]">
+	<spawn spawn_bydefault="true"  name="[innadrile_m_teleporter]" event_name="[innadrile_m_teleporter]">
 		<npc id="35311" count="1" respawn="60" pos="114443 249142 -74 0" />	
 	</spawn>
-	<spawn name="[innadrile_siege01]" event_name="[innadrile_siege01]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege01]" event_name="[innadrile_siege01]">
 		<npc id="35301" count="1" respawn="10800" pos="116371 245422 -1049 48376" />	
 		<npc id="35301" count="1" respawn="10800" pos="116343 245422 -1049 48376" />	
 		<npc id="35301" count="1" respawn="10800" pos="116315 245422 -1049 48376" />	
@@ -42,7 +42,7 @@
 		<npc id="35300" count="1" respawn="10800" pos="116175 245382 -1049 48376" />	
 		<npc id="35300" count="1" respawn="10800" pos="116147 245382 -1049 48376" />	
 	</spawn>
-	<spawn name="[innadrile_siege02]" event_name="[innadrile_siege02]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege02]" event_name="[innadrile_siege02]">
 		<npc id="35300" count="1" respawn="10800" pos="116514 245800 -1039 32080" />	
 		<npc id="35300" count="1" respawn="10800" pos="116513 245831 -1038 32080" />	
 		<npc id="35295" count="1" respawn="10800" pos="116513 245861 -1038 32080" />	
@@ -84,7 +84,7 @@
 		<npc id="35287" count="1" respawn="60" pos="116570 245880 -1037 32080" />	
 		<npc id="35287" count="1" respawn="60" pos="116567 245820 -1037 32080" />	
 	</spawn>
-	<spawn name="[innadrile_siege03]" event_name="[innadrile_siege03]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege03]" event_name="[innadrile_siege03]">
 		<npc id="35301" count="1" respawn="10800" pos="116321 246173 -788 48668" />	
 		<npc id="35301" count="1" respawn="10800" pos="116291 246174 -789 48668" />	
 		<npc id="35296" count="1" respawn="10800" pos="116261 246171 -788 48668" />	
@@ -111,7 +111,7 @@
 		<npc id="35298" count="1" respawn="10800" pos="115785 246250 -865 32712" />	
 		<npc id="35297" count="1" respawn="10800" pos="116118 246216 -788 55444" />	
 	</spawn>
-	<spawn name="[innadrile_siege04]" event_name="[innadrile_siege04]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege04]" event_name="[innadrile_siege04]">
 		<npc id="35298" count="1" respawn="10800" pos="116168 248194 -783 39088" />	
 		<npc id="35300" count="1" respawn="10800" pos="116151 248219 -784 39088" />	
 		<npc id="35298" count="1" respawn="10800" pos="116127 248245 -783 39088" />	
@@ -167,7 +167,7 @@
 		<npc id="35287" count="1" respawn="60" pos="115919 248317 -783 39088" />	
 		<npc id="35287" count="1" respawn="60" pos="115847 248214 -783 39088" />	
 	</spawn>
-	<spawn name="[innadrile_siege05]" event_name="[innadrile_siege05]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege05]" event_name="[innadrile_siege05]">
 		<npc id="35280" count="1" respawn="300" pos="116084 250339 -845 49112" />	
 		<npc id="35281" count="1" respawn="180" pos="115972 250342 -844 49112" />	
 		<npc id="35288" count="1" respawn="120" pos="115870 250325 -850 49112" />	
@@ -227,7 +227,7 @@
 		<npc id="35284" count="1" respawn="120" pos="115772 250486 -841 49112" />	
 		<npc id="35284" count="1" respawn="120" pos="115698 250486 -841 49112" />	
 	</spawn>
-	<spawn name="[innadrile_siege06]" event_name="[innadrile_siege06]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege06]" event_name="[innadrile_siege06]">
 		<npc id="35300" count="1" respawn="10800" pos="115510 249359 -623 48856" />	
 		<npc id="35295" count="1" respawn="10800" pos="115536 249359 -623 48856" />	
 		<npc id="35300" count="1" respawn="10800" pos="115564 249359 -622 48856" />	
@@ -252,7 +252,7 @@
 		<npc id="35301" count="1" respawn="10800" pos="115701 250380 -626 65460" />	
 		<npc id="35301" count="1" respawn="10800" pos="115701 250417 -626 65460" />	
 	</spawn>
-	<spawn name="[innadrile_siege07]" event_name="[innadrile_siege07]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege07]" event_name="[innadrile_siege07]">
 		<npc id="35300" count="1" respawn="10800" pos="116485 249293 -623 48856" />	
 		<npc id="35295" count="1" respawn="10800" pos="116511 249293 -623 48856" />	
 		<npc id="35300" count="1" respawn="10800" pos="116554 249296 -622 48856" />	
@@ -277,7 +277,7 @@
 		<npc id="35301" count="1" respawn="10800" pos="116334 250088 -626 32384" />	
 		<npc id="35301" count="1" respawn="10800" pos="116333 250051 -626 32384" />	
 	</spawn>
-	<spawn name="[innadrile_siege08]" event_name="[innadrile_siege08]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege08]" event_name="[innadrile_siege08]">
 		<npc id="35301" count="1" respawn="10800" pos="116032 245348 -672 0" />	
 		<npc id="35301" count="1" respawn="10800" pos="116032 245277 -672 0" />	
 		<npc id="35301" count="1" respawn="10800" pos="116015 245210 -672 57344" />	
@@ -299,7 +299,7 @@
 		<npc id="35297" count="1" respawn="10800" pos="115968 245248 -672 57344" />	
 		<npc id="35297" count="1" respawn="10800" pos="116544 245248 -672 40960" />	
 	</spawn>
-	<spawn name="[innadrile_siege09]" event_name="[innadrile_siege09]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege09]" event_name="[innadrile_siege09]">
 		<npc id="35288" count="1" respawn="10800" pos="116087 247109 -790 49152" />	
 		<npc id="35288" count="1" respawn="10800" pos="115959 247109 -790 49152" />	
 		<npc id="35288" count="1" respawn="10800" pos="115896 247109 -790 49152" />	
@@ -331,7 +331,7 @@
 		<npc id="35287" count="1" respawn="10800" pos="115768 246959 -790 49152" />	
 		<npc id="35287" count="1" respawn="10800" pos="115704 246959 -790 49152" />	
 	</spawn>
-	<spawn name="[innadrile_siege10]" event_name="[innadrile_siege10]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege10]" event_name="[innadrile_siege10]">
 		<npc id="35301" count="1" respawn="10800" pos="115791 247862 -481 0" />	
 		<npc id="35301" count="1" respawn="10800" pos="115792 247740 -481 0" />	
 		<npc id="35301" count="1" respawn="10800" pos="115737 247679 -481 57344" />	
@@ -353,7 +353,7 @@
 		<npc id="35296" count="1" respawn="10800" pos="116266 247714 -482 40960" />	
 		<npc id="35297" count="1" respawn="10800" pos="116346 247732 -479 40960" />	
 	</spawn>
-	<spawn name="[innadrile_siege11]" event_name="[innadrile_siege11]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege11]" event_name="[innadrile_siege11]">
 		<npc id="35301" count="1" respawn="10800" pos="116131 247989 -790 49152" />	
 		<npc id="35301" count="1" respawn="10800" pos="116100 247989 -790 49152" />	
 		<npc id="35301" count="1" respawn="10800" pos="116069 247989 -790 49152" />	
@@ -371,7 +371,7 @@
 		<npc id="35301" count="1" respawn="10800" pos="115943 247969 -790 49152" />	
 		<npc id="35301" count="1" respawn="10800" pos="115911 247969 -790 49152" />	
 	</spawn>
-	<spawn name="[innadrile_siege12]" event_name="[innadrile_siege12]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege12]" event_name="[innadrile_siege12]">
 		<npc id="35301" count="1" respawn="10800" pos="114459 246876 -666 32768" />	
 		<npc id="35301" count="1" respawn="10800" pos="114459 246927 -666 32768" />	
 		<npc id="35301" count="1" respawn="10800" pos="114459 246977 -666 32768" />	
@@ -385,7 +385,7 @@
 		<npc id="35301" count="1" respawn="10800" pos="114459 247377 -666 32768" />	
 		<npc id="35301" count="1" respawn="10800" pos="114459 247427 -666 32768" />	
 	</spawn>
-	<spawn name="[innadrile_siege13]" event_name="[innadrile_siege13]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege13]" event_name="[innadrile_siege13]">
 		<npc id="35301" count="1" respawn="10800" pos="117861 246876 -666 32768" />	
 		<npc id="35301" count="1" respawn="10800" pos="117861 246927 -666 32768" />	
 		<npc id="35301" count="1" respawn="10800" pos="117861 246977 -666 32768" />	
@@ -399,7 +399,7 @@
 		<npc id="35301" count="1" respawn="10800" pos="117861 247377 -666 32768" />	
 		<npc id="35301" count="1" respawn="10800" pos="117861 247427 -666 32768" />	
 	</spawn>
-	<spawn name="[innadrile_siege03]" event_name="[innadrile_siege03]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege03]" event_name="[innadrile_siege03]">
 		<npc id="35301" count="1" respawn="10800" pos="116321 246173 -788 48668" />	
 		<npc id="35296" count="1" respawn="10800" pos="116261 246171 -788 48668" />	
 		<npc id="35301" count="1" respawn="10800" pos="116202 246169 -787 48668" />	
@@ -411,7 +411,7 @@
 		<npc id="35296" count="1" respawn="10800" pos="116017 245910 -787 64432" />	
 		<npc id="35301" count="1" respawn="10800" pos="116015 245850 -786 64432" />	
 	</spawn>
-	<spawn name="[innadrile_siege08_1]" event_name="[innadrile_siege08_1]">
+	<spawn spawn_bydefault="true"  name="[innadrile_siege08_1]" event_name="[innadrile_siege08_1]">
 		<npc id="35301" count="1" respawn="10800" pos="116015 245358 -663 0" />	
 		<npc id="35301" count="1" respawn="10800" pos="116015 245246 -663 0" />	
 		<npc id="35301" count="1" respawn="10800" pos="115968 245187 -663 57344" />	
@@ -427,16 +427,16 @@
 		<npc id="35297" count="1" respawn="10800" pos="116599 245209 -663 40960" />	
 		<npc id="35297" count="1" respawn="10800" pos="115909 245217 -663 57344" />	
 	</spawn>
-	<spawn name="[innadril12_npc2325_01]">
+	<spawn spawn_bydefault="true"  name="[innadril12_npc2325_01]">
 		<npc id="35318" count="1" respawn="60" pos="115787 249585 -775 49152" />	
 	</spawn>
-	<spawn name="[innadril12_npc2325_02]">
+	<spawn spawn_bydefault="true"  name="[innadril12_npc2325_02]">
 		<npc id="35314" count="1" respawn="60" pos="115660 249265 -946 0" />	
 	</spawn>
-	<spawn name="[innadril12_npc2325_03]">
+	<spawn spawn_bydefault="true"  name="[innadril12_npc2325_03]">
 		<npc id="35315" count="1" respawn="60" pos="116062 248523 -953 16384" />	
 	</spawn>
-	<spawn name="[innadril12_npc2325_04]">
+	<spawn spawn_bydefault="true"  name="[innadril12_npc2325_04]">
 		<npc id="35317" count="1" respawn="60" pos="115863 250387 -322 0" />	
 	</spawn>
 

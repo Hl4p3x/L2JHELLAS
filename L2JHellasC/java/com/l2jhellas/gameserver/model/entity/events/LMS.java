@@ -115,10 +115,6 @@ public class LMS extends Event
 		NpcHtmlMessage html = new NpcHtmlMessage(obj);
 		StringBuilder sb = new StringBuilder();
 		sb.append("<html><body><table width=270><tr><td width=200>Event Engine </td><td><a action=\"bypass -h eventstats 1\">Statistics</a></td></tr></table><br><center><table width=270 bgcolor=5A5A5A><tr><td width=70>Running</td><td width=130><center>" + getString("eventName") + "</td><td width=70>Time: " + clock.getTime() + "</td></tr></table><table width=270><tr><td><center>Players left: " + getPlayersWithStatus(0).size() + "</td></tr></table><br><table width=270>");
-		
-		for (L2PcInstance p : getPlayersOfTeam(1))
-			sb.append("<tr><td>" + p.getName() + "</td><td>lvl " + p.getLevel() + "</td><td>" + p.getTemplate().getClassName() + "</td><td>" + (getStatus(p) == 1 ? "Dead" : "Alive") + "</td></tr>");
-		
 		sb.append("</table></body></html>");
 		html.setHtml(sb.toString());
 		player.sendPacket(html);

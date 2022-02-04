@@ -11,8 +11,7 @@ public class ItemsAutoDestroy
 	private final Set<L2ItemInstance> _items = ConcurrentHashMap.newKeySet();
 	private final Set<L2ItemInstance> _herbs = ConcurrentHashMap.newKeySet();
 	
-	//run every 2 minutes
-	private final int herbstime = 2 * 60 * 1000;
+	private final int herbstime = 15100;
 	
 	protected ItemsAutoDestroy()
 	{

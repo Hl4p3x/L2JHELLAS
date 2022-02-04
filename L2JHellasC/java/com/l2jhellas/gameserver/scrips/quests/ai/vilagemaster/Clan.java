@@ -1,8 +1,5 @@
 package com.l2jhellas.gameserver.scrips.quests.ai.vilagemaster;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.quest.Quest;
@@ -120,38 +117,41 @@ public class Clan extends Quest
 		32233,
 		32234
 	};
-	
-	private static final Map<String, String> LEADER_REQUIRED = new HashMap<>();
-	static
-	{
-		LEADER_REQUIRED.put("9000-03.htm", "9000-03-no.htm");
-		LEADER_REQUIRED.put("9000-04.htm", "9000-04-no.htm");
-		LEADER_REQUIRED.put("9000-05.htm", "9000-05-no.htm");
-		LEADER_REQUIRED.put("9000-07.htm", "9000-07-no.htm");
-		LEADER_REQUIRED.put("9000-12a.htm", "9000-07-no.htm");
-		LEADER_REQUIRED.put("9000-12b.htm", "9000-07-no.htm");
-		LEADER_REQUIRED.put("9000-13a.htm", "9000-07-no.htm");
-		LEADER_REQUIRED.put("9000-13b.htm", "9000-07-no.htm");
-		LEADER_REQUIRED.put("9000-14a.htm", "9000-07-no.htm");
-		LEADER_REQUIRED.put("9000-14b.htm", "9000-07-no.htm");
-		LEADER_REQUIRED.put("9000-15.htm", "9000-07-no.htm");
-	}
-	
+
 	public Clan()
 	{
-		super(-1, Clan.class.getSimpleName(), "village_master");
-		
+		super(-1, "Clan", "village_master");	
 		addStartNpc(NPC);
-		addTalkId(NPC);
+		addTalkId(NPC);		
 	}
 	
 	@Override
 	public String onAdvEvent(String event, L2Npc npc, L2PcInstance player)
 	{
-		
-		if (LEADER_REQUIRED.containsKey(event) && !player.isClanLeader())
-			return LEADER_REQUIRED.get(event);
-		
+		switch (event)
+		{
+			case "9000-03.htm":
+				if (!player.isClanLeader())
+					return "9000-03-no.htm";
+				
+			case "9000-04.htm":
+				if (!player.isClanLeader())
+					return "9000-04-no.htm";
+				
+			case "9000-05.htm":
+				if (!player.isClanLeader())
+					return "9000-05-no.htm";
+				
+			case "9000-07.htm":
+			case "9000-08.htm":
+			case "9000-12a.htm":
+			case "9000-13a.htm":
+			case "9000-13b.htm":
+			case "9000-14a.htm":
+			case "9000-15.htm":
+				if (!player.isClanLeader())
+					return "9000-07-no.htm";
+		}		
 		return event;
 	}
 	

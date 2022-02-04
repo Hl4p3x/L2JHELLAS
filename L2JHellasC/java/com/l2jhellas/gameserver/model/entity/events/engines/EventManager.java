@@ -12,7 +12,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.enums.Team;
-import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.entity.events.CTF;
@@ -80,34 +79,7 @@ public final class EventManager
 						break;
 				}
 			}
-			
-			if (status == State.VOTING && counter == getInt("showVotePopupAt") && getBoolean("votePopupEnabled"))
-			{
-				NpcHtmlMessage html = new NpcHtmlMessage(0);
-				StringBuilder sb = new StringBuilder();
-				int count = 0;
-
-				sb.append("<html><body><center><table width=270><tr><td width=270><center>Event Engine - Vote for your favourite event!</center></td></tr></table></center><br>");
-				
-				for (Map.Entry<Integer, Event> event : events.entrySet())
-				{
-					count++;
-					sb.append("<center><table width=270 " + (count % 2 == 1 ? "" : "bgcolor=000000") + "><tr><td width=240>" + event.getValue().getString("eventName") + "</td><td width=30><a action=\"bypass -h eventvote " + event.getKey() + "\">Vote</a></td></tr></table></center>");
-					sb.append("<img src=\"L2UI.Squaregray\" width=\"270\" height=\"1\">");
-				}
-
-				sb.append("</body></html>");
-				html.setHtml(sb.toString());
-				
-				for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
-				{
-					if (player == null || votes.containsKey(player) || player.getLevel() < 40)
-						continue;
-					
-					player.sendPacket(html);
-				}
-			}
-			
+						
 			if (counter == 0)
 				schedule(1);
 			else
@@ -133,7 +105,7 @@ public final class EventManager
 					
 					announce("The next event will be: " + getCurrentEvent().getString("eventName"));
 					announce("Registering phase started! You have " + getInt("registerTime") / 60 + " minutes to register!");
-					announce("You can use commands .join - .leave  , or visit the event manager.");
+					announce("You can use commands: .join - .leave , or visit the event manager.");
 					setStatus(State.REGISTERING);
 					counter = getInt("registerTime") - 1;
 					ThreadPoolManager.getInstance().scheduleGeneral(cdtask, 1);
@@ -143,6 +115,7 @@ public final class EventManager
 					if (players.size() < getCurrentEvent().getInt("minPlayers"))
 					{
 						announce("There are not enough participants! Next event in " + getInt("betweenEventsTime") / 60 + "mins!");
+						announce("Vote for your favourite event by using .vote");
 						setCurrentEvent(0);
 						players.clear();
 						colors.clear();
@@ -174,14 +147,6 @@ public final class EventManager
 						}
 					}
 					getCurrentEvent().start();
-					
-					for (L2PcInstance player : players)
-					{
-						if(player == null)
-							continue;
-						
-						EventStats.getInstance().tempTable.put(player.getObjectId(), new int[] { 0, 0, 0, 0 });
-					}
 					break;
 			default:
 				break;
@@ -208,9 +173,6 @@ public final class EventManager
 		public void run()
 		{
 			teleBackEveryone();
-			EventStats.getInstance().applyChanges();
-			EventStats.getInstance().tempTable.clear();
-			EventStats.getInstance().sumPlayerStats();
 			players.clear();
 			colors.clear();
 			positions.clear();
@@ -454,16 +416,20 @@ public final class EventManager
 	
 	public boolean isRegistered(L2PcInstance player)
 	{
-		if (getCurrentEvent() != null)
-			return getCurrentEvent().players.containsKey(player);
+		Event currEvt = getCurrentEvent();
+
+		if (currEvt != null)
+			return currEvt.players.containsKey(player);
 		
 		return false;
 	}
 	
 	public boolean isRegistered(L2Character player)
 	{
-		if (getCurrentEvent() != null)
-			return getCurrentEvent().players.containsKey(player);
+		Event currEvt = getCurrentEvent();
+
+		if (currEvt != null)
+			return currEvt.players.containsKey(player);
 		
 		return false;
 	}
@@ -487,9 +453,6 @@ public final class EventManager
 		if (votes.containsKey(player))
 			votes.remove(player);
 
-		if (players.contains(player))
-			players.remove(player);
-
 		if(colors.containsKey(player))
 			colors.remove(player);
 
@@ -498,6 +461,9 @@ public final class EventManager
 
 		if(positions.containsKey(player))
 			positions.remove(player);
+		
+		if (players.contains(player))
+			players.remove(player);
 	}
 	
 	public boolean registerPlayer(L2PcInstance player)
@@ -521,8 +487,11 @@ public final class EventManager
 			player.sendMessage("You have succesfully registered to the event!");
 			players.add(player);
 			
-			if(player.getTitle() != null)
-			   titles.put(player, player.getTitle());
+			
+			String title = player.getTitle();
+			
+			if(title != null && !title.isEmpty())
+			   titles.put(player, title);
 			
 			colors.put(player, player.getAppearance().getNameColor());
 			positions.put(player, new int[] { player.getX(), player.getY(), player.getZ() });
@@ -546,6 +515,57 @@ public final class EventManager
 	protected void setStatus(State s)
 	{
 		status = s;
+	}
+	
+	public void showVoteHtml(L2PcInstance player)
+	{
+		NpcHtmlMessage html = new NpcHtmlMessage(0);
+		StringBuilder sb = new StringBuilder();
+		int count = 0;
+
+		sb.append("<html><body><center><table width=270><tr><td width=270><center>Event Engine Manager</center></td></tr></table></center><br>");
+
+		if (votes.containsKey(player))
+		{
+			sb.append("<center><table width=270 bgcolor=000000><tr><td width=90>Events</td><td width=140><center>Time left: " + cdtask.getTime() + "</center></td><td width=40><center>Votes</center></td></tr></table></center><br>");
+
+			for (Map.Entry<Integer, Event> event : events.entrySet())
+			{
+				count++;
+				sb.append("<center><table width=270 " + (count % 2 == 1 ? "" : "bgcolor=000000") + "><tr><td width=180>" + event.getValue().getString("eventName") + "</td><td width=30><a action=\"bypass -h eventinfo " + event.getKey() + "\">Info</a></td><td width=30><center>" + getVoteCount(event.getKey()) + "</td></tr></table></center>");
+				sb.append("<img src=\"L2UI.Squaregray\" width=\"270\" height=\"1\">");
+			}			
+
+			html.setHtml(sb.toString());
+		}
+		else if (getStatus() == State.REGISTERING)
+		{
+			sb.append("<center><table width=270><tr><td width=70>");
+			
+			if (players.contains(player))
+				sb.append("<a action=\"bypass -h event_unregister"  +"\">Unregister</a>");
+			else
+				sb.append("<a action=\"bypass -h  event_register" + "\">Register</a>");
+			
+			sb.append("</td><td width=130><center><a action=\"bypass -h eventinfo " + getCurrentEvent().getInt("EventId") + "\">" + getCurrentEvent().getString("eventName") + "</a></td><td width=70>Time: " + cdtask.getTime() + "</td></tr></table><br>");
+			
+			sb.append("<center><table width=270 "+"><tr><td width=120>" + "Registered Players: " + EventManager.getInstance().players.size() + "</td><td width=40>");
+			
+			html.setHtml(sb.toString());
+		}
+		else
+		{
+			for (Map.Entry<Integer, Event> event : events.entrySet())
+			{
+				count++;
+				sb.append("<center><table width=270 " + (count % 2 == 1 ? "" : "bgcolor=000000") + "><tr><td width=240>" + event.getValue().getString("eventName") + "</td><td width=30><a action=\"bypass -h eventvote " + event.getKey() + "\">Vote</a></td></tr></table></center>");
+				sb.append("<img src=\"L2UI.Squaregray\" width=\"270\" height=\"1\">");
+			}
+		}
+		
+		sb.append("</body></html>");
+		html.setHtml(sb.toString());
+		player.sendPacket(html);
 	}
 	
 	public void showFirstHtml(L2PcInstance player, int obj)
@@ -596,7 +616,7 @@ public final class EventManager
 	{
 		for (L2PcInstance player : getCurrentEvent().getPlayerList())
 		{				
-			if (player.isOnline() != 0)
+			if (player.isOnline())
 			{
 				player.setTeam(Team.NONE);
 
@@ -651,18 +671,22 @@ public final class EventManager
 		players.remove(player);
 		colors.remove(player);
 		positions.remove(player);
+		if(titles.containsKey(player))
+			titles.remove(player);
 		return true;
 	}
 	
 	public boolean areTeammates(L2PcInstance player, L2PcInstance target) 
 	{ 
-		if (getCurrentEvent() == null) 
+		Event currEvt = getCurrentEvent();
+		
+		if (currEvt == null)
 			return false; 
 		
-		if (getCurrentEvent().numberOfTeams() < 2) 
-			return false; 
+		if (currEvt.numberOfTeams() < 2) 
+			return false;
 		
-		if (getCurrentEvent().getTeam(player) == getCurrentEvent().getTeam(target)) 
+		if (currEvt.getTeam(player) == currEvt.getTeam(target)) 
 			return true;
 		
 		return false;
@@ -696,7 +720,8 @@ public final class EventManager
 	
 	public boolean isSpecialEvent()
 	{
-		return getCurrentEvent() != null && (getCurrentEvent() instanceof LMS || getCurrentEvent() instanceof DM);
+		Event currEvt = getCurrentEvent();
+		return currEvt != null && (currEvt instanceof LMS || currEvt instanceof DM);
 	}
 		
 	private static class SingletonHolder

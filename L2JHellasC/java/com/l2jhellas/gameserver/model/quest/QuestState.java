@@ -139,18 +139,12 @@ public final class QuestState
 				takeItems(itemId, -1);
 		}
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+			PreparedStatement ps = con.prepareStatement((repeatable) ? QUEST_DELETE : QUEST_COMPLETE))
 		{
-			PreparedStatement statement;
-			if (repeatable)
-				statement = con.prepareStatement(QUEST_DELETE);
-			else
-				statement = con.prepareStatement(QUEST_COMPLETE);
-			
-			statement.setInt(1, _player.getObjectId());
-			statement.setString(2, _quest.getName());
-			statement.executeUpdate();
-			statement.close();
+			ps.setInt(1, _player.getObjectId());
+			ps.setString(2, _quest.getName());
+			ps.executeUpdate();
 		}
 		catch (Exception e)
 		{
@@ -369,15 +363,14 @@ public final class QuestState
 	
 	private void setQuestVarInDb(String var, String value)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(QUEST_SET_VAR))
 		{
-			PreparedStatement statement = con.prepareStatement(QUEST_SET_VAR);
 			statement.setInt(1, _player.getObjectId());
 			statement.setString(2, _quest.getName());
 			statement.setString(3, var);
 			statement.setString(4, value);
 			statement.executeUpdate();
-			statement.close();
 		}
 		catch (Exception e)
 		{
@@ -387,14 +380,13 @@ public final class QuestState
 	
 	private void removeQuestVarInDb(String var)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(QUEST_DEL_VAR))
 		{
-			PreparedStatement statement = con.prepareStatement(QUEST_DEL_VAR);
 			statement.setInt(1, _player.getObjectId());
 			statement.setString(2, _quest.getName());
 			statement.setString(3, var);
 			statement.executeUpdate();
-			statement.close();
 		}
 		catch (Exception e)
 		{

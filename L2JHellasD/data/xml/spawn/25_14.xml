@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[25_14_blacksmith_of_wind_rooney]">
+	<spawn spawn_bydefault="true"  name="[25_14_blacksmith_of_wind_rooney]">
 		<npc id="32049" count="1" respawn="60" pos="179815 -115465 -3598 49152" />	
 	</spawn>
-	<spawn name="[godard10_npc2514_02]">
+	<spawn spawn_bydefault="true"  name="[godard10_npc2514_02]">
 		<npc id="31686" count="1" respawn="60" pos="189584 -108768 -1017 43000" />	
 	</spawn>
-	<spawn name="[godard10_npc2514_03]">
+	<spawn spawn_bydefault="true"  name="[godard10_npc2514_03]">
 		<npc id="31687" count="1" respawn="60" pos="191456 -108448 -1017 0" />	
 	</spawn>
-	<spawn name="[godard10_npc2514_04]">
+	<spawn spawn_bydefault="true"  name="[godard10_npc2514_04]">
 		<npc id="31384" count="1" respawn="60" pos="190744 -115656 -1568 32767" />	
 	</spawn>
-    <spawn name="[godard10_npc2514_04_01]">
+    <spawn spawn_bydefault="true"  name="[godard10_npc2514_04_01]">
         <npc id="31384" count="1" respawn="60" pos="191296 -115472 -1580 56000" />	
     </spawn>
-	<spawn name="[godard09_npc2514_05]">
+	<spawn spawn_bydefault="true"  name="[godard09_npc2514_05]">
 		<npc id="31539" count="1" respawn="60" pos="180352 -111888 -5826 24000" />	
 	</spawn>
-	<spawn name="[godard08_npc2514_06]">
+	<spawn spawn_bydefault="true"  name="[godard08_npc2514_06]">
 		<npc id="31540" count="1" respawn="60" pos="183664 -114944 -3335 20000" />	
 	</spawn>
-	<spawn name="[godard10_npc2514_07]">
+	<spawn spawn_bydefault="true"  name="[godard10_npc2514_07]">
 		<npc id="31385" count="1" respawn="60" pos="189872 -105152 -724 49000" />	
 	</spawn>
-	<spawn name="[godard08_2514_01]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_01]">
 		<territory>	
 			<location x="179651" y="-116994" minz="-3647" maxz="-3447" />
 			<location x="179519" y="-116706" minz="-3647" maxz="-3447" />
@@ -41,7 +41,7 @@
 		<npc id="21652" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_02]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_02]">
 		<territory>	
 			<location x="180621" y="-115487" minz="-3675" maxz="-3475" />
 			<location x="180461" y="-115247" minz="-3675" maxz="-3475" />
@@ -58,7 +58,7 @@
 		<npc id="21652" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_03]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_03]">
 		<territory>	
 			<location x="178529" y="-119994" minz="-4165" maxz="-3965" />
 			<location x="178734" y="-119409" minz="-4165" maxz="-3965" />
@@ -73,7 +73,7 @@
 		<npc id="21652" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_05]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_05]">
 		<territory>	
 			<location x="176164" y="-121387" minz="-4148" maxz="-3948" />
 			<location x="177436" y="-121403" minz="-4148" maxz="-3948" />
@@ -88,7 +88,7 @@
 		<npc id="21652" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_06]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_06]">
 		<territory>	
 			<location x="181328" y="-119542" minz="-3710" maxz="-3510" />
 			<location x="181328" y="-119542" minz="-3710" maxz="-3510" />
@@ -105,7 +105,7 @@
 		<npc id="21652" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_07]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_07]">
 		<territory>	
 			<location x="182415" y="-117705" minz="-3382" maxz="-3182" />
 			<location x="182059" y="-117521" minz="-3382" maxz="-3182" />
@@ -122,7 +122,7 @@
 		<npc id="21652" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_08]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_08]">
 		<territory>	
 			<location x="185977" y="-118936" minz="-3329" maxz="-3129" />
 			<location x="186445" y="-118884" minz="-3329" maxz="-3129" />
@@ -138,7 +138,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_09]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_09]">
 		<territory>	
 			<location x="184154" y="-118553" minz="-3124" maxz="-2924" />
 			<location x="184534" y="-119217" minz="-3124" maxz="-2924" />
@@ -154,7 +154,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_10]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_10]">
 		<territory>	
 			<location x="185916" y="-120861" minz="-3136" maxz="-2936" />
 			<location x="185920" y="-120505" minz="-3136" maxz="-2936" />
@@ -170,7 +170,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_11]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_11]">
 		<territory>	
 			<location x="187906" y="-121665" minz="-3136" maxz="-2936" />
 			<location x="188526" y="-121049" minz="-3136" maxz="-2936" />
@@ -186,7 +186,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_12]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_12]">
 		<territory>	
 			<location x="190497" y="-120846" minz="-3134" maxz="-2934" />
 			<location x="190353" y="-120154" minz="-3134" maxz="-2934" />
@@ -202,7 +202,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_13]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_13]">
 		<territory>	
 			<location x="189260" y="-119154" minz="-3352" maxz="-3152" />
 			<location x="189252" y="-118574" minz="-3352" maxz="-3152" />
@@ -219,7 +219,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_14]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_14]">
 		<territory>	
 			<location x="190058" y="-118093" minz="-3332" maxz="-3132" />
 			<location x="190590" y="-117357" minz="-3332" maxz="-3132" />
@@ -235,7 +235,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_15]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_15]">
 		<territory>	
 			<location x="189479" y="-115830" minz="-3328" maxz="-3128" />
 			<location x="188663" y="-115174" minz="-3328" maxz="-3128" />
@@ -251,7 +251,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_16]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_16]">
 		<territory>	
 			<location x="186172" y="-115111" minz="-3365" maxz="-3165" />
 			<location x="186508" y="-115355" minz="-3365" maxz="-3165" />
@@ -265,7 +265,7 @@
 		<npc id="21653" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_17]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_17]">
 		<territory>	
 			<location x="186055" y="-113599" minz="-3398" maxz="-3198" />
 			<location x="185827" y="-112719" minz="-3398" maxz="-3198" />
@@ -282,7 +282,7 @@
 		<npc id="21654" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_18]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_18]">
 		<territory>	
 			<location x="188291" y="-112601" minz="-3324" maxz="-3124" />
 			<location x="187787" y="-112253" minz="-3324" maxz="-3124" />
@@ -299,7 +299,7 @@
 		<npc id="21654" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_19]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_19]">
 		<territory>	
 			<location x="190463" y="-113751" minz="-3332" maxz="-3132" />
 			<location x="190315" y="-112971" minz="-3332" maxz="-3132" />
@@ -315,7 +315,7 @@
 		<npc id="21654" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_20]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_20]">
 		<territory>	
 			<location x="188937" y="-112731" minz="-3336" maxz="-3136" />
 			<location x="188337" y="-112335" minz="-3336" maxz="-3136" />
@@ -333,7 +333,7 @@
 		<npc id="21654" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_21]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_21]">
 		<territory>	
 			<location x="191193" y="-109008" minz="-3332" maxz="-3182" />
 			<location x="190785" y="-107960" minz="-3332" maxz="-3182" />
@@ -350,7 +350,7 @@
 		<npc id="21654" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_22]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_22]">
 		<territory>	
 			<location x="187762" y="-109743" minz="-3340" maxz="-3140" />
 			<location x="187082" y="-110095" minz="-3340" maxz="-3140" />
@@ -366,7 +366,7 @@
 		<npc id="21654" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_23]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_23]">
 		<territory>	
 			<location x="186200" y="-109243" minz="-3332" maxz="-3132" />
 			<location x="186144" y="-108607" minz="-3332" maxz="-3132" />
@@ -386,7 +386,7 @@
 		<npc id="21655" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_24]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_24]">
 		<territory>	
 			<location x="181914" y="-108363" minz="-3719" maxz="-3569" />
 			<location x="181850" y="-107951" minz="-3719" maxz="-3569" />
@@ -403,7 +403,7 @@
 		<npc id="21655" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_25]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_25]">
 		<territory>	
 			<location x="183803" y="-112187" minz="-3740" maxz="-3540" />
 			<location x="183867" y="-111743" minz="-3740" maxz="-3540" />
@@ -419,7 +419,7 @@
 		<npc id="21655" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_26]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_26]">
 		<territory>	
 			<location x="182600" y="-112042" minz="-3707" maxz="-3507" />
 			<location x="181652" y="-111582" minz="-3707" maxz="-3507" />
@@ -437,7 +437,7 @@
 		<npc id="21655" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_27]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_27]">
 		<territory>	
 			<location x="180780" y="-112379" minz="-3751" maxz="-3551" />
 			<location x="180276" y="-112003" minz="-3751" maxz="-3551" />
@@ -456,7 +456,7 @@
 		<npc id="21655" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_28]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_28]">
 		<territory>	
 			<location x="179861" y="-108287" minz="-3711" maxz="-3511" />
 			<location x="180049" y="-107871" minz="-3711" maxz="-3511" />
@@ -475,7 +475,7 @@
 		<npc id="21655" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_29]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_29]">
 		<territory>	
 			<location x="176861" y="-108117" minz="-3703" maxz="-3503" />
 			<location x="176021" y="-107829" minz="-3703" maxz="-3503" />
@@ -496,7 +496,7 @@
 		<npc id="21655" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard08_2514_30]">
+	<spawn spawn_bydefault="true"  name="[godard08_2514_30]">
 		<territory>	
 			<location x="176442" y="-111822" minz="-3531" maxz="-3331" />
 			<location x="176002" y="-111794" minz="-3531" maxz="-3331" />
@@ -517,7 +517,7 @@
 		<npc id="21655" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21394" count="1" respawn="90" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[godard09_2514_01]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_01]">
 		<territory>	
 			<location x="175828" y="-111714" minz="-5565" maxz="-5365" />
 			<location x="175528" y="-111346" minz="-5565" maxz="-5365" />
@@ -533,7 +533,7 @@
 		<npc id="21656" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_02]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_02]">
 		<territory>	
 			<location x="177666" y="-112338" minz="-5876" maxz="-5676" />
 			<location x="178118" y="-111838" minz="-5876" maxz="-5676" />
@@ -551,7 +551,7 @@
 		<npc id="21656" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_03]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_03]">
 		<territory>	
 			<location x="181013" y="-115006" minz="-6170" maxz="-5970" />
 			<location x="180393" y="-114762" minz="-6170" maxz="-5970" />
@@ -569,7 +569,7 @@
 		<npc id="21656" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_04]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_04]">
 		<territory>	
 			<location x="183192" y="-115568" minz="-6174" maxz="-5974" />
 			<location x="184072" y="-114860" minz="-6174" maxz="-5974" />
@@ -588,7 +588,7 @@
 		<npc id="21656" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_05]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_05]">
 		<territory>	
 			<location x="184908" y="-118019" minz="-6182" maxz="-5982" />
 			<location x="185328" y="-117263" minz="-6182" maxz="-5982" />
@@ -603,7 +603,7 @@
 		<npc id="21656" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_06]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_06]">
 		<territory>	
 			<location x="182031" y="-111122" minz="-5894" maxz="-5694" />
 			<location x="182679" y="-110114" minz="-5894" maxz="-5694" />
@@ -618,7 +618,7 @@
 		<npc id="21657" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_07]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_07]">
 		<territory>	
 			<location x="179604" y="-108013" minz="-5886" maxz="-5686" />
 			<location x="179592" y="-107193" minz="-5886" maxz="-5686" />
@@ -636,7 +636,7 @@
 		<npc id="21657" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_08]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_08]">
 		<territory>	
 			<location x="178992" y="-110514" minz="-5893" maxz="-5693" />
 			<location x="179516" y="-110270" minz="-5893" maxz="-5693" />
@@ -653,7 +653,7 @@
 		<npc id="21657" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_09]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_09]">
 		<territory>	
 			<location x="181981" y="-105685" minz="-6101" maxz="-5901" />
 			<location x="180989" y="-105901" minz="-6101" maxz="-5901" />
@@ -673,7 +673,7 @@
 		<npc id="21657" count="3" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="60" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[godard09_2514_11]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_11]">
 		<territory>	
 			<location x="184380" y="-110588" minz="-6006" maxz="-5806" />
 			<location x="184512" y="-110696" minz="-6006" maxz="-5806" />
@@ -684,7 +684,7 @@
 		<npc id="21395" count="3" respawn="105" respawn_rand="35" />	
 		<npc id="21393" count="2" respawn="110" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_12]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_12]">
 		<territory>	
 			<location x="185260" y="-109723" minz="-5972" maxz="-5772" />
 			<location x="185704" y="-109463" minz="-5972" maxz="-5772" />
@@ -696,7 +696,7 @@
 		<npc id="21657" count="2" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="2" respawn="105" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_13]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_13]">
 		<territory>	
 			<location x="184537" y="-110697" minz="-5986" maxz="-5786" />
 			<location x="185265" y="-110141" minz="-5986" maxz="-5786" />
@@ -707,7 +707,7 @@
 		<npc id="21392" count="2" respawn="110" respawn_rand="35" />	
 		<npc id="21393" count="2" respawn="110" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_14]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_14]">
 		<territory>	
 			<location x="185386" y="-111386" minz="-6004" maxz="-5804" />
 			<location x="185534" y="-110414" minz="-6004" maxz="-5804" />
@@ -719,7 +719,7 @@
 		<npc id="21391" count="2" respawn="110" respawn_rand="35" />	
 		<npc id="21392" count="1" respawn="110" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_15]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_15]">
 		<territory>	
 			<location x="185407" y="-111408" minz="-5970" maxz="-5770" />
 			<location x="186103" y="-111832" minz="-5970" maxz="-5770" />
@@ -730,7 +730,7 @@
 		<npc id="21392" count="2" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="2" respawn="105" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_16]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_16]">
 		<territory>	
 			<location x="187009" y="-111776" minz="-5928" maxz="-5728" />
 			<location x="187173" y="-110252" minz="-5928" maxz="-5728" />
@@ -743,7 +743,7 @@
 		<npc id="21392" count="1" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="2" respawn="105" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_17]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_17]">
 		<territory>	
 			<location x="185715" y="-109455" minz="-5932" maxz="-5732" />
 			<location x="186103" y="-109603" minz="-5932" maxz="-5732" />
@@ -753,7 +753,7 @@
 		</territory>
 		<npc id="21393" count="2" respawn="110" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_18]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_18]">
 		<territory>	
 			<location x="186194" y="-110196" minz="-5968" maxz="-5768" />
 			<location x="187114" y="-110252" minz="-5968" maxz="-5768" />
@@ -765,7 +765,7 @@
 		<npc id="21393" count="2" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="105" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_19]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_19]">
 		<territory>	
 			<location x="187187" y="-109656" minz="-5952" maxz="-5752" />
 			<location x="187719" y="-109664" minz="-5952" maxz="-5752" />
@@ -774,7 +774,7 @@
 		</territory>
 		<npc id="21392" count="2" respawn="110" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_20]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_20]">
 		<territory>	
 			<location x="188399" y="-109529" minz="-5956" maxz="-5756" />
 			<location x="188487" y="-109357" minz="-5956" maxz="-5756" />
@@ -785,7 +785,7 @@
 		</territory>
 		<npc id="21391" count="2" respawn="110" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_21]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_21]">
 		<territory>	
 			<location x="188030" y="-111311" minz="-5932" maxz="-5732" />
 			<location x="188390" y="-111115" minz="-5932" maxz="-5732" />
@@ -798,7 +798,7 @@
 		<npc id="21391" count="2" respawn="110" respawn_rand="35" />	
 		<npc id="21395" count="1" respawn="105" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard09_2514_22]">
+	<spawn spawn_bydefault="true"  name="[godard09_2514_22]">
 		<territory>	
 			<location x="187619" y="-111382" minz="-5942" maxz="-5742" />
 			<location x="188015" y="-111526" minz="-5942" maxz="-5742" />
@@ -809,7 +809,7 @@
 		<npc id="21392" count="1" respawn="110" respawn_rand="35" />	
 		<npc id="21657" count="2" respawn="110" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[godard10_2514_01]">
+	<spawn spawn_bydefault="true"  name="[godard10_2514_01]">
 		<territory>	
 			<location x="191644" y="-117588" minz="-1896" maxz="-1696" />
 			<location x="191844" y="-117588" minz="-1896" maxz="-1696" />
@@ -818,7 +818,7 @@
 		</territory>
 		<npc id="21392" count="10" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard10_mb2514_02]">
+	<spawn spawn_bydefault="true"  name="[godard10_mb2514_02]">
 		<territory>	
 			<location x="189964" y="-116820" minz="-1624" maxz="-1424" />
 			<location x="190164" y="-116820" minz="-1624" maxz="-1424" />
@@ -827,7 +827,7 @@
 		</territory>
 		<npc id="29030" count="1" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard10_mb2514_03]">
+	<spawn spawn_bydefault="true"  name="[godard10_mb2514_03]">
 		<territory>	
 			<location x="193260" y="-116820" minz="-1444" maxz="-1244" />
 			<location x="193460" y="-116820" minz="-1444" maxz="-1244" />
@@ -836,7 +836,7 @@
 		</territory>
 		<npc id="29033" count="1" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard10_mb2514_04]">
+	<spawn spawn_bydefault="true"  name="[godard10_mb2514_04]">
 		<territory>	
 			<location x="189388" y="-109476" minz="-1064" maxz="-864" />
 			<location x="189588" y="-109476" minz="-1064" maxz="-864" />
@@ -845,7 +845,7 @@
 		</territory>
 		<npc id="29036" count="1" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard10_mb2514_05]">
+	<spawn spawn_bydefault="true"  name="[godard10_mb2514_05]">
 		<territory>	
 			<location x="192156" y="-108980" minz="-1060" maxz="-860" />
 			<location x="192356" y="-108980" minz="-1060" maxz="-860" />
@@ -854,7 +854,7 @@
 		</territory>
 		<npc id="29037" count="1" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard10_mb2514_06]">
+	<spawn spawn_bydefault="true"  name="[godard10_mb2514_06]">
 		<territory>	
 			<location x="189404" y="-106296" minz="-844" maxz="-644" />
 			<location x="190372" y="-106276" minz="-844" maxz="-644" />
@@ -863,7 +863,7 @@
 		</territory>
 		<npc id="29040" count="1" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard10_2514_07]">
+	<spawn spawn_bydefault="true"  name="[godard10_2514_07]">
 		<territory>	
 			<location x="192648" y="-113844" minz="-1464" maxz="-1264" />
 			<location x="193080" y="-114196" minz="-1464" maxz="-1264" />
@@ -873,7 +873,7 @@
 		</territory>
 		<npc id="21395" count="8" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard10_2514_08]">
+	<spawn spawn_bydefault="true"  name="[godard10_2514_08]">
 		<territory>	
 			<location x="188936" y="-107280" minz="-884" maxz="-684" />
 			<location x="189364" y="-107328" minz="-884" maxz="-684" />
@@ -883,7 +883,7 @@
 		</territory>
 		<npc id="21395" count="4" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard10_2514_09]">
+	<spawn spawn_bydefault="true"  name="[godard10_2514_09]">
 		<territory>	
 			<location x="190756" y="-106952" minz="-880" maxz="-680" />
 			<location x="190996" y="-106952" minz="-880" maxz="-680" />
@@ -893,7 +893,7 @@
 		</territory>
 		<npc id="21395" count="4" respawn="604800" />	
 	</spawn>
-	<spawn name="[godard09_mb2514_01]">
+	<spawn spawn_bydefault="true"  name="[godard09_mb2514_01]">
 		<territory>	
 			<location x="184536" y="-106084" minz="-6384" maxz="-6184" />
 			<location x="185372" y="-106872" minz="-6384" maxz="-6184" />

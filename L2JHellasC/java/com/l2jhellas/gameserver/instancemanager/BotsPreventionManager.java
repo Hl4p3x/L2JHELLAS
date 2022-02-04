@@ -229,7 +229,7 @@ public class BotsPreventionManager
 		@Override
 		public void run()
 		{
-			if (_player.isbOnline())
+			if (_player.isOnline())
 			{
 				if (_validation.containsKey(_player.getObjectId()) && _validation.get(_player.getObjectId()).firstWindow)
 				{

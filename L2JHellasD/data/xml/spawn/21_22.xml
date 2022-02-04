@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[dion15_2122_01]">
+	<spawn spawn_bydefault="true"  name="[dion15_2122_01]">
 		<territory>	
 			<location x="32971" y="135013" minz="-3401" maxz="-2401" />
 			<location x="37333" y="134255" minz="-3401" maxz="-2401" />
@@ -11,7 +11,7 @@
 		<npc id="20205" count="5" respawn="24" />	
 		<npc id="20266" count="6" respawn="24" />	
 	</spawn>
-	<spawn name="[dion15_2122_02]">
+	<spawn spawn_bydefault="true"  name="[dion15_2122_02]">
 		<territory>	
 			<location x="37534" y="134310" minz="-3567" maxz="-2667" />
 			<location x="42190" y="133128" minz="-3567" maxz="-2667" />
@@ -21,7 +21,7 @@
 		<npc id="20205" count="2" respawn="24" />	
 		<npc id="20266" count="4" respawn="24" />	
 	</spawn>
-	<spawn name="[dion15_2122_03s]">
+	<spawn spawn_bydefault="true"  name="[dion15_2122_03s]">
 		<territory>	
 			<location x="33268" y="136204" minz="-3341" maxz="-2741" />
 			<location x="35377" y="135291" minz="-3341" maxz="-2741" />
@@ -31,7 +31,7 @@
 		<npc id="20265" count="2" respawn="24" />	
 		<npc id="20266" count="2" respawn="24" />	
 	</spawn>
-	<spawn name="[dion02_2122_18]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_18]">
 		<territory>	
 			<location x="40084" y="144588" minz="-3861" maxz="-3061" />
 			<location x="41708" y="146494" minz="-3861" maxz="-3061" />
@@ -43,7 +43,7 @@
 		<npc id="20223" count="2" respawn="35" />	
 		<npc id="20154" count="4" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_19]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_19]">
 		<territory>	
 			<location x="41756" y="149052" minz="-3894" maxz="-3094" />
 			<location x="41136" y="151006" minz="-3894" maxz="-3094" />
@@ -56,7 +56,7 @@
 		<npc id="20223" count="2" respawn="35" />	
 		<npc id="20154" count="4" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_20s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_20s]">
 		<territory>	
 			<location x="40207" y="145191" minz="-3960" maxz="-3360" />
 			<location x="41090" y="146457" minz="-3960" maxz="-3360" />
@@ -68,7 +68,7 @@
 		<npc id="20155" count="2" respawn="35" />	
 		<npc id="20156" count="3" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_21s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_21s]">
 		<territory>	
 			<location x="40684" y="148647" minz="-3960" maxz="-3360" />
 			<location x="41166" y="149292" minz="-3960" maxz="-3360" />
@@ -80,7 +80,7 @@
 		<npc id="20155" count="3" respawn="35" />	
 		<npc id="20156" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_22]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_22]">
 		<territory>	
 			<location x="42496" y="145978" minz="-3926" maxz="-3326" />
 			<location x="44081" y="145641" minz="-3926" maxz="-3326" />
@@ -92,7 +92,7 @@
 		<npc id="20083" count="5" respawn="35" />	
 		<npc id="20202" count="5" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_23]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_23]">
 		<territory>	
 			<location x="42857" y="141840" minz="-3383" maxz="-2783" />
 			<location x="45622" y="140341" minz="-3383" maxz="-2783" />
@@ -106,7 +106,7 @@
 		<npc id="20199" count="6" respawn="35" />	
 		<npc id="20200" count="6" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_24]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_24]">
 		<territory>	
 			<location x="44744" y="145274" minz="-3838" maxz="-3238" />
 			<location x="48911" y="142988" minz="-3838" maxz="-3238" />
@@ -118,7 +118,7 @@
 		<npc id="20202" count="4" respawn="35" />	
 		<npc id="20144" count="6" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_25]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_25]">
 		<territory>	
 			<location x="44980" y="146491" minz="-3838" maxz="-3238" />
 			<location x="47143" y="146996" minz="-3838" maxz="-3238" />
@@ -130,7 +130,7 @@
 		<npc id="20083" count="2" respawn="35" />	
 		<npc id="20202" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_26]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_26]">
 		<territory>	
 			<location x="47199" y="146990" minz="-3838" maxz="-3238" />
 			<location x="50752" y="145592" minz="-3838" maxz="-3238" />
@@ -142,7 +142,7 @@
 		<npc id="20202" count="3" respawn="35" />	
 		<npc id="20144" count="3" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_27]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_27]">
 		<territory>	
 			<location x="42902" y="152504" minz="-2950" maxz="-2450" />
 			<location x="44936" y="152332" minz="-2950" maxz="-2450" />
@@ -154,7 +154,7 @@
 		<npc id="20200" count="2" respawn="35" />	
 		<npc id="20202" count="3" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_29]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_29]">
 		<territory>	
 			<location x="45699" y="151349" minz="-2946" maxz="-2446" />
 			<location x="48307" y="150431" minz="-2946" maxz="-2446" />
@@ -166,7 +166,7 @@
 		<npc id="20160" count="7" respawn="35" />	
 		<npc id="20198" count="7" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_30]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_30]">
 		<territory>	
 			<location x="48695" y="149982" minz="-3636" maxz="-3136" />
 			<location x="49276" y="149854" minz="-3636" maxz="-3136" />
@@ -176,7 +176,7 @@
 		<npc id="20200" count="2" respawn="35" />	
 		<npc id="20202" count="1" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_31]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_31]">
 		<territory>	
 			<location x="50625" y="152619" minz="-3636" maxz="-3136" />
 			<location x="50943" y="152432" minz="-3636" maxz="-3136" />
@@ -186,7 +186,7 @@
 		<npc id="20200" count="2" respawn="35" />	
 		<npc id="20202" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_32]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_32]">
 		<territory>	
 			<location x="55469" y="149586" minz="-2582" maxz="-2082" />
 			<location x="56313" y="152034" minz="-2582" maxz="-2082" />
@@ -199,7 +199,7 @@
 		<npc id="20197" count="4" respawn="35" />	
 		<npc id="20160" count="6" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_33]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_33]">
 		<territory>	
 			<location x="51744" y="145023" minz="-3253" maxz="-2453" />
 			<location x="56485" y="145730" minz="-3253" maxz="-2453" />
@@ -209,7 +209,7 @@
 		<npc id="20171" count="4" respawn="35" />	
 		<npc id="20197" count="5" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_34]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_34]">
 		<territory>	
 			<location x="56056" y="142591" minz="-3253" maxz="-2553" />
 			<location x="57137" y="144898" minz="-3253" maxz="-2553" />
@@ -219,7 +219,7 @@
 		<npc id="20171" count="3" respawn="35" />	
 		<npc id="20197" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_35]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_35]">
 		<territory>	
 			<location x="55936" y="140654" minz="-3241" maxz="-2541" />
 			<location x="56037" y="142496" minz="-3241" maxz="-2541" />
@@ -229,7 +229,7 @@
 		<npc id="20156" count="2" respawn="35" />	
 		<npc id="20171" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_36]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_36]">
 		<territory>	
 			<location x="55871" y="140644" minz="-3220" maxz="-2520" />
 			<location x="54432" y="142155" minz="-3220" maxz="-2520" />
@@ -240,7 +240,7 @@
 		<npc id="20156" count="2" respawn="35" />	
 		<npc id="20171" count="3" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_37]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_37]">
 		<territory>	
 			<location x="51970" y="141788" minz="-3284" maxz="-2684" />
 			<location x="52534" y="145286" minz="-3284" maxz="-2684" />
@@ -251,7 +251,7 @@
 		<npc id="20171" count="3" respawn="35" />	
 		<npc id="20197" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_38s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_38s]">
 		<territory>	
 			<location x="42853" y="146471" minz="-3767" maxz="-3267" />
 			<location x="43925" y="146306" minz="-3767" maxz="-3267" />
@@ -260,7 +260,7 @@
 		</territory>
 		<npc id="20200" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_39s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_39s]">
 		<territory>	
 			<location x="42663" y="149260" minz="-3834" maxz="-3334" />
 			<location x="44673" y="149064" minz="-3834" maxz="-3334" />
@@ -269,7 +269,7 @@
 		</territory>
 		<npc id="20201" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_40s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_40s]">
 		<territory>	
 			<location x="45398" y="145106" minz="-3805" maxz="-3305" />
 			<location x="47076" y="144403" minz="-3805" maxz="-3305" />
@@ -279,7 +279,7 @@
 		<npc id="20201" count="2" respawn="35" />	
 		<npc id="20144" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_41s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_41s]">
 		<territory>	
 			<location x="47681" y="144020" minz="-3802" maxz="-3302" />
 			<location x="48911" y="143887" minz="-3802" maxz="-3302" />
@@ -289,7 +289,7 @@
 		<npc id="20202" count="2" respawn="35" />	
 		<npc id="20144" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_42s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_42s]">
 		<territory>	
 			<location x="45323" y="147125" minz="-3831" maxz="-3331" />
 			<location x="46906" y="147752" minz="-3831" maxz="-3331" />
@@ -298,7 +298,7 @@
 		</territory>
 		<npc id="20200" count="3" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_43s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_43s]">
 		<territory>	
 			<location x="49251" y="146451" minz="-3683" maxz="-3183" />
 			<location x="50449" y="146123" minz="-3683" maxz="-3183" />
@@ -307,7 +307,7 @@
 		</territory>
 		<npc id="20144" count="3" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_44s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_44s]">
 		<territory>	
 			<location x="45393" y="152293" minz="-2923" maxz="-2423" />
 			<location x="45869" y="151501" minz="-2923" maxz="-2423" />
@@ -316,7 +316,7 @@
 		</territory>
 		<npc id="20144" count="3" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_45s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_45s]">
 		<territory>	
 			<location x="46917" y="153602" minz="-2923" maxz="-2423" />
 			<location x="47305" y="151737" minz="-2923" maxz="-2423" />
@@ -325,7 +325,7 @@
 		</territory>
 		<npc id="20202" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_46s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_46s]">
 		<territory>	
 			<location x="47291" y="154950" minz="-2923" maxz="-2423" />
 			<location x="46822" y="153717" minz="-2923" maxz="-2423" />
@@ -335,7 +335,7 @@
 		<npc id="20201" count="2" respawn="35" />	
 		<npc id="20198" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_47s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_47s]">
 		<territory>	
 			<location x="42840" y="144248" minz="-3382" maxz="-2882" />
 			<location x="42175" y="142912" minz="-3382" maxz="-2882" />
@@ -344,7 +344,7 @@
 		</territory>
 		<npc id="20144" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_48s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_48s]">
 		<territory>	
 			<location x="44505" y="143300" minz="-3382" maxz="-2882" />
 			<location x="43840" y="141964" minz="-3382" maxz="-2882" />
@@ -353,7 +353,7 @@
 		</territory>
 		<npc id="20202" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_49s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_49s]">
 		<territory>	
 			<location x="46453" y="142389" minz="-3382" maxz="-2882" />
 			<location x="45613" y="140687" minz="-3382" maxz="-2882" />
@@ -362,7 +362,7 @@
 		</territory>
 		<npc id="20200" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_50s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_50s]">
 		<territory>	
 			<location x="51784" y="151099" minz="-2584" maxz="-2084" />
 			<location x="51063" y="149673" minz="-2584" maxz="-2084" />
@@ -371,7 +371,7 @@
 		</territory>
 		<npc id="20200" count="3" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_51s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_51s]">
 		<territory>	
 			<location x="53951" y="153066" minz="-2584" maxz="-2084" />
 			<location x="52204" y="151589" minz="-2584" maxz="-2084" />
@@ -380,7 +380,7 @@
 		</territory>
 		<npc id="20198" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_52s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_52s]">
 		<territory>	
 			<location x="53620" y="146977" minz="-3185" maxz="-2685" />
 			<location x="52769" y="145630" minz="-3185" maxz="-2685" />
@@ -389,7 +389,7 @@
 		</territory>
 		<npc id="20160" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion02_2122_53s]">
+	<spawn spawn_bydefault="true"  name="[dion02_2122_53s]">
 		<territory>	
 			<location x="52848" y="142049" minz="-3185" maxz="-2685" />
 			<location x="52509" y="141197" minz="-3185" maxz="-2685" />
@@ -398,7 +398,7 @@
 		</territory>
 		<npc id="20197" count="2" respawn="35" />	
 	</spawn>
-	<spawn name="[dion13_2122_01]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_01]">
 		<territory>	
 			<location x="34507" y="162123" minz="-3869" maxz="-2869" />
 			<location x="41523" y="161005" minz="-3869" maxz="-2869" />
@@ -407,7 +407,7 @@
 		</territory>
 		<npc id="20939" count="10" respawn="45" />	
 	</spawn>
-	<spawn name="[dion13_2122_02]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_02]">
 		<territory>	
 			<location x="41784" y="161100" minz="-3467" maxz="-2267" />
 			<location x="46612" y="160716" minz="-3467" maxz="-2267" />
@@ -417,7 +417,7 @@
 		<npc id="20939" count="8" respawn="45" />	
 		<npc id="20944" count="4" respawn="45" />	
 	</spawn>
-	<spawn name="[dion13_2122_03]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_03]">
 		<territory>	
 			<location x="50358" y="162813" minz="-2943" maxz="-2143" />
 			<location x="54555" y="161502" minz="-2943" maxz="-2143" />
@@ -427,7 +427,7 @@
 		<npc id="20939" count="2" respawn="45" />	
 		<npc id="20944" count="4" respawn="45" />	
 	</spawn>
-	<spawn name="[dion13_2122_04]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_04]">
 		<territory>	
 			<location x="56219" y="162213" minz="-3729" maxz="-2429" />
 			<location x="65262" y="157122" minz="-3729" maxz="-2429" />
@@ -438,7 +438,7 @@
 		<npc id="20944" count="10" respawn="45" />	
 		<npc id="20941" count="6" respawn="45" />	
 	</spawn>
-	<spawn name="[dion13_2122_05]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_05]">
 		<territory>	
 			<location x="64250" y="146987" minz="-3789" maxz="-2689" />
 			<location x="65162" y="146870" minz="-3789" maxz="-2689" />
@@ -449,7 +449,7 @@
 		<npc id="20944" count="2" respawn="45" />	
 		<npc id="20941" count="1" respawn="45" />	
 	</spawn>
-	<spawn name="[dion13_2122_06]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_06]">
 		<territory>	
 			<location x="63982" y="142779" minz="-3789" maxz="-2689" />
 			<location x="65167" y="141626" minz="-3789" maxz="-2689" />
@@ -459,7 +459,7 @@
 		<npc id="20939" count="2" respawn="45" />	
 		<npc id="20944" count="1" respawn="45" />	
 	</spawn>
-	<spawn name="[dion13_2122_08s]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_08s]">
 		<territory>	
 			<location x="38161" y="162091" minz="-3724" maxz="-2524" />
 			<location x="41318" y="161797" minz="-3724" maxz="-2524" />
@@ -468,7 +468,7 @@
 		</territory>
 		<npc id="20939" count="3" respawn="45" />	
 	</spawn>
-	<spawn name="[dion13_2122_09s]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_09s]">
 		<territory>	
 			<location x="45485" y="162041" minz="-3276" maxz="-2376" />
 			<location x="47721" y="161650" minz="-3276" maxz="-2376" />
@@ -477,7 +477,7 @@
 		</territory>
 		<npc id="20944" count="3" respawn="45" />	
 	</spawn>
-	<spawn name="[dion13_2122_10s]">
+	<spawn spawn_bydefault="true"  name="[dion13_2122_10s]">
 		<territory>	
 			<location x="62282" y="159897" minz="-3702" maxz="-2802" />
 			<location x="64998" y="159112" minz="-3702" maxz="-2802" />
@@ -486,7 +486,7 @@
 		</territory>
 		<npc id="20941" count="3" respawn="45" />	
 	</spawn>
-	<spawn name="[dion02_mb2122_01]">
+	<spawn spawn_bydefault="true"  name="[dion02_mb2122_01]">
 		<territory>	
 			<location x="53151" y="142897" minz="-3932" maxz="-3332" />
 			<location x="53548" y="142749" minz="-3932" maxz="-3332" />
@@ -497,7 +497,7 @@
 		</territory>
 		<npc id="25385" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[dion02_mb2122_02]">
+	<spawn spawn_bydefault="true"  name="[dion02_mb2122_02]">
 		<territory>	
 			<location x="50325" y="146283" minz="-3677" maxz="-3077" />
 			<location x="50978" y="145946" minz="-3677" maxz="-3077" />
@@ -507,7 +507,7 @@
 		</territory>
 		<npc id="25118" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[dion02_mb2122_03]">
+	<spawn spawn_bydefault="true"  name="[dion02_mb2122_03]">
 		<territory>	
 			<location x="42227" y="152067" minz="-2894" maxz="-2294" />
 			<location x="43611" y="152017" minz="-2894" maxz="-2294" />
@@ -516,7 +516,7 @@
 		</territory>
 		<npc id="25223" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[ssq06_mb2122_01]">
+	<spawn spawn_bydefault="true"  name="[ssq06_mb2122_01]">
 		<territory>	
 			<location x="50882" y="153506" minz="-3608" maxz="-3008" />
 			<location x="51369" y="153158" minz="-3608" maxz="-3008" />
@@ -525,7 +525,7 @@
 		</territory>
 		<npc id="25383" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[dion01_qm2023_03]">
+	<spawn spawn_bydefault="true"  name="[dion01_qm2023_03]">
 		<territory>	
 			<location x="56743" y="141465" minz="-2829" maxz="-1929" />
 			<location x="57926" y="142725" minz="-2829" maxz="-1929" />
@@ -534,7 +534,7 @@
 		</territory>
 		<npc id="27099" count="8" respawn="600" />	
 	</spawn>
-	<spawn name="[dion01_qm2023_04]">
+	<spawn spawn_bydefault="true"  name="[dion01_qm2023_04]">
 		<territory>	
 			<location x="53205" y="142949" minz="-3907" maxz="-3507" />
 			<location x="54067" y="143000" minz="-3907" maxz="-3507" />
@@ -543,19 +543,19 @@
 		</territory>
 		<npc id="27099" count="8" respawn="600" />	
 	</spawn>
-	<spawn name="[dion09_npc2023_10]">
+	<spawn spawn_bydefault="true"  name="[dion09_npc2023_10]">
 		<npc id="30979" count="1" respawn="60" pos="50693 158674 376 0" />	
 	</spawn>
-	<spawn name="[dion02_npc2122_01]">
+	<spawn spawn_bydefault="true"  name="[dion02_npc2122_01]">
 		<npc id="30631" count="1" respawn="60" pos="44694 146500 -3682 12288" />	
 	</spawn>
-	<spawn name="[dion02_npc2122_02]">
+	<spawn spawn_bydefault="true"  name="[dion02_npc2122_02]">
 		<npc id="30632" count="1" respawn="60" pos="45411 149100 -3681 42000" />	
 	</spawn>
-	<spawn name="[ssq06_npc2122_02]">
+	<spawn spawn_bydefault="true"  name="[ssq06_npc2122_02]">
 		<npc id="31114" count="1" respawn="60" pos="42608 143952 -5379 32500" />	
 	</spawn>
-	<spawn name="[dion15_tb2122_03s]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion15_tb2122_03s]" event_name="[treasure_box]">
 		<territory>	
 			<location x="33268" y="136204" minz="-3341" maxz="-2741" />
 			<location x="35377" y="135291" minz="-3341" maxz="-2741" />
@@ -565,7 +565,7 @@
 		<npc id="18266" count="1" respawn="60" />	
 		<npc id="21802" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion06_tb2122_20s]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion06_tb2122_20s]" event_name="[treasure_box]">
 		<territory>	
 			<location x="40207" y="145191" minz="-3960" maxz="-3360" />
 			<location x="41090" y="146457" minz="-3960" maxz="-3360" />
@@ -577,7 +577,7 @@
 		<npc id="18265" count="1" respawn="60" />	
 		<npc id="21801" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion06_tb2122_21s]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion06_tb2122_21s]" event_name="[treasure_box]">
 		<territory>	
 			<location x="40684" y="148647" minz="-3960" maxz="-3360" />
 			<location x="41166" y="149292" minz="-3960" maxz="-3360" />
@@ -589,7 +589,7 @@
 		<npc id="18265" count="1" respawn="60" />	
 		<npc id="21801" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion02_tb2122_23]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion02_tb2122_23]" event_name="[treasure_box]">
 		<territory>	
 			<location x="42857" y="141840" minz="-3383" maxz="-2783" />
 			<location x="45622" y="140341" minz="-3383" maxz="-2783" />
@@ -603,7 +603,7 @@
 		<npc id="18268" count="1" respawn="60" />	
 		<npc id="21804" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion02_tb2122_24]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion02_tb2122_24]" event_name="[treasure_box]">
 		<territory>	
 			<location x="44744" y="145274" minz="-3838" maxz="-3238" />
 			<location x="48911" y="142988" minz="-3838" maxz="-3238" />
@@ -618,7 +618,7 @@
 		<npc id="18269" count="1" respawn="60" />	
 		<npc id="21805" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion02_tb2122_29]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion02_tb2122_29]" event_name="[treasure_box]">
 		<territory>	
 			<location x="45699" y="151349" minz="-2946" maxz="-2446" />
 			<location x="48307" y="150431" minz="-2946" maxz="-2446" />
@@ -632,7 +632,7 @@
 		<npc id="18268" count="1" respawn="60" />	
 		<npc id="21804" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion02_tb2122_32]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion02_tb2122_32]" event_name="[treasure_box]">
 		<territory>	
 			<location x="55469" y="149586" minz="-2582" maxz="-2082" />
 			<location x="56313" y="152034" minz="-2582" maxz="-2082" />
@@ -646,7 +646,7 @@
 		<npc id="18267" count="1" respawn="60" />	
 		<npc id="21803" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion02_tb2122_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion02_tb2122_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="51744" y="145023" minz="-3253" maxz="-2453" />
 			<location x="56485" y="145730" minz="-3253" maxz="-2453" />

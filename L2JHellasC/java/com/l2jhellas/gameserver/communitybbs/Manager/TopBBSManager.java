@@ -137,7 +137,7 @@ public class TopBBSManager extends BaseBBSManager
 		int counter = 0;
 		for (L2PcInstance onlinePlayer : L2World.getInstance().getAllPlayers().values())
 		{
-			if (onlinePlayer.isOnline() == 1 && onlinePlayer.getClient() != null)
+			if (onlinePlayer.isOnline() && onlinePlayer.getClient() != null)
 			{
 				counter++;
 			}

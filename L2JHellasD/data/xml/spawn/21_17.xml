@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[fortress_of_dead_steward_bandello]">
+	<spawn spawn_bydefault="true"  name="[fortress_of_dead_steward_bandello]">
 		<npc id="35640" count="1" respawn="60" pos="57945 -25895 592 49152" />	
 	</spawn>
-	<spawn name="[fortress_of_dead_wyvern_manager_valens]">
+	<spawn spawn_bydefault="true"  name="[fortress_of_dead_wyvern_manager_valens]">
 		<npc id="35638" count="1" respawn="60" pos="56755 -26505 568 49152" />	
 	</spawn>
-	<spawn name="[fortress_of_dead_guard11]">
+	<spawn spawn_bydefault="true"  name="[fortress_of_dead_guard11]">
 		<npc id="35641" count="1" respawn="60" pos="58130 -29190 568 16384" />	
 	</spawn>
-	<spawn name="[fortress_of_dead_guard12]">
+	<spawn spawn_bydefault="true"  name="[fortress_of_dead_guard12]">
 		<npc id="35641" count="1" respawn="60" pos="58130 -29575 568 49152" />	
 	</spawn>
-	<spawn name="[fortress_of_dead_guard21]">
+	<spawn spawn_bydefault="true"  name="[fortress_of_dead_guard21]">
 		<npc id="35642" count="1" respawn="60" pos="58080 -26300 592 16384" />	
 	</spawn>
-	<spawn name="[fortress_of_dead_guard22]">
+	<spawn spawn_bydefault="true"  name="[fortress_of_dead_guard22]">
 		<npc id="35642" count="1" respawn="60" pos="57860 -26480 592 49152" />	
 	</spawn>
-	<spawn name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
+	<spawn spawn_bydefault="false"  name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
 		<npc id="35629" count="1" respawn="7200" pos="58640 -27490 584 32768" />	
 	</spawn>
-	<spawn name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
+	<spawn spawn_bydefault="false"  name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
 		<npc id="35630" count="1" respawn="7200" pos="58640 -27620 584 32768" />	
 	</spawn>
-	<spawn name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
+	<spawn spawn_bydefault="false"  name="[fortress_of_dead_boss]" event_name="fortress_of_dead_boss">
 		<npc id="35631" count="1" respawn="7200" pos="58640 -27360 584 32768" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_room]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_room]" event_name="fortress_of_dead_guards">
 		<npc id="35635" count="1" respawn="1200" pos="58530 -27815 584 32768" />	
 		<npc id="35635" count="1" respawn="1200" pos="58530 -27745 584 32768" />	
 		<npc id="35635" count="1" respawn="1200" pos="58530 -27680 584 32768" />	
@@ -138,7 +138,7 @@
 		<npc id="35637" count="1" respawn="1200" pos="57815 -27355 584 32768" />	
 		<npc id="35637" count="1" respawn="1200" pos="57815 -27290 584 32768" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_11]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_11]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="7200" pos="57360 -29980 584 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="57376 -29930 584 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="57390 -29890 584 49152" />	
@@ -149,7 +149,7 @@
 		<npc id="35634" count="1" respawn="7200" pos="57520 -29640 584 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="57535 -29590 584 49152" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_12]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_12]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="7200" pos="58375 -29600 584 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="58395 -29650 584 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="58425 -29700 584 49152" />	
@@ -160,7 +160,7 @@
 		<npc id="35634" count="1" respawn="7200" pos="58530 -29920 584 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="58560 -29970 584 49152" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_13]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_13]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="7200" pos="57090 -28775 568 57400" />	
 		<npc id="35634" count="1" respawn="7200" pos="57110 -28705 568 57400" />	
 		<npc id="35634" count="1" respawn="7200" pos="57130 -28640 568 57400" />	
@@ -194,7 +194,7 @@
 		<npc id="35633" count="1" respawn="7200" pos="56955 -28685 568 57400" />	
 		<npc id="35633" count="1" respawn="7200" pos="56940 -28740 576 57400" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_14]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_14]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="7200" pos="58800 -29000 568 32768" />	
 		<npc id="35634" count="1" respawn="7200" pos="58800 -28940 568 32768" />	
 		<npc id="35634" count="1" respawn="7200" pos="58800 -28880 568 32768" />	
@@ -236,7 +236,7 @@
 		<npc id="35633" count="1" respawn="7200" pos="58950 -28520 568 32768" />	
 		<npc id="35633" count="1" respawn="7200" pos="58950 -28480 568 32768" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_15]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_15]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="1200" pos="59000 -27180 568 49152" />	
 		<npc id="35634" count="1" respawn="1200" pos="59040 -27180 568 49152" />	
 		<npc id="35634" count="1" respawn="1200" pos="59080 -27180 568 49152" />	
@@ -282,7 +282,7 @@
 		<npc id="35633" count="1" respawn="1200" pos="59360 -27000 568 49152" />	
 		<npc id="35633" count="1" respawn="1200" pos="59400 -27000 568 49152" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_16]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_16]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="7200" pos="59380 -26185 600 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="59170 -26185 600 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="58950 -26185 600 49152" />	
@@ -297,7 +297,7 @@
 		<npc id="35634" count="1" respawn="7200" pos="58640 -26100 600 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="58560 -26100 600 49152" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_17]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_17]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="7200" pos="57330 -26185 600 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="57075 -26185 600 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="56890 -26185 600 49152" />	
@@ -313,7 +313,7 @@
 		<npc id="35634" count="1" respawn="7200" pos="56580 -26100 600 49152" />	
 		<npc id="35634" count="1" respawn="7200" pos="56510 -26100 600 49152" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_18]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_18]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="1200" pos="58500 -26900 592 0" />	
 		<npc id="35634" count="1" respawn="1200" pos="58500 -26860 592 0" />	
 		<npc id="35634" count="1" respawn="1200" pos="58500 -26820 592 0" />	
@@ -363,7 +363,7 @@
 		<npc id="35636" count="1" respawn="1200" pos="58350 -26480 592 0" />	
 		<npc id="35636" count="1" respawn="1200" pos="58350 -26440 592 0" />	
 	</spawn>
-	<spawn name="[rune_fod_agit_2117_19]" event_name="fortress_of_dead_guards">
+	<spawn spawn_bydefault="false"  name="[rune_fod_agit_2117_19]" event_name="fortress_of_dead_guards">
 		<npc id="35634" count="1" respawn="1200" pos="57550 -26900 592 0" />	
 		<npc id="35634" count="1" respawn="1200" pos="57550 -26860 592 0" />	
 		<npc id="35634" count="1" respawn="1200" pos="57550 -26820 592 0" />	
@@ -413,13 +413,13 @@
 		<npc id="35636" count="1" respawn="1200" pos="57400 -26480 592 0" />	
 		<npc id="35636" count="1" respawn="1200" pos="57400 -26440 592 0" />	
 	</spawn>
-    <spawn name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
+    <spawn spawn_bydefault="true"  name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
         <npc id="35641" count="1" respawn="60" pos="58080 -29556 568 46154" />
     </spawn>
-    <spawn name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
+    <spawn spawn_bydefault="true"  name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
         <npc id="35641" count="1" respawn="60" pos="58087 -29283 566 17167" />
     </spawn>
-    <spawn name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
+    <spawn spawn_bydefault="true"  name="[fortress_of_dead]" event_name="fortress_of_dead_owner">
         <npc id="35642" count="1" respawn="60" pos="57883 -26472 592 48218" />
     </spawn>
 </list>

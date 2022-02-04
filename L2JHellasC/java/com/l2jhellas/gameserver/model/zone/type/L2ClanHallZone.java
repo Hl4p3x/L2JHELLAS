@@ -23,10 +23,10 @@ public class L2ClanHallZone extends L2SpawnZone
 	{
 		if (name.equals("clanHallId"))
 		{
-			_clanHallId = Integer.parseInt(value);
-			
-			// Register self to the correct clan hall
-			ClanHallManager.getInstance().getClanHallById(_clanHallId).setZone(this);
+			_clanHallId = Integer.parseInt(value);		
+			ClanHall clanHall = ClanHallManager.getInstance().getClanHallById(_clanHallId);
+            if(clanHall != null)
+            	clanHall.setZone(this);
 		}
 		else
 			super.setParameter(name, value);
@@ -41,12 +41,9 @@ public class L2ClanHallZone extends L2SpawnZone
 			character.setInsideZone(ZoneId.CLAN_HALL, true);
 			
 			ClanHall clanHall = ClanHallManager.getInstance().getClanHallById(_clanHallId);
-			if (clanHall == null)
-				return;
-			
 			// Send decoration packet
-			ClanHallDecoration deco = new ClanHallDecoration(clanHall);
-			((L2PcInstance) character).sendPacket(deco);
+			if (clanHall != null)
+				((L2PcInstance) character).sendPacket(new ClanHallDecoration(clanHall));
 		}
 	}
 	

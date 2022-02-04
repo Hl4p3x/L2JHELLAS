@@ -66,7 +66,7 @@ public class CursedWeapon
 		
 		if (_isActivated)
 		{
-			if (item != null && _player != null && _player.isOnline() == 1)
+			if (item != null && _player != null && _player.isOnline())
 			{
 				_player.abortAttack();
 				

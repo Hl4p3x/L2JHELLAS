@@ -6,11 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -21,6 +23,7 @@ import com.l2jhellas.gameserver.datatables.sql.NpcData;
 import com.l2jhellas.gameserver.engines.DocumentParser;
 import com.l2jhellas.gameserver.enums.PeriodOfDay;
 import com.l2jhellas.gameserver.instancemanager.DayNightSpawnManager;
+import com.l2jhellas.gameserver.instancemanager.CustomSpawnManager;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.zone.form.ZoneNPoly;
@@ -51,7 +54,7 @@ public class SpawnData implements DocumentParser
 	public void load()
 	{
 		parseDatapackDirectory("data/xml/spawn", true);
-		LOGGER.info("Spawns loaded: " + _spawns.size());
+		LOGGER.info("Spawns loaded: " + getSpawns().size());
 	}
 
 	@Override
@@ -59,8 +62,8 @@ public class SpawnData implements DocumentParser
 	{	
 		forEach(doc, "list", listNode -> forEach(listNode, "spawn", spawnNode ->
 		{
+			boolean SpawnByDefault = Boolean.valueOf(String.valueOf(spawnNode.getAttributes().getNamedItem("spawn_bydefault").getNodeValue()));
 			String SpawnName = String.valueOf(spawnNode.getAttributes().getNamedItem("name").getNodeValue());
-
 			String EventName =  String.valueOf(parseEventName(spawnNode));
 			
 			forEach(spawnNode, "npc", npc ->
@@ -121,6 +124,7 @@ public class SpawnData implements DocumentParser
 						spawnDat.setAmount(count);
 						spawnDat.setTerritory(_territory);
 						spawnDat.setLocationName(SpawnName);
+						spawnDat.setIsSpawningByDefault(SpawnByDefault);
 						
 						PeriodOfDay pod = PeriodOfDay.ALL;
 												
@@ -145,7 +149,10 @@ public class SpawnData implements DocumentParser
 						switch (pod.ordinal())
 						{
 							case 0: // default
-								spawnDat.init();
+								if(spawnDat.isSpawningByDefault())
+									spawnDat.init();
+								else
+									CustomSpawnManager.getInstance().addSpawn(spawnDat);
 								break;
 							case 1: // Day
 								DayNightSpawnManager.getInstance().addDayCreature(spawnDat);
@@ -230,7 +237,7 @@ public class SpawnData implements DocumentParser
 	
 	public void deleteSpawn(L2Spawn spawn, boolean updateDb)
 	{
-		if (!_spawns.remove(spawn))
+		if (!getSpawns().remove(spawn))
 			return;
 		
 		if (updateDb)
@@ -261,47 +268,27 @@ public class SpawnData implements DocumentParser
 	
 	private void addSpawn(L2Spawn spawn)
 	{
-		_spawns.add(spawn);
+		getSpawns().add(spawn);
 	}
 	
 	public L2Spawn getSpawn(int npcId)
 	{
-		return _spawns.stream().filter(s -> s != null && s.getNpcid() == npcId).findFirst().orElse(null);
-	}
-
-	public void spawnByEventName(String Evtname)
-	{	
-		_spawns.stream().filter(s -> s != null && s.getEventName().equals(Evtname)).forEach(sp -> sp.init());
-	}
-
-	public void despawnByEventName(String Evtname)
-	{	
-		_spawns.stream().filter(s -> s != null && s.getEventName().equals(Evtname) && s.getLastSpawn() != null).forEach(ls ->
-		{
-			ls.stopRespawn();
-			ls.decreaseCount(ls.getLastSpawn());
-			ls.getLastSpawn().deleteMe();
-		});
+		return getSpawns().stream().filter(Objects::nonNull).filter(s -> s.getNpcid() == npcId).findFirst().orElse(null);
 	}
 	
-	public void spawnByLocationName(String locname)
-	{	
-		_spawns.stream().filter(s -> s != null && s.getLocationName().equals(locname)).forEach(sp -> sp.init());
-	}
-
-	public void despawnByLocationName(String locname)
-	{	
-		_spawns.stream().filter(s -> s != null && s.getLocationName().equals(locname) && s.getLastSpawn() != null).forEach(ls ->
-		{
-			ls.stopRespawn();
-			ls.decreaseCount(ls.getLastSpawn());
-			ls.getLastSpawn().deleteMe();
-		});
-	}
-	
-	public L2Spawn getSpawn(L2Spawn spawn)
+	public  List<L2Spawn> getSpawnsByEventName(String Evtname)
 	{
-		return _spawns.stream().filter(sp -> sp != null && sp == spawn).findFirst().orElse(null);
+		return getSpawns().stream().filter(Objects::nonNull).filter(L2Spawn :: EvtNameIsNotBlank).filter(s -> String.valueOf(s.getEventName()).equalsIgnoreCase(Evtname)).collect(Collectors.toList());
+	}
+	
+	public  List<L2Spawn> getSpawnsByLocationName(String Locname)
+	{
+		return getSpawns().stream().filter(Objects::nonNull).filter(L2Spawn :: LocNameIsNotBlank).filter(s -> String.valueOf(s.getLocationName()).equalsIgnoreCase(Locname)).collect(Collectors.toList());
+	}
+	
+	public  List<L2Spawn> getSpawnsByTerritoryName(String Terrname)
+	{
+		return getSpawns().stream().filter(Objects::nonNull).filter(L2Spawn :: hasTerritory).filter(s -> String.valueOf(s.getTerritory().getName()).equalsIgnoreCase(Terrname)).collect(Collectors.toList());
 	}
 	
 	public Set<L2Spawn> getSpawns()
@@ -311,7 +298,7 @@ public class SpawnData implements DocumentParser
 	
 	public boolean forEachSpawn(Function<L2Spawn, Boolean> function)
 	{
-		for (L2Spawn spawn : _spawns)
+		for (L2Spawn spawn : getSpawns())
 			if (!function.apply(spawn))
 				return false;
 		return true;
@@ -321,7 +308,7 @@ public class SpawnData implements DocumentParser
 	{
 	    AtomicInteger _index = new AtomicInteger(0);
 
-		_spawns.stream().filter(s -> s != null && s.getNpcid() ==  npcId && s.getLastSpawn() != null).forEach(ls ->
+	    getSpawns().stream().filter(Objects::nonNull).filter(s -> s.getNpcid() ==  npcId && s.getLastSpawn() != null).forEach(ls ->
 		{
 			_index.incrementAndGet();
 
@@ -342,7 +329,8 @@ public class SpawnData implements DocumentParser
 	{
 		if (!Config.ALT_DEV_NO_SPAWNS)
 		{
-			_spawns.clear();
+			getSpawns().clear();
+			CustomSpawnManager.getInstance().cleanUp();
 			loadCustomSpawn();
 			load();
 		}

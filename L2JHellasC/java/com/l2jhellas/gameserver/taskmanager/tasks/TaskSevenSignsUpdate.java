@@ -8,6 +8,7 @@ import com.l2jhellas.gameserver.SevenSignsFestival;
 import com.l2jhellas.gameserver.taskmanager.Task;
 import com.l2jhellas.gameserver.taskmanager.TaskManager;
 import com.l2jhellas.gameserver.taskmanager.TaskManager.ExecutedTask;
+
 import com.l2jhellas.gameserver.taskmanager.TaskTypes;
 
 public class TaskSevenSignsUpdate extends Task
@@ -25,11 +26,12 @@ public class TaskSevenSignsUpdate extends Task
 	public void onTimeElapsed(ExecutedTask task)
 	{
 		try
-		{
-			SevenSigns.getInstance().saveSevenSignsData(null, true);
-			
+		{			
 			if (!SevenSigns.getInstance().isSealValidationPeriod())
 				SevenSignsFestival.getInstance().saveFestivalData(false);
+			
+			SevenSigns.getInstance().saveSevenSignsData();
+			SevenSigns.getInstance().saveSevenSignsStatus();
 			
 			_log.info("SevenSigns: Data updated successfully.");
 		}

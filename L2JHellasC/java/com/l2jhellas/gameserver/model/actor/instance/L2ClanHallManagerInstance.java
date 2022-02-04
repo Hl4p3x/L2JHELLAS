@@ -8,6 +8,7 @@ import com.l2jhellas.gameserver.controllers.TradeController;
 import com.l2jhellas.gameserver.datatables.xml.TeleportLocationData;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.instancemanager.ClanHallManager;
+import com.l2jhellas.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jhellas.gameserver.instancemanager.SiegeManager;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2Skill;
@@ -22,6 +23,7 @@ import com.l2jhellas.gameserver.network.serverpackets.MyTargetSelected;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.WareHouseDepositList;
 import com.l2jhellas.gameserver.network.serverpackets.WareHouseWithdrawalList;
+import com.l2jhellas.gameserver.scrips.siegable.SiegableHall;
 import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 
@@ -755,11 +757,22 @@ public class L2ClanHallManagerInstance extends L2NpcInstance
 			ClanHall temp = ClanHallManager.getInstance().getNearbyClanHall(getX(), getY(), 500);
 			
 			if (temp != null)
-				_clanHallId = temp.getId();
+				_clanHallId = temp.getId();	
+			else
+			{
+				SiegableHall hall = getConquerableHall();
+				if(hall != null)
+					_clanHallId = hall.getId();
+			}
 			
-			if (_clanHallId < 0)
+			if(_clanHallId <= 0)
 				return null;
 		}
+		
+		SiegableHall hall = ClanHallSiegeManager.getInstance().getSiegableHall(_clanHallId);
+		if(hall != null)
+			return hall;
+		
 		return ClanHallManager.getInstance().getClanHallById(_clanHallId);
 	}
 	

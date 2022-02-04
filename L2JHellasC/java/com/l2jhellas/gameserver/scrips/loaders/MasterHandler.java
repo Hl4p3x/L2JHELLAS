@@ -23,6 +23,7 @@ import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminAutoAnnouncem
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminBBS;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminBan;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminBanChat;
+import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminCHSiege;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminCache;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminChangeAccessLevel;
 import com.l2jhellas.gameserver.handlers.admincommandhandlers.AdminClanFull;
@@ -183,12 +184,11 @@ import com.l2jhellas.gameserver.handlers.usercommandhandlers.Time;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.BankingCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.CastleCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.EventRegistration;
+import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.Menu;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.OnlinePlayersCmd;
-import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.PMonoffCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.PremiumCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.PvpInfoCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.ServerRestartVoteCmd;
-import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.TradeonoffCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.VoiceInfoCmd;
 import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.WeddingCmd;
 import com.l2jhellas.util.Util;
@@ -272,6 +272,7 @@ public class MasterHandler
 			AdminBBS.class,
 			AdminCache.class,
 			AdminChangeAccessLevel.class,
+			AdminCHSiege.class,
 			AdminClanFull.class,
 			AdminCreateItem.class,
 			AdminCursedWeapons.class,
@@ -447,12 +448,11 @@ public class MasterHandler
 			(Config.BANKING_SYSTEM_ENABLED ? BankingCmd.class : null),
 			CastleCmd.class,
 			(Config.ONLINE_VOICE_ALLOW ? OnlinePlayersCmd.class : null),
-			(Config.ALLOW_PLAYERS_REFUSAL ? PMonoffCmd.class : null),								
 			(Config.USE_PREMIUMSERVICE ? PremiumCmd.class : null),
 			EventRegistration.class,
+			(Config.ALLOW_MENU_VOICED ? Menu.class : null),
 			(Config.RANK_PVP_SYSTEM_ENABLED && Config.PVP_INFO_COMMAND_ENABLED && Config.RANK_PVP_SYSTEM_ENABLED && !Config.PVP_INFO_USER_COMMAND_ENABLED ? PvpInfoCmd.class : null),
 			(Config.ALLOW_SERVER_RESTART_COMMAND ? ServerRestartVoteCmd.class : null),
-			(Config.ALLOW_TRADEOFF_COMMAND ? TradeonoffCmd.class : null),
 			(Config.ALLOW_INFO_COMMAND ? VoiceInfoCmd.class : null),
 			(Config.MOD_ALLOW_WEDDING ? WeddingCmd.class : null),
 		},

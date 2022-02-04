@@ -10,8 +10,6 @@
 		<property name="betweenEventsTime" value="2400" /><!-- 40 mins-->
 		<property name="firstAfterStartTime" value="600" /><!-- 10 mins-->
 		<property name="managerNpcId" value="70010" />
-		<property name="showVotePopupAt" value="300" /><!-- 5 min-->
-		<property name="votePopupEnabled" value="true" />
 		<property name="eventBufferEnabled" value="true" />
 		<property name="allowedBuffsList" value="1204,1085,1086,1388,1389" />	
 	    <property name="dualboxAllowed" value="false" />	

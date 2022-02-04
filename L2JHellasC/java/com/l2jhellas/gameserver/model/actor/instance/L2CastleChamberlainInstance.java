@@ -27,6 +27,7 @@ import com.l2jhellas.gameserver.network.serverpackets.ExShowSeedSetting;
 import com.l2jhellas.gameserver.network.serverpackets.MyTargetSelected;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
+import com.l2jhellas.gameserver.scrips.siegable.SiegableHall;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
 import com.l2jhellas.util.Util;
 
@@ -531,6 +532,17 @@ public class L2CastleChamberlainInstance extends L2NpcInstance
 	{
 		if (getCastle() != null && player.getClan() != null)
 		{
+			SiegableHall hall = getConquerableHall();
+
+			if (hall != null) 
+			{
+				if (hall.isInSiege())
+					return COND_BUSY_BECAUSE_OF_SIEGE; // Busy because of siege
+
+				if(player.getClanId() == hall.getOwnerId())
+					return COND_OWNER;
+			}
+			
 			if (getCastle().getSiege().getIsInProgress())
 				return COND_BUSY_BECAUSE_OF_SIEGE; // Busy because of siege
 				

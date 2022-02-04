@@ -2,6 +2,7 @@ package com.l2jhellas.gameserver.network.serverpackets;
 
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
+import com.l2jhellas.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jhellas.gameserver.model.L2AccessLevel;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.L2SiegeClan;
@@ -9,6 +10,7 @@ import com.l2jhellas.gameserver.model.actor.L2Attackable;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.entity.Castle;
+import com.l2jhellas.gameserver.scrips.siegable.SiegableHall;
 
 public class Die extends L2GameServerPacket
 {
@@ -56,6 +58,8 @@ public class Die extends L2GameServerPacket
 			L2SiegeClan siegeClan = null;
 			Boolean isInDefense = false;
 			Castle castle = CastleManager.getInstance().getCastle(_activeChar);
+			final SiegableHall hall = ClanHallSiegeManager.getInstance().getActiveSiege(_activeChar);
+
 			if (castle != null && castle.getSiege().getIsInProgress())
 			{
 				// siege in progress
@@ -68,7 +72,7 @@ public class Die extends L2GameServerPacket
 			
 			writeD(_clan.hasHideout() > 0 ? 0x01 : 0x00); // 6d 01 00 00 00 - to hide away
 			writeD(_clan.hasCastle() > 0 || isInDefense ? 0x01 : 0x00); // 6d 02 00 00 00 - to castle
-			writeD(siegeClan != null && !isInDefense && siegeClan.getFlag().size() > 0 ? 0x01 : 0x00); // 6d 03 00 00 00 - to siege HQ
+			writeD(siegeClan != null && !isInDefense && siegeClan.getFlag().size() > 0 || ((hall != null) && hall.getSiege().checkIsAttacker(_clan))? 0x01 : 0x00); // 6d 03 00 00 00 - to siege HQ
 		}
 		else
 		{

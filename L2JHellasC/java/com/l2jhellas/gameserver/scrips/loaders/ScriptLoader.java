@@ -77,6 +77,10 @@ import com.l2jhellas.gameserver.scrips.quests.ai.vilagemaster.Alliance;
 import com.l2jhellas.gameserver.scrips.quests.ai.vilagemaster.Clan;
 import com.l2jhellas.gameserver.scrips.quests.ai.vilagemaster.FirstClassChange;
 import com.l2jhellas.gameserver.scrips.quests.ai.vilagemaster.SecondClassChange;
+import com.l2jhellas.gameserver.scrips.siegablehall.DevastatedCastle;
+import com.l2jhellas.gameserver.scrips.siegablehall.FortressOfResistance;
+import com.l2jhellas.gameserver.scrips.siegablehall.FortressOfTheDead;
+import com.l2jhellas.gameserver.scrips.siegablehall.RainbowSpringsChateau;
 
 public class ScriptLoader
 {
@@ -404,6 +408,7 @@ public class ScriptLoader
 		Q652_AnAgedExAdventurer.class,
 		Q653_WildMaiden.class,
 		Q654_JourneyToASettlement.class,
+		Q655_AGrandPlanForTamingWildBeasts.class,
 		Q659_IdRatherBeCollectingFairyBreath.class,
 		Q660_AidingTheFloranVillage.class,
 		Q661_MakingTheHarvestGroundsSafe.class,
@@ -476,6 +481,12 @@ public class ScriptLoader
 		Clan.class,
 		FirstClassChange.class,
 		SecondClassChange.class,
+			
+		// siegablehall
+		DevastatedCastle.class,
+		FortressOfResistance.class,
+		FortressOfTheDead.class,
+		RainbowSpringsChateau.class,
 		
 		// bosses
 		Anays.class,
@@ -494,7 +505,7 @@ public class ScriptLoader
 		Zaken.class
 	};
 	
-	private static void teleiwne()
+	public static void teleiwne()
 	{
 		for (Class<?> _qs : Quests)
 		{

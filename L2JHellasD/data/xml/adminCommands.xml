@@ -491,4 +491,15 @@
 	<!-- KnownList -->
 	<admin command="admin_knownlist" accessLevel="7" />	
 	<admin command="admin_knownlist_page" accessLevel="7" />
+	
+	<!-- SiegableHall -->
+	<admin command="admin_chsiege_siegablehall" accessLevel="7" />	
+	<admin command="admin_chsiege_startSiege" accessLevel="7" />	
+	<admin command="admin_chsiege_endsSiege" accessLevel="7" />	
+	<admin command="admin_chsiege_setSiegeDate" accessLevel="7" />	
+	<admin command="admin_chsiege_addAttacker" accessLevel="7" />	
+	<admin command="admin_chsiege_removeAttacker" accessLevel="7" />	
+	<admin command="admin_chsiege_clearAttackers" accessLevel="7" />	
+	<admin command="admin_chsiege_listAttackers" accessLevel="7" />	
+	<admin command="admin_chsiege_forwardSiege" accessLevel="7" />	
 </list>

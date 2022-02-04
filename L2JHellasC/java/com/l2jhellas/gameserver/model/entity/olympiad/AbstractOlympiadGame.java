@@ -71,7 +71,7 @@ public abstract class AbstractOlympiadGame
 	
 	protected static SystemMessage checkDefaulted(L2PcInstance player)
 	{
-		if (player == null || player.isOnline() == 0)
+		if (player == null || !player.isOnline())
 			return SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_HAS_BEEN_CANCELLED_BECAUSE_THE_OTHER_PARTY_ENDS_THE_GAME);
 		
 		if (player.getClient() == null || player.getClient().isDetached())
@@ -105,7 +105,7 @@ public abstract class AbstractOlympiadGame
 	protected static final boolean portPlayerToArena(Participant par, Location loc, int id)
 	{
 		final L2PcInstance player = par.player;
-		if (player == null || player.isOnline() == 0)
+		if (player == null || !player.isOnline())
 			return false;
 		
 		_playerLocation = new int[3];
@@ -336,7 +336,7 @@ public abstract class AbstractOlympiadGame
 	
 	public static final void rewardParticipant(L2PcInstance player, int[][] reward)
 	{
-		if (player == null || player.isOnline() == 0 || reward == null)
+		if (player == null || !player.isOnline() || reward == null)
 			return;
 
 		final InventoryUpdate iu = new InventoryUpdate();

@@ -97,120 +97,116 @@ public class Hero
 		_herodiary = new HashMap<>();
 		_heroMessage = new HashMap<>();
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement statement = con.prepareStatement(GET_HEROES);
-			ResultSet rset = statement.executeQuery();
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(GET_HEROES))
+		{		
 			PreparedStatement statement2 = con.prepareStatement(GET_CLAN_ALLY);
-			ResultSet rset2 = null;
-			
-			while (rset.next())
-			{
-				StatsSet hero = new StatsSet();
-				int charId = rset.getInt(Olympiad.CHAR_ID);
-				hero.set(Olympiad.CHAR_NAME, rset.getString(Olympiad.CHAR_NAME));
-				hero.set(Olympiad.CLASS_ID, rset.getInt(Olympiad.CLASS_ID));
-				hero.set(COUNT, rset.getInt(COUNT));
-				hero.set(PLAYED, rset.getInt(PLAYED));
-				hero.set(ACTIVE, rset.getInt(ACTIVE));
-				
-				loadFights(charId);
-				loadDiary(charId);
-				loadMessage(charId);
-				
-				statement2.setInt(1, charId);
-				rset2 = statement2.executeQuery();
-				
-				if (rset2.next())
+
+			try (ResultSet rset = statement.executeQuery())
+			{			
+				while (rset.next())
 				{
-					int clanId = rset2.getInt("clanid");
-					int allyId = rset2.getInt("allyId");
-					
-					String clanName = "";
-					String allyName = "";
-					int clanCrest = 0;
-					int allyCrest = 0;
-					
-					if (clanId > 0)
+					StatsSet hero = new StatsSet();
+					int charId = rset.getInt(Olympiad.CHAR_ID);
+					hero.set(Olympiad.CHAR_NAME, rset.getString(Olympiad.CHAR_NAME));
+					hero.set(Olympiad.CLASS_ID, rset.getInt(Olympiad.CLASS_ID));
+					hero.set(COUNT, rset.getInt(COUNT));
+					hero.set(PLAYED, rset.getInt(PLAYED));
+					hero.set(ACTIVE, rset.getInt(ACTIVE));
+
+					loadFights(charId);
+					loadDiary(charId);
+					loadMessage(charId);
+				
+					statement2.setInt(1, charId);
+
+					try (ResultSet rset2 = statement2.executeQuery())
 					{
-						clanName = ClanTable.getInstance().getClan(clanId).getName();
-						clanCrest = ClanTable.getInstance().getClan(clanId).getCrestId();
-						
-						if (allyId > 0)
+						while (rset2.next())
 						{
-							allyName = ClanTable.getInstance().getClan(clanId).getAllyName();
-							allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
+							int clanId = rset2.getInt("clanid");
+							int allyId = rset2.getInt("allyId");
+
+							String clanName = "";
+							String allyName = "";
+							int clanCrest = 0;
+							int allyCrest = 0;
+
+							if (clanId > 0)
+							{
+								clanName = ClanTable.getInstance().getClan(clanId).getName();
+								clanCrest = ClanTable.getInstance().getClan(clanId).getCrestId();
+
+								if (allyId > 0)
+								{
+									allyName = ClanTable.getInstance().getClan(clanId).getAllyName();
+									allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
+								}
+							}
+
+							hero.set(CLAN_CREST, clanCrest);
+							hero.set(CLAN_NAME, clanName);
+							hero.set(ALLY_CREST, allyCrest);
+							hero.set(ALLY_NAME, allyName);
 						}
 					}
-					
-					hero.set(CLAN_CREST, clanCrest);
-					hero.set(CLAN_NAME, clanName);
-					hero.set(ALLY_CREST, allyCrest);
-					hero.set(ALLY_NAME, allyName);
+					statement2.clearParameters();
+					_heroes.put(charId, hero);
 				}
-				
-				rset2.close();
-				statement2.clearParameters();
-				
-				_heroes.put(charId, hero);
 			}
 			
-			rset.close();
-			statement.close();
-			
-			statement = con.prepareStatement(GET_ALL_HEROES);
-			rset = statement.executeQuery();
-			
-			while (rset.next())
+			try (PreparedStatement ps = con.prepareStatement(GET_ALL_HEROES))
 			{
-				StatsSet hero = new StatsSet();
-				int charId = rset.getInt(Olympiad.CHAR_ID);
-				hero.set(Olympiad.CHAR_NAME, rset.getString(Olympiad.CHAR_NAME));
-				hero.set(Olympiad.CLASS_ID, rset.getInt(Olympiad.CLASS_ID));
-				hero.set(COUNT, rset.getInt(COUNT));
-				hero.set(PLAYED, rset.getInt(PLAYED));
-				hero.set(ACTIVE, rset.getInt(ACTIVE));
-				
-				statement2.setInt(1, charId);
-				rset2 = statement2.executeQuery();
-				
-				if (rset2.next())
+				try (ResultSet rset = ps.executeQuery())
 				{
-					int clanId = rset2.getInt("clanid");
-					int allyId = rset2.getInt("allyId");
-					
-					String clanName = "";
-					String allyName = "";
-					int clanCrest = 0;
-					int allyCrest = 0;
-					
-					if (clanId > 0)
+					while (rset.next())
 					{
-						clanName = ClanTable.getInstance().getClan(clanId).getName();
-						clanCrest = ClanTable.getInstance().getClan(clanId).getCrestId();
-						
-						if (allyId > 0)
+						StatsSet hero = new StatsSet();
+						int charId = rset.getInt(Olympiad.CHAR_ID);
+						hero.set(Olympiad.CHAR_NAME, rset.getString(Olympiad.CHAR_NAME));
+						hero.set(Olympiad.CLASS_ID, rset.getInt(Olympiad.CLASS_ID));
+						hero.set(COUNT, rset.getInt(COUNT));
+						hero.set(PLAYED, rset.getInt(PLAYED));
+						hero.set(ACTIVE, rset.getInt(ACTIVE));
+
+						statement2.setInt(1, charId);
+
+						try (ResultSet rset2 = statement2.executeQuery())
 						{
-							allyName = ClanTable.getInstance().getClan(clanId).getAllyName();
-							allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
+							while (rset2.next())
+							{
+								int clanId = rset2.getInt("clanid");
+								int allyId = rset2.getInt("allyId");
+
+								String clanName = "";
+								String allyName = "";
+								int clanCrest = 0;
+								int allyCrest = 0;
+
+								if (clanId > 0)
+								{
+									clanName = ClanTable.getInstance().getClan(clanId).getName();
+									clanCrest = ClanTable.getInstance().getClan(clanId).getCrestId();
+
+									if (allyId > 0)
+									{
+										allyName = ClanTable.getInstance().getClan(clanId).getAllyName();
+										allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
+									}
+								}
+
+								hero.set(CLAN_CREST, clanCrest);
+								hero.set(CLAN_NAME, clanName);
+								hero.set(ALLY_CREST, allyCrest);
+								hero.set(ALLY_NAME, allyName);
+							}
 						}
+						
+						statement2.clearParameters();
+						_completeHeroes.put(charId, hero);
 					}
-					
-					hero.set(CLAN_CREST, clanCrest);
-					hero.set(CLAN_NAME, clanName);
-					hero.set(ALLY_CREST, allyCrest);
-					hero.set(ALLY_NAME, allyName);
 				}
-				
-				rset2.close();
-				statement2.clearParameters();
-				
-				_completeHeroes.put(charId, hero);
 			}
-			
-			statement2.close();
-			rset.close();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
@@ -233,17 +229,18 @@ public class Hero
 	
 	public void loadMessage(int charId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(SELECT_MESSAGE))
 		{
-			String message = null;
-			PreparedStatement statement = con.prepareStatement(SELECT_MESSAGE);
 			statement.setInt(1, charId);
-			ResultSet rset = statement.executeQuery();
-			rset.next();
-			message = rset.getString("message");
-			_heroMessage.put(charId, message);
-			rset.close();
-			statement.close();
+			
+			try (ResultSet rset = statement.executeQuery())
+			{
+				while (rset.next())
+				{
+				   _heroMessage.put(charId, rset.getString("message"));
+				}
+			}
 		}
 		catch (SQLException e)
 		{
@@ -256,43 +253,43 @@ public class Hero
 		_diary = new ArrayList<>();
 		
 		int diaryentries = 0;
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(GET_DIARIES))
 		{
-			PreparedStatement statement = con.prepareStatement(GET_DIARIES);
 			statement.setInt(1, charId);
-			ResultSet rset = statement.executeQuery();
 			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				StatsSet _diaryentry = new StatsSet();
-				
-				long time = rset.getLong("time");
-				int action = rset.getInt("action");
-				int param = rset.getInt("param");
-				
-				String date = (new SimpleDateFormat("yyyy-MM-dd HH")).format(new Date(time));
-				_diaryentry.set("date", date);
-				
-				if (action == ACTION_RAID_KILLED)
+				while (rset.next())
 				{
-					L2NpcTemplate template = NpcData.getInstance().getTemplate(param);
-					if (template != null)
-						_diaryentry.set("action", template.getName() + " was defeated!");
+					StatsSet _diaryentry = new StatsSet();
+					
+					long time = rset.getLong("time");
+					int action = rset.getInt("action");
+					int param = rset.getInt("param");
+					
+					String date = (new SimpleDateFormat("yyyy-MM-dd HH")).format(new Date(time));
+					_diaryentry.set("date", date);
+					
+					if (action == ACTION_RAID_KILLED)
+					{
+						L2NpcTemplate template = NpcData.getInstance().getTemplate(param);
+						if (template != null)
+							_diaryentry.set("action", template.getName() + " was defeated!");
+					}
+					else if (action == ACTION_HERO_GAINED)
+						_diaryentry.set("action", "Gained Hero status");
+					else if (action == ACTION_CASTLE_TAKEN)
+					{
+						Castle castle = CastleManager.getInstance().getCastleById(param);
+						if (castle != null)
+							_diaryentry.set("action", castle.getName() + " Castle was successfuly taken!");
+					}
+					_diary.add(_diaryentry);
+					diaryentries++;					
 				}
-				else if (action == ACTION_HERO_GAINED)
-					_diaryentry.set("action", "Gained Hero status");
-				else if (action == ACTION_CASTLE_TAKEN)
-				{
-					Castle castle = CastleManager.getInstance().getCastleById(param);
-					if (castle != null)
-						_diaryentry.set("action", castle.getName() + " Castle was successfuly taken!");
-				}
-				_diary.add(_diaryentry);
-				diaryentries++;
 			}
-			rset.close();
-			statement.close();
-			
+
 			_herodiary.put(charId, _diary);
 			
 			_log.info("Hero System: Loaded " + diaryentries + " diary entries for Hero: " + CharNameTable.getInstance().getNameById(charId));
@@ -321,101 +318,101 @@ public class Hero
 		int _losses = 0;
 		int _draws = 0;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(SELECT_OLYMPIAD_FIGHTS))
 		{
-			PreparedStatement statement = con.prepareStatement(SELECT_OLYMPIAD_FIGHTS);
 			statement.setInt(1, charId);
 			statement.setInt(2, charId);
 			statement.setLong(3, from);
-			ResultSet rset = statement.executeQuery();
 			
-			while (rset.next())
+			try (ResultSet rset = statement.executeQuery())
 			{
-				int charOneId = rset.getInt("charOneId");
-				int charOneClass = rset.getInt("charOneClass");
-				int charTwoId = rset.getInt("charTwoId");
-				int charTwoClass = rset.getInt("charTwoClass");
-				int winner = rset.getInt("winner");
-				long start = rset.getLong("start");
-				int time = rset.getInt("time");
-				int classed = rset.getInt("classed");
-				
-				if (charId == charOneId)
+				while (rset.next())
 				{
-					String name = CharNameTable.getInstance().getNameById(charTwoId);
-					String cls = PlayerDataTemplate.getInstance().getClassNameById(charTwoClass);
-					if (name != null && cls != null)
+					int charOneId = rset.getInt("charOneId");
+					int charOneClass = rset.getInt("charOneClass");
+					int charTwoId = rset.getInt("charTwoId");
+					int charTwoClass = rset.getInt("charTwoClass");
+					int winner = rset.getInt("winner");
+					long start = rset.getLong("start");
+					int time = rset.getInt("time");
+					int classed = rset.getInt("classed");
+					
+					if (charId == charOneId)
 					{
-						StatsSet fight = new StatsSet();
-						fight.set("oponent", name);
-						fight.set("oponentclass", cls);
-						
-						fight.set("time", calcFightTime(time));
-						String date = (new SimpleDateFormat("yyyy-MM-dd HH:mm")).format(new Date(start));
-						fight.set("start", date);
-						
-						fight.set("classed", classed);
-						if (winner == 1)
+						String name = CharNameTable.getInstance().getNameById(charTwoId);
+						String cls = PlayerDataTemplate.getInstance().getClassNameById(charTwoClass);
+						if (name != null && cls != null)
 						{
-							fight.set("result", "<font color=\"00ff00\">victory</font>");
-							_victorys++;
+							StatsSet fight = new StatsSet();
+							fight.set("oponent", name);
+							fight.set("oponentclass", cls);
+							
+							fight.set("time", calcFightTime(time));
+							String date = (new SimpleDateFormat("yyyy-MM-dd HH:mm")).format(new Date(start));
+							fight.set("start", date);
+							
+							fight.set("classed", classed);
+							if (winner == 1)
+							{
+								fight.set("result", "<font color=\"00ff00\">victory</font>");
+								_victorys++;
+							}
+							else if (winner == 2)
+							{
+								fight.set("result", "<font color=\"ff0000\">loss</font>");
+								_losses++;
+							}
+							else if (winner == 0)
+							{
+								fight.set("result", "<font color=\"ffff00\">draw</font>");
+								_draws++;
+							}
+							
+							_fights.add(fight);
+							
+							numberoffights++;
 						}
-						else if (winner == 2)
-						{
-							fight.set("result", "<font color=\"ff0000\">loss</font>");
-							_losses++;
-						}
-						else if (winner == 0)
-						{
-							fight.set("result", "<font color=\"ffff00\">draw</font>");
-							_draws++;
-						}
-						
-						_fights.add(fight);
-						
-						numberoffights++;
 					}
-				}
-				else if (charId == charTwoId)
-				{
-					String name = CharNameTable.getInstance().getNameById(charOneId);
-					String cls = PlayerDataTemplate.getInstance().getClassNameById(charOneClass);
-					if (name != null && cls != null)
+					else if (charId == charTwoId)
 					{
-						StatsSet fight = new StatsSet();
-						fight.set("oponent", name);
-						fight.set("oponentclass", cls);
-						
-						fight.set("time", calcFightTime(time));
-						String date = (new SimpleDateFormat("yyyy-MM-dd HH:mm")).format(new Date(start));
-						fight.set("start", date);
-						
-						fight.set("classed", classed);
-						if (winner == 1)
+						String name = CharNameTable.getInstance().getNameById(charOneId);
+						String cls = PlayerDataTemplate.getInstance().getClassNameById(charOneClass);
+						if (name != null && cls != null)
 						{
-							fight.set("result", "<font color=\"ff0000\">loss</font>");
-							_losses++;
+							StatsSet fight = new StatsSet();
+							fight.set("oponent", name);
+							fight.set("oponentclass", cls);
+							
+							fight.set("time", calcFightTime(time));
+							String date = (new SimpleDateFormat("yyyy-MM-dd HH:mm")).format(new Date(start));
+							fight.set("start", date);
+							
+							fight.set("classed", classed);
+							if (winner == 1)
+							{
+								fight.set("result", "<font color=\"ff0000\">loss</font>");
+								_losses++;
+							}
+							else if (winner == 2)
+							{
+								fight.set("result", "<font color=\"00ff00\">victory</font>");
+								_victorys++;
+							}
+							else if (winner == 0)
+							{
+								fight.set("result", "<font color=\"ffff00\">draw</font>");
+								_draws++;
+							}
+							
+							_fights.add(fight);
+							
+							numberoffights++;
 						}
-						else if (winner == 2)
-						{
-							fight.set("result", "<font color=\"00ff00\">victory</font>");
-							_victorys++;
-						}
-						else if (winner == 0)
-						{
-							fight.set("result", "<font color=\"ffff00\">draw</font>");
-							_draws++;
-						}
-						
-						_fights.add(fight);
-						
-						numberoffights++;
 					}
 				}
 			}
-			rset.close();
-			statement.close();
-			
+
 			_herocountdata.set("victory", _victorys);
 			_herocountdata.set("draw", _draws);
 			_herocountdata.set("loss", _losses);
@@ -695,75 +692,78 @@ public class Hero
 		{	
 			if (setDefault)
 			{
-				PreparedStatement statement = con.prepareStatement(UPDATE_ALL);
-				statement.execute();
-				statement.close();
+				try (PreparedStatement ps = con.prepareStatement(UPDATE_ALL))
+				{
+					ps.execute();
+				}
 			}
 			else
 			{
-				for (Integer heroId : _heroes.keySet())
+				try (PreparedStatement ps = con.prepareStatement(INSERT_HERO);
+				PreparedStatement psally = con.prepareStatement(GET_CLAN_ALLY))
 				{
-					StatsSet hero = _heroes.get(heroId);
-					
-					if (_completeHeroes == null || !_completeHeroes.containsKey(heroId))
+					for (Integer heroId : _heroes.keySet())
 					{
-						PreparedStatement statement = con.prepareStatement(INSERT_HERO);
-						statement.setInt(1, heroId);
-						statement.setInt(2, hero.getInteger(Olympiad.CLASS_ID));
-						statement.setInt(3, hero.getInteger(COUNT));
-						statement.setInt(4, hero.getInteger(PLAYED));
-						statement.setInt(5, hero.getInteger(ACTIVE));
-						statement.execute();
-						statement.close();
+						StatsSet hero = _heroes.get(heroId);
 						
-						statement = con.prepareStatement(GET_CLAN_ALLY);
-						statement.setInt(1, heroId);
-						ResultSet rset = statement.executeQuery();
-						
-						if (rset.next())
+						if (_completeHeroes == null || !_completeHeroes.containsKey(heroId))
 						{
-							int clanId = rset.getInt("clanid");
-							int allyId = rset.getInt("allyId");
+							ps.setInt(1, heroId);
+							ps.setInt(2, hero.getInteger(Olympiad.CLASS_ID));
+							ps.setInt(3, hero.getInteger(COUNT));
+							ps.setInt(4, hero.getInteger(PLAYED));
+							ps.setInt(5, hero.getInteger(ACTIVE));
+							ps.addBatch();
 							
-							String clanName = "";
-							String allyName = "";
-							int clanCrest = 0;
-							int allyCrest = 0;
+							psally.setInt(1, heroId);
 							
-							if (clanId > 0)
+							try (ResultSet rset = psally.executeQuery())
 							{
-								clanName = ClanTable.getInstance().getClan(clanId).getName();
-								clanCrest = ClanTable.getInstance().getClan(clanId).getCrestId();
-								
-								if (allyId > 0)
+								while (rset.next())
 								{
-									allyName = ClanTable.getInstance().getClan(clanId).getAllyName();
-									allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
+									int clanId = rset.getInt("clanid");
+									int allyId = rset.getInt("allyId");
+
+									String clanName = "";
+									String allyName = "";
+									int clanCrest = 0;
+									int allyCrest = 0;
+
+									if (clanId > 0)
+									{
+										clanName = ClanTable.getInstance().getClan(clanId).getName();
+										clanCrest = ClanTable.getInstance().getClan(clanId).getCrestId();
+
+										if (allyId > 0)
+										{
+											allyName = ClanTable.getInstance().getClan(clanId).getAllyName();
+											allyCrest = ClanTable.getInstance().getClan(clanId).getAllyCrestId();
+										}
+									}
+
+									hero.set(CLAN_CREST, clanCrest);
+									hero.set(CLAN_NAME, clanName);
+									hero.set(ALLY_CREST, allyCrest);
+									hero.set(ALLY_NAME, allyName);
 								}
 							}
-							
-							hero.set(CLAN_CREST, clanCrest);
-							hero.set(CLAN_NAME, clanName);
-							hero.set(ALLY_CREST, allyCrest);
-							hero.set(ALLY_NAME, allyName);
+
+							_heroes.put(heroId, hero);
+							_completeHeroes.put(heroId, hero);
 						}
-						
-						rset.close();
-						statement.close();
-						
-						_heroes.put(heroId, hero);
-						_completeHeroes.put(heroId, hero);
-					}
-					else
-					{
-						PreparedStatement statement = con.prepareStatement(UPDATE_HERO);
-						statement.setInt(1, hero.getInteger(COUNT));
-						statement.setInt(2, hero.getInteger(PLAYED));
-						statement.setInt(3, hero.getInteger(ACTIVE));
-						statement.setInt(4, heroId);
-						statement.execute();
-						statement.close();
-					}
+						else
+						{
+							try (PreparedStatement pshero = con.prepareStatement(UPDATE_HERO))
+							{
+								pshero.setInt(1, hero.getInteger(COUNT));
+								pshero.setInt(2, hero.getInteger(PLAYED));
+								pshero.setInt(3, hero.getInteger(ACTIVE));
+								pshero.setInt(4, heroId);
+								pshero.execute();
+							}
+						}
+					}					
+					ps.executeBatch();
 				}
 			}
 		}
@@ -836,15 +836,14 @@ public class Hero
 	
 	public void setDiaryData(int charId, int action, int param)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(UPDATE_DIARIES))
 		{
-			PreparedStatement statement = con.prepareStatement(UPDATE_DIARIES);
 			statement.setInt(1, charId);
 			statement.setLong(2, System.currentTimeMillis());
 			statement.setInt(3, action);
 			statement.setInt(4, param);
 			statement.execute();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
@@ -866,13 +865,12 @@ public class Hero
 		if (_heroMessage.get(charId) == null)
 			return;
 		
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(UPDATE_HEROES))
 		{
-			PreparedStatement statement = con.prepareStatement(UPDATE_HEROES);
 			statement.setString(1, _heroMessage.get(charId));
 			statement.setInt(2, charId);
 			statement.execute();
-			statement.close();
 		}
 		catch (SQLException e)
 		{
@@ -884,11 +882,10 @@ public class Hero
 	
 	private static void deleteItemsInDb()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement(DELETE_ITEMS))
 		{
-			PreparedStatement statement = con.prepareStatement(DELETE_ITEMS);
 			statement.execute();
-			statement.close();
 		}
 		catch (SQLException e)
 		{

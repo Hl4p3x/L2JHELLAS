@@ -12,6 +12,7 @@ import com.l2jhellas.gameserver.datatables.sql.ClanTable;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.entity.ClanHall;
 import com.l2jhellas.gameserver.model.zone.type.L2ClanHallZone;
+import com.l2jhellas.gameserver.scrips.siegable.SiegableHall;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public class ClanHallManager
@@ -136,13 +137,16 @@ public class ClanHallManager
 		if (_clanHall.containsKey(clanHallId))
 			return _clanHall.get(clanHallId);
 		if (_freeClanHall.containsKey(clanHallId))
-			return _freeClanHall.get(clanHallId);
+			return _freeClanHall.get(clanHallId);		
+		SiegableHall siegableHall = ClanHallSiegeManager.getInstance().getSiegableHall(clanHallId);
+		if(siegableHall != null)
+			return siegableHall;
+		
 		return null;
 	}
 	
 	public final ClanHall getNearbyClanHall(int x, int y, int maxDist)
-	{
-		
+	{	
 		L2ClanHallZone zone = null;
 		
 		for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())
@@ -157,7 +161,8 @@ public class ClanHallManager
 			if (zone != null && zone.getDistanceToZone(x, y) < maxDist)
 				return ch.getValue();
 		}
-		return null;
+		
+		return ClanHallSiegeManager.getInstance().getNearbyClanHall(x, y, maxDist);
 	}
 	
 	public final ClanHall getClanHallByOwner(L2Clan clan)
@@ -165,6 +170,7 @@ public class ClanHallManager
 		for (Map.Entry<Integer, ClanHall> ch : _clanHall.entrySet())
 			if (clan.getClanId() == ch.getValue().getOwnerId())
 				return ch.getValue();
-		return null;
+		
+		return ClanHallSiegeManager.getInstance().getClanHallByOwner(clan);
 	}
 }

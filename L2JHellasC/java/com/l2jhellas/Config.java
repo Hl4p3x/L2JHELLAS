@@ -312,9 +312,7 @@ public final class Config
 	public static int ALT_MAX_EVASION;
 	public static boolean ONLINE_VOICE_ALLOW;
 	public static boolean ALT_GAME_FLAGGED_PLAYER_CAN_USE_GK;
-	public static boolean ALLOW_PLAYERS_REFUSAL;
 	public static boolean ALLOW_INFO_COMMAND;
-	public static boolean ALLOW_TRADEOFF_COMMAND;
 	public static boolean ALT_SUBCLASS_SKILLS;
 	public static boolean DONATOR_NAME_COLOR_ENABLED;
 	public static int DONATOR_NAME_COLOR;
@@ -324,6 +322,9 @@ public final class Config
 	public static int SPAWN_X;
 	public static int SPAWN_Y;
 	public static int SPAWN_Z;
+	public static boolean ALLOW_MENU_VOICED;	
+	public static String MENU_ACTIVATED_ICON;
+	public static String MENU_DEACTIVATED_ICON;	
 	public static boolean USE_SAY_FILTER;
 	public static String CHAT_FILTER_CHARS;
 	public static List<String> FILTER_LIST = new ArrayList<>();
@@ -565,7 +566,6 @@ public final class Config
 	public static boolean EMPTY_DROPPED_ITEM_TABLE_AFTER_LOAD;
 	public static int SAVE_DROPPED_ITEM_INTERVAL;
 	public static boolean CLEAR_DROPPED_ITEM_TABLE;
-	public static boolean AUTODELETE_INVALID_QUEST_DATA;
 	public static boolean MULTIPLE_ITEM_DROP;
 	public static boolean FORCE_INVENTORY_UPDATE;
 	public static int MAX_DRIFT_RANGE;
@@ -1182,9 +1182,7 @@ public final class Config
 			SOUL_CRYSTAL_LEVEL_CHANCE = Integer.parseInt(L2JHellasSettings.getProperty("SoulCrystalLevelChance", "32"));
 			ONLINE_VOICE_ALLOW = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowOnlineCommand", "False"));
 			ALT_GAME_FLAGGED_PLAYER_CAN_USE_GK = Boolean.parseBoolean(L2JHellasSettings.getProperty("AltFlaggedPlayerCanUseGK", "False"));
-			ALLOW_PLAYERS_REFUSAL = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowPlayersRefusal", "False"));
 			ALLOW_INFO_COMMAND = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowVoiceInfoCommand", "False"));
-			ALLOW_TRADEOFF_COMMAND = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowTradeoffCommand", "False"));
 			ALT_SUBCLASS_SKILLS = Boolean.parseBoolean(L2JHellasSettings.getProperty("AltSubClassSkills", "False"));
 			DONATOR_NAME_COLOR_ENABLED = Boolean.parseBoolean(L2JHellasSettings.getProperty("DonatorNameColorEnabled", "False"));
 			DONATOR_NAME_COLOR = Integer.decode("0x" + L2JHellasSettings.getProperty("DonatorColorName", "00FFFF"));
@@ -1194,6 +1192,9 @@ public final class Config
 			SPAWN_X = Integer.parseInt(L2JHellasSettings.getProperty("SpawnX", "0"));
 			SPAWN_Y = Integer.parseInt(L2JHellasSettings.getProperty("SpawnY", "0"));
 			SPAWN_Z = Integer.parseInt(L2JHellasSettings.getProperty("SpawnZ", "0"));
+			ALLOW_MENU_VOICED = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowMenuVoiced", "False"));			
+			MENU_ACTIVATED_ICON = L2JHellasSettings.getProperty("MenuActivatedIcon", "L2UI_CH3.br_bar1_hp");
+			MENU_DEACTIVATED_ICON = L2JHellasSettings.getProperty("MenuDeactivatedIcon", "L2UI_CH3.br_bar1_mp");
 			USE_SAY_FILTER = Boolean.parseBoolean(L2JHellasSettings.getProperty("UseChatFilter", "False"));
 			CHAT_FILTER_CHARS = L2JHellasSettings.getProperty("ChatFilterChars", "***");
 			ALLOW_DAGGERS_WEAR_HEAVY = Boolean.parseBoolean(L2JHellasSettings.getProperty("AllowDaggersUseHeavy", "True"));
@@ -1976,7 +1977,6 @@ public final class Config
 			EMPTY_DROPPED_ITEM_TABLE_AFTER_LOAD = Boolean.valueOf(optionsSettings.getProperty("EmptyDroppedItemTableAfterLoad", "False"));
 			SAVE_DROPPED_ITEM_INTERVAL = Integer.parseInt(optionsSettings.getProperty("SaveDroppedItemInterval", "0")) * 60000;
 			CLEAR_DROPPED_ITEM_TABLE = Boolean.valueOf(optionsSettings.getProperty("ClearDroppedItemTable", "False"));
-			AUTODELETE_INVALID_QUEST_DATA = Boolean.valueOf(optionsSettings.getProperty("AutoDeleteInvalidQuestData", "False"));
 			MULTIPLE_ITEM_DROP = Boolean.valueOf(optionsSettings.getProperty("MultipleItemDrop", "True"));
 			FORCE_INVENTORY_UPDATE = Boolean.valueOf(optionsSettings.getProperty("ForceInventoryUpdate", "False"));
 			MAX_DRIFT_RANGE = Integer.parseInt(optionsSettings.getProperty("MaxDriftRange", "300"));
@@ -2587,9 +2587,6 @@ public final class Config
 				break;
 			case "ForceInventoryUpdate":
 				FORCE_INVENTORY_UPDATE = Boolean.valueOf(pValue);
-				break;
-			case "AutoDeleteInvalidQuestData":
-				AUTODELETE_INVALID_QUEST_DATA = Boolean.valueOf(pValue);
 				break;
 			case "MaximumOnlineUsers":
 				MAXIMUM_ONLINE_USERS = Integer.parseInt(pValue);

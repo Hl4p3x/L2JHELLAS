@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[raidboss_2216_spike_stakato_qn_shyid]">
+	<spawn spawn_bydefault="true"  name="[raidboss_2216_spike_stakato_qn_shyid]">
 		<territory>	
 			<location x="79130" y="-55930" minz="-6144" maxz="-5504" />
 			<location x="80130" y="-55930" minz="-6144" maxz="-5504" />
@@ -10,1006 +10,1006 @@
 		</territory>
 		<npc id="25514" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_0]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_0]">
 		<npc id="22115" count="1" respawn="240" pos="75053 -54708 -5640 34996" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_1]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_1]">
 		<npc id="22115" count="1" respawn="240" pos="75752 -54942 -5640 61547" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_2]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_2]">
 		<npc id="22115" count="1" respawn="240" pos="76246 -55182 -5640 60452" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_3]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_3]">
 		<npc id="22115" count="1" respawn="240" pos="76089 -54582 -5640 19250" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_4]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_4]">
 		<npc id="22115" count="1" respawn="240" pos="75897 -54089 -5640 21300" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_5]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_5]">
 		<npc id="22112" count="1" respawn="240" pos="78357 -55554 -6138 33762" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_6]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_6]">
 		<npc id="22112" count="1" respawn="240" pos="78934 -56025 -6138 58392" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_7]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_7]">
 		<npc id="22112" count="1" respawn="240" pos="79657 -56364 -6138 61723" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_8]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_8]">
 		<npc id="22116" count="1" respawn="240" pos="75165 -54447 -5640 57664" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_9]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_9]">
 		<npc id="22116" count="1" respawn="240" pos="74692 -54049 -5640 35122" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_10]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_10]">
 		<npc id="22116" count="1" respawn="240" pos="75368 -54954 -5640 54006" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_11]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_11]">
 		<npc id="22113" count="1" respawn="240" pos="75730 -54556 -5640 10495" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_12]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_12]">
 		<npc id="22120" count="1" respawn="240" pos="75497 -53841 -5640 20983" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_13]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_13]">
 		<npc id="22120" count="1" respawn="240" pos="75118 -53635 -5636 28180" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_14]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_14]">
 		<npc id="22120" count="1" respawn="240" pos="74832 -54300 -5640 2778" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_15]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_15]">
 		<npc id="22120" count="1" respawn="240" pos="75541 -54195 -5666 65211" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_16]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_16]">
 		<npc id="22120" count="1" respawn="240" pos="75176 -54144 -5640 32600" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_17]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_17]">
 		<npc id="22116" count="1" respawn="240" pos="75158 -53942 -5640 17311" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_18]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_18]">
 		<npc id="22112" count="1" respawn="240" pos="80496 -56171 -6138 8983" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_19]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_19]">
 		<npc id="22112" count="1" respawn="240" pos="80665 -55331 -6138 21679" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_20]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_20]">
 		<npc id="22112" count="1" respawn="240" pos="79988 -54719 -6138 26327" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_21]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_21]">
 		<npc id="22115" count="1" respawn="240" pos="79381 -56673 -6164 47326" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_22]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_22]">
 		<npc id="22115" count="1" respawn="240" pos="79432 -55503 -6129 39433" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_23]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_23]">
 		<npc id="22115" count="1" respawn="240" pos="79880 -55170 -6135 58859" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_24]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_24]">
 		<npc id="22116" count="1" respawn="240" pos="78612 -54568 -6138 16300" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_25]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_25]">
 		<npc id="22116" count="1" respawn="240" pos="78717 -55516 -6138 18823" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_26]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_26]">
 		<npc id="22116" count="1" respawn="240" pos="79185 -56002 -6138 29506" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_27]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_27]">
 		<npc id="22116" count="1" respawn="240" pos="79686 -55916 -6128 42542" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_28]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_28]">
 		<npc id="22116" count="1" respawn="240" pos="79625 -55427 -6119 34673" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_29]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_29]">
 		<npc id="22120" count="1" respawn="240" pos="80208 -55324 -6138 43737" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_30]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_30]">
 		<npc id="22120" count="1" respawn="240" pos="80442 -54820 -6164 62258" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_31]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_31]">
 		<npc id="22120" count="1" respawn="240" pos="79493 -54589 -6138 4451" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_32]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_32]">
 		<npc id="22120" count="1" respawn="240" pos="79255 -55036 -6120 21918" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_33]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_33]">
 		<npc id="22120" count="1" respawn="240" pos="79565 -55574 -6138 21523" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_34]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_34]">
 		<npc id="22120" count="1" respawn="240" pos="79799 -56011 -6138 25021" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_35]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_35]">
 		<npc id="22113" count="1" respawn="240" pos="80210 -56395 -6138 58070" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_36]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_36]">
 		<npc id="22113" count="1" respawn="240" pos="78732 -54880 -6138 42157" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_37]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_37]">
 		<npc id="22113" count="1" respawn="240" pos="79374 -54519 -6138 33335" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_38]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_38]">
 		<npc id="22115" count="1" respawn="240" pos="80055 -56841 -6164 52103" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_39]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_39]">
 		<npc id="22112" count="1" respawn="240" pos="74823 -55023 -5640 56576" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_40]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_40]">
 		<npc id="22112" count="1" respawn="240" pos="74461 -54275 -5640 50573" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_41]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_41]">
 		<npc id="22106" count="1" respawn="240" pos="78309 -50609 -5666 10456" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_42]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_42]">
 		<npc id="22106" count="1" respawn="240" pos="77134 -52317 -5640 62694" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_43]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_43]">
 		<npc id="22106" count="1" respawn="240" pos="76466 -52168 -5640 47738" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_44]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_44]">
 		<npc id="22106" count="1" respawn="240" pos="76624 -50577 -5640 29728" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_45]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_45]">
 		<npc id="22111" count="1" respawn="240" pos="77474 -50832 -5640 45558" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_46]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_46]">
 		<npc id="22111" count="1" respawn="240" pos="77597 -51183 -5640 3085" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_47]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_47]">
 		<npc id="22107" count="1" respawn="240" pos="76724 -51346 -5666 16823" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_48]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_48]">
 		<npc id="22107" count="1" respawn="240" pos="76908 -50850 -5640 39746" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_49]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_49]">
 		<npc id="22107" count="1" respawn="240" pos="77338 -50398 -5640 30452" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_50]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_50]">
 		<npc id="22109" count="1" respawn="240" pos="77829 -50755 -5666 10271" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_51]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_51]">
 		<npc id="22109" count="1" respawn="240" pos="77269 -51491 -5640 4874" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_52]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_52]">
 		<npc id="22108" count="1" respawn="240" pos="76919 -51668 -5640 44522" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_53]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_53]">
 		<npc id="22108" count="1" respawn="240" pos="77278 -50913 -5666 44078" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_54]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_54]">
 		<npc id="22108" count="1" respawn="240" pos="77609 -50287 -5640 50330" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_55]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_55]">
 		<npc id="22113" count="1" respawn="240" pos="78217 -51065 -5640 14961" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_56]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_56]">
 		<npc id="22113" count="1" respawn="240" pos="78100 -51921 -5640 1760" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_57]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_57]">
 		<npc id="22112" count="1" respawn="240" pos="77196 -52075 -5639 61876" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_58]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_58]">
 		<npc id="22106" count="1" respawn="240" pos="76927 -49889 -5640 31398" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_59]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_59]">
 		<npc id="22105" count="1" respawn="240" pos="77094 -50421 -5640 14371" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_60]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_60]">
 		<npc id="22105" count="1" respawn="240" pos="77206 -51135 -5640 20701" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_61]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_61]">
 		<npc id="22112" count="1" respawn="240" pos="74570 -53732 -5666 37006" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_62]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_62]">
 		<npc id="22112" count="1" respawn="240" pos="80020 -51426 -5640 31392" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_63]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_63]">
 		<npc id="22113" count="1" respawn="240" pos="80268 -51663 -5640 21737" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_64]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_64]">
 		<npc id="22112" count="1" respawn="240" pos="80511 -52095 -5640 29457" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_65]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_65]">
 		<npc id="22108" count="1" respawn="240" pos="80861 -52210 -5666 43332" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_66]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_66]">
 		<npc id="22109" count="1" respawn="240" pos="81110 -51811 -5640 58656" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_67]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_67]">
 		<npc id="22107" count="1" respawn="240" pos="80892 -51699 -5640 8495" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_68]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_68]">
 		<npc id="22111" count="1" respawn="240" pos="80722 -51879 -5640 57988" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_69]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_69]">
 		<npc id="22106" count="1" respawn="240" pos="80628 -51568 -5640 48758" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_70]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_70]">
 		<npc id="22106" count="1" respawn="240" pos="80632 -51444 -5640 33765" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_71]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_71]">
 		<npc id="22105" count="1" respawn="240" pos="81070 -51402 -5640 15237" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_72]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_72]">
 		<npc id="22105" count="1" respawn="240" pos="81224 -52356 -5640 14509" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_73]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_73]">
 		<npc id="22105" count="1" respawn="240" pos="80829 -52717 -5640 62332" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_74]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_74]">
 		<npc id="22105" count="1" respawn="240" pos="80286 -52592 -5640 59003" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_75]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_75]">
 		<npc id="22105" count="1" respawn="240" pos="78006 -51342 -5640 19886" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_76]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_76]">
 		<npc id="22105" count="1" respawn="240" pos="77964 -52392 -5666 53766" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_77]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_77]">
 		<npc id="22105" count="1" respawn="240" pos="77623 -51702 -5640 54579" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_78]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_78]">
 		<npc id="22112" count="1" respawn="240" pos="76473 -51605 -5640 47971" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_79]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_79]">
 		<npc id="22115" count="1" respawn="240" pos="80736 -56455 -6164 3421" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_80]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_80]">
 		<npc id="22110" count="1" respawn="240" pos="75061 -47368 -5134 52882" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_81]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_81]">
 		<npc id="22110" count="1" respawn="240" pos="78151 -46602 -5143 53701" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_82]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_82]">
 		<npc id="22110" count="1" respawn="240" pos="79841 -47801 -5134 21332" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_83]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_83]">
 		<npc id="22110" count="1" respawn="240" pos="80495 -45688 -5134 39350" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_84]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_84]">
 		<npc id="22114" count="1" respawn="240" pos="80878 -44202 -5134 9814" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_85]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_85]">
 		<npc id="22121" count="1" respawn="240" pos="82791 -48894 -4645 61963" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_86]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_86]">
 		<npc id="22118" count="1" respawn="240" pos="82289 -48715 -4660 53530" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_87]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_87]">
 		<npc id="22118" count="1" respawn="240" pos="82185 -48482 -4654 38561" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_88]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_88]">
 		<npc id="22119" count="1" respawn="240" pos="82680 -48169 -4645 26216" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_89]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_89]">
 		<npc id="22117" count="1" respawn="240" pos="83646 -48257 -4645 6407" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_90]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_90]">
 		<npc id="22114" count="1" respawn="240" pos="82262 -49703 -4645 60238" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_91]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_91]">
 		<npc id="22121" count="1" respawn="240" pos="82134 -53506 -4645 57594" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_92]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_92]">
 		<npc id="22121" count="1" respawn="240" pos="84544 -53663 -5134 31421" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_93]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_93]">
 		<npc id="22118" count="1" respawn="240" pos="85515 -53775 -5134 8192" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_94]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_94]">
 		<npc id="22119" count="1" respawn="240" pos="85509 -53212 -5134 55555" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_95]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_95]">
 		<npc id="22117" count="1" respawn="240" pos="85230 -52141 -5134 16146" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_96]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_96]">
 		<npc id="22118" count="1" respawn="240" pos="88237 -53623 -5119 51395" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_97]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_97]">
 		<npc id="22117" count="1" respawn="240" pos="88026 -52560 -5134 12881" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_98]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_98]">
 		<npc id="22110" count="1" respawn="240" pos="77914 -50313 -5640 19399" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_99]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_99]">
 		<npc id="22110" count="1" respawn="240" pos="79672 -51267 -5631 60412" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_100]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_100]">
 		<npc id="22117" count="1" respawn="240" pos="74872 -53003 -5632 15113" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_101]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_101]">
 		<npc id="22118" count="1" respawn="240" pos="75519 -53801 -5666 10548" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_102]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_102]">
 		<npc id="22118" count="1" respawn="240" pos="75257 -54421 -5640 2499" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_103]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_103]">
 		<npc id="22110" count="1" respawn="240" pos="77235 -51564 -5640 43264" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_104]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_104]">
 		<npc id="22114" count="1" respawn="240" pos="80190 -48457 -5134 50257" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_105]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_105]">
 		<npc id="22110" count="1" respawn="240" pos="85038 -42488 -4618 973" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_106]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_106]">
 		<npc id="22117" count="1" respawn="240" pos="82061 -49196 -4645 61963" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_107]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_107]">
 		<npc id="22118" count="1" respawn="240" pos="82006 -53384 -4645 24384" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_108]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_108]">
 		<npc id="22117" count="1" respawn="240" pos="82645 -54047 -4639 16606" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_109]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_109]">
 		<npc id="22119" count="1" respawn="240" pos="87883 -50051 -5134 3778" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_110]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_110]">
 		<npc id="22110" count="1" respawn="240" pos="85825 -50948 -5134 51393" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_111]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_111]">
 		<npc id="22114" count="1" respawn="240" pos="85937 -49671 -5150 27354" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_112]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_112]">
 		<npc id="22114" count="1" respawn="240" pos="85923 -47128 -4635 21221" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_113]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_113]">
 		<npc id="22117" count="1" respawn="240" pos="88279 -46255 -4645 31208" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_114]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_114]">
 		<npc id="22121" count="1" respawn="240" pos="75388 -55313 -5640 34904" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_115]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_115]">
 		<npc id="22118" count="1" respawn="240" pos="74647 -54570 -5640 10611" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_116]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_116]">
 		<npc id="22119" count="1" respawn="240" pos="74440 -54905 -5640 45453" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_117]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_117]">
 		<npc id="22117" count="1" respawn="240" pos="74963 -52578 -5632 14184" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_118]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_118]">
 		<npc id="22114" count="1" respawn="240" pos="87879 -52981 -5134 44067" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_119]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_119]">
 		<npc id="22121" count="1" respawn="240" pos="89294 -50470 -5134 8020" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_120]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_120]">
 		<npc id="22118" count="1" respawn="240" pos="88753 -50815 -5134 58564" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_121]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_121]">
 		<npc id="22105" count="1" respawn="240" pos="77639 -42335 -5134 39530" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_122]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_122]">
 		<npc id="22106" count="1" respawn="240" pos="77837 -42185 -5134 15341" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_123]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_123]">
 		<npc id="22106" count="1" respawn="240" pos="77810 -42454 -5134 58728" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_124]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_124]">
 		<npc id="22107" count="1" respawn="240" pos="77351 -42277 -5134 65348" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_125]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_125]">
 		<npc id="22108" count="1" respawn="240" pos="76917 -42270 -5134 26357" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_126]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_126]">
 		<npc id="22109" count="1" respawn="240" pos="77424 -42056 -5134 36909" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_127]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_127]">
 		<npc id="22105" count="1" respawn="240" pos="75103 -47593 -5134 38419" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_128]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_128]">
 		<npc id="22105" count="1" respawn="240" pos="75417 -47404 -5134 56315" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_129]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_129]">
 		<npc id="22106" count="1" respawn="240" pos="75462 -47074 -5134 59840" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_130]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_130]">
 		<npc id="22108" count="1" respawn="240" pos="77415 -42555 -5134 1761" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_131]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_131]">
 		<npc id="22109" count="1" respawn="240" pos="76799 -42623 -5134 62623" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_132]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_132]">
 		<npc id="22107" count="1" respawn="240" pos="75311 -46398 -5134 24393" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_133]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_133]">
 		<npc id="22107" count="1" respawn="240" pos="75572 -46662 -5134 51432" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_134]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_134]">
 		<npc id="22108" count="1" respawn="240" pos="75337 -46709 -5125 4804" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_135]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_135]">
 		<npc id="22108" count="1" respawn="240" pos="74949 -47146 -5134 14439" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_136]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_136]">
 		<npc id="22109" count="1" respawn="240" pos="74915 -47329 -5134 36991" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_137]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_137]">
 		<npc id="22112" count="1" respawn="240" pos="75149 -46754 -5134 46106" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_138]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_138]">
 		<npc id="21508" count="1" respawn="240" pos="87836 -45273 -2159 39508" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_139]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_139]">
 		<npc id="21509" count="1" respawn="240" pos="88081 -45307 -2159 64075" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_140]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_140]">
 		<npc id="21510" count="1" respawn="240" pos="88725 -45254 -2119 7726" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_141]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_141]">
 		<npc id="22121" count="1" respawn="240" pos="88558 -46681 -4645 27450" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_142]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_142]">
 		<npc id="22118" count="1" respawn="240" pos="88955 -46903 -4645 22122" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_143]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_143]">
 		<npc id="22119" count="1" respawn="240" pos="89025 -47395 -4645 13093" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_144]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_144]">
 		<npc id="22110" count="1" respawn="240" pos="86316 -47062 -4645 13445" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_145]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_145]">
 		<npc id="22114" count="1" respawn="240" pos="89446 -46824 -4645 27365" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_146]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_146]">
 		<npc id="22110" count="1" respawn="240" pos="89194 -43136 -4013 2611" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_147]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_147]">
 		<npc id="22114" count="1" respawn="240" pos="87556 -43382 -4133 38572" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_148]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_148]">
 		<npc id="22110" count="1" respawn="240" pos="88723 -43043 -4132 5299" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_149]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_149]">
 		<npc id="21511" count="1" respawn="240" pos="84969 -46048 -2937 35130" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_150]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_150]">
 		<npc id="21510" count="1" respawn="240" pos="85754 -46026 -2557 29738" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_151]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_151]">
 		<npc id="21509" count="1" respawn="240" pos="86460 -46211 -2408 34619" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_152]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_152]">
 		<npc id="21508" count="1" respawn="240" pos="86936 -45978 -2267 43117" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_153]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_153]">
 		<npc id="21511" count="1" respawn="240" pos="89135 -43878 -2157 19869" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_154]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_154]">
 		<npc id="21509" count="1" respawn="240" pos="89889 -45215 -2144 61941" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_155]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_155]">
 		<npc id="21508" count="1" respawn="240" pos="89523 -45083 -2143 61941" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_156]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_156]">
 		<npc id="21508" count="1" respawn="240" pos="88657 -44500 -2142 34353" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_157]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_157]">
 		<npc id="21511" count="1" respawn="240" pos="89028 -44529 -2141 16746" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_158]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_158]">
 		<npc id="22115" count="1" respawn="240" pos="80765 -55717 -6138 16949" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_159]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_159]">
 		<npc id="22112" count="1" respawn="240" pos="76985 -50309 -5640 41596" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_160]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_160]">
 		<npc id="22112" count="1" respawn="240" pos="82689 -53954 -4645 15489" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_161]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_161]">
 		<npc id="22120" count="1" respawn="240" pos="89017 -49927 -5134 60089" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_162]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_162]">
 		<npc id="22113" count="1" respawn="240" pos="88772 -49786 -5134 4174" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_163]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_163]">
 		<npc id="22112" count="1" respawn="240" pos="88279 -49995 -5134 4174" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_164]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_164]">
 		<npc id="22112" count="1" respawn="240" pos="87733 -50283 -5134 246" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_165]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_165]">
 		<npc id="22109" count="1" respawn="240" pos="86010 -50088 -5134 8972" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_166]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_166]">
 		<npc id="22112" count="1" respawn="240" pos="85874 -50246 -5134 28900" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_167]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_167]">
 		<npc id="22105" count="1" respawn="240" pos="84863 -50158 -5134 2442" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_168]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_168]">
 		<npc id="22106" count="1" respawn="240" pos="84836 -49608 -5134 25881" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_169]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_169]">
 		<npc id="22106" count="1" respawn="240" pos="85236 -49960 -5134 12771" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_170]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_170]">
 		<npc id="22111" count="1" respawn="240" pos="84960 -50727 -5134 39026" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_171]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_171]">
 		<npc id="22107" count="1" respawn="240" pos="86330 -50496 -5160 62822" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_172]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_172]">
 		<npc id="22109" count="1" respawn="240" pos="85538 -50833 -5131 41159" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_173]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_173]">
 		<npc id="22108" count="1" respawn="240" pos="85665 -50482 -5128 56994" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_174]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_174]">
 		<npc id="22113" count="1" respawn="240" pos="85031 -49916 -5134 12949" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_175]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_175]">
 		<npc id="22112" count="1" respawn="240" pos="84777 -50308 -5134 31153" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_176]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_176]">
 		<npc id="22115" count="1" respawn="240" pos="89111 -46891 -4645 11075" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_177]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_177]">
 		<npc id="22120" count="1" respawn="240" pos="89264 -47124 -4633 58256" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_178]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_178]">
 		<npc id="22120" count="1" respawn="240" pos="88929 -50597 -5134 43188" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_179]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_179]">
 		<npc id="22116" count="1" respawn="240" pos="88359 -50782 -5134 35146" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_180]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_180]">
 		<npc id="22116" count="1" respawn="240" pos="89137 -50304 -5130 4012" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_181]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_181]">
 		<npc id="22115" count="1" respawn="240" pos="85378 -54084 -5134 44512" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_182]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_182]">
 		<npc id="22116" count="1" respawn="240" pos="85604 -53033 -5134 61862" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_183]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_183]">
 		<npc id="22116" count="1" respawn="240" pos="85087 -52843 -5134 11896" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_184]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_184]">
 		<npc id="22120" count="1" respawn="240" pos="84880 -53294 -5134 6587" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_185]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_185]">
 		<npc id="22120" count="1" respawn="240" pos="84638 -53471 -5134 23238" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_186]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_186]">
 		<npc id="22113" count="1" respawn="240" pos="85097 -54066 -5121 39665" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_187]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_187]">
 		<npc id="22112" count="1" respawn="240" pos="85665 -53624 -5134 52572" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_188]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_188]">
 		<npc id="22112" count="1" respawn="240" pos="85350 -52698 -5134 42949" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_189]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_189]">
 		<npc id="22115" count="1" respawn="240" pos="88684 -53700 -5134 33453" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_190]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_190]">
 		<npc id="22116" count="1" respawn="240" pos="87410 -52981 -5134 13482" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_191]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_191]">
 		<npc id="22120" count="1" respawn="240" pos="87626 -53531 -5118 37417" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_192]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_192]">
 		<npc id="22120" count="1" respawn="240" pos="87964 -53275 -5134 24125" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_193]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_193]">
 		<npc id="22113" count="1" respawn="240" pos="88579 -53919 -5134 64651" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_194]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_194]">
 		<npc id="22112" count="1" respawn="240" pos="88089 -53660 -5120 54765" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_195]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_195]">
 		<npc id="22112" count="1" respawn="240" pos="87715 -52837 -5134 38500" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_196]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_196]">
 		<npc id="22115" count="1" respawn="240" pos="88109 -50463 -5134 39434" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_197]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_197]">
 		<npc id="22115" count="1" respawn="240" pos="89398 -49937 -5134 11009" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_198]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_198]">
 		<npc id="22115" count="1" respawn="240" pos="88330 -46321 -4645 30452" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_199]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_199]">
 		<npc id="22115" count="1" respawn="240" pos="88844 -46013 -4645 36691" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_200]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_200]">
 		<npc id="22116" count="1" respawn="240" pos="88800 -46164 -4641 38915" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_201]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_201]">
 		<npc id="22112" count="1" respawn="240" pos="85788 -45959 -4645 65253" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_202]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_202]">
 		<npc id="22105" count="1" respawn="240" pos="87061 -44127 -4133 60195" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_203]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_203]">
 		<npc id="22105" count="1" respawn="240" pos="87249 -42537 -4130 29833" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_204]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_204]">
 		<npc id="22106" count="1" respawn="240" pos="87510 -42718 -4133 22833" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_205]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_205]">
 		<npc id="22106" count="1" respawn="240" pos="87986 -43635 -4133 13147" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_206]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_206]">
 		<npc id="22107" count="1" respawn="240" pos="88411 -43263 -4133 55066" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_207]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_207]">
 		<npc id="22107" count="1" respawn="240" pos="86773 -43321 -4133 32569" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_208]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_208]">
 		<npc id="22108" count="1" respawn="240" pos="87311 -43770 -4133 51038" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_209]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_209]">
 		<npc id="22105" count="1" respawn="240" pos="86804 -43686 -4133 40562" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_210]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_210]">
 		<npc id="22111" count="1" respawn="240" pos="87774 -43358 -4133 37996" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_211]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_211]">
 		<npc id="22109" count="1" respawn="240" pos="88199 -43858 -4133 3109" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_212]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_212]">
 		<npc id="22109" count="1" respawn="240" pos="87614 -44053 -4133 53934" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_213]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_213]">
 		<npc id="22106" count="1" respawn="240" pos="87844 -43867 -4133 9534" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_214]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_214]">
 		<npc id="22113" count="1" respawn="240" pos="86983 -42870 -4133 59778" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_215]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_215]">
 		<npc id="22112" count="1" respawn="240" pos="87120 -43137 -4133 24504" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_216]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_216]">
 		<npc id="22106" count="1" respawn="240" pos="87735 -43072 -4133 20678" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_217]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_217]">
 		<npc id="22108" count="1" respawn="240" pos="88183 -43041 -4133 29366" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_218]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_218]">
 		<npc id="22112" count="1" respawn="240" pos="85517 -47350 -4645 45150" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_219]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_219]">
 		<npc id="22113" count="1" respawn="240" pos="85681 -46738 -4645 11762" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_220]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_220]">
 		<npc id="22108" count="1" respawn="240" pos="85069 -46432 -4645 23302" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_221]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_221]">
 		<npc id="22120" count="1" respawn="240" pos="88915 -46446 -4645 61376" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_222]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_222]">
 		<npc id="22113" count="1" respawn="240" pos="89122 -46378 -4645 20946" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_223]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_223]">
 		<npc id="22112" count="1" respawn="240" pos="89237 -46625 -4645 5675" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_224]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_224]">
 		<npc id="22105" count="1" respawn="240" pos="85050 -46093 -4645 16314" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_225]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_225]">
 		<npc id="22105" count="1" respawn="240" pos="85051 -46894 -4645 15468" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_226]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_226]">
 		<npc id="22105" count="1" respawn="240" pos="85184 -47249 -4645 30614" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_227]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_227]">
 		<npc id="22106" count="1" respawn="240" pos="85975 -47389 -4641 48104" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_228]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_228]">
 		<npc id="22106" count="1" respawn="240" pos="86263 -46846 -4645 36379" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_229]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_229]">
 		<npc id="22106" count="1" respawn="240" pos="86361 -46179 -4645 3203" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_230]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_230]">
 		<npc id="22106" count="1" respawn="240" pos="85562 -46359 -4645 30460" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_231]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_231]">
 		<npc id="22111" count="1" respawn="240" pos="85790 -46464 -4645 62207" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_232]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_232]">
 		<npc id="22107" count="1" respawn="240" pos="85457 -46891 -4645 13209" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_233]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_233]">
 		<npc id="22109" count="1" respawn="240" pos="85675 -47232 -4638 31270" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_234]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_234]">
 		<npc id="22109" count="1" respawn="240" pos="86312 -47010 -4645 44025" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_235]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_235]">
 		<npc id="22109" count="1" respawn="240" pos="86469 -46482 -4645 53308" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_236]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_236]">
 		<npc id="22108" count="1" respawn="240" pos="86086 -45882 -4644 62660" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_237]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_237]">
 		<npc id="22108" count="1" respawn="240" pos="85370 -45837 -4645 10367" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_238]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_238]">
 		<npc id="22108" count="1" respawn="240" pos="87490 -43281 -4133 32895" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_239]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_239]">
 		<npc id="22112" count="1" respawn="240" pos="82189 -53465 -4645 22677" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_240]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_240]">
 		<npc id="22112" count="1" respawn="240" pos="77453 -49780 -5640 18267" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_241]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_241]">
 		<npc id="22107" count="1" respawn="240" pos="79518 -48982 -5132 32320" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_242]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_242]">
 		<npc id="22109" count="1" respawn="240" pos="79867 -48997 -5148 51965" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_243]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_243]">
 		<npc id="22108" count="1" respawn="240" pos="79794 -48733 -5129 13351" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_244]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_244]">
 		<npc id="22108" count="1" respawn="240" pos="79559 -49593 -5134 28157" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_245]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_245]">
 		<npc id="22113" count="1" respawn="240" pos="79255 -49489 -5134 3148" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_246]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_246]">
 		<npc id="22112" count="1" respawn="240" pos="80784 -48848 -5134 58498" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_247]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_247]">
 		<npc id="22112" count="1" respawn="240" pos="79870 -48105 -5134 53905" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_248]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_248]">
 		<npc id="22105" count="1" respawn="240" pos="80529 -46471 -5134 53211" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_249]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_249]">
 		<npc id="22105" count="1" respawn="240" pos="80508 -45235 -5134 60805" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_250]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_250]">
 		<npc id="22106" count="1" respawn="240" pos="80361 -44162 -5134 38981" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_251]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_251]">
 		<npc id="22106" count="1" respawn="240" pos="80639 -44462 -5134 14176" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_252]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_252]">
 		<npc id="22106" count="1" respawn="240" pos="79993 -45365 -5134 7119" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_253]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_253]">
 		<npc id="22111" count="1" respawn="240" pos="79726 -45582 -5134 39384" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_254]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_254]">
 		<npc id="22107" count="1" respawn="240" pos="80638 -44911 -5134 57163" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_255]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_255]">
 		<npc id="22109" count="1" respawn="240" pos="79771 -45184 -5129 52874" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_256]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_256]">
 		<npc id="22108" count="1" respawn="240" pos="79817 -44849 -5134 39412" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_257]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_257]">
 		<npc id="22108" count="1" respawn="240" pos="80354 -44528 -5134 27703" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_258]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_258]">
 		<npc id="22111" count="1" respawn="240" pos="79577 -48711 -5134 14149" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_259]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_259]">
 		<npc id="22111" count="1" respawn="240" pos="80187 -48861 -5134 63011" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_260]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_260]">
 		<npc id="22106" count="1" respawn="240" pos="80150 -49660 -5131 45946" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_261]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_261]">
 		<npc id="22108" count="1" respawn="240" pos="76912 -47571 -5134 40358" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_262]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_262]">
 		<npc id="22113" count="1" respawn="240" pos="76912 -47571 -5134 40358" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_263]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_263]">
 		<npc id="22112" count="1" respawn="240" pos="77437 -47238 -5134 39525" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_264]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_264]">
 		<npc id="22108" count="1" respawn="240" pos="77692 -47045 -5122 63559" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_265]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_265]">
 		<npc id="22108" count="1" respawn="240" pos="77692 -47045 -5122 63559" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_266]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_266]">
 		<npc id="22109" count="1" respawn="240" pos="77374 -46984 -5123 53461" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_267]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_267]">
 		<npc id="22107" count="1" respawn="240" pos="77265 -46736 -5134 53461" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_268]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_268]">
 		<npc id="22111" count="1" respawn="240" pos="76997 -46885 -5131 19545" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_269]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_269]">
 		<npc id="22106" count="1" respawn="240" pos="77418 -47625 -5134 50043" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_270]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_270]">
 		<npc id="22106" count="1" respawn="240" pos="77395 -46439 -5134 48363" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_271]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_271]">
 		<npc id="22106" count="1" respawn="240" pos="77436 -45891 -5134 11928" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_272]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_272]">
 		<npc id="22105" count="1" respawn="240" pos="76679 -47404 -5134 24108" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_273]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_273]">
 		<npc id="22105" count="1" respawn="240" pos="77134 -47821 -5134 34770" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_274]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_274]">
 		<npc id="22105" count="1" respawn="240" pos="77745 -47497 -5134 49446" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_275]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_275]">
 		<npc id="22105" count="1" respawn="240" pos="77698 -46557 -5134 50834" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_276]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_276]">
 		<npc id="22105" count="1" respawn="240" pos="77746 -46016 -5134 14614" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_277]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_277]">
 		<npc id="22105" count="1" respawn="240" pos="80505 -48787 -5120 12711" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_278]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_278]">
 		<npc id="22113" count="1" respawn="240" pos="80065 -44381 -5134 4729" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_279]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_279]">
 		<npc id="22113" count="1" respawn="240" pos="79172 -44816 -5134 19427" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_280]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_280]">
 		<npc id="22112" count="1" respawn="240" pos="79483 -45555 -5134 31398" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_281]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_281]">
 		<npc id="22109" count="1" respawn="240" pos="83124 -44733 -4645 3627" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_282]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_282]">
 		<npc id="22108" count="1" respawn="240" pos="82683 -44695 -4645 10575" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_283]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_283]">
 		<npc id="22113" count="1" respawn="240" pos="82442 -45082 -4645 32943" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_284]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_284]">
 		<npc id="22112" count="1" respawn="240" pos="82859 -45075 -4645 17599" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_285]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_285]">
 		<npc id="22115" count="1" respawn="240" pos="83175 -48704 -4645 13445" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_286]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_286]">
 		<npc id="22115" count="1" respawn="240" pos="82847 -49837 -4671 60626" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_287]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_287]">
 		<npc id="22115" count="1" respawn="240" pos="82564 -49693 -4636 26899" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_288]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_288]">
 		<npc id="22116" count="1" respawn="240" pos="83118 -49247 -4645 1508" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_289]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_289]">
 		<npc id="22116" count="1" respawn="240" pos="82527 -49333 -4645 40168" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_290]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_290]">
 		<npc id="22120" count="1" respawn="240" pos="82803 -49096 -4645 50464" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_291]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_291]">
 		<npc id="22120" count="1" respawn="240" pos="82729 -48511 -4645 31017" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_292]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_292]">
 		<npc id="22113" count="1" respawn="240" pos="82965 -48551 -4645 5896" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_293]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_293]">
 		<npc id="22112" count="1" respawn="240" pos="82061 -49196 -4645 28454" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_294]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_294]">
 		<npc id="22112" count="1" respawn="240" pos="82924 -49575 -4643 63237" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_295]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_295]">
 		<npc id="22115" count="1" respawn="240" pos="82727 -52990 -4645 22083" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_296]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_296]">
 		<npc id="22116" count="1" respawn="240" pos="82859 -53131 -4645 60121" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_297]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_297]">
 		<npc id="22120" count="1" respawn="240" pos="82748 -53528 -4645 4948" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_298]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_298]">
 		<npc id="22107" count="1" respawn="240" pos="82664 -46579 -4645 46826" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_299]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_299]">
 		<npc id="22111" count="1" respawn="240" pos="82678 -45207 -4637 14100" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_300]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_300]">
 		<npc id="22111" count="1" respawn="240" pos="82361 -44541 -4645 21018" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_301]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_301]">
 		<npc id="22112" count="1" respawn="240" pos="80495 -45688 -5134 51992" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_302]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_302]">
 		<npc id="22112" count="1" respawn="240" pos="80292 -44961 -5134 44071" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_303]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_303]">
 		<npc id="22105" count="1" respawn="240" pos="84769 -42637 -4671 54733" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_304]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_304]">
 		<npc id="22105" count="1" respawn="240" pos="84507 -42195 -4671 20357" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_305]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_305]">
 		<npc id="22105" count="1" respawn="240" pos="84111 -42989 -4638 4489" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_306]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_306]">
 		<npc id="22105" count="1" respawn="240" pos="83969 -43054 -4638 39114" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_307]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_307]">
 		<npc id="22106" count="1" respawn="240" pos="84113 -42744 -4645 46873" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_308]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_308]">
 		<npc id="22106" count="1" respawn="240" pos="84078 -42407 -4645 52862" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_309]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_309]">
 		<npc id="22106" count="1" respawn="240" pos="84024 -42260 -4645 22469" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_310]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_310]">
 		<npc id="22107" count="1" respawn="240" pos="83959 -42638 -4645 13279" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_311]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_311]">
 		<npc id="22109" count="1" respawn="240" pos="83787 -42647 -4645 55011" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_312]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_312]">
 		<npc id="22109" count="1" respawn="240" pos="83704 -42514 -4645 25360" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_313]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_313]">
 		<npc id="22108" count="1" respawn="240" pos="84290 -43018 -4645 47584" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_314]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_314]">
 		<npc id="22108" count="1" respawn="240" pos="84358 -42569 -4645 36881" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_315]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_315]">
 		<npc id="22105" count="1" respawn="240" pos="83211 -45459 -4671 60340" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_316]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_316]">
 		<npc id="22106" count="1" respawn="240" pos="83131 -44857 -4645 1499" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_317]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_317]">
 		<npc id="22106" count="1" respawn="240" pos="82275 -44946 -4645 46969" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_318]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_318]">
 		<npc id="22113" count="1" respawn="240" pos="82348 -53100 -4645 7739" />	
 	</spawn>
-	<spawn name="[Stakato_Nest_319]">
+	<spawn spawn_bydefault="true"  name="[Stakato_Nest_319]">
 		<npc id="32015" count="1" respawn="60" pos="89872 -44896 -2144 49152" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_01]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_01]">
 		<npc id="31554" count="1" respawn="60" pos="70000 -50064 -3264 8000" />	
 		<npc id="31557" count="1" respawn="60" pos="69840 -49888 -3264 7000" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_02]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_02]">
 		<npc id="31553" count="1" respawn="60" pos="69248 -50160 -3288 0" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_03]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_03]">
 		<npc id="31555" count="1" respawn="60" pos="69348 -50408 -3288 10000" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_04]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_04]">
 		<npc id="31556" count="1" respawn="60" pos="69232 -49984 -3284 0" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_05]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_05]">
 		<npc id="31557" count="1" respawn="60" pos="69376 -50080 -3288 0" />	
 		<npc id="31557" count="1" respawn="60" pos="69372 -50264 -3288 0" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_06]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_06]">
 		<npc id="31661" count="1" respawn="60" pos="72196 -55720 -3144 0" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_07]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_07]">
 		<npc id="31662" count="1" respawn="60" pos="77184 -44064 -3264 0" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_08]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_08]">
 		<npc id="31663" count="1" respawn="60" pos="78832 -61536 -2308 0" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_09]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_09]">
 		<npc id="31664" count="1" respawn="60" pos="91856 -52340 -2636 0" />	
 	</spawn>
-	<spawn name="[rune12_npc2216_10]">
+	<spawn spawn_bydefault="true"  name="[rune12_npc2216_10]">
 		<npc id="31665" count="1" respawn="60" pos="83168 -54320 -2328 0" />	
 	</spawn>
-	<spawn name="[rune01_npc2216_11]">
+	<spawn spawn_bydefault="true"  name="[rune01_npc2216_11]">
 		<npc id="31751" count="1" respawn="60" pos="96192 -59040 -1868 35000" />	
 		<npc id="31752" count="1" respawn="60" pos="96240 -59088 -1868 0" />	
 		<npc id="31752" count="1" respawn="60" pos="96096 -59120 -1868 8000" />	
 		<npc id="31752" count="1" respawn="60" pos="96112 -59040 -1868 27000" />	
 		<npc id="31752" count="1" respawn="60" pos="96160 -58992 -1868 16000" />	
 	</spawn>
-	<spawn name="[rune12_2216_01]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_01]">
 		<territory>	
 			<location x="68634" y="-59312" minz="-3289" maxz="-2989" />
 			<location x="69434" y="-59720" minz="-3289" maxz="-2989" />
@@ -1020,7 +1020,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_02]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_02]">
 		<territory>	
 			<location x="69613" y="-59152" minz="-3249" maxz="-3049" />
 			<location x="70657" y="-59132" minz="-3249" maxz="-3049" />
@@ -1030,7 +1030,7 @@
 		<npc id="21508" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_04]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_04]">
 		<territory>	
 			<location x="71126" y="-60016" minz="-3166" maxz="-2966" />
 			<location x="71794" y="-59852" minz="-3166" maxz="-2966" />
@@ -1041,7 +1041,7 @@
 		<npc id="21508" count="1" respawn="42" />	
 		<npc id="21511" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_05]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_05]">
 		<territory>	
 			<location x="70444" y="-60916" minz="-3239" maxz="-3039" />
 			<location x="71188" y="-61692" minz="-3239" maxz="-3039" />
@@ -1052,7 +1052,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_06]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_06]">
 		<territory>	
 			<location x="73149" y="-60207" minz="-3180" maxz="-2980" />
 			<location x="72477" y="-60251" minz="-3180" maxz="-2980" />
@@ -1063,7 +1063,7 @@
 		</territory>
 		<npc id="21511" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_07]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_07]">
 		<territory>	
 			<location x="72532" y="-58308" minz="-3205" maxz="-3005" />
 			<location x="73476" y="-58588" minz="-3205" maxz="-3005" />
@@ -1076,7 +1076,7 @@
 		<npc id="21510" count="2" respawn="42" />	
 		<npc id="21509" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_08]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_08]">
 		<territory>	
 			<location x="71295" y="-57992" minz="-3276" maxz="-3076" />
 			<location x="73735" y="-56328" minz="-3276" maxz="-3076" />
@@ -1089,7 +1089,7 @@
 		<npc id="21510" count="2" respawn="42" />	
 		<npc id="21509" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_09]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_09]">
 		<territory>	
 			<location x="69888" y="-58191" minz="-3234" maxz="-3034" />
 			<location x="71260" y="-58047" minz="-3234" maxz="-3034" />
@@ -1101,7 +1101,7 @@
 		<npc id="21510" count="2" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_10]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_10]">
 		<territory>	
 			<location x="68766" y="-57734" minz="-3211" maxz="-3011" />
 			<location x="70206" y="-56890" minz="-3211" maxz="-3011" />
@@ -1113,7 +1113,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_11]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_11]">
 		<territory>	
 			<location x="68842" y="-55369" minz="-3243" maxz="-3043" />
 			<location x="69634" y="-55161" minz="-3243" maxz="-3043" />
@@ -1126,7 +1126,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21509" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_12]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_12]">
 		<territory>	
 			<location x="71868" y="-54192" minz="-3237" maxz="-3037" />
 			<location x="72880" y="-53852" minz="-3237" maxz="-3037" />
@@ -1140,7 +1140,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_13]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_13]">
 		<territory>	
 			<location x="73656" y="-54993" minz="-3209" maxz="-3009" />
 			<location x="74040" y="-54285" minz="-3209" maxz="-3009" />
@@ -1153,7 +1153,7 @@
 		<npc id="21510" count="2" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_14]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_14]">
 		<territory>	
 			<location x="74888" y="-54731" minz="-3199" maxz="-2999" />
 			<location x="74856" y="-54343" minz="-3199" maxz="-2999" />
@@ -1169,7 +1169,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_15]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_15]">
 		<territory>	
 			<location x="75182" y="-55787" minz="-3196" maxz="-2996" />
 			<location x="76606" y="-55659" minz="-3196" maxz="-2996" />
@@ -1180,7 +1180,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_16]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_16]">
 		<territory>	
 			<location x="76354" y="-55061" minz="-3230" maxz="-3030" />
 			<location x="76846" y="-54981" minz="-3230" maxz="-3030" />
@@ -1191,7 +1191,7 @@
 		<npc id="21508" count="1" respawn="42" />	
 		<npc id="21511" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_17]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_17]">
 		<territory>	
 			<location x="75217" y="-53480" minz="-3228" maxz="-2928" />
 			<location x="76721" y="-53992" minz="-3228" maxz="-2928" />
@@ -1202,7 +1202,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21511" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_18]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_18]">
 		<territory>	
 			<location x="74052" y="-54297" minz="-3209" maxz="-3009" />
 			<location x="74844" y="-54333" minz="-3209" maxz="-3009" />
@@ -1214,7 +1214,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21511" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_19]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_19]">
 		<territory>	
 			<location x="70544" y="-52902" minz="-3247" maxz="-3047" />
 			<location x="72304" y="-53166" minz="-3247" maxz="-3047" />
@@ -1226,7 +1226,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_20]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_20]">
 		<territory>	
 			<location x="72915" y="-53828" minz="-3247" maxz="-3047" />
 			<location x="73527" y="-53624" minz="-3247" maxz="-3047" />
@@ -1239,7 +1239,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_21]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_21]">
 		<territory>	
 			<location x="74728" y="-52385" minz="-3210" maxz="-3010" />
 			<location x="75640" y="-52121" minz="-3210" maxz="-3010" />
@@ -1252,7 +1252,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21511" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_22]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_22]">
 		<territory>	
 			<location x="74471" y="-51819" minz="-3162" maxz="-2962" />
 			<location x="75095" y="-51291" minz="-3162" maxz="-2962" />
@@ -1262,7 +1262,7 @@
 		<npc id="21509" count="1" respawn="42" />	
 		<npc id="21510" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_23]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_23]">
 		<territory>	
 			<location x="74058" y="-50585" minz="-3165" maxz="-2765" />
 			<location x="74622" y="-50733" minz="-3165" maxz="-2765" />
@@ -1272,7 +1272,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21510" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_24]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_24]">
 		<territory>	
 			<location x="72822" y="-50716" minz="-3147" maxz="-2847" />
 			<location x="74062" y="-50516" minz="-3147" maxz="-2847" />
@@ -1283,7 +1283,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21511" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_25]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_25]">
 		<territory>	
 			<location x="71456" y="-51543" minz="-3189" maxz="-2789" />
 			<location x="73052" y="-51787" minz="-3189" maxz="-2789" />
@@ -1296,7 +1296,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_26]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_26]">
 		<territory>	
 			<location x="72879" y="-47456" minz="-3261" maxz="-3061" />
 			<location x="73491" y="-48492" minz="-3261" maxz="-3061" />
@@ -1310,7 +1310,7 @@
 		<npc id="21510" count="2" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_27]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_27]">
 		<territory>	
 			<location x="72917" y="-46276" minz="-3256" maxz="-3056" />
 			<location x="73969" y="-46744" minz="-3256" maxz="-3056" />
@@ -1323,7 +1323,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_28]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_28]">
 		<territory>	
 			<location x="73422" y="-45155" minz="-3312" maxz="-3112" />
 			<location x="74210" y="-44643" minz="-3312" maxz="-3112" />
@@ -1335,7 +1335,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_29]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_29]">
 		<territory>	
 			<location x="71636" y="-44250" minz="-3338" maxz="-3138" />
 			<location x="72696" y="-44278" minz="-3338" maxz="-3138" />
@@ -1347,7 +1347,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21511" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_30]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_30]">
 		<territory>	
 			<location x="71228" y="-45904" minz="-3265" maxz="-3065" />
 			<location x="71184" y="-44888" minz="-3265" maxz="-3065" />
@@ -1361,7 +1361,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_31]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_31]">
 		<territory>	
 			<location x="73408" y="-43177" minz="-3296" maxz="-3096" />
 			<location x="72584" y="-42941" minz="-3296" maxz="-3096" />
@@ -1374,7 +1374,7 @@
 		<npc id="21510" count="2" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_32]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_32]">
 		<territory>	
 			<location x="71262" y="-41952" minz="-3260" maxz="-3060" />
 			<location x="72438" y="-42208" minz="-3260" maxz="-3060" />
@@ -1387,7 +1387,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_33]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_33]">
 		<territory>	
 			<location x="74004" y="-41863" minz="-3333" maxz="-3033" />
 			<location x="74724" y="-41379" minz="-3333" maxz="-3033" />
@@ -1398,7 +1398,7 @@
 		<npc id="21508" count="1" respawn="42" />	
 		<npc id="21510" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_34]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_34]">
 		<territory>	
 			<location x="74494" y="-43260" minz="-3326" maxz="-3126" />
 			<location x="74734" y="-42640" minz="-3326" maxz="-3126" />
@@ -1409,7 +1409,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_35]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_35]">
 		<territory>	
 			<location x="72403" y="-43493" minz="-3261" maxz="-3061" />
 			<location x="73087" y="-43797" minz="-3261" maxz="-3061" />
@@ -1423,7 +1423,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_351]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_351]">
 		<territory>	
 			<location x="77914" y="-40371" minz="-3316" maxz="-3116" />
 			<location x="76302" y="-39727" minz="-3316" maxz="-3116" />
@@ -1437,7 +1437,7 @@
 		<npc id="21510" count="3" respawn="42" />	
 		<npc id="21509" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_36]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_36]">
 		<territory>	
 			<location x="77878" y="-43304" minz="-3390" maxz="-3090" />
 			<location x="78550" y="-43796" minz="-3390" maxz="-3090" />
@@ -1449,7 +1449,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21510" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_37]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_37]">
 		<territory>	
 			<location x="77693" y="-45232" minz="-3317" maxz="-3117" />
 			<location x="78601" y="-44508" minz="-3317" maxz="-3117" />
@@ -1463,7 +1463,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_38]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_38]">
 		<territory>	
 			<location x="74683" y="-45807" minz="-3298" maxz="-3098" />
 			<location x="77631" y="-45243" minz="-3298" maxz="-3098" />
@@ -1476,7 +1476,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_39]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_39]">
 		<territory>	
 			<location x="73696" y="-47790" minz="-3327" maxz="-3127" />
 			<location x="78120" y="-46434" minz="-3327" maxz="-3127" />
@@ -1488,7 +1488,7 @@
 		<npc id="21510" count="3" respawn="42" />	
 		<npc id="21509" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_40]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_40]">
 		<territory>	
 			<location x="78130" y="-46421" minz="-3302" maxz="-3102" />
 			<location x="79494" y="-46301" minz="-3302" maxz="-3102" />
@@ -1500,7 +1500,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_41]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_41]">
 		<territory>	
 			<location x="79514" y="-46296" minz="-3287" maxz="-3087" />
 			<location x="81358" y="-46324" minz="-3287" maxz="-3087" />
@@ -1513,7 +1513,7 @@
 		<npc id="21510" count="2" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_42]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_42]">
 		<territory>	
 			<location x="83820" y="-44985" minz="-3261" maxz="-2961" />
 			<location x="82420" y="-44725" minz="-3261" maxz="-2961" />
@@ -1527,7 +1527,7 @@
 		<npc id="21510" count="2" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_43]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_43]">
 		<territory>	
 			<location x="82393" y="-44713" minz="-3292" maxz="-3092" />
 			<location x="83813" y="-44981" minz="-3292" maxz="-3092" />
@@ -1541,7 +1541,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_44]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_44]">
 		<territory>	
 			<location x="80632" y="-44415" minz="-3386" maxz="-3086" />
 			<location x="80976" y="-44155" minz="-3386" maxz="-3086" />
@@ -1555,7 +1555,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_45]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_45]">
 		<territory>	
 			<location x="78599" y="-44527" minz="-3289" maxz="-3089" />
 			<location x="79643" y="-44351" minz="-3289" maxz="-3089" />
@@ -1572,7 +1572,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_46]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_46]">
 		<territory>	
 			<location x="77727" y="-41684" minz="-3319" maxz="-3119" />
 			<location x="78547" y="-42228" minz="-3319" maxz="-3119" />
@@ -1584,7 +1584,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_47]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_47]">
 		<territory>	
 			<location x="79572" y="-41249" minz="-3261" maxz="-3061" />
 			<location x="80280" y="-41325" minz="-3261" maxz="-3061" />
@@ -1596,7 +1596,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_48]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_48]">
 		<territory>	
 			<location x="80641" y="-42410" minz="-3287" maxz="-3087" />
 			<location x="81037" y="-42614" minz="-3287" maxz="-3087" />
@@ -1609,7 +1609,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_49]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_49]">
 		<territory>	
 			<location x="81039" y="-42635" minz="-3329" maxz="-3129" />
 			<location x="81551" y="-41903" minz="-3329" maxz="-3129" />
@@ -1622,7 +1622,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_50]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_50]">
 		<territory>	
 			<location x="83069" y="-43320" minz="-3277" maxz="-2977" />
 			<location x="82681" y="-42260" minz="-3277" maxz="-2977" />
@@ -1635,7 +1635,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_51]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_51]">
 		<territory>	
 			<location x="83076" y="-43333" minz="-3259" maxz="-2959" />
 			<location x="83864" y="-41929" minz="-3259" maxz="-2959" />
@@ -1648,7 +1648,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_52]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_52]">
 		<territory>	
 			<location x="82058" y="-40780" minz="-3291" maxz="-3091" />
 			<location x="82886" y="-40836" minz="-3291" maxz="-3091" />
@@ -1661,7 +1661,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_521]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_521]">
 		<territory>	
 			<location x="77638" y="-51370" minz="-2403" maxz="-2203" />
 			<location x="78342" y="-50690" minz="-2403" maxz="-2203" />
@@ -1674,7 +1674,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_53]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_53]">
 		<territory>	
 			<location x="78612" y="-52058" minz="-2366" maxz="-2166" />
 			<location x="78088" y="-51534" minz="-2366" maxz="-2166" />
@@ -1685,7 +1685,7 @@
 		<npc id="21513" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_54]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_54]">
 		<territory>	
 			<location x="80114" y="-52511" minz="-2390" maxz="-2190" />
 			<location x="79546" y="-51811" minz="-2390" maxz="-2190" />
@@ -1698,7 +1698,7 @@
 		<npc id="21514" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_55]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_55]">
 		<territory>	
 			<location x="79571" y="-51786" minz="-2380" maxz="-2180" />
 			<location x="80127" y="-52506" minz="-2380" maxz="-2180" />
@@ -1711,7 +1711,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_56]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_56]">
 		<territory>	
 			<location x="79784" y="-50884" minz="-2357" maxz="-2157" />
 			<location x="80988" y="-50660" minz="-2357" maxz="-2157" />
@@ -1723,7 +1723,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_57]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_57]">
 		<territory>	
 			<location x="82475" y="-51494" minz="-2414" maxz="-2214" />
 			<location x="82031" y="-50862" minz="-2414" maxz="-2214" />
@@ -1736,7 +1736,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_58]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_58]">
 		<territory>	
 			<location x="82974" y="-52601" minz="-2421" maxz="-2221" />
 			<location x="83074" y="-51609" minz="-2421" maxz="-2221" />
@@ -1748,7 +1748,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_59]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_59]">
 		<territory>	
 			<location x="83853" y="-53000" minz="-2494" maxz="-2194" />
 			<location x="85261" y="-52444" minz="-2494" maxz="-2194" />
@@ -1761,7 +1761,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_60]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_60]">
 		<territory>	
 			<location x="83680" y="-51248" minz="-2605" maxz="-2205" />
 			<location x="84844" y="-52092" minz="-2605" maxz="-2205" />
@@ -1774,7 +1774,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_61]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_61]">
 		<territory>	
 			<location x="85375" y="-54082" minz="-2370" maxz="-2070" />
 			<location x="85867" y="-54166" minz="-2370" maxz="-2070" />
@@ -1787,7 +1787,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_62]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_62]">
 		<territory>	
 			<location x="84293" y="-55548" minz="-2401" maxz="-2101" />
 			<location x="84909" y="-55356" minz="-2401" maxz="-2101" />
@@ -1799,7 +1799,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_63]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_63]">
 		<territory>	
 			<location x="86976" y="-56458" minz="-2429" maxz="-2129" />
 			<location x="86264" y="-54670" minz="-2429" maxz="-2129" />
@@ -1812,7 +1812,7 @@
 		<npc id="21515" count="2" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_64]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_64]">
 		<territory>	
 			<location x="83100" y="-56065" minz="-2369" maxz="-2169" />
 			<location x="84288" y="-56485" minz="-2369" maxz="-2169" />
@@ -1825,7 +1825,7 @@
 		<npc id="21515" count="2" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_65]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_65]">
 		<territory>	
 			<location x="80515" y="-53407" minz="-2384" maxz="-2184" />
 			<location x="82583" y="-53631" minz="-2384" maxz="-2184" />
@@ -1839,7 +1839,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_66]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_66]">
 		<territory>	
 			<location x="78596" y="-55331" minz="-2401" maxz="-1901" />
 			<location x="80500" y="-53419" minz="-2401" maxz="-1901" />
@@ -1852,7 +1852,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_67]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_67]">
 		<territory>	
 			<location x="77500" y="-56487" minz="-2575" maxz="-2075" />
 			<location x="79948" y="-57971" minz="-2575" maxz="-2075" />
@@ -1863,7 +1863,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_68]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_68]">
 		<territory>	
 			<location x="79950" y="-57967" minz="-2405" maxz="-2205" />
 			<location x="82378" y="-58227" minz="-2405" maxz="-2205" />
@@ -1876,7 +1876,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_69]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_69]">
 		<territory>	
 			<location x="84174" y="-58149" minz="-2414" maxz="-2214" />
 			<location x="84282" y="-56501" minz="-2414" maxz="-2214" />
@@ -1889,7 +1889,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_70]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_70]">
 		<territory>	
 			<location x="84213" y="-58121" minz="-2432" maxz="-2232" />
 			<location x="86917" y="-57833" minz="-2432" maxz="-2232" />
@@ -1901,7 +1901,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_71]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_71]">
 		<territory>	
 			<location x="84280" y="-53492" minz="-2415" maxz="-2115" />
 			<location x="85500" y="-52984" minz="-2415" maxz="-2115" />
@@ -1911,7 +1911,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_72]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_72]">
 		<territory>	
 			<location x="86927" y="-57833" minz="-2422" maxz="-2222" />
 			<location x="88119" y="-57689" minz="-2422" maxz="-2222" />
@@ -1923,7 +1923,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_73]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_73]">
 		<territory>	
 			<location x="88812" y="-59323" minz="-2543" maxz="-2243" />
 			<location x="90580" y="-58271" minz="-2543" maxz="-2243" />
@@ -1936,7 +1936,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_74]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_74]">
 		<territory>	
 			<location x="90620" y="-62087" minz="-2408" maxz="-2108" />
 			<location x="91444" y="-59863" minz="-2408" maxz="-2108" />
@@ -1950,7 +1950,7 @@
 		<npc id="21515" count="3" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_75]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_75]">
 		<territory>	
 			<location x="87914" y="-62159" minz="-2434" maxz="-2134" />
 			<location x="89542" y="-61987" minz="-2434" maxz="-2134" />
@@ -1964,7 +1964,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_76]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_76]">
 		<territory>	
 			<location x="86834" y="-61157" minz="-2406" maxz="-2206" />
 			<location x="87054" y="-61441" minz="-2406" maxz="-2206" />
@@ -1977,7 +1977,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_77]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_77]">
 		<territory>	
 			<location x="88062" y="-59317" minz="-2415" maxz="-2215" />
 			<location x="88798" y="-59317" minz="-2415" maxz="-2215" />
@@ -1990,7 +1990,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_78]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_78]">
 		<territory>	
 			<location x="86291" y="-59465" minz="-2399" maxz="-2199" />
 			<location x="86975" y="-59605" minz="-2399" maxz="-2199" />
@@ -2004,7 +2004,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_79]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_79]">
 		<territory>	
 			<location x="84784" y="-60987" minz="-2394" maxz="-2194" />
 			<location x="84764" y="-59327" minz="-2394" maxz="-2194" />
@@ -2017,7 +2017,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_80]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_80]">
 		<territory>	
 			<location x="86269" y="-59530" minz="-2466" maxz="-2266" />
 			<location x="85757" y="-60158" minz="-2466" maxz="-2266" />
@@ -2031,7 +2031,7 @@
 		<npc id="21515" count="2" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_81]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_81]">
 		<territory>	
 			<location x="81624" y="-61028" minz="-2414" maxz="-2214" />
 			<location x="83744" y="-60992" minz="-2414" maxz="-2214" />
@@ -2044,7 +2044,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_82]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_82]">
 		<territory>	
 			<location x="80447" y="-58883" minz="-2386" maxz="-2186" />
 			<location x="81759" y="-58967" minz="-2386" maxz="-2186" />
@@ -2057,7 +2057,7 @@
 		<npc id="21515" count="2" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_83]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_83]">
 		<territory>	
 			<location x="80301" y="-61984" minz="-2392" maxz="-2192" />
 			<location x="80553" y="-61160" minz="-2392" maxz="-2192" />
@@ -2070,7 +2070,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_84]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_84]">
 		<territory>	
 			<location x="80305" y="-61977" minz="-2383" maxz="-2183" />
 			<location x="83069" y="-62105" minz="-2383" maxz="-2183" />
@@ -2082,7 +2082,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_85]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_85]">
 		<territory>	
 			<location x="83099" y="-62095" minz="-2395" maxz="-2195" />
 			<location x="84523" y="-62579" minz="-2395" maxz="-2195" />
@@ -2095,7 +2095,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_86]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_86]">
 		<territory>	
 			<location x="85148" y="-62167" minz="-2422" maxz="-2222" />
 			<location x="85680" y="-62427" minz="-2422" maxz="-2222" />
@@ -2106,7 +2106,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_87]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_87]">
 		<territory>	
 			<location x="85693" y="-63964" minz="-2358" maxz="-2058" />
 			<location x="86445" y="-63752" minz="-2358" maxz="-2058" />
@@ -2119,7 +2119,7 @@
 		<npc id="21514" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_88]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_88]">
 		<territory>	
 			<location x="83494" y="-63376" minz="-2390" maxz="-2190" />
 			<location x="84730" y="-64164" minz="-2390" maxz="-2190" />
@@ -2130,7 +2130,7 @@
 		<npc id="21514" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_89]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_89]">
 		<territory>	
 			<location x="83492" y="-63354" minz="-2418" maxz="-2218" />
 			<location x="84404" y="-63258" minz="-2418" maxz="-2218" />
@@ -2141,7 +2141,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_90]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_90]">
 		<territory>	
 			<location x="82407" y="-64117" minz="-2449" maxz="-2249" />
 			<location x="83555" y="-63549" minz="-2449" maxz="-2249" />
@@ -2154,7 +2154,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_91]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_91]">
 		<territory>	
 			<location x="81547" y="-64968" minz="-2398" maxz="-2198" />
 			<location x="82659" y="-64464" minz="-2398" maxz="-2198" />
@@ -2167,7 +2167,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_92]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_92]">
 		<territory>	
 			<location x="79441" y="-64663" minz="-2392" maxz="-2192" />
 			<location x="81257" y="-64487" minz="-2392" maxz="-2192" />
@@ -2179,7 +2179,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_93]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_93]">
 		<territory>	
 			<location x="81410" y="-62568" minz="-2390" maxz="-2190" />
 			<location x="81918" y="-62956" minz="-2390" maxz="-2190" />
@@ -2194,7 +2194,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_94]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_94]">
 		<territory>	
 			<location x="78951" y="-62102" minz="-2419" maxz="-2219" />
 			<location x="79271" y="-62930" minz="-2419" maxz="-2219" />
@@ -2205,7 +2205,7 @@
 		<npc id="21514" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_95]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_95]">
 		<territory>	
 			<location x="78317" y="-63135" minz="-2366" maxz="-2166" />
 			<location x="79305" y="-63419" minz="-2366" maxz="-2166" />
@@ -2215,7 +2215,7 @@
 		<npc id="21514" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_96]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_96]">
 		<territory>	
 			<location x="77424" y="-62268" minz="-2357" maxz="-2157" />
 			<location x="78304" y="-63112" minz="-2357" maxz="-2157" />
@@ -2226,7 +2226,7 @@
 		<npc id="21514" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_97]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_97]">
 		<territory>	
 			<location x="76472" y="-62971" minz="-2395" maxz="-2195" />
 			<location x="77264" y="-62267" minz="-2395" maxz="-2195" />
@@ -2240,7 +2240,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_98]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_98]">
 		<territory>	
 			<location x="75220" y="-61250" minz="-2426" maxz="-2226" />
 			<location x="78948" y="-60646" minz="-2426" maxz="-2226" />
@@ -2252,7 +2252,7 @@
 		<npc id="21515" count="2" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_99]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_99]">
 		<territory>	
 			<location x="77907" y="-62090" minz="-2413" maxz="-2213" />
 			<location x="78911" y="-62142" minz="-2413" maxz="-2213" />
@@ -2265,7 +2265,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_100]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_100]">
 		<territory>	
 			<location x="75603" y="-59148" minz="-2354" maxz="-2154" />
 			<location x="78559" y="-60260" minz="-2354" maxz="-2154" />
@@ -2277,7 +2277,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_101]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_101]">
 		<territory>	
 			<location x="78022" y="-58982" minz="-2507" maxz="-2207" />
 			<location x="78974" y="-59386" minz="-2507" maxz="-2207" />
@@ -2290,7 +2290,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_102]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_102]">
 		<territory>	
 			<location x="77081" y="-57796" minz="-2500" maxz="-2300" />
 			<location x="78077" y="-57652" minz="-2500" maxz="-2300" />
@@ -2303,7 +2303,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_103]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_103]">
 		<territory>	
 			<location x="77411" y="-58984" minz="-2391" maxz="-2191" />
 			<location x="76931" y="-58304" minz="-2391" maxz="-2191" />
@@ -2316,7 +2316,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_104]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_104]">
 		<territory>	
 			<location x="88186" y="-54313" minz="-2659" maxz="-2459" />
 			<location x="88938" y="-52761" minz="-2659" maxz="-2459" />
@@ -2332,7 +2332,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_105]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_105]">
 		<territory>	
 			<location x="90272" y="-51931" minz="-2685" maxz="-2485" />
 			<location x="90756" y="-51919" minz="-2685" maxz="-2485" />
@@ -2345,7 +2345,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_106]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_106]">
 		<territory>	
 			<location x="88245" y="-54213" minz="-2699" maxz="-2499" />
 			<location x="90201" y="-54849" minz="-2699" maxz="-2499" />
@@ -2360,7 +2360,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_107]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_107]">
 		<territory>	
 			<location x="90231" y="-54841" minz="-2714" maxz="-2514" />
 			<location x="92391" y="-55961" minz="-2714" maxz="-2514" />
@@ -2375,7 +2375,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_108]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_108]">
 		<territory>	
 			<location x="90604" y="-52749" minz="-2701" maxz="-2501" />
 			<location x="91952" y="-51881" minz="-2701" maxz="-2501" />
@@ -2388,7 +2388,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_109]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_109]">
 		<territory>	
 			<location x="92620" y="-50470" minz="-2707" maxz="-2507" />
 			<location x="93552" y="-50390" minz="-2707" maxz="-2507" />
@@ -2400,7 +2400,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_110]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_110]">
 		<territory>	
 			<location x="92406" y="-55021" minz="-2689" maxz="-2489" />
 			<location x="93142" y="-53981" minz="-2689" maxz="-2489" />
@@ -2410,7 +2410,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_111]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_111]">
 		<territory>	
 			<location x="93100" y="-55982" minz="-2667" maxz="-2467" />
 			<location x="93392" y="-54326" minz="-2667" maxz="-2467" />
@@ -2424,7 +2424,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_112]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_112]">
 		<territory>	
 			<location x="94918" y="-55993" minz="-2708" maxz="-2508" />
 			<location x="94734" y="-55157" minz="-2708" maxz="-2508" />
@@ -2438,7 +2438,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_113]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_113]">
 		<territory>	
 			<location x="94930" y="-55997" minz="-2663" maxz="-2463" />
 			<location x="95490" y="-55525" minz="-2663" maxz="-2463" />
@@ -2451,7 +2451,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_114]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_114]">
 		<territory>	
 			<location x="93459" y="-53670" minz="-2679" maxz="-2479" />
 			<location x="95479" y="-53938" minz="-2679" maxz="-2479" />
@@ -2464,7 +2464,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_115]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_115]">
 		<territory>	
 			<location x="95487" y="-53928" minz="-2655" maxz="-2455" />
 			<location x="95003" y="-53260" minz="-2655" maxz="-2455" />
@@ -2476,7 +2476,7 @@
 		<npc id="21514" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_116]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_116]">
 		<territory>	
 			<location x="94307" y="-51974" minz="-2726" maxz="-2526" />
 			<location x="95815" y="-51802" minz="-2726" maxz="-2526" />
@@ -2488,7 +2488,7 @@
 		<npc id="21515" count="1" respawn="42" />	
 		<npc id="21516" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_117]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_117]">
 		<territory>	
 			<location x="93834" y="-52434" minz="-2706" maxz="-2506" />
 			<location x="94282" y="-51942" minz="-2706" maxz="-2506" />
@@ -2500,7 +2500,7 @@
 		<npc id="21514" count="1" respawn="42" />	
 		<npc id="21515" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_118]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_118]">
 		<territory>	
 			<location x="69437" y="-62166" minz="-3238" maxz="-2938" />
 			<location x="70157" y="-61302" minz="-3238" maxz="-2938" />
@@ -2512,7 +2512,7 @@
 		<npc id="21510" count="1" respawn="42" />	
 		<npc id="21509" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b01]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b01]">
 		<territory>	
 			<location x="71030" y="-60113" minz="-3375" maxz="-2975" />
 			<location x="70966" y="-59549" minz="-3375" maxz="-2975" />
@@ -2526,7 +2526,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="2" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b02]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b02]">
 		<territory>	
 			<location x="73522" y="-59473" minz="-3191" maxz="-2991" />
 			<location x="73454" y="-58861" minz="-3191" maxz="-2991" />
@@ -2543,7 +2543,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b03]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b03]">
 		<territory>	
 			<location x="72376" y="-55558" minz="-3335" maxz="-2935" />
 			<location x="72036" y="-54506" minz="-3335" maxz="-2935" />
@@ -2561,7 +2561,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="3" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b04]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b04]">
 		<territory>	
 			<location x="76091" y="-53873" minz="-3179" maxz="-2979" />
 			<location x="75447" y="-53721" minz="-3179" maxz="-2979" />
@@ -2577,7 +2577,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b05]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b05]">
 		<territory>	
 			<location x="74415" y="-51769" minz="-3255" maxz="-2955" />
 			<location x="74351" y="-51081" minz="-3255" maxz="-2955" />
@@ -2593,7 +2593,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b06]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b06]">
 		<territory>	
 			<location x="73198" y="-44860" minz="-3458" maxz="-3158" />
 			<location x="72682" y="-44392" minz="-3458" maxz="-3158" />
@@ -2610,7 +2610,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b07]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b07]">
 		<territory>	
 			<location x="74049" y="-42558" minz="-3418" maxz="-3118" />
 			<location x="73997" y="-41998" minz="-3418" maxz="-3118" />
@@ -2627,7 +2627,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b08]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b08]">
 		<territory>	
 			<location x="77309" y="-42410" minz="-3410" maxz="-3110" />
 			<location x="76629" y="-41878" minz="-3410" maxz="-3110" />
@@ -2645,7 +2645,7 @@
 		<npc id="21511" count="2" respawn="42" />	
 		<npc id="21512" count="3" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b09]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b09]">
 		<territory>	
 			<location x="80214" y="-42670" minz="-3422" maxz="-3122" />
 			<location x="80438" y="-42094" minz="-3422" maxz="-3122" />
@@ -2662,7 +2662,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b10]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b10]">
 		<territory>	
 			<location x="83118" y="-41483" minz="-3370" maxz="-3070" />
 			<location x="82686" y="-40931" minz="-3370" maxz="-3070" />
@@ -2680,7 +2680,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b11]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b11]">
 		<territory>	
 			<location x="81654" y="-45503" minz="-3366" maxz="-3066" />
 			<location x="81886" y="-45267" minz="-3366" maxz="-3066" />
@@ -2697,7 +2697,7 @@
 		<npc id="21511" count="1" respawn="42" />	
 		<npc id="21512" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b12]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b12]">
 		<territory>	
 			<location x="79526" y="-51746" minz="-2522" maxz="-2222" />
 			<location x="79638" y="-51098" minz="-2522" maxz="-2222" />
@@ -2712,7 +2712,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b13]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b13]">
 		<territory>	
 			<location x="83615" y="-50828" minz="-2470" maxz="-2170" />
 			<location x="83507" y="-50428" minz="-2470" maxz="-2170" />
@@ -2728,7 +2728,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b14]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b14]">
 		<territory>	
 			<location x="81946" y="-53719" minz="-2458" maxz="-2158" />
 			<location x="81398" y="-53767" minz="-2458" maxz="-2158" />
@@ -2747,7 +2747,7 @@
 		<npc id="21516" count="2" respawn="42" />	
 		<npc id="21517" count="3" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b15]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b15]">
 		<territory>	
 			<location x="78226" y="-58454" minz="-2542" maxz="-2242" />
 			<location x="78206" y="-58026" minz="-2542" maxz="-2242" />
@@ -2762,7 +2762,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b16]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b16]">
 		<territory>	
 			<location x="77796" y="-61961" minz="-2558" maxz="-2258" />
 			<location x="77836" y="-61333" minz="-2558" maxz="-2258" />
@@ -2777,7 +2777,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b17]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b17]">
 		<territory>	
 			<location x="82052" y="-59979" minz="-2414" maxz="-2114" />
 			<location x="81588" y="-59123" minz="-2414" maxz="-2114" />
@@ -2793,7 +2793,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b18]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b18]">
 		<territory>	
 			<location x="85533" y="-63207" minz="-2522" maxz="-2222" />
 			<location x="85685" y="-62647" minz="-2522" maxz="-2222" />
@@ -2807,7 +2807,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b19]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b19]">
 		<territory>	
 			<location x="89512" y="-60985" minz="-2462" maxz="-2162" />
 			<location x="89712" y="-60141" minz="-2462" maxz="-2162" />
@@ -2823,7 +2823,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b20]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b20]">
 		<territory>	
 			<location x="86034" y="-54576" minz="-2574" maxz="-2274" />
 			<location x="85642" y="-54220" minz="-2574" maxz="-2274" />
@@ -2838,7 +2838,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b21]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b21]">
 		<territory>	
 			<location x="90080" y="-52443" minz="-2727" maxz="-2427" />
 			<location x="90212" y="-51947" minz="-2727" maxz="-2427" />
@@ -2853,7 +2853,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b22]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b22]">
 		<territory>	
 			<location x="92777" y="-52363" minz="-2767" maxz="-2467" />
 			<location x="91981" y="-51967" minz="-2767" maxz="-2467" />
@@ -2868,7 +2868,7 @@
 		<npc id="21516" count="2" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b23]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b23]">
 		<territory>	
 			<location x="95179" y="-52286" minz="-2763" maxz="-2463" />
 			<location x="94747" y="-51982" minz="-2763" maxz="-2463" />
@@ -2884,7 +2884,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b24]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b24]">
 		<territory>	
 			<location x="85757" y="-59957" minz="-2550" maxz="-2350" />
 			<location x="86073" y="-59585" minz="-2550" maxz="-2350" />
@@ -2899,7 +2899,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b25]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b25]">
 		<territory>	
 			<location x="81382" y="-63921" minz="-2486" maxz="-2286" />
 			<location x="81826" y="-63537" minz="-2486" maxz="-2286" />
@@ -2914,7 +2914,7 @@
 		<npc id="21516" count="1" respawn="42" />	
 		<npc id="21517" count="1" respawn="42" />	
 	</spawn>
-	<spawn name="[rune12_2216_b26]">
+	<spawn spawn_bydefault="true"  name="[rune12_2216_b26]">
 		<territory>	
 			<location x="93421" y="-55220" minz="-2819" maxz="-2619" />
 			<location x="94109" y="-55536" minz="-2819" maxz="-2619" />

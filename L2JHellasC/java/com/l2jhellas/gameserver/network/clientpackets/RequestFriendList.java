@@ -34,7 +34,7 @@ public final class RequestFriendList extends L2GameClientPacket
 			
 			final L2PcInstance friend = L2World.getInstance().getPlayer(id);
 			
-			activeChar.sendPacket(SystemMessage.getSystemMessage((friend == null || friend.isOnline() == 0) ? SystemMessageId.S1_OFFLINE : SystemMessageId.S1_ONLINE).addString(friendName));
+			activeChar.sendPacket(SystemMessage.getSystemMessage((friend == null || !friend.isOnline()) ? SystemMessageId.S1_OFFLINE : SystemMessageId.S1_ONLINE).addString(friendName));
 		}
 		
 		activeChar.sendPacket(SystemMessageId.FRIEND_LIST_FOOTER);

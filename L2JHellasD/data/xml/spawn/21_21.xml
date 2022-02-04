@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[partisan_agit_2121_01]" event_name="fortress_of_resistance_siege_guards_no_owner">
+	<spawn spawn_bydefault="false"  name="[partisan_agit_2121_01]" event_name="fortress_of_resistance_siege_guards_no_owner">
 		<territory>	
 			<location x="44368" y="107440" minz="-2032" maxz="-1032" />
 			<location x="46080" y="108968" minz="-2032" maxz="-1032" />
@@ -29,7 +29,7 @@
 		<npc id="35373" count="1" respawn="60" pos="45168 109020 -1705 0" />	
 		<npc id="35372" count="15" respawn="60" />	
 	</spawn>
-    <spawn name="[partisan_agit_2121_01]" event_name="fortress_of_resistance_siege_guards_owner">
+    <spawn spawn_bydefault="false"  name="[partisan_agit_2121_01]" event_name="fortress_of_resistance_siege_guards_owner">
         <territory>	
             <location x="44368" y="107440" minz="-2032" maxz="-1032" />
             <location x="46080" y="108968" minz="-2032" maxz="-1032" />
@@ -57,19 +57,19 @@
         <npc id="35373" count="1" respawn="60" pos="45168 109020 -1705 0" />	
         <npc id="35372" count="15" respawn="60" />	
     </spawn>
-    <spawn name="[partisan_agit_2121_02]" event_name="fortress_of_resistance_siege_nurka_no_owner">
+    <spawn spawn_bydefault="false"  name="[partisan_agit_2121_02]" event_name="fortress_of_resistance_siege_nurka_no_owner">
         <npc id="35368" count="1" respawn="10800" pos="44525 108867 -2020 0" />	
     </spawn>
-	<spawn name="[partisan_agit_2121_02]" event_name="fortress_of_resistance_siege_nurka_owner">
+	<spawn spawn_bydefault="false"  name="[partisan_agit_2121_02]" event_name="fortress_of_resistance_siege_nurka_owner">
 		<npc id="35375" count="1" respawn="10800" pos="45109 112124 -1900 0" />	
 	</spawn>
-	<spawn name="[partisan_agit_2121_03]" event_name="fortress_of_resistance_no_siege">
+	<spawn spawn_bydefault="false"  name="[partisan_agit_2121_03]" event_name="fortress_of_resistance_no_siege">
 		<npc id="35382" count="1" respawn="60" pos="50343 111282 -1970 0" />	
 	</spawn>
-    <spawn name="[partisan_agit_2121_04]">
+    <spawn spawn_bydefault="true"  name="[partisan_agit_2121_04]">
         <npc id="35383" count="1" respawn="60" pos="43160 108840 -1984 0" />	
     </spawn>
-	<spawn name="[dion03_2121_01]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_01]">
 		<territory>	
 			<location x="47995" y="127717" minz="-3767" maxz="-2967" />
 			<location x="49791" y="127264" minz="-3767" maxz="-2967" />
@@ -79,7 +79,7 @@
 		<npc id="20547" count="3" respawn="60" />	
 		<npc id="20063" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_02]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_02]">
 		<territory>	
 			<location x="52016" y="127249" minz="-3768" maxz="-3568" />
 			<location x="51524" y="127878" minz="-3768" maxz="-3568" />
@@ -90,7 +90,7 @@
 		<npc id="20547" count="4" respawn="60" />	
 		<npc id="20063" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_03]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_03]">
 		<territory>	
 			<location x="50378" y="129034" minz="-3768" maxz="-2768" />
 			<location x="54160" y="126197" minz="-3768" maxz="-2768" />
@@ -100,7 +100,7 @@
 		<npc id="20547" count="4" respawn="60" />	
 		<npc id="20063" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_04]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_04]">
 		<territory>	
 			<location x="55877" y="123841" minz="-3726" maxz="-2826" />
 			<location x="55545" y="124840" minz="-3726" maxz="-2826" />
@@ -110,7 +110,7 @@
 		<npc id="20547" count="4" respawn="60" />	
 		<npc id="20063" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_05]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_05]">
 		<territory>	
 			<location x="50270" y="118823" minz="-3624" maxz="-2324" />
 			<location x="54388" y="121233" minz="-3624" maxz="-2324" />
@@ -122,7 +122,7 @@
 		<npc id="20063" count="5" respawn="60" />	
 		<npc id="20207" count="8" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_05s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_05s]">
 		<territory>	
 			<location x="51433" y="120726" minz="-3001" maxz="-2301" />
 			<location x="52003" y="121776" minz="-3001" maxz="-2301" />
@@ -133,7 +133,7 @@
 		<npc id="20547" count="3" respawn="60" />	
 		<npc id="20207" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_06]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_06]">
 		<territory>	
 			<location x="52120" y="124066" minz="-3821" maxz="-2921" />
 			<location x="51573" y="126308" minz="-3821" maxz="-2921" />
@@ -143,7 +143,7 @@
 		<npc id="20547" count="9" respawn="60" />	
 		<npc id="20063" count="3" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_07]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_07]">
 		<territory>	
 			<location x="38544" y="122605" minz="-2579" maxz="-1579" />
 			<location x="41831" y="125587" minz="-2579" maxz="-1579" />
@@ -155,7 +155,7 @@
 		<npc id="20063" count="5" respawn="60" />	
 		<npc id="20207" count="10" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_08]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_08]">
 		<territory>	
 			<location x="36493" y="118257" minz="-2257" maxz="-1057" />
 			<location x="39933" y="120206" minz="-2257" maxz="-1057" />
@@ -167,7 +167,7 @@
 		<npc id="20063" count="3" respawn="60" />	
 		<npc id="20207" count="4" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_09]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_09]">
 		<territory>	
 			<location x="36091" y="113112" minz="-2044" maxz="-844" />
 			<location x="38310" y="114391" minz="-2044" maxz="-844" />
@@ -179,7 +179,7 @@
 		<npc id="20207" count="8" respawn="60" />	
 		<npc id="20208" count="4" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_09s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_09s]">
 		<territory>	
 			<location x="35089" y="115098" minz="-1661" maxz="-961" />
 			<location x="36498" y="113764" minz="-1661" maxz="-961" />
@@ -189,7 +189,7 @@
 		<npc id="20063" count="1" respawn="60" />	
 		<npc id="20207" count="4" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_10]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_10]">
 		<territory>	
 			<location x="34733" y="113708" minz="-2061" maxz="-1261" />
 			<location x="35221" y="109796" minz="-2061" maxz="-1261" />
@@ -199,7 +199,7 @@
 		<npc id="20207" count="5" respawn="60" />	
 		<npc id="20208" count="5" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_11]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_11]">
 		<territory>	
 			<location x="37116" y="106244" minz="-1668" maxz="-868" />
 			<location x="39617" y="106485" minz="-1668" maxz="-868" />
@@ -209,7 +209,7 @@
 		<npc id="20207" count="5" respawn="60" />	
 		<npc id="20208" count="5" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_12]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_12]">
 		<territory>	
 			<location x="40412" y="104293" minz="-2088" maxz="-1288" />
 			<location x="41342" y="104023" minz="-2088" maxz="-1288" />
@@ -219,7 +219,7 @@
 		<npc id="20208" count="4" respawn="60" />	
 		<npc id="20209" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_13]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_13]">
 		<territory>	
 			<location x="40023" y="101330" minz="-1300" maxz="-1000" />
 			<location x="40948" y="101697" minz="-1300" maxz="-1000" />
@@ -231,7 +231,7 @@
 		<npc id="20210" count="3" respawn="60" />	
 		<npc id="20211" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_14]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_14]">
 		<territory>	
 			<location x="43014" y="102582" minz="-1596" maxz="-1096" />
 			<location x="44471" y="102087" minz="-1596" maxz="-1096" />
@@ -242,7 +242,7 @@
 		<npc id="20210" count="4" respawn="60" />	
 		<npc id="20211" count="3" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_15]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_15]">
 		<territory>	
 			<location x="41431" y="119745" minz="-3284" maxz="-1384" />
 			<location x="42260" y="119560" minz="-3284" maxz="-1384" />
@@ -254,7 +254,7 @@
 		<npc id="20207" count="6" respawn="60" />	
 		<npc id="20208" count="5" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_16]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_16]">
 		<territory>	
 			<location x="45975" y="120040" minz="-2748" maxz="-2048" />
 			<location x="46122" y="121257" minz="-2748" maxz="-2048" />
@@ -265,7 +265,7 @@
 		<npc id="20207" count="4" respawn="60" />	
 		<npc id="20208" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_17]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_17]">
 		<territory>	
 			<location x="42690" y="116410" minz="-2443" maxz="-1443" />
 			<location x="44885" y="117384" minz="-2443" maxz="-1443" />
@@ -277,7 +277,7 @@
 		<npc id="20208" count="8" respawn="60" />	
 		<npc id="20209" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_18]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_18]">
 		<territory>	
 			<location x="41982" y="118724" minz="-2257" maxz="-1957" />
 			<location x="41871" y="119345" minz="-2257" maxz="-1957" />
@@ -288,7 +288,7 @@
 		<npc id="20063" count="1" respawn="60" />	
 		<npc id="20207" count="3" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_19]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_19]">
 		<territory>	
 			<location x="40158" y="114878" minz="-2251" maxz="-1451" />
 			<location x="42564" y="116319" minz="-2251" maxz="-1451" />
@@ -300,7 +300,7 @@
 		<npc id="20208" count="6" respawn="60" />	
 		<npc id="20209" count="3" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_20]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_20]">
 		<territory>	
 			<location x="46263" y="115406" minz="-2429" maxz="-1629" />
 			<location x="46891" y="116091" minz="-2429" maxz="-1629" />
@@ -311,7 +311,7 @@
 		<npc id="20208" count="4" respawn="60" />	
 		<npc id="20209" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_21]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_21]">
 		<territory>	
 			<location x="45654" y="114804" minz="-2050" maxz="-1250" />
 			<location x="44627" y="115727" minz="-2050" maxz="-1250" />
@@ -323,7 +323,7 @@
 		<npc id="20210" count="5" respawn="60" />	
 		<npc id="20211" count="3" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_22]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_22]">
 		<territory>	
 			<location x="39458" y="113077" minz="-2131" maxz="-1831" />
 			<location x="40605" y="113485" minz="-2131" maxz="-1831" />
@@ -335,7 +335,7 @@
 		<npc id="20209" count="2" respawn="60" />	
 		<npc id="20210" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_23]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_23]">
 		<territory>	
 			<location x="44295" y="111711" minz="-1957" maxz="-1657" />
 			<location x="45208" y="112687" minz="-1957" maxz="-1657" />
@@ -346,7 +346,7 @@
 		<npc id="20210" count="3" respawn="60" />	
 		<npc id="20211" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_24]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_24]">
 		<territory>	
 			<location x="43921" y="110652" minz="-1755" maxz="-355" />
 			<location x="42462" y="113068" minz="-1755" maxz="-355" />
@@ -360,7 +360,7 @@
 		<npc id="20549" count="1" respawn="60" pos="40951 111575 -814 0" />	
 		<npc id="20549" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_24s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_24s]">
 		<territory>	
 			<location x="40147" y="109887" minz="-1650" maxz="-650" />
 			<location x="40713" y="110858" minz="-1650" maxz="-650" />
@@ -371,7 +371,7 @@
 		<npc id="20210" count="3" respawn="60" />	
 		<npc id="20211" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_25]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_25]">
 		<territory>	
 			<location x="43328" y="107161" minz="-1738" maxz="-38" />
 			<location x="41378" y="110023" minz="-1738" maxz="-38" />
@@ -383,7 +383,7 @@
 		<npc id="20210" count="5" respawn="60" />	
 		<npc id="20211" count="5" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_25s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_25s]">
 		<territory>	
 			<location x="41328" y="107611" minz="-1131" maxz="-131" />
 			<location x="42325" y="107390" minz="-1131" maxz="-131" />
@@ -394,7 +394,7 @@
 		<npc id="20210" count="2" respawn="60" />	
 		<npc id="20549" count="1" respawn="60" pos="41453 108173 -791 0" />	
 	</spawn>
-	<spawn name="[dion03_2121_26]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_26]">
 		<territory>	
 			<location x="42412" y="105188" minz="-1708" maxz="-1308" />
 			<location x="43497" y="104877" minz="-1708" maxz="-1308" />
@@ -406,7 +406,7 @@
 		<npc id="20210" count="2" respawn="60" />	
 		<npc id="20211" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_27]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_27]">
 		<territory>	
 			<location x="47586" y="104562" minz="-1738" maxz="-538" />
 			<location x="47399" y="107731" minz="-1738" maxz="-538" />
@@ -417,7 +417,7 @@
 		<npc id="20210" count="8" respawn="60" />	
 		<npc id="20211" count="6" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_27s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_27s]">
 		<territory>	
 			<location x="45671" y="105287" minz="-1207" maxz="-607" />
 			<location x="47105" y="105600" minz="-1207" maxz="-607" />
@@ -428,7 +428,7 @@
 		<npc id="20549" count="1" respawn="60" pos="46288 106144 -832 0" />	
 		<npc id="20549" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_28]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_28]">
 		<territory>	
 			<location x="51050" y="106484" minz="-1794" maxz="-794" />
 			<location x="51061" y="109961" minz="-1794" maxz="-794" />
@@ -439,10 +439,10 @@
 		<npc id="20210" count="9" respawn="60" />	
 		<npc id="20211" count="7" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_28s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_28s]">
 		<npc id="20549" count="1" respawn="60" pos="50016 108048 -1040 0" />	
 	</spawn>
-	<spawn name="[dion03_2121_29]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_29]">
 		<territory>	
 			<location x="46995" y="108393" minz="-2157" maxz="-1857" />
 			<location x="47919" y="108664" minz="-2157" maxz="-1857" />
@@ -453,7 +453,7 @@
 		<npc id="20210" count="2" respawn="60" />	
 		<npc id="20211" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_30]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_30]">
 		<territory>	
 			<location x="56114" y="106426" minz="-1859" maxz="-659" />
 			<location x="53325" y="107409" minz="-1859" maxz="-659" />
@@ -463,7 +463,7 @@
 		<npc id="20209" count="8" respawn="60" />	
 		<npc id="20210" count="12" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_31]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_31]">
 		<territory>	
 			<location x="56250" y="106502" minz="-1946" maxz="-746" />
 			<location x="57639" y="110391" minz="-1946" maxz="-746" />
@@ -474,7 +474,7 @@
 		<npc id="20209" count="3" respawn="60" />	
 		<npc id="20210" count="10" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_31s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_31s]">
 		<territory>	
 			<location x="55055" y="108926" minz="-1507" maxz="-757" />
 			<location x="56245" y="109653" minz="-1507" maxz="-757" />
@@ -485,7 +485,7 @@
 		<npc id="20209" count="2" respawn="60" />	
 		<npc id="20210" count="6" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_32]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_32]">
 		<territory>	
 			<location x="57465" y="110499" minz="-2149" maxz="-949" />
 			<location x="57895" y="113597" minz="-2149" maxz="-949" />
@@ -496,7 +496,7 @@
 		<npc id="20208" count="9" respawn="60" />	
 		<npc id="20209" count="4" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_32s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_32s]">
 		<territory>	
 			<location x="57359" y="111384" minz="-1918" maxz="-1218" />
 			<location x="57744" y="113119" minz="-1918" maxz="-1218" />
@@ -507,7 +507,7 @@
 		<npc id="20207" count="2" respawn="60" />	
 		<npc id="20208" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_33]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_33]">
 		<territory>	
 			<location x="56548" y="104902" minz="-1552" maxz="-1302" />
 			<location x="57407" y="105289" minz="-1552" maxz="-1302" />
@@ -518,7 +518,7 @@
 		<npc id="20210" count="3" respawn="60" />	
 		<npc id="20211" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_34]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_34]">
 		<territory>	
 			<location x="59696" y="110517" minz="-1912" maxz="-1312" />
 			<location x="59853" y="111128" minz="-1912" maxz="-1312" />
@@ -530,7 +530,7 @@
 		<npc id="20210" count="2" respawn="60" />	
 		<npc id="20211" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_35]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_35]">
 		<territory>	
 			<location x="48882" y="111848" minz="-2112" maxz="-1812" />
 			<location x="50326" y="111644" minz="-2112" maxz="-1812" />
@@ -542,7 +542,7 @@
 		<npc id="20210" count="3" respawn="60" />	
 		<npc id="20211" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_36]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_36]">
 		<territory>	
 			<location x="51971" y="114764" minz="-1898" maxz="-898" />
 			<location x="50772" y="115816" minz="-1898" maxz="-898" />
@@ -552,7 +552,7 @@
 		<npc id="20207" count="6" respawn="60" />	
 		<npc id="20208" count="9" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_37]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_37]">
 		<territory>	
 			<location x="52264" y="112861" minz="-2115" maxz="-1815" />
 			<location x="53648" y="114229" minz="-2115" maxz="-1815" />
@@ -563,7 +563,7 @@
 		<npc id="20208" count="4" respawn="60" />	
 		<npc id="20210" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_38]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_38]">
 		<territory>	
 			<location x="54980" y="114996" minz="-2239" maxz="-1239" />
 			<location x="54424" y="117789" minz="-2239" maxz="-1239" />
@@ -573,7 +573,7 @@
 		<npc id="20207" count="6" respawn="60" />	
 		<npc id="20208" count="7" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_39]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_39]">
 		<territory>	
 			<location x="56737" y="115971" minz="-2783" maxz="-1383" />
 			<location x="57639" y="117683" minz="-2783" maxz="-1383" />
@@ -584,7 +584,7 @@
 		<npc id="20207" count="7" respawn="60" />	
 		<npc id="20208" count="3" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_40]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_40]">
 		<territory>	
 			<location x="55777" y="117833" minz="-3375" maxz="-1475" />
 			<location x="57245" y="120487" minz="-3375" maxz="-1475" />
@@ -594,7 +594,7 @@
 		<npc id="20063" count="3" respawn="60" />	
 		<npc id="20207" count="7" respawn="60" />	
 	</spawn>
-	<spawn name="[dion03_2121_p13]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p13]">
 		<territory>	
 			<location x="40023" y="101330" minz="-1300" maxz="-1000" />
 			<location x="40948" y="101697" minz="-1300" maxz="-1000" />
@@ -605,7 +605,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p21]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p21]">
 		<territory>	
 			<location x="45654" y="114804" minz="-2050" maxz="-1250" />
 			<location x="44627" y="115727" minz="-2050" maxz="-1250" />
@@ -615,7 +615,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p24]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p24]">
 		<territory>	
 			<location x="43921" y="110652" minz="-1755" maxz="-355" />
 			<location x="42462" y="113068" minz="-1755" maxz="-355" />
@@ -626,7 +626,7 @@
 		<npc id="20755" count="1" respawn="80" />	
 		<npc id="20755" count="2" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p24s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p24s]">
 		<territory>	
 			<location x="40147" y="109887" minz="-1650" maxz="-650" />
 			<location x="40713" y="110858" minz="-1650" maxz="-650" />
@@ -636,7 +636,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p25]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p25]">
 		<territory>	
 			<location x="43613" y="107320" minz="-1738" maxz="-38" />
 			<location x="41378" y="110023" minz="-1738" maxz="-38" />
@@ -647,7 +647,7 @@
 		<npc id="20755" count="1" respawn="80" />	
 		<npc id="20755" count="2" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p25s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p25s]">
 		<territory>	
 			<location x="41328" y="107611" minz="-1131" maxz="-131" />
 			<location x="42776" y="107512" minz="-1131" maxz="-131" />
@@ -657,7 +657,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p27]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p27]">
 		<territory>	
 			<location x="47586" y="104562" minz="-1738" maxz="-538" />
 			<location x="47399" y="107731" minz="-1738" maxz="-538" />
@@ -668,7 +668,7 @@
 		<npc id="20755" count="2" respawn="80" />	
 		<npc id="20755" count="2" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p27s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p27s]">
 		<territory>	
 			<location x="45671" y="105287" minz="-1207" maxz="-607" />
 			<location x="47105" y="105600" minz="-1207" maxz="-607" />
@@ -678,7 +678,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p28]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p28]">
 		<territory>	
 			<location x="51050" y="106484" minz="-1794" maxz="-794" />
 			<location x="51061" y="109961" minz="-1794" maxz="-794" />
@@ -689,7 +689,7 @@
 		<npc id="20755" count="2" respawn="80" />	
 		<npc id="20755" count="2" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p28s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p28s]">
 		<territory>	
 			<location x="49587" y="106250" minz="-1503" maxz="-903" />
 			<location x="50687" y="106790" minz="-1503" maxz="-903" />
@@ -699,7 +699,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p29]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p29]">
 		<territory>	
 			<location x="46995" y="108393" minz="-2157" maxz="-1857" />
 			<location x="47919" y="108664" minz="-2157" maxz="-1857" />
@@ -709,7 +709,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p30]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p30]">
 		<territory>	
 			<location x="56114" y="106426" minz="-1859" maxz="-659" />
 			<location x="53325" y="107409" minz="-1859" maxz="-659" />
@@ -718,7 +718,7 @@
 		</territory>
 		<npc id="20755" count="2" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p301s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p301s]">
 		<territory>	
 			<location x="51151" y="102858" minz="-1241" maxz="-641" />
 			<location x="52004" y="103559" minz="-1241" maxz="-641" />
@@ -728,7 +728,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_2121_p302s]">
+	<spawn spawn_bydefault="true"  name="[dion03_2121_p302s]">
 		<territory>	
 			<location x="52187" y="105370" minz="-1859" maxz="-1359" />
 			<location x="53448" y="105683" minz="-1859" maxz="-1359" />
@@ -738,7 +738,7 @@
 		</territory>
 		<npc id="20755" count="1" respawn="80" />	
 	</spawn>
-	<spawn name="[dion03_mb2121_01]">
+	<spawn spawn_bydefault="true"  name="[dion03_mb2121_01]">
 		<territory>	
 			<location x="39659" y="101745" minz="-1390" maxz="-790" />
 			<location x="40050" y="101470" minz="-1390" maxz="-790" />
@@ -749,7 +749,7 @@
 		</territory>
 		<npc id="25388" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[dion03_mb2121_02]">
+	<spawn spawn_bydefault="true"  name="[dion03_mb2121_02]">
 		<territory>	
 			<location x="44694" y="120364" minz="-2758" maxz="-2158" />
 			<location x="46120" y="119953" minz="-2758" maxz="-2158" />
@@ -758,7 +758,7 @@
 		</territory>
 		<npc id="25391" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[dion03_mb2121_03]">
+	<spawn spawn_bydefault="true"  name="[dion03_mb2121_03]">
 		<territory>	
 			<location x="48485" y="127590" minz="-3761" maxz="-3161" />
 			<location x="49668" y="127446" minz="-3761" maxz="-3161" />
@@ -767,7 +767,7 @@
 		</territory>
 		<npc id="25272" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[dion03_mb2121_04]">
+	<spawn spawn_bydefault="true"  name="[dion03_mb2121_04]">
 		<territory>	
 			<location x="53245" y="102524" minz="-1129" maxz="-529" />
 			<location x="53868" y="102087" minz="-1129" maxz="-529" />
@@ -776,7 +776,7 @@
 		</territory>
 		<npc id="25079" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[dion03_mb2121_05]">
+	<spawn spawn_bydefault="true"  name="[dion03_mb2121_05]">
 		<territory>	
 			<location x="42772" y="123908" minz="-3312" maxz="-2512" />
 			<location x="44524" y="123164" minz="-3312" maxz="-2512" />
@@ -785,7 +785,7 @@
 		</territory>
 		<npc id="25152" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq02]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq02]" event_name="[ssq_event]">
 		<territory>	
 			<location x="44919" y="119975" minz="-5446" maxz="-5296" />
 			<location x="45569" y="119976" minz="-5446" maxz="-5296" />
@@ -797,7 +797,7 @@
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq03]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq03]" event_name="[ssq_event]">
 		<territory>	
 			<location x="44931" y="118632" minz="-5444" maxz="-5294" />
 			<location x="45573" y="118629" minz="-5444" maxz="-5294" />
@@ -809,7 +809,7 @@
 		<npc id="21170" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq04]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq04]" event_name="[ssq_event]">
 		<territory>	
 			<location x="46929" y="118916" minz="-5447" maxz="-5297" />
 			<location x="48298" y="118922" minz="-5447" maxz="-5297" />
@@ -821,7 +821,7 @@
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq05]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq05]" event_name="[ssq_event]">
 		<territory>	
 			<location x="46087" y="119750" minz="-5441" maxz="-5291" />
 			<location x="46725" y="119743" minz="-5441" maxz="-5291" />
@@ -833,7 +833,7 @@
 		<npc id="21170" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq06]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq06]" event_name="[ssq_event]">
 		<territory>	
 			<location x="46202" y="120836" minz="-5448" maxz="-5298" />
 			<location x="46841" y="120836" minz="-5448" maxz="-5298" />
@@ -845,7 +845,7 @@
 		<npc id="21170" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq07]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq07]" event_name="[ssq_event]">
 		<territory>	
 			<location x="46207" y="121977" minz="-5452" maxz="-5302" />
 			<location x="46858" y="121973" minz="-5452" maxz="-5302" />
@@ -857,7 +857,7 @@
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq08]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq08]" event_name="[ssq_event]">
 		<territory>	
 			<location x="49543" y="123242" minz="-5424" maxz="-5274" />
 			<location x="50173" y="123240" minz="-5424" maxz="-5274" />
@@ -869,7 +869,7 @@
 		<npc id="21170" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq09]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq09]" event_name="[ssq_event]">
 		<territory>	
 			<location x="47660" y="121325" minz="-5455" maxz="-5305" />
 			<location x="49020" y="121314" minz="-5455" maxz="-5305" />
@@ -881,7 +881,7 @@
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq10]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq10]" event_name="[ssq_event]">
 		<territory>	
 			<location x="48285" y="120029" minz="-5449" maxz="-5299" />
 			<location x="50093" y="120046" minz="-5449" maxz="-5299" />
@@ -893,7 +893,7 @@
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq11]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq11]" event_name="[ssq_event]">
 		<territory>	
 			<location x="49540" y="118633" minz="-5446" maxz="-5296" />
 			<location x="50167" y="118633" minz="-5446" maxz="-5296" />
@@ -905,7 +905,7 @@
 		<npc id="21170" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq12]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq12]" event_name="[ssq_event]">
 		<territory>	
 			<location x="50632" y="118630" minz="-5448" maxz="-5298" />
 			<location x="51269" y="118626" minz="-5448" maxz="-5298" />
@@ -917,7 +917,7 @@
 		<npc id="21171" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq13]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq13]" event_name="[ssq_event]">
 		<territory>	
 			<location x="50656" y="120516" minz="-5450" maxz="-5300" />
 			<location x="51988" y="120491" minz="-5450" maxz="-5300" />
@@ -929,7 +929,7 @@
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq14]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq14]" event_name="[ssq_event]">
 		<territory>	
 			<location x="50615" y="123229" minz="-5446" maxz="-5296" />
 			<location x="51256" y="123227" minz="-5446" maxz="-5296" />
@@ -941,7 +941,7 @@
 		<npc id="21171" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq15]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq15]" event_name="[ssq_event]">
 		<territory>	
 			<location x="51584" y="122480" minz="-5446" maxz="-5296" />
 			<location x="52229" y="122484" minz="-5446" maxz="-5296" />
@@ -953,7 +953,7 @@
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq16]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq16]" event_name="[ssq_event]">
 		<territory>	
 			<location x="52667" y="123210" minz="-5449" maxz="-5299" />
 			<location x="54012" y="123195" minz="-5449" maxz="-5299" />
@@ -965,7 +965,7 @@
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq17]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq17]" event_name="[ssq_event]">
 		<territory>	
 			<location x="55240" y="123240" minz="-5445" maxz="-5295" />
 			<location x="55867" y="123235" minz="-5445" maxz="-5295" />
@@ -977,7 +977,7 @@
 		<npc id="21171" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq18]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq18]" event_name="[ssq_event]">
 		<territory>	
 			<location x="54507" y="121813" minz="-5448" maxz="-5298" />
 			<location x="55841" y="121807" minz="-5448" maxz="-5298" />
@@ -989,7 +989,7 @@
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq19]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq19]" event_name="[ssq_event]">
 		<territory>	
 			<location x="52739" y="119531" minz="-5455" maxz="-5305" />
 			<location x="53388" y="119534" minz="-5455" maxz="-5305" />
@@ -1001,7 +1001,7 @@
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq20]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq20]" event_name="[ssq_event]">
 		<territory>	
 			<location x="55233" y="118638" minz="-5446" maxz="-5296" />
 			<location x="55862" y="118635" minz="-5446" maxz="-5296" />
@@ -1013,7 +1013,7 @@
 		<npc id="21171" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq21]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq21]" event_name="[ssq_event]">
 		<territory>	
 			<location x="55226" y="117544" minz="-5442" maxz="-5292" />
 			<location x="55860" y="117538" minz="-5442" maxz="-5292" />
@@ -1025,7 +1025,7 @@
 		<npc id="21172" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq22]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq22]" event_name="[ssq_event]">
 		<territory>	
 			<location x="55223" y="114711" minz="-5453" maxz="-5303" />
 			<location x="55887" y="114712" minz="-5453" maxz="-5303" />
@@ -1037,7 +1037,7 @@
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq23]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq23]" event_name="[ssq_event]">
 		<territory>	
 			<location x="55248" y="112934" minz="-5447" maxz="-5297" />
 			<location x="55869" y="112927" minz="-5447" maxz="-5297" />
@@ -1049,7 +1049,7 @@
 		<npc id="21172" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq24]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq24]" event_name="[ssq_event]">
 		<territory>	
 			<location x="52527" y="112901" minz="-5449" maxz="-5299" />
 			<location x="53856" y="112912" minz="-5449" maxz="-5299" />
@@ -1061,7 +1061,7 @@
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq25]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq25]" event_name="[ssq_event]">
 		<territory>	
 			<location x="52755" y="115453" minz="-5454" maxz="-5304" />
 			<location x="54557" y="115438" minz="-5454" maxz="-5304" />
@@ -1073,7 +1073,7 @@
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq26]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq26]" event_name="[ssq_event]">
 		<territory>	
 			<location x="52289" y="117521" minz="-5444" maxz="-5294" />
 			<location x="53640" y="117520" minz="-5444" maxz="-5294" />
@@ -1085,7 +1085,7 @@
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq27]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq27]" event_name="[ssq_event]">
 		<territory>	
 			<location x="50628" y="117546" minz="-5452" maxz="-5302" />
 			<location x="51256" y="117549" minz="-5452" maxz="-5302" />
@@ -1097,7 +1097,7 @@
 		<npc id="21172" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq28]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq28]" event_name="[ssq_event]">
 		<territory>	
 			<location x="50625" y="116455" minz="-5449" maxz="-5299" />
 			<location x="51260" y="116454" minz="-5449" maxz="-5299" />
@@ -1109,7 +1109,7 @@
 		<npc id="21172" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq29]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq29]" event_name="[ssq_event]">
 		<territory>	
 			<location x="50599" y="114371" minz="-5448" maxz="-5298" />
 			<location x="51232" y="114374" minz="-5448" maxz="-5298" />
@@ -1121,7 +1121,7 @@
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_ssq30]" event_name="[ssq_event]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_ssq30]" event_name="[ssq_event]">
 		<territory>	
 			<location x="50615" y="112937" minz="-5444" maxz="-5294" />
 			<location x="51268" y="112927" minz="-5444" maxz="-5294" />
@@ -1133,7 +1133,7 @@
 		<npc id="21172" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no02]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no02]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="44919" y="119975" minz="-5446" maxz="-5296" />
 			<location x="45569" y="119976" minz="-5446" maxz="-5296" />
@@ -1144,7 +1144,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no03]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no03]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="44931" y="118632" minz="-5444" maxz="-5294" />
 			<location x="45573" y="118629" minz="-5444" maxz="-5294" />
@@ -1155,7 +1155,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no04]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no04]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="46929" y="118916" minz="-5447" maxz="-5297" />
 			<location x="48298" y="118922" minz="-5447" maxz="-5297" />
@@ -1166,7 +1166,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no05]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no05]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="46087" y="119750" minz="-5441" maxz="-5291" />
 			<location x="46725" y="119743" minz="-5441" maxz="-5291" />
@@ -1177,7 +1177,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no06]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no06]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="46202" y="120836" minz="-5448" maxz="-5298" />
 			<location x="46841" y="120836" minz="-5448" maxz="-5298" />
@@ -1188,7 +1188,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no07]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no07]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="46207" y="121977" minz="-5452" maxz="-5302" />
 			<location x="46858" y="121973" minz="-5452" maxz="-5302" />
@@ -1199,7 +1199,7 @@
 		<npc id="21214" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no08]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no08]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="49543" y="123242" minz="-5424" maxz="-5274" />
 			<location x="50173" y="123240" minz="-5424" maxz="-5274" />
@@ -1210,7 +1210,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no09]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no09]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="47660" y="121325" minz="-5455" maxz="-5305" />
 			<location x="49020" y="121314" minz="-5455" maxz="-5305" />
@@ -1221,7 +1221,7 @@
 		<npc id="21214" count="4" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no10]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no10]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="48285" y="120029" minz="-5449" maxz="-5299" />
 			<location x="50093" y="120046" minz="-5449" maxz="-5299" />
@@ -1232,7 +1232,7 @@
 		<npc id="21214" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no11]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no11]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="49540" y="118633" minz="-5446" maxz="-5296" />
 			<location x="50167" y="118633" minz="-5446" maxz="-5296" />
@@ -1243,7 +1243,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no12]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no12]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="50632" y="118630" minz="-5448" maxz="-5298" />
 			<location x="51269" y="118626" minz="-5448" maxz="-5298" />
@@ -1254,7 +1254,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no13]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no13]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="50656" y="120516" minz="-5450" maxz="-5300" />
 			<location x="51988" y="120491" minz="-5450" maxz="-5300" />
@@ -1265,7 +1265,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no14]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no14]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="50615" y="123229" minz="-5446" maxz="-5296" />
 			<location x="51256" y="123227" minz="-5446" maxz="-5296" />
@@ -1276,7 +1276,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no15]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no15]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="51584" y="122480" minz="-5446" maxz="-5296" />
 			<location x="52229" y="122484" minz="-5446" maxz="-5296" />
@@ -1287,7 +1287,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no16]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no16]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="52667" y="123210" minz="-5449" maxz="-5299" />
 			<location x="54012" y="123195" minz="-5449" maxz="-5299" />
@@ -1298,7 +1298,7 @@
 		<npc id="21144" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no17]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no17]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="55240" y="123240" minz="-5445" maxz="-5295" />
 			<location x="55867" y="123235" minz="-5445" maxz="-5295" />
@@ -1309,7 +1309,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no18]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no18]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="54507" y="121813" minz="-5448" maxz="-5298" />
 			<location x="55841" y="121807" minz="-5448" maxz="-5298" />
@@ -1320,7 +1320,7 @@
 		<npc id="21144" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no19]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no19]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="52739" y="119531" minz="-5455" maxz="-5305" />
 			<location x="53388" y="119534" minz="-5455" maxz="-5305" />
@@ -1331,7 +1331,7 @@
 		<npc id="21144" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no20]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no20]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="55233" y="118638" minz="-5446" maxz="-5296" />
 			<location x="55862" y="118635" minz="-5446" maxz="-5296" />
@@ -1342,7 +1342,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no21]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no21]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="55226" y="117544" minz="-5442" maxz="-5292" />
 			<location x="55860" y="117538" minz="-5442" maxz="-5292" />
@@ -1353,7 +1353,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no22]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no22]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="55223" y="114711" minz="-5453" maxz="-5303" />
 			<location x="55887" y="114712" minz="-5453" maxz="-5303" />
@@ -1364,7 +1364,7 @@
 		<npc id="21146" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no23]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no23]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="55248" y="112934" minz="-5447" maxz="-5297" />
 			<location x="55869" y="112927" minz="-5447" maxz="-5297" />
@@ -1375,7 +1375,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no24]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no24]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="52527" y="112901" minz="-5449" maxz="-5299" />
 			<location x="53856" y="112912" minz="-5449" maxz="-5299" />
@@ -1386,7 +1386,7 @@
 		<npc id="21146" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no25]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no25]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="52755" y="115453" minz="-5454" maxz="-5304" />
 			<location x="54557" y="115438" minz="-5454" maxz="-5304" />
@@ -1397,7 +1397,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no26]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no26]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="52289" y="117521" minz="-5444" maxz="-5294" />
 			<location x="53640" y="117520" minz="-5444" maxz="-5294" />
@@ -1408,7 +1408,7 @@
 		<npc id="21146" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="3" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no27]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no27]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="50628" y="117546" minz="-5452" maxz="-5302" />
 			<location x="51256" y="117549" minz="-5452" maxz="-5302" />
@@ -1419,7 +1419,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no28]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no28]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="50625" y="116455" minz="-5449" maxz="-5299" />
 			<location x="51260" y="116454" minz="-5449" maxz="-5299" />
@@ -1430,7 +1430,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no29]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no29]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="50599" y="114371" minz="-5448" maxz="-5298" />
 			<location x="51232" y="114374" minz="-5448" maxz="-5298" />
@@ -1441,7 +1441,7 @@
 		<npc id="21146" count="3" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_no30]" event_name="[ssq_seal1_none]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_no30]" event_name="[ssq_seal1_none]">
 		<territory>	
 			<location x="50615" y="112937" minz="-5444" maxz="-5294" />
 			<location x="51268" y="112927" minz="-5444" maxz="-5294" />
@@ -1452,7 +1452,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21215" count="1" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da02]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da02]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="44919" y="119975" minz="-5446" maxz="-5296" />
 			<location x="45569" y="119976" minz="-5446" maxz="-5296" />
@@ -1463,7 +1463,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da03]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da03]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="44931" y="118632" minz="-5444" maxz="-5294" />
 			<location x="45573" y="118629" minz="-5444" maxz="-5294" />
@@ -1474,7 +1474,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da04]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da04]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="46929" y="118916" minz="-5447" maxz="-5297" />
 			<location x="48298" y="118922" minz="-5447" maxz="-5297" />
@@ -1485,7 +1485,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da05]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da05]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="46087" y="119750" minz="-5441" maxz="-5291" />
 			<location x="46725" y="119743" minz="-5441" maxz="-5291" />
@@ -1496,7 +1496,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da06]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da06]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="46202" y="120836" minz="-5448" maxz="-5298" />
 			<location x="46841" y="120836" minz="-5448" maxz="-5298" />
@@ -1507,7 +1507,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da07]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da07]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="46207" y="121977" minz="-5452" maxz="-5302" />
 			<location x="46858" y="121973" minz="-5452" maxz="-5302" />
@@ -1518,7 +1518,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da08]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da08]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="49543" y="123242" minz="-5424" maxz="-5274" />
 			<location x="50173" y="123240" minz="-5424" maxz="-5274" />
@@ -1529,7 +1529,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da09]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da09]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="47660" y="121325" minz="-5455" maxz="-5305" />
 			<location x="49020" y="121314" minz="-5455" maxz="-5305" />
@@ -1540,7 +1540,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da10]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da10]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="48285" y="120029" minz="-5449" maxz="-5299" />
 			<location x="50093" y="120046" minz="-5449" maxz="-5299" />
@@ -1551,7 +1551,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da11]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da11]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="49540" y="118633" minz="-5446" maxz="-5296" />
 			<location x="50167" y="118633" minz="-5446" maxz="-5296" />
@@ -1562,7 +1562,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21170" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da12]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da12]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="50632" y="118630" minz="-5448" maxz="-5298" />
 			<location x="51269" y="118626" minz="-5448" maxz="-5298" />
@@ -1573,7 +1573,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da13]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da13]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="50656" y="120516" minz="-5450" maxz="-5300" />
 			<location x="51988" y="120491" minz="-5450" maxz="-5300" />
@@ -1584,7 +1584,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da14]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da14]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="50615" y="123229" minz="-5446" maxz="-5296" />
 			<location x="51256" y="123227" minz="-5446" maxz="-5296" />
@@ -1595,7 +1595,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da15]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da15]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="51584" y="122480" minz="-5446" maxz="-5296" />
 			<location x="52229" y="122484" minz="-5446" maxz="-5296" />
@@ -1606,7 +1606,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da16]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da16]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="52667" y="123210" minz="-5449" maxz="-5299" />
 			<location x="54012" y="123195" minz="-5449" maxz="-5299" />
@@ -1617,7 +1617,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da17]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da17]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="55240" y="123240" minz="-5445" maxz="-5295" />
 			<location x="55867" y="123235" minz="-5445" maxz="-5295" />
@@ -1628,7 +1628,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da18]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da18]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="54507" y="121813" minz="-5448" maxz="-5298" />
 			<location x="55841" y="121807" minz="-5448" maxz="-5298" />
@@ -1639,7 +1639,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da19]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da19]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="52739" y="119531" minz="-5455" maxz="-5305" />
 			<location x="53388" y="119534" minz="-5455" maxz="-5305" />
@@ -1650,7 +1650,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da20]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da20]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="55233" y="118638" minz="-5446" maxz="-5296" />
 			<location x="55862" y="118635" minz="-5446" maxz="-5296" />
@@ -1661,7 +1661,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21171" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da21]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da21]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="55226" y="117544" minz="-5442" maxz="-5292" />
 			<location x="55860" y="117538" minz="-5442" maxz="-5292" />
@@ -1672,7 +1672,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da22]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da22]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="55223" y="114711" minz="-5453" maxz="-5303" />
 			<location x="55887" y="114712" minz="-5453" maxz="-5303" />
@@ -1683,7 +1683,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da23]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da23]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="55248" y="112934" minz="-5447" maxz="-5297" />
 			<location x="55869" y="112927" minz="-5447" maxz="-5297" />
@@ -1694,7 +1694,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da24]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da24]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="52527" y="112901" minz="-5449" maxz="-5299" />
 			<location x="53856" y="112912" minz="-5449" maxz="-5299" />
@@ -1705,7 +1705,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da25]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da25]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="52755" y="115453" minz="-5454" maxz="-5304" />
 			<location x="54557" y="115438" minz="-5454" maxz="-5304" />
@@ -1716,7 +1716,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da26]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da26]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="52289" y="117521" minz="-5444" maxz="-5294" />
 			<location x="53640" y="117520" minz="-5444" maxz="-5294" />
@@ -1727,7 +1727,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da27]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da27]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="50628" y="117546" minz="-5452" maxz="-5302" />
 			<location x="51256" y="117549" minz="-5452" maxz="-5302" />
@@ -1738,7 +1738,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da28]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da28]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="50625" y="116455" minz="-5449" maxz="-5299" />
 			<location x="51260" y="116454" minz="-5449" maxz="-5299" />
@@ -1749,7 +1749,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da29]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da29]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="50599" y="114371" minz="-5448" maxz="-5298" />
 			<location x="51232" y="114374" minz="-5448" maxz="-5298" />
@@ -1760,7 +1760,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_da30]" event_name="[ssq_seal1_dawn]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_da30]" event_name="[ssq_seal1_dawn]">
 		<territory>	
 			<location x="50615" y="112937" minz="-5444" maxz="-5294" />
 			<location x="51268" y="112927" minz="-5444" maxz="-5294" />
@@ -1771,7 +1771,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21172" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw02]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw02]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="44919" y="119975" minz="-5446" maxz="-5296" />
 			<location x="45569" y="119976" minz="-5446" maxz="-5296" />
@@ -1782,7 +1782,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw03]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw03]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="44931" y="118632" minz="-5444" maxz="-5294" />
 			<location x="45573" y="118629" minz="-5444" maxz="-5294" />
@@ -1793,7 +1793,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw04]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw04]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="46929" y="118916" minz="-5447" maxz="-5297" />
 			<location x="48298" y="118922" minz="-5447" maxz="-5297" />
@@ -1804,7 +1804,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw05]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw05]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="46087" y="119750" minz="-5441" maxz="-5291" />
 			<location x="46725" y="119743" minz="-5441" maxz="-5291" />
@@ -1815,7 +1815,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw06]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw06]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="46202" y="120836" minz="-5448" maxz="-5298" />
 			<location x="46841" y="120836" minz="-5448" maxz="-5298" />
@@ -1826,7 +1826,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw07]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw07]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="46207" y="121977" minz="-5452" maxz="-5302" />
 			<location x="46858" y="121973" minz="-5452" maxz="-5302" />
@@ -1837,7 +1837,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw08]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw08]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="49543" y="123242" minz="-5424" maxz="-5274" />
 			<location x="50173" y="123240" minz="-5424" maxz="-5274" />
@@ -1848,7 +1848,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw09]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw09]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="47660" y="121325" minz="-5455" maxz="-5305" />
 			<location x="49020" y="121314" minz="-5455" maxz="-5305" />
@@ -1859,7 +1859,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw10]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw10]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="48285" y="120029" minz="-5449" maxz="-5299" />
 			<location x="50093" y="120046" minz="-5449" maxz="-5299" />
@@ -1870,7 +1870,7 @@
 		<npc id="21214" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw11]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw11]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="49540" y="118633" minz="-5446" maxz="-5296" />
 			<location x="50167" y="118633" minz="-5446" maxz="-5296" />
@@ -1881,7 +1881,7 @@
 		<npc id="21214" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21191" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw12]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw12]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="50632" y="118630" minz="-5448" maxz="-5298" />
 			<location x="51269" y="118626" minz="-5448" maxz="-5298" />
@@ -1892,7 +1892,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw13]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw13]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="50656" y="120516" minz="-5450" maxz="-5300" />
 			<location x="51988" y="120491" minz="-5450" maxz="-5300" />
@@ -1903,7 +1903,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw14]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw14]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="50615" y="123229" minz="-5446" maxz="-5296" />
 			<location x="51256" y="123227" minz="-5446" maxz="-5296" />
@@ -1914,7 +1914,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw15]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw15]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="51584" y="122480" minz="-5446" maxz="-5296" />
 			<location x="52229" y="122484" minz="-5446" maxz="-5296" />
@@ -1925,7 +1925,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw16]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw16]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="52667" y="123210" minz="-5449" maxz="-5299" />
 			<location x="54012" y="123195" minz="-5449" maxz="-5299" />
@@ -1936,7 +1936,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw17]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw17]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="55240" y="123240" minz="-5445" maxz="-5295" />
 			<location x="55867" y="123235" minz="-5445" maxz="-5295" />
@@ -1947,7 +1947,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw18]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw18]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="54507" y="121813" minz="-5448" maxz="-5298" />
 			<location x="55841" y="121807" minz="-5448" maxz="-5298" />
@@ -1958,7 +1958,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw19]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw19]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="52739" y="119531" minz="-5455" maxz="-5305" />
 			<location x="53388" y="119534" minz="-5455" maxz="-5305" />
@@ -1969,7 +1969,7 @@
 		<npc id="21144" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw20]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw20]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="55233" y="118638" minz="-5446" maxz="-5296" />
 			<location x="55862" y="118635" minz="-5446" maxz="-5296" />
@@ -1980,7 +1980,7 @@
 		<npc id="21144" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21192" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw21]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw21]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="55226" y="117544" minz="-5442" maxz="-5292" />
 			<location x="55860" y="117538" minz="-5442" maxz="-5292" />
@@ -1991,7 +1991,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw22]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw22]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="55223" y="114711" minz="-5453" maxz="-5303" />
 			<location x="55887" y="114712" minz="-5453" maxz="-5303" />
@@ -2002,7 +2002,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw23]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw23]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="55248" y="112934" minz="-5447" maxz="-5297" />
 			<location x="55869" y="112927" minz="-5447" maxz="-5297" />
@@ -2013,7 +2013,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw24]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw24]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="52527" y="112901" minz="-5449" maxz="-5299" />
 			<location x="53856" y="112912" minz="-5449" maxz="-5299" />
@@ -2024,7 +2024,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw25]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw25]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="52755" y="115453" minz="-5454" maxz="-5304" />
 			<location x="54557" y="115438" minz="-5454" maxz="-5304" />
@@ -2035,7 +2035,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw26]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw26]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="52289" y="117521" minz="-5444" maxz="-5294" />
 			<location x="53640" y="117520" minz="-5444" maxz="-5294" />
@@ -2046,7 +2046,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw27]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw27]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="50628" y="117546" minz="-5452" maxz="-5302" />
 			<location x="51256" y="117549" minz="-5452" maxz="-5302" />
@@ -2057,7 +2057,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw28]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw28]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="50625" y="116455" minz="-5449" maxz="-5299" />
 			<location x="51260" y="116454" minz="-5449" maxz="-5299" />
@@ -2068,7 +2068,7 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw29]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw29]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="50599" y="114371" minz="-5448" maxz="-5298" />
 			<location x="51232" y="114374" minz="-5448" maxz="-5298" />
@@ -2079,7 +2079,7 @@
 		<npc id="21146" count="2" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="4" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[ssq07_2121_tw30]" event_name="[ssq_seal1_twilight]">
+	<spawn spawn_bydefault="true"  name="[ssq07_2121_tw30]" event_name="[ssq_seal1_twilight]">
 		<territory>	
 			<location x="50615" y="112937" minz="-5444" maxz="-5294" />
 			<location x="51268" y="112927" minz="-5444" maxz="-5294" />
@@ -2090,25 +2090,25 @@
 		<npc id="21146" count="1" respawn="140" respawn_rand="40" />	
 		<npc id="21193" count="2" respawn="140" respawn_rand="40" />	
 	</spawn>
-	<spawn name="[dion03_npc2121_01]">
+	<spawn spawn_bydefault="true"  name="[dion03_npc2121_01]">
 		<npc id="30596" count="1" respawn="60" pos="43996 108998 -2035 61440" />	
 	</spawn>
-	<spawn name="[ssq07_npc2121_01]">
+	<spawn spawn_bydefault="true"  name="[ssq07_npc2121_01]">
 		<npc id="31104" count="1" respawn="60" pos="45280 123504 -5409 49000" />	
 	</spawn>
-	<spawn name="[ssq07_npc2121_02]">
+	<spawn spawn_bydefault="true"  name="[ssq07_npc2121_02]">
 		<npc id="31096" count="1" respawn="60" pos="45248 124352 -5411 16500" />	
 	</spawn>
-	<spawn name="[ssq07_npc2121_03]">
+	<spawn spawn_bydefault="true"  name="[ssq07_npc2121_03]">
 		<npc id="31496" count="1" respawn="60" pos="44953 123778 -5408 0" />	
 	</spawn>
-	<spawn name="[giran01_npc2121_01]">
+	<spawn spawn_bydefault="true"  name="[giran01_npc2121_01]">
 		<npc id="30752" count="1" respawn="60" pos="64001 126486 -2016 0" />	
 	</spawn>
-	<spawn name="[giran06_npc2221_05]">
+	<spawn spawn_bydefault="true"  name="[giran06_npc2221_05]">
 		<npc id="30751" count="1" respawn="60" pos="62008 107589 -1893 0" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_05]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_05]" event_name="[treasure_box]">
 		<territory>	
 			<location x="50270" y="118823" minz="-3624" maxz="-2324" />
 			<location x="54388" y="121233" minz="-3624" maxz="-2324" />
@@ -2121,7 +2121,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_06]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_06]" event_name="[treasure_box]">
 		<territory>	
 			<location x="52120" y="124066" minz="-3821" maxz="-2921" />
 			<location x="51573" y="126308" minz="-3821" maxz="-2921" />
@@ -2133,7 +2133,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_13]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_13]" event_name="[treasure_box]">
 		<territory>	
 			<location x="40023" y="101330" minz="-1300" maxz="-1000" />
 			<location x="40948" y="101697" minz="-1300" maxz="-1000" />
@@ -2147,7 +2147,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_15]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_15]" event_name="[treasure_box]">
 		<territory>	
 			<location x="41431" y="119745" minz="-3284" maxz="-1384" />
 			<location x="42260" y="119560" minz="-3284" maxz="-1384" />
@@ -2160,7 +2160,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_17]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_17]" event_name="[treasure_box]">
 		<territory>	
 			<location x="42690" y="116410" minz="-2443" maxz="-1443" />
 			<location x="44885" y="117384" minz="-2443" maxz="-1443" />
@@ -2173,7 +2173,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_18]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_18]" event_name="[treasure_box]">
 		<territory>	
 			<location x="41982" y="118724" minz="-2257" maxz="-1957" />
 			<location x="41871" y="119345" minz="-2257" maxz="-1957" />
@@ -2186,7 +2186,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_19]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_19]" event_name="[treasure_box]">
 		<territory>	
 			<location x="40158" y="114878" minz="-2251" maxz="-1451" />
 			<location x="42564" y="116319" minz="-2251" maxz="-1451" />
@@ -2199,7 +2199,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_21]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_21]" event_name="[treasure_box]">
 		<territory>	
 			<location x="45654" y="114804" minz="-2050" maxz="-1250" />
 			<location x="44627" y="115727" minz="-2050" maxz="-1250" />
@@ -2212,7 +2212,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_22]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_22]" event_name="[treasure_box]">
 		<territory>	
 			<location x="39458" y="113077" minz="-2131" maxz="-1831" />
 			<location x="40605" y="113485" minz="-2131" maxz="-1831" />
@@ -2225,7 +2225,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_23]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_23]" event_name="[treasure_box]">
 		<territory>	
 			<location x="44295" y="111711" minz="-1957" maxz="-1657" />
 			<location x="45208" y="112687" minz="-1957" maxz="-1657" />
@@ -2238,7 +2238,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_24]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_24]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43921" y="110652" minz="-1755" maxz="-355" />
 			<location x="42462" y="113068" minz="-1755" maxz="-355" />
@@ -2251,7 +2251,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_24]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_24]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43921" y="110652" minz="-1755" maxz="-355" />
 			<location x="42462" y="113068" minz="-1755" maxz="-355" />
@@ -2264,7 +2264,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_25]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_25]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43328" y="107161" minz="-1738" maxz="-38" />
 			<location x="41378" y="110023" minz="-1738" maxz="-38" />
@@ -2277,7 +2277,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_25]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_25]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43328" y="107161" minz="-1738" maxz="-38" />
 			<location x="41378" y="110023" minz="-1738" maxz="-38" />
@@ -2290,7 +2290,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_26]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_26]" event_name="[treasure_box]">
 		<territory>	
 			<location x="42412" y="105188" minz="-1708" maxz="-1308" />
 			<location x="43497" y="104877" minz="-1708" maxz="-1308" />
@@ -2303,7 +2303,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_27]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_27]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47586" y="104562" minz="-1738" maxz="-538" />
 			<location x="47399" y="107731" minz="-1738" maxz="-538" />
@@ -2316,7 +2316,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_27]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_27]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47586" y="104562" minz="-1738" maxz="-538" />
 			<location x="47399" y="107731" minz="-1738" maxz="-538" />
@@ -2329,7 +2329,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_28]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_28]" event_name="[treasure_box]">
 		<territory>	
 			<location x="51050" y="106484" minz="-1794" maxz="-794" />
 			<location x="51061" y="109961" minz="-1794" maxz="-794" />
@@ -2342,7 +2342,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_29]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_29]" event_name="[treasure_box]">
 		<territory>	
 			<location x="46995" y="108393" minz="-2157" maxz="-1857" />
 			<location x="47919" y="108664" minz="-2157" maxz="-1857" />
@@ -2355,7 +2355,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_30]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_30]" event_name="[treasure_box]">
 		<territory>	
 			<location x="56114" y="106426" minz="-1859" maxz="-659" />
 			<location x="53325" y="107409" minz="-1859" maxz="-659" />
@@ -2367,7 +2367,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_30]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_30]" event_name="[treasure_box]">
 		<territory>	
 			<location x="56114" y="106426" minz="-1859" maxz="-659" />
 			<location x="53325" y="107409" minz="-1859" maxz="-659" />
@@ -2379,7 +2379,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_31]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_31]" event_name="[treasure_box]">
 		<territory>	
 			<location x="56250" y="106502" minz="-1946" maxz="-746" />
 			<location x="57639" y="110391" minz="-1946" maxz="-746" />
@@ -2391,7 +2391,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_31]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_31]" event_name="[treasure_box]">
 		<territory>	
 			<location x="56250" y="106502" minz="-1946" maxz="-746" />
 			<location x="57639" y="110391" minz="-1946" maxz="-746" />
@@ -2403,7 +2403,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_32]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_32]" event_name="[treasure_box]">
 		<territory>	
 			<location x="57465" y="110499" minz="-2149" maxz="-949" />
 			<location x="57895" y="113597" minz="-2149" maxz="-949" />
@@ -2415,7 +2415,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_32]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_32]" event_name="[treasure_box]">
 		<territory>	
 			<location x="57465" y="110499" minz="-2149" maxz="-949" />
 			<location x="57895" y="113597" minz="-2149" maxz="-949" />
@@ -2427,7 +2427,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="56548" y="104902" minz="-1552" maxz="-1302" />
 			<location x="57407" y="105289" minz="-1552" maxz="-1302" />
@@ -2440,7 +2440,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_34]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_34]" event_name="[treasure_box]">
 		<territory>	
 			<location x="59696" y="110517" minz="-1912" maxz="-1312" />
 			<location x="59853" y="111128" minz="-1912" maxz="-1312" />
@@ -2453,7 +2453,7 @@
 		<npc id="18268" count="1" respawn="135" />	
 		<npc id="21804" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_35]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_35]" event_name="[treasure_box]">
 		<territory>	
 			<location x="48882" y="111848" minz="-2112" maxz="-1812" />
 			<location x="50326" y="111644" minz="-2112" maxz="-1812" />
@@ -2466,7 +2466,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_36]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_36]" event_name="[treasure_box]">
 		<territory>	
 			<location x="51971" y="114764" minz="-1898" maxz="-898" />
 			<location x="50772" y="115816" minz="-1898" maxz="-898" />
@@ -2478,7 +2478,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_37]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_37]" event_name="[treasure_box]">
 		<territory>	
 			<location x="52264" y="112861" minz="-2115" maxz="-1815" />
 			<location x="53648" y="114229" minz="-2115" maxz="-1815" />
@@ -2491,7 +2491,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_38]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_38]" event_name="[treasure_box]">
 		<territory>	
 			<location x="54980" y="114996" minz="-2239" maxz="-1239" />
 			<location x="54424" y="117789" minz="-2239" maxz="-1239" />
@@ -2503,7 +2503,7 @@
 		<npc id="18267" count="1" respawn="135" />	
 		<npc id="21803" count="1" respawn="135" />	
 	</spawn>
-	<spawn name="[dion03_tb2121_39]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[dion03_tb2121_39]" event_name="[treasure_box]">
 		<territory>	
 			<location x="56737" y="115971" minz="-2783" maxz="-1383" />
 			<location x="57639" y="117683" minz="-2783" maxz="-1383" />

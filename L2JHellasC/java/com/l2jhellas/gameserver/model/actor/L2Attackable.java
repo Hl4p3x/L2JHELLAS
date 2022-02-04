@@ -662,7 +662,7 @@ public class L2Attackable extends L2Npc
 			}
 			
 			// Manage Base, Quests and Sweep drops of the L2Attackable
-			doItemDrop(maxDealer != null && maxDealer.isOnline() == 1 ? maxDealer : lastAttacker);
+			doItemDrop(maxDealer != null && maxDealer.isOnline() ? maxDealer : lastAttacker);
 			
 			if (lastAttacker == null)
 				return;

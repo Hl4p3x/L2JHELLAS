@@ -3,12 +3,14 @@ package com.l2jhellas.gameserver.model.zone.type;
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.datatables.xml.MapRegionTable;
 import com.l2jhellas.gameserver.enums.ZoneId;
+import com.l2jhellas.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.actor.instance.L2SiegeSummonInstance;
 import com.l2jhellas.gameserver.model.zone.L2ZoneType;
 import com.l2jhellas.gameserver.network.SystemMessageId;
+import com.l2jhellas.gameserver.scrips.siegable.SiegableHall;
 import com.l2jhellas.gameserver.taskmanager.PvpFlagTaskManager;
 
 public class L2SiegeZone extends L2ZoneType
@@ -36,6 +38,10 @@ public class L2SiegeZone extends L2ZoneType
 			if (_siegableId != -1)
 				throw new IllegalArgumentException("Siege object already defined!");
 			_siegableId = Integer.parseInt(value);
+			
+			SiegableHall hall = ClanHallSiegeManager.getInstance().getConquerableHalls().get(_siegableId);
+			if (hall != null) 
+				hall.setSiegeZone(this);
 		}
 		else
 			super.setParameter(name, value);
@@ -163,6 +169,17 @@ public class L2SiegeZone extends L2ZoneType
 	public void setIsActive(boolean val)
 	{
 		_isActiveSiege = val;
+	}
+	
+	public void banishForeignerss(int owningClanId)
+	{
+		for (L2PcInstance player : getKnownTypeInside(L2PcInstance.class))
+		{
+			if((owningClanId > 0 && player.getClanId() == owningClanId) || player.isGM())
+				continue;
+			
+			player.teleToLocation(MapRegionTable.TeleportWhereType.TOWN);
+		}
 	}
 	
 	public void banishForeigners(L2Clan owningClan)

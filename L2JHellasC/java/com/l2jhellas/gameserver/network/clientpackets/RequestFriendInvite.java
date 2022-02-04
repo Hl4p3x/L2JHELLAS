@@ -30,7 +30,7 @@ public final class RequestFriendInvite extends L2GameClientPacket
 			return;
 		
 		final L2PcInstance target = L2World.getInstance().getPlayer(_name);
-		if (target == null || !target.isbOnline())
+		if (target == null || !target.isOnline())
 		{
 			player.sendPacket(SystemMessageId.TARGET_IS_NOT_FOUND_IN_THE_GAME);
 			player.sendPacket(FriendAddRequestResult.STATIC_FAIL);

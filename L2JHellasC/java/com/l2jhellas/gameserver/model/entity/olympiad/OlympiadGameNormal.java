@@ -53,11 +53,11 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 		{
 			playerOneObjectId = list.remove(Rnd.get(list.size()));
 			playerOne = L2World.getInstance().getPlayer(playerOneObjectId);
-			if (playerOne == null || !playerOne.isbOnline())
+			if (playerOne == null || !playerOne.isOnline())
 				continue;
 			
 			playerTwo = L2World.getInstance().getPlayer(list.remove(Rnd.get(list.size())));
-			if (playerTwo == null || !playerTwo.isbOnline())
+			if (playerTwo == null || !playerTwo.isOnline())
 			{
 				list.add(playerOneObjectId);
 				continue;
@@ -81,7 +81,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 	@Override
 	protected final boolean portPlayersToArena(Location location)
 	{		
-		if (_playerOne.player == null || _playerTwo.player == null || !_playerOne.player.isbOnline() || !_playerTwo.player.isbOnline())
+		if (_playerOne.player == null || _playerTwo.player == null || !_playerOne.player.isOnline() || !_playerTwo.player.isOnline())
 			return false;
 		
 		boolean result = true;
@@ -425,14 +425,14 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 			_playerOne.updatePlayer();
 			_playerTwo.updatePlayer();
 			
-			if ((_playerOne.player == null || _playerOne.player.isOnline() == 0) && (_playerTwo.player == null || _playerTwo.player.isOnline() == 0))
+			if ((_playerOne.player == null || !_playerOne.player.isOnline()) && (_playerTwo.player == null || !_playerTwo.player.isOnline()))
 			{
 				_playerOne.updateStat(COMP_DRAWN, 1);
 				_playerTwo.updateStat(COMP_DRAWN, 1);
 				sm = SystemMessage.getSystemMessage(SystemMessageId.THE_GAME_ENDED_IN_A_TIE);
 				stadium.broadcastPacket(sm);
 			}
-			else if (_playerTwo.player == null || _playerTwo.player.isOnline() == 0 || (playerTwoHp == 0 && playerOneHp != 0) || (_damageP1 > _damageP2 && playerTwoHp != 0 && playerOneHp != 0))
+			else if (_playerTwo.player == null || !_playerTwo.player.isOnline()|| (playerTwoHp == 0 && playerOneHp != 0) || (_damageP1 > _damageP2 && playerTwoHp != 0 && playerOneHp != 0))
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_WON_THE_GAME);
 				sm.addString(_playerOne.name);
@@ -448,7 +448,7 @@ abstract public class OlympiadGameNormal extends AbstractOlympiadGame
 				saveResults(_playerOne, _playerTwo, 1, _startTime, _fightTime, getType());
 				rewardParticipant(_playerOne.player, getReward());
 			}
-			else if (_playerOne.player == null || _playerOne.player.isOnline() == 0 || (playerOneHp == 0 && playerTwoHp != 0) || (_damageP2 > _damageP1 && playerOneHp != 0 && playerTwoHp != 0))
+			else if (_playerOne.player == null || !_playerOne.player.isOnline() || (playerOneHp == 0 && playerTwoHp != 0) || (_damageP2 > _damageP1 && playerOneHp != 0 && playerTwoHp != 0))
 			{
 				sm = SystemMessage.getSystemMessage(SystemMessageId.S1_HAS_WON_THE_GAME);
 				sm.addString(_playerTwo.name);

@@ -19,6 +19,7 @@ public class L2Spawn
 {
 	protected static final Logger _log = Logger.getLogger(L2Spawn.class.getName());
 	
+	boolean _canSpawnByDefault;
 	SpawnTerritory _territory;
 	private L2NpcTemplate _template;
 	
@@ -126,6 +127,16 @@ public class L2Spawn
 	public String getEventName()
 	{
 		return _EventName;
+	}
+	
+	public boolean EvtNameIsNotBlank()
+	{
+		return !_EventName.isEmpty();
+	}
+	
+	public boolean LocNameIsNotBlank()
+	{
+		return !_LocationName.isEmpty();
 	}
 	
 	public String getLocationName()
@@ -414,5 +425,35 @@ public class L2Spawn
 	public SpawnTerritory getTerritory()
 	{
 		return _territory;
+	}
+	
+	public boolean hasTerritory()
+	{
+		return _territory != null;
+	}
+	
+	public void setIsSpawningByDefault(boolean val)
+	{
+		_canSpawnByDefault = val;
+	}
+	
+	public boolean isSpawningByDefault()
+	{
+		return _canSpawnByDefault;
+	}
+	
+	public void setLoc(Location loc)
+	{
+		setLocx(loc.getX());
+		setLocy(loc.getY());
+		setLocz(loc.getZ());
+	}
+	
+	public void setLoc(int x, int y, int z, int heading)
+	{
+		setLocx(x);
+		setLocy(y);
+		setLocz(z);
+		setHeading(heading);
 	}
 }

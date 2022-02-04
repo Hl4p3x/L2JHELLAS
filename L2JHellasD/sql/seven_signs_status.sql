@@ -8,7 +8,7 @@ CREATE TABLE `seven_signs_status` (
   `current_cycle` int(10) NOT NULL DEFAULT '1',
   `festival_cycle` int(10) NOT NULL DEFAULT '1',
   `active_period` int(10) NOT NULL DEFAULT '1',
-  `date` int(10) NOT NULL DEFAULT '1',
+  `date` bigint(13) unsigned NOT NULL DEFAULT '0',
   `previous_winner` int(10) NOT NULL DEFAULT '0',
   `dawn_stone_score` decimal(20,0) NOT NULL DEFAULT '0',
   `dawn_festival_score` int(10) NOT NULL DEFAULT '0',

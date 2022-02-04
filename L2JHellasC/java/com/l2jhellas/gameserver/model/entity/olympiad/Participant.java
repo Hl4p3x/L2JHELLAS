@@ -37,7 +37,7 @@ public final class Participant
 	
 	public final void updatePlayer()
 	{
-		if (player == null || player.isOnline() == 0)
+		if (player == null || !player.isOnline())
 			player = L2World.getInstance().getPlayer(objectId);
 	}
 	

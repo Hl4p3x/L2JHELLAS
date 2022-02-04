@@ -27,7 +27,7 @@ public class AdminDonator implements IAdminCommandHandler
 		if (command.startsWith("admin_setdonator"))
 		{
 			final L2PcInstance  player = activeChar.getTarget() != null ? activeChar.getTarget().getActingPlayer() : activeChar;
-			if (player == null || !player.isbOnline())
+			if (player == null || !player.isOnline())
 			{
 				activeChar.sendPacket(SystemMessageId.INCORRECT_TARGET);
 				return false;

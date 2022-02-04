@@ -218,7 +218,7 @@ public class RequestAquireSkill extends L2GameClientPacket
 	
 	boolean canRead(L2PcInstance player)
 	{		
-		if (player == null || !player.isbOnline())
+		if (player == null || !player.isOnline())
 			return false;
 		
 		final L2NpcInstance trainer = player.getLastFolkNPC();

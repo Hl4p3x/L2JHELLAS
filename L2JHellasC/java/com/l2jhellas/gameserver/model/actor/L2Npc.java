@@ -21,6 +21,7 @@ import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
 import com.l2jhellas.gameserver.idfactory.IdFactory;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
+import com.l2jhellas.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jhellas.gameserver.instancemanager.DimensionalRiftManager;
 import com.l2jhellas.gameserver.instancemanager.QuestManager;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
@@ -57,6 +58,7 @@ import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.model.spawn.SpawnTerritory;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.AbstractNpcInfo.NpcInfo;
+import com.l2jhellas.gameserver.scrips.siegable.SiegableHall;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.gameserver.network.serverpackets.ExServerPrimitive;
@@ -564,6 +566,11 @@ public class L2Npc extends L2Character
 	public final Castle getCastle()
 	{
 		return CastleManager.getInstance().getCastleById(MapRegionTable.getAreaCastle(this.getX(),this.getY()));
+	}
+	
+	public final SiegableHall getConquerableHall() 
+	{
+		return ClanHallSiegeManager.getInstance().getNearbyClanHall(getX(), getY(), 10000);
 	}
 	
 	public final boolean getIsInTown()
@@ -1951,6 +1958,10 @@ public class L2Npc extends L2Character
 		    broadcastPacket(new NpcSay(getObjectId(), ChatType.GENERAL.getClientId(), getNpcId(), message), 1250);
 	}
 	
+	public void broadcastNpcShout(String message)
+	{
+		broadcastPacket(new NpcSay(getObjectId(), ChatType.SHOUT.ordinal(), getNpcId() , message));
+	}
 	@Override
 	public void sendInfo(L2PcInstance activeChar)
 	{

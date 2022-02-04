@@ -603,7 +603,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 					
 					getActiveChar().setClient(null);
 					
-					if (getActiveChar().isOnline() == 1)
+					if (getActiveChar().isOnline())
 						getActiveChar().deleteMe();
 				}
 				setActiveChar(null);
@@ -626,7 +626,7 @@ public final class L2GameClient extends MMOClient<MMOConnection<L2GameClient>> i
 		{
 			try
 			{
-				if (getActiveChar() != null && getActiveChar().isOnline() == 1)
+				if (getActiveChar() != null && getActiveChar().isOnline())
 				{
 					getActiveChar().store();
 					

@@ -31,7 +31,6 @@ public class AdminAdmin implements IAdminCommandHandler
 		"admin_saveolymp",
 		"admin_manualhero"
 	};
-	
 	@Override
 	public boolean useAdminCommand(String command, L2PcInstance activeChar)
 	{

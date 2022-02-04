@@ -27,7 +27,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket
 		// Get the current L2PcInstance of the player
 		final L2PcInstance activeChar = getClient().getActiveChar();
 		
-		if (activeChar == null || activeChar.isOnline() == 0)
+		if (activeChar == null || !activeChar.isOnline())
 			return;
 
 		if (!activeChar.getAppearance().isVisible())

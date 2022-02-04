@@ -274,7 +274,7 @@ public abstract class AbstractNpcInfo extends L2GameServerPacket
 			_lhand = 0;
 			_chest = _summon.getArmor();
 			_enchantEffect = 0;
-			_title = (_owner == null || !_owner.isbOnline()) ? "" : _owner.getName();
+			_title = (_owner == null || !_owner.isOnline()) ? "" : _owner.getName();
 			_idTemplate = _summon.getTemplate().idTemplate;
 			
 			_collisionHeight = _summon.getTemplate().getCollisionHeight();

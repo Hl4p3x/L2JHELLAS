@@ -921,7 +921,7 @@ public class SevenSignsFestival
 		}
 		
 		if (updateSettings) 
-			SevenSigns.getInstance().saveSevenSignsData(null, true);
+			SevenSigns.getInstance().saveSevenSignsStatus();
 	}
 
 	protected void rewardHighestRanked()

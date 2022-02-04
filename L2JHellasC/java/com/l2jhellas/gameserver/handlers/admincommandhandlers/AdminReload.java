@@ -24,6 +24,7 @@ import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jhellas.gameserver.instancemanager.DayNightSpawnManager;
 import com.l2jhellas.gameserver.instancemanager.Manager;
+import com.l2jhellas.gameserver.instancemanager.QuestManager;
 import com.l2jhellas.gameserver.instancemanager.RaidBossSpawnManager;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
 import com.l2jhellas.gameserver.model.L2World;
@@ -31,6 +32,7 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.spawn.SpawnData;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
+import com.l2jhellas.gameserver.scrips.loaders.ScriptLoader;
 import com.l2jhellas.gameserver.skills.SkillTable;
 import com.l2jhellas.util.Util;
 
@@ -83,8 +85,11 @@ public class AdminReload implements IAdminCommandHandler
 				case "npc":
 				{
 					NpcData.getInstance().reloadAllNpc();
+					QuestManager.getInstance().cleanQuests();					
+					ScriptLoader.teleiwne();
+					QuestManager.getInstance().report();
 					sendReloadPage(activeChar);
-					activeChar.sendMessage("All NPCs have been reloaded.");
+					activeChar.sendMessage("NPCs and Scripts have been reloaded.");
 					break;
 				}
 				case "respawn_npcs":

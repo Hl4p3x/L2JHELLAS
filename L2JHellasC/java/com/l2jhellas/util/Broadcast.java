@@ -10,6 +10,8 @@ import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.gameserver.model.zone.L2ZoneType;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
 import com.l2jhellas.gameserver.network.serverpackets.L2GameServerPacket;
+import com.l2jhellas.gameserver.network.serverpackets.MagicSkillUse;
+import com.l2jhellas.gameserver.skills.SkillTable;
 
 public final class Broadcast
 {
@@ -58,11 +60,15 @@ public final class Broadcast
 		if (character.isPlayer())
 			character.sendPacket(mov);
 		
+		final boolean isMagicSkillUse = (mov instanceof MagicSkillUse);
+
 		L2World.getInstance().forEachVisibleObjectInRange(character, L2PcInstance.class, radius, player ->
 		{
+			if (isMagicSkillUse && SkillTable.isShotSkill(((MagicSkillUse) mov).getSkillId()) && player.getSSRefusal())
+				return;
+			
 			player.sendPacket(mov);
-		});
-		
+		});		
 	}
 	
 	public static void toSelfAndKnownPlayersInRadiusSq(L2Character character, L2GameServerPacket mov, int radiusSq)
@@ -84,7 +90,7 @@ public final class Broadcast
 	{
 		for (L2PcInstance player : L2World.getInstance().getAllPlayers().values())
 		{
-			if (player.isOnline() == 1)
+			if (player.isOnline())
 				player.sendPacket(mov);
 		}
 	}
@@ -99,6 +105,18 @@ public final class Broadcast
 				
 				for (L2GameServerPacket packet : packets)
 					player.sendPacket(packet);
+			}
+		}
+	}
+	
+	public static void toAllPlayersInRegion(L2WorldRegion region, L2GameServerPacket packet)
+	{
+		for (L2Object object : region.getVisibleObjects().values())
+		{
+			if (object.isPlayer())
+			{
+				final L2PcInstance player = (L2PcInstance) object;				
+				player.sendPacket(packet);
 			}
 		}
 	}

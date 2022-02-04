@@ -86,6 +86,46 @@ public class SkillTable
 		return weaponsAllowed;
 	}
 	
+	private static final int[] _shotSkillsId =
+	{
+		2008,
+		2009,
+		2033,
+		2039,
+		2047,
+		2061,
+		2150,
+		2151,
+		2152,
+		2153,
+		2154,
+		2155,
+		2156,
+		2157,
+		2158,
+		2159,
+		2160,
+		2161,
+		2162,
+		2163,
+		2164,
+		2181,
+		2182,
+		2183,
+		2184,
+		2185,
+		2186
+	};
+	
+	public static boolean isShotSkill(int skillId)
+	{
+		for (int id : _shotSkillsId)
+			if (id == skillId)
+				return true;
+			
+		return false;
+	}
+	
 	public static SkillTable getInstance()
 	{
 		return SingletonHolder._instance;

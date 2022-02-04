@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[rune_npc1]">
+	<spawn spawn_bydefault="true"  name="[rune_npc1]">
 		<npc id="35503" count="1" respawn="10800" pos="18618 -49358 -1220 0" />	
 	</spawn>
-	<spawn name="[rune_npc2a]">
+	<spawn spawn_bydefault="true"  name="[rune_npc2a]">
 		<npc id="35503" count="1" respawn="10800" pos="18372 -48992 -1212 49152" />	
 	</spawn>
-	<spawn name="[rune_npc2b]">
+	<spawn spawn_bydefault="true"  name="[rune_npc2b]">
 		<npc id="35511" count="1" respawn="10800" pos="10105 -49235 -280 0" />	
 	</spawn>
-	<spawn name="[rune_npc3]">
+	<spawn spawn_bydefault="true"  name="[rune_npc3]">
 		<npc id="35509" count="1" respawn="10800" pos="10105 -49064 -280 0" />	
 	</spawn>
-	<spawn name="[rune_npc4]">
+	<spawn spawn_bydefault="true"  name="[rune_npc4]">
 		<npc id="35507" count="1" respawn="10800" pos="12837 -49831 -1088 32768" />	
 	</spawn>
-	<spawn name="[rune_npc5]">
+	<spawn spawn_bydefault="true"  name="[rune_npc5]">
 		<npc id="35508" count="1" respawn="10800" pos="12837 -48550 -1088 32768" />	
 	</spawn>
-	<spawn name="[rune_npc6]">
+	<spawn spawn_bydefault="true"  name="[rune_npc6]">
 		<npc id="35510" count="1" respawn="10800" pos="12783 -49167 981 0" />	
 	</spawn>
-	<spawn name="[rune_npc7]">
+	<spawn spawn_bydefault="true"  name="[rune_npc7]">
 		<npc id="35513" count="1" respawn="10800" pos="27074 -49357 -1300 0" />	
 	</spawn>
-	<spawn name="[rune_npc8]" event_name="[rune_npc8]">
+	<spawn spawn_bydefault="true"  name="[rune_npc8]" event_name="[rune_npc8]">
 		<npc id="35502" count="1" respawn="10800" pos="11259 -49146 3865 0" />	
 	</spawn>
-	<spawn name="[rune_npc9]">
+	<spawn spawn_bydefault="true"  name="[rune_npc9]">
 		<npc id="35504" count="1" respawn="60" pos="15989 -49355 -1072 49152" />	
 	</spawn>
-	<spawn name="[rune_npc10]">
+	<spawn spawn_bydefault="true"  name="[rune_npc10]">
 		<npc id="35504" count="1" respawn="60" pos="15634 -49248 -1056 49152" />	
 	</spawn>
-	<spawn name="[rune_npc11]">
+	<spawn spawn_bydefault="true"  name="[rune_npc11]">
 		<npc id="35505" count="1" respawn="60" pos="12784 -50971 -1088 49152" />	
 	</spawn>
-	<spawn name="[rune_npc12]">
+	<spawn spawn_bydefault="true"  name="[rune_npc12]">
 		<npc id="35505" count="1" respawn="60" pos="12699 -51223 -1096 49152" />	
 	</spawn>
-	<spawn name="[rune_castle_outergate_inside]" event_name="[rune_castle_outergate_inside]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_outergate_inside]" event_name="[rune_castle_outergate_inside]">
 		<npc id="35496" count="1" respawn="10800" pos="18519 -49020 -1215 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18519 -49053 -1215 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18519 -49086 -1215 0" />	
@@ -69,7 +69,7 @@
 		<npc id="35495" count="1" respawn="10800" pos="18585 -49251 -1215 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="18585 -49284 -1215 0" />	
 	</spawn>
-	<spawn name="[rune_castle_outergate_frontside]" event_name="[rune_castle_outergate_frontside]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_outergate_frontside]" event_name="[rune_castle_outergate_frontside]">
 		<npc id="35495" count="1" respawn="10800" pos="18439 -49020 -1215 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="18439 -49053 -1215 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="18439 -49086 -1215 0" />	
@@ -98,7 +98,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="18519 -49251 -1215 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18519 -49284 -1215 0" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_inside]" event_name="[rune_castle_innergate_inside]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_inside]" event_name="[rune_castle_innergate_inside]">
 		<npc id="35496" count="1" respawn="10800" pos="15834 -49050 -1059 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="15834 -49076 -1059 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="15834 -49102 -1059 0" />	
@@ -127,7 +127,7 @@
 		<npc id="35495" count="1" respawn="10800" pos="15900 -49232 -1059 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="15900 -49258 -1059 0" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_frontside]" event_name="[rune_castle_innergate_frontside]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_frontside]" event_name="[rune_castle_innergate_frontside]">
 		<npc id="35495" count="1" respawn="10800" pos="15720 -49050 -1059 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="15720 -49076 -1059 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="15720 -49102 -1059 0" />	
@@ -147,10 +147,10 @@
 		<npc id="35488" count="1" respawn="10800" pos="15687 -49232 -1059 0" />	
 		<npc id="35488" count="1" respawn="10800" pos="15687 -49258 -1059 0" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_frontside_c]" event_name="[rune_castle_innergate_frontside_c]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_frontside_c]" event_name="[rune_castle_innergate_frontside_c]">
 		<npc id="35486" count="1" respawn="10800" pos="15517 -49158 -1059 0" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_frontsideright]" event_name="[rune_castle_innergate_frontsideright]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_frontsideright]" event_name="[rune_castle_innergate_frontsideright]">
 		<npc id="35495" count="1" respawn="10800" pos="15453 -49401 -1059 16384" />	
 		<npc id="35495" count="1" respawn="10800" pos="15473 -49401 -1059 16384" />	
 		<npc id="35495" count="1" respawn="10800" pos="15493 -49401 -1059 16384" />	
@@ -170,10 +170,10 @@
 		<npc id="35488" count="1" respawn="10800" pos="15593 -49368 -1059 16384" />	
 		<npc id="35488" count="1" respawn="10800" pos="15613 -49368 -1059 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_frontsideright_c]" event_name="[rune_castle_innergate_frontsideright_c]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_frontsideright_c]" event_name="[rune_castle_innergate_frontsideright_c]">
 		<npc id="35486" count="1" respawn="10800" pos="15513 -49520 -1010 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_frontsideleft]" event_name="[rune_castle_innergate_frontsideleft]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_frontsideleft]" event_name="[rune_castle_innergate_frontsideleft]">
 		<npc id="35488" count="1" respawn="10800" pos="15453 -48927 -1059 49152" />	
 		<npc id="35488" count="1" respawn="10800" pos="15473 -48927 -1059 49152" />	
 		<npc id="35488" count="1" respawn="10800" pos="15493 -48927 -1059 49152" />	
@@ -193,10 +193,10 @@
 		<npc id="35495" count="1" respawn="10800" pos="15593 -48894 -1059 49152" />	
 		<npc id="35495" count="1" respawn="10800" pos="15613 -48894 -1059 49152" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_frontsideleft_c]" event_name="[rune_castle_innergate_frontsideleft_c]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_frontsideleft_c]" event_name="[rune_castle_innergate_frontsideleft_c]">
 		<npc id="35486" count="1" respawn="10800" pos="15542 -48783 -1013 49152" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_pod]" event_name="[rune_castle_innergate_pod]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_pod]" event_name="[rune_castle_innergate_pod]">
 		<npc id="35496" count="1" respawn="10800" pos="14902 -50683 -420 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="14925 -50648 -420 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="14947 -50613 -420 0" />	
@@ -207,7 +207,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="15040 -50468 -420 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="15055 -50441 -420 0" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_pod1]" event_name="[rune_castle_innergate_pod1]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_pod1]" event_name="[rune_castle_innergate_pod1]">
 		<npc id="35496" count="1" respawn="10800" pos="15219 -50914 -420 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="15239 -50878 -420 0" />	
 		<npc id="35485" count="1" respawn="10800" pos="15258 -50848 -420 0" />	
@@ -216,7 +216,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="15309 -50761 -420 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="15329 -50731 -420 0" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_balkon]" event_name="[rune_castle_innergate_balkon]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_balkon]" event_name="[rune_castle_innergate_balkon]">
 		<npc id="35496" count="1" respawn="10800" pos="16408 -50210 -394 49152" />	
 		<npc id="35496" count="1" respawn="10800" pos="16362 -50201 -394 49152" />	
 		<npc id="35485" count="1" respawn="10800" pos="16330 -50194 -394 49152" />	
@@ -225,7 +225,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="16194 -50156 -394 49152" />	
 		<npc id="35485" count="1" respawn="10800" pos="16141 -50148 -394 49152" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_balkon1]" event_name="[rune_castle_innergate_balkon1]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_balkon1]" event_name="[rune_castle_innergate_balkon1]">
 		<npc id="35496" count="1" respawn="10800" pos="16423 -50155 -394 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="16377 -50140 -394 16384" />	
 		<npc id="35485" count="1" respawn="10800" pos="16346 -50136 -394 16384" />	
@@ -234,7 +234,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="16211 -50094 -394 16384" />	
 		<npc id="35485" count="1" respawn="10800" pos="16156 -50071 -394 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_in]" event_name="[rune_castle_in]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_in]" event_name="[rune_castle_in]">
 		<npc id="35495" count="1" respawn="10800" pos="13510 -49064 -538 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="13510 -49086 -538 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="13510 -49108 -538 0" />	
@@ -272,7 +272,7 @@
 		<npc id="35485" count="1" respawn="10800" pos="13378 -49218 -538 0" />	
 		<npc id="35486" count="1" respawn="10800" pos="13378 -49240 -538 0" />	
 	</spawn>
-	<spawn name="[rune_castle_podleft]" event_name="[rune_castle_podleft]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_podleft]" event_name="[rune_castle_podleft]">
 		<npc id="35495" count="1" respawn="10800" pos="11257 -48435 -32 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="11257 -48470 -32 0" />	
 		<npc id="35484" count="1" respawn="10800" pos="11257 -48505 -32 0" />	
@@ -289,7 +289,7 @@
 		<npc id="35485" count="1" respawn="10800" pos="11207 -48540 -32 0" />	
 		<npc id="35486" count="1" respawn="10800" pos="11207 -48575 -32 0" />	
 	</spawn>
-	<spawn name="[rune_castle_podright]" event_name="[rune_castle_podright]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_podright]" event_name="[rune_castle_podright]">
 		<npc id="35495" count="1" respawn="10800" pos="11257 -49735 -32 0" />	
 		<npc id="35495" count="1" respawn="10800" pos="11257 -49770 -32 0" />	
 		<npc id="35484" count="1" respawn="10800" pos="11257 -49805 -32 0" />	
@@ -306,7 +306,7 @@
 		<npc id="35485" count="1" respawn="10800" pos="11207 -49840 -32 0" />	
 		<npc id="35486" count="1" respawn="10800" pos="11207 -49875 -32 0" />	
 	</spawn>
-	<spawn name="[rune_castle_crystal_balkon]" event_name="[rune_castle_crystal_balkon]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_crystal_balkon]" event_name="[rune_castle_crystal_balkon]">
 		<npc id="35496" count="1" respawn="10800" pos="9116 -49683 1252 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="9149 -49683 1252 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="9182 -49683 1252 16384" />	
@@ -317,7 +317,7 @@
 		<npc id="35486" count="1" respawn="10800" pos="9347 -49683 1252 16384" />	
 		<npc id="35485" count="1" respawn="10800" pos="9380 -49683 1252 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_crystal_balkon1]" event_name="[rune_castle_crystal_balkon1]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_crystal_balkon1]" event_name="[rune_castle_crystal_balkon1]">
 		<npc id="35496" count="1" respawn="10800" pos="9116 -48625 1252 49152" />	
 		<npc id="35496" count="1" respawn="10800" pos="9149 -48625 1252 49152" />	
 		<npc id="35496" count="1" respawn="10800" pos="9182 -48625 1252 49152" />	
@@ -328,7 +328,7 @@
 		<npc id="35486" count="1" respawn="10800" pos="9347 -48625 1252 49152" />	
 		<npc id="35485" count="1" respawn="10800" pos="9380 -48625 1252 49152" />	
 	</spawn>
-	<spawn name="[rune_castle_crystal_balkon2]" event_name="[rune_castle_crystal_balkon2]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_crystal_balkon2]" event_name="[rune_castle_crystal_balkon2]">
 		<npc id="35496" count="1" respawn="10800" pos="8501 -49168 1252 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="8501 -49190 1252 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="8501 -49212 1252 0" />	
@@ -339,7 +339,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="8501 -49324 1252 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="8501 -49346 1252 0" />	
 	</spawn>
-	<spawn name="[rune_castle_crystal_in]" event_name="[rune_castle_crystal_in]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_crystal_in]" event_name="[rune_castle_crystal_in]">
 		<npc id="35496" count="1" respawn="10800" pos="11056 -49020 997 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="11056 -49053 997 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="11056 -49086 997 0" />	
@@ -377,7 +377,7 @@
 		<npc id="35473" count="1" respawn="10800" pos="11023 -49251 997 0" />	
 		<npc id="35470" count="1" respawn="10800" pos="11023 -49284 997 0" />	
 	</spawn>
-	<spawn name="[rune_castle_crystal_in1]" event_name="[rune_castle_crystal_in1]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_crystal_in1]" event_name="[rune_castle_crystal_in1]">
 		<npc id="35496" count="1" respawn="10800" pos="9116 -49438 997 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="9149 -49438 997 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="9182 -49438 997 16384" />	
@@ -388,7 +388,7 @@
 		<npc id="35486" count="1" respawn="10800" pos="9347 -49438 997 16384" />	
 		<npc id="35485" count="1" respawn="10800" pos="9380 -49438 997 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_crystal_in2]" event_name="[rune_castle_crystal_in2]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_crystal_in2]" event_name="[rune_castle_crystal_in2]">
 		<npc id="35496" count="1" respawn="10800" pos="9616 -49438 997 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="9649 -49438 997 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="9682 -49438 997 16384" />	
@@ -408,7 +408,7 @@
 		<npc id="35475" count="1" respawn="10800" pos="9847 -49400 997 16384" />	
 		<npc id="35475" count="1" respawn="10800" pos="9880 -49400 997 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_crystal_balkon3]" event_name="[rune_castle_crystal_balkon3]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_crystal_balkon3]" event_name="[rune_castle_crystal_balkon3]">
 		<npc id="35475" count="1" respawn="10800" pos="10419 -48380 1252 16384" />	
 		<npc id="35475" count="1" respawn="10800" pos="10441 -48380 1252 16384" />	
 		<npc id="35475" count="1" respawn="10800" pos="10463 -48380 1252 16384" />	
@@ -428,7 +428,7 @@
 		<npc id="35495" count="1" respawn="10800" pos="10573 -48347 1252 16384" />	
 		<npc id="35495" count="1" respawn="10800" pos="10595 -48347 1252 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_pole_in]" event_name="[rune_castle_pole_in]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_pole_in]" event_name="[rune_castle_pole_in]">
 		<npc id="35488" count="1" respawn="10800" pos="13268 -50257 987 49152" />	
 		<npc id="35488" count="1" respawn="10800" pos="13294 -50247 987 49152" />	
 		<npc id="35488" count="1" respawn="10800" pos="13316 -50240 987 49152" />	
@@ -448,7 +448,7 @@
 		<npc id="35495" count="1" respawn="10800" pos="13422 -50158 987 49152" />	
 		<npc id="35495" count="1" respawn="10800" pos="13454 -50143 987 49152" />	
 	</spawn>
-	<spawn name="[rune_castle_pole_in1]" event_name="[rune_castle_pole_in1]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_pole_in1]" event_name="[rune_castle_pole_in1]">
 		<npc id="35495" count="1" respawn="10800" pos="13466 -48156 987 16384" />	
 		<npc id="35495" count="1" respawn="10800" pos="13442 -48141 987 16384" />	
 		<npc id="35495" count="1" respawn="10800" pos="13423 -48127 987 16384" />	
@@ -468,7 +468,7 @@
 		<npc id="35488" count="1" respawn="10800" pos="13330 -48041 987 16384" />	
 		<npc id="35488" count="1" respawn="10800" pos="13300 -48026 987 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_pole_in2]" event_name="[rune_castle_pole_in2]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_pole_in2]" event_name="[rune_castle_pole_in2]">
 		<npc id="35496" count="1" respawn="10800" pos="13318 -47787 987 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="13298 -47845 987 0" />	
 		<npc id="35486" count="1" respawn="10800" pos="13275 -47883 987 0" />	
@@ -476,7 +476,7 @@
 		<npc id="35486" count="1" respawn="10800" pos="13241 -47955 987 0" />	
 		<npc id="35485" count="1" respawn="10800" pos="13213 -47998 987 0" />	
 	</spawn>
-	<spawn name="[rune_castle_pole_in3]" event_name="[rune_castle_pole_in3]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_pole_in3]" event_name="[rune_castle_pole_in3]">
 		<npc id="35496" count="1" respawn="10800" pos="13317 -50536 987 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="13302 -50475 987 16384" />	
 		<npc id="35486" count="1" respawn="10800" pos="13274 -50413 987 16384" />	
@@ -484,7 +484,7 @@
 		<npc id="35486" count="1" respawn="10800" pos="13233 -50331 987 16384" />	
 		<npc id="35485" count="1" respawn="10800" pos="13205 -50280 987 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_outergate_top]" event_name="[rune_castle_outergate_top]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_outergate_top]" event_name="[rune_castle_outergate_top]">
 		<npc id="35496" count="1" respawn="10800" pos="18509 -49013 -571 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18509 -49046 -571 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18509 -49079 -571 0" />	
@@ -495,7 +495,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="18509 -49244 -571 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18509 -49277 -571 0" />	
 	</spawn>
-	<spawn name="[rune_castle_outergate_top1]" event_name="[rune_castle_outergate_top1]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_outergate_top1]" event_name="[rune_castle_outergate_top1]">
 		<npc id="35486" count="1" respawn="10800" pos="18528 -48942 -517 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18578 -48941 -517 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18585 -48899 -517 0" />	
@@ -503,7 +503,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="18511 -48853 -517 0" />	
 		<npc id="35486" count="1" respawn="10800" pos="18437 -48852 -517 0" />	
 	</spawn>
-	<spawn name="[rune_castle_outergate_top2]" event_name="[rune_castle_outergate_top2]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_outergate_top2]" event_name="[rune_castle_outergate_top2]">
 		<npc id="35486" count="1" respawn="10800" pos="18427 -49450 -517 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18473 -49455 -517 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="18581 -49446 -517 0" />	
@@ -511,7 +511,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="18586 -49372 -517 0" />	
 		<npc id="35486" count="1" respawn="10800" pos="18527 -49366 -517 0" />	
 	</spawn>
-	<spawn name="[rune_castle_wallright]" event_name="[rune_castle_wallright]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_wallright]" event_name="[rune_castle_wallright]">
 		<npc id="35486" count="1" respawn="10800" pos="17511 -51417 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17566 -51480 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17600 -51497 -579 0" />	
@@ -519,7 +519,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="17658 -51442 -579 0" />	
 		<npc id="35486" count="1" respawn="10800" pos="17625 -51391 -579 0" />	
 	</spawn>
-	<spawn name="[rune_castle_wallright1]" event_name="[rune_castle_wallright1]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_wallright1]" event_name="[rune_castle_wallright1]">
 		<npc id="35496" count="1" respawn="10800" pos="17190 -57912 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17207 -51693 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17231 -51675 -579 0" />	
@@ -530,7 +530,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="17410 -51512 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17482 -51482 -579 0" />	
 	</spawn>
-	<spawn name="[rune_castle_walleft]" event_name="[rune_castle_walleft]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_walleft]" event_name="[rune_castle_walleft]">
 		<npc id="35496" count="1" respawn="10800" pos="17434 -46824 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17399 -46782 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17382 -46763 -579 0" />	
@@ -541,7 +541,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="17211 -46610 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17183 -46585 -579 0" />	
 	</spawn>
-	<spawn name="[rune_castle_walleft1]" event_name="[rune_castle_walleft1]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_walleft1]" event_name="[rune_castle_walleft1]">
 		<npc id="35486" count="1" respawn="10800" pos="17505 -46889 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17558 -46829 -579 0" />	
 		<npc id="35496" count="1" respawn="10800" pos="17604 -46808 -579 0" />	
@@ -549,7 +549,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="17659 -46866 -579 0" />	
 		<npc id="35486" count="1" respawn="10800" pos="17624 -46918 -579 0" />	
 	</spawn>
-	<spawn name="[rune_castle_outergate_top3]" event_name="[rune_castle_outergate_top3]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_outergate_top3]" event_name="[rune_castle_outergate_top3]">
 		<npc id="35484" count="1" respawn="10800" pos="17922 -48435 -706 16384" />	
 		<npc id="35484" count="1" respawn="10800" pos="17950 -48423 -706 16384" />	
 		<npc id="35484" count="1" respawn="10800" pos="17972 -48415 -706 16384" />	
@@ -563,7 +563,7 @@
 		<npc id="35495" count="1" respawn="10800" pos="18036 -48430 -706 16384" />	
 		<npc id="35495" count="1" respawn="10800" pos="18081 -48421 -706 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_outergate_top4]" event_name="[rune_castle_outergate_top4]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_outergate_top4]" event_name="[rune_castle_outergate_top4]">
 		<npc id="35484" count="1" respawn="10800" pos="17922 -49935 -706 49152" />	
 		<npc id="35484" count="1" respawn="10800" pos="17950 -49923 -706 49152" />	
 		<npc id="35484" count="1" respawn="10800" pos="17972 -49915 -706 49152" />	
@@ -577,7 +577,7 @@
 		<npc id="35495" count="1" respawn="10800" pos="18036 -49930 -706 49152" />	
 		<npc id="35495" count="1" respawn="10800" pos="18081 -49921 -706 49152" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_003]" event_name="[rune_castle_innergate_003]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_003]" event_name="[rune_castle_innergate_003]">
 		<npc id="35486" count="1" respawn="10800" pos="12782 -51123 -1087 49152" />	
 		<npc id="35485" count="1" respawn="10800" pos="12802 -51123 -1087 49152" />	
 		<npc id="35486" count="1" respawn="10800" pos="12822 -51123 -1087 49152" />	
@@ -613,7 +613,7 @@
 		<npc id="35495" count="1" respawn="10800" pos="12902 -51221 -1087 49152" />	
 		<npc id="35495" count="1" respawn="10800" pos="12922 -51221 -1087 49152" />	
 	</spawn>
-	<spawn name="[rune_castle_balkon_003]" event_name="[rune_castle_balkon_003]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_balkon_003]" event_name="[rune_castle_balkon_003]">
 		<npc id="35496" count="1" respawn="10800" pos="16421 -48148 -393 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="16380 -48166 -393 16384" />	
 		<npc id="35486" count="1" respawn="10800" pos="16360 -48168 -393 16384" />	
@@ -628,7 +628,7 @@
 		<npc id="35485" count="1" respawn="10800" pos="16415 -48089 -393 16384" />	
 		<npc id="35485" count="1" respawn="10800" pos="16384 -48091 -393 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_bashnya_001]" event_name="[rune_castle_bashnya_001]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_bashnya_001]" event_name="[rune_castle_bashnya_001]">
 		<npc id="35496" count="1" respawn="10800" pos="16739 -47800 -640 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="16682 -47800 -640 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="16627 -47794 -640 16384" />	
@@ -652,7 +652,7 @@
 		<npc id="35485" count="1" respawn="10800" pos="16630 -48157 -640 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="16677 -48147 -640 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_bashnya_002]" event_name="[rune_castle_bashnya_002]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_bashnya_002]" event_name="[rune_castle_bashnya_002]">
 		<npc id="35496" count="1" respawn="10800" pos="16739 -47800 -640 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="16682 -47800 -640 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="16734 -50510 -640 16384" />	
@@ -676,7 +676,7 @@
 		<npc id="35485" count="1" respawn="10800" pos="16699 -50170 -640 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="16742 -50188 -640 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_innergate_001]" event_name="[rune_castle_innergate_001]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_innergate_001]" event_name="[rune_castle_innergate_001]">
 		<npc id="35496" count="1" respawn="10800" pos="15142 -47442 -418 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="15170 -47489 -418 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="15193 -47526 -418 16384" />	
@@ -686,7 +686,7 @@
 		<npc id="35496" count="1" respawn="10800" pos="15315 -47722 -418 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="15363 -47798 -418 16384" />	
 	</spawn>
-	<spawn name="[rune_castle_wall_004]" event_name="[rune_castle_wall_004]">
+	<spawn spawn_bydefault="true"  name="[rune_castle_wall_004]" event_name="[rune_castle_wall_004]">
 		<npc id="35496" count="1" respawn="10800" pos="13719 -51965 -290 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="13766 -51953 -290 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="13831 -51945 -290 16384" />	
@@ -696,10 +696,10 @@
 		<npc id="35496" count="1" respawn="10800" pos="14054 -51850 -290 16384" />	
 		<npc id="35496" count="1" respawn="10800" pos="14098 -41830 -290 16384" />	
 	</spawn>
-	<spawn name="[raidboss_2016_benom]" event_name="[raidboss_2016_benom]">
+	<spawn spawn_bydefault="true"  name="[raidboss_2016_benom]" event_name="[raidboss_2016_benom]">
 		<npc id="29054" count="1" respawn="0" pos="18584 -48894 -568 0" />	
 	</spawn>
-	<spawn name="[court_magician_rune]">
+	<spawn spawn_bydefault="true"  name="[court_magician_rune]">
 		<npc id="35655" count="1" respawn="60" pos="11461 -49609 -544 16384" />	
 	</spawn>
 </list>

@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[rune16_npc2017_01]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_01]">
 		<npc id="32109" count="1" respawn="60" pos="23664 -8464 -1345 33000" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_02]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_02]">
 		<npc id="32106" count="1" respawn="60" pos="10304 -25024 -3680 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_03]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_03]">
 		<npc id="32105" count="1" respawn="60" pos="11952 -24016 -3644 32000" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_04]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_04]">
 		<npc id="32104" count="1" respawn="60" pos="11504 -23344 -3644 39000" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_05]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_05]">
 		<npc id="32113" count="1" respawn="60" pos="11712 -23616 -3644 40000" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_06]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_06]">
 		<npc id="32111" count="1" respawn="60" pos="7344 -5440 -3219 50000" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_07]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_07]">
 		<npc id="32116" count="1" respawn="60" pos="12736 -14448 -3168 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_08]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_08]">
 		<npc id="32118" count="1" respawn="60" pos="15489 -19641 -3120 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_09]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_09]">
 		<npc id="32122" count="1" respawn="60" pos="13123 -8895 -3122 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_10]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_10]">
 		<npc id="32121" count="1" respawn="60" pos="18714 -9635 -2795 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_11]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_11]">
 		<npc id="32120" count="1" respawn="60" pos="27723 -11684 -2302 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_12]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_12]">
 		<npc id="32119" count="1" respawn="60" pos="23707 -19108 -2820 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_13]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_13]">
 		<npc id="32110" count="1" respawn="60" pos="27549 -6640 -2009 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_14]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_14]">
 		<npc id="32112" count="1" respawn="60" pos="5376 -2720 -3200 16500" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_15]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_15]">
 		<npc id="32114" count="1" respawn="60" pos="6538 -2529 -2936 42000" />	
 		<npc id="32115" count="1" respawn="60" pos="6360 -2573 -2936 0" />	
 		<npc id="32117" count="1" respawn="60" pos="6264 -2187 -2960 26000" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_sp29]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_sp29]">
 		<npc id="32108" count="1" respawn="60" pos="5432 -22628 -950 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_sp30]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_sp30]">
 		<npc id="32108" count="1" respawn="60" pos="2144 -18228 -1250 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_sp31]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_sp31]">
 		<npc id="32108" count="1" respawn="60" pos="1532 -13976 -950 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_sp32]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_sp32]">
 		<npc id="32108" count="1" respawn="60" pos="2000 -8504 -1450 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_sp33]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_sp33]">
 		<npc id="32108" count="1" respawn="60" pos="3876 -5572 -1150 0" />	
 	</spawn>
-	<spawn name="[rune16_npc2017_sp34]">
+	<spawn spawn_bydefault="true"  name="[rune16_npc2017_sp34]">
 		<npc id="32108" count="1" respawn="60" pos="3440 -20708 -1250 0" />	
 	</spawn>
-	<spawn name="[rune18_2017_01]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_01]">
 		<territory>	
 			<location x="5664" y="-19891" minz="-3668" maxz="-3468" />
 			<location x="5734" y="-19651" minz="-3668" maxz="-3468" />
@@ -77,7 +77,7 @@
 		</territory>
 		<npc id="22214" count="1" respawn="150" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune18_2017_02]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_02]">
 		<territory>	
 			<location x="6099" y="-17686" minz="-3772" maxz="-3572" />
 			<location x="6281" y="-17502" minz="-3772" maxz="-3572" />
@@ -88,7 +88,7 @@
 		</territory>
 		<npc id="22214" count="1" respawn="150" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune18_2017_03]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_03]">
 		<territory>	
 			<location x="3752" y="-18000" minz="-3684" maxz="-3484" />
 			<location x="3932" y="-17897" minz="-3684" maxz="-3484" />
@@ -99,7 +99,7 @@
 		</territory>
 		<npc id="22214" count="1" respawn="150" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune18_2017_04]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_04]">
 		<territory>	
 			<location x="3252" y="-15653" minz="-3608" maxz="-3408" />
 			<location x="3488" y="-15739" minz="-3608" maxz="-3408" />
@@ -110,7 +110,7 @@
 		</territory>
 		<npc id="22214" count="1" respawn="150" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune18_2017_05]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_05]">
 		<territory>	
 			<location x="5604" y="-14535" minz="-3756" maxz="-3556" />
 			<location x="5774" y="-14480" minz="-3756" maxz="-3556" />
@@ -121,7 +121,7 @@
 		</territory>
 		<npc id="22214" count="1" respawn="150" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune18_2017_06]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_06]">
 		<territory>	
 			<location x="7421" y="-14911" minz="-3788" maxz="-3588" />
 			<location x="7634" y="-14793" minz="-3788" maxz="-3588" />
@@ -132,7 +132,7 @@
 		</territory>
 		<npc id="22214" count="1" respawn="150" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune18_2017_10]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_10]">
 		<territory>	
 			<location x="7940" y="-21460" minz="-3672" maxz="-3172" />
 			<location x="8028" y="-19916" minz="-3672" maxz="-3172" />
@@ -142,7 +142,7 @@
 		</territory>
 		<npc id="22200" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_11]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_11]">
 		<territory>	
 			<location x="7940" y="-21460" minz="-3672" maxz="-3172" />
 			<location x="8028" y="-19916" minz="-3672" maxz="-3172" />
@@ -157,7 +157,7 @@
 		<npc id="22224" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22225" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_12]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_12]">
 		<territory>	
 			<location x="6004" y="-20072" minz="-3812" maxz="-3312" />
 			<location x="8084" y="-19952" minz="-3812" maxz="-3312" />
@@ -167,7 +167,7 @@
 		</territory>
 		<npc id="22203" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_13]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_13]">
 		<territory>	
 			<location x="6624" y="-18961" minz="-3812" maxz="-3312" />
 			<location x="6009" y="-19935" minz="-3812" maxz="-3312" />
@@ -187,7 +187,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_14]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_14]">
 		<territory>	
 			<location x="4212" y="-21220" minz="-3852" maxz="-3152" />
 			<location x="5052" y="-20284" minz="-3852" maxz="-3152" />
@@ -198,7 +198,7 @@
 		</territory>
 		<npc id="22211" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_15]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_15]">
 		<territory>	
 			<location x="3813" y="-20843" minz="-3852" maxz="-3152" />
 			<location x="4941" y="-20106" minz="-3852" maxz="-3152" />
@@ -217,7 +217,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_16]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_16]">
 		<territory>	
 			<location x="6644" y="-17804" minz="-3836" maxz="-3136" />
 			<location x="9124" y="-17596" minz="-3836" maxz="-3136" />
@@ -228,7 +228,7 @@
 		</territory>
 		<npc id="22208" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_17]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_17]">
 		<territory>	
 			<location x="6644" y="-17804" minz="-3836" maxz="-3136" />
 			<location x="8020" y="-17724" minz="-3836" maxz="-3136" />
@@ -247,7 +247,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_18]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_18]">
 		<territory>	
 			<location x="5448" y="-17132" minz="-3812" maxz="-3412" />
 			<location x="6300" y="-16940" minz="-3812" maxz="-3412" />
@@ -258,7 +258,7 @@
 		</territory>
 		<npc id="22211" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_19]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_19]">
 		<territory>	
 			<location x="5549" y="-16169" minz="-3812" maxz="-3412" />
 			<location x="6300" y="-16940" minz="-3812" maxz="-3412" />
@@ -278,7 +278,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="2" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_20]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_20]">
 		<territory>	
 			<location x="3260" y="-17464" minz="-3812" maxz="-2912" />
 			<location x="3952" y="-17348" minz="-3812" maxz="-2912" />
@@ -289,7 +289,7 @@
 		</territory>
 		<npc id="22203" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_21]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_21]">
 		<territory>	
 			<location x="3260" y="-17464" minz="-3812" maxz="-2912" />
 			<location x="3952" y="-17348" minz="-3812" maxz="-2912" />
@@ -308,7 +308,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_22]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_22]">
 		<territory>	
 			<location x="1632" y="-15840" minz="-3736" maxz="-2836" />
 			<location x="3160" y="-15940" minz="-3736" maxz="-2836" />
@@ -317,7 +317,7 @@
 		</territory>
 		<npc id="22200" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_23]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_23]">
 		<territory>	
 			<location x="3265" y="-14749" minz="-3736" maxz="-2836" />
 			<location x="3353" y="-13533" minz="-3736" maxz="-2836" />
@@ -335,7 +335,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_24]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_24]">
 		<territory>	
 			<location x="3924" y="-15596" minz="-3804" maxz="-3404" />
 			<location x="5048" y="-14872" minz="-3804" maxz="-3404" />
@@ -346,7 +346,7 @@
 		</territory>
 		<npc id="22203" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_25]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_25]">
 		<territory>	
 			<location x="3923" y="-15596" minz="-3804" maxz="-3404" />
 			<location x="5048" y="-14872" minz="-3804" maxz="-3404" />
@@ -365,7 +365,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_26]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_26]">
 		<territory>	
 			<location x="6940" y="-14972" minz="-3876" maxz="-3676" />
 			<location x="7524" y="-12764" minz="-3876" maxz="-3676" />
@@ -376,7 +376,7 @@
 		</territory>
 		<npc id="22208" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_27]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_27]">
 		<territory>	
 			<location x="6326" y="-14790" minz="-3876" maxz="-3676" />
 			<location x="6933" y="-12900" minz="-3876" maxz="-3676" />
@@ -392,7 +392,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_28]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_28]">
 		<territory>	
 			<location x="7732" y="-15128" minz="-3812" maxz="-3612" />
 			<location x="8820" y="-15200" minz="-3812" maxz="-3612" />
@@ -404,7 +404,7 @@
 		</territory>
 		<npc id="22203" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_29]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_29]">
 		<territory>	
 			<location x="7732" y="-15128" minz="-3812" maxz="-3612" />
 			<location x="8820" y="-15200" minz="-3812" maxz="-3612" />
@@ -420,7 +420,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_30]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_30]">
 		<territory>	
 			<location x="2840" y="-12800" minz="-3832" maxz="-3332" />
 			<location x="6960" y="-12688" minz="-3832" maxz="-3332" />
@@ -430,7 +430,7 @@
 		</territory>
 		<npc id="22200" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_31]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_31]">
 		<territory>	
 			<location x="2686" y="-12874" minz="-3844" maxz="-3344" />
 			<location x="6305" y="-12607" minz="-3844" maxz="-3344" />
@@ -452,7 +452,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_32]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_32]">
 		<territory>	
 			<location x="2152" y="-9900" minz="-3836" maxz="-3336" />
 			<location x="7100" y="-10972" minz="-3836" maxz="-3336" />
@@ -462,7 +462,7 @@
 		</territory>
 		<npc id="22208" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_33]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_33]">
 		<territory>	
 			<location x="3577" y="-10243" minz="-3836" maxz="-3336" />
 			<location x="7100" y="-10972" minz="-3836" maxz="-3336" />
@@ -484,7 +484,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_34]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_34]">
 		<territory>	
 			<location x="4364" y="-5736" minz="-3796" maxz="-2996" />
 			<location x="5720" y="-6180" minz="-3796" maxz="-2996" />
@@ -496,7 +496,7 @@
 		</territory>
 		<npc id="22200" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_35]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_35]">
 		<territory>	
 			<location x="3864" y="-5622" minz="-3796" maxz="-2996" />
 			<location x="5685" y="-6168" minz="-3796" maxz="-2996" />
@@ -518,7 +518,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_36]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_36]">
 		<territory>	
 			<location x="5744" y="-9016" minz="-3832" maxz="-3132" />
 			<location x="7668" y="-10024" minz="-3832" maxz="-3132" />
@@ -529,7 +529,7 @@
 		</territory>
 		<npc id="22208" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_37]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_37]">
 		<territory>	
 			<location x="5818" y="-8997" minz="-3832" maxz="-3132" />
 			<location x="7574" y="-9669" minz="-3832" maxz="-3132" />
@@ -552,7 +552,7 @@
 		<npc id="22227" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22226" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_38]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_38]" event_name="NIGHT">
 		<territory>	
 			<location x="7940" y="-21460" minz="-3672" maxz="-3172" />
 			<location x="8028" y="-19916" minz="-3672" maxz="-3172" />
@@ -563,7 +563,7 @@
 		<npc id="22219" count="2" respawn="150" respawn_rand="20" />	
 		<npc id="22220" count="2" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_39]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_39]" event_name="NIGHT">
 		<territory>	
 			<location x="6004" y="-20072" minz="-3812" maxz="-3312" />
 			<location x="8084" y="-19952" minz="-3812" maxz="-3312" />
@@ -575,7 +575,7 @@
 		<npc id="22220" count="2" respawn="150" respawn_rand="20" />	
 		<npc id="22221" count="2" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_40]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_40]" event_name="NIGHT">
 		<territory>	
 			<location x="4212" y="-21220" minz="-3852" maxz="-3152" />
 			<location x="5052" y="-20284" minz="-3852" maxz="-3152" />
@@ -589,7 +589,7 @@
 		<npc id="22221" count="2" respawn="150" respawn_rand="20" />	
 		<npc id="22222" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_41]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_41]" event_name="NIGHT">
 		<territory>	
 			<location x="6644" y="-17804" minz="-3836" maxz="-3136" />
 			<location x="9124" y="-17596" minz="-3836" maxz="-3136" />
@@ -603,7 +603,7 @@
 		<npc id="22221" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22222" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_42]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_42]" event_name="NIGHT">
 		<territory>	
 			<location x="5549" y="-16169" minz="-3812" maxz="-3412" />
 			<location x="6300" y="-16940" minz="-3812" maxz="-3412" />
@@ -619,7 +619,7 @@
 		<npc id="22222" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22214" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_43]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_43]" event_name="NIGHT">
 		<territory>	
 			<location x="3260" y="-17464" minz="-3832" maxz="-2932" />
 			<location x="3952" y="-17348" minz="-3832" maxz="-2932" />
@@ -632,7 +632,7 @@
 		<npc id="22220" count="2" respawn="150" respawn_rand="20" />	
 		<npc id="22221" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_44]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_44]" event_name="NIGHT">
 		<territory>	
 			<location x="1468" y="-15760" minz="-3768" maxz="-2868" />
 			<location x="3160" y="-15940" minz="-3768" maxz="-2868" />
@@ -643,7 +643,7 @@
 		<npc id="22220" count="2" respawn="150" respawn_rand="20" />	
 		<npc id="22222" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_45]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_45]" event_name="NIGHT">
 		<territory>	
 			<location x="3923" y="-15596" minz="-3804" maxz="-3404" />
 			<location x="5048" y="-14872" minz="-3804" maxz="-3404" />
@@ -657,7 +657,7 @@
 		<npc id="22222" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22214" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_46]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_46]" event_name="NIGHT">
 		<territory>	
 			<location x="6940" y="-14972" minz="-3876" maxz="-3676" />
 			<location x="7524" y="-12764" minz="-3876" maxz="-3676" />
@@ -670,7 +670,7 @@
 		<npc id="22220" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22221" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_47]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_47]" event_name="NIGHT">
 		<territory>	
 			<location x="7732" y="-15128" minz="-3812" maxz="-3612" />
 			<location x="8820" y="-15200" minz="-3812" maxz="-3612" />
@@ -683,7 +683,7 @@
 		<npc id="22219" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22220" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_48]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_48]" event_name="NIGHT">
 		<territory>	
 			<location x="2648" y="-12876" minz="-3876" maxz="-3376" />
 			<location x="6312" y="-12627" minz="-3876" maxz="-3376" />
@@ -700,7 +700,7 @@
 		<npc id="22222" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22214" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_49]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_49]" event_name="NIGHT">
 		<territory>	
 			<location x="3588" y="-10233" minz="-3820" maxz="-3320" />
 			<location x="7100" y="-10972" minz="-3820" maxz="-3320" />
@@ -718,7 +718,7 @@
 		<npc id="22222" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22214" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_50]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_50]" event_name="NIGHT">
 		<territory>	
 			<location x="3839" y="-5600" minz="-3696" maxz="-2896" />
 			<location x="5692" y="-5984" minz="-3696" maxz="-2896" />
@@ -736,7 +736,7 @@
 		<npc id="22222" count="1" respawn="150" respawn_rand="20" />	
 		<npc id="22214" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_51]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_51]" event_name="NIGHT">
 		<territory>	
 			<location x="5781" y="-8941" minz="-3904" maxz="-3204" />
 			<location x="7518" y="-9650" minz="-3904" maxz="-3204" />
@@ -754,7 +754,7 @@
 		<npc id="22222" count="2" respawn="150" respawn_rand="20" />	
 		<npc id="22214" count="1" respawn="150" respawn_rand="20" />	
 	</spawn>
-	<spawn name="[rune18_2017_sp01]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp01]">
 		<territory>	
 			<location x="4608" y="-22016" minz="-3672" maxz="-3072" />
 			<location x="7912" y="-21752" minz="-3672" maxz="-3072" />
@@ -768,7 +768,7 @@
 		</npc>
 		
 	</spawn>
-	<spawn name="[rune18_2017_sp17]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp17]">
 		<territory>	
 			<location x="5584" y="-21796" minz="-3852" maxz="-3352" />
 			<location x="8020" y="-20412" minz="-3852" maxz="-3352" />
@@ -781,7 +781,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp02]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp02]">
 		<territory>	
 			<location x="6220" y="-19928" minz="-3764" maxz="-3364" />
 			<location x="8136" y="-19944" minz="-3764" maxz="-3364" />
@@ -794,7 +794,7 @@
 			</ai_params>
 		</npc>
 	</spawn>
-	<spawn name="[rune18_2017_sp18]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp18]">
 		<territory>	
 			<location x="6876" y="-19520" minz="-3788" maxz="-3388" />
 			<location x="8368" y="-19204" minz="-3788" maxz="-3388" />
@@ -807,7 +807,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp03]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp03]">
 		<territory>	
 			<location x="2972" y="-18908" minz="-3792" maxz="-3192" />
 			<location x="4316" y="-21180" minz="-3792" maxz="-3192" />
@@ -821,7 +821,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp19]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp19]">
 		<territory>	
 			<location x="3188" y="-19636" minz="-3744" maxz="-3244" />
 			<location x="4156" y="-19320" minz="-3744" maxz="-3244" />
@@ -834,7 +834,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp04]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp04]">
 		<territory>	
 			<location x="6604" y="-17744" minz="-3828" maxz="-3528" />
 			<location x="8344" y="-16932" minz="-3828" maxz="-3528" />
@@ -847,7 +847,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp05]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp05]">
 		<territory>	
 			<location x="4296" y="-17772" minz="-3828" maxz="-3528" />
 			<location x="5964" y="-16576" minz="-3828" maxz="-3528" />
@@ -860,7 +860,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp06]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp06]">
 		<territory>	
 			<location x="2752" y="-18380" minz="-3904" maxz="-2904" />
 			<location x="3664" y="-16576" minz="-3904" maxz="-2904" />
@@ -873,7 +873,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp07]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp07]">
 		<territory>	
 			<location x="1492" y="-15752" minz="-3656" maxz="-2956" />
 			<location x="3020" y="-15716" minz="-3656" maxz="-2956" />
@@ -887,7 +887,7 @@
 		</npc>
 		
 	</spawn>
-	<spawn name="[rune18_2017_sp22]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp22]">
 		<territory>	
 			<location x="2056" y="-15208" minz="-3804" maxz="-3104" />
 			<location x="3564" y="-14232" minz="-3804" maxz="-3104" />
@@ -900,7 +900,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp08]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp08]">
 		<territory>	
 			<location x="4084" y="-15352" minz="-3804" maxz="-3404" />
 			<location x="5192" y="-14640" minz="-3804" maxz="-3404" />
@@ -914,7 +914,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp21]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp21]">
 		<territory>	
 			<location x="3948" y="-15392" minz="-3844" maxz="-3244" />
 			<location x="5068" y="-17096" minz="-3844" maxz="-3244" />
@@ -927,7 +927,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp09]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp09]">
 		<territory>	
 			<location x="6000" y="-14460" minz="-3912" maxz="-3612" />
 			<location x="8120" y="-13500" minz="-3912" maxz="-3612" />
@@ -940,7 +940,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp24]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp24]">
 		<territory>	
 			<location x="4868" y="-12696" minz="-3856" maxz="-3556" />
 			<location x="7012" y="-13168" minz="-3856" maxz="-3556" />
@@ -953,7 +953,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp20]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp20]">
 		<territory>	
 			<location x="3440" y="-15012" minz="-3804" maxz="-3404" />
 			<location x="5980" y="-16756" minz="-3804" maxz="-3404" />
@@ -966,7 +966,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp10]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp10]">
 		<territory>	
 			<location x="6600" y="-13220" minz="-3824" maxz="-3324" />
 			<location x="6104" y="-11004" minz="-3824" maxz="-3324" />
@@ -981,7 +981,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp11]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp11]">
 		<territory>	
 			<location x="2728" y="-12496" minz="-3840" maxz="-3540" />
 			<location x="5004" y="-12756" minz="-3840" maxz="-3540" />
@@ -995,7 +995,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp23]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp23]">
 		<territory>	
 			<location x="4640" y="-13480" minz="-3892" maxz="-3492" />
 			<location x="7004" y="-12808" minz="-3892" maxz="-3492" />
@@ -1008,7 +1008,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp25]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp25]">
 		<territory>	
 			<location x="2028" y="-10772" minz="-3816" maxz="-3316" />
 			<location x="3924" y="-10444" minz="-3816" maxz="-3316" />
@@ -1021,7 +1021,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp12]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp12]">
 		<territory>	
 			<location x="2284" y="-9048" minz="-3856" maxz="-3456" />
 			<location x="4004" y="-10548" minz="-3856" maxz="-3456" />
@@ -1034,7 +1034,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp13]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp13]">
 		<territory>	
 			<location x="5676" y="-11152" minz="-3852" maxz="-3452" />
 			<location x="7544" y="-10148" minz="-3852" maxz="-3452" />
@@ -1048,7 +1048,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp26]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp26]">
 		<territory>	
 			<location x="5852" y="-11608" minz="-3828" maxz="-3628" />
 			<location x="7032" y="-10880" minz="-3828" maxz="-3628" />
@@ -1061,7 +1061,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp27]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp27]">
 		<territory>	
 			<location x="1584" y="-9096" minz="-3820" maxz="-3320" />
 			<location x="3792" y="-10136" minz="-3820" maxz="-3320" />
@@ -1074,7 +1074,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp14]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp14]">
 		<territory>	
 			<location x="2500" y="-8940" minz="-3596" maxz="-2896" />
 			<location x="5252" y="-7596" minz="-3596" maxz="-2896" />
@@ -1088,7 +1088,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp15]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp15]">
 		<territory>	
 			<location x="2656" y="-8792" minz="-3676" maxz="-3176" />
 			<location x="4728" y="-8728" minz="-3676" maxz="-3176" />
@@ -1101,7 +1101,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp28]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp28]">
 		<territory>	
 			<location x="3020" y="-7796" minz="-3828" maxz="-2928" />
 			<location x="7624" y="-8252" minz="-3828" maxz="-2928" />
@@ -1114,7 +1114,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp16]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp16]">
 		<territory>	
 			<location x="5748" y="-8460" minz="-3816" maxz="-3416" />
 			<location x="7756" y="-9608" minz="-3816" maxz="-3416" />
@@ -1127,7 +1127,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune18_2017_sp29]">
+	<spawn spawn_bydefault="true"  name="[rune18_2017_sp29]">
 		<territory>	
 			<location x="5416" y="-10508" minz="-3848" maxz="-3448" />
 			<location x="7492" y="-10528" minz="-3848" maxz="-3448" />
@@ -1140,7 +1140,7 @@
 			</ai_params>
 		</npc>	
 	</spawn>
-	<spawn name="[rune17_2017_01]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_01]">
 		<territory>	
 			<location x="13284" y="-18080" minz="-3232" maxz="-2832" />
 			<location x="14372" y="-19508" minz="-3232" maxz="-2832" />
@@ -1149,7 +1149,7 @@
 		</territory>
 		<npc id="22224" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_02]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_02]">
 		<territory>	
 			<location x="13284" y="-18080" minz="-3232" maxz="-2832" />
 			<location x="14372" y="-19508" minz="-3232" maxz="-2832" />
@@ -1160,7 +1160,7 @@
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_03]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_03]">
 		<territory>	
 			<location x="16232" y="-19716" minz="-3320" maxz="-2620" />
 			<location x="17696" y="-16160" minz="-3320" maxz="-2620" />
@@ -1169,7 +1169,7 @@
 		</territory>
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_04]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_04]">
 		<territory>	
 			<location x="16232" y="-19716" minz="-3320" maxz="-2620" />
 			<location x="17696" y="-16160" minz="-3320" maxz="-2620" />
@@ -1183,7 +1183,7 @@
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_05]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_05]">
 		<territory>	
 			<location x="16768" y="-18244" minz="-3448" maxz="-3048" />
 			<location x="20232" y="-19244" minz="-3448" maxz="-3048" />
@@ -1192,7 +1192,7 @@
 		</territory>
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_06]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_06]">
 		<territory>	
 			<location x="16768" y="-18244" minz="-3448" maxz="-3048" />
 			<location x="20232" y="-19244" minz="-3448" maxz="-3048" />
@@ -1205,7 +1205,7 @@
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_07]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_07]">
 		<territory>	
 			<location x="17516" y="-20328" minz="-3504" maxz="-3004" />
 			<location x="20072" y="-20632" minz="-3504" maxz="-3004" />
@@ -1214,7 +1214,7 @@
 		</territory>
 		<npc id="22224" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_08]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_08]">
 		<territory>	
 			<location x="17516" y="-20328" minz="-3504" maxz="-3004" />
 			<location x="20072" y="-20632" minz="-3504" maxz="-3004" />
@@ -1227,7 +1227,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_09]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_09]">
 		<territory>	
 			<location x="19916" y="-21344" minz="-3476" maxz="-2676" />
 			<location x="20416" y="-22004" minz="-3476" maxz="-2676" />
@@ -1237,7 +1237,7 @@
 		</territory>
 		<npc id="22199" count="1" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_10]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_10]">
 		<territory>	
 			<location x="19916" y="-21344" minz="-3476" maxz="-2676" />
 			<location x="20416" y="-22004" minz="-3476" maxz="-2676" />
@@ -1252,7 +1252,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_11]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_11]">
 		<territory>	
 			<location x="22324" y="-21104" minz="-2900" maxz="-2200" />
 			<location x="22900" y="-22240" minz="-2900" maxz="-2200" />
@@ -1262,7 +1262,7 @@
 		</territory>
 		<npc id="22215" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_12]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_12]">
 		<territory>	
 			<location x="22324" y="-21104" minz="-2900" maxz="-2200" />
 			<location x="22900" y="-22240" minz="-2900" maxz="-2200" />
@@ -1277,7 +1277,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_13]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_13]">
 		<territory>	
 			<location x="22564" y="-18736" minz="-2884" maxz="-1984" />
 			<location x="24900" y="-20908" minz="-2884" maxz="-1984" />
@@ -1287,7 +1287,7 @@
 		</territory>
 		<npc id="22199" count="1" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_14]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_14]">
 		<territory>	
 			<location x="22564" y="-18736" minz="-2884" maxz="-1984" />
 			<location x="24900" y="-20908" minz="-2884" maxz="-1984" />
@@ -1302,7 +1302,7 @@
 		<npc id="22215" count="1" respawn="500" respawn_rand="100" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_15]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_15]">
 		<territory>	
 			<location x="26412" y="-19452" minz="-2764" maxz="-1864" />
 			<location x="26740" y="-20540" minz="-2764" maxz="-1864" />
@@ -1312,7 +1312,7 @@
 		</territory>
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_16]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_16]">
 		<territory>	
 			<location x="26412" y="-19452" minz="-2764" maxz="-1864" />
 			<location x="26740" y="-20540" minz="-2764" maxz="-1864" />
@@ -1325,7 +1325,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_17]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_17]">
 		<territory>	
 			<location x="23496" y="-18000" minz="-2864" maxz="-2164" />
 			<location x="28168" y="-18304" minz="-2864" maxz="-2164" />
@@ -1335,7 +1335,7 @@
 		</territory>
 		<npc id="22224" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_18]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_18]">
 		<territory>	
 			<location x="23496" y="-18000" minz="-2864" maxz="-2164" />
 			<location x="28168" y="-18304" minz="-2864" maxz="-2164" />
@@ -1345,7 +1345,7 @@
 		</territory>
 		<npc id="22215" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_19]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_19]">
 		<territory>	
 			<location x="23496" y="-18000" minz="-2864" maxz="-2164" />
 			<location x="28168" y="-18304" minz="-2864" maxz="-2164" />
@@ -1360,7 +1360,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="2" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_20]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_20]">
 		<territory>	
 			<location x="24312" y="-16116" minz="-2908" maxz="-2308" />
 			<location x="28500" y="-16192" minz="-2908" maxz="-2308" />
@@ -1371,7 +1371,7 @@
 		</territory>
 		<npc id="22199" count="1" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_21]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_21]">
 		<territory>	
 			<location x="24312" y="-16116" minz="-2908" maxz="-2308" />
 			<location x="28500" y="-16192" minz="-2908" maxz="-2308" />
@@ -1386,7 +1386,7 @@
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_22]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_22]">
 		<territory>	
 			<location x="22236" y="-17340" minz="-3176" maxz="-2376" />
 			<location x="22816" y="-17636" minz="-3176" maxz="-2376" />
@@ -1395,7 +1395,7 @@
 		</territory>
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_23]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_23]">
 		<territory>	
 			<location x="22236" y="-17340" minz="-3176" maxz="-2376" />
 			<location x="22816" y="-17636" minz="-3176" maxz="-2376" />
@@ -1409,7 +1409,7 @@
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_24]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_24]">
 		<territory>	
 			<location x="23024" y="-17792" minz="-3272" maxz="-2572" />
 			<location x="22292" y="-17424" minz="-3272" maxz="-2572" />
@@ -1420,7 +1420,7 @@
 		</territory>
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_25]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_25]">
 		<territory>	
 			<location x="23024" y="-17792" minz="-3272" maxz="-2572" />
 			<location x="22292" y="-17424" minz="-3272" maxz="-2572" />
@@ -1431,7 +1431,7 @@
 		</territory>
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_26]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_26]">
 		<territory>	
 			<location x="23024" y="-17792" minz="-3272" maxz="-2572" />
 			<location x="22292" y="-17424" minz="-3272" maxz="-2572" />
@@ -1447,7 +1447,7 @@
 		<npc id="22218" count="2" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_27]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_27]">
 		<territory>	
 			<location x="15468" y="-16084" minz="-3308" maxz="-3008" />
 			<location x="17652" y="-16164" minz="-3308" maxz="-3008" />
@@ -1458,7 +1458,7 @@
 		</territory>
 		<npc id="22224" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_28]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_28]">
 		<territory>	
 			<location x="15468" y="-16084" minz="-3308" maxz="-3008" />
 			<location x="17652" y="-16164" minz="-3308" maxz="-3008" />
@@ -1474,7 +1474,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="2" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_29]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_29]">
 		<territory>	
 			<location x="13108" y="-13196" minz="-3260" maxz="-2860" />
 			<location x="18140" y="-14552" minz="-3260" maxz="-2860" />
@@ -1483,7 +1483,7 @@
 		</territory>
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_30]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_30]">
 		<territory>	
 			<location x="13108" y="-13196" minz="-3260" maxz="-2860" />
 			<location x="18140" y="-14552" minz="-3260" maxz="-2860" />
@@ -1496,7 +1496,7 @@
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_31]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_31]">
 		<territory>	
 			<location x="18184" y="-14680" minz="-3204" maxz="-2504" />
 			<location x="24696" y="-14716" minz="-3204" maxz="-2504" />
@@ -1506,7 +1506,7 @@
 		</territory>
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_32]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_32]">
 		<territory>	
 			<location x="18184" y="-14680" minz="-3204" maxz="-2504" />
 			<location x="24696" y="-14716" minz="-3204" maxz="-2504" />
@@ -1520,7 +1520,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="2" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_33]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_33]">
 		<territory>	
 			<location x="22296" y="-12636" minz="-2764" maxz="-2364" />
 			<location x="24340" y="-13844" minz="-2764" maxz="-2364" />
@@ -1529,7 +1529,7 @@
 		</territory>
 		<npc id="22199" count="1" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_34]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_34]">
 		<territory>	
 			<location x="22296" y="-12636" minz="-2764" maxz="-2364" />
 			<location x="24340" y="-13844" minz="-2764" maxz="-2364" />
@@ -1539,7 +1539,7 @@
 		<npc id="22199" count="1" respawn="350" respawn_rand="55" />	
 		<npc id="22224" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_35]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_35]">
 		<territory>	
 			<location x="22296" y="-12636" minz="-2764" maxz="-2364" />
 			<location x="24340" y="-13844" minz="-2764" maxz="-2364" />
@@ -1553,7 +1553,7 @@
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_36]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_36]">
 		<territory>	
 			<location x="27936" y="-13856" minz="-2912" maxz="-2112" />
 			<location x="28408" y="-12504" minz="-2912" maxz="-2112" />
@@ -1563,7 +1563,7 @@
 		</territory>
 		<npc id="22199" count="1" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_37]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_37]">
 		<territory>	
 			<location x="27936" y="-13856" minz="-2912" maxz="-2112" />
 			<location x="28408" y="-12504" minz="-2912" maxz="-2112" />
@@ -1573,7 +1573,7 @@
 		</territory>
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_38]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_38]">
 		<territory>	
 			<location x="27936" y="-13856" minz="-2912" maxz="-2112" />
 			<location x="28408" y="-12504" minz="-2912" maxz="-2112" />
@@ -1588,7 +1588,7 @@
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_39]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_39]">
 		<territory>	
 			<location x="21672" y="-12080" minz="-2992" maxz="-2492" />
 			<location x="22120" y="-12872" minz="-2992" maxz="-2492" />
@@ -1598,7 +1598,7 @@
 		</territory>
 		<npc id="22199" count="2" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_40]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_40]">
 		<territory>	
 			<location x="21672" y="-12080" minz="-2992" maxz="-2492" />
 			<location x="22120" y="-12872" minz="-2992" maxz="-2492" />
@@ -1613,7 +1613,7 @@
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_41]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_41]">
 		<territory>	
 			<location x="19916" y="-13384" minz="-3184" maxz="-2484" />
 			<location x="21764" y="-8828" minz="-3184" maxz="-2484" />
@@ -1626,7 +1626,7 @@
 		</territory>
 		<npc id="22200" count="2" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_42]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_42]">
 		<territory>	
 			<location x="19916" y="-13384" minz="-3184" maxz="-2484" />
 			<location x="21764" y="-8828" minz="-3184" maxz="-2484" />
@@ -1639,7 +1639,7 @@
 		</territory>
 		<npc id="22199" count="2" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_43]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_43]">
 		<territory>	
 			<location x="19916" y="-13384" minz="-3184" maxz="-2484" />
 			<location x="21764" y="-8828" minz="-3184" maxz="-2484" />
@@ -1658,7 +1658,7 @@
 		<npc id="22225" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_44]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_44]">
 		<territory>	
 			<location x="17840" y="-11764" minz="-3376" maxz="-2476" />
 			<location x="17096" y="-10404" minz="-3376" maxz="-2476" />
@@ -1669,7 +1669,7 @@
 		<npc id="22224" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="22199" count="2" respawn="350" respawn_rand="55" />	
 	</spawn>
-	<spawn name="[rune17_2017_45]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_45]">
 		<territory>	
 			<location x="17840" y="-11764" minz="-3376" maxz="-2476" />
 			<location x="17096" y="-10404" minz="-3376" maxz="-2476" />
@@ -1680,7 +1680,7 @@
 		<npc id="22199" count="2" respawn="350" respawn_rand="55" />	
 		<npc id="22223" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_46]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_46]">
 		<territory>	
 			<location x="17840" y="-11764" minz="-3376" maxz="-2476" />
 			<location x="17096" y="-10404" minz="-3376" maxz="-2476" />
@@ -1695,7 +1695,7 @@
 		<npc id="22223" count="2" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="500" respawn_rand="100" />	
 	</spawn>
-	<spawn name="[rune17_2017_47]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_47]" event_name="NIGHT">
 		<territory>	
 			<location x="13284" y="-18080" minz="-3232" maxz="-2832" />
 			<location x="14372" y="-19508" minz="-3232" maxz="-2832" />
@@ -1707,7 +1707,7 @@
 		<npc id="22218" count="2" respawn="150" respawn_rand="35" />	
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_48]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_48]" event_name="NIGHT">
 		<territory>	
 			<location x="16232" y="-19716" minz="-3364" maxz="-2664" />
 			<location x="17696" y="-16160" minz="-3364" maxz="-2664" />
@@ -1720,7 +1720,7 @@
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_49]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_49]" event_name="NIGHT">
 		<territory>	
 			<location x="16768" y="-18244" minz="-3448" maxz="-3048" />
 			<location x="20232" y="-19244" minz="-3448" maxz="-3048" />
@@ -1733,7 +1733,7 @@
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_50]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_50]" event_name="NIGHT">
 		<territory>	
 			<location x="17516" y="-20328" minz="-3424" maxz="-2924" />
 			<location x="20072" y="-20632" minz="-3424" maxz="-2924" />
@@ -1746,7 +1746,7 @@
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="22220" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_51]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_51]" event_name="NIGHT">
 		<territory>	
 			<location x="20044" y="-20668" minz="-3376" maxz="-2576" />
 			<location x="20868" y="-21120" minz="-3376" maxz="-2576" />
@@ -1759,7 +1759,7 @@
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="22220" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_52]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_52]" event_name="NIGHT">
 		<territory>	
 			<location x="22324" y="-21104" minz="-2900" maxz="-2200" />
 			<location x="22900" y="-22240" minz="-2900" maxz="-2200" />
@@ -1773,7 +1773,7 @@
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="22220" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_53]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_53]" event_name="NIGHT">
 		<territory>	
 			<location x="22564" y="-18736" minz="-3136" maxz="-2236" />
 			<location x="24900" y="-20908" minz="-3136" maxz="-2236" />
@@ -1784,7 +1784,7 @@
 		<npc id="22218" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_54]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_54]" event_name="NIGHT">
 		<territory>	
 			<location x="26412" y="-19452" minz="-2684" maxz="-1884" />
 			<location x="26740" y="-20540" minz="-2684" maxz="-1884" />
@@ -1795,7 +1795,7 @@
 		<npc id="22218" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_55]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_55]" event_name="NIGHT">
 		<territory>	
 			<location x="26356" y="-18372" minz="-2788" maxz="-2188" />
 			<location x="28168" y="-18304" minz="-2788" maxz="-2188" />
@@ -1807,7 +1807,7 @@
 		<npc id="22218" count="1" respawn="150" respawn_rand="35" />	
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_56]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_56]" event_name="NIGHT">
 		<territory>	
 			<location x="26364" y="-16068" minz="-2756" maxz="-2256" />
 			<location x="28500" y="-16192" minz="-2756" maxz="-2256" />
@@ -1818,7 +1818,7 @@
 		<npc id="22218" count="3" respawn="150" respawn_rand="35" />	
 		<npc id="18344" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_57]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_57]" event_name="NIGHT">
 		<territory>	
 			<location x="22236" y="-17340" minz="-3144" maxz="-2344" />
 			<location x="26416" y="-19460" minz="-3144" maxz="-2344" />
@@ -1832,7 +1832,7 @@
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="22220" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_58]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_58]" event_name="NIGHT">
 		<territory>	
 			<location x="17668" y="-16120" minz="-3256" maxz="-2856" />
 			<location x="22424" y="-18280" minz="-3256" maxz="-2856" />
@@ -1845,7 +1845,7 @@
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="22220" count="1" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_59]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_59]" event_name="NIGHT">
 		<territory>	
 			<location x="13588" y="-15900" minz="-3272" maxz="-2972" />
 			<location x="17652" y="-16164" minz="-3272" maxz="-2972" />
@@ -1857,7 +1857,7 @@
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="22220" count="2" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_60]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_60]" event_name="NIGHT">
 		<territory>	
 			<location x="13108" y="-13196" minz="-3260" maxz="-2860" />
 			<location x="18140" y="-14552" minz="-3260" maxz="-2860" />
@@ -1869,7 +1869,7 @@
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="22220" count="2" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_61]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_61]" event_name="NIGHT">
 		<territory>	
 			<location x="18184" y="-14680" minz="-3220" maxz="-2620" />
 			<location x="24696" y="-14716" minz="-3220" maxz="-2620" />
@@ -1882,7 +1882,7 @@
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_62]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_62]" event_name="NIGHT">
 		<territory>	
 			<location x="22296" y="-12636" minz="-2764" maxz="-2364" />
 			<location x="24340" y="-13844" minz="-2764" maxz="-2364" />
@@ -1894,7 +1894,7 @@
 		<npc id="22218" count="2" respawn="150" respawn_rand="35" />	
 		<npc id="18345" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_63]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_63]" event_name="NIGHT">
 		<territory>	
 			<location x="27160" y="-14596" minz="-2916" maxz="-2116" />
 			<location x="28408" y="-12504" minz="-2916" maxz="-2116" />
@@ -1906,7 +1906,7 @@
 		<npc id="22218" count="2" respawn="150" respawn_rand="35" />	
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_64]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_64]" event_name="NIGHT">
 		<territory>	
 			<location x="20588" y="-11836" minz="-2916" maxz="-2416" />
 			<location x="22120" y="-12872" minz="-2916" maxz="-2416" />
@@ -1918,7 +1918,7 @@
 		<npc id="22218" count="2" respawn="150" respawn_rand="35" />	
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_65]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_65]" event_name="NIGHT">
 		<territory>	
 			<location x="20580" y="-11796" minz="-3152" maxz="-2452" />
 			<location x="21616" y="-9456" minz="-3152" maxz="-2452" />
@@ -1931,7 +1931,7 @@
 		<npc id="22218" count="3" respawn="150" respawn_rand="35" />	
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[rune17_2017_66]" event_name="NIGHT">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_66]" event_name="NIGHT">
 		<territory>	
 			<location x="13988" y="-11568" minz="-3384" maxz="-2484" />
 			<location x="18200" y="-11864" minz="-3384" maxz="-2484" />
@@ -1944,7 +1944,7 @@
 		<npc id="18346" count="1" respawn="300" respawn_rand="30" />	
 		<npc id="22220" count="2" respawn="150" respawn_rand="35" />	
 	</spawn>
-	<spawn name="[rune17_2017_67]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_67]">
 		<territory>	
 			<location x="16862" y="-19056" minz="-3425" maxz="-1925" />
 			<location x="21499" y="-20491" minz="-3425" maxz="-1925" />
@@ -1954,7 +1954,7 @@
 		</territory>
 		<npc id="22216" count="1" respawn="10800" respawn_rand="3600" />	
 	</spawn>
-	<spawn name="[rune17_2017_sp01]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp01]">
 		<territory>	
 			<location x="14612" y="-18908" minz="-3284" maxz="-2884" />
 			<location x="14936" y="-18204" minz="-3284" maxz="-2884" />
@@ -1968,7 +1968,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp02]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp02]">
 		<territory>	
 			<location x="14612" y="-18908" minz="-3284" maxz="-2884" />
 			<location x="14936" y="-18204" minz="-3284" maxz="-2884" />
@@ -1982,7 +1982,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp03]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp03]">
 		<territory>	
 			<location x="14224" y="-17008" minz="-3308" maxz="-3008" />
 			<location x="16180" y="-18604" minz="-3308" maxz="-3008" />
@@ -1995,7 +1995,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp04]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp04]">
 		<territory>	
 			<location x="15140" y="-17368" minz="-3356" maxz="-3156" />
 			<location x="16564" y="-17580" minz="-3356" maxz="-3156" />
@@ -2008,7 +2008,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp05]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp05]">
 		<territory>	
 			<location x="16992" y="-17204" minz="-3248" maxz="-3048" />
 			<location x="18000" y="-18656" minz="-3248" maxz="-3048" />
@@ -2021,7 +2021,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp06]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp06]">
 		<territory>	
 			<location x="17992" y="-18696" minz="-3376" maxz="-3176" />
 			<location x="19248" y="-18656" minz="-3376" maxz="-3176" />
@@ -2034,7 +2034,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp07]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp07]">
 		<territory>	
 			<location x="19064" y="-18792" minz="-3364" maxz="-3064" />
 			<location x="20440" y="-18716" minz="-3364" maxz="-3064" />
@@ -2047,7 +2047,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp08]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp08]">
 		<territory>	
 			<location x="17776" y="-19672" minz="-3344" maxz="-3144" />
 			<location x="18604" y="-19640" minz="-3344" maxz="-3144" />
@@ -2060,7 +2060,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp09]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp09]">
 		<territory>	
 			<location x="18376" y="-19916" minz="-3392" maxz="-3192" />
 			<location x="19224" y="-20132" minz="-3392" maxz="-3192" />
@@ -2073,7 +2073,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp10]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp10]">
 		<territory>	
 			<location x="19196" y="-20244" minz="-3416" maxz="-3216" />
 			<location x="20012" y="-20392" minz="-3416" maxz="-3216" />
@@ -2086,7 +2086,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp11]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp11]">
 		<territory>	
 			<location x="20076" y="-21412" minz="-3440" maxz="-2940" />
 			<location x="21264" y="-20956" minz="-3440" maxz="-2940" />
@@ -2099,7 +2099,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp12]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp12]">
 		<territory>	
 			<location x="20884" y="-19328" minz="-3316" maxz="-3116" />
 			<location x="21512" y="-19192" minz="-3316" maxz="-3116" />
@@ -2112,7 +2112,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp13]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp13]">
 		<territory>	
 			<location x="20204" y="-20056" minz="-3360" maxz="-3160" />
 			<location x="21168" y="-20024" minz="-3360" maxz="-3160" />
@@ -2125,7 +2125,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp14]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp14]">
 		<territory>	
 			<location x="22756" y="-21388" minz="-2796" maxz="-2396" />
 			<location x="24088" y="-21720" minz="-2796" maxz="-2396" />
@@ -2138,7 +2138,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp15]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp15]">
 		<territory>	
 			<location x="22728" y="-20996" minz="-2836" maxz="-2536" />
 			<location x="23824" y="-20688" minz="-2836" maxz="-2536" />
@@ -2151,7 +2151,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp18]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp18]">
 		<territory>	
 			<location x="22752" y="-19796" minz="-2836" maxz="-2636" />
 			<location x="23932" y="-20624" minz="-2836" maxz="-2636" />
@@ -2164,7 +2164,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp16]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp16]">
 		<territory>	
 			<location x="23820" y="-19684" minz="-2860" maxz="-2460" />
 			<location x="24752" y="-20584" minz="-2860" maxz="-2460" />
@@ -2177,7 +2177,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp17]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp17]">
 		<territory>	
 			<location x="23068" y="-18884" minz="-2848" maxz="-2648" />
 			<location x="23720" y="-19676" minz="-2848" maxz="-2648" />
@@ -2190,7 +2190,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp19]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp19]">
 		<territory>	
 			<location x="23508" y="-17896" minz="-2892" maxz="-2692" />
 			<location x="24332" y="-18772" minz="-2892" maxz="-2692" />
@@ -2203,7 +2203,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp20]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp20]">
 		<territory>	
 			<location x="24632" y="-17616" minz="-2912" maxz="-2712" />
 			<location x="26128" y="-17348" minz="-2912" maxz="-2712" />
@@ -2216,7 +2216,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp21]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp21]">
 		<territory>	
 			<location x="25956" y="-17400" minz="-2820" maxz="-2620" />
 			<location x="27436" y="-17192" minz="-2820" maxz="-2620" />
@@ -2229,7 +2229,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp22]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp22]">
 		<territory>	
 			<location x="27808" y="-17764" minz="-2792" maxz="-2492" />
 			<location x="28156" y="-17332" minz="-2792" maxz="-2492" />
@@ -2242,7 +2242,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp23]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp23]">
 		<territory>	
 			<location x="23972" y="-17228" minz="-2904" maxz="-2604" />
 			<location x="27684" y="-17456" minz="-2904" maxz="-2604" />
@@ -2255,7 +2255,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp24]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp24]">
 		<territory>	
 			<location x="26812" y="-15856" minz="-2752" maxz="-2452" />
 			<location x="27904" y="-16096" minz="-2752" maxz="-2452" />
@@ -2268,7 +2268,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp25]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp25]">
 		<territory>	
 			<location x="24512" y="-15704" minz="-2856" maxz="-2656" />
 			<location x="25552" y="-15748" minz="-2856" maxz="-2656" />
@@ -2291,7 +2291,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp26]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp26]">
 		<territory>	
 			<location x="25212" y="-16380" minz="-2876" maxz="-2676" />
 			<location x="26468" y="-16492" minz="-2876" maxz="-2676" />
@@ -2304,7 +2304,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp27]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp27]">
 		<territory>	
 			<location x="26308" y="-16224" minz="-2768" maxz="-2568" />
 			<location x="27216" y="-16600" minz="-2768" maxz="-2568" />
@@ -2317,7 +2317,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp28]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp28]">
 		<territory>	
 			<location x="22108" y="-16988" minz="-3136" maxz="-2936" />
 			<location x="23296" y="-16768" minz="-3136" maxz="-2936" />
@@ -2330,7 +2330,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp29]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp29]">
 		<territory>	
 			<location x="22028" y="-16632" minz="-3120" maxz="-2920" />
 			<location x="22800" y="-16492" minz="-3120" maxz="-2920" />
@@ -2343,7 +2343,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp30]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp30]">
 		<territory>	
 			<location x="22028" y="-17560" minz="-3068" maxz="-2868" />
 			<location x="22980" y="-17388" minz="-3068" maxz="-2868" />
@@ -2356,7 +2356,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp31]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp31]">
 		<territory>	
 			<location x="18672" y="-16224" minz="-3192" maxz="-2992" />
 			<location x="20040" y="-16940" minz="-3192" maxz="-2992" />
@@ -2369,7 +2369,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp32]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp32]">
 		<territory>	
 			<location x="18888" y="-15988" minz="-3148" maxz="-2948" />
 			<location x="19908" y="-15944" minz="-3148" maxz="-2948" />
@@ -2382,7 +2382,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp33]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp33]">
 		<territory>	
 			<location x="18676" y="-16868" minz="-3216" maxz="-3016" />
 			<location x="20184" y="-17376" minz="-3216" maxz="-3016" />
@@ -2395,7 +2395,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp34]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp34]">
 		<territory>	
 			<location x="20280" y="-15816" minz="-3204" maxz="-3004" />
 			<location x="22016" y="-15880" minz="-3204" maxz="-3004" />
@@ -2408,7 +2408,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp35]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp35]">
 		<territory>	
 			<location x="19756" y="-18524" minz="-3324" maxz="-3024" />
 			<location x="20952" y="-18488" minz="-3324" maxz="-3024" />
@@ -2421,7 +2421,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp36]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp36]">
 		<territory>	
 			<location x="16864" y="-16840" minz="-3312" maxz="-3112" />
 			<location x="17608" y="-17080" minz="-3312" maxz="-3112" />
@@ -2434,7 +2434,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp37]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp37]">
 		<territory>	
 			<location x="15660" y="-16228" minz="-3268" maxz="-3068" />
 			<location x="16684" y="-16812" minz="-3268" maxz="-3068" />
@@ -2447,7 +2447,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp38]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp38]">
 		<territory>	
 			<location x="15920" y="-15776" minz="-3296" maxz="-3096" />
 			<location x="17256" y="-16104" minz="-3296" maxz="-3096" />
@@ -2460,7 +2460,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp39]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp39]">
 		<territory>	
 			<location x="15752" y="-15184" minz="-3244" maxz="-3044" />
 			<location x="16916" y="-15540" minz="-3244" maxz="-3044" />
@@ -2473,7 +2473,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp40]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp40]">
 		<territory>	
 			<location x="14972" y="-15816" minz="-3240" maxz="-3040" />
 			<location x="16268" y="-15228" minz="-3240" maxz="-3040" />
@@ -2486,7 +2486,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp41]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp41]">
 		<territory>	
 			<location x="14428" y="-15168" minz="-3264" maxz="-3064" />
 			<location x="15480" y="-14304" minz="-3264" maxz="-3064" />
@@ -2499,7 +2499,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp42]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp42]">
 		<territory>	
 			<location x="14236" y="-14788" minz="-3260" maxz="-3060" />
 			<location x="14828" y="-14132" minz="-3260" maxz="-3060" />
@@ -2512,7 +2512,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp43]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp43]">
 		<territory>	
 			<location x="14496" y="-14268" minz="-3292" maxz="-3092" />
 			<location x="15088" y="-13716" minz="-3292" maxz="-3092" />
@@ -2525,7 +2525,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp44]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp44]">
 		<territory>	
 			<location x="14680" y="-13420" minz="-3220" maxz="-3020" />
 			<location x="15284" y="-13368" minz="-3220" maxz="-3020" />
@@ -2538,7 +2538,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp45]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp45]">
 		<territory>	
 			<location x="12920" y="-12952" minz="-3164" maxz="-2764" />
 			<location x="13528" y="-13216" minz="-3164" maxz="-2764" />
@@ -2551,7 +2551,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp46]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp46]">
 		<territory>	
 			<location x="13700" y="-11876" minz="-3352" maxz="-2852" />
 			<location x="14380" y="-12204" minz="-3352" maxz="-2852" />
@@ -2564,7 +2564,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp47]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp47]">
 		<territory>	
 			<location x="14392" y="-12412" minz="-3212" maxz="-3012" />
 			<location x="15296" y="-12628" minz="-3212" maxz="-3012" />
@@ -2577,7 +2577,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp48]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp48]">
 		<territory>	
 			<location x="14660" y="-13696" minz="-3284" maxz="-3084" />
 			<location x="15620" y="-13672" minz="-3284" maxz="-3084" />
@@ -2590,7 +2590,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp49]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp49]">
 		<territory>	
 			<location x="14660" y="-13696" minz="-3284" maxz="-3084" />
 			<location x="15620" y="-13672" minz="-3284" maxz="-3084" />
@@ -2603,7 +2603,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp50]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp50]">
 		<territory>	
 			<location x="15336" y="-13792" minz="-3292" maxz="-3092" />
 			<location x="16460" y="-13736" minz="-3292" maxz="-3092" />
@@ -2616,7 +2616,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp51]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp51]">
 		<territory>	
 			<location x="15576" y="-14804" minz="-3240" maxz="-3040" />
 			<location x="17088" y="-14612" minz="-3240" maxz="-3040" />
@@ -2629,7 +2629,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp52]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp52]">
 		<territory>	
 			<location x="16736" y="-13952" minz="-3252" maxz="-3052" />
 			<location x="17372" y="-13368" minz="-3252" maxz="-3052" />
@@ -2642,7 +2642,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp53]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp53]">
 		<territory>	
 			<location x="16772" y="-13432" minz="-3268" maxz="-3068" />
 			<location x="17756" y="-12888" minz="-3268" maxz="-3068" />
@@ -2655,7 +2655,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp54]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp54]">
 		<territory>	
 			<location x="16692" y="-13996" minz="-3248" maxz="-3048" />
 			<location x="17648" y="-14104" minz="-3248" maxz="-3048" />
@@ -2668,7 +2668,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp55]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp55]">
 		<territory>	
 			<location x="18160" y="-14780" minz="-3108" maxz="-2908" />
 			<location x="19124" y="-15072" minz="-3108" maxz="-2908" />
@@ -2681,7 +2681,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp56]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp56]">
 		<territory>	
 			<location x="19096" y="-14912" minz="-3096" maxz="-2896" />
 			<location x="19828" y="-14760" minz="-3096" maxz="-2896" />
@@ -2694,7 +2694,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp57]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp57]">
 		<territory>	
 			<location x="20360" y="-15100" minz="-3160" maxz="-2960" />
 			<location x="21176" y="-14800" minz="-3160" maxz="-2960" />
@@ -2707,7 +2707,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp58]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp58]">
 		<territory>	
 			<location x="21672" y="-15032" minz="-3204" maxz="-3004" />
 			<location x="22844" y="-14876" minz="-3204" maxz="-3004" />
@@ -2720,7 +2720,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp59]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp59]">
 		<territory>	
 			<location x="21160" y="-14968" minz="-3228" maxz="-3028" />
 			<location x="22052" y="-14856" minz="-3228" maxz="-3028" />
@@ -2733,7 +2733,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp60]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp60]">
 		<territory>	
 			<location x="24832" y="-12180" minz="-2664" maxz="-2464" />
 			<location x="25168" y="-13124" minz="-2664" maxz="-2464" />
@@ -2746,7 +2746,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp61]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp61]">
 		<territory>	
 			<location x="25748" y="-12588" minz="-2612" maxz="-2312" />
 			<location x="27252" y="-12540" minz="-2612" maxz="-2312" />
@@ -2759,7 +2759,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp62]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp62]">
 		<territory>	
 			<location x="26264" y="-11628" minz="-2544" maxz="-2344" />
 			<location x="27360" y="-11684" minz="-2544" maxz="-2344" />
@@ -2772,7 +2772,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp63]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp63]">
 		<territory>	
 			<location x="26480" y="-12572" minz="-2596" maxz="-2196" />
 			<location x="27600" y="-12996" minz="-2596" maxz="-2196" />
@@ -2785,7 +2785,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp64]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp64]">
 		<territory>	
 			<location x="26480" y="-12572" minz="-2596" maxz="-2196" />
 			<location x="27600" y="-12996" minz="-2596" maxz="-2196" />
@@ -2798,7 +2798,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp65]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp65]">
 		<territory>	
 			<location x="26412" y="-13528" minz="-2656" maxz="-2256" />
 			<location x="27564" y="-13252" minz="-2656" maxz="-2256" />
@@ -2811,7 +2811,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp66]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp66]">
 		<territory>	
 			<location x="25588" y="-11416" minz="-2556" maxz="-2356" />
 			<location x="26504" y="-11652" minz="-2556" maxz="-2356" />
@@ -2824,7 +2824,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp67]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp67]">
 		<territory>	
 			<location x="25056" y="-11540" minz="-2600" maxz="-2400" />
 			<location x="25876" y="-11556" minz="-2600" maxz="-2400" />
@@ -2837,7 +2837,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp68]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp68]">
 		<territory>	
 			<location x="24200" y="-11496" minz="-2660" maxz="-2460" />
 			<location x="25080" y="-11624" minz="-2660" maxz="-2460" />
@@ -2850,7 +2850,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp69]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp69]">
 		<territory>	
 			<location x="24084" y="-12288" minz="-2616" maxz="-2416" />
 			<location x="25236" y="-12308" minz="-2616" maxz="-2416" />
@@ -2863,7 +2863,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp70]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp70]">
 		<territory>	
 			<location x="23440" y="-13148" minz="-2596" maxz="-2396" />
 			<location x="24508" y="-13024" minz="-2596" maxz="-2396" />
@@ -2876,7 +2876,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp71]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp71]">
 		<territory>	
 			<location x="23328" y="-12152" minz="-2648" maxz="-2448" />
 			<location x="24492" y="-12064" minz="-2648" maxz="-2448" />
@@ -2889,7 +2889,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp72]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp72]">
 		<territory>	
 			<location x="22716" y="-10660" minz="-2788" maxz="-2488" />
 			<location x="24436" y="-10924" minz="-2788" maxz="-2488" />
@@ -2902,7 +2902,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp73]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp73]">
 		<territory>	
 			<location x="22644" y="-11412" minz="-2832" maxz="-2532" />
 			<location x="24080" y="-11076" minz="-2832" maxz="-2532" />
@@ -2915,7 +2915,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp74]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp74]">
 		<territory>	
 			<location x="21404" y="-10196" minz="-2884" maxz="-2684" />
 			<location x="22256" y="-10808" minz="-2884" maxz="-2684" />
@@ -2928,7 +2928,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp75]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp75]">
 		<territory>	
 			<location x="21300" y="-12320" minz="-2828" maxz="-2628" />
 			<location x="22824" y="-11728" minz="-2828" maxz="-2628" />
@@ -2941,7 +2941,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp76]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp76]">
 		<territory>	
 			<location x="20788" y="-11864" minz="-2912" maxz="-2712" />
 			<location x="22400" y="-11408" minz="-2912" maxz="-2712" />
@@ -2954,7 +2954,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp77]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp77]">
 		<territory>	
 			<location x="19704" y="-11948" minz="-2880" maxz="-2680" />
 			<location x="20912" y="-12580" minz="-2880" maxz="-2680" />
@@ -2967,7 +2967,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp78]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp78]">
 		<territory>	
 			<location x="20324" y="-9948" minz="-2920" maxz="-2720" />
 			<location x="21568" y="-10152" minz="-2920" maxz="-2720" />
@@ -2980,7 +2980,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp79]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp79]">
 		<territory>	
 			<location x="18964" y="-9588" minz="-2904" maxz="-2704" />
 			<location x="20156" y="-10652" minz="-2904" maxz="-2704" />
@@ -2993,7 +2993,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp80]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp80]">
 		<territory>	
 			<location x="18524" y="-11656" minz="-3004" maxz="-2804" />
 			<location x="19920" y="-11936" minz="-3004" maxz="-2804" />
@@ -3006,7 +3006,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp81]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp81]">
 		<territory>	
 			<location x="19184" y="-10960" minz="-2952" maxz="-2752" />
 			<location x="20164" y="-11256" minz="-2952" maxz="-2752" />
@@ -3019,7 +3019,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp82]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp82]">
 		<territory>	
 			<location x="18648" y="-9524" minz="-2868" maxz="-2668" />
 			<location x="19752" y="-10324" minz="-2868" maxz="-2668" />
@@ -3032,7 +3032,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp83]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp83]">
 		<territory>	
 			<location x="15252" y="-11560" minz="-3408" maxz="-3208" />
 			<location x="16816" y="-11548" minz="-3408" maxz="-3208" />
@@ -3045,7 +3045,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp84]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp84]">
 		<territory>	
 			<location x="14620" y="-11200" minz="-3392" maxz="-3192" />
 			<location x="15648" y="-11052" minz="-3392" maxz="-3192" />
@@ -3059,7 +3059,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp85]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp85]">
 		<territory>	
 			<location x="15684" y="-10832" minz="-3356" maxz="-3156" />
 			<location x="17180" y="-10468" minz="-3356" maxz="-3156" />
@@ -3072,7 +3072,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp86]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp86]">
 		<territory>	
 			<location x="14928" y="-9024" minz="-3336" maxz="-3136" />
 			<location x="15832" y="-9620" minz="-3336" maxz="-3136" />
@@ -3085,7 +3085,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune17_2017_sp87]">
+	<spawn spawn_bydefault="true"  name="[rune17_2017_sp87]">
 		<territory>	
 			<location x="14724" y="-8916" minz="-3300" maxz="-3100" />
 			<location x="16168" y="-8792" minz="-3300" maxz="-3100" />
@@ -3098,7 +3098,7 @@
             </ai_params>
         </npc>	
 	</spawn>
-	<spawn name="[rune18_mb2017_01]">
+	<spawn spawn_bydefault="true"  name="[rune18_mb2017_01]">
 		<npc id="25527" count="1" respawn="129600" respawn_rand="86400" pos="3075 -10966 -3650 0" />	
 	</spawn>
 

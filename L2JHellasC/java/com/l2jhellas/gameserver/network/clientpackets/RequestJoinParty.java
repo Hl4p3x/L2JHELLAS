@@ -53,6 +53,12 @@ public final class RequestJoinParty extends L2GameClientPacket
 			return;
 		}
 
+		if (target.getPartyRefusal())
+		{
+			requestor.sendMessage("You can't invite that player because he is in party refusal mode.");
+			return;
+		}
+		
 		if (target.isInParty())
 		{
 			requestor.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_IS_ALREADY_IN_PARTY).addPcName(target));

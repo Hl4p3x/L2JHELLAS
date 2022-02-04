@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[schttgart09_2412_01]">
+	<spawn spawn_bydefault="true"  name="[schttgart09_2412_01]">
 		<territory>	
 			<location x="131200" y="-196540" minz="-3692" maxz="-3292" />
 			<location x="134596" y="-196544" minz="-3692" maxz="-3292" />
@@ -13,7 +13,7 @@
 		<npc id="20323" count="2" respawn="20" />	
 		<npc id="20526" count="2" respawn="20" />	
 	</spawn>
-	<spawn name="[schttgart09_2412_02]">
+	<spawn spawn_bydefault="true"  name="[schttgart09_2412_02]">
 		<territory>	
 			<location x="136280" y="-196344" minz="-3660" maxz="-2810" />
 			<location x="141644" y="-196444" minz="-3660" maxz="-2810" />
@@ -24,7 +24,7 @@
 		<npc id="20323" count="3" respawn="20" />	
 		<npc id="20526" count="3" respawn="20" />	
 	</spawn>
-	<spawn name="[schttgart09_2411_03]">
+	<spawn spawn_bydefault="true"  name="[schttgart09_2411_03]">
 		<territory>	
 			<location x="136272" y="-195116" minz="-3696" maxz="-2446" />
 			<location x="138420" y="-192304" minz="-3696" maxz="-2446" />
@@ -37,7 +37,7 @@
 		<npc id="20323" count="3" respawn="20" />	
 		<npc id="20526" count="3" respawn="20" />	
 	</spawn>
-	<spawn name="[schttgart09_2411_04]">
+	<spawn spawn_bydefault="true"  name="[schttgart09_2411_04]">
 		<territory>	
 			<location x="139684" y="-192352" minz="-3068" maxz="-1418" />
 			<location x="141332" y="-189636" minz="-3068" maxz="-1418" />
@@ -50,7 +50,7 @@
 		<npc id="20323" count="3" respawn="20" />	
 		<npc id="20526" count="2" respawn="20" />	
 	</spawn>
-	<spawn name="[schttgart09_2412_05]">
+	<spawn spawn_bydefault="true"  name="[schttgart09_2412_05]">
 		<territory>	
 			<location x="134320" y="-188684" minz="-3284" maxz="-2684" />
 			<location x="135748" y="-188472" minz="-3284" maxz="-2684" />
@@ -59,7 +59,7 @@
 		</territory>
 		<npc id="20521" count="2" respawn="20" />	
 	</spawn>
-	<spawn name="[schttgart09_2412_06]">
+	<spawn spawn_bydefault="true"  name="[schttgart09_2412_06]">
 		<territory>	
 			<location x="136468" y="-188148" minz="-2688" maxz="-1488" />
 			<location x="139464" y="-186372" minz="-2688" maxz="-1488" />
@@ -69,7 +69,7 @@
 		<npc id="20521" count="1" respawn="20" />	
 		<npc id="20323" count="2" respawn="20" />	
 	</spawn>
-	<spawn name="[schttgart09_2412_07]">
+	<spawn spawn_bydefault="true"  name="[schttgart09_2412_07]">
 		<territory>	
 			<location x="134584" y="-185140" minz="-2984" maxz="-1484" />
 			<location x="138376" y="-184440" minz="-2984" maxz="-1484" />
@@ -79,7 +79,7 @@
 		<npc id="20323" count="1" respawn="20" />	
 		<npc id="20526" count="2" respawn="20" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_01]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_01]">
 		<territory>	
 			<location x="136277" y="-174803" minz="-1820" maxz="-1620" />
 			<location x="137590" y="-174370" minz="-1820" maxz="-1620" />
@@ -94,7 +94,7 @@
 		<npc id="20346" count="2" respawn="34" respawn_rand="15" />	
 		<npc id="20423" count="1" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_02]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_02]">
 		<territory>	
 			<location x="139743" y="-172257" minz="-1828" maxz="-1628" />
 			<location x="142942" y="-172968" minz="-1828" maxz="-1628" />
@@ -110,7 +110,7 @@
 		<npc id="20346" count="3" respawn="34" respawn_rand="15" />	
 		<npc id="20423" count="2" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_03]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_03]">
 		<territory>	
 			<location x="144242" y="-175991" minz="-1572" maxz="-1372" />
 			<location x="146205" y="-176301" minz="-1572" maxz="-1372" />
@@ -125,7 +125,7 @@
 		<npc id="20389" count="3" respawn="34" respawn_rand="15" />	
 		<npc id="20422" count="4" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_04]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_04]">
 		<territory>	
 			<location x="148639" y="-171050" minz="328" maxz="528" />
 			<location x="150861" y="-171333" minz="328" maxz="528" />
@@ -140,7 +140,7 @@
 		<npc id="20389" count="4" respawn="34" respawn_rand="15" />	
 		<npc id="20422" count="3" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_05]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_05]">
 		<territory>	
 			<location x="142568" y="-169588" minz="332" maxz="532" />
 			<location x="145625" y="-169588" minz="332" maxz="532" />
@@ -150,7 +150,7 @@
 		<npc id="20389" count="4" respawn="34" respawn_rand="15" />	
 		<npc id="20422" count="3" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_06]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_06]">
 		<territory>	
 			<location x="142685" y="-169924" minz="328" maxz="528" />
 			<location x="145527" y="-169924" minz="328" maxz="528" />
@@ -160,7 +160,7 @@
 		<npc id="20389" count="3" respawn="34" respawn_rand="15" />	
 		<npc id="20422" count="4" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_07]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_07]">
 		<territory>	
 			<location x="142234" y="-172875" minz="336" maxz="536" />
 			<location x="142434" y="-172875" minz="336" maxz="536" />
@@ -172,7 +172,7 @@
 		<npc id="20389" count="2" respawn="34" respawn_rand="15" />	
 		<npc id="20422" count="1" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_08]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_08]">
 		<territory>	
 			<location x="141930" y="-172883" minz="328" maxz="528" />
 			<location x="142130" y="-172883" minz="328" maxz="528" />
@@ -185,7 +185,7 @@
 		<npc id="20389" count="1" respawn="34" respawn_rand="15" />	
 		<npc id="20422" count="2" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_09]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_09]">
 		<territory>	
 			<location x="141569" y="-178235" minz="324" maxz="524" />
 			<location x="142691" y="-178543" minz="324" maxz="524" />
@@ -199,7 +199,7 @@
 		<npc id="20390" count="4" respawn="34" respawn_rand="15" />	
 		<npc id="20511" count="3" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_10]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_10]">
 		<territory>	
 			<location x="146795" y="-174558" minz="2216" maxz="2416" />
 			<location x="148316" y="-174496" minz="2216" maxz="2416" />
@@ -213,7 +213,7 @@
 		<npc id="20390" count="5" respawn="34" respawn_rand="15" />	
 		<npc id="20511" count="6" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_11]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_11]">
 		<territory>	
 			<location x="146808" y="-169052" minz="1976" maxz="2376" />
 			<location x="148176" y="-170219" minz="1976" maxz="2376" />
@@ -227,7 +227,7 @@
 		<npc id="20390" count="3" respawn="34" respawn_rand="15" />	
 		<npc id="20511" count="4" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_12]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_12]">
 		<territory>	
 			<location x="147232" y="-177888" minz="68" maxz="268" />
 			<location x="148354" y="-178000" minz="68" maxz="268" />
@@ -241,7 +241,7 @@
 		<npc id="20390" count="2" respawn="34" respawn_rand="15" />	
 		<npc id="20511" count="3" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart05_2412_13]">
+	<spawn spawn_bydefault="true"  name="[schuttgart05_2412_13]">
 		<territory>	
 			<location x="150799" y="-175582" minz="-1836" maxz="-1636" />
 			<location x="152049" y="-175439" minz="-1836" maxz="-1636" />
@@ -255,11 +255,11 @@
 		<npc id="20390" count="2" respawn="34" respawn_rand="15" />	
 		<npc id="20511" count="3" respawn="34" respawn_rand="15" />	
 	</spawn>
-	<spawn name="[schuttgart01_npc2412_g01]">
+	<spawn spawn_bydefault="true"  name="[schuttgart01_npc2412_g01]">
 		<npc id="31035" count="1" respawn="60" pos="139264 -194720 -3177 0" />	
 		<npc id="31035" count="1" respawn="60" pos="135904 -191280 -3072 0" />	
 	</spawn>
-	<spawn name="[schuttgart01_npc2412_g02]">
+	<spawn spawn_bydefault="true"  name="[schuttgart01_npc2412_g02]">
 		<npc id="31035" count="1" respawn="60" pos="137008 -184720 -2128 0" />	
 	</spawn>
 

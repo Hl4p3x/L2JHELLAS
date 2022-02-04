@@ -2,6 +2,7 @@
 <!ELEMENT list (spawn|location)*>
 <!ELEMENT spawn (territory|npc)*>
 <!ATTLIST spawn
+        spawn_bydefault CDATA #REQUIRED
         name CDATA #REQUIRED
         event_name CDATA #IMPLIED>
 <!ELEMENT territory (location)*>

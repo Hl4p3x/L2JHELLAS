@@ -10,6 +10,7 @@ import com.l2jhellas.gameserver.controllers.GameTimeController;
 import com.l2jhellas.gameserver.controllers.TradeController;
 import com.l2jhellas.gameserver.instancemanager.BufferManager;
 import com.l2jhellas.gameserver.instancemanager.CastleManorManager;
+import com.l2jhellas.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jhellas.gameserver.instancemanager.FourSepulchersManager;
 import com.l2jhellas.gameserver.instancemanager.GrandBossManager;
@@ -114,6 +115,9 @@ public class Shutdown extends Thread
 			{
 			}
 			
+			ClanHallSiegeManager.getInstance().onServerShutDown();
+			_log.info(Shutdown.class.getSimpleName() + ": SiegableHall data have been saved.");
+		
 			BufferManager.getInstance().saveSchemes();
 			_log.info(Shutdown.class.getSimpleName() + ": Scheme data have been saved.");
 
@@ -122,7 +126,7 @@ public class Shutdown extends Thread
 				SevenSignsFestival.getInstance().saveFestivalData(false);
 			
 			// Save Seven Signs data before closing. :)
-			SevenSigns.getInstance().saveSevenSignsData(null, true);
+			SevenSigns.getInstance().saveSevenSignsStatus();
 			
 			_log.info(Shutdown.class.getSimpleName() + ": Seven Signs Festival, general data && status have been saved.");
 			

@@ -2,9 +2,12 @@ package com.l2jhellas.gameserver.model.entity.events.engines;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.datatables.sql.NpcData;
@@ -90,12 +93,7 @@ public abstract class Event
 	{
 		
 	}
-	
-	public void dropBomb(L2PcInstance player)
-	{
-		
-	}
-	
+
 	public void onHit(L2PcInstance actor, L2PcInstance target)
 	{
 		
@@ -156,14 +154,11 @@ public abstract class Event
 		
 		List<L2PcInstance> list = new CopyOnWriteArrayList<>();
 		
-		for (L2PcInstance p : players.keySet())
+		getStreamedPlayerList().forEach(p ->
 		{
-			if (p == null)
-				continue;
-			
 			if (getTeam(p) == teamId)
 				list.add(p);
-		}
+		});
 
 		for (L2PcInstance player : list)
 		{
@@ -177,78 +172,98 @@ public abstract class Event
 	
 	public void divideIntoTeams(int number)
 	{
-		int i = 0;
-		
-		while (EventManager.getInstance().players.size() != 0)
+		List<L2PcInstance> registeredplayers = EventManager.getInstance().players.stream().filter(Objects :: nonNull).filter(L2PcInstance::isOnline).collect(Collectors.toList());
+		List<L2PcInstance> registeredhealers = registeredplayers.stream().filter(L2PcInstance :: isHealer).collect(Collectors.toList());
+
+		AtomicInteger counter = new AtomicInteger(0);
+
+		if(registeredplayers.size() > 0)
 		{
-			i++;
-			L2PcInstance player = EventManager.getInstance().players.get(Rnd.get(EventManager.getInstance().players.size()));
-			
-			if (player == null || player.isHealer())
-				continue;
-			
-			players.put(player, new int[] { i, 0, 0 });
-			EventManager.getInstance().players.remove(player);
-			if (i == number)
-				i = 0;
+			registeredplayers.stream().filter(L2PcInstance :: isNotHealer).forEach(player -> 
+			{
+				counter.incrementAndGet();
+
+				players.put(player, new int[] {counter.get(), 0, 0 });
+				EventManager.getInstance().players.remove(player);
+
+				if (counter.get() == number)
+					counter.set(0);
+			});
 		}
-		
-		i = getPlayersOfTeam(1).size() > getPlayersOfTeam(2).size() ? 1 : 0;
-		
-		while (EventManager.getInstance().players.size() != 0)
+	
+		counter.set(0);
+
+		if(registeredhealers.size() > 0)
 		{
-			i++;
-			L2PcInstance player = EventManager.getInstance().players.get(Rnd.get(EventManager.getInstance().players.size()));
-			
-			if (player == null)
-				continue;
-			
-			players.put(player, new int[] { i, 0, 0 });
-			EventManager.getInstance().players.remove(player);
-			if (i == number)
-				i = 0;
-		}
+			if(registeredhealers.size() == 2)
+			{				
+				L2PcInstance healer1 = registeredhealers.get(0);
+				L2PcInstance healer2 = registeredhealers.get(1);
+
+				players.put(healer1, new int[] {1, 0, 0 });
+				players.put(healer2, new int[] {2, 0, 0 });
+
+				EventManager.getInstance().players.remove(healer1);
+				EventManager.getInstance().players.remove(healer2);
+			}
+			else
+			{
+				if(getPlayersOfTeam(1).size() > getPlayersOfTeam(2).size())
+					counter.set(1);
+
+				registeredhealers.forEach(player -> 
+				{
+					counter.incrementAndGet();
+
+					players.put(player, new int[] {counter.get(), 0, 0 });
+					EventManager.getInstance().players.remove(player);
+
+					if (counter.get() == number)
+						counter.set(0);
+				});
+			}
+		}		
 	}
 	
 	public void forceSitAll()
 	{
-		for (L2PcInstance player : players.keySet())
+		getStreamedPlayerList().forEach(player ->
 		{
 			player.abortAttack();
 			player.abortCast();
 			player.setIsParalyzed(true);
 			player.setIsInvul(true);
 			player.startAbnormalEffect(AbnormalEffect.HOLD_2);
-		}
+		});
 	}
 	
 	public void forceStandAll()
 	{
-		for (L2PcInstance player : players.keySet())
-		{	
+		getStreamedPlayerList().forEach(player ->
+		{
 			player.stopAbnormalEffect(AbnormalEffect.HOLD_2);
 			player.setIsInvul(false);
 			player.setIsParalyzed(false);
-		}
+		});
 	}
 	
 	public void InvisAll()
-	{
-		for (L2PcInstance player : players.keySet())
+	{		
+		getStreamedPlayerList().forEach(player ->
 		{
 			player.abortAttack();
 			player.abortCast();
 			player.getAppearance().setIsVisible(false);
-		}
+		});
 	}
 	
 	public void unInvisAll()
 	{
-		for (L2PcInstance player : players.keySet())
+		getStreamedPlayerList().forEach(player ->
 		{
 			player.getAppearance().setIsVisible(true);
 			player.broadcastUserInfo();
-		}
+		});
 	}
 	
 	public boolean getBoolean(String propName)
@@ -268,18 +283,17 @@ public abstract class Event
 	
 	protected Set<L2PcInstance> getPlayerList()
 	{
-		return players.keySet();
+		return players.keySet();				
+	}
+	
+	protected List<L2PcInstance> getStreamedPlayerList()
+	{
+		return players.keySet().stream().filter(Objects:: nonNull).filter(L2PcInstance::isOnline).collect(Collectors.toList());			
 	}
 	
 	public List<L2PcInstance> getPlayersOfTeam(int team)
 	{
-		List<L2PcInstance> list = new CopyOnWriteArrayList<>();
-		
-		for (L2PcInstance player : getPlayerList())
-			if (getTeam(player) == team)
-				list.add(player);
-		
-		return list;
+		return getStreamedPlayerList().stream().filter( p -> getTeam(p) == team).collect(Collectors.toList());
 	}
 	
 	protected EventTeam getPlayersTeam(L2PcInstance player)
@@ -289,13 +303,7 @@ public abstract class Event
 	
 	public List<L2PcInstance> getPlayersWithStatus(int status)
 	{
-		List<L2PcInstance> list = new CopyOnWriteArrayList<>();
-		
-		for (L2PcInstance player : getPlayerList())
-			if (getStatus(player) == status)
-				list.add(player);
-		
-		return list;
+		return getStreamedPlayerList().stream().filter( p -> getStatus(p) == status).collect(Collectors.toList());
 	}
 	
 	protected List<L2PcInstance> getTopPlayers(int limit)
@@ -329,15 +337,6 @@ public abstract class Event
 		return players.get(0);
 	}
 	
-	public void unequip()
-	{
-		for (L2PcInstance player : players.keySet())
-		{
-			player.getInventory().unEquipItemInSlot(7);
-			player.getInventory().unEquipItemInSlot(8);
-		}
-	}
-	
 	public int[] getPosition(String owner, int num)
 	{
 		return config.getPosition(eventId, owner, num);
@@ -346,8 +345,11 @@ public abstract class Event
 	protected L2PcInstance getRandomPlayer()
 	{
 		List<L2PcInstance> temp = new CopyOnWriteArrayList<>();
-		for (L2PcInstance player : players.keySet())
+		
+		getStreamedPlayerList().forEach(player ->
+		{
 			temp.add(player);
+		});
 		
 		return temp.get(Rnd.get(temp.size()));
 	}
@@ -355,9 +357,11 @@ public abstract class Event
 	protected L2PcInstance getRandomPlayerFromTeam(int team)
 	{
 		List<L2PcInstance> temp = new CopyOnWriteArrayList<>();
-		for (L2PcInstance player : players.keySet())
+		getStreamedPlayerList().forEach(player ->
+		{
 			if (getTeam(player) == team)
 				temp.add(player);
+		});
 		
 		return temp.get(Rnd.get(temp.size()));
 	}
@@ -429,13 +433,13 @@ public abstract class Event
 				continue;
 			
 			player.addItem("Event", id, ammount, player, true);
-			EventStats.getInstance().tempTable.get(player.getObjectId())[0] = 1;
+			//EventStats.getInstance().tempTable.get(player.getObjectId())[0] = 1;
 		}
 	}
 	
 	public void giveReward(L2PcInstance player, int id, int ammount)
 	{
-		EventStats.getInstance().tempTable.get(player.getObjectId())[0] = 1;
+		//EventStats.getInstance().tempTable.get(player.getObjectId())[0] = 1;
 		player.addItem("Event", id, ammount, player, true);
 	}
 	
@@ -443,26 +447,27 @@ public abstract class Event
 	{	
 		int old = getScore(player);
 		setScore(player, old + 1);
-		EventStats.getInstance().tempTable.get(player.getObjectId())[3] = EventStats.getInstance().tempTable.get(player.getObjectId())[3] + 1;
+		//EventStats.getInstance().tempTable.get(player.getObjectId())[3] = EventStats.getInstance().tempTable.get(player.getObjectId())[3] + 1;
 	}
 	
 	protected void msgToAll(String text)
 	{
 		if (text.isEmpty())
 			return;
-		
-		for (L2PcInstance player : players.keySet())
+		getStreamedPlayerList().forEach(player ->
+		{
 			player.sendMessage(text);
+		});
 	}
 	
 	public void onDie(L2PcInstance victim, L2Character killer)
 	{
-		EventStats.getInstance().tempTable.get(victim.getObjectId())[2] = EventStats.getInstance().tempTable.get(victim.getObjectId())[2] + 1;
+		//EventStats.getInstance().tempTable.get(victim.getObjectId())[2] = EventStats.getInstance().tempTable.get(victim.getObjectId())[2] + 1;
 	}
 	
 	public void onKill(L2Character victim, L2PcInstance killer)
 	{
-		EventStats.getInstance().tempTable.get(killer.getObjectId())[1] = EventStats.getInstance().tempTable.get(killer.getObjectId())[1] + 1;
+		//EventStats.getInstance().tempTable.get(killer.getObjectId())[1] = EventStats.getInstance().tempTable.get(killer.getObjectId())[1] + 1;
 	}
 	
 	public void onLogout(L2PcInstance player)
@@ -472,7 +477,9 @@ public abstract class Event
 		
 		player.setXYZ(EventManager.getInstance().positions.get(player)[0], EventManager.getInstance().positions.get(player)[1], EventManager.getInstance().positions.get(player)[2]);
 		player.getAppearance().setNameColor(EventManager.getInstance().colors.get(player));
-		player.setTitle(EventManager.getInstance().titles.get(player));
+		
+		String title = EventManager.getInstance().titles.get(player);	
+		player.setTitle(title == null || title.isEmpty() ? "" : title);
 
 		if (teams.size() == 1)
 		{
@@ -559,7 +566,7 @@ public abstract class Event
 		else
 		{
 			for (L2Effect e : player.getAllEffects())
-				if (e.getStackType().equals("hero_buff"))
+				if (e.getSkill().isHeroSkill())
 					e.exit();
 		}
 		
@@ -610,13 +617,10 @@ public abstract class Event
 
 	public void preparePlayers()
 	{
-		for (L2PcInstance player : players.keySet())
+		getStreamedPlayerList().forEach(player ->
 		{
-			if (player == null)
-				continue;
-			
 			prepare(player);	
-		}
+		});
 	}
 	
 	protected void removePlayer(L2PcInstance player)
@@ -631,16 +635,6 @@ public abstract class Event
 		
 		for (EventTeam team : teams.values())
 			team.setScore(0);
-	}
-	
-	protected void selectPlayers(int teamId, int playerCount)
-	{
-		for (int i = 0; i < playerCount; i++)
-		{
-			L2PcInstance player = EventManager.getInstance().players.get(Rnd.get(EventManager.getInstance().players.size()));
-			players.put(player, new int[] { teamId, 0, 0 });
-			EventManager.getInstance().players.remove(player);
-		}
 	}
 	
 	protected void setScore(L2PcInstance player, int score)
@@ -719,14 +713,16 @@ public abstract class Event
 	}
 	
 	public void teleportToTeamPos()
-	{
-		for (L2PcInstance player : players.keySet())
+	{		
+		getStreamedPlayerList().forEach(player ->
+		{
 			teleportTask(player);
+		});
 	}
 	
 	protected void teleportToTeamPos(L2PcInstance player)
 	{
-		if(player != null && player.isbOnline())
+		if(player != null && player.isOnline())
 		{
 			int[] pos = getPosition(teams.get(getTeam(player)).getName(), 0);
 			teleportPlayer(player, pos);
@@ -761,7 +757,7 @@ public abstract class Event
 		
 		npcSpawn.getLastSpawn().deleteMe();
 		npcSpawn.stopRespawn();
-		SpawnData.getInstance().deleteSpawn(npcSpawn, true);
+		SpawnData.getInstance().deleteSpawn(npcSpawn, false);
 	}
 	
 	public int numberOfTeams()
@@ -771,8 +767,10 @@ public abstract class Event
 
 	public void sendMsg()
 	{
-		for (L2PcInstance player : getPlayerList())
+		getStreamedPlayerList().forEach(player ->
+		{
 			player.sendPacket(new ExShowScreenMessage(1, -1, 2, 0, 0, 0, 0, false, 3000, 0, getStartingMsg()));
+		});
 	}
 	
 	protected abstract void endEvent();

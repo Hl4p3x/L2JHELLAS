@@ -10,6 +10,7 @@ import com.l2jhellas.gameserver.communitybbs.CommunityBoard;
 import com.l2jhellas.gameserver.datatables.xml.AdminData;
 import com.l2jhellas.gameserver.handler.AdminCommandHandler;
 import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
+import com.l2jhellas.gameserver.handlers.voicedcommandhandlers.Menu;
 import com.l2jhellas.gameserver.instancemanager.BotsPreventionManager;
 import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
@@ -291,6 +292,30 @@ public final class RequestBypassToServer extends L2GameClientPacket
 				html.setFile("data/html/eventinfo/"+eventId+".htm");
 				activeChar.sendPacket(html);
 				activeChar.sendPacket(ActionFailed.STATIC_PACKET);
+		}
+		
+		if(Config.ALLOW_MENU_VOICED)
+		{
+			if(_command.startsWith("pmrefusal"))
+			{
+				activeChar.setMessageRefusal(activeChar.getMessageRefusal() ? false : true);
+				Menu.ShowMain(activeChar);
+			}
+			else if(_command.startsWith("traderefusal"))
+			{
+				activeChar.setTradeRefusal(activeChar.getTradeRefusal() ? false : true);
+				Menu.ShowMain(activeChar);
+			}
+			else if(_command.startsWith("partyrefusal"))
+			{
+				activeChar.setPartyRefusal(activeChar.getPartyRefusal() ? false : true);
+				Menu.ShowMain(activeChar);
+			}
+			else if(_command.startsWith("ssrefusal"))
+			{
+				activeChar.setSSRefusal(activeChar.getSSRefusal() ? false : true);
+				Menu.ShowMain(activeChar);
+			}
 		}
 	}
 	

@@ -35,7 +35,7 @@ public class FriendList extends L2GameServerPacket
 			final String name = CharNameTable.getInstance().getNameById(objId);
 			final L2PcInstance player1 = L2World.getInstance().getPlayer(objId);
 			
-			_info.add(new FriendInfo(objId, name, (player1 != null && player1.isOnline() == 1)));
+			_info.add(new FriendInfo(objId, name, (player1 != null && player1.isOnline())));
 		}
 	}
 	

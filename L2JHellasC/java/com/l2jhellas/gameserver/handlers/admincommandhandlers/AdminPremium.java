@@ -11,6 +11,9 @@ import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
+/**
+ * @author AbsolutePower
+ */
 public class AdminPremium implements IAdminCommandHandler
 {
 	private static final Logger _log = Logger.getLogger(AdminPremium.class.getName());
@@ -41,8 +44,7 @@ public class AdminPremium implements IAdminCommandHandler
 				activeChar.sendMessage("Invalid account!");
 			else
 				addPremiumServices(activeChar, month, DayOfmonth, HourOfDay, accname);
-		}
-		
+		}		
 		return true;
 	}
 

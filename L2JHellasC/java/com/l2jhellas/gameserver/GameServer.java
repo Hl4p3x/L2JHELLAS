@@ -64,6 +64,7 @@ import com.l2jhellas.gameserver.instancemanager.BufferManager;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.CastleManorManager;
 import com.l2jhellas.gameserver.instancemanager.ClanHallManager;
+import com.l2jhellas.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jhellas.gameserver.instancemanager.CoupleManager;
 import com.l2jhellas.gameserver.instancemanager.CrownManager;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
@@ -165,6 +166,7 @@ public class GameServer
 		NpcBufferSkillIdsTable.getInstance();
 		
 		Util.printSection("Zone");
+		ClanHallSiegeManager.getInstance();
 		ZoneManager.getInstance();
 
 		Util.printSection("Items");
@@ -269,8 +271,7 @@ public class GameServer
 		{
 			ScriptLoader.getInstance();
 			QuestManager.getInstance().report();
-			MasterHandler.getInstance();
-			
+			MasterHandler.getInstance();			
 		}
 		else
 			_log.info(GameServer.class.getSimpleName() + ": Scripts are disabled by Config.");

@@ -76,7 +76,7 @@ public class L2CastleTeleportZone extends L2ZoneType
 		
 		for (L2PcInstance player : getKnownTypeInside(L2PcInstance.class))
 		{
-			if (player.isOnline() == 1)
+			if (player.isOnline())
 				player.teleToLocation(Rnd.get(_spawnLoc[0], _spawnLoc[1]), Rnd.get(_spawnLoc[2], _spawnLoc[3]), _spawnLoc[4], false);
 		}
 	}

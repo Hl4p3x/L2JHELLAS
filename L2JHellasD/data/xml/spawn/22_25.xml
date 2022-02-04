@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[innadrill05_2225_01]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_01]">
 		<territory>	
 			<location x="84380" y="240871" minz="-4935" maxz="-4635" />
 			<location x="85722" y="240974" minz="-4935" maxz="-4635" />
@@ -10,7 +10,7 @@
 		</territory>
 		<npc id="20849" count="3" respawn="94" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_02]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_02]">
 		<territory>	
 			<location x="84400" y="240861" minz="-7211" maxz="-6861" />
 			<location x="86026" y="240886" minz="-7211" maxz="-6861" />
@@ -20,7 +20,7 @@
 		<npc id="20849" count="1" respawn="94" />	
 		<npc id="20314" count="2" respawn="94" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_03]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_03]">
 		<territory>	
 			<location x="82602" y="244023" minz="-7202" maxz="-7042" />
 			<location x="82887" y="244025" minz="-7202" maxz="-7042" />
@@ -29,7 +29,7 @@
 		</territory>
 		<npc id="20793" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_04]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_04]">
 		<territory>	
 			<location x="83882" y="244643" minz="-7532" maxz="-7182" />
 			<location x="84885" y="244646" minz="-7532" maxz="-7182" />
@@ -38,7 +38,7 @@
 		</territory>
 		<npc id="20794" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_05]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_05]">
 		<territory>	
 			<location x="86172" y="244152" minz="-7711" maxz="-7491" />
 			<location x="86492" y="244139" minz="-7711" maxz="-7491" />
@@ -47,7 +47,7 @@
 		</territory>
 		<npc id="20793" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_06]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_06]">
 		<territory>	
 			<location x="83878" y="244162" minz="-8100" maxz="-7750" />
 			<location x="84882" y="244165" minz="-8100" maxz="-7750" />
@@ -56,7 +56,7 @@
 		</territory>
 		<npc id="20794" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_07]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_07]">
 		<territory>	
 			<location x="84771" y="245748" minz="-8875" maxz="-8625" />
 			<location x="84989" y="245256" minz="-8875" maxz="-8625" />
@@ -68,7 +68,7 @@
 		<npc id="20793" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20794" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_08]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_08]">
 		<territory>	
 			<location x="88064" y="248239" minz="-8875" maxz="-8625" />
 			<location x="88394" y="248113" minz="-8875" maxz="-8625" />
@@ -81,7 +81,7 @@
 		<npc id="20794" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20796" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_09]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_09]">
 		<territory>	
 			<location x="89262" y="252153" minz="-8875" maxz="-8625" />
 			<location x="89663" y="252260" minz="-8875" maxz="-8625" />
@@ -93,7 +93,7 @@
 		<npc id="20795" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20796" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_10]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_10]">
 		<territory>	
 			<location x="87865" y="256022" minz="-8875" maxz="-8625" />
 			<location x="88152" y="256312" minz="-8875" maxz="-8625" />
@@ -105,7 +105,7 @@
 		<npc id="20795" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20796" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_11]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_11]">
 		<territory>	
 			<location x="83469" y="258300" minz="-9366" maxz="-8966" />
 			<location x="83484" y="258862" minz="-9366" maxz="-8966" />
@@ -114,7 +114,7 @@
 		</territory>
 		<npc id="20849" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_12]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_12]">
 		<territory>	
 			<location x="80386" y="258093" minz="-8875" maxz="-8625" />
 			<location x="80132" y="258683" minz="-8875" maxz="-8625" />
@@ -126,7 +126,7 @@
 		<npc id="20795" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20796" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_13]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_13]">
 		<territory>	
 			<location x="77271" y="255884" minz="-8875" maxz="-8625" />
 			<location x="76696" y="256071" minz="-8875" maxz="-8625" />
@@ -138,7 +138,7 @@
 		<npc id="20795" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20796" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_14]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_14]">
 		<territory>	
 			<location x="76056" y="251940" minz="-8875" maxz="-8625" />
 			<location x="75390" y="251813" minz="-8875" maxz="-8625" />
@@ -151,7 +151,7 @@
 		<npc id="20794" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20796" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_15]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_15]">
 		<territory>	
 			<location x="77285" y="248174" minz="-8875" maxz="-8625" />
 			<location x="76874" y="247660" minz="-8875" maxz="-8625" />
@@ -163,7 +163,7 @@
 		<npc id="20793" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20794" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_16]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_16]">
 		<territory>	
 			<location x="83344" y="245135" minz="-9366" maxz="-9066" />
 			<location x="83345" y="245675" minz="-9366" maxz="-9066" />
@@ -175,7 +175,7 @@
 		<npc id="20797" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_18]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_18]">
 		<territory>	
 			<location x="84560" y="246455" minz="-9378" maxz="-9128" />
 			<location x="84585" y="246245" minz="-9378" maxz="-9128" />
@@ -187,7 +187,7 @@
 		<npc id="20797" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_19]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_19]">
 		<territory>	
 			<location x="87531" y="248553" minz="-9378" maxz="-9178" />
 			<location x="87683" y="248460" minz="-9378" maxz="-9178" />
@@ -199,7 +199,7 @@
 		<npc id="20797" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_20]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_20]">
 		<territory>	
 			<location x="88557" y="252138" minz="-9378" maxz="-9178" />
 			<location x="88783" y="252098" minz="-9378" maxz="-9178" />
@@ -211,7 +211,7 @@
 		<npc id="20797" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_21]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_21]">
 		<territory>	
 			<location x="87407" y="255537" minz="-9378" maxz="-9178" />
 			<location x="87641" y="255654" minz="-9378" maxz="-9178" />
@@ -223,7 +223,7 @@
 		<npc id="20797" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_22]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_22]">
 		<territory>	
 			<location x="84413" y="257556" minz="-9378" maxz="-9178" />
 			<location x="84543" y="257896" minz="-9378" maxz="-9178" />
@@ -235,7 +235,7 @@
 		<npc id="20797" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_23]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_23]">
 		<territory>	
 			<location x="80840" y="257419" minz="-9378" maxz="-9178" />
 			<location x="80754" y="257847" minz="-9378" maxz="-9178" />
@@ -247,7 +247,7 @@
 		<npc id="20797" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_24]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_24]">
 		<territory>	
 			<location x="77977" y="255184" minz="-9378" maxz="-9178" />
 			<location x="77673" y="255392" minz="-9378" maxz="-9178" />
@@ -259,7 +259,7 @@
 		<npc id="20797" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_25]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_25]">
 		<territory>	
 			<location x="76858" y="252081" minz="-9378" maxz="-9178" />
 			<location x="76510" y="252037" minz="-9378" maxz="-9178" />
@@ -271,7 +271,7 @@
 		<npc id="20797" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_26]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_26]">
 		<territory>	
 			<location x="78047" y="248457" minz="-9378" maxz="-9178" />
 			<location x="77889" y="248359" minz="-9378" maxz="-9178" />
@@ -283,7 +283,7 @@
 		<npc id="20797" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20798" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_27]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_27]">
 		<territory>	
 			<location x="78804" y="249049" minz="-9891" maxz="-9691" />
 			<location x="78443" y="248745" minz="-9891" maxz="-9691" />
@@ -295,7 +295,7 @@
 		<npc id="20799" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_28]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_28]">
 		<territory>	
 			<location x="81281" y="247301" minz="-9891" maxz="-9691" />
 			<location x="81162" y="246883" minz="-9891" maxz="-9691" />
@@ -307,7 +307,7 @@
 		<npc id="20799" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_29]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_29]">
 		<territory>	
 			<location x="84345" y="247390" minz="-9891" maxz="-9691" />
 			<location x="84484" y="246909" minz="-9891" maxz="-9691" />
@@ -319,7 +319,7 @@
 		<npc id="20799" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_30]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_30]">
 		<territory>	
 			<location x="86710" y="249188" minz="-9891" maxz="-9691" />
 			<location x="87091" y="248898" minz="-9891" maxz="-9691" />
@@ -331,7 +331,7 @@
 		<npc id="20799" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_31]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_31]">
 		<territory>	
 			<location x="87662" y="252027" minz="-9891" maxz="-9691" />
 			<location x="88137" y="252040" minz="-9891" maxz="-9691" />
@@ -343,7 +343,7 @@
 		<npc id="20799" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_32]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_32]">
 		<territory>	
 			<location x="86633" y="254906" minz="-9891" maxz="-9691" />
 			<location x="87016" y="255188" minz="-9891" maxz="-9691" />
@@ -355,7 +355,7 @@
 		<npc id="20799" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_33]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_33]">
 		<territory>	
 			<location x="84204" y="256679" minz="-9891" maxz="-9691" />
 			<location x="84336" y="257167" minz="-9891" maxz="-9691" />
@@ -367,7 +367,7 @@
 		<npc id="20799" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_34]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_34]">
 		<territory>	
 			<location x="81028" y="256474" minz="-9891" maxz="-9691" />
 			<location x="80871" y="256937" minz="-9891" maxz="-9691" />
@@ -379,7 +379,7 @@
 		<npc id="20799" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_35]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_35]">
 		<territory>	
 			<location x="78792" y="255012" minz="-9891" maxz="-9691" />
 			<location x="78424" y="255217" minz="-9891" maxz="-9691" />
@@ -391,7 +391,7 @@
 		<npc id="20799" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_36]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_36]">
 		<territory>	
 			<location x="77766" y="252056" minz="-9891" maxz="-9691" />
 			<location x="77413" y="252018" minz="-9891" maxz="-9691" />
@@ -403,7 +403,7 @@
 		<npc id="20799" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20800" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_37]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_37]">
 		<territory>	
 			<location x="78742" y="251988" minz="-10407" maxz="-10207" />
 			<location x="78272" y="251997" minz="-10407" maxz="-10207" />
@@ -415,7 +415,7 @@
 		<npc id="20801" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_38]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_38]">
 		<territory>	
 			<location x="79620" y="249589" minz="-10407" maxz="-10207" />
 			<location x="79296" y="249351" minz="-10407" maxz="-10207" />
@@ -427,7 +427,7 @@
 		<npc id="20801" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_39]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_39]">
 		<territory>	
 			<location x="81629" y="248208" minz="-10407" maxz="-10207" />
 			<location x="81441" y="247736" minz="-10407" maxz="-10207" />
@@ -439,7 +439,7 @@
 		<npc id="20801" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_40]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_40]">
 		<territory>	
 			<location x="84014" y="248250" minz="-10407" maxz="-10207" />
 			<location x="84145" y="247839" minz="-10407" maxz="-10207" />
@@ -451,7 +451,7 @@
 		<npc id="20801" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_41]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_41]">
 		<territory>	
 			<location x="86009" y="249732" minz="-10407" maxz="-10207" />
 			<location x="86374" y="249445" minz="-10407" maxz="-10207" />
@@ -463,7 +463,7 @@
 		<npc id="20801" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_42]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_42]">
 		<territory>	
 			<location x="86705" y="252082" minz="-10407" maxz="-10207" />
 			<location x="87121" y="252100" minz="-10407" maxz="-10207" />
@@ -475,7 +475,7 @@
 		<npc id="20801" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_43]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_43]">
 		<territory>	
 			<location x="85914" y="254374" minz="-10407" maxz="-10207" />
 			<location x="86270" y="254680" minz="-10407" maxz="-10207" />
@@ -487,7 +487,7 @@
 		<npc id="20801" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_44]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_44]">
 		<territory>	
 			<location x="83864" y="255776" minz="-10407" maxz="-10207" />
 			<location x="84031" y="256194" minz="-10407" maxz="-10207" />
@@ -499,7 +499,7 @@
 		<npc id="20801" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_45]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_45]">
 		<territory>	
 			<location x="81459" y="255733" minz="-10407" maxz="-10207" />
 			<location x="81314" y="256191" minz="-10407" maxz="-10207" />
@@ -511,7 +511,7 @@
 		<npc id="20801" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="1" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_46]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_46]">
 		<territory>	
 			<location x="79509" y="254326" minz="-10407" maxz="-10207" />
 			<location x="79197" y="254565" minz="-10407" maxz="-10207" />
@@ -523,7 +523,7 @@
 		<npc id="20801" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20802" count="2" respawn="94" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_47]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_47]">
 		<territory>	
 			<location x="80543" y="254602" minz="-10945" maxz="-10745" />
 			<location x="79870" y="254096" minz="-10945" maxz="-10745" />
@@ -536,7 +536,7 @@
 		<npc id="20803" count="3" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="1" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_48]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_48]">
 		<territory>	
 			<location x="81416" y="252103" minz="-10945" maxz="-10745" />
 			<location x="79462" y="252992" minz="-10945" maxz="-10745" />
@@ -548,7 +548,7 @@
 		<npc id="20803" count="3" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="1" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_49]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_49]">
 		<territory>	
 			<location x="80868" y="251185" minz="-10945" maxz="-10745" />
 			<location x="79571" y="250665" minz="-10945" maxz="-10745" />
@@ -560,7 +560,7 @@
 		<npc id="20803" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="2" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_50]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_50]">
 		<territory>	
 			<location x="82011" y="250375" minz="-10945" maxz="-10745" />
 			<location x="80728" y="249237" minz="-10945" maxz="-10745" />
@@ -573,7 +573,7 @@
 		<npc id="20803" count="3" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="1" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_51]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_51]">
 		<territory>	
 			<location x="83760" y="250849" minz="-10945" maxz="-10745" />
 			<location x="83061" y="251201" minz="-10945" maxz="-10745" />
@@ -584,7 +584,7 @@
 		<npc id="20803" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="2" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_52]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_52]">
 		<territory>	
 			<location x="85941" y="250730" minz="-10945" maxz="-10745" />
 			<location x="84236" y="251458" minz="-10945" maxz="-10745" />
@@ -596,7 +596,7 @@
 		<npc id="20803" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="2" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_53]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_53]">
 		<territory>	
 			<location x="86311" y="252001" minz="-10945" maxz="-10745" />
 			<location x="85923" y="253402" minz="-10945" maxz="-10745" />
@@ -607,7 +607,7 @@
 		<npc id="20803" count="2" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="2" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_54]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_54]">
 		<territory>	
 			<location x="85645" y="254136" minz="-10945" maxz="-10745" />
 			<location x="84953" y="254648" minz="-10945" maxz="-10745" />
@@ -619,7 +619,7 @@
 		<npc id="20803" count="4" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="1" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_55]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_55]">
 		<territory>	
 			<location x="83846" y="255388" minz="-10945" maxz="-10745" />
 			<location x="83115" y="255407" minz="-10945" maxz="-10745" />
@@ -631,7 +631,7 @@
 		<npc id="20803" count="3" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="1" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadrill05_2225_56]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_2225_56]">
 		<territory>	
 			<location x="81657" y="255394" minz="-10945" maxz="-10745" />
 			<location x="80906" y="254924" minz="-10945" maxz="-10745" />
@@ -643,7 +643,7 @@
 		<npc id="20803" count="1" respawn="94" respawn_rand="30" />	
 		<npc id="20994" count="2" respawn="110" respawn_rand="30" />	
 	</spawn>
-	<spawn name="[innadril05_mb2225_01]">
+	<spawn spawn_bydefault="true"  name="[innadril05_mb2225_01]">
 		<territory>	
 			<location x="82061" y="251621" minz="-10634" maxz="-10234" />
 			<location x="82622" y="251452" minz="-10634" maxz="-10234" />
@@ -656,7 +656,7 @@
 		</territory>
 		<npc id="25493" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[innadril05_mb2225_02]">
+	<spawn spawn_bydefault="true"  name="[innadril05_mb2225_02]">
 		<territory>	
 			<location x="87800" y="257500" minz="-10220" maxz="-9600" />
 			<location x="88800" y="257500" minz="-10220" maxz="-9600" />
@@ -665,13 +665,13 @@
 		</territory>
 		<npc id="25496" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[innadril05_mb2225_031]">
+	<spawn spawn_bydefault="true"  name="[innadril05_mb2225_031]">
 		<npc id="25016" count="1" respawn="129600" respawn_rand="86400" pos="76787 245775 -10376 0" />	
 	</spawn>
-	<spawn name="[innadril05_mb2225_041]">
+	<spawn spawn_bydefault="true"  name="[innadril05_mb2225_041]">
 		<npc id="25032" count="1" respawn="129600" respawn_rand="86400" pos="88532 245798 -10376 0" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_11]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_11]" event_name="[treasure_box]">
 		<territory>	
 			<location x="83469" y="258300" minz="-9366" maxz="-8966" />
 			<location x="83484" y="258862" minz="-9366" maxz="-8966" />
@@ -681,7 +681,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_16]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_16]" event_name="[treasure_box]">
 		<territory>	
 			<location x="83344" y="245135" minz="-9366" maxz="-9066" />
 			<location x="83345" y="245675" minz="-9366" maxz="-9066" />
@@ -691,7 +691,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_17]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_17]" event_name="[treasure_box]">
 		<territory>	
 			<location x="80898" y="246443" minz="-9378" maxz="-9128" />
 			<location x="80849" y="246180" minz="-9378" maxz="-9128" />
@@ -701,7 +701,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_19]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_19]" event_name="[treasure_box]">
 		<territory>	
 			<location x="87531" y="248553" minz="-9378" maxz="-9178" />
 			<location x="87683" y="248460" minz="-9378" maxz="-9178" />
@@ -711,7 +711,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_21]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_21]" event_name="[treasure_box]">
 		<territory>	
 			<location x="87407" y="255537" minz="-9378" maxz="-9178" />
 			<location x="87641" y="255654" minz="-9378" maxz="-9178" />
@@ -721,7 +721,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_23]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_23]" event_name="[treasure_box]">
 		<territory>	
 			<location x="80840" y="257419" minz="-9378" maxz="-9178" />
 			<location x="80754" y="257847" minz="-9378" maxz="-9178" />
@@ -731,7 +731,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_25]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_25]" event_name="[treasure_box]">
 		<territory>	
 			<location x="76858" y="252081" minz="-9378" maxz="-9178" />
 			<location x="76510" y="252037" minz="-9378" maxz="-9178" />
@@ -741,7 +741,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_27]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_27]" event_name="[treasure_box]">
 		<territory>	
 			<location x="78804" y="249049" minz="-9891" maxz="-9691" />
 			<location x="78443" y="248745" minz="-9891" maxz="-9691" />
@@ -751,7 +751,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_29]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_29]" event_name="[treasure_box]">
 		<territory>	
 			<location x="84345" y="247390" minz="-9891" maxz="-9691" />
 			<location x="84484" y="246909" minz="-9891" maxz="-9691" />
@@ -761,7 +761,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_31]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_31]" event_name="[treasure_box]">
 		<territory>	
 			<location x="87662" y="252027" minz="-9891" maxz="-9691" />
 			<location x="88137" y="252040" minz="-9891" maxz="-9691" />
@@ -771,7 +771,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="84204" y="256679" minz="-9891" maxz="-9691" />
 			<location x="84336" y="257167" minz="-9891" maxz="-9691" />
@@ -781,7 +781,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_35]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_35]" event_name="[treasure_box]">
 		<territory>	
 			<location x="78792" y="255012" minz="-9891" maxz="-9691" />
 			<location x="78424" y="255217" minz="-9891" maxz="-9691" />
@@ -791,7 +791,7 @@
 		<npc id="21808" count="1" respawn="100" />	
 		<npc id="18272" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_37]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_37]" event_name="[treasure_box]">
 		<territory>	
 			<location x="78742" y="251988" minz="-10407" maxz="-10207" />
 			<location x="78272" y="251997" minz="-10407" maxz="-10207" />
@@ -803,7 +803,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_38]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_38]" event_name="[treasure_box]">
 		<territory>	
 			<location x="79620" y="249589" minz="-10407" maxz="-10207" />
 			<location x="79296" y="249351" minz="-10407" maxz="-10207" />
@@ -815,7 +815,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_39]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_39]" event_name="[treasure_box]">
 		<territory>	
 			<location x="81629" y="248208" minz="-10407" maxz="-10207" />
 			<location x="81441" y="247736" minz="-10407" maxz="-10207" />
@@ -827,7 +827,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_40]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_40]" event_name="[treasure_box]">
 		<territory>	
 			<location x="84014" y="248250" minz="-10407" maxz="-10207" />
 			<location x="84145" y="247839" minz="-10407" maxz="-10207" />
@@ -839,7 +839,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_41]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_41]" event_name="[treasure_box]">
 		<territory>	
 			<location x="86009" y="249732" minz="-10407" maxz="-10207" />
 			<location x="86374" y="249445" minz="-10407" maxz="-10207" />
@@ -851,7 +851,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_42]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_42]" event_name="[treasure_box]">
 		<territory>	
 			<location x="86705" y="252082" minz="-10407" maxz="-10207" />
 			<location x="87121" y="252100" minz="-10407" maxz="-10207" />
@@ -863,7 +863,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_43]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_43]" event_name="[treasure_box]">
 		<territory>	
 			<location x="85914" y="254374" minz="-10407" maxz="-10207" />
 			<location x="86270" y="254680" minz="-10407" maxz="-10207" />
@@ -875,7 +875,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_44]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_44]" event_name="[treasure_box]">
 		<territory>	
 			<location x="83864" y="255776" minz="-10407" maxz="-10207" />
 			<location x="84031" y="256194" minz="-10407" maxz="-10207" />
@@ -887,7 +887,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_45]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_45]" event_name="[treasure_box]">
 		<territory>	
 			<location x="81459" y="255733" minz="-10407" maxz="-10207" />
 			<location x="81314" y="256191" minz="-10407" maxz="-10207" />
@@ -899,7 +899,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_46]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_46]" event_name="[treasure_box]">
 		<territory>	
 			<location x="79509" y="254326" minz="-10407" maxz="-10207" />
 			<location x="79197" y="254565" minz="-10407" maxz="-10207" />
@@ -911,7 +911,7 @@
 		<npc id="21809" count="1" respawn="100" />	
 		<npc id="18273" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_47]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_47]" event_name="[treasure_box]">
 		<territory>	
 			<location x="80543" y="254602" minz="-10945" maxz="-10745" />
 			<location x="79870" y="254096" minz="-10945" maxz="-10745" />
@@ -924,7 +924,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_48]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_48]" event_name="[treasure_box]">
 		<territory>	
 			<location x="81416" y="252103" minz="-10945" maxz="-10745" />
 			<location x="79462" y="252992" minz="-10945" maxz="-10745" />
@@ -936,7 +936,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_49]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_49]" event_name="[treasure_box]">
 		<territory>	
 			<location x="80868" y="251185" minz="-10945" maxz="-10745" />
 			<location x="79571" y="250665" minz="-10945" maxz="-10745" />
@@ -949,7 +949,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_50]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_50]" event_name="[treasure_box]">
 		<territory>	
 			<location x="82011" y="250375" minz="-10945" maxz="-10745" />
 			<location x="80728" y="249237" minz="-10945" maxz="-10745" />
@@ -962,7 +962,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_51]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_51]" event_name="[treasure_box]">
 		<territory>	
 			<location x="83760" y="250849" minz="-10945" maxz="-10745" />
 			<location x="83061" y="251201" minz="-10945" maxz="-10745" />
@@ -975,7 +975,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_52]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_52]" event_name="[treasure_box]">
 		<territory>	
 			<location x="85941" y="250730" minz="-10945" maxz="-10745" />
 			<location x="84236" y="251458" minz="-10945" maxz="-10745" />
@@ -988,7 +988,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_53]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_53]" event_name="[treasure_box]">
 		<territory>	
 			<location x="86311" y="252001" minz="-10945" maxz="-10745" />
 			<location x="85923" y="253402" minz="-10945" maxz="-10745" />
@@ -1001,7 +1001,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_54]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_54]" event_name="[treasure_box]">
 		<territory>	
 			<location x="85645" y="254136" minz="-10945" maxz="-10745" />
 			<location x="84953" y="254648" minz="-10945" maxz="-10745" />
@@ -1014,7 +1014,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_55]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_55]" event_name="[treasure_box]">
 		<territory>	
 			<location x="83846" y="255388" minz="-10945" maxz="-10745" />
 			<location x="83115" y="255407" minz="-10945" maxz="-10745" />
@@ -1027,7 +1027,7 @@
 		<npc id="21810" count="1" respawn="100" />	
 		<npc id="18274" count="1" respawn="100" />	
 	</spawn>
-	<spawn name="[innadrill05_tb2225_56]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[innadrill05_tb2225_56]" event_name="[treasure_box]">
 		<territory>	
 			<location x="81657" y="255394" minz="-10945" maxz="-10745" />
 			<location x="80906" y="254924" minz="-10945" maxz="-10745" />

@@ -21,6 +21,8 @@ import com.l2jhellas.gameserver.model.actor.item.Inventory;
 import com.l2jhellas.gameserver.model.actor.item.L2Item;
 import com.l2jhellas.gameserver.model.actor.item.L2ItemInstance;
 import com.l2jhellas.gameserver.model.entity.events.engines.EventManager;
+import com.l2jhellas.gameserver.model.quest.Quest;
+import com.l2jhellas.gameserver.model.quest.QuestState;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.CreatureSay;
@@ -419,6 +421,15 @@ public final class UseItem extends L2GameClientPacket
 			final IItemHandler handler = ItemHandler.getInstance().getHandler(item.getItem().getItemId());
 			if (handler != null)
 				handler.useItem(activeChar, item);
+			
+			for (final Quest quest : item.getQuestEvents())
+			{
+				final QuestState state = activeChar.getQuestState(quest.getName());
+				if (state == null || !state.isStarted())
+					continue;
+				
+				quest.notifyItemUse(item, activeChar, activeChar.getTarget());
+			}
 		}
 	}
 	

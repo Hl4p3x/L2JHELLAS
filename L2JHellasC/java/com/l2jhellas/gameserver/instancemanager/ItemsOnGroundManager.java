@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
@@ -27,7 +27,7 @@ public class ItemsOnGroundManager
 	{
 		if (!Config.SAVE_DROPPED_ITEM)
 			return;
-		_items = new ArrayList<>();
+		_items = new CopyOnWriteArrayList<>();
 		if (Config.SAVE_DROPPED_ITEM_INTERVAL > 0)
 			ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new saveTask(), Config.SAVE_DROPPED_ITEM_INTERVAL, Config.SAVE_DROPPED_ITEM_INTERVAL);
 	}
@@ -204,7 +204,8 @@ public class ItemsOnGroundManager
 					statement.setInt(7, item.getZ());
 					statement.setLong(8, item.isProtected() ? -1 : item.getDropTime());				
 					statement.setLong(9, item.isEquipable() ? 1 : 0); 
-					statement.execute();
+					statement.addBatch();
+
 				}
 				catch (Exception e)
 				{					
@@ -212,6 +213,7 @@ public class ItemsOnGroundManager
 					e.printStackTrace();
 				}
 			}
+			statement.executeBatch();
 		}
 		catch (SQLException e)
 		{

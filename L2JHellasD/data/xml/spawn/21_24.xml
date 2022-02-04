@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[giran08_npc2124_01]">
+	<spawn spawn_bydefault="true"  name="[giran08_npc2124_01]">
 		<npc id="31074" count="1" respawn="60" pos="52081 219173 -3229 57344" />	
 	</spawn>
-	<spawn name="[giran08_npc2124_02]">
+	<spawn spawn_bydefault="true"  name="[giran08_npc2124_02]">
 		<npc id="31706" count="1" respawn="60" pos="44208 206560 -3760 26000" />	
 	</spawn>
-	<spawn name="[giran08_2124_001]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_001]">
 		<territory>	
 			<location x="39370" y="196737" minz="-4696" maxz="-4096" />
 			<location x="43657" y="196725" minz="-4696" maxz="-4096" />
@@ -18,7 +18,7 @@
 		<npc id="20832" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_001]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_001]">
 		<territory>	
 			<location x="39370" y="196737" minz="-4696" maxz="-4096" />
 			<location x="43657" y="196725" minz="-4696" maxz="-4096" />
@@ -28,7 +28,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_001]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_001]">
 		<territory>	
 			<location x="39370" y="196737" minz="-4696" maxz="-4096" />
 			<location x="43657" y="196725" minz="-4696" maxz="-4096" />
@@ -39,7 +39,7 @@
 		<npc id="20832" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_001]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_001]">
 		<territory>	
 			<location x="39370" y="196737" minz="-4696" maxz="-4096" />
 			<location x="43657" y="196725" minz="-4696" maxz="-4096" />
@@ -49,7 +49,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_001]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_001]">
 		<territory>	
 			<location x="39370" y="196737" minz="-4696" maxz="-4096" />
 			<location x="43657" y="196725" minz="-4696" maxz="-4096" />
@@ -60,7 +60,7 @@
 		<npc id="20832" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_001]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_001]">
 		<territory>	
 			<location x="39370" y="196737" minz="-4696" maxz="-4096" />
 			<location x="43657" y="196725" minz="-4696" maxz="-4096" />
@@ -70,7 +70,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_001]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_001]">
 		<territory>	
 			<location x="39370" y="196737" minz="-4696" maxz="-4096" />
 			<location x="43657" y="196725" minz="-4696" maxz="-4096" />
@@ -81,7 +81,7 @@
 		<npc id="20833" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_001]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_001]">
 		<territory>	
 			<location x="39370" y="196737" minz="-4696" maxz="-4096" />
 			<location x="43657" y="196725" minz="-4696" maxz="-4096" />
@@ -91,7 +91,7 @@
 		</territory>
 		<npc id="21607" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_002]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_002]">
 		<territory>	
 			<location x="41398" y="198549" minz="-4672" maxz="-4472" />
 			<location x="41699" y="198574" minz="-4672" maxz="-4472" />
@@ -101,7 +101,7 @@
 		<npc id="20832" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_002]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_002]">
 		<territory>	
 			<location x="41398" y="198549" minz="-4672" maxz="-4472" />
 			<location x="41699" y="198574" minz="-4672" maxz="-4472" />
@@ -110,7 +110,7 @@
 		</territory>
 		<npc id="21604" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_003]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_003]">
 		<territory>	
 			<location x="41212" y="199522" minz="-4680" maxz="-4480" />
 			<location x="41567" y="199506" minz="-4680" maxz="-4480" />
@@ -122,7 +122,7 @@
 		<npc id="20832" count="2" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_003]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_003]">
 		<territory>	
 			<location x="41212" y="199522" minz="-4680" maxz="-4480" />
 			<location x="41567" y="199506" minz="-4680" maxz="-4480" />
@@ -133,7 +133,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_003]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_003]">
 		<territory>	
 			<location x="41212" y="199522" minz="-4680" maxz="-4480" />
 			<location x="41567" y="199506" minz="-4680" maxz="-4480" />
@@ -145,7 +145,7 @@
 		<npc id="20833" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_003]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_003]">
 		<territory>	
 			<location x="41212" y="199522" minz="-4680" maxz="-4480" />
 			<location x="41567" y="199506" minz="-4680" maxz="-4480" />
@@ -156,7 +156,7 @@
 		</territory>
 		<npc id="21607" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_004]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_004]">
 		<territory>	
 			<location x="41406" y="200402" minz="-4684" maxz="-4334" />
 			<location x="41896" y="200319" minz="-4684" maxz="-4334" />
@@ -167,7 +167,7 @@
 		<npc id="20832" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_004]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_004]">
 		<territory>	
 			<location x="41406" y="200402" minz="-4684" maxz="-4334" />
 			<location x="41896" y="200319" minz="-4684" maxz="-4334" />
@@ -177,7 +177,7 @@
 		</territory>
 		<npc id="21604" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_006]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_006]">
 		<territory>	
 			<location x="41608" y="200821" minz="-4500" maxz="-4200" />
 			<location x="42037" y="200951" minz="-4500" maxz="-4200" />
@@ -188,7 +188,7 @@
 		<npc id="20832" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_006]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_006]">
 		<territory>	
 			<location x="41608" y="200821" minz="-4500" maxz="-4200" />
 			<location x="42037" y="200951" minz="-4500" maxz="-4200" />
@@ -198,7 +198,7 @@
 		</territory>
 		<npc id="21604" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_006]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_006]">
 		<territory>	
 			<location x="41608" y="200821" minz="-4500" maxz="-4200" />
 			<location x="42037" y="200951" minz="-4500" maxz="-4200" />
@@ -209,7 +209,7 @@
 		<npc id="20833" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_006]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_006]">
 		<territory>	
 			<location x="41608" y="200821" minz="-4500" maxz="-4200" />
 			<location x="42037" y="200951" minz="-4500" maxz="-4200" />
@@ -219,7 +219,7 @@
 		</territory>
 		<npc id="21607" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_007]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_007]">
 		<territory>	
 			<location x="41370" y="201591" minz="-4324" maxz="-4074" />
 			<location x="41778" y="201370" minz="-4324" maxz="-4074" />
@@ -229,7 +229,7 @@
 		<npc id="20832" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_007]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_007]">
 		<territory>	
 			<location x="41370" y="201591" minz="-4324" maxz="-4074" />
 			<location x="41778" y="201370" minz="-4324" maxz="-4074" />
@@ -238,7 +238,7 @@
 		</territory>
 		<npc id="21604" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_008]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_008]">
 		<territory>	
 			<location x="41938" y="201923" minz="-4268" maxz="-3918" />
 			<location x="42319" y="201754" minz="-4268" maxz="-3918" />
@@ -249,7 +249,7 @@
 		<npc id="20832" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_008]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_008]">
 		<territory>	
 			<location x="41938" y="201923" minz="-4268" maxz="-3918" />
 			<location x="42319" y="201754" minz="-4268" maxz="-3918" />
@@ -259,7 +259,7 @@
 		</territory>
 		<npc id="21604" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_008]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_008]">
 		<territory>	
 			<location x="41938" y="201923" minz="-4268" maxz="-3918" />
 			<location x="42319" y="201754" minz="-4268" maxz="-3918" />
@@ -270,7 +270,7 @@
 		<npc id="20833" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_008]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_008]">
 		<territory>	
 			<location x="41938" y="201923" minz="-4268" maxz="-3918" />
 			<location x="42319" y="201754" minz="-4268" maxz="-3918" />
@@ -280,7 +280,7 @@
 		</territory>
 		<npc id="21607" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_009]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_009]">
 		<territory>	
 			<location x="41798" y="202736" minz="-4064" maxz="-3714" />
 			<location x="42167" y="202710" minz="-4064" maxz="-3714" />
@@ -292,7 +292,7 @@
 		<npc id="20832" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_009]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_009]">
 		<territory>	
 			<location x="41798" y="202736" minz="-4064" maxz="-3714" />
 			<location x="42167" y="202710" minz="-4064" maxz="-3714" />
@@ -303,7 +303,7 @@
 		</territory>
 		<npc id="21604" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_009]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_009]">
 		<territory>	
 			<location x="41798" y="202736" minz="-4064" maxz="-3714" />
 			<location x="42167" y="202710" minz="-4064" maxz="-3714" />
@@ -315,7 +315,7 @@
 		<npc id="20833" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_009]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_009]">
 		<territory>	
 			<location x="41798" y="202736" minz="-4064" maxz="-3714" />
 			<location x="42167" y="202710" minz="-4064" maxz="-3714" />
@@ -326,7 +326,7 @@
 		</territory>
 		<npc id="21607" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_010]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_010]">
 		<territory>	
 			<location x="42566" y="203960" minz="-3864" maxz="-3664" />
 			<location x="42116" y="203583" minz="-3864" maxz="-3664" />
@@ -336,7 +336,7 @@
 		<npc id="20832" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_010]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_010]">
 		<territory>	
 			<location x="42566" y="203960" minz="-3864" maxz="-3664" />
 			<location x="42116" y="203583" minz="-3864" maxz="-3664" />
@@ -345,7 +345,7 @@
 		</territory>
 		<npc id="21604" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_011]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_011]">
 		<territory>	
 			<location x="42538" y="204058" minz="-3812" maxz="-3612" />
 			<location x="42829" y="203720" minz="-3812" maxz="-3612" />
@@ -355,7 +355,7 @@
 		</territory>
 		<npc id="20832" count="4" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_011]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_011]">
 		<territory>	
 			<location x="42538" y="204058" minz="-3812" maxz="-3612" />
 			<location x="42829" y="203720" minz="-3812" maxz="-3612" />
@@ -365,7 +365,7 @@
 		</territory>
 		<npc id="21604" count="3" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_011]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_011]">
 		<territory>	
 			<location x="42538" y="204058" minz="-3812" maxz="-3612" />
 			<location x="42829" y="203720" minz="-3812" maxz="-3612" />
@@ -376,7 +376,7 @@
 		<npc id="20833" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_011]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_011]">
 		<territory>	
 			<location x="42538" y="204058" minz="-3812" maxz="-3612" />
 			<location x="42829" y="203720" minz="-3812" maxz="-3612" />
@@ -386,7 +386,7 @@
 		</territory>
 		<npc id="21607" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_012]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_012]">
 		<territory>	
 			<location x="44871" y="205705" minz="-3816" maxz="-3606" />
 			<location x="45051" y="205765" minz="-3816" maxz="-3606" />
@@ -396,7 +396,7 @@
 		<npc id="20833" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_012]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_012]">
 		<territory>	
 			<location x="44871" y="205705" minz="-3816" maxz="-3606" />
 			<location x="45051" y="205765" minz="-3816" maxz="-3606" />
@@ -405,7 +405,7 @@
 		</territory>
 		<npc id="21607" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_013]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_013]">
 		<territory>	
 			<location x="46427" y="204961" minz="-3683" maxz="-3483" />
 			<location x="47040" y="205041" minz="-3683" maxz="-3483" />
@@ -418,7 +418,7 @@
 		<npc id="20832" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_013]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_013]">
 		<territory>	
 			<location x="46427" y="204961" minz="-3683" maxz="-3483" />
 			<location x="47040" y="205041" minz="-3683" maxz="-3483" />
@@ -430,7 +430,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_013]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_013]">
 		<territory>	
 			<location x="46427" y="204961" minz="-3683" maxz="-3483" />
 			<location x="47040" y="205041" minz="-3683" maxz="-3483" />
@@ -443,7 +443,7 @@
 		<npc id="20832" count="2" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_013]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_013]">
 		<territory>	
 			<location x="46427" y="204961" minz="-3683" maxz="-3483" />
 			<location x="47040" y="205041" minz="-3683" maxz="-3483" />
@@ -455,7 +455,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_013]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_013]">
 		<territory>	
 			<location x="46427" y="204961" minz="-3683" maxz="-3483" />
 			<location x="47040" y="205041" minz="-3683" maxz="-3483" />
@@ -468,7 +468,7 @@
 		<npc id="20833" count="2" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_013]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_013]">
 		<territory>	
 			<location x="46427" y="204961" minz="-3683" maxz="-3483" />
 			<location x="47040" y="205041" minz="-3683" maxz="-3483" />
@@ -480,7 +480,7 @@
 		</territory>
 		<npc id="21607" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_013]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_013]">
 		<territory>	
 			<location x="46427" y="204961" minz="-3683" maxz="-3483" />
 			<location x="47040" y="205041" minz="-3683" maxz="-3483" />
@@ -493,7 +493,7 @@
 		<npc id="20833" count="2" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_013]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_013]">
 		<territory>	
 			<location x="46427" y="204961" minz="-3683" maxz="-3483" />
 			<location x="47040" y="205041" minz="-3683" maxz="-3483" />
@@ -505,7 +505,7 @@
 		</territory>
 		<npc id="21607" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_014]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_014]">
 		<territory>	
 			<location x="45945" y="206769" minz="-3732" maxz="-3532" />
 			<location x="46193" y="206927" minz="-3732" maxz="-3532" />
@@ -519,7 +519,7 @@
 		<npc id="20832" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_014]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_014]">
 		<territory>	
 			<location x="45945" y="206769" minz="-3732" maxz="-3532" />
 			<location x="46193" y="206927" minz="-3732" maxz="-3532" />
@@ -532,7 +532,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_014]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_014]">
 		<territory>	
 			<location x="45945" y="206769" minz="-3732" maxz="-3532" />
 			<location x="46193" y="206927" minz="-3732" maxz="-3532" />
@@ -546,7 +546,7 @@
 		<npc id="20833" count="2" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_014]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_014]">
 		<territory>	
 			<location x="45945" y="206769" minz="-3732" maxz="-3532" />
 			<location x="46193" y="206927" minz="-3732" maxz="-3532" />
@@ -559,7 +559,7 @@
 		</territory>
 		<npc id="21607" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_015]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_015]">
 		<territory>	
 			<location x="48337" y="205663" minz="-3556" maxz="-3356" />
 			<location x="48773" y="205879" minz="-3556" maxz="-3356" />
@@ -572,7 +572,7 @@
 		<npc id="20832" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_015]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_015]">
 		<territory>	
 			<location x="48337" y="205663" minz="-3556" maxz="-3356" />
 			<location x="48773" y="205879" minz="-3556" maxz="-3356" />
@@ -584,7 +584,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_015]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_015]">
 		<territory>	
 			<location x="48337" y="205663" minz="-3556" maxz="-3356" />
 			<location x="48773" y="205879" minz="-3556" maxz="-3356" />
@@ -597,7 +597,7 @@
 		<npc id="20832" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_015]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_015]">
 		<territory>	
 			<location x="48337" y="205663" minz="-3556" maxz="-3356" />
 			<location x="48773" y="205879" minz="-3556" maxz="-3356" />
@@ -609,7 +609,7 @@
 		</territory>
 		<npc id="21604" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_015]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_015]">
 		<territory>	
 			<location x="48337" y="205663" minz="-3556" maxz="-3356" />
 			<location x="48773" y="205879" minz="-3556" maxz="-3356" />
@@ -622,7 +622,7 @@
 		<npc id="20833" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_015]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_015]">
 		<territory>	
 			<location x="48337" y="205663" minz="-3556" maxz="-3356" />
 			<location x="48773" y="205879" minz="-3556" maxz="-3356" />
@@ -634,7 +634,7 @@
 		</territory>
 		<npc id="21607" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_015]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_015]">
 		<territory>	
 			<location x="48337" y="205663" minz="-3556" maxz="-3356" />
 			<location x="48773" y="205879" minz="-3556" maxz="-3356" />
@@ -647,7 +647,7 @@
 		<npc id="20833" count="3" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_015]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_015]">
 		<territory>	
 			<location x="48337" y="205663" minz="-3556" maxz="-3356" />
 			<location x="48773" y="205879" minz="-3556" maxz="-3356" />
@@ -659,7 +659,7 @@
 		</territory>
 		<npc id="21607" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_016]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_016]">
 		<territory>	
 			<location x="49420" y="207132" minz="-3752" maxz="-3502" />
 			<location x="49564" y="207048" minz="-3752" maxz="-3502" />
@@ -670,7 +670,7 @@
 		<npc id="20833" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_016]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_016]">
 		<territory>	
 			<location x="49420" y="207132" minz="-3752" maxz="-3502" />
 			<location x="49564" y="207048" minz="-3752" maxz="-3502" />
@@ -680,7 +680,7 @@
 		</territory>
 		<npc id="21607" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -690,7 +690,7 @@
 		<npc id="20833" count="1" respawn="55" />	
 		<npc id="20836" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -699,7 +699,7 @@
 		</territory>
 		<npc id="21607" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -708,7 +708,7 @@
 		</territory>
 		<npc id="20835" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -717,7 +717,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -726,7 +726,7 @@
 		</territory>
 		<npc id="20835" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -735,7 +735,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -744,7 +744,7 @@
 		</territory>
 		<npc id="20835" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -753,7 +753,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -762,7 +762,7 @@
 		</territory>
 		<npc id="20839" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_017]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_017]">
 		<territory>	
 			<location x="49163" y="207966" minz="-3772" maxz="-3572" />
 			<location x="50907" y="207966" minz="-3772" maxz="-3572" />
@@ -771,7 +771,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -780,7 +780,7 @@
 		</territory>
 		<npc id="20835" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -789,7 +789,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -798,7 +798,7 @@
 		</territory>
 		<npc id="20835" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -807,7 +807,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -816,7 +816,7 @@
 		</territory>
 		<npc id="20835" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -825,7 +825,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -834,7 +834,7 @@
 		</territory>
 		<npc id="20839" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -843,7 +843,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -852,7 +852,7 @@
 		</territory>
 		<npc id="20839" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_018]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_018]">
 		<territory>	
 			<location x="49427" y="209611" minz="-3780" maxz="-3580" />
 			<location x="50885" y="209630" minz="-3780" maxz="-3580" />
@@ -861,7 +861,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_019]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_019]">
 		<territory>	
 			<location x="50122" y="206397" minz="-4040" maxz="-3840" />
 			<location x="51336" y="206122" minz="-4040" maxz="-3840" />
@@ -872,7 +872,7 @@
 		</territory>
 		<npc id="20835" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_019]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_019]">
 		<territory>	
 			<location x="50122" y="206397" minz="-4040" maxz="-3840" />
 			<location x="51336" y="206122" minz="-4040" maxz="-3840" />
@@ -883,7 +883,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_019]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_019]">
 		<territory>	
 			<location x="50122" y="206397" minz="-4040" maxz="-3840" />
 			<location x="51336" y="206122" minz="-4040" maxz="-3840" />
@@ -894,7 +894,7 @@
 		</territory>
 		<npc id="20839" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_019]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_019]">
 		<territory>	
 			<location x="50122" y="206397" minz="-4040" maxz="-3840" />
 			<location x="51336" y="206122" minz="-4040" maxz="-3840" />
@@ -905,7 +905,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_020]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_020]">
 		<territory>	
 			<location x="51296" y="205421" minz="-4048" maxz="-3848" />
 			<location x="51788" y="205266" minz="-4048" maxz="-3848" />
@@ -914,7 +914,7 @@
 		</territory>
 		<npc id="20835" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_020]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_020]">
 		<territory>	
 			<location x="51296" y="205421" minz="-4048" maxz="-3848" />
 			<location x="51788" y="205266" minz="-4048" maxz="-3848" />
@@ -923,7 +923,7 @@
 		</territory>
 		<npc id="21610" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_021]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_021]">
 		<territory>	
 			<location x="51820" y="205340" minz="-4032" maxz="-3732" />
 			<location x="52535" y="205305" minz="-4032" maxz="-3732" />
@@ -932,7 +932,7 @@
 		</territory>
 		<npc id="20839" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_021]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_021]">
 		<territory>	
 			<location x="51820" y="205340" minz="-4032" maxz="-3732" />
 			<location x="52535" y="205305" minz="-4032" maxz="-3732" />
@@ -941,7 +941,7 @@
 		</territory>
 		<npc id="21613" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_022]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_022]">
 		<territory>	
 			<location x="52884" y="205080" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -951,7 +951,7 @@
 		</territory>
 		<npc id="20835" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_022]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_022]">
 		<territory>	
 			<location x="52884" y="205080" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -961,7 +961,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_022]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_022]">
 		<territory>	
 			<location x="52884" y="205080" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -971,7 +971,7 @@
 		</territory>
 		<npc id="20839" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_022]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_022]">
 		<territory>	
 			<location x="52884" y="205080" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -981,7 +981,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_023]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_023]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -990,7 +990,7 @@
 		</territory>
 		<npc id="20835" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_023]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_023]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -999,7 +999,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_023]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_023]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -1008,7 +1008,7 @@
 		</territory>
 		<npc id="20839" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_023]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_023]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -1017,7 +1017,7 @@
 		</territory>
 		<npc id="21613" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_024]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_024]">
 		<territory>	
 			<location x="48360" y="208115" minz="-3632" maxz="-3432" />
 			<location x="48535" y="208115" minz="-3632" maxz="-3432" />
@@ -1026,7 +1026,7 @@
 		</territory>
 		<npc id="20835" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_024]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_024]">
 		<territory>	
 			<location x="48360" y="208115" minz="-3632" maxz="-3432" />
 			<location x="48535" y="208115" minz="-3632" maxz="-3432" />
@@ -1035,7 +1035,7 @@
 		</territory>
 		<npc id="21610" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_025]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_025]">
 		<territory>	
 			<location x="47595" y="208720" minz="-3636" maxz="-3436" />
 			<location x="47989" y="209095" minz="-3636" maxz="-3436" />
@@ -1047,7 +1047,7 @@
 		</territory>
 		<npc id="20835" count="4" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_025]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_025]">
 		<territory>	
 			<location x="47595" y="208720" minz="-3636" maxz="-3436" />
 			<location x="47989" y="209095" minz="-3636" maxz="-3436" />
@@ -1059,7 +1059,7 @@
 		</territory>
 		<npc id="21610" count="3" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_025]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_025]">
 		<territory>	
 			<location x="47595" y="208720" minz="-3636" maxz="-3436" />
 			<location x="47989" y="209095" minz="-3636" maxz="-3436" />
@@ -1071,7 +1071,7 @@
 		</territory>
 		<npc id="20839" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_025]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_025]">
 		<territory>	
 			<location x="47595" y="208720" minz="-3636" maxz="-3436" />
 			<location x="47989" y="209095" minz="-3636" maxz="-3436" />
@@ -1083,7 +1083,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_026]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_026]">
 		<territory>	
 			<location x="45467" y="210166" minz="-3632" maxz="-3432" />
 			<location x="47622" y="209897" minz="-3632" maxz="-3432" />
@@ -1095,7 +1095,7 @@
 		</territory>
 		<npc id="20835" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_026]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_026]">
 		<territory>	
 			<location x="45467" y="210166" minz="-3632" maxz="-3432" />
 			<location x="47622" y="209897" minz="-3632" maxz="-3432" />
@@ -1107,7 +1107,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_026]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_026]">
 		<territory>	
 			<location x="45467" y="210166" minz="-3632" maxz="-3432" />
 			<location x="47622" y="209897" minz="-3632" maxz="-3432" />
@@ -1119,7 +1119,7 @@
 		</territory>
 		<npc id="20835" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_026]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_026]">
 		<territory>	
 			<location x="45467" y="210166" minz="-3632" maxz="-3432" />
 			<location x="47622" y="209897" minz="-3632" maxz="-3432" />
@@ -1131,7 +1131,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_026]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_026]">
 		<territory>	
 			<location x="45467" y="210166" minz="-3632" maxz="-3432" />
 			<location x="47622" y="209897" minz="-3632" maxz="-3432" />
@@ -1143,7 +1143,7 @@
 		</territory>
 		<npc id="20839" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_026]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_026]">
 		<territory>	
 			<location x="45467" y="210166" minz="-3632" maxz="-3432" />
 			<location x="47622" y="209897" minz="-3632" maxz="-3432" />
@@ -1155,7 +1155,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_026]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_026]">
 		<territory>	
 			<location x="45467" y="210166" minz="-3632" maxz="-3432" />
 			<location x="47622" y="209897" minz="-3632" maxz="-3432" />
@@ -1167,7 +1167,7 @@
 		</territory>
 		<npc id="20839" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_026]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_026]">
 		<territory>	
 			<location x="45467" y="210166" minz="-3632" maxz="-3432" />
 			<location x="47622" y="209897" minz="-3632" maxz="-3432" />
@@ -1179,7 +1179,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_027]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_027]">
 		<territory>	
 			<location x="47212" y="211356" minz="-3624" maxz="-3424" />
 			<location x="47601" y="211356" minz="-3624" maxz="-3424" />
@@ -1189,7 +1189,7 @@
 		</territory>
 		<npc id="20835" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_027]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_027]">
 		<territory>	
 			<location x="47212" y="211356" minz="-3624" maxz="-3424" />
 			<location x="47601" y="211356" minz="-3624" maxz="-3424" />
@@ -1199,7 +1199,7 @@
 		</territory>
 		<npc id="21610" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_028]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_028]">
 		<territory>	
 			<location x="45671" y="209399" minz="-3636" maxz="-3436" />
 			<location x="45922" y="209399" minz="-3636" maxz="-3436" />
@@ -1208,7 +1208,7 @@
 		</territory>
 		<npc id="20839" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_028]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_028]">
 		<territory>	
 			<location x="45671" y="209399" minz="-3636" maxz="-3436" />
 			<location x="45922" y="209399" minz="-3636" maxz="-3436" />
@@ -1217,7 +1217,7 @@
 		</territory>
 		<npc id="21613" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_029]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_029]">
 		<territory>	
 			<location x="43447" y="209837" minz="-3788" maxz="-3588" />
 			<location x="43776" y="209816" minz="-3788" maxz="-3588" />
@@ -1229,7 +1229,7 @@
 		</territory>
 		<npc id="20835" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_029]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_029]">
 		<territory>	
 			<location x="43447" y="209837" minz="-3788" maxz="-3588" />
 			<location x="43776" y="209816" minz="-3788" maxz="-3588" />
@@ -1241,7 +1241,7 @@
 		</territory>
 		<npc id="21610" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_029]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_029]">
 		<territory>	
 			<location x="43447" y="209837" minz="-3788" maxz="-3588" />
 			<location x="43776" y="209816" minz="-3788" maxz="-3588" />
@@ -1253,7 +1253,7 @@
 		</territory>
 		<npc id="20839" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_029]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_029]">
 		<territory>	
 			<location x="43447" y="209837" minz="-3788" maxz="-3588" />
 			<location x="43776" y="209816" minz="-3788" maxz="-3588" />
@@ -1265,7 +1265,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_029]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_029]">
 		<territory>	
 			<location x="43447" y="209837" minz="-3788" maxz="-3588" />
 			<location x="43776" y="209816" minz="-3788" maxz="-3588" />
@@ -1277,7 +1277,7 @@
 		</territory>
 		<npc id="20839" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_029]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_029]">
 		<territory>	
 			<location x="43447" y="209837" minz="-3788" maxz="-3588" />
 			<location x="43776" y="209816" minz="-3788" maxz="-3588" />
@@ -1289,7 +1289,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_030]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_030]">
 		<territory>	
 			<location x="42232" y="209877" minz="-3764" maxz="-3564" />
 			<location x="42778" y="210050" minz="-3764" maxz="-3564" />
@@ -1300,7 +1300,7 @@
 		</territory>
 		<npc id="20839" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_030]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_030]">
 		<territory>	
 			<location x="42232" y="209877" minz="-3764" maxz="-3564" />
 			<location x="42778" y="210050" minz="-3764" maxz="-3564" />
@@ -1311,7 +1311,7 @@
 		</territory>
 		<npc id="21613" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_030]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_030]">
 		<territory>	
 			<location x="42232" y="209877" minz="-3764" maxz="-3564" />
 			<location x="42778" y="210050" minz="-3764" maxz="-3564" />
@@ -1322,7 +1322,7 @@
 		</territory>
 		<npc id="20840" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_030]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_030]">
 		<territory>	
 			<location x="42232" y="209877" minz="-3764" maxz="-3564" />
 			<location x="42778" y="210050" minz="-3764" maxz="-3564" />
@@ -1333,7 +1333,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_031]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_031]">
 		<territory>	
 			<location x="42443" y="211319" minz="-3764" maxz="-3564" />
 			<location x="42784" y="211446" minz="-3764" maxz="-3564" />
@@ -1343,7 +1343,7 @@
 		</territory>
 		<npc id="20839" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_031]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_031]">
 		<territory>	
 			<location x="42443" y="211319" minz="-3764" maxz="-3564" />
 			<location x="42784" y="211446" minz="-3764" maxz="-3564" />
@@ -1353,7 +1353,7 @@
 		</territory>
 		<npc id="21613" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_032]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_032]">
 		<territory>	
 			<location x="42983" y="212134" minz="-3772" maxz="-3572" />
 			<location x="43466" y="212134" minz="-3772" maxz="-3572" />
@@ -1365,7 +1365,7 @@
 		</territory>
 		<npc id="20839" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_032]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_032]">
 		<territory>	
 			<location x="42983" y="212134" minz="-3772" maxz="-3572" />
 			<location x="43466" y="212134" minz="-3772" maxz="-3572" />
@@ -1377,7 +1377,7 @@
 		</territory>
 		<npc id="21613" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_032]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_032]">
 		<territory>	
 			<location x="42983" y="212134" minz="-3772" maxz="-3572" />
 			<location x="43466" y="212134" minz="-3772" maxz="-3572" />
@@ -1389,7 +1389,7 @@
 		</territory>
 		<npc id="20840" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_032]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_032]">
 		<territory>	
 			<location x="42983" y="212134" minz="-3772" maxz="-3572" />
 			<location x="43466" y="212134" minz="-3772" maxz="-3572" />
@@ -1401,7 +1401,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_033]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_033]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -1411,7 +1411,7 @@
 		</territory>
 		<npc id="20839" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_033]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_033]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -1421,7 +1421,7 @@
 		</territory>
 		<npc id="21613" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_034]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_034]">
 		<territory>	
 			<location x="43439" y="213259" minz="-3776" maxz="-3626" />
 			<location x="43589" y="213249" minz="-3776" maxz="-3626" />
@@ -1430,7 +1430,7 @@
 		</territory>
 		<npc id="20839" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_034]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_034]">
 		<territory>	
 			<location x="43439" y="213259" minz="-3776" maxz="-3626" />
 			<location x="43589" y="213249" minz="-3776" maxz="-3626" />
@@ -1439,7 +1439,7 @@
 		</territory>
 		<npc id="21613" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_035]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_035]">
 		<territory>	
 			<location x="42805" y="214266" minz="-3764" maxz="-3564" />
 			<location x="43627" y="214195" minz="-3764" maxz="-3564" />
@@ -1448,7 +1448,7 @@
 		</territory>
 		<npc id="20840" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_035]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_035]">
 		<territory>	
 			<location x="42805" y="214266" minz="-3764" maxz="-3564" />
 			<location x="43627" y="214195" minz="-3764" maxz="-3564" />
@@ -1457,7 +1457,7 @@
 		</territory>
 		<npc id="21616" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_036]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_036]">
 		<territory>	
 			<location x="41707" y="211982" minz="-3752" maxz="-3552" />
 			<location x="42025" y="211917" minz="-3752" maxz="-3552" />
@@ -1470,7 +1470,7 @@
 		</territory>
 		<npc id="20840" count="4" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_036]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_036]">
 		<territory>	
 			<location x="41707" y="211982" minz="-3752" maxz="-3552" />
 			<location x="42025" y="211917" minz="-3752" maxz="-3552" />
@@ -1483,7 +1483,7 @@
 		</territory>
 		<npc id="21616" count="3" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_036]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_036]">
 		<territory>	
 			<location x="41707" y="211982" minz="-3752" maxz="-3552" />
 			<location x="42025" y="211917" minz="-3752" maxz="-3552" />
@@ -1496,7 +1496,7 @@
 		</territory>
 		<npc id="20841" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_036]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_036]">
 		<territory>	
 			<location x="41707" y="211982" minz="-3752" maxz="-3552" />
 			<location x="42025" y="211917" minz="-3752" maxz="-3552" />
@@ -1509,7 +1509,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_037]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_037]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -1518,7 +1518,7 @@
 		</territory>
 		<npc id="20840" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_037]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_037]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -1527,7 +1527,7 @@
 		</territory>
 		<npc id="21616" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_037]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_037]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -1536,7 +1536,7 @@
 		</territory>
 		<npc id="20841" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_037]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_037]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -1545,7 +1545,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_038]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_038]">
 		<territory>	
 			<location x="46101" y="211469" minz="-3732" maxz="-3532" />
 			<location x="46353" y="211477" minz="-3732" maxz="-3532" />
@@ -1555,7 +1555,7 @@
 		</territory>
 		<npc id="20840" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_038]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_038]">
 		<territory>	
 			<location x="46101" y="211469" minz="-3732" maxz="-3532" />
 			<location x="46353" y="211477" minz="-3732" maxz="-3532" />
@@ -1565,7 +1565,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_039]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_039]">
 		<territory>	
 			<location x="45112" y="212320" minz="-3808" maxz="-3608" />
 			<location x="46048" y="212280" minz="-3808" maxz="-3608" />
@@ -1576,7 +1576,7 @@
 		</territory>
 		<npc id="20840" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_039]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_039]">
 		<territory>	
 			<location x="45112" y="212320" minz="-3808" maxz="-3608" />
 			<location x="46048" y="212280" minz="-3808" maxz="-3608" />
@@ -1587,7 +1587,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_039]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_039]">
 		<territory>	
 			<location x="45112" y="212320" minz="-3808" maxz="-3608" />
 			<location x="46048" y="212280" minz="-3808" maxz="-3608" />
@@ -1598,7 +1598,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_039]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_039]">
 		<territory>	
 			<location x="45112" y="212320" minz="-3808" maxz="-3608" />
 			<location x="46048" y="212280" minz="-3808" maxz="-3608" />
@@ -1609,7 +1609,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_040]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_040]">
 		<territory>	
 			<location x="45296" y="213219" minz="-3800" maxz="-3600" />
 			<location x="46136" y="213081" minz="-3800" maxz="-3600" />
@@ -1619,7 +1619,7 @@
 		</territory>
 		<npc id="20840" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_040]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_040]">
 		<territory>	
 			<location x="45296" y="213219" minz="-3800" maxz="-3600" />
 			<location x="46136" y="213081" minz="-3800" maxz="-3600" />
@@ -1629,7 +1629,7 @@
 		</territory>
 		<npc id="21616" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_040]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_040]">
 		<territory>	
 			<location x="45296" y="213219" minz="-3800" maxz="-3600" />
 			<location x="46136" y="213081" minz="-3800" maxz="-3600" />
@@ -1639,7 +1639,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_040]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_040]">
 		<territory>	
 			<location x="45296" y="213219" minz="-3800" maxz="-3600" />
 			<location x="46136" y="213081" minz="-3800" maxz="-3600" />
@@ -1649,7 +1649,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_041]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_041]">
 		<territory>	
 			<location x="45103" y="213855" minz="-3800" maxz="-3600" />
 			<location x="46096" y="213838" minz="-3800" maxz="-3600" />
@@ -1659,7 +1659,7 @@
 		</territory>
 		<npc id="20840" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_041]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_041]">
 		<territory>	
 			<location x="45103" y="213855" minz="-3800" maxz="-3600" />
 			<location x="46096" y="213838" minz="-3800" maxz="-3600" />
@@ -1669,7 +1669,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_041]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_041]">
 		<territory>	
 			<location x="45103" y="213855" minz="-3800" maxz="-3600" />
 			<location x="46096" y="213838" minz="-3800" maxz="-3600" />
@@ -1679,7 +1679,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_041]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_041]">
 		<territory>	
 			<location x="45103" y="213855" minz="-3800" maxz="-3600" />
 			<location x="46096" y="213838" minz="-3800" maxz="-3600" />
@@ -1689,7 +1689,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_042]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_042]">
 		<territory>	
 			<location x="45215" y="215339" minz="-3964" maxz="-3664" />
 			<location x="45657" y="215270" minz="-3964" maxz="-3664" />
@@ -1699,7 +1699,7 @@
 		</territory>
 		<npc id="20840" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_042]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_042]">
 		<territory>	
 			<location x="45215" y="215339" minz="-3964" maxz="-3664" />
 			<location x="45657" y="215270" minz="-3964" maxz="-3664" />
@@ -1709,7 +1709,7 @@
 		</territory>
 		<npc id="21616" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_042]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_042]">
 		<territory>	
 			<location x="45215" y="215339" minz="-3964" maxz="-3664" />
 			<location x="45657" y="215270" minz="-3964" maxz="-3664" />
@@ -1719,7 +1719,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_042]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_042]">
 		<territory>	
 			<location x="45215" y="215339" minz="-3964" maxz="-3664" />
 			<location x="45657" y="215270" minz="-3964" maxz="-3664" />
@@ -1729,7 +1729,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_043]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_043]">
 		<territory>	
 			<location x="44651" y="215939" minz="-4004" maxz="-3754" />
 			<location x="45506" y="215904" minz="-4004" maxz="-3754" />
@@ -1739,7 +1739,7 @@
 		</territory>
 		<npc id="20840" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_043]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_043]">
 		<territory>	
 			<location x="44651" y="215939" minz="-4004" maxz="-3754" />
 			<location x="45506" y="215904" minz="-4004" maxz="-3754" />
@@ -1749,7 +1749,7 @@
 		</territory>
 		<npc id="21616" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_043]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_043]">
 		<territory>	
 			<location x="44651" y="215939" minz="-4004" maxz="-3754" />
 			<location x="45506" y="215904" minz="-4004" maxz="-3754" />
@@ -1759,7 +1759,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_043]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_043]">
 		<territory>	
 			<location x="44651" y="215939" minz="-4004" maxz="-3754" />
 			<location x="45506" y="215904" minz="-4004" maxz="-3754" />
@@ -1769,7 +1769,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_044]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_044]">
 		<territory>	
 			<location x="43199" y="215819" minz="-3940" maxz="-3740" />
 			<location x="44508" y="215819" minz="-3940" maxz="-3740" />
@@ -1778,7 +1778,7 @@
 		</territory>
 		<npc id="20840" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_044]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_044]">
 		<territory>	
 			<location x="43199" y="215819" minz="-3940" maxz="-3740" />
 			<location x="44508" y="215819" minz="-3940" maxz="-3740" />
@@ -1787,7 +1787,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_044]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_044]">
 		<territory>	
 			<location x="43199" y="215819" minz="-3940" maxz="-3740" />
 			<location x="44508" y="215819" minz="-3940" maxz="-3740" />
@@ -1796,7 +1796,7 @@
 		</territory>
 		<npc id="20840" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_044]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_044]">
 		<territory>	
 			<location x="43199" y="215819" minz="-3940" maxz="-3740" />
 			<location x="44508" y="215819" minz="-3940" maxz="-3740" />
@@ -1805,7 +1805,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_044]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_044]">
 		<territory>	
 			<location x="43199" y="215819" minz="-3940" maxz="-3740" />
 			<location x="44508" y="215819" minz="-3940" maxz="-3740" />
@@ -1814,7 +1814,7 @@
 		</territory>
 		<npc id="20841" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_044]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_044]">
 		<territory>	
 			<location x="43199" y="215819" minz="-3940" maxz="-3740" />
 			<location x="44508" y="215819" minz="-3940" maxz="-3740" />
@@ -1823,7 +1823,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_045]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_045]">
 		<territory>	
 			<location x="43211" y="214537" minz="-3940" maxz="-3740" />
 			<location x="44492" y="214537" minz="-3940" maxz="-3740" />
@@ -1832,7 +1832,7 @@
 		</territory>
 		<npc id="20840" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_045]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_045]">
 		<territory>	
 			<location x="43211" y="214537" minz="-3940" maxz="-3740" />
 			<location x="44492" y="214537" minz="-3940" maxz="-3740" />
@@ -1841,7 +1841,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_045]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_045]">
 		<territory>	
 			<location x="43211" y="214537" minz="-3940" maxz="-3740" />
 			<location x="44492" y="214537" minz="-3940" maxz="-3740" />
@@ -1850,7 +1850,7 @@
 		</territory>
 		<npc id="20840" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_045]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_045]">
 		<territory>	
 			<location x="43211" y="214537" minz="-3940" maxz="-3740" />
 			<location x="44492" y="214537" minz="-3940" maxz="-3740" />
@@ -1859,7 +1859,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_045]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_045]">
 		<territory>	
 			<location x="43211" y="214537" minz="-3940" maxz="-3740" />
 			<location x="44492" y="214537" minz="-3940" maxz="-3740" />
@@ -1868,7 +1868,7 @@
 		</territory>
 		<npc id="20841" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_045]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_045]">
 		<territory>	
 			<location x="43211" y="214537" minz="-3940" maxz="-3740" />
 			<location x="44492" y="214537" minz="-3940" maxz="-3740" />
@@ -1877,7 +1877,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_046]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_046]">
 		<territory>	
 			<location x="44775" y="216905" minz="-3968" maxz="-3768" />
 			<location x="45752" y="216795" minz="-3968" maxz="-3768" />
@@ -1887,7 +1887,7 @@
 		</territory>
 		<npc id="20840" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_046]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_046]">
 		<territory>	
 			<location x="44775" y="216905" minz="-3968" maxz="-3768" />
 			<location x="45752" y="216795" minz="-3968" maxz="-3768" />
@@ -1897,7 +1897,7 @@
 		</territory>
 		<npc id="21616" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_046]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_046]">
 		<territory>	
 			<location x="44775" y="216905" minz="-3968" maxz="-3768" />
 			<location x="45752" y="216795" minz="-3968" maxz="-3768" />
@@ -1907,7 +1907,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_046]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_046]">
 		<territory>	
 			<location x="44775" y="216905" minz="-3968" maxz="-3768" />
 			<location x="45752" y="216795" minz="-3968" maxz="-3768" />
@@ -1917,7 +1917,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_047]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_047]">
 		<territory>	
 			<location x="44786" y="217500" minz="-4000" maxz="-3800" />
 			<location x="45659" y="217482" minz="-4000" maxz="-3800" />
@@ -1927,7 +1927,7 @@
 		</territory>
 		<npc id="20840" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_047]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_047]">
 		<territory>	
 			<location x="44786" y="217500" minz="-4000" maxz="-3800" />
 			<location x="45659" y="217482" minz="-4000" maxz="-3800" />
@@ -1937,7 +1937,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_047]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_047]">
 		<territory>	
 			<location x="44786" y="217500" minz="-4000" maxz="-3800" />
 			<location x="45659" y="217482" minz="-4000" maxz="-3800" />
@@ -1947,7 +1947,7 @@
 		</territory>
 		<npc id="20841" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_047]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_047]">
 		<territory>	
 			<location x="44786" y="217500" minz="-4000" maxz="-3800" />
 			<location x="45659" y="217482" minz="-4000" maxz="-3800" />
@@ -1957,7 +1957,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_048]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_048]">
 		<territory>	
 			<location x="43209" y="217145" minz="-3936" maxz="-3736" />
 			<location x="44491" y="217145" minz="-3936" maxz="-3736" />
@@ -1966,7 +1966,7 @@
 		</territory>
 		<npc id="20840" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_048]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_048]">
 		<territory>	
 			<location x="43209" y="217145" minz="-3936" maxz="-3736" />
 			<location x="44491" y="217145" minz="-3936" maxz="-3736" />
@@ -1975,7 +1975,7 @@
 		</territory>
 		<npc id="21616" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_048]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_048]">
 		<territory>	
 			<location x="43209" y="217145" minz="-3936" maxz="-3736" />
 			<location x="44491" y="217145" minz="-3936" maxz="-3736" />
@@ -1984,7 +1984,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_048]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_048]">
 		<territory>	
 			<location x="43209" y="217145" minz="-3936" maxz="-3736" />
 			<location x="44491" y="217145" minz="-3936" maxz="-3736" />
@@ -1993,7 +1993,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_048]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_048]">
 		<territory>	
 			<location x="43209" y="217145" minz="-3936" maxz="-3736" />
 			<location x="44491" y="217145" minz="-3936" maxz="-3736" />
@@ -2002,7 +2002,7 @@
 		</territory>
 		<npc id="20848" count="5" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_049]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_049]">
 		<territory>	
 			<location x="43511" y="218426" minz="-3856" maxz="-3656" />
 			<location x="43711" y="218426" minz="-3856" maxz="-3656" />
@@ -2011,7 +2011,7 @@
 		</territory>
 		<npc id="20848" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_050]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_050]">
 		<territory>	
 			<location x="43012" y="218850" minz="-3940" maxz="-3740" />
 			<location x="43708" y="218850" minz="-3940" maxz="-3740" />
@@ -2020,7 +2020,7 @@
 		</territory>
 		<npc id="20848" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_051]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_051]">
 		<territory>	
 			<location x="45213" y="219877" minz="-3660" maxz="-3460" />
 			<location x="45834" y="220143" minz="-3660" maxz="-3460" />
@@ -2031,7 +2031,7 @@
 		</territory>
 		<npc id="20841" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_051]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_051]">
 		<territory>	
 			<location x="45213" y="219877" minz="-3660" maxz="-3460" />
 			<location x="45834" y="220143" minz="-3660" maxz="-3460" />
@@ -2042,7 +2042,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_051]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_051]">
 		<territory>	
 			<location x="45213" y="219877" minz="-3660" maxz="-3460" />
 			<location x="45834" y="220143" minz="-3660" maxz="-3460" />
@@ -2053,7 +2053,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_051]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_051]">
 		<territory>	
 			<location x="45213" y="219877" minz="-3660" maxz="-3460" />
 			<location x="45834" y="220143" minz="-3660" maxz="-3460" />
@@ -2064,7 +2064,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_052]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_052]">
 		<territory>	
 			<location x="45982" y="220162" minz="-3620" maxz="-3420" />
 			<location x="46833" y="219847" minz="-3620" maxz="-3420" />
@@ -2075,7 +2075,7 @@
 		</territory>
 		<npc id="20841" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_052]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_052]">
 		<territory>	
 			<location x="45982" y="220162" minz="-3620" maxz="-3420" />
 			<location x="46833" y="219847" minz="-3620" maxz="-3420" />
@@ -2086,7 +2086,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_052]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_052]">
 		<territory>	
 			<location x="45982" y="220162" minz="-3620" maxz="-3420" />
 			<location x="46833" y="219847" minz="-3620" maxz="-3420" />
@@ -2097,7 +2097,7 @@
 		</territory>
 		<npc id="20842" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_052]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_052]">
 		<territory>	
 			<location x="45982" y="220162" minz="-3620" maxz="-3420" />
 			<location x="46833" y="219847" minz="-3620" maxz="-3420" />
@@ -2108,7 +2108,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_053]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_053]">
 		<territory>	
 			<location x="46287" y="216779" minz="-3792" maxz="-3592" />
 			<location x="46934" y="216830" minz="-3792" maxz="-3592" />
@@ -2120,7 +2120,7 @@
 		</territory>
 		<npc id="20841" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_053]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_053]">
 		<territory>	
 			<location x="46287" y="216779" minz="-3792" maxz="-3592" />
 			<location x="46934" y="216830" minz="-3792" maxz="-3592" />
@@ -2132,7 +2132,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_053]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_053]">
 		<territory>	
 			<location x="46287" y="216779" minz="-3792" maxz="-3592" />
 			<location x="46934" y="216830" minz="-3792" maxz="-3592" />
@@ -2144,7 +2144,7 @@
 		</territory>
 		<npc id="20842" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_053]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_053]">
 		<territory>	
 			<location x="46287" y="216779" minz="-3792" maxz="-3592" />
 			<location x="46934" y="216830" minz="-3792" maxz="-3592" />
@@ -2156,7 +2156,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_054]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_054]">
 		<territory>	
 			<location x="46292" y="215386" minz="-3796" maxz="-3596" />
 			<location x="46518" y="215271" minz="-3796" maxz="-3596" />
@@ -2167,7 +2167,7 @@
 		</territory>
 		<npc id="20841" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_054]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_054]">
 		<territory>	
 			<location x="46292" y="215386" minz="-3796" maxz="-3596" />
 			<location x="46518" y="215271" minz="-3796" maxz="-3596" />
@@ -2178,7 +2178,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_054]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_054]">
 		<territory>	
 			<location x="46292" y="215386" minz="-3796" maxz="-3596" />
 			<location x="46518" y="215271" minz="-3796" maxz="-3596" />
@@ -2189,7 +2189,7 @@
 		</territory>
 		<npc id="20841" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_054]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_054]">
 		<territory>	
 			<location x="46292" y="215386" minz="-3796" maxz="-3596" />
 			<location x="46518" y="215271" minz="-3796" maxz="-3596" />
@@ -2200,7 +2200,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_055]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_055]">
 		<territory>	
 			<location x="47790" y="220792" minz="-3628" maxz="-3428" />
 			<location x="48632" y="220818" minz="-3628" maxz="-3428" />
@@ -2209,7 +2209,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_055]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_055]">
 		<territory>	
 			<location x="47790" y="220792" minz="-3628" maxz="-3428" />
 			<location x="48632" y="220818" minz="-3628" maxz="-3428" />
@@ -2218,7 +2218,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_056]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_056]">
 		<territory>	
 			<location x="49156" y="219671" minz="-3632" maxz="-3432" />
 			<location x="49775" y="219367" minz="-3632" maxz="-3432" />
@@ -2230,7 +2230,7 @@
 		</territory>
 		<npc id="20841" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_056]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_056]">
 		<territory>	
 			<location x="49156" y="219671" minz="-3632" maxz="-3432" />
 			<location x="49775" y="219367" minz="-3632" maxz="-3432" />
@@ -2242,7 +2242,7 @@
 		</territory>
 		<npc id="21619" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_056]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_056]">
 		<territory>	
 			<location x="49156" y="219671" minz="-3632" maxz="-3432" />
 			<location x="49775" y="219367" minz="-3632" maxz="-3432" />
@@ -2254,7 +2254,7 @@
 		</territory>
 		<npc id="20842" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_056]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_056]">
 		<territory>	
 			<location x="49156" y="219671" minz="-3632" maxz="-3432" />
 			<location x="49775" y="219367" minz="-3632" maxz="-3432" />
@@ -2266,7 +2266,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_056]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_056]">
 		<territory>	
 			<location x="49156" y="219671" minz="-3632" maxz="-3432" />
 			<location x="49775" y="219367" minz="-3632" maxz="-3432" />
@@ -2278,7 +2278,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_056]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_056]">
 		<territory>	
 			<location x="49156" y="219671" minz="-3632" maxz="-3432" />
 			<location x="49775" y="219367" minz="-3632" maxz="-3432" />
@@ -2290,7 +2290,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_056]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_056]">
 		<territory>	
 			<location x="49156" y="219671" minz="-3632" maxz="-3432" />
 			<location x="49775" y="219367" minz="-3632" maxz="-3432" />
@@ -2302,7 +2302,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_056]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_056]">
 		<territory>	
 			<location x="49156" y="219671" minz="-3632" maxz="-3432" />
 			<location x="49775" y="219367" minz="-3632" maxz="-3432" />
@@ -2314,7 +2314,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_057]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_057]">
 		<territory>	
 			<location x="48397" y="218429" minz="-3632" maxz="-3432" />
 			<location x="49158" y="218215" minz="-3632" maxz="-3432" />
@@ -2324,7 +2324,7 @@
 		</territory>
 		<npc id="20841" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_057]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_057]">
 		<territory>	
 			<location x="48397" y="218429" minz="-3632" maxz="-3432" />
 			<location x="49158" y="218215" minz="-3632" maxz="-3432" />
@@ -2334,7 +2334,7 @@
 		</territory>
 		<npc id="21619" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_057]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_057]">
 		<territory>	
 			<location x="48397" y="218429" minz="-3632" maxz="-3432" />
 			<location x="49158" y="218215" minz="-3632" maxz="-3432" />
@@ -2344,7 +2344,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_057]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_057]">
 		<territory>	
 			<location x="48397" y="218429" minz="-3632" maxz="-3432" />
 			<location x="49158" y="218215" minz="-3632" maxz="-3432" />
@@ -2354,7 +2354,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_057]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_057]">
 		<territory>	
 			<location x="48397" y="218429" minz="-3632" maxz="-3432" />
 			<location x="49158" y="218215" minz="-3632" maxz="-3432" />
@@ -2364,7 +2364,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_057]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_057]">
 		<territory>	
 			<location x="48397" y="218429" minz="-3632" maxz="-3432" />
 			<location x="49158" y="218215" minz="-3632" maxz="-3432" />
@@ -2374,7 +2374,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_058]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_058]">
 		<territory>	
 			<location x="48420" y="219337" minz="-3628" maxz="-3428" />
 			<location x="48850" y="219568" minz="-3628" maxz="-3428" />
@@ -2384,7 +2384,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_058]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_058]">
 		<territory>	
 			<location x="48420" y="219337" minz="-3628" maxz="-3428" />
 			<location x="48850" y="219568" minz="-3628" maxz="-3428" />
@@ -2394,7 +2394,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_058]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_058]">
 		<territory>	
 			<location x="48420" y="219337" minz="-3628" maxz="-3428" />
 			<location x="48850" y="219568" minz="-3628" maxz="-3428" />
@@ -2404,7 +2404,7 @@
 		</territory>
 		<npc id="20843" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_058]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_058]">
 		<territory>	
 			<location x="48420" y="219337" minz="-3628" maxz="-3428" />
 			<location x="48850" y="219568" minz="-3628" maxz="-3428" />
@@ -2414,7 +2414,7 @@
 		</territory>
 		<npc id="21625" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_059]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_059]">
 		<territory>	
 			<location x="48769" y="216497" minz="-3616" maxz="-3416" />
 			<location x="49476" y="217003" minz="-3616" maxz="-3416" />
@@ -2426,7 +2426,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_059]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_059]">
 		<territory>	
 			<location x="48769" y="216497" minz="-3616" maxz="-3416" />
 			<location x="49476" y="217003" minz="-3616" maxz="-3416" />
@@ -2438,7 +2438,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_059]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_059]">
 		<territory>	
 			<location x="48769" y="216497" minz="-3616" maxz="-3416" />
 			<location x="49476" y="217003" minz="-3616" maxz="-3416" />
@@ -2450,7 +2450,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_059]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_059]">
 		<territory>	
 			<location x="48769" y="216497" minz="-3616" maxz="-3416" />
 			<location x="49476" y="217003" minz="-3616" maxz="-3416" />
@@ -2462,7 +2462,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_059]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_059]">
 		<territory>	
 			<location x="48769" y="216497" minz="-3616" maxz="-3416" />
 			<location x="49476" y="217003" minz="-3616" maxz="-3416" />
@@ -2474,7 +2474,7 @@
 		</territory>
 		<npc id="20843" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_059]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_059]">
 		<territory>	
 			<location x="48769" y="216497" minz="-3616" maxz="-3416" />
 			<location x="49476" y="217003" minz="-3616" maxz="-3416" />
@@ -2486,7 +2486,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_060]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_060]">
 		<territory>	
 			<location x="48233" y="215539" minz="-3628" maxz="-3428" />
 			<location x="48448" y="215631" minz="-3628" maxz="-3428" />
@@ -2497,7 +2497,7 @@
 		</territory>
 		<npc id="20842" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_060]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_060]">
 		<territory>	
 			<location x="48233" y="215539" minz="-3628" maxz="-3428" />
 			<location x="48448" y="215631" minz="-3628" maxz="-3428" />
@@ -2508,7 +2508,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_060]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_060]">
 		<territory>	
 			<location x="48233" y="215539" minz="-3628" maxz="-3428" />
 			<location x="48448" y="215631" minz="-3628" maxz="-3428" />
@@ -2519,7 +2519,7 @@
 		</territory>
 		<npc id="20843" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_060]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_060]">
 		<territory>	
 			<location x="48233" y="215539" minz="-3628" maxz="-3428" />
 			<location x="48448" y="215631" minz="-3628" maxz="-3428" />
@@ -2530,7 +2530,7 @@
 		</territory>
 		<npc id="21625" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_061]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_061]">
 		<territory>	
 			<location x="48914" y="215051" minz="-3620" maxz="-3420" />
 			<location x="49206" y="215066" minz="-3620" maxz="-3420" />
@@ -2542,7 +2542,7 @@
 		</territory>
 		<npc id="20842" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_061]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_061]">
 		<territory>	
 			<location x="48914" y="215051" minz="-3620" maxz="-3420" />
 			<location x="49206" y="215066" minz="-3620" maxz="-3420" />
@@ -2554,7 +2554,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_061]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_061]">
 		<territory>	
 			<location x="48914" y="215051" minz="-3620" maxz="-3420" />
 			<location x="49206" y="215066" minz="-3620" maxz="-3420" />
@@ -2566,7 +2566,7 @@
 		</territory>
 		<npc id="20842" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_061]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_061]">
 		<territory>	
 			<location x="48914" y="215051" minz="-3620" maxz="-3420" />
 			<location x="49206" y="215066" minz="-3620" maxz="-3420" />
@@ -2578,7 +2578,7 @@
 		</territory>
 		<npc id="21622" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_061]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_061]">
 		<territory>	
 			<location x="48914" y="215051" minz="-3620" maxz="-3420" />
 			<location x="49206" y="215066" minz="-3620" maxz="-3420" />
@@ -2590,7 +2590,7 @@
 		</territory>
 		<npc id="20843" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_061]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_061]">
 		<territory>	
 			<location x="48914" y="215051" minz="-3620" maxz="-3420" />
 			<location x="49206" y="215066" minz="-3620" maxz="-3420" />
@@ -2602,7 +2602,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_061]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_061]">
 		<territory>	
 			<location x="48914" y="215051" minz="-3620" maxz="-3420" />
 			<location x="49206" y="215066" minz="-3620" maxz="-3420" />
@@ -2614,7 +2614,7 @@
 		</territory>
 		<npc id="20843" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_061]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_061]">
 		<territory>	
 			<location x="48914" y="215051" minz="-3620" maxz="-3420" />
 			<location x="49206" y="215066" minz="-3620" maxz="-3420" />
@@ -2626,7 +2626,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_062]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_062]">
 		<territory>	
 			<location x="48852" y="214396" minz="-3552" maxz="-3352" />
 			<location x="49315" y="214404" minz="-3552" maxz="-3352" />
@@ -2635,7 +2635,7 @@
 		</territory>
 		<npc id="20842" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_062]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_062]">
 		<territory>	
 			<location x="48852" y="214396" minz="-3552" maxz="-3352" />
 			<location x="49315" y="214404" minz="-3552" maxz="-3352" />
@@ -2644,7 +2644,7 @@
 		</territory>
 		<npc id="21622" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_063]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_063]">
 		<territory>	
 			<location x="48863" y="213936" minz="-3472" maxz="-3272" />
 			<location x="49300" y="213936" minz="-3472" maxz="-3272" />
@@ -2653,7 +2653,7 @@
 		</territory>
 		<npc id="20842" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_063]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_063]">
 		<territory>	
 			<location x="48863" y="213936" minz="-3472" maxz="-3272" />
 			<location x="49300" y="213936" minz="-3472" maxz="-3272" />
@@ -2662,7 +2662,7 @@
 		</territory>
 		<npc id="21622" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_064]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_064]">
 		<territory>	
 			<location x="48846" y="212831" minz="-3464" maxz="-3264" />
 			<location x="49319" y="212831" minz="-3464" maxz="-3264" />
@@ -2671,7 +2671,7 @@
 		</territory>
 		<npc id="20842" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_064]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_064]">
 		<territory>	
 			<location x="48846" y="212831" minz="-3464" maxz="-3264" />
 			<location x="49319" y="212831" minz="-3464" maxz="-3264" />
@@ -2680,7 +2680,7 @@
 		</territory>
 		<npc id="21622" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_064]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_064]">
 		<territory>	
 			<location x="48846" y="212831" minz="-3464" maxz="-3264" />
 			<location x="49319" y="212831" minz="-3464" maxz="-3264" />
@@ -2689,7 +2689,7 @@
 		</territory>
 		<npc id="20843" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_064]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_064]">
 		<territory>	
 			<location x="48846" y="212831" minz="-3464" maxz="-3264" />
 			<location x="49319" y="212831" minz="-3464" maxz="-3264" />
@@ -2698,7 +2698,7 @@
 		</territory>
 		<npc id="21625" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_065]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_065]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -2707,7 +2707,7 @@
 		</territory>
 		<npc id="20843" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_065]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_065]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -2716,7 +2716,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_065]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_065]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -2725,7 +2725,7 @@
 		</territory>
 		<npc id="20843" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_065]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_065]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -2734,7 +2734,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_065]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_065]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -2743,7 +2743,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_065]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_065]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -2752,7 +2752,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_066]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_066]">
 		<territory>	
 			<location x="49464" y="213202" minz="-3464" maxz="-3264" />
 			<location x="50764" y="213202" minz="-3464" maxz="-3264" />
@@ -2761,7 +2761,7 @@
 		</territory>
 		<npc id="20843" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_066]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_066]">
 		<territory>	
 			<location x="49464" y="213202" minz="-3464" maxz="-3264" />
 			<location x="50764" y="213202" minz="-3464" maxz="-3264" />
@@ -2770,7 +2770,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_066]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_066]">
 		<territory>	
 			<location x="49464" y="213202" minz="-3464" maxz="-3264" />
 			<location x="50764" y="213202" minz="-3464" maxz="-3264" />
@@ -2779,7 +2779,7 @@
 		</territory>
 		<npc id="20843" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_066]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_066]">
 		<territory>	
 			<location x="49464" y="213202" minz="-3464" maxz="-3264" />
 			<location x="50764" y="213202" minz="-3464" maxz="-3264" />
@@ -2788,7 +2788,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_066]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_066]">
 		<territory>	
 			<location x="49464" y="213202" minz="-3464" maxz="-3264" />
 			<location x="50764" y="213202" minz="-3464" maxz="-3264" />
@@ -2797,7 +2797,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_066]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_066]">
 		<territory>	
 			<location x="49464" y="213202" minz="-3464" maxz="-3264" />
 			<location x="50764" y="213202" minz="-3464" maxz="-3264" />
@@ -2806,7 +2806,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_066]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_066]">
 		<territory>	
 			<location x="49464" y="213202" minz="-3464" maxz="-3264" />
 			<location x="50764" y="213202" minz="-3464" maxz="-3264" />
@@ -2815,7 +2815,7 @@
 		</territory>
 		<npc id="20986" count="1" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_2124_067]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_067]">
 		<territory>	
 			<location x="48786" y="211389" minz="-3384" maxz="-3184" />
 			<location x="49376" y="211385" minz="-3384" maxz="-3184" />
@@ -2824,7 +2824,7 @@
 		</territory>
 		<npc id="20843" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_067]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_067]">
 		<territory>	
 			<location x="48786" y="211389" minz="-3384" maxz="-3184" />
 			<location x="49376" y="211385" minz="-3384" maxz="-3184" />
@@ -2833,7 +2833,7 @@
 		</territory>
 		<npc id="21625" count="3" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_068]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_068]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -2842,7 +2842,7 @@
 		</territory>
 		<npc id="20843" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_068]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_068]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -2851,7 +2851,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_068]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_068]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -2860,7 +2860,7 @@
 		</territory>
 		<npc id="20843" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_068]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_068]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -2869,7 +2869,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_068]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_068]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -2878,7 +2878,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_068]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_068]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -2887,7 +2887,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_068]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_068]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -2896,7 +2896,7 @@
 		</territory>
 		<npc id="20986" count="2" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_2124_069]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_069]">
 		<territory>	
 			<location x="49559" y="211921" minz="-3376" maxz="-3176" />
 			<location x="50962" y="211921" minz="-3376" maxz="-3176" />
@@ -2905,7 +2905,7 @@
 		</territory>
 		<npc id="20843" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_069]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_069]">
 		<territory>	
 			<location x="49559" y="211921" minz="-3376" maxz="-3176" />
 			<location x="50962" y="211921" minz="-3376" maxz="-3176" />
@@ -2914,7 +2914,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_069]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_069]">
 		<territory>	
 			<location x="49559" y="211921" minz="-3376" maxz="-3176" />
 			<location x="50962" y="211921" minz="-3376" maxz="-3176" />
@@ -2923,7 +2923,7 @@
 		</territory>
 		<npc id="20843" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_069]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_069]">
 		<territory>	
 			<location x="49559" y="211921" minz="-3376" maxz="-3176" />
 			<location x="50962" y="211921" minz="-3376" maxz="-3176" />
@@ -2932,7 +2932,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_069]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_069]">
 		<territory>	
 			<location x="49559" y="211921" minz="-3376" maxz="-3176" />
 			<location x="50962" y="211921" minz="-3376" maxz="-3176" />
@@ -2941,7 +2941,7 @@
 		</territory>
 		<npc id="20844" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_069]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_069]">
 		<territory>	
 			<location x="49559" y="211921" minz="-3376" maxz="-3176" />
 			<location x="50962" y="211921" minz="-3376" maxz="-3176" />
@@ -2950,7 +2950,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_069]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_069]">
 		<territory>	
 			<location x="49559" y="211921" minz="-3376" maxz="-3176" />
 			<location x="50962" y="211921" minz="-3376" maxz="-3176" />
@@ -2959,7 +2959,7 @@
 		</territory>
 		<npc id="20986" count="2" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_2124_070]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_070]">
 		<territory>	
 			<location x="51128" y="212089" minz="-3380" maxz="-3180" />
 			<location x="52041" y="212074" minz="-3380" maxz="-3180" />
@@ -2968,7 +2968,7 @@
 		</territory>
 		<npc id="20843" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_070]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_070]">
 		<territory>	
 			<location x="51128" y="212089" minz="-3380" maxz="-3180" />
 			<location x="52041" y="212074" minz="-3380" maxz="-3180" />
@@ -2977,7 +2977,7 @@
 		</territory>
 		<npc id="21625" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_070]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_070]">
 		<territory>	
 			<location x="51128" y="212089" minz="-3380" maxz="-3180" />
 			<location x="52041" y="212074" minz="-3380" maxz="-3180" />
@@ -2986,7 +2986,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_070]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_070]">
 		<territory>	
 			<location x="51128" y="212089" minz="-3380" maxz="-3180" />
 			<location x="52041" y="212074" minz="-3380" maxz="-3180" />
@@ -2995,7 +2995,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[t121_24_071]">
+	<spawn spawn_bydefault="true"  name="[t121_24_071]">
 		<territory>	
 			<location x="52188" y="211564" minz="-3380" maxz="-3180" />
 			<location x="52570" y="211568" minz="-3380" maxz="-3180" />
@@ -3004,7 +3004,7 @@
 		</territory>
 		<npc id="20843" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[t121_24_071]">
+	<spawn spawn_bydefault="true"  name="[t121_24_071]">
 		<territory>	
 			<location x="52188" y="211564" minz="-3380" maxz="-3180" />
 			<location x="52570" y="211568" minz="-3380" maxz="-3180" />
@@ -3013,7 +3013,7 @@
 		</territory>
 		<npc id="21625" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_072]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_072]">
 		<territory>	
 			<location x="49514" y="211415" minz="-3384" maxz="-3034" />
 			<location x="50184" y="211420" minz="-3384" maxz="-3034" />
@@ -3022,7 +3022,7 @@
 		</territory>
 		<npc id="20843" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_072]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_072]">
 		<territory>	
 			<location x="49514" y="211415" minz="-3384" maxz="-3034" />
 			<location x="50184" y="211420" minz="-3384" maxz="-3034" />
@@ -3031,7 +3031,7 @@
 		</territory>
 		<npc id="21625" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_073]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_073]">
 		<territory>	
 			<location x="50630" y="211383" minz="-3060" maxz="-2860" />
 			<location x="51129" y="211383" minz="-3060" maxz="-2860" />
@@ -3040,7 +3040,7 @@
 		</territory>
 		<npc id="20844" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_073]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_073]">
 		<territory>	
 			<location x="50630" y="211383" minz="-3060" maxz="-2860" />
 			<location x="51129" y="211383" minz="-3060" maxz="-2860" />
@@ -3049,7 +3049,7 @@
 		</territory>
 		<npc id="21628" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_074]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_074]">
 		<territory>	
 			<location x="51216" y="210670" minz="-3056" maxz="-2856" />
 			<location x="52631" y="210682" minz="-3056" maxz="-2856" />
@@ -3058,7 +3058,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_074]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_074]">
 		<territory>	
 			<location x="51216" y="210670" minz="-3056" maxz="-2856" />
 			<location x="52631" y="210682" minz="-3056" maxz="-2856" />
@@ -3067,7 +3067,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_074]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_074]">
 		<territory>	
 			<location x="51216" y="210670" minz="-3056" maxz="-2856" />
 			<location x="52631" y="210682" minz="-3056" maxz="-2856" />
@@ -3076,7 +3076,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_074]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_074]">
 		<territory>	
 			<location x="51216" y="210670" minz="-3056" maxz="-2856" />
 			<location x="52631" y="210682" minz="-3056" maxz="-2856" />
@@ -3085,7 +3085,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_074]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_074]">
 		<territory>	
 			<location x="51216" y="210670" minz="-3056" maxz="-2856" />
 			<location x="52631" y="210682" minz="-3056" maxz="-2856" />
@@ -3094,7 +3094,7 @@
 		</territory>
 		<npc id="20845" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_074]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_074]">
 		<territory>	
 			<location x="51216" y="210670" minz="-3056" maxz="-2856" />
 			<location x="52631" y="210682" minz="-3056" maxz="-2856" />
@@ -3103,7 +3103,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_074]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_074]">
 		<territory>	
 			<location x="51216" y="210670" minz="-3056" maxz="-2856" />
 			<location x="52631" y="210682" minz="-3056" maxz="-2856" />
@@ -3112,7 +3112,7 @@
 		</territory>
 		<npc id="20986" count="1" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_2124_075]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_075]">
 		<territory>	
 			<location x="50673" y="210566" minz="-3056" maxz="-2706" />
 			<location x="51054" y="210572" minz="-3056" maxz="-2706" />
@@ -3121,7 +3121,7 @@
 		</territory>
 		<npc id="20844" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_075]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_075]">
 		<territory>	
 			<location x="50673" y="210566" minz="-3056" maxz="-2706" />
 			<location x="51054" y="210572" minz="-3056" maxz="-2706" />
@@ -3130,7 +3130,7 @@
 		</territory>
 		<npc id="21628" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_076]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_076]">
 		<territory>	
 			<location x="50608" y="209718" minz="-2736" maxz="-2536" />
 			<location x="51145" y="209718" minz="-2736" maxz="-2536" />
@@ -3139,7 +3139,7 @@
 		</territory>
 		<npc id="20844" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_076]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_076]">
 		<territory>	
 			<location x="50608" y="209718" minz="-2736" maxz="-2536" />
 			<location x="51145" y="209718" minz="-2736" maxz="-2536" />
@@ -3148,7 +3148,7 @@
 		</territory>
 		<npc id="21628" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3157,7 +3157,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3166,7 +3166,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3175,7 +3175,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3184,7 +3184,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3193,7 +3193,7 @@
 		</territory>
 		<npc id="20844" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3202,7 +3202,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3211,7 +3211,7 @@
 		</territory>
 		<npc id="20845" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3220,7 +3220,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3229,7 +3229,7 @@
 		</territory>
 		<npc id="20845" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3238,7 +3238,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_078]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_078]">
 		<territory>	
 			<location x="49135" y="207867" minz="-2740" maxz="-2540" />
 			<location x="51120" y="207877" minz="-2740" maxz="-2540" />
@@ -3247,7 +3247,7 @@
 		</territory>
 		<npc id="20986" count="3" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_2124_079]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_079]">
 		<territory>	
 			<location x="51239" y="209755" minz="-2740" maxz="-2390" />
 			<location x="51970" y="209755" minz="-2740" maxz="-2390" />
@@ -3256,7 +3256,7 @@
 		</territory>
 		<npc id="20844" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_079]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_079]">
 		<territory>	
 			<location x="51239" y="209755" minz="-2740" maxz="-2390" />
 			<location x="51970" y="209755" minz="-2740" maxz="-2390" />
@@ -3265,7 +3265,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_080]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_080]">
 		<territory>	
 			<location x="52345" y="209743" minz="-2504" maxz="-2304" />
 			<location x="52846" y="209743" minz="-2504" maxz="-2304" />
@@ -3274,7 +3274,7 @@
 		</territory>
 		<npc id="20845" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_080]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_080]">
 		<territory>	
 			<location x="52345" y="209743" minz="-2504" maxz="-2304" />
 			<location x="52846" y="209743" minz="-2504" maxz="-2304" />
@@ -3283,7 +3283,7 @@
 		</territory>
 		<npc id="21631" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_081]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_081]">
 		<territory>	
 			<location x="51639" y="208195" minz="-2492" maxz="-2292" />
 			<location x="52812" y="208195" minz="-2492" maxz="-2292" />
@@ -3292,7 +3292,7 @@
 		</territory>
 		<npc id="20844" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_081]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_081]">
 		<territory>	
 			<location x="51639" y="208195" minz="-2492" maxz="-2292" />
 			<location x="52812" y="208195" minz="-2492" maxz="-2292" />
@@ -3301,7 +3301,7 @@
 		</territory>
 		<npc id="21628" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_081]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_081]">
 		<territory>	
 			<location x="51639" y="208195" minz="-2492" maxz="-2292" />
 			<location x="52812" y="208195" minz="-2492" maxz="-2292" />
@@ -3310,7 +3310,7 @@
 		</territory>
 		<npc id="20845" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_081]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_081]">
 		<territory>	
 			<location x="51639" y="208195" minz="-2492" maxz="-2292" />
 			<location x="52812" y="208195" minz="-2492" maxz="-2292" />
@@ -3319,7 +3319,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_081]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_081]">
 		<territory>	
 			<location x="51639" y="208195" minz="-2492" maxz="-2292" />
 			<location x="52812" y="208195" minz="-2492" maxz="-2292" />
@@ -3328,7 +3328,7 @@
 		</territory>
 		<npc id="20845" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_081]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_081]">
 		<territory>	
 			<location x="51639" y="208195" minz="-2492" maxz="-2292" />
 			<location x="52812" y="208195" minz="-2492" maxz="-2292" />
@@ -3337,7 +3337,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_081]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_081]">
 		<territory>	
 			<location x="51639" y="208195" minz="-2492" maxz="-2292" />
 			<location x="52812" y="208195" minz="-2492" maxz="-2292" />
@@ -3346,7 +3346,7 @@
 		</territory>
 		<npc id="20986" count="1" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_2124_082]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_082]">
 		<territory>	
 			<location x="51645" y="210291" minz="-2496" maxz="-2296" />
 			<location x="52794" y="210291" minz="-2496" maxz="-2296" />
@@ -3355,7 +3355,7 @@
 		</territory>
 		<npc id="20845" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_082]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_082]">
 		<territory>	
 			<location x="51645" y="210291" minz="-2496" maxz="-2296" />
 			<location x="52794" y="210291" minz="-2496" maxz="-2296" />
@@ -3364,7 +3364,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_082]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_082]">
 		<territory>	
 			<location x="51645" y="210291" minz="-2496" maxz="-2296" />
 			<location x="52794" y="210291" minz="-2496" maxz="-2296" />
@@ -3373,7 +3373,7 @@
 		</territory>
 		<npc id="20845" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_082]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_082]">
 		<territory>	
 			<location x="51645" y="210291" minz="-2496" maxz="-2296" />
 			<location x="52794" y="210291" minz="-2496" maxz="-2296" />
@@ -3382,7 +3382,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_082]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_082]">
 		<territory>	
 			<location x="51645" y="210291" minz="-2496" maxz="-2296" />
 			<location x="52794" y="210291" minz="-2496" maxz="-2296" />
@@ -3391,7 +3391,7 @@
 		</territory>
 		<npc id="20845" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_082]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_082]">
 		<territory>	
 			<location x="51645" y="210291" minz="-2496" maxz="-2296" />
 			<location x="52794" y="210291" minz="-2496" maxz="-2296" />
@@ -3400,7 +3400,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_082]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_082]">
 		<territory>	
 			<location x="51645" y="210291" minz="-2496" maxz="-2296" />
 			<location x="52794" y="210291" minz="-2496" maxz="-2296" />
@@ -3409,7 +3409,7 @@
 		</territory>
 		<npc id="20846" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_082]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_082]">
 		<territory>	
 			<location x="51645" y="210291" minz="-2496" maxz="-2296" />
 			<location x="52794" y="210291" minz="-2496" maxz="-2296" />
@@ -3418,7 +3418,7 @@
 		</territory>
 		<npc id="21634" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_083]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_083]">
 		<territory>	
 			<location x="52995" y="209651" minz="-2500" maxz="-2300" />
 			<location x="54689" y="209647" minz="-2500" maxz="-2300" />
@@ -3427,7 +3427,7 @@
 		</territory>
 		<npc id="20845" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_083]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_083]">
 		<territory>	
 			<location x="52995" y="209651" minz="-2500" maxz="-2300" />
 			<location x="54689" y="209647" minz="-2500" maxz="-2300" />
@@ -3436,7 +3436,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_083]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_083]">
 		<territory>	
 			<location x="52995" y="209651" minz="-2500" maxz="-2300" />
 			<location x="54689" y="209647" minz="-2500" maxz="-2300" />
@@ -3445,7 +3445,7 @@
 		</territory>
 		<npc id="20845" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_083]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_083]">
 		<territory>	
 			<location x="52995" y="209651" minz="-2500" maxz="-2300" />
 			<location x="54689" y="209647" minz="-2500" maxz="-2300" />
@@ -3454,7 +3454,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_083]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_083]">
 		<territory>	
 			<location x="52995" y="209651" minz="-2500" maxz="-2300" />
 			<location x="54689" y="209647" minz="-2500" maxz="-2300" />
@@ -3463,7 +3463,7 @@
 		</territory>
 		<npc id="20846" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_083]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_083]">
 		<territory>	
 			<location x="52995" y="209651" minz="-2500" maxz="-2300" />
 			<location x="54689" y="209647" minz="-2500" maxz="-2300" />
@@ -3472,7 +3472,7 @@
 		</territory>
 		<npc id="21634" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_084]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_084]">
 		<territory>	
 			<location x="53024" y="208754" minz="-2504" maxz="-2304" />
 			<location x="54183" y="208754" minz="-2504" maxz="-2304" />
@@ -3481,7 +3481,7 @@
 		</territory>
 		<npc id="20845" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_084]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_084]">
 		<territory>	
 			<location x="53024" y="208754" minz="-2504" maxz="-2304" />
 			<location x="54183" y="208754" minz="-2504" maxz="-2304" />
@@ -3490,7 +3490,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_084]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_084]">
 		<territory>	
 			<location x="53024" y="208754" minz="-2504" maxz="-2304" />
 			<location x="54183" y="208754" minz="-2504" maxz="-2304" />
@@ -3499,7 +3499,7 @@
 		</territory>
 		<npc id="20846" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_084]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_084]">
 		<territory>	
 			<location x="53024" y="208754" minz="-2504" maxz="-2304" />
 			<location x="54183" y="208754" minz="-2504" maxz="-2304" />
@@ -3508,7 +3508,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_085]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_085]">
 		<territory>	
 			<location x="53037" y="210358" minz="-2496" maxz="-2296" />
 			<location x="53946" y="210358" minz="-2496" maxz="-2296" />
@@ -3517,7 +3517,7 @@
 		</territory>
 		<npc id="20845" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_085]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_085]">
 		<territory>	
 			<location x="53037" y="210358" minz="-2496" maxz="-2296" />
 			<location x="53946" y="210358" minz="-2496" maxz="-2296" />
@@ -3526,7 +3526,7 @@
 		</territory>
 		<npc id="21631" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_085]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_085]">
 		<territory>	
 			<location x="53037" y="210358" minz="-2496" maxz="-2296" />
 			<location x="53946" y="210358" minz="-2496" maxz="-2296" />
@@ -3535,7 +3535,7 @@
 		</territory>
 		<npc id="20846" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_085]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_085]">
 		<territory>	
 			<location x="53037" y="210358" minz="-2496" maxz="-2296" />
 			<location x="53946" y="210358" minz="-2496" maxz="-2296" />
@@ -3544,7 +3544,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_086]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_086]">
 		<territory>	
 			<location x="54853" y="209648" minz="-2496" maxz="-2296" />
 			<location x="55245" y="209648" minz="-2496" maxz="-2296" />
@@ -3553,7 +3553,7 @@
 		</territory>
 		<npc id="20845" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_086]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_086]">
 		<territory>	
 			<location x="54853" y="209648" minz="-2496" maxz="-2296" />
 			<location x="55245" y="209648" minz="-2496" maxz="-2296" />
@@ -3562,7 +3562,7 @@
 		</territory>
 		<npc id="21631" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_077]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_077]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -3571,7 +3571,7 @@
 		</territory>
 		<npc id="20845" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_077]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_077]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -3580,7 +3580,7 @@
 		</territory>
 		<npc id="21631" count="3" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_077]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_077]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -3589,7 +3589,7 @@
 		</territory>
 		<npc id="20846" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_077]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_077]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -3598,7 +3598,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_077]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_077]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -3607,7 +3607,7 @@
 		</territory>
 		<npc id="20846" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_077]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_077]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -3616,7 +3616,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_087]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_087]">
 		<territory>	
 			<location x="54847" y="210380" minz="-2492" maxz="-2292" />
 			<location x="55238" y="210370" minz="-2492" maxz="-2292" />
@@ -3625,7 +3625,7 @@
 		</territory>
 		<npc id="20846" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_087]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_087]">
 		<territory>	
 			<location x="54847" y="210380" minz="-2492" maxz="-2292" />
 			<location x="55238" y="210370" minz="-2492" maxz="-2292" />
@@ -3634,7 +3634,7 @@
 		</territory>
 		<npc id="21634" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_088]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_088]">
 		<territory>	
 			<location x="55250" y="210873" minz="-3964" maxz="-3364" />
 			<location x="55762" y="211217" minz="-3964" maxz="-3364" />
@@ -3647,7 +3647,7 @@
 		</territory>
 		<npc id="20845" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_088]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_088]">
 		<territory>	
 			<location x="55250" y="210873" minz="-3964" maxz="-3364" />
 			<location x="55762" y="211217" minz="-3964" maxz="-3364" />
@@ -3660,7 +3660,7 @@
 		</territory>
 		<npc id="21631" count="3" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_088]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_088]">
 		<territory>	
 			<location x="55250" y="210873" minz="-3964" maxz="-3364" />
 			<location x="55762" y="211217" minz="-3964" maxz="-3364" />
@@ -3673,7 +3673,7 @@
 		</territory>
 		<npc id="20846" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_088]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_088]">
 		<territory>	
 			<location x="55250" y="210873" minz="-3964" maxz="-3364" />
 			<location x="55762" y="211217" minz="-3964" maxz="-3364" />
@@ -3686,7 +3686,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_088]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_088]">
 		<territory>	
 			<location x="55250" y="210873" minz="-3964" maxz="-3364" />
 			<location x="55762" y="211217" minz="-3964" maxz="-3364" />
@@ -3699,7 +3699,7 @@
 		</territory>
 		<npc id="20846" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_088]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_088]">
 		<territory>	
 			<location x="55250" y="210873" minz="-3964" maxz="-3364" />
 			<location x="55762" y="211217" minz="-3964" maxz="-3364" />
@@ -3712,7 +3712,7 @@
 		</territory>
 		<npc id="21634" count="3" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_088]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_088]">
 		<territory>	
 			<location x="55250" y="210873" minz="-3964" maxz="-3364" />
 			<location x="55762" y="211217" minz="-3964" maxz="-3364" />
@@ -3725,7 +3725,7 @@
 		</territory>
 		<npc id="20986" count="1" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_2124_089]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_089]">
 		<territory>	
 			<location x="54616" y="211740" minz="-3924" maxz="-3324" />
 			<location x="55200" y="211688" minz="-3924" maxz="-3324" />
@@ -3734,7 +3734,7 @@
 		</territory>
 		<npc id="20846" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_089]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_089]">
 		<territory>	
 			<location x="54616" y="211740" minz="-3924" maxz="-3324" />
 			<location x="55200" y="211688" minz="-3924" maxz="-3324" />
@@ -3743,7 +3743,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_090]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_090]">
 		<territory>	
 			<location x="54999" y="213442" minz="-4268" maxz="-4068" />
 			<location x="55327" y="213424" minz="-4268" maxz="-4068" />
@@ -3752,7 +3752,7 @@
 		</territory>
 		<npc id="20846" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_090]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_090]">
 		<territory>	
 			<location x="54999" y="213442" minz="-4268" maxz="-4068" />
 			<location x="55327" y="213424" minz="-4268" maxz="-4068" />
@@ -3761,7 +3761,7 @@
 		</territory>
 		<npc id="21634" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_091]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_091]">
 		<territory>	
 			<location x="55017" y="214940" minz="-4252" maxz="-4052" />
 			<location x="55309" y="214940" minz="-4252" maxz="-4052" />
@@ -3770,7 +3770,7 @@
 		</territory>
 		<npc id="20847" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_091]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_091]">
 		<territory>	
 			<location x="55017" y="214940" minz="-4252" maxz="-4052" />
 			<location x="55309" y="214940" minz="-4252" maxz="-4052" />
@@ -3779,7 +3779,7 @@
 		</territory>
 		<npc id="21637" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3788,7 +3788,7 @@
 		</territory>
 		<npc id="20846" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3797,7 +3797,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3806,7 +3806,7 @@
 		</territory>
 		<npc id="20846" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3815,7 +3815,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3824,7 +3824,7 @@
 		</territory>
 		<npc id="20847" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3833,7 +3833,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3842,7 +3842,7 @@
 		</territory>
 		<npc id="20847" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3851,7 +3851,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_092]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_092]">
 		<territory>	
 			<location x="54083" y="215627" minz="-4116" maxz="-3716" />
 			<location x="56094" y="215643" minz="-4116" maxz="-3716" />
@@ -3860,7 +3860,7 @@
 		</territory>
 		<npc id="20986" count="1" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_2124_093]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_093]">
 		<territory>	
 			<location x="52552" y="215124" minz="-4284" maxz="-3684" />
 			<location x="53776" y="215236" minz="-4284" maxz="-3684" />
@@ -3870,7 +3870,7 @@
 		</territory>
 		<npc id="20846" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_093]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_093]">
 		<territory>	
 			<location x="52552" y="215124" minz="-4284" maxz="-3684" />
 			<location x="53776" y="215236" minz="-4284" maxz="-3684" />
@@ -3880,7 +3880,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_093]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_093]">
 		<territory>	
 			<location x="52552" y="215124" minz="-4284" maxz="-3684" />
 			<location x="53776" y="215236" minz="-4284" maxz="-3684" />
@@ -3890,7 +3890,7 @@
 		</territory>
 		<npc id="20846" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_093]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_093]">
 		<territory>	
 			<location x="52552" y="215124" minz="-4284" maxz="-3684" />
 			<location x="53776" y="215236" minz="-4284" maxz="-3684" />
@@ -3900,7 +3900,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_093]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_093]">
 		<territory>	
 			<location x="52552" y="215124" minz="-4284" maxz="-3684" />
 			<location x="53776" y="215236" minz="-4284" maxz="-3684" />
@@ -3910,7 +3910,7 @@
 		</territory>
 		<npc id="20847" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_093]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_093]">
 		<territory>	
 			<location x="52552" y="215124" minz="-4284" maxz="-3684" />
 			<location x="53776" y="215236" minz="-4284" maxz="-3684" />
@@ -3920,7 +3920,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_094]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_094]">
 		<territory>	
 			<location x="51467" y="213833" minz="-4300" maxz="-3700" />
 			<location x="52733" y="213849" minz="-4300" maxz="-3700" />
@@ -3930,7 +3930,7 @@
 		</territory>
 		<npc id="20846" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_094]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_094]">
 		<territory>	
 			<location x="51467" y="213833" minz="-4300" maxz="-3700" />
 			<location x="52733" y="213849" minz="-4300" maxz="-3700" />
@@ -3940,7 +3940,7 @@
 		</territory>
 		<npc id="21634" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_094]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_094]">
 		<territory>	
 			<location x="51467" y="213833" minz="-4300" maxz="-3700" />
 			<location x="52733" y="213849" minz="-4300" maxz="-3700" />
@@ -3950,7 +3950,7 @@
 		</territory>
 		<npc id="20847" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_094]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_094]">
 		<territory>	
 			<location x="51467" y="213833" minz="-4300" maxz="-3700" />
 			<location x="52733" y="213849" minz="-4300" maxz="-3700" />
@@ -3960,7 +3960,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_094]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_094]">
 		<territory>	
 			<location x="51467" y="213833" minz="-4300" maxz="-3700" />
 			<location x="52733" y="213849" minz="-4300" maxz="-3700" />
@@ -3970,7 +3970,7 @@
 		</territory>
 		<npc id="20847" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_094]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_094]">
 		<territory>	
 			<location x="51467" y="213833" minz="-4300" maxz="-3700" />
 			<location x="52733" y="213849" minz="-4300" maxz="-3700" />
@@ -3980,7 +3980,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_095]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_095]">
 		<territory>	
 			<location x="51600" y="214652" minz="-4304" maxz="-3704" />
 			<location x="51720" y="214064" minz="-4304" maxz="-3704" />
@@ -3989,7 +3989,7 @@
 		</territory>
 		<npc id="20846" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_095]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_095]">
 		<territory>	
 			<location x="51600" y="214652" minz="-4304" maxz="-3704" />
 			<location x="51720" y="214064" minz="-4304" maxz="-3704" />
@@ -3998,7 +3998,7 @@
 		</territory>
 		<npc id="21634" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_095]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_095]">
 		<territory>	
 			<location x="51600" y="214652" minz="-4304" maxz="-3704" />
 			<location x="51720" y="214064" minz="-4304" maxz="-3704" />
@@ -4007,7 +4007,7 @@
 		</territory>
 		<npc id="20847" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_095]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_095]">
 		<territory>	
 			<location x="51600" y="214652" minz="-4304" maxz="-3704" />
 			<location x="51720" y="214064" minz="-4304" maxz="-3704" />
@@ -4016,7 +4016,7 @@
 		</territory>
 		<npc id="21637" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_096]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_096]">
 		<territory>	
 			<location x="50944" y="214948" minz="-3816" maxz="-3616" />
 			<location x="51568" y="213856" minz="-3816" maxz="-3616" />
@@ -4025,7 +4025,7 @@
 		</territory>
 		<npc id="20846" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_096]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_096]">
 		<territory>	
 			<location x="50944" y="214948" minz="-3816" maxz="-3616" />
 			<location x="51568" y="213856" minz="-3816" maxz="-3616" />
@@ -4034,7 +4034,7 @@
 		</territory>
 		<npc id="21634" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_096]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_096]">
 		<territory>	
 			<location x="50944" y="214948" minz="-3816" maxz="-3616" />
 			<location x="51568" y="213856" minz="-3816" maxz="-3616" />
@@ -4043,7 +4043,7 @@
 		</territory>
 		<npc id="20847" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_096]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_096]">
 		<territory>	
 			<location x="50944" y="214948" minz="-3816" maxz="-3616" />
 			<location x="51568" y="213856" minz="-3816" maxz="-3616" />
@@ -4052,7 +4052,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_097]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_097]">
 		<territory>	
 			<location x="52092" y="214964" minz="-3380" maxz="-3180" />
 			<location x="52344" y="214960" minz="-3380" maxz="-3180" />
@@ -4061,7 +4061,7 @@
 		</territory>
 		<npc id="20846" count="1" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_097]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_097]">
 		<territory>	
 			<location x="52092" y="214964" minz="-3380" maxz="-3180" />
 			<location x="52344" y="214960" minz="-3380" maxz="-3180" />
@@ -4070,7 +4070,7 @@
 		</territory>
 		<npc id="21634" count="1" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4079,7 +4079,7 @@
 		</territory>
 		<npc id="20847" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4088,7 +4088,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4097,7 +4097,7 @@
 		</territory>
 		<npc id="20847" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4106,7 +4106,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4115,7 +4115,7 @@
 		</territory>
 		<npc id="20847" count="3" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4124,7 +4124,7 @@
 		</territory>
 		<npc id="21637" count="3" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4133,7 +4133,7 @@
 		</territory>
 		<npc id="20847" count="2" respawn="55" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4142,7 +4142,7 @@
 		</territory>
 		<npc id="21637" count="2" respawn="180" />	
 	</spawn>
-	<spawn name="[giran08_2124_098]">
+	<spawn spawn_bydefault="true"  name="[giran08_2124_098]">
 		<territory>	
 			<location x="51636" y="216352" minz="-3412" maxz="-3212" />
 			<location x="52804" y="216352" minz="-3412" maxz="-3212" />
@@ -4151,7 +4151,7 @@
 		</territory>
 		<npc id="20986" count="1" respawn="320" respawn_rand="90" />	
 	</spawn>
-	<spawn name="[giran08_mb2225_01]">
+	<spawn spawn_bydefault="true"  name="[giran08_mb2225_01]">
 		<territory>	
 			<location x="55260" y="206028" minz="-3800" maxz="-3400" />
 			<location x="55876" y="205540" minz="-3800" maxz="-3400" />
@@ -4161,7 +4161,7 @@
 		</territory>
 		<npc id="25029" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[giran08_mb2225_02]">
+	<spawn spawn_bydefault="true"  name="[giran08_mb2225_02]">
 		<territory>	
 			<location x="41512" y="215512" minz="-3816" maxz="-3416" />
 			<location x="42484" y="215548" minz="-3816" maxz="-3416" />
@@ -4170,7 +4170,7 @@
 		</territory>
 		<npc id="25182" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[giran08_mb2225_03]">
+	<spawn spawn_bydefault="true"  name="[giran08_mb2225_03]">
 		<territory>	
 			<location x="41550" y="207607" minz="-3772" maxz="-3152" />
 			<location x="42550" y="207607" minz="-3772" maxz="-3152" />
@@ -4179,7 +4179,7 @@
 		</territory>
 		<npc id="25259" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[giran08_mb2225_04]">
+	<spawn spawn_bydefault="true"  name="[giran08_mb2225_04]">
 		<territory>	
 			<location x="52976" y="205080" minz="-3788" maxz="-3588" />
 			<location x="54060" y="205136" minz="-3788" maxz="-3588" />
@@ -4191,7 +4191,7 @@
 		</territory>
 		<npc id="25481" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[giran08_mb2225_05]">
+	<spawn spawn_bydefault="true"  name="[giran08_mb2225_05]">
 		<territory>	
 			<location x="42744" y="219880" minz="-3808" maxz="-3508" />
 			<location x="43440" y="219668" minz="-3808" maxz="-3508" />
@@ -4200,7 +4200,7 @@
 		</territory>
 		<npc id="25484" count="1" respawn="129600" respawn_rand="86400" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_22]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_22]" event_name="[treasure_box]">
 		<territory>	
 			<location x="52861" y="205124" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -4211,7 +4211,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_22]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_22]" event_name="[treasure_box]">
 		<territory>	
 			<location x="52861" y="205124" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -4222,7 +4222,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_22]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_22]" event_name="[treasure_box]">
 		<territory>	
 			<location x="52861" y="205124" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -4233,7 +4233,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_22]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_22]" event_name="[treasure_box]">
 		<territory>	
 			<location x="52861" y="205124" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -4244,7 +4244,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_22]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_22]" event_name="[treasure_box]">
 		<territory>	
 			<location x="52861" y="205124" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -4255,7 +4255,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_22]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_22]" event_name="[treasure_box]">
 		<territory>	
 			<location x="52861" y="205124" minz="-3776" maxz="-3576" />
 			<location x="54068" y="205113" minz="-3776" maxz="-3576" />
@@ -4266,7 +4266,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_23]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_23]" event_name="[treasure_box]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -4276,7 +4276,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_23]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_23]" event_name="[treasure_box]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -4286,7 +4286,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_23]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_23]" event_name="[treasure_box]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -4296,7 +4296,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_23]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_23]" event_name="[treasure_box]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -4306,7 +4306,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_23]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_23]" event_name="[treasure_box]">
 		<territory>	
 			<location x="53067" y="206478" minz="-3800" maxz="-3600" />
 			<location x="54472" y="206453" minz="-3800" maxz="-3600" />
@@ -4316,7 +4316,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_27]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_27]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47212" y="211356" minz="-3624" maxz="-3424" />
 			<location x="47601" y="211356" minz="-3624" maxz="-3424" />
@@ -4327,7 +4327,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_27]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_27]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47212" y="211356" minz="-3624" maxz="-3424" />
 			<location x="47601" y="211356" minz="-3624" maxz="-3424" />
@@ -4338,7 +4338,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_27]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_27]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47212" y="211356" minz="-3624" maxz="-3424" />
 			<location x="47601" y="211356" minz="-3624" maxz="-3424" />
@@ -4349,7 +4349,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_27]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_27]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47212" y="211356" minz="-3624" maxz="-3424" />
 			<location x="47601" y="211356" minz="-3624" maxz="-3424" />
@@ -4360,7 +4360,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_27]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_27]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47212" y="211356" minz="-3624" maxz="-3424" />
 			<location x="47601" y="211356" minz="-3624" maxz="-3424" />
@@ -4371,7 +4371,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_28]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_28]" event_name="[treasure_box]">
 		<territory>	
 			<location x="45671" y="209399" minz="-3636" maxz="-3436" />
 			<location x="45922" y="209399" minz="-3636" maxz="-3436" />
@@ -4381,7 +4381,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_28]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_28]" event_name="[treasure_box]">
 		<territory>	
 			<location x="45671" y="209399" minz="-3636" maxz="-3436" />
 			<location x="45922" y="209399" minz="-3636" maxz="-3436" />
@@ -4391,7 +4391,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_28]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_28]" event_name="[treasure_box]">
 		<territory>	
 			<location x="45671" y="209399" minz="-3636" maxz="-3436" />
 			<location x="45922" y="209399" minz="-3636" maxz="-3436" />
@@ -4401,7 +4401,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_28]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_28]" event_name="[treasure_box]">
 		<territory>	
 			<location x="45671" y="209399" minz="-3636" maxz="-3436" />
 			<location x="45922" y="209399" minz="-3636" maxz="-3436" />
@@ -4411,7 +4411,7 @@
 		<npc id="18273" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21809" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -4422,7 +4422,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -4433,7 +4433,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -4444,7 +4444,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -4455,7 +4455,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -4466,7 +4466,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -4477,7 +4477,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_33]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_33]" event_name="[treasure_box]">
 		<territory>	
 			<location x="43898" y="212426" minz="-3748" maxz="-3548" />
 			<location x="44276" y="212318" minz="-3748" maxz="-3548" />
@@ -4488,7 +4488,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_37]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_37]" event_name="[treasure_box]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -4498,7 +4498,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_37]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_37]" event_name="[treasure_box]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -4508,7 +4508,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_37]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_37]" event_name="[treasure_box]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -4518,7 +4518,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_37]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_37]" event_name="[treasure_box]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -4528,7 +4528,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_37]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_37]" event_name="[treasure_box]">
 		<territory>	
 			<location x="42015" y="213410" minz="-3752" maxz="-3552" />
 			<location x="42328" y="213424" minz="-3752" maxz="-3552" />
@@ -4538,7 +4538,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_65]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_65]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -4548,7 +4548,7 @@
 		<npc id="18276" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21812" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_65]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_65]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -4558,7 +4558,7 @@
 		<npc id="18276" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21812" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_65]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_65]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -4568,7 +4568,7 @@
 		<npc id="18276" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21812" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_65]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_65]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47262" y="213191" minz="-3460" maxz="-3260" />
 			<location x="48665" y="213191" minz="-3460" maxz="-3260" />
@@ -4578,7 +4578,7 @@
 		<npc id="18276" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21812" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_68]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_68]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -4588,7 +4588,7 @@
 		<npc id="18276" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21812" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_68]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_68]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -4598,7 +4598,7 @@
 		<npc id="18276" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21812" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_68]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_68]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -4608,7 +4608,7 @@
 		<npc id="18276" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21812" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_68]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_68]" event_name="[treasure_box]">
 		<territory>	
 			<location x="47185" y="211923" minz="-3380" maxz="-3180" />
 			<location x="48604" y="211923" minz="-3380" maxz="-3180" />
@@ -4618,7 +4618,7 @@
 		<npc id="18276" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21812" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_77]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_77]" event_name="[treasure_box]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -4628,7 +4628,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_77]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_77]" event_name="[treasure_box]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -4638,7 +4638,7 @@
 		<npc id="18275" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21811" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_78]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_78]" event_name="[treasure_box]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />
@@ -4648,7 +4648,7 @@
 		<npc id="18274" count="1" respawn="90" respawn_rand="60" />	
 		<npc id="21810" count="1" respawn="90" respawn_rand="60" />	
 	</spawn>
-	<spawn name="[giran08_tb2124_78]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[giran08_tb2124_78]" event_name="[treasure_box]">
 		<territory>	
 			<location x="49128" y="209812" minz="-2748" maxz="-2548" />
 			<location x="50504" y="209812" minz="-2748" maxz="-2548" />

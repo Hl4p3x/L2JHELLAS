@@ -14,7 +14,7 @@ public class FriendStatus extends L2GameServerPacket
 	public FriendStatus(int objectId)
 	{
 		_player = L2World.getInstance().getPlayer(objectId);
-		_isOnline = _player != null && _player.isbOnline();
+		_isOnline = _player != null && _player.isOnline();
 		_name = _isOnline ? _player.getName() : CharNameTable.getInstance().getNameById(objectId);
 		_objectId = objectId;
 	}

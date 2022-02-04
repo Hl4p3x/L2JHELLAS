@@ -1,853 +1,853 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[Monastery_Silence_0]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_0]">
 		<npc id="22132" count="1" respawn="60" pos="108104 -77264 -1112 42841" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_1]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_1]">
 		<npc id="22132" count="1" respawn="60" pos="108188 -75798 -1143 62512" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_2]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_2]">
 		<npc id="22132" count="1" respawn="60" pos="108469 -74554 -1106 5013" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_3]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_3]">
 		<npc id="22132" count="1" respawn="60" pos="109334 -77107 -1102 48284" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_4]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_4]">
 		<npc id="22132" count="1" respawn="60" pos="109574 -76583 -1122 43774" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_5]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_5]">
 		<npc id="22132" count="1" respawn="60" pos="109700 -74650 -1122 19318" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_6]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_6]">
 		<npc id="22132" count="1" respawn="60" pos="110688 -71826 -591 56005" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_7]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_7]">
 		<npc id="22132" count="1" respawn="60" pos="109298 -78479 -1090 34561" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_8]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_8]">
 		<npc id="22132" count="1" respawn="60" pos="109389 -78993 -1090 17924" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_9]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_9]">
 		<npc id="22132" count="1" respawn="60" pos="108266 -78463 -1090 14440" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_10]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_10]">
 		<npc id="22132" count="1" respawn="60" pos="111818 -80072 -1612 33101" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_11]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_11]">
 		<npc id="22132" count="1" respawn="60" pos="112813 -79809 -1642 64938" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_12]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_12]">
 		<npc id="22132" count="1" respawn="60" pos="112749 -79439 -1631 62297" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_13]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_13]">
 		<npc id="22132" count="1" respawn="60" pos="112876 -81036 -1642 58842" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_14]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_14]">
 		<npc id="22132" count="1" respawn="60" pos="111843 -80615 -1617 1830" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_15]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_15]">
 		<npc id="22132" count="1" respawn="60" pos="110815 -80948 -1621 51085" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_16]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_16]">
 		<npc id="22132" count="1" respawn="60" pos="110384 -72812 -570 40459" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_17]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_17]">
 		<npc id="22132" count="1" respawn="60" pos="110876 -73226 -570 10265" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_18]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_18]">
 		<npc id="22133" count="1" respawn="60" pos="112686 -71964 -602 6417" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_19]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_19]">
 		<npc id="22133" count="1" respawn="60" pos="109664 -76409 -1122 53231" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_20]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_20]">
 		<npc id="22133" count="1" respawn="60" pos="109589 -74960 -1122 54460" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_21]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_21]">
 		<npc id="22133" count="1" respawn="60" pos="108346 -75004 -1122 12116" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_22]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_22]">
 		<npc id="22133" count="1" respawn="60" pos="108339 -77013 -1122 49341" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_23]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_23]">
 		<npc id="22133" count="1" respawn="60" pos="111547 -79669 -1642 31574" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_24]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_24]">
 		<npc id="22133" count="1" respawn="60" pos="113447 -79692 -1642 302" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_25]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_25]">
 		<npc id="22133" count="1" respawn="60" pos="112051 -80954 -1627 39391" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_26]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_26]">
 		<npc id="22133" count="1" respawn="60" pos="113204 -81223 -1629 60543" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_27]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_27]">
 		<npc id="22132" count="1" respawn="60" pos="117084 -80777 -50 1982" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_28]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_28]">
 		<npc id="22132" count="1" respawn="60" pos="116880 -81198 -50 63777" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_29]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_29]">
 		<npc id="22132" count="1" respawn="60" pos="115852 -80946 -50 21324" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_30]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_30]">
 		<npc id="22132" count="1" respawn="60" pos="115946 -74648 -50 59524" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_31]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_31]">
 		<npc id="22132" count="1" respawn="60" pos="116437 -74032 -71 29689" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_32]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_32]">
 		<npc id="22132" count="1" respawn="60" pos="117446 -74015 -50 1723" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_33]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_33]">
 		<npc id="22133" count="1" respawn="60" pos="113144 -72197 -602 61500" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_34]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_34]">
 		<npc id="22132" count="1" respawn="60" pos="114704 -80346 -1610 44542" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_35]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_35]">
 		<npc id="22132" count="1" respawn="60" pos="115258 -79516 -1610 36935" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_36]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_36]">
 		<npc id="22129" count="1" respawn="60" pos="117180 -74614 -50 36462" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_37]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_37]">
 		<npc id="22129" count="1" respawn="60" pos="114554 -73025 -578 20353" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_38]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_38]">
 		<npc id="22129" count="1" respawn="60" pos="114252 -73624 -585 31901" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_39]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_39]">
 		<npc id="22129" count="1" respawn="60" pos="112335 -73569 -596 39869" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_40]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_40]">
 		<npc id="22129" count="1" respawn="60" pos="112305 -73166 -602 34452" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_41]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_41]">
 		<npc id="22129" count="1" respawn="60" pos="112593 -71737 -576 27030" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_42]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_42]">
 		<npc id="22129" count="1" respawn="60" pos="113454 -72359 -583 36469" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_43]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_43]">
 		<npc id="22129" count="1" respawn="60" pos="114071 -72109 -602 45954" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_44]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_44]">
 		<npc id="22129" count="1" respawn="60" pos="114779 -71815 -575 28406" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_45]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_45]">
 		<npc id="22129" count="1" respawn="60" pos="110926 -72741 -591 12588" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_46]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_46]">
 		<npc id="22129" count="1" respawn="60" pos="110278 -73382 -570 47871" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_47]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_47]">
 		<npc id="22129" count="1" respawn="60" pos="110904 -72092 -570 61049" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_48]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_48]">
 		<npc id="22129" count="1" respawn="60" pos="110025 -75085 -1092 52025" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_49]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_49]">
 		<npc id="22129" count="1" respawn="60" pos="109476 -75195 -1122 21128" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_50]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_50]">
 		<npc id="22129" count="1" respawn="60" pos="109802 -75968 -1122 13841" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_51]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_51]">
 		<npc id="22129" count="1" respawn="60" pos="116058 -74064 -50 33646" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_52]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_52]">
 		<npc id="22129" count="1" respawn="60" pos="115817 -74352 -50 41889" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_53]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_53]">
 		<npc id="22132" count="1" respawn="60" pos="114793 -80955 -1610 28158" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_54]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_54]">
 		<npc id="22129" count="1" respawn="60" pos="114368 -79824 -50 38356" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_55]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_55]">
 		<npc id="22129" count="1" respawn="60" pos="115020 -80101 -50 64133" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_56]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_56]">
 		<npc id="22129" count="1" respawn="60" pos="117469 -80765 -50 14212" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_57]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_57]">
 		<npc id="22129" count="1" respawn="60" pos="114967 -79964 -1610 51432" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_58]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_58]">
 		<npc id="22129" count="1" respawn="60" pos="116471 -80885 -50 55305" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_59]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_59]">
 		<npc id="22129" count="1" respawn="60" pos="115888 -81208 -50 7247" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_60]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_60]">
 		<npc id="22129" count="1" respawn="60" pos="115743 -75456 -76 57419" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_61]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_61]">
 		<npc id="22129" count="1" respawn="60" pos="116167 -75728 -82 16703" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_62]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_62]">
 		<npc id="22129" count="1" respawn="60" pos="115660 -78446 -55 43707" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_63]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_63]">
 		<npc id="22129" count="1" respawn="60" pos="116156 -78431 -70 49579" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_64]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_64]">
 		<npc id="22129" count="1" respawn="60" pos="116949 -75669 -72 23767" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_65]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_65]">
 		<npc id="22129" count="1" respawn="60" pos="117640 -76542 -53 12074" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_66]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_66]">
 		<npc id="22129" count="1" respawn="60" pos="117496 -78420 -77 50323" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_67]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_67]">
 		<npc id="22129" count="1" respawn="60" pos="117296 -77894 -82 35022" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_68]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_68]">
 		<npc id="22129" count="1" respawn="60" pos="109736 -77200 -1122 50583" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_69]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_69]">
 		<npc id="22133" count="1" respawn="60" pos="113484 -73352 -602 44160" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_70]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_70]">
 		<npc id="22135" count="1" pos="114482 -80787 -50 33991" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_71]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_71]">
 		<npc id="22135" count="1" respawn="60" pos="109448 -77350 -1122 41197" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_72]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_72]">
 		<npc id="22135" count="1" respawn="60" pos="109832 -76842 -1122 52958" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_73]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_73]">
 		<npc id="22135" count="1" respawn="60" pos="109376 -75932 -1110 37751" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_74]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_74]">
 		<npc id="22135" count="1" respawn="60" pos="109855 -75442 -1122 54411" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_75]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_75]">
 		<npc id="22135" count="1" respawn="60" pos="108765 -76367 -1092 19777" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_76]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_76]">
 		<npc id="22135" count="1" respawn="60" pos="108671 -75441 -1097 37340" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_77]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_77]">
 		<npc id="22135" count="1" respawn="60" pos="108011 -75550 -1093 11548" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_78]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_78]">
 		<npc id="22135" count="1" respawn="60" pos="108055 -76428 -1102 51993" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_79]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_79]">
 		<npc id="22135" count="1" respawn="60" pos="111766 -79343 -1614 481" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_80]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_80]">
 		<npc id="22135" count="1" respawn="60" pos="110869 -79668 -1630 32575" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_81]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_81]">
 		<npc id="22135" count="1" respawn="60" pos="112175 -79845 -1642 29356" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_82]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_82]">
 		<npc id="22135" count="1" respawn="60" pos="112940 -79928 -1642 41970" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_83]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_83]">
 		<npc id="22135" count="1" respawn="60" pos="111018 -80643 -1618 54377" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_84]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_84]">
 		<npc id="22135" count="1" respawn="60" pos="111470 -81135 -1632 35051" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_85]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_85]">
 		<npc id="22135" count="1" respawn="60" pos="113079 -80627 -1615 35554" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_86]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_86]">
 		<npc id="22135" count="1" respawn="60" pos="111753 -72075 -577 33813" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_87]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_87]">
 		<npc id="22135" count="1" respawn="60" pos="112298 -72181 -602 61327" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_88]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_88]">
 		<npc id="22135" count="1" respawn="60" pos="114360 -79545 -50 43967" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_89]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_89]">
 		<npc id="22135" count="1" respawn="60" pos="116264 -78164 -82 57460" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_90]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_90]">
 		<npc id="22135" count="1" respawn="60" pos="115642 -77661 -57 44784" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_91]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_91]">
 		<npc id="22135" count="1" respawn="60" pos="116218 -76965 -40 50534" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_92]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_92]">
 		<npc id="22135" count="1" respawn="60" pos="115735 -75879 -97 48954" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_93]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_93]">
 		<npc id="22135" count="1" respawn="60" pos="117551 -77838 -61 14152" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_94]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_94]">
 		<npc id="22135" count="1" respawn="60" pos="117209 -78258 -82 53216" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_95]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_95]">
 		<npc id="22135" count="1" respawn="60" pos="117542 -76142 -63 16384" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_96]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_96]">
 		<npc id="22135" count="1" respawn="60" pos="117271 -75638 -82 16145" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_97]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_97]">
 		<npc id="22135" count="1" respawn="60" pos="112025 -73086 -590 27900" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_98]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_98]">
 		<npc id="22135" count="1" respawn="60" pos="113033 -73352 -602 32436" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_99]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_99]">
 		<npc id="22135" count="1" respawn="60" pos="113993 -73003 -574 29744" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_100]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_100]">
 		<npc id="22135" count="1" respawn="60" pos="114787 -73353 -581 55676" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_101]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_101]">
 		<npc id="22135" count="1" respawn="60" pos="114551 -72070 -602 33227" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_102]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_102]">
 		<npc id="22135" count="1" respawn="60" pos="113739 -72192 -623 899" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_103]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_103]">
 		<npc id="22135" count="1" respawn="60" pos="113643 -80781 -1639 5651" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_104]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_104]">
 		<npc id="22134" count="1" respawn="60" pos="114664 -80136 -50 53468" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_105]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_105]">
 		<npc id="22134" count="1" respawn="60" pos="114913 -79607 -50 30085" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_106]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_106]">
 		<npc id="22134" count="1" respawn="60" pos="110646 -73572 -570 56777" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_107]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_107]">
 		<npc id="22134" count="1" respawn="60" pos="110736 -72441 -591 41614" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_108]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_108]">
 		<npc id="22134" count="1" respawn="60" pos="110270 -71879 -570 33065" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_109]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_109]">
 		<npc id="22134" count="1" respawn="60" pos="108784 -78368 -1091 32929" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_110]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_110]">
 		<npc id="22134" count="1" respawn="60" pos="109778 -78753 -1090 9438" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_111]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_111]">
 		<npc id="22134" count="1" respawn="60" pos="108508 -78741 -1090 56855" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_112]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_112]">
 		<npc id="22134" count="1" respawn="60" pos="115061 -80670 -1610 57020" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_113]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_113]">
 		<npc id="22134" count="1" respawn="60" pos="114792 -79556 -1610 36597" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_114]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_114]">
 		<npc id="22134" count="1" respawn="60" pos="115019 -80412 -1610 7441" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_115]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_115]">
 		<npc id="22133" count="1" respawn="60" pos="114865 -80703 -50 53312" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_116]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_116]">
 		<npc id="22133" count="1" respawn="60" pos="114751 -79345 -50 50316" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_117]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_117]">
 		<npc id="22133" count="1" respawn="60" pos="115936 -77242 -82 64496" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_118]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_118]">
 		<npc id="22133" count="1" respawn="60" pos="115968 -76314 -103 54281" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_119]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_119]">
 		<npc id="22133" count="1" respawn="60" pos="116856 -77539 -52 47652" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_120]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_120]">
 		<npc id="22133" count="1" respawn="60" pos="117037 -76652 -103 41502" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_121]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_121]">
 		<npc id="22134" count="1" respawn="60" pos="114237 -71655 -572 28454" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_122]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_122]">
 		<npc id="22134" count="1" respawn="60" pos="113253 -71798 -588 30213" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_123]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_123]">
 		<npc id="22134" count="1" respawn="60" pos="116671 -80982 -50 8630" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_124]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_124]">
 		<npc id="22134" count="1" respawn="60" pos="117368 -81243 -50 2352" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_125]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_125]">
 		<npc id="22134" count="1" respawn="60" pos="116311 -80646 -71 4976" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_126]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_126]">
 		<npc id="22134" count="1" respawn="60" pos="116067 -76343 -82 10273" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_127]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_127]">
 		<npc id="22134" count="1" respawn="60" pos="115635 -77119 -78 19373" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_128]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_128]">
 		<npc id="22134" count="1" respawn="60" pos="115951 -78063 -82 50347" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_129]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_129]">
 		<npc id="22134" count="1" respawn="60" pos="117275 -76050 -103 18578" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_130]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_130]">
 		<npc id="22134" count="1" respawn="60" pos="117377 -77029 -82 6144" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_131]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_131]">
 		<npc id="22134" count="1" respawn="60" pos="116939 -77486 -59 55090" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_132]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_132]">
 		<npc id="22134" count="1" respawn="60" pos="116506 -74622 -50 1344" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_133]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_133]">
 		<npc id="22134" count="1" respawn="60" pos="116876 -74334 -71 25228" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_134]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_134]">
 		<npc id="22134" count="1" respawn="60" pos="117418 -74526 -71 44972" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_135]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_135]">
 		<npc id="22134" count="1" respawn="60" pos="114465 -73361 -602 18940" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_136]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_136]">
 		<npc id="22134" count="1" respawn="60" pos="111915 -73311 -602 33121" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_137]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_137]">
 		<npc id="22134" count="1" respawn="60" pos="112030 -72167 -602 38782" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_138]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_138]">
 		<npc id="22133" count="1" respawn="60" pos="112451 -73434 -602 22064" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_139]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_139]">
 		<npc id="22125" count="1" respawn="60" pos="109776 -80374 -3530 34230" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_140]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_140]">
 		<npc id="22124" count="1" respawn="60" pos="119085 -82982 -3098 22922" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_141]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_141]">
 		<npc id="22124" count="1" respawn="60" pos="119012 -83733 -3098 37308" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_142]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_142]">
 		<npc id="22124" count="1" respawn="60" pos="111263 -84945 -3402 41881" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_143]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_143]">
 		<npc id="22124" count="1" respawn="60" pos="110544 -84983 -3402 1436" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_144]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_144]">
 		<npc id="22124" count="1" respawn="60" pos="110036 -85164 -3402 9790" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_145]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_145]">
 		<npc id="22124" count="1" respawn="60" pos="110269 -85482 -3402 25022" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_146]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_146]">
 		<npc id="22124" count="1" respawn="60" pos="110032 -84042 -3402 42627" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_147]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_147]">
 		<npc id="22124" count="1" respawn="60" pos="109835 -84185 -3402 22825" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_148]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_148]">
 		<npc id="22124" count="1" respawn="60" pos="110135 -84347 -3402 35188" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_149]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_149]">
 		<npc id="22124" count="1" respawn="60" pos="109757 -83082 -3402 14070" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_150]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_150]">
 		<npc id="22124" count="1" respawn="60" pos="109703 -82706 -3402 47953" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_151]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_151]">
 		<npc id="22124" count="1" respawn="60" pos="109766 -82160 -3402 49615" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_152]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_152]">
 		<npc id="22124" count="1" respawn="60" pos="109656 -79928 -3530 62123" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_153]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_153]">
 		<npc id="22124" count="1" respawn="60" pos="109391 -80182 -3530 19077" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_154]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_154]">
 		<npc id="22124" count="1" respawn="60" pos="110176 -80512 -3530 48340" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_155]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_155]">
 		<npc id="22125" count="1" respawn="60" pos="115636 -80814 -3402 29442" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_156]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_156]">
 		<npc id="22125" count="1" respawn="60" pos="115908 -81569 -3402 53974" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_157]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_157]">
 		<npc id="22125" count="1" respawn="60" pos="112711 -81763 -3402 33581" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_158]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_158]">
 		<npc id="22125" count="1" respawn="60" pos="113082 -81734 -3402 40960" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_159]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_159]">
 		<npc id="22125" count="1" respawn="60" pos="111897 -84033 -3402 11245" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_160]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_160]">
 		<npc id="22125" count="1" respawn="60" pos="111982 -84448 -3402 801" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_161]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_161]">
 		<npc id="22125" count="1" respawn="60" pos="112576 -84607 -3402 24540" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_162]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_162]">
 		<npc id="22125" count="1" respawn="60" pos="114735 -88336 -3498 54383" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_163]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_163]">
 		<npc id="22125" count="1" respawn="60" pos="115255 -88346 -3498 42781" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_164]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_164]">
 		<npc id="22125" count="1" respawn="60" pos="115999 -88369 -3498 61015" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_165]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_165]">
 		<npc id="22125" count="1" respawn="60" pos="116458 -88334 -3498 43551" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_166]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_166]">
 		<npc id="22125" count="1" respawn="60" pos="117106 -87558 -3530 29675" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_167]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_167]">
 		<npc id="22125" count="1" respawn="60" pos="117450 -87779 -3551 54290" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_168]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_168]">
 		<npc id="22125" count="1" respawn="60" pos="115644 -85186 -3402 31450" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_169]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_169]">
 		<npc id="22125" count="1" respawn="60" pos="116452 -85281 -3402 55645" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_170]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_170]">
 		<npc id="22125" count="1" respawn="60" pos="116020 -84426 -3402 54617" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_171]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_171]">
 		<npc id="22125" count="1" respawn="60" pos="116077 -82334 -3402 18940" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_172]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_172]">
 		<npc id="22124" count="1" respawn="60" pos="110289 -81726 -3402 60778" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_173]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_173]">
 		<npc id="22124" count="1" respawn="60" pos="112583 -82803 -3402 65014" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_174]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_174]">
 		<npc id="22124" count="1" respawn="60" pos="112131 -83087 -3402 3869" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_175]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_175]">
 		<npc id="22124" count="1" respawn="60" pos="118882 -76797 -3402 52140" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_176]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_176]">
 		<npc id="22124" count="1" respawn="60" pos="119234 -76816 -3402 27368" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_177]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_177]">
 		<npc id="22123" count="1" respawn="60" pos="116722 -79940 -2250 53636" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_178]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_178]">
 		<npc id="22123" count="1" respawn="60" pos="116597 -79462 -2250 43544" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_179]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_179]">
 		<npc id="22123" count="1" respawn="60" pos="118590 -83295 -3098 52729" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_180]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_180]">
 		<npc id="22123" count="1" respawn="60" pos="111022 -85467 -3402 45101" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_181]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_181]">
 		<npc id="22123" count="1" respawn="60" pos="111386 -80525 -3530 37033" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_182]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_182]">
 		<npc id="22123" count="1" respawn="60" pos="109841 -80150 -3530 42413" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_183]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_183]">
 		<npc id="22123" count="1" respawn="60" pos="112841 -84893 -3402 13404" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_184]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_184]">
 		<npc id="22123" count="1" respawn="60" pos="115911 -83979 -3402 12369" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_185]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_185]">
 		<npc id="22123" count="1" respawn="60" pos="115593 -84950 -3402 12330" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_186]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_186]">
 		<npc id="22123" count="1" respawn="60" pos="116054 -80679 -3402 21356" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_187]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_187]">
 		<npc id="22123" count="1" respawn="60" pos="115290 -81400 -3402 18986" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_188]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_188]">
 		<npc id="22123" count="1" respawn="60" pos="117093 -77821 -3402 53328" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_189]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_189]">
 		<npc id="22123" count="1" respawn="60" pos="116667 -77335 -3402 28467" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_190]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_190]">
 		<npc id="22124" count="1" respawn="60" pos="119161 -76095 -3402 9480" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_191]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_191]">
 		<npc id="22124" count="1" respawn="60" pos="119244 -78626 -3530 54606" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_192]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_192]">
 		<npc id="22124" count="1" respawn="60" pos="112784 -85275 -3402 24864" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_193]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_193]">
 		<npc id="22124" count="1" respawn="60" pos="113383 -87040 -3402 50306" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_194]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_194]">
 		<npc id="22124" count="1" respawn="60" pos="113423 -87519 -3402 49524" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_195]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_195]">
 		<npc id="22124" count="1" respawn="60" pos="115593 -84950 -3402 12330" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_196]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_196]">
 		<npc id="22124" count="1" respawn="60" pos="116029 -85544 -3423 43229" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_197]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_197]">
 		<npc id="22124" count="1" respawn="60" pos="116265 -84212 -3402 56884" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_198]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_198]">
 		<npc id="22124" count="1" respawn="60" pos="115602 -81806 -3402 15201" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_199]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_199]">
 		<npc id="22124" count="1" respawn="60" pos="116326 -81981 -3423 43029" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_200]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_200]">
 		<npc id="22124" count="1" respawn="60" pos="116364 -80784 -3402 62670" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_201]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_201]">
 		<npc id="22124" count="1" respawn="60" pos="115400 -78837 -3402 1334" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_202]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_202]">
 		<npc id="22124" count="1" respawn="60" pos="115441 -78446 -3402 53129" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_203]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_203]">
 		<npc id="22124" count="1" respawn="60" pos="116362 -77187 -3402 26719" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_204]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_204]">
 		<npc id="22124" count="1" respawn="60" pos="116178 -77813 -3402 5271" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_205]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_205]">
 		<npc id="22124" count="1" respawn="60" pos="116903 -78128 -3402 9490" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_206]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_206]">
 		<npc id="22124" count="1" respawn="60" pos="118653 -78593 -3530 4004" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_207]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_207]">
 		<npc id="22123" count="1" respawn="60" pos="118821 -75971 -3402 58941" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_208]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_208]">
 		<npc id="22125" count="1" respawn="60" pos="109271 -79857 -3530 56597" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_209]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_209]">
 		<npc id="22129" count="1" respawn="60" pos="108136 -74651 -1132 17885" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_210]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_210]">
 		<npc id="22128" count="1" respawn="60" pos="118797 -82675 -3098 20247" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_211]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_211]">
 		<npc id="22128" count="1" respawn="60" pos="112495 -83267 -3402 29559" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_212]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_212]">
 		<npc id="22128" count="1" respawn="60" pos="112632 -85027 -3402 12389" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_213]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_213]">
 		<npc id="22128" count="1" respawn="60" pos="115868 -86287 -3402 51798" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_214]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_214]">
 		<npc id="22128" count="1" respawn="60" pos="115109 -84975 -3402 5325" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_215]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_215]">
 		<npc id="22128" count="1" respawn="60" pos="116066 -81258 -3423 20109" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_216]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_216]">
 		<npc id="22128" count="1" respawn="60" pos="116163 -81894 -3402 10635" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_217]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_217]">
 		<npc id="22128" count="1" respawn="60" pos="117155 -77329 -3402 29587" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_218]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_218]">
 		<npc id="22128" count="1" respawn="60" pos="118670 -76774 -3402 11759" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_219]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_219]">
 		<npc id="22127" count="1" respawn="60" pos="112945 -83082 -3402 15954" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_220]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_220]">
 		<npc id="22126" count="1" respawn="60" pos="116881 -80463 -2250 57723" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_221]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_221]">
 		<npc id="22126" count="1" respawn="60" pos="118769 -84380 -3098 48448" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_222]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_222]">
 		<npc id="22126" count="1" respawn="60" pos="110574 -85762 -3423 44581" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_223]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_223]">
 		<npc id="22126" count="1" respawn="60" pos="110876 -85186 -3402 62026" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_224]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_224]">
 		<npc id="22126" count="1" respawn="60" pos="110136 -84949 -3402 49913" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_225]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_225]">
 		<npc id="22128" count="1" respawn="60" pos="116504 -79711 -2250 14993" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_226]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_226]">
 		<npc id="22129" count="1" respawn="60" pos="115242 -81131 -1610 62721" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_227]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_227]">
 		<npc id="22129" count="1" respawn="60" pos="108483 -75547 -1122 15094" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_228]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_228]">
 		<npc id="22129" count="1" respawn="60" pos="108312 -76583 -1122 43175" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_229]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_229]">
 		<npc id="22129" count="1" respawn="60" pos="108550 -77104 -1143 45989" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_230]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_230]">
 		<npc id="22129" count="1" respawn="60" pos="109678 -78413 -1090 19532" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_231]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_231]">
 		<npc id="22129" count="1" respawn="60" pos="108864 -78894 -1090 18571" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_232]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_232]">
 		<npc id="22129" count="1" respawn="60" pos="108145 -78861 -1090 49276" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_233]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_233]">
 		<npc id="22129" count="1" respawn="60" pos="111055 -79836 -1663 30694" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_234]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_234]">
 		<npc id="22129" count="1" respawn="60" pos="113654 -79988 -1620 273" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_235]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_235]">
 		<npc id="22129" count="1" respawn="60" pos="113452 -79338 -1616 1585" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_236]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_236]">
 		<npc id="22129" count="1" respawn="60" pos="112031 -79330 -1612 512" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_237]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_237]">
 		<npc id="22129" count="1" respawn="60" pos="110913 -81274 -1618 36502" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_238]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_238]">
 		<npc id="22129" count="1" respawn="60" pos="111850 -80917 -1642 36405" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_239]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_239]">
 		<npc id="22129" count="1" respawn="60" pos="112836 -80687 -1638 27333" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_240]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_240]">
 		<npc id="22129" count="1" respawn="60" pos="113532 -81016 -1642 63852" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_241]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_241]">
 		<npc id="22129" count="1" respawn="60" pos="115190 -79888 -1610 41636" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_242]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_242]">
 		<npc id="22126" count="1" respawn="60" pos="110043 -84485 -3402 54201" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_243]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_243]">
 		<npc id="22126" count="1" respawn="60" pos="109787 -83967 -3402 11153" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_244]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_244]">
 		<npc id="22126" count="1" respawn="60" pos="109780 -83438 -3402 51294" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_245]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_245]">
 		<npc id="22126" count="1" respawn="60" pos="115833 -82220 -3402 43515" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_246]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_246]">
 		<npc id="22126" count="1" respawn="60" pos="116614 -81326 -3402 53042" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_247]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_247]">
 		<npc id="22126" count="1" respawn="60" pos="115880 -80115 -3402 16529" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_248]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_248]">
 		<npc id="22126" count="1" respawn="60" pos="115533 -78694 -3402 51405" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_249]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_249]">
 		<npc id="22126" count="1" respawn="60" pos="117309 -77807 -3400 1391" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_250]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_250]">
 		<npc id="22126" count="1" respawn="60" pos="118904 -78929 -3530 17682" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_251]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_251]">
 		<npc id="22126" count="1" respawn="60" pos="118932 -78245 -3530 15816" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_252]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_252]">
 		<npc id="22126" count="1" respawn="60" pos="119319 -76369 -3402 2830" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_253]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_253]">
 		<npc id="22126" count="1" respawn="60" pos="118624 -76327 -3402 41840" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_254]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_254]">
 		<npc id="22126" count="1" respawn="60" pos="119022 -75854 -3402 53038" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_255]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_255]">
 		<npc id="22125" count="1" respawn="60" pos="116578 -79052 -2250 17011" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_256]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_256]">
 		<npc id="22125" count="1" respawn="60" pos="116576 -80078 -2271 18562" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_257]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_257]">
 		<npc id="22125" count="1" respawn="60" pos="111067 -80226 -3530 2976" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_258]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_258]">
 		<npc id="22125" count="1" respawn="60" pos="111310 -80034 -3530 58555" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_259]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_259]">
 		<npc id="22125" count="1" respawn="60" pos="111562 -80306 -3530 42569" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_260]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_260]">
 		<npc id="22126" count="1" respawn="60" pos="115931 -83579 -3402 15265" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_261]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_261]">
 		<npc id="22126" count="1" respawn="60" pos="116426 -84871 -3400 51737" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_262]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_262]">
 		<npc id="22126" count="1" respawn="60" pos="111103 -80513 -3530 50453" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_263]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_263]">
 		<npc id="22126" count="1" respawn="60" pos="111615 -80005 -3530 40024" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_264]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_264]">
 		<npc id="22126" count="1" respawn="60" pos="111385 -80756 -3530 49152" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_265]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_265]">
 		<npc id="22126" count="1" respawn="60" pos="111421 -81725 -3402 38643" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_266]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_266]">
 		<npc id="22126" count="1" respawn="60" pos="113038 -82050 -3402 51860" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_267]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_267]">
 		<npc id="22126" count="1" respawn="60" pos="113019 -82764 -3423 12692" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_268]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_268]">
 		<npc id="22126" count="1" respawn="60" pos="111953 -83528 -3402 45114" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_269]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_269]">
 		<npc id="22126" count="1" respawn="60" pos="111715 -84372 -3402 9522" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_270]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_270]">
 		<npc id="22126" count="1" respawn="60" pos="113201 -85540 -3402 63581" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_271]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_271]">
 		<npc id="22126" count="1" respawn="60" pos="113599 -87208 -3402 22186" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_272]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_272]">
 		<npc id="22126" count="1" respawn="60" pos="116255 -89348 -3496 7225" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_273]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_273]">
 		<npc id="22126" count="1" respawn="60" pos="115361 -89350 -3498 27132" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_274]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_274]">
 		<npc id="22126" count="1" respawn="60" pos="114395 -89298 -3498 18107" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_275]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_275]">
 		<npc id="22126" count="1" respawn="60" pos="117297 -87494 -3528 387" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_276]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_276]">
 		<npc id="22126" count="1" respawn="60" pos="115537 -85424 -3402 61153" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_277]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_277]">
 		<npc id="22125" count="1" respawn="60" pos="109982 -79963 -3530 56333" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_278]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_278]">
 		<npc id="32008" count="1" respawn="60" pos="114672 -70848 -547 49152" />	
 	</spawn>
-	<spawn name="[Monastery_Silence_279]">
+	<spawn spawn_bydefault="true"  name="[Monastery_Silence_279]">
 		<npc id="32028" count="1" respawn="60" pos="112800 -76512 86 49152" />	
 	</spawn>
-	<spawn name="[rune01_npc2315_01]">
+	<spawn spawn_bydefault="true"  name="[rune01_npc2315_01]">
 		<npc id="31369" count="1" respawn="60" pos="123712 -72224 -3008 16000" />	
 	</spawn>
-	<spawn name="[rune01_npc2315_02]">
+	<spawn spawn_bydefault="true"  name="[rune01_npc2315_02]">
 		<npc id="31654" count="1" respawn="60" pos="122526 -69955 -3112 0" />	
 	</spawn>
-	<spawn name="[godard01_npc2315_01]">
+	<spawn spawn_bydefault="true"  name="[godard01_npc2315_01]">
 		<territory>	
 			<location x="121972" y="-68272" minz="-3100" maxz="-2900" />
 			<location x="122196" y="-68324" minz="-3100" maxz="-2900" />
@@ -858,7 +858,7 @@
 		<npc id="31711" count="1" respawn="60" />	
 		<npc id="31712" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[godard01_npc2315_02]">
+	<spawn spawn_bydefault="true"  name="[godard01_npc2315_02]">
 		<territory>	
 			<location x="127432" y="-70528" minz="-3180" maxz="-2980" />
 			<location x="127632" y="-70620" minz="-3180" maxz="-2980" />
@@ -869,7 +869,7 @@
 		<npc id="31708" count="1" respawn="60" />	
 		<npc id="31709" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[rune13_mb2315_01]">
+	<spawn spawn_bydefault="true"  name="[rune13_mb2315_01]">
 		<npc id="29096" count="1" respawn="129600" respawn_rand="86400" pos="112800 -76160 10 49152" />	
 	</spawn>
 

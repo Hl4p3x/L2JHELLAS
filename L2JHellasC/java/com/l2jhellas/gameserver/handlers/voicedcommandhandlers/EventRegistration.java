@@ -10,7 +10,8 @@ public class EventRegistration implements IVoicedCommandHandler
 	private static final String[] VOICED_COMMANDS =
 	{
 		"join",
-		"leave"
+		"leave",
+		"vote"
 	};
 	
 	@Override
@@ -22,11 +23,18 @@ public class EventRegistration implements IVoicedCommandHandler
 			return false;
 		}
 		
-		if (command.startsWith(VOICED_COMMANDS[0]))
-			EventManager.getInstance().registerPlayer(activeChar);		
-		if (command.startsWith(VOICED_COMMANDS[1]))
-			EventManager.getInstance().unregisterPlayer(activeChar);
-		
+		switch(command)
+		{
+			case "join":
+				EventManager.getInstance().registerPlayer(activeChar);	
+				break;
+			case "leave":
+				EventManager.getInstance().unregisterPlayer(activeChar);
+				break;
+			case "vote":
+				EventManager.getInstance().showVoteHtml(activeChar);
+				break;
+		}
 		return true;
 	}
 	

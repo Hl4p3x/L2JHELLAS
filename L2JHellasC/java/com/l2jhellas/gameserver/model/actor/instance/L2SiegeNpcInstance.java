@@ -56,7 +56,9 @@ public class L2SiegeNpcInstance extends L2NpcInstance
 		int castleid = MapRegionTable.getAreaCastle(getX(), getY());
 		Castle castle = CastleManager.getInstance().getCastleById(castleid);
 		
-		if (castle != null)
+		if (getConquerableHall() != null && validateCondition(player)) 
+			getConquerableHall().showSiegeInfo(player);
+		else if (castle != null)
 		{
 			if (validateCondition(player))
 			{

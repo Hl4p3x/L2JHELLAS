@@ -14,6 +14,7 @@ import com.l2jhellas.gameserver.enums.player.ClassRace;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.ClanHallManager;
 import com.l2jhellas.gameserver.instancemanager.ZoneManager;
+import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Npc;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -97,6 +98,11 @@ public class MapRegionTable implements DocumentParser
 	public static final int getMapRegion(int posX, int posY)
 	{
 		return _regions[getMapRegionX(posX)][getMapRegionY(posY)];
+	}
+	
+	public static final int getMapRegion(L2Object ob)
+	{
+		return _regions[getMapRegionX(ob.getX())][getMapRegionY(ob.getY())];
 	}
 	
 	public static final int getMapRegionX(int posX)

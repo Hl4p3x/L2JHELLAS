@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[aden_chamberlain_etc]">
+	<spawn spawn_bydefault="true"  name="[aden_chamberlain_etc]">
 		<npc id="35652" count="1" respawn="60" pos="147343 4024 -304 16384" />	
 		<npc id="35274" count="1" respawn="60" pos="147412 3355 -46 16389" />	
 		<npc id="35278" count="1" respawn="60" pos="147551 19577 -1991 16389" />	
@@ -14,10 +14,10 @@
 		<npc id="35269" count="1" respawn="10800" pos="147702 6345 -400 16389" />	
 		<npc id="35269" count="1" respawn="10800" pos="147362 6111 -400 49152" />	
 	</spawn>
-	<spawn name="[aden_mass_teleporter]" event_name="[aden_mass_teleporter]">
+	<spawn spawn_bydefault="true"  name="[aden_mass_teleporter]" event_name="[aden_mass_teleporter]">
 		<npc id="35266" count="1" respawn="60" pos="147457 4609 -2789 0" />	
 	</spawn>
-	<spawn name="[aden_siege01]" event_name="[aden_siege01]">
+	<spawn spawn_bydefault="true"  name="[aden_siege01]" event_name="[aden_siege01]">
 		<npc id="35250" count="1" respawn="10800" pos="147290 8527 -470 16389" />	
 		<npc id="35250" count="1" respawn="10800" pos="147356 8527 -470 16389" />	
 		<npc id="35250" count="1" respawn="10800" pos="147423 8527 -470 16389" />	
@@ -54,7 +54,7 @@
 		<npc id="35253" count="1" respawn="10800" pos="147556 8587 -470 16389" />	
 		<npc id="35253" count="1" respawn="10800" pos="147590 8587 -470 16389" />	
 	</spawn>
-	<spawn name="[aden_siege02]" event_name="[aden_siege02]">
+	<spawn spawn_bydefault="true"  name="[aden_siege02]" event_name="[aden_siege02]">
 		<npc id="35254" count="1" respawn="10800" pos="148185 8527 -212 32768" />	
 		<npc id="35254" count="1" respawn="10800" pos="148185 8567 -212 32768" />	
 		<npc id="35254" count="1" respawn="10800" pos="148185 8608 -212 32768" />	
@@ -87,7 +87,7 @@
 		<npc id="35250" count="1" respawn="10800" pos="148261 9030 -212 32768" />	
 		<npc id="35250" count="1" respawn="10800" pos="148261 9167 -212 32768" />	
 	</spawn>
-	<spawn name="[aden_siege03]" event_name="[aden_siege03]">
+	<spawn spawn_bydefault="true"  name="[aden_siege03]" event_name="[aden_siege03]">
 		<npc id="35254" count="1" respawn="10800" pos="147984 8486 -192 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="147955 8486 -192 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="147927 8486 -192 16389" />	
@@ -101,7 +101,7 @@
 		<npc id="35250" count="1" respawn="10800" pos="147864 8466 -192 16389" />	
 		<npc id="35249" count="1" respawn="10800" pos="147833 8466 -192 16389" />	
 	</spawn>
-	<spawn name="[aden_siege04]" event_name="[aden_siege04]">
+	<spawn spawn_bydefault="true"  name="[aden_siege04]" event_name="[aden_siege04]">
 		<npc id="35254" count="1" respawn="10800" pos="147064 8489 -192 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="147035 8489 -192 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="147007 8489 -192 16389" />	
@@ -115,7 +115,7 @@
 		<npc id="35250" count="1" respawn="10800" pos="146946 8465 -192 16389" />	
 		<npc id="35249" count="1" respawn="10800" pos="146915 8465 -192 16389" />	
 	</spawn>
-	<spawn name="[aden_siege05]" event_name="[aden_siege05]">
+	<spawn spawn_bydefault="true"  name="[aden_siege05]" event_name="[aden_siege05]">
 		<npc id="35252" count="1" respawn="10800" pos="149105 6657 -470 16389" />	
 		<npc id="35252" count="1" respawn="10800" pos="149142 6657 -470 16389" />	
 		<npc id="35252" count="1" respawn="10800" pos="149180 6657 -470 16389" />	
@@ -138,7 +138,7 @@
 		<npc id="35249" count="1" respawn="10800" pos="149292 6617 -470 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="149330 6617 -470 16389" />	
 	</spawn>
-	<spawn name="[aden_siege06]" event_name="[aden_siege06]">
+	<spawn spawn_bydefault="true"  name="[aden_siege06]" event_name="[aden_siege06]">
 		<npc id="35252" count="1" respawn="10800" pos="145569 6657 -470 16389" />	
 		<npc id="35252" count="1" respawn="10800" pos="145606 6657 -470 16389" />	
 		<npc id="35252" count="1" respawn="10800" pos="145644 6657 -470 16389" />	
@@ -161,7 +161,7 @@
 		<npc id="35249" count="1" respawn="10800" pos="145757 6617 -470 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="145795 6617 -470 16389" />	
 	</spawn>
-	<spawn name="[aden_siege07]" event_name="[aden_siege07]">
+	<spawn spawn_bydefault="true"  name="[aden_siege07]" event_name="[aden_siege07]">
 		<npc id="35239" count="1" respawn="10800" pos="145762 7588 -470 16389" />	
 		<npc id="35239" count="1" respawn="10800" pos="146067 7588 -470 16389" />	
 		<npc id="35239" count="1" respawn="10800" pos="146372 7588 -470 16389" />	
@@ -175,7 +175,7 @@
 		<npc id="35239" count="1" respawn="10800" pos="148815 7588 -470 16389" />	
 		<npc id="35239" count="1" respawn="10800" pos="149121 7588 -470 16389" />	
 	</spawn>
-	<spawn name="[aden_siege08]" event_name="[aden_siege08]">
+	<spawn spawn_bydefault="true"  name="[aden_siege08]" event_name="[aden_siege08]">
 		<npc id="35250" count="1" respawn="10800" pos="149083 4965 -20 0" />	
 		<npc id="35254" count="1" respawn="10800" pos="149082 4926 -20 0" />	
 		<npc id="35254" count="1" respawn="10800" pos="149081 4886 -20 0" />	
@@ -188,7 +188,7 @@
 		<npc id="35254" count="1" respawn="10800" pos="148921 4766 -20 0" />	
 		<npc id="35250" count="1" respawn="10800" pos="149006 4835 -20 0" />	
 	</spawn>
-	<spawn name="[aden_siege09]" event_name="[aden_siege09]">
+	<spawn spawn_bydefault="true"  name="[aden_siege09]" event_name="[aden_siege09]">
 		<npc id="35250" count="1" respawn="10800" pos="149056 4219 -20 0" />	
 		<npc id="35254" count="1" respawn="10800" pos="149080 4252 -20 0" />	
 		<npc id="35254" count="1" respawn="10800" pos="149080 4295 -20 0" />	
@@ -201,7 +201,7 @@
 		<npc id="35254" count="1" respawn="10800" pos="148922 4451 -20 0" />	
 		<npc id="35250" count="1" respawn="10800" pos="149006 4362 -20 0" />	
 	</spawn>
-	<spawn name="[aden_siege10]" event_name="[aden_siege10]">
+	<spawn spawn_bydefault="true"  name="[aden_siege10]" event_name="[aden_siege10]">
 		<npc id="35250" count="1" respawn="10800" pos="145831 4252 -20 32768" />	
 		<npc id="35254" count="1" respawn="10800" pos="145909 4440 -20 32768" />	
 		<npc id="35254" count="1" respawn="10800" pos="145883 4421 -20 32768" />	
@@ -214,7 +214,7 @@
 		<npc id="35254" count="1" respawn="10800" pos="145995 4449 -20 32768" />	
 		<npc id="35250" count="1" respawn="10800" pos="145926 4377 -20 32768" />	
 	</spawn>
-	<spawn name="[aden_siege11]" event_name="[aden_siege11]">
+	<spawn spawn_bydefault="true"  name="[aden_siege11]" event_name="[aden_siege11]">
 		<npc id="35250" count="1" respawn="10800" pos="145836 4968 -20 32768" />	
 		<npc id="35254" count="1" respawn="10800" pos="145836 4929 -20 32768" />	
 		<npc id="35254" count="1" respawn="10800" pos="145835 4889 -20 32768" />	
@@ -227,7 +227,7 @@
 		<npc id="35254" count="1" respawn="10800" pos="145928 4767 -20 32768" />	
 		<npc id="35250" count="1" respawn="10800" pos="145921 4829 -20 32768" />	
 	</spawn>
-	<spawn name="[aden_siege12]" event_name="[aden_siege12]">
+	<spawn spawn_bydefault="true"  name="[aden_siege12]" event_name="[aden_siege12]">
 		<npc id="35254" count="1" respawn="10800" pos="147146 5459 -340 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="147196 5459 -340 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="147247 5459 -340 16389" />	
@@ -265,7 +265,7 @@
 		<npc id="35252" count="1" respawn="10800" pos="147570 5827 -400 16389" />	
 		<npc id="35252" count="1" respawn="10800" pos="147590 5857 -400 16389" />	
 	</spawn>
-	<spawn name="[aden_siege13]" event_name="[aden_siege13]">
+	<spawn spawn_bydefault="true"  name="[aden_siege13]" event_name="[aden_siege13]">
 		<npc id="35252" count="1" respawn="10800" pos="148161 1600 -150 16389" />	
 		<npc id="35252" count="1" respawn="10800" pos="148199 1600 -150 16389" />	
 		<npc id="35252" count="1" respawn="10800" pos="148161 1620 -150 16389" />	
@@ -295,7 +295,7 @@
 		<npc id="35254" count="1" respawn="10800" pos="146750 1720 -150 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="146707 1720 -150 16389" />	
 	</spawn>
-	<spawn name="[aden_siege14]" event_name="[aden_siege14]">
+	<spawn spawn_bydefault="true"  name="[aden_siege14]" event_name="[aden_siege14]">
 		<npc id="35254" count="1" respawn="10800" pos="146818 1300 -150 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="146861 1300 -150 16389" />	
 		<npc id="35254" count="1" respawn="10800" pos="146905 1300 -150 16389" />	
@@ -313,7 +313,7 @@
 		<npc id="35250" count="1" respawn="10800" pos="147441 1245 -150 16391" />	
 		<npc id="35250" count="1" respawn="10800" pos="146953 1245 -150 16392" />	
 	</spawn>
-	<spawn name="[aden_siege15]" event_name="[aden_siege15]">
+	<spawn spawn_bydefault="true"  name="[aden_siege15]" event_name="[aden_siege15]">
 		<npc id="35234" count="1" respawn="200" pos="147468 1671 -338 16389" />	
 		<npc id="35250" count="1" respawn="200" pos="147428 1671 -338 16389" />	
 		<npc id="35251" count="1" respawn="200" pos="147508 1671 -338 16389" />	
@@ -368,7 +368,7 @@
 		<npc id="35240" count="1" respawn="200" pos="147247 2080 -450 16389" />	
 		<npc id="35240" count="1" respawn="200" pos="147198 2080 -450 16389" />	
 	</spawn>
-	<spawn name="[aden_siege16]" event_name="[aden_siege16]">
+	<spawn spawn_bydefault="true"  name="[aden_siege16]" event_name="[aden_siege16]">
 		<npc id="35250" count="1" respawn="120" pos="148404 5289 -21 0" />	
 		<npc id="35249" count="1" respawn="120" pos="148404 5309 -21 0" />	
 		<npc id="35250" count="1" respawn="120" pos="148404 5328 -21 0" />	
@@ -390,7 +390,7 @@
 		<npc id="35240" count="1" respawn="120" pos="148464 5348 -21 0" />	
 		<npc id="35240" count="1" respawn="120" pos="148464 5368 -21 0" />	
 	</spawn>
-	<spawn name="[aden_siege17]" event_name="[aden_siege17]">
+	<spawn spawn_bydefault="true"  name="[aden_siege17]" event_name="[aden_siege17]">
 		<npc id="35250" count="1" respawn="120" pos="146520 5289 -21 32768" />	
 		<npc id="35249" count="1" respawn="120" pos="146520 5308 -21 32768" />	
 		<npc id="35250" count="1" respawn="120" pos="146520 5328 -21 32768" />	
@@ -412,7 +412,7 @@
 		<npc id="35240" count="1" respawn="120" pos="146460 5348 -21 32768" />	
 		<npc id="35240" count="1" respawn="120" pos="146460 5368 -21 32768" />	
 	</spawn>
-	<spawn name="[aden_siege18]" event_name="[aden_siege18]">
+	<spawn spawn_bydefault="true"  name="[aden_siege18]" event_name="[aden_siege18]">
 		<npc id="35254" count="1" respawn="120" pos="149936 5168 -80 8192" />	
 		<npc id="35254" count="1" respawn="120" pos="149893 5230 -80 8192" />	
 		<npc id="35254" count="1" respawn="120" pos="149851 5293 -80 8192" />	
@@ -426,7 +426,7 @@
 		<npc id="35254" count="1" respawn="120" pos="149514 5793 -80 8192" />	
 		<npc id="35254" count="1" respawn="120" pos="149472 5856 -80 8192" />	
 	</spawn>
-	<spawn name="[aden_siege19]" event_name="[aden_siege19]">
+	<spawn spawn_bydefault="true"  name="[aden_siege19]" event_name="[aden_siege19]">
 		<npc id="35254" count="1" respawn="120" pos="144976 5136 -80 8192" />	
 		<npc id="35254" count="1" respawn="120" pos="145015 5197 -80 8192" />	
 		<npc id="35254" count="1" respawn="120" pos="145054 5258 -80 8192" />	
@@ -440,7 +440,7 @@
 		<npc id="35254" count="1" respawn="120" pos="145368 5746 -80 8192" />	
 		<npc id="35254" count="1" respawn="120" pos="145408 5808 -80 8192" />	
 	</spawn>
-	<spawn name="[aden_siege092]" event_name="[aden_siege092]">
+	<spawn spawn_bydefault="true"  name="[aden_siege092]" event_name="[aden_siege092]">
 		<npc id="35254" count="1" respawn="10800" pos="148185 8527 -212 32768" />	
 		<npc id="35254" count="1" respawn="10800" pos="148185 8567 -212 32768" />	
 		<npc id="35254" count="1" respawn="10800" pos="148185 8649 -212 32768" />	
@@ -463,10 +463,10 @@
 		<npc id="35250" count="1" respawn="10800" pos="148261 8894 -212 32768" />	
 		<npc id="35250" count="1" respawn="10800" pos="148261 9167 -212 32768" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_tk01]" event_name="[lotto_manager]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_tk01]" event_name="[lotto_manager]">
 		<npc id="30990" count="1" respawn="60" pos="146738 25756 -2008 0" />	
 	</spawn>
-	<spawn name="[aden25_2418_01]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_01]">
 		<territory>	
 			<location x="134340" y="120" minz="-4172" maxz="-3572" />
 			<location x="136996" y="212" minz="-4172" maxz="-3572" />
@@ -477,7 +477,7 @@
 		<npc id="20685" count="2" respawn="30" />	
 		<npc id="20686" count="2" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_02]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_02]">
 		<territory>	
 			<location x="132992" y="1888" minz="-3812" maxz="-3412" />
 			<location x="133848" y="1312" minz="-3812" maxz="-3412" />
@@ -490,7 +490,7 @@
 		<npc id="20685" count="1" respawn="30" />	
 		<npc id="20686" count="1" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_03]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_03]">
 		<territory>	
 			<location x="133104" y="4652" minz="-4200" maxz="-3600" />
 			<location x="135380" y="2860" minz="-4200" maxz="-3600" />
@@ -501,7 +501,7 @@
 		<npc id="20685" count="1" respawn="30" />	
 		<npc id="20686" count="1" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_04]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_04]">
 		<territory>	
 			<location x="138228" y="212" minz="-4580" maxz="-3980" />
 			<location x="141620" y="192" minz="-4580" maxz="-3980" />
@@ -512,7 +512,7 @@
 		<npc id="20685" count="5" respawn="30" />	
 		<npc id="20686" count="4" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_05]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_05]">
 		<territory>	
 			<location x="138544" y="2960" minz="-4576" maxz="-3976" />
 			<location x="140364" y="2880" minz="-4576" maxz="-3976" />
@@ -524,7 +524,7 @@
 		<npc id="20685" count="4" respawn="30" />	
 		<npc id="20686" count="3" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_06]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_06]">
 		<territory>	
 			<location x="136740" y="3176" minz="-4588" maxz="-4188" />
 			<location x="137664" y="3016" minz="-4588" maxz="-4188" />
@@ -536,7 +536,7 @@
 		<npc id="20685" count="4" respawn="30" />	
 		<npc id="20686" count="3" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_07]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_07]">
 		<territory>	
 			<location x="131296" y="6064" minz="-4512" maxz="-3712" />
 			<location x="132436" y="5332" minz="-4512" maxz="-3712" />
@@ -549,7 +549,7 @@
 		<npc id="20685" count="7" respawn="30" />	
 		<npc id="20686" count="8" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_08]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_08]">
 		<territory>	
 			<location x="135968" y="7452" minz="-4412" maxz="-3712" />
 			<location x="137812" y="7324" minz="-4412" maxz="-3712" />
@@ -561,7 +561,7 @@
 		<npc id="20685" count="7" respawn="30" />	
 		<npc id="20686" count="8" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_09]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_09]">
 		<territory>	
 			<location x="138212" y="7244" minz="-4388" maxz="-3788" />
 			<location x="140256" y="6776" minz="-4388" maxz="-3788" />
@@ -572,7 +572,7 @@
 		<npc id="20685" count="2" respawn="30" />	
 		<npc id="20686" count="3" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_10]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_10]">
 		<territory>	
 			<location x="138920" y="11768" minz="-4272" maxz="-3572" />
 			<location x="141044" y="10940" minz="-4272" maxz="-3572" />
@@ -583,7 +583,7 @@
 		<npc id="20682" count="2" respawn="30" />	
 		<npc id="20683" count="2" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_11]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_11]">
 		<territory>	
 			<location x="135412" y="14676" minz="-4040" maxz="-3440" />
 			<location x="139528" y="13264" minz="-4040" maxz="-3440" />
@@ -594,7 +594,7 @@
 		<npc id="20682" count="7" respawn="30" />	
 		<npc id="20683" count="8" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_12]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_12]">
 		<territory>	
 			<location x="135568" y="21920" minz="-3852" maxz="-3252" />
 			<location x="137652" y="17888" minz="-3852" maxz="-3252" />
@@ -606,7 +606,7 @@
 		<npc id="20682" count="4" respawn="30" />	
 		<npc id="20683" count="3" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_13]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_13]">
 		<territory>	
 			<location x="134376" y="21940" minz="-3884" maxz="-3084" />
 			<location x="137168" y="22452" minz="-3884" maxz="-3084" />
@@ -618,7 +618,7 @@
 		<npc id="20682" count="8" respawn="30" />	
 		<npc id="20683" count="7" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_14]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_14]">
 		<territory>	
 			<location x="132220" y="27736" minz="-3944" maxz="-2944" />
 			<location x="137284" y="27732" minz="-3944" maxz="-2944" />
@@ -631,7 +631,7 @@
 		<npc id="20682" count="4" respawn="30" />	
 		<npc id="20683" count="3" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_15]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_15]">
 		<territory>	
 			<location x="131256" y="29288" minz="-3924" maxz="-3524" />
 			<location x="134540" y="30724" minz="-3924" maxz="-3524" />
@@ -642,7 +642,7 @@
 		<npc id="20682" count="3" respawn="30" />	
 		<npc id="20683" count="2" respawn="30" />	
 	</spawn>
-	<spawn name="[aden25_2418_16]">
+	<spawn spawn_bydefault="true"  name="[aden25_2418_16]">
 		<territory>	
 			<location x="134756" y="30792" minz="-3924" maxz="-3124" />
 			<location x="139312" y="31184" minz="-3924" maxz="-3124" />
@@ -653,7 +653,7 @@
 		<npc id="20682" count="2" respawn="30" />	
 		<npc id="20683" count="2" respawn="30" />	
 	</spawn>
-	<spawn name="[aden27_2418_17]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_17]">
 		<territory>	
 			<location x="152528" y="152" minz="-4500" maxz="-3900" />
 			<location x="157676" y="116" minz="-4500" maxz="-3900" />
@@ -664,7 +664,7 @@
 		<npc id="20665" count="4" respawn="23" />	
 		<npc id="20667" count="5" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_18]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_18]">
 		<territory>	
 			<location x="158360" y="52" minz="-4440" maxz="-3940" />
 			<location x="159364" y="72" minz="-4440" maxz="-3940" />
@@ -676,7 +676,7 @@
 		<npc id="20665" count="1" respawn="23" />	
 		<npc id="20667" count="1" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_19]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_19]">
 		<territory>	
 			<location x="159760" y="1844" minz="-4472" maxz="-3672" />
 			<location x="161768" y="3236" minz="-4472" maxz="-3672" />
@@ -687,7 +687,7 @@
 		<npc id="20665" count="1" respawn="23" />	
 		<npc id="20667" count="1" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_20]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_20]">
 		<territory>	
 			<location x="160432" y="116" minz="-3604" maxz="-3204" />
 			<location x="161752" y="124" minz="-3604" maxz="-3204" />
@@ -699,7 +699,7 @@
 		<npc id="20665" count="1" respawn="23" />	
 		<npc id="20667" count="1" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_21]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_21]">
 		<territory>	
 			<location x="162044" y="2384" minz="-3936" maxz="-3236" />
 			<location x="163632" y="1476" minz="-3936" maxz="-3236" />
@@ -710,7 +710,7 @@
 		<npc id="20665" count="1" respawn="23" />	
 		<npc id="20667" count="1" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_22]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_22]">
 		<territory>	
 			<location x="162604" y="4276" minz="-4164" maxz="-3464" />
 			<location x="163496" y="4244" minz="-4164" maxz="-3464" />
@@ -722,7 +722,7 @@
 		<npc id="20663" count="4" respawn="23" />	
 		<npc id="20664" count="5" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_23]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_23]">
 		<territory>	
 			<location x="156936" y="3712" minz="-4560" maxz="-3760" />
 			<location x="158128" y="2412" minz="-4560" maxz="-3760" />
@@ -734,7 +734,7 @@
 		<npc id="20663" count="4" respawn="23" />	
 		<npc id="20664" count="5" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_24]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_24]">
 		<territory>	
 			<location x="154440" y="3520" minz="-4528" maxz="-3928" />
 			<location x="156372" y="2980" minz="-4528" maxz="-3928" />
@@ -745,7 +745,7 @@
 		<npc id="20663" count="2" respawn="23" />	
 		<npc id="20664" count="2" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_25]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_25]">
 		<territory>	
 			<location x="154140" y="9388" minz="-4360" maxz="-3760" />
 			<location x="156408" y="9324" minz="-4360" maxz="-3760" />
@@ -756,7 +756,7 @@
 		<npc id="20663" count="2" respawn="23" />	
 		<npc id="20664" count="2" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_26]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_26]">
 		<territory>	
 			<location x="159076" y="10056" minz="-4148" maxz="-3548" />
 			<location x="163404" y="10580" minz="-4148" maxz="-3548" />
@@ -768,7 +768,7 @@
 		<npc id="20663" count="5" respawn="23" />	
 		<npc id="20664" count="6" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_27]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_27]">
 		<territory>	
 			<location x="159132" y="15456" minz="-3956" maxz="-3356" />
 			<location x="163460" y="14364" minz="-3956" maxz="-3356" />
@@ -779,7 +779,7 @@
 		<npc id="20660" count="4" respawn="23" />	
 		<npc id="20661" count="4" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_28]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_28]">
 		<territory>	
 			<location x="153364" y="16112" minz="-4120" maxz="-3520" />
 			<location x="155368" y="13392" minz="-4120" maxz="-3520" />
@@ -791,7 +791,7 @@
 		<npc id="20663" count="3" respawn="23" />	
 		<npc id="20664" count="3" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_29]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_29]">
 		<territory>	
 			<location x="160540" y="20868" minz="-3824" maxz="-3224" />
 			<location x="163512" y="20408" minz="-3824" maxz="-3224" />
@@ -802,7 +802,7 @@
 		<npc id="20660" count="3" respawn="23" />	
 		<npc id="20661" count="4" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_30]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_30]">
 		<territory>	
 			<location x="158352" y="26112" minz="-3748" maxz="-3148" />
 			<location x="160104" y="25644" minz="-3748" maxz="-3148" />
@@ -814,7 +814,7 @@
 		<npc id="20660" count="5" respawn="23" />	
 		<npc id="20661" count="6" respawn="23" />	
 	</spawn>
-	<spawn name="[aden27_2418_31]">
+	<spawn spawn_bydefault="true"  name="[aden27_2418_31]">
 		<territory>	
 			<location x="156436" y="25296" minz="-3580" maxz="-2780" />
 			<location x="158160" y="26136" minz="-3580" maxz="-2780" />
@@ -826,213 +826,213 @@
 		<npc id="20660" count="5" respawn="23" />	
 		<npc id="20661" count="5" respawn="23" />	
 	</spawn>
-	<spawn name="[aden20_npc2418_01]">
+	<spawn spawn_bydefault="true"  name="[aden20_npc2418_01]">
 		<npc id="35276" count="1" respawn="60" pos="147952 3742 -307 32768" />	
 	</spawn>
-	<spawn name="[aden20_npc2418_02]">
+	<spawn spawn_bydefault="true"  name="[aden20_npc2418_02]">
 		<npc id="31001" count="1" respawn="60" pos="148700 16834 -1559 0" />	
 	</spawn>
-	<spawn name="[aden20_npc2418_03]">
+	<spawn spawn_bydefault="true"  name="[aden20_npc2418_03]">
 		<npc id="35272" count="1" respawn="60" pos="147583 5839 -890 49152" />	
 		<npc id="35273" count="1" respawn="60" pos="147454 5839 -891 49152" />	
 	</spawn>
-	<spawn name="[aden20_npc2418_04]">
+	<spawn spawn_bydefault="true"  name="[aden20_npc2418_04]">
 		<npc id="35275" count="1" respawn="60" pos="147449 1899 216 49000" />	
 	</spawn>
-	<spawn name="[aden20_npc2418_05]">
+	<spawn spawn_bydefault="true"  name="[aden20_npc2418_05]">
 		<npc id="35271" count="1" respawn="60" pos="147408 2320 221 16000" />	
 	</spawn>
-	<spawn name="[aden20_npc2418_06]">
+	<spawn spawn_bydefault="true"  name="[aden20_npc2418_06]">
 		<npc id="35271" count="1" respawn="60" pos="147552 2128 221 48000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_02]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_02]">
 		<npc id="30837" count="1" respawn="60" pos="146787 26255 -2189 32768" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_03]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_03]">
 		<npc id="30838" count="1" respawn="60" pos="146046 27293 -2189 49152" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_04]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_04]">
 		<npc id="30840" count="1" respawn="60" pos="146893 28982 -2250 32768" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_05]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_05]">
 		<npc id="30839" count="1" respawn="60" pos="146054 27988 -2250 16384" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_06]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_06]">
 		<npc id="30841" count="1" respawn="60" pos="148860 27959 -2253 16384" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_09]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_09]">
 		<npc id="30847" count="1" respawn="60" pos="150337 28398 -2246 49152" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_10]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_10]">
 		<npc id="30846" count="1" respawn="60" pos="150608 28510 -2247 49152" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_11]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_11]">
 		<npc id="30848" count="1" respawn="60" pos="146737 25807 -2013 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_12]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_12]">
 		<npc id="30849" count="1" respawn="60" pos="149216 24960 -2122 16384" />	
 		<npc id="30850" count="1" respawn="60" pos="148960 25120 -2121 0" />	
 		<npc id="30852" count="1" respawn="60" pos="148960 25408 -2121 0" />	
 		<npc id="30851" count="1" respawn="60" pos="149216 25648 -2121 49152" />	
 		<npc id="30853" count="1" respawn="60" pos="149488 25504 -2121 32768" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_13]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_13]">
 		<npc id="30854" count="1" respawn="60" pos="145856 23168 -2115 32768" />	
 		<npc id="30855" count="1" respawn="60" pos="145648 22752 -2116 16384" />	
 		<npc id="30856" count="1" respawn="60" pos="145646 23568 -2116 49152" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_14]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_14]">
 		<npc id="30857" count="1" respawn="60" pos="147456 22576 -1989 16384" />	
 		<npc id="30858" count="1" respawn="60" pos="147216 22848 -1992 0" />	
 		<npc id="30860" count="1" respawn="60" pos="147692 22848 -1991 32768" />	
 		<npc id="30861" count="1" respawn="60" pos="147214 23067 -1991 0" />	
 		<npc id="30859" count="1" respawn="60" pos="147693 23067 -1991 32768" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_15]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_15]">
 		<npc id="30863" count="1" respawn="60" pos="143968 24256 -2118 49152" />	
 		<npc id="30862" count="1" respawn="60" pos="143776 23936 -2118 0" />	
 		<npc id="30864" count="1" respawn="60" pos="144096 23584 -2117 16384" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_17]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_17]">
 		<npc id="30868" count="1" respawn="60" pos="147456 27488 -2204 16384" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_18]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_18]">
 		<npc id="30869" count="1" respawn="60" pos="145168 30432 -2461 57344" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_19]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_19]">
 		<npc id="30872" count="1" respawn="60" pos="147191 32128 -2475 16384" />	
 		<npc id="30873" count="1" respawn="60" pos="147727 32126 -2471 16384" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_20]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_20]">
 		<npc id="30870" count="1" respawn="60" pos="147274 19838 -2009 49152" />	
 		<npc id="30871" count="1" respawn="60" pos="147648 19840 -2009 49152" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_21]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_21]">
 		<npc id="30874" count="1" respawn="60" pos="142589 26137 -2396 32768" />	
 		<npc id="30875" count="1" respawn="60" pos="142592 26564 -2397 32768" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_22]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_22]">
 		<npc id="30877" count="1" respawn="60" pos="152004 25352 -2129 0" />	
 		<npc id="30876" count="1" respawn="60" pos="152007 24856 -2137 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_23]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_23]">
 		<npc id="30842" count="1" respawn="60" pos="148142 28986 -2253 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_24]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_24]">
 		<npc id="30845" count="1" respawn="60" pos="148960 26145 -2218 24576" />	
 		<npc id="30843" count="1" respawn="60" pos="148859 27258 -2216 49152" />	
 		<npc id="30844" count="1" respawn="60" pos="148155 26254 -2217 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_26]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_26]">
 		<npc id="31053" count="1" respawn="60" pos="149044 29160 -2253 36864" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_27]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_27]">
 		<npc id="35277" count="1" respawn="60" pos="148408 28476 -2272 36884" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_28]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_28]">
 		<npc id="35277" count="1" respawn="60" pos="146504 28468 -2272 61440" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_29]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_29]">
 		<npc id="35439" count="1" respawn="60" pos="149358 23189 -2120 33500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_30]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_30]">
 		<npc id="35440" count="1" respawn="60" pos="149494 23219 -2136 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_31]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_31]">
 		<npc id="35441" count="1" respawn="60" pos="150416 23605 -2112 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_32]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_32]">
 		<npc id="35442" count="1" respawn="60" pos="150194 23758 -2136 33500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_33]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_33]">
 		<npc id="35443" count="1" respawn="60" pos="145473 25295 -2112 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_34]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_34]">
 		<npc id="35444" count="1" respawn="60" pos="145250 25244 -2120 32500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_35]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_35]">
 		<npc id="35445" count="1" respawn="60" pos="150532 26500 -2248 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_36]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_36]">
 		<npc id="35446" count="1" respawn="60" pos="150342 26471 -2264 32500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_37]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_37]">
 		<npc id="35449" count="1" respawn="60" pos="144243 28252 -2240 33000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_38]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_38]">
 		<npc id="35448" count="1" respawn="60" pos="144352 27165 -2264 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_39]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_39]">
 		<npc id="35447" count="1" respawn="60" pos="144237 27172 -2248 33000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_40]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_40]">
 		<npc id="35450" count="1" respawn="60" pos="144462 28125 -2264 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_41]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_41]">
 		<npc id="31084" count="1" respawn="60" pos="146983 26645 -2200 16500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_42]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_42]">
 		<npc id="31091" count="1" respawn="60" pos="147570 28927 -2264 33000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_44]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_44]">
 		<npc id="31431" count="1" respawn="60" pos="144272 25328 -2124 16500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_45]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_45]">
 		<npc id="31438" count="1" respawn="60" pos="150928 28384 -2246 33000" />	
 		<npc id="31445" count="1" respawn="60" pos="150912 28112 -2246 25000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_46]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_46]">
 		<npc id="31423" count="1" respawn="60" pos="147328 24992 -1989 48000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_47]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_47]">
 		<npc id="31577" count="1" respawn="60" pos="149072 28736 -2253 32500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_48]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_48]">
 		<npc id="31666" count="1" respawn="60" pos="145332 23112 -2116 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_49]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_49]">
 		<npc id="31520" count="1" respawn="60" pos="146336 27088 -2208 0" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_50]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_50]">
 		<npc id="31613" count="1" respawn="60" pos="144172 23664 -2118 33000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_51]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_51]">
 		<npc id="31614" count="1" respawn="60" pos="145928 22768 -2116 25000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_52]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_52]">
 		<npc id="31688" count="1" respawn="60" pos="147392 27408 -2203 16500" />	
 		<npc id="31690" count="1" respawn="60" pos="147504 27408 -2203 16500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_53]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_53]">
 		<npc id="31739" count="1" respawn="60" pos="147792 26368 -2107 33000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_54]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_54]">
 		<npc id="31827" count="1" respawn="60" pos="150856 24864 -2144 26000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_55]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_55]">
 		<npc id="31828" count="1" respawn="60" pos="148496 26544 -2208 16500" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_56]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_56]">
 		<npc id="31829" count="1" respawn="60" pos="147132 25936 -2016 49000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_57]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_57]">
 		<npc id="31830" count="1" respawn="60" pos="143376 26592 -2400 56000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_58]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_58]">
 		<npc id="31831" count="1" respawn="60" pos="147112 31056 -2464 49000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_59]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_59]">
 		<npc id="30767" count="1" respawn="60" pos="148560 27104 -2208 33000" />	
 	</spawn>
-	<spawn name="[aden13_npc2418_60]">
+	<spawn spawn_bydefault="true"  name="[aden13_npc2418_60]">
 		<npc id="30865" count="1" respawn="60" pos="144512 25696 -2125 32768" />	
 		<npc id="30866" count="1" respawn="60" pos="144496 25360 -2124 16384" />	
 		<npc id="30867" count="1" respawn="60" pos="143856 25696 -2125 0" />	
 	</spawn>
-	<spawn name="[aden27_npc2418_01]">
+	<spawn spawn_bydefault="true"  name="[aden27_npc2418_01]">
 		<npc id="30766" count="1" respawn="60" pos="160611 21236 -3714 32768" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_01]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_01]" event_name="[treasure_box]">
 		<territory>	
 			<location x="134340" y="120" minz="-4172" maxz="-3572" />
 			<location x="136996" y="212" minz="-4172" maxz="-3572" />
@@ -1042,7 +1042,7 @@
 		<npc id="18273" count="1" respawn="60" />	
 		<npc id="21809" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_04]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_04]" event_name="[treasure_box]">
 		<territory>	
 			<location x="138228" y="212" minz="-4580" maxz="-3980" />
 			<location x="141620" y="192" minz="-4580" maxz="-3980" />
@@ -1052,7 +1052,7 @@
 		<npc id="18273" count="1" respawn="60" />	
 		<npc id="21809" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_05]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_05]" event_name="[treasure_box]">
 		<territory>	
 			<location x="138544" y="2960" minz="-4576" maxz="-3976" />
 			<location x="140364" y="2880" minz="-4576" maxz="-3976" />
@@ -1063,7 +1063,7 @@
 		<npc id="18273" count="1" respawn="60" />	
 		<npc id="21809" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_06]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_06]" event_name="[treasure_box]">
 		<territory>	
 			<location x="136740" y="3176" minz="-4588" maxz="-4188" />
 			<location x="137664" y="3016" minz="-4588" maxz="-4188" />
@@ -1074,7 +1074,7 @@
 		<npc id="18273" count="1" respawn="60" />	
 		<npc id="21809" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_07]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_07]" event_name="[treasure_box]">
 		<territory>	
 			<location x="131296" y="6064" minz="-4512" maxz="-3712" />
 			<location x="132436" y="5332" minz="-4512" maxz="-3712" />
@@ -1086,7 +1086,7 @@
 		<npc id="18273" count="2" respawn="60" />	
 		<npc id="21809" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_08]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_08]" event_name="[treasure_box]">
 		<territory>	
 			<location x="135968" y="7452" minz="-4412" maxz="-3712" />
 			<location x="137812" y="7324" minz="-4412" maxz="-3712" />
@@ -1097,7 +1097,7 @@
 		<npc id="18273" count="2" respawn="60" />	
 		<npc id="21809" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_09]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_09]" event_name="[treasure_box]">
 		<territory>	
 			<location x="138212" y="7244" minz="-4388" maxz="-3788" />
 			<location x="140256" y="6776" minz="-4388" maxz="-3788" />
@@ -1107,7 +1107,7 @@
 		<npc id="18274" count="1" respawn="60" />	
 		<npc id="21810" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_10]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_10]" event_name="[treasure_box]">
 		<territory>	
 			<location x="138920" y="11768" minz="-4272" maxz="-3572" />
 			<location x="141044" y="10940" minz="-4272" maxz="-3572" />
@@ -1117,7 +1117,7 @@
 		<npc id="18274" count="1" respawn="60" />	
 		<npc id="21810" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_11]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_11]" event_name="[treasure_box]">
 		<territory>	
 			<location x="135412" y="14676" minz="-4040" maxz="-3440" />
 			<location x="139528" y="13264" minz="-4040" maxz="-3440" />
@@ -1127,7 +1127,7 @@
 		<npc id="18274" count="2" respawn="60" />	
 		<npc id="21810" count="2" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_12]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_12]" event_name="[treasure_box]">
 		<territory>	
 			<location x="135568" y="21920" minz="-3852" maxz="-3252" />
 			<location x="137652" y="17888" minz="-3852" maxz="-3252" />
@@ -1138,7 +1138,7 @@
 		<npc id="18274" count="1" respawn="60" />	
 		<npc id="21810" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_13]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_13]" event_name="[treasure_box]">
 		<territory>	
 			<location x="134376" y="21940" minz="-3884" maxz="-3084" />
 			<location x="137168" y="22452" minz="-3884" maxz="-3084" />
@@ -1149,7 +1149,7 @@
 		<npc id="18274" count="1" respawn="60" />	
 		<npc id="21810" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_14]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_14]" event_name="[treasure_box]">
 		<territory>	
 			<location x="132220" y="27736" minz="-3944" maxz="-2944" />
 			<location x="137284" y="27732" minz="-3944" maxz="-2944" />
@@ -1161,7 +1161,7 @@
 		<npc id="18274" count="1" respawn="60" />	
 		<npc id="21810" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_15]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_15]" event_name="[treasure_box]">
 		<territory>	
 			<location x="131256" y="29288" minz="-3924" maxz="-3524" />
 			<location x="134540" y="30724" minz="-3924" maxz="-3524" />
@@ -1171,7 +1171,7 @@
 		<npc id="18274" count="1" respawn="60" />	
 		<npc id="21810" count="1" respawn="60" />	
 	</spawn>
-	<spawn name="[aden25_tb2418_16]" event_name="[treasure_box]">
+	<spawn spawn_bydefault="true"  name="[aden25_tb2418_16]" event_name="[treasure_box]">
 		<territory>	
 			<location x="134756" y="30792" minz="-3924" maxz="-3124" />
 			<location x="139312" y="31184" minz="-3924" maxz="-3124" />

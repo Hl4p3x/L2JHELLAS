@@ -3,6 +3,7 @@ package com.l2jhellas.gameserver.model.actor.item;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
@@ -20,6 +21,7 @@ import com.l2jhellas.gameserver.model.L2Object;
 import com.l2jhellas.gameserver.model.L2World;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
+import com.l2jhellas.gameserver.model.quest.Quest;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
 import com.l2jhellas.gameserver.network.serverpackets.DropItem;
@@ -833,7 +835,7 @@ public final class L2ItemInstance extends L2Object
 		
 	public boolean canBeRemoved()
 	{
-		final long autoDestroyTime = isHerb() ? 19600 : Config.AUTODESTROY_ITEM_AFTER <= 0 ? 3600000 : Config.AUTODESTROY_ITEM_AFTER;	
+		final long autoDestroyTime = isHerb() ? 14000 : Config.AUTODESTROY_ITEM_AFTER <= 0 ? 3600000 : Config.AUTODESTROY_ITEM_AFTER;	
 		long curtime = System.currentTimeMillis();
 		
 	    if ((getDropTime() == 0) || (getLocation() != ItemLocation.VOID))
@@ -1000,5 +1002,10 @@ public final class L2ItemInstance extends L2Object
 			return (L2EtcItem) _item;
 		
 		return null;
+	}
+	
+	public List<Quest> getQuestEvents()
+	{
+		return _item.getQuestEvents();
 	}
 }

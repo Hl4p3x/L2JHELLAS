@@ -88,7 +88,7 @@ public class Gui extends JFrame
 			public void actionPerformed(ActionEvent e)
 			{
 				pc = L2World.getInstance().getPlayer(pmPlayerName.getText().toString().trim());
-				if (pc == null || pc.isOnline() == 0)
+				if (pc == null || !pc.isOnline())
 				{
 					generalMessage.setText("The player is offfline!");
 					pmPlayerName.setText("PlayerName");
@@ -112,7 +112,7 @@ public class Gui extends JFrame
 			{
 				pc = L2World.getInstance().getPlayer(rewardName.getText().toString().trim());
 				
-				if (pc == null || pc.isOnline() == 0)
+				if (pc == null || !pc.isOnline())
 				{
 					generalMessage.setText("Player " + rewardName.getText().toString() + " is offline.");
 					rewardName.setText("PlayerName");

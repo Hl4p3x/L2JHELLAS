@@ -119,8 +119,7 @@ public class RaceTrack extends Quest
 			int return_id = st.getInt("id") - 1;
 			player.teleToLocation(RETURN_LOCS[return_id][0], RETURN_LOCS[return_id][1], RETURN_LOCS[return_id][2], false);
 			st.exitQuest(true);
-		}
-		
+		}		
 		return null;
 	}
 	

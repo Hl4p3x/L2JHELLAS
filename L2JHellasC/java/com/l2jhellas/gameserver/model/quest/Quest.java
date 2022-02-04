@@ -36,6 +36,7 @@ import com.l2jhellas.gameserver.model.actor.position.Location;
 import com.l2jhellas.gameserver.model.spawn.L2Spawn;
 import com.l2jhellas.gameserver.model.zone.L2ZoneType;
 import com.l2jhellas.gameserver.network.serverpackets.ActionFailed;
+import com.l2jhellas.gameserver.network.serverpackets.InventoryUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
 import com.l2jhellas.gameserver.network.serverpackets.QuestList;
 import com.l2jhellas.gameserver.templates.L2NpcTemplate;
@@ -48,8 +49,7 @@ public class Quest
 	
 	private static final String LOAD_QUEST_STATES = "SELECT name,value FROM character_quests WHERE char_id=? AND var='<state>'";
 	private static final String LOAD_QUEST_VARIABLES = "SELECT name,var,value FROM character_quests WHERE char_id=? AND var<>'<state>'";
-	private static final String DELETE_INVALID_QUEST = "DELETE FROM character_quests WHERE name=?";
-	
+
 	private static final String HTML_NONE_AVAILABLE = "<html><body>You are either not on a quest that involves this NPC, or you don't meet this NPC's minimum quest requirements.</body></html>";
 	private static final String HTML_ALREADY_COMPLETED = "<html><body>This quest has already been completed.</body></html>";
 	private static final String HTML_TOO_MUCH_QUESTS = "<html><body>You have already accepted the maximum number of quests. No more than 25 quests may be undertaken simultaneously.<br>For quest information, enter Alt+U.</body></html>";
@@ -119,79 +119,59 @@ public class Quest
 	{
 		return new QuestState(player, this, STATE_CREATED);
 	}
-	
+
 	public final static void playerEnter(L2PcInstance player)
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
-			PreparedStatement invalidQuest = con.prepareStatement(DELETE_INVALID_QUEST);
-			
-			PreparedStatement statement = con.prepareStatement(LOAD_QUEST_STATES);
-			statement.setInt(1, player.getObjectId());
-			ResultSet rs = statement.executeQuery();
-			
-			while (rs.next())
+			try (PreparedStatement statement = con.prepareStatement(LOAD_QUEST_STATES))
 			{
-				String questId = rs.getString("name");
-				
-				Quest q = QuestManager.getInstance().getQuest(questId);
-				if (q == null)
+				statement.setInt(1, player.getObjectId());
+
+				try (ResultSet rs = statement.executeQuery())
 				{
-					if (Config.AUTODELETE_INVALID_QUEST_DATA)
+					while (rs.next())
 					{
-						invalidQuest.setString(1, questId);
-						invalidQuest.executeUpdate();
+						String qname = rs.getString("name");
+
+						Quest q = QuestManager.getInstance().getQuest(qname);
+						if (q == null)
+						{
+							_log.finer("Unknown  quest " + qname + " for player " + player.getName());
+							continue;
+						}
+
+						new QuestState(player, q, rs.getByte("value"));
 					}
-					
-					_log.finer("Unknown  quest " + questId + " for player " + player.getName());
-					continue;
 				}
-				
-				new QuestState(player, q, rs.getByte("value"));
 			}
 			
-			rs.close();
-			statement.close();
-			
-			statement = con.prepareStatement(LOAD_QUEST_VARIABLES);
-			statement.setInt(1, player.getObjectId());
-			rs = statement.executeQuery();
-			
-			while (rs.next())
+			try (PreparedStatement ps = con.prepareStatement(LOAD_QUEST_VARIABLES))
 			{
-				String questId = rs.getString("name");
-				
-				QuestState qs = player.getQuestState(questId);
-				if (qs == null)
+				ps.setInt(1, player.getObjectId());
+
+				try (ResultSet rs = ps.executeQuery())
 				{
-					if (Config.AUTODELETE_INVALID_QUEST_DATA)
+					while (rs.next())
 					{
-						invalidQuest.setString(1, questId);
-						invalidQuest.executeUpdate();
+						String qname = rs.getString("name");
+
+						QuestState qs = player.getQuestState(qname);
+						if (qs == null)
+						{
+							_log.finer("Unknown quest state" + qname + " for player " + player.getName());
+							continue;
+						}
+
+						qs.setInternal(rs.getString("var"), rs.getString("value"));
 					}
-					
-					_log.finer("Unknown quest " + questId + " for player " + player.getName());
-					continue;
 				}
-				
-				qs.setInternal(rs.getString("var"), rs.getString("value"));
 			}
-			
-			rs.close();
-			statement.close();
-			invalidQuest.close();
 		}
 		catch (Exception e)
 		{
-			_log.warning(Quest.class.getSimpleName() + ": could not insert char quest:");
-		}
-		
-		// events
-		for (Quest q : QuestManager.getInstance().getAllManagedScripts())
-		{
-			player.processQuestEvent(q.getName(), "enter");
-		}
-		
+			_log.warning(Quest.class.getSimpleName() + ": could not insert char quest:" + e);
+		}		
 		player.sendPacket(new QuestList(player));
 	}
 	
@@ -651,15 +631,12 @@ public class Quest
 	
 	public boolean showError(L2PcInstance player, Throwable e)
 	{
-		_log.warning(Quest.class.getName());
-		
-		if (e.getMessage() == null)
-			e.printStackTrace();
+		_log.warning(Quest.class.getName()  +","+ e);
 		
 		if (player != null && player.isGM())
 		{
 			NpcHtmlMessage npcReply = new NpcHtmlMessage(0);
-			npcReply.setHtml("<html><body><title>Script error</title>" + e.getMessage() + "</body></html>");
+			npcReply.setHtml("<html><body><title>Script error</title>" + e + "</body></html>");
 			player.sendPacket(npcReply);
 			player.sendPacket(ActionFailed.STATIC_PACKET);
 			return true;
@@ -1260,21 +1237,19 @@ public class Quest
 	
 	private void setQuestToOfflineMembers(Integer[] objectsId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
-		{
-			PreparedStatement stm = con.prepareStatement("INSERT INTO character_quests (char_id,name,var,value) VALUES (?,?,?,?)");
-			
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement stm = con.prepareStatement("INSERT INTO character_quests (char_id,name,var,value) VALUES (?,?,?,?)"))
+		{		
 			for (Integer charId : objectsId)
 			{
 				stm.setInt(1, charId.intValue());
 				stm.setString(2, getName());
 				stm.setString(3, "<state>");
-				stm.setString(4, "1");			
-				stm.executeUpdate();
+				stm.setString(4, "1");	
+				stm.addBatch();
 			}
 			
-			stm.close();
-			con.close();
+			stm.executeBatch();
 		}
 		catch (Exception e)
 		{
@@ -1285,14 +1260,12 @@ public class Quest
 	
 	private void deleteQuestToOfflineMembers(int clanId)
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement stm = con.prepareStatement("DELETE FROM character_quests WHERE name = ? and char_id IN (SELECT obj_Id FROM characters WHERE clanid = ? AND online = 0)"))
 		{
-			PreparedStatement stm = con.prepareStatement("DELETE FROM character_quests WHERE name = ? and char_id IN (SELECT obj_Id FROM characters WHERE clanid = ? AND online = 0)");	
 			stm.setString(1, getName());
 			stm.setInt(2, clanId);		
-			stm.executeUpdate();		
-			stm.close();
-			con.close();
+			stm.executeUpdate();
 		}
 		catch (Exception e)
 		{
@@ -1332,6 +1305,33 @@ public class Quest
 			
 			deleteQuestToOfflineMembers(player.getClanId());
 		}
+	}
+	
+	public void takeItems(L2PcInstance player , int itemId, int itemCount)
+	{
+		// Find item in player's inventory.
+		final L2ItemInstance item = player.getInventory().getItemByItemId(itemId);
+		if (item == null)
+			return;
+		
+		// Tests on count value and set correct value if necessary.
+		if (itemCount < 0 || itemCount > item.getCount())
+			itemCount = item.getCount();
+		
+		// Disarm item, if equipped.
+		if (item.isEquipped())
+		{
+			L2ItemInstance[] unequiped = player.getInventory().unEquipItemInBodySlotAndRecord(item);
+			InventoryUpdate iu = new InventoryUpdate();
+			for (L2ItemInstance itm : unequiped)
+				iu.addModifiedItem(itm);
+			
+			player.sendPacket(iu);
+			player.broadcastUserInfo();
+		}
+		
+		// Destroy the quantity of items wanted.
+		player.destroyItemByItemId("Quest", itemId, itemCount, player, true);
 	}
 	
 	@Override

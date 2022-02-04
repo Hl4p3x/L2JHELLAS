@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE list SYSTEM "spawn.dtd">
+<list>
+	<spawn spawn_bydefault="false"  name="[Bandit_Stronghold]" event_name="Bandit_Stronghold_Npcs">	
+		<npc id="35560" count="1" respawn="1200" pos="79745 -15472 -1792 0" />	
+		<npc id="35561" count="1" respawn="1200" pos="83348 -18267 -1248 14536" />		
+		<npc id="35562" count="1" respawn="1200" pos="81258 -17387 -1248 11144" />				
+		<npc id="35563" count="1" respawn="1200" pos="81832 -14223 -1248 -17664" />		
+		<npc id="35564" count="1" respawn="1200" pos="83687 -14532 -1248 -19008" />	
+		<npc id="35565" count="1" respawn="1200" pos="85263 -15447 -1248 -21328" />		
+	</spawn>
+	<spawn spawn_bydefault="false"  name="[Beast_Farm]" event_name="Beast_Farm_Npcs">	
+		<npc id="35612" count="1" respawn="1200" pos="60606 -93984 -1344 0" />	
+		<npc id="35613" count="1" respawn="1200" pos="56098 -91770 -1360 0" />	
+		<npc id="35614" count="1" respawn="1200" pos="58276 -90672 -1360 0" />	
+		<npc id="35615" count="1" respawn="1200" pos="59970 -92422 -1360 0" />	
+		<npc id="35616" count="1" respawn="1200" pos="58783 -94540 -1360 0" />	
+		<npc id="35617" count="1" respawn="1200" pos="56415 -94126 -1360 0" />			
+	</spawn>
+</list>

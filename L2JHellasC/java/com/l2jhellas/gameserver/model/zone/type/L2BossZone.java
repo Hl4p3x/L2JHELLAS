@@ -126,7 +126,7 @@ public class L2BossZone extends L2ZoneType
 				
 				if (_playerAllowed.contains(id))
 				{
-					if (player.isOnline() == 0)
+					if (!player.isOnline())
 					{
 						// Player disconnected.
 						_playerAllowEntry.put(id, System.currentTimeMillis() + _timeInvade);
@@ -213,7 +213,7 @@ public class L2BossZone extends L2ZoneType
 		
 		for (L2PcInstance player : getKnownTypeInside(L2PcInstance.class))
 		{
-			if (player != null && player.isOnline() == 1)
+			if (player != null && player.isOnline() )
 				player.teleToLocation(x, y, z, false);
 		}
 	}
@@ -225,7 +225,7 @@ public class L2BossZone extends L2ZoneType
 		
 		for (L2PcInstance player : getKnownTypeInside(L2PcInstance.class))
 		{
-			if (player.isOnline() == 1)
+			if (player.isOnline())
 			{
 				if (_oustLoc[0] != 0 && _oustLoc[1] != 0 && _oustLoc[2] != 0)
 					player.teleToLocation(_oustLoc[0], _oustLoc[1], _oustLoc[2], false);

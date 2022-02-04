@@ -346,7 +346,8 @@ public class L2PcInstance extends L2Playable
 	private boolean _messageRefusal = false; // message refusal mode
 	private boolean _dietMode = false; // ignore weight penalty
 	private boolean _tradeRefusal = false; // Trade refusal
-	private boolean _exchangeRefusal = false; // Exchange refusal
+	private boolean _partyRefusal = false;
+	private boolean _ssRefusal = false;
 	private boolean _observerMode = false;				
 	private boolean _IsWearingFormalWear = false;
 	private boolean _revivePet = false;
@@ -4879,7 +4880,7 @@ public class L2PcInstance extends L2Playable
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
 		PreparedStatement statement = con.prepareStatement("UPDATE characters SET online=?, lastAccess=? WHERE obj_Id=?"))
 		{
-			statement.setInt(1, isOnline());
+			statement.setInt(1, isOnline() ? 1 : 0);
 			statement.setLong(2, System.currentTimeMillis());
 			statement.setInt(3, getObjectId());
 			statement.execute();
@@ -4963,7 +4964,7 @@ public class L2PcInstance extends L2Playable
 			statement.setInt(46, hasDwarvenCraft() ? 1 : 0);
 			statement.setString(47, getTitle());
 			statement.setInt(48, getAccessLevel().getLevel());
-			statement.setInt(49, isOnline());
+			statement.setInt(49, isOnline() ? 1 : 0);
 			statement.setInt(50, isIn7sDungeon() ? 1 : 0);
 			statement.setInt(51, getClanPrivileges());
 			statement.setInt(52, getWantsPeace());
@@ -5408,7 +5409,7 @@ public class L2PcInstance extends L2Playable
 			statement.setLong(33, getDeleteTimer());
 			statement.setString(34, getTitle());
 			statement.setInt(35, getAccessLevel().getLevel());
-			statement.setInt(36, isOnline());
+			statement.setInt(36, isOnline() ? 1 : 0);
 			statement.setInt(37, isIn7sDungeon() ? 1 : 0);
 			statement.setInt(38, getClanPrivileges());
 			statement.setInt(39, getWantsPeace());
@@ -5581,13 +5582,8 @@ public class L2PcInstance extends L2Playable
 	{
 		return ChatFilterCount;
 	}
-	
-	public int isOnline()
-	{
-		return (_isOnline ? 1 : 0);
-	}
-	
-	public boolean isbOnline()
+
+	public boolean isOnline()
 	{
 		return _isOnline;
 	}
@@ -7125,15 +7121,10 @@ public class L2PcInstance extends L2Playable
 		@Override
 		public void run()
 		{
-			if (isOnline() == 1)
-			{
-				SystemMessage msg = SystemMessage.getSystemMessage(SystemMessageId.PLAYING_FOR_LONG_TIME);
-				L2PcInstance.this.sendPacket(msg);
-			}
+			if (isOnline())
+				sendPacket(SystemMessage.getSystemMessage(SystemMessageId.PLAYING_FOR_LONG_TIME));
 			else
-			{
 				stopWarnUserTakeBreak();
-			}
 		}
 	}
 	
@@ -7483,14 +7474,26 @@ public class L2PcInstance extends L2Playable
 		return _tradeRefusal;
 	}
 	
-	public void setExchangeRefusal(boolean mode)
+	public boolean getPartyRefusal()
 	{
-		_exchangeRefusal = mode;
+		return _partyRefusal;
 	}
 	
-	public boolean getExchangeRefusal()
+	public void setPartyRefusal(boolean mode)
 	{
-		return _exchangeRefusal;
+		_partyRefusal = mode;
+		sendMessage(_partyRefusal ? "Party refusal is enabled." : "Party refusal is disabled.");
+	}
+	
+	public boolean getSSRefusal()
+	{
+		return _ssRefusal;
+	}
+	
+	public void setSSRefusal(boolean mode)
+	{
+		_ssRefusal = mode;
+		sendMessage(_ssRefusal ? "Soulshot refusal is enabled." : "Soulshot refusal is disabled.");
 	}
 	
 	public BlockList getBlockList()
@@ -11255,7 +11258,7 @@ public class L2PcInstance extends L2Playable
 			return false;
 		}
 		
-		if (isOnline() == 0)
+		if (!isOnline())
 		{
 			setActiveEnchantItem(null);
 			return false;
@@ -12103,6 +12106,11 @@ public class L2PcInstance extends L2Playable
 	public boolean isHealer()
 	{
 		return getClassId().getId() == 16 || getClassId().getId() == 97;
+	}
+	
+	public boolean isNotHealer()
+	{
+		return getClassId().getId() != 16 && getClassId().getId() != 97;
 	}
 	
 	int _moveSpeed;

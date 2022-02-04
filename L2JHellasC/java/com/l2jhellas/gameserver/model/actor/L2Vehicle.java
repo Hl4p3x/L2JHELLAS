@@ -146,7 +146,7 @@ public class L2Vehicle extends L2Character
 		
 		final Location loc = MapRegionTable.getInstance().getTeleToLocation(this, MapRegionTable.TeleportWhereType.TOWN);
 		
-		if (player.isOnline()==1)
+		if (player.isOnline())
 			player.teleToLocation(loc.getX(), loc.getY(), loc.getZ(), false);
 		else
 			player.setXYZInvisible(loc.getX(), loc.getY(), loc.getZ()); // disconnects handling

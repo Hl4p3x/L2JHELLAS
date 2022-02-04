@@ -78,6 +78,11 @@ public class MagicSkillUse extends L2GameServerPacket
 		writeD(_targetz);
 	}
 	
+	public int getSkillId()
+	{
+		return _skillId;
+	}
+	
 	@Override
 	public String getType()
 	{

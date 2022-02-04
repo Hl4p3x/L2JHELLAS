@@ -108,11 +108,11 @@ public final class L2Radar
 		{
 			try
 			{
-				if (_me == null || _me.isOnline() == 0)
+				if (_me == null || !_me.isOnline())
 					return;
 				
 				_me.sendPacket(new RadarControl(1, 1, _me.getX(), _me.getY(), _me.getZ()));
-				if (_myTarget == null || _myTarget.isOnline() == 0)
+				if (_myTarget == null || !_myTarget.isOnline())
 					return;
 				
 				_me.sendPacket(new RadarControl(0, 1, _myTarget.getX(), _myTarget.getY(), _myTarget.getZ()));

@@ -14,7 +14,7 @@ public class FriendPacket extends L2GameServerPacket
 		_action = action;
 		_name = player.getName();
 		_objectId = player.getObjectId();
-		_isOnline = player.isOnline();
+		_isOnline = player.isOnline() ? 1 : 0;
 	}
 	
 	public FriendPacket(String name, int action)

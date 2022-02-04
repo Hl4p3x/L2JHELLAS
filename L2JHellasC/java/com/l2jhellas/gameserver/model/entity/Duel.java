@@ -667,16 +667,16 @@ public class Duel
 	
 	protected DuelResult checkEndDuelCondition()
 	{
-		if (_playerA.isOnline() == 0 && _playerB.isOnline() == 0)
+		if (!_playerA.isOnline() && !_playerB.isOnline())
 			return DuelResult.CANCELED;
 		
-		if (_playerA.isOnline() == 0)
+		if (!_playerA.isOnline())
 		{
 			onPlayerDefeat(_playerA);
 			return DuelResult.TEAM_1_SURRENDER;
 		}
 		
-		if (_playerB.isOnline() == 0)
+		if (!_playerB.isOnline())
 		{
 			onPlayerDefeat(_playerB);
 			return DuelResult.TEAM_2_SURRENDER;

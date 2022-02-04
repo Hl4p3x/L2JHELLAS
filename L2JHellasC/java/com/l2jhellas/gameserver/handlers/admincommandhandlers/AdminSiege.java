@@ -9,6 +9,7 @@ import com.l2jhellas.gameserver.handler.IAdminCommandHandler;
 import com.l2jhellas.gameserver.instancemanager.AuctionManager;
 import com.l2jhellas.gameserver.instancemanager.CastleManager;
 import com.l2jhellas.gameserver.instancemanager.ClanHallManager;
+import com.l2jhellas.gameserver.instancemanager.ClanHallSiegeManager;
 import com.l2jhellas.gameserver.instancemanager.SiegeGuardManager;
 import com.l2jhellas.gameserver.model.L2Clan;
 import com.l2jhellas.gameserver.model.actor.instance.L2PcInstance;
@@ -17,6 +18,7 @@ import com.l2jhellas.gameserver.model.entity.ClanHall;
 import com.l2jhellas.gameserver.model.zone.type.L2ClanHallZone;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.NpcHtmlMessage;
+import com.l2jhellas.gameserver.scrips.siegable.SiegableHall;
 import com.l2jhellas.util.StringUtil;
 import com.l2jhellas.util.Util;
 
@@ -90,20 +92,44 @@ public class AdminSiege implements IAdminCommandHandler
 							return false;
 						}
 						
-						ClanHallManager.getInstance().setOwner(clanhall.getId(), clan);
-						
-						if (AuctionManager.getInstance().getAuction(clanhall.getId()) != null)
-							AuctionManager.getInstance().getAuction(clanhall.getId()).deleteAuctionFromDB();
-							
-						break;
-						case "admin_clanhalldel":
-						if (!ClanHallManager.getInstance().isFree(clanhall.getId()))
+						if(clanhall.isSiegableHall())
 						{
-							ClanHallManager.getInstance().setFree(clanhall.getId());
-							AuctionManager.getInstance().initNPC(clanhall.getId());
+							clanhall.setOwner(clan);
+							clan.setHasHideout(clanhall.getId());
 						}
 						else
-							activeChar.sendMessage("This Clan Hall is already free!");
+						{
+							ClanHallManager.getInstance().setOwner(clanhall.getId(), clan);
+
+							if (AuctionManager.getInstance().getAuction(clanhall.getId()) != null)
+								AuctionManager.getInstance().getAuction(clanhall.getId()).deleteAuctionFromDB();
+						}							
+						break;
+						case "admin_clanhalldel":
+							if(clanhall.isSiegableHall())
+							{
+								final int oldOwner = clanhall.getOwnerId();
+								if (oldOwner > 0) 
+								{
+									clanhall.free();
+									clan = ClanTable.getInstance().getClan(oldOwner);
+									if (clan != null) 
+									{
+										clan.setHasHideout(0);
+										clan.broadcastClanStatus();
+									}
+								}
+							}
+							else
+							{
+								if (!ClanHallManager.getInstance().isFree(clanhall.getId()))
+								{
+									ClanHallManager.getInstance().setFree(clanhall.getId());
+									AuctionManager.getInstance().initNPC(clanhall.getId());
+								}
+								else
+									activeChar.sendMessage("This Clan Hall is already free!");
+							}
 							break;
 						case "admin_clanhallopendoors":
 							clanhall.openCloseDoors(true);
@@ -308,6 +334,24 @@ public class AdminSiege implements IAdminCommandHandler
 			}
 		}
 		adminReply.replace("%freeclanhalls%", cList.toString());
+		cList.setLength(0);
+		i = 0;
+		for (SiegableHall hall : ClanHallSiegeManager.getInstance().getConquerableHalls().values()) 
+		{
+			if (hall != null) 
+			{
+				StringUtil.append(cList, "<td fixwidth=90><a action=\"bypass -h admin_chsiege_siegablehall ", String.valueOf(hall.getId()), "\">", hall.getName(), "</a></td>");
+				i++;
+			}
+			if (i > 1) 
+			{
+				cList.append("</tr><tr>");
+				i = 0;
+			}
+		}
+		adminReply.replace("%siegableHalls%", cList.toString());
+		cList.setLength(0);
+		
 		activeChar.sendPacket(adminReply);
 	}
 	

@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
@@ -22,6 +22,7 @@ import com.l2jhellas.gameserver.model.zone.type.L2ClanHallZone;
 import com.l2jhellas.gameserver.network.SystemMessageId;
 import com.l2jhellas.gameserver.network.serverpackets.PledgeShowInfoUpdate;
 import com.l2jhellas.gameserver.network.serverpackets.SystemMessage;
+import com.l2jhellas.gameserver.templates.StatsSet;
 import com.l2jhellas.util.database.L2DatabaseFactory;
 
 public class ClanHall
@@ -221,10 +222,6 @@ public class ClanHall
 		_clanHallId = clanHallId;
 		_name = name;
 		_ownerId = ownerId;
-		if (Config.DEBUG)
-		{
-			_log.config(ClanHall.class.getSimpleName() + ": Init Owner : " + _ownerId);
-		}
 		_lease = lease;
 		_desc = desc;
 		_location = location;
@@ -232,13 +229,38 @@ public class ClanHall
 		_grade = Grade;
 		_paid = paid;
 		_doorDefault = new ArrayList<>();
-		_functions = new HashMap<>();
+		_functions = new ConcurrentHashMap<>();
 		
 		if (ownerId != 0)
 		{
 			_isFree = false;
 			initialyzeTask(false);
 			loadFunctions();
+		}
+	}
+	
+	public ClanHall(StatsSet set) 
+	{
+		_clanHallId = set.getInteger("id");
+		_lease = 0;
+		_grade = 0;
+		_name = set.getString("name");
+		_ownerId = set.getInteger("ownerId");
+		_desc = set.getString("desc");
+		_location = set.getString("location");
+		_doorDefault = new ArrayList<>();
+		_functions = new ConcurrentHashMap<>();
+		
+		if (_ownerId > 0)
+		{
+			L2Clan clan = ClanTable.getInstance().getClan(_ownerId);
+			if (clan != null)
+			{
+				_isFree = false;
+				clan.setHasHideout(getId());
+			}
+			else
+				free();
 		}
 	}
 	
@@ -437,7 +459,7 @@ public class ClanHall
 		_zone.banishForeigners(getOwnerId());
 	}
 	
-	private void loadFunctions()
+	protected void loadFunctions()
 	{
 		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 		{
@@ -644,5 +666,9 @@ public class ClanHall
 					t.printStackTrace();
 			}
 		}
+	}
+	
+	public boolean isSiegableHall() {
+		return false;
 	}
 }

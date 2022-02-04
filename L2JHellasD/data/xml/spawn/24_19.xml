@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE list SYSTEM "spawn.dtd">
 <list>
-	<spawn name="[aden18_npc2419_01]">
+	<spawn spawn_bydefault="true"  name="[aden18_npc2419_01]">
 		<npc id="31226" count="1" respawn="60" pos="147508 47042 -3400 49000" />	
 	</spawn>
-	<spawn name="[aden18_npc2419_02]">
+	<spawn spawn_bydefault="true"  name="[aden18_npc2419_02]">
 		<npc id="31226" count="1" respawn="60" pos="151484 46383 -3400 16000" />	
 	</spawn>
-	<spawn name="[aden19_npc2419_01]">
+	<spawn spawn_bydefault="true"  name="[aden19_npc2419_01]">
 		<npc id="31745" count="1" respawn="60" pos="143200 44000 -3040 0" />	
 	</spawn>
 

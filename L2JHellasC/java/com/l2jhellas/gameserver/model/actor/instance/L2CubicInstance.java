@@ -169,12 +169,12 @@ public class L2CubicInstance
 		@Override
 		public void run()
 		{
-			if (_owner.isDead() || !_owner.isbOnline())
+			if (_owner.isDead() || !_owner.isOnline())
 			{
 				if(_owner != null)
 					_owner.delCubic(_id);
 
-				if (_owner.isbOnline())
+				if (_owner.isOnline())
 					_owner.broadcastUserInfo();
 				
 				cancelDisappear();
