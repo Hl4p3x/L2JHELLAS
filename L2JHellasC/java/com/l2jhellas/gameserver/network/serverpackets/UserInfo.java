@@ -1,7 +1,6 @@
 package com.l2jhellas.gameserver.network.serverpackets;
 
 import com.l2jhellas.Config;
-import com.l2jhellas.gameserver.enums.ZoneId;
 import com.l2jhellas.gameserver.enums.skills.AbnormalEffect;
 import com.l2jhellas.gameserver.instancemanager.CursedWeaponsManager;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
@@ -18,37 +17,22 @@ public class UserInfo extends L2GameServerPacket
 	public UserInfo(L2PcInstance character)
 	{
 		_activeChar = character;
-		_relation = getRelation(_activeChar);
-	}
-	
-	private int getRelation(L2PcInstance activeChar)
-	{
-		int relation = activeChar.isClanLeader() ? 0x40 : 0;
+		_relation = _activeChar.isClanLeader() ? 0x40 : 0;
 		
-		if (activeChar.getSiegeState() == 1)
-			relation |= 0x180;
-		if (activeChar.getSiegeState() == 2)
-			relation |= 0x80;
-		
-		return relation;
+		if (_activeChar.getSiegeState() == 1)
+			_relation |= 0x180;
+		if (_activeChar.getSiegeState() == 2)
+			_relation |= 0x80;
 	}
 	
 	@Override
 	protected final void writeImpl()
 	{
-		
-		if (_activeChar == null)
-			return;
-		
-		if (_activeChar != getClient().getActiveChar())
-			return;
-		
-		writeC(0x04);
-		
+		writeC(0x04);	
 		writeD(_activeChar.getX());
 		writeD(_activeChar.getY());
 		writeD(_activeChar.getZ());
-		writeD(_activeChar.getVehicle() != null ? _activeChar.getVehicle().getObjectId() : 0);
+		writeD(_activeChar.getHeading());
 		
 		writeD(_activeChar.getObjectId());
 		writeS(_activeChar.getName());
@@ -217,7 +201,7 @@ public class UserInfo extends L2GameServerPacket
 		
 		writeD(!_activeChar.getAppearance().isVisible() && _activeChar.isGM() ? _activeChar.getAbnormalEffect() | AbnormalEffect.STEALTH.getMask() : _activeChar.getAbnormalEffect());
 		
-		writeC(_activeChar.isInsideZone(ZoneId.WATER) ? 1 : _activeChar.isFlying() ? 2 : 0);
+		writeC(0x00);
 		
 		writeD(_activeChar.getClanPrivileges());
 		

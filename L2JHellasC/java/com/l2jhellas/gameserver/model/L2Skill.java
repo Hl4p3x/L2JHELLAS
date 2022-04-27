@@ -188,6 +188,8 @@ public abstract class L2Skill
 	
 	private int _displayId;
 	
+	private final int _reuseHashCode;
+	
 	// not needed, just for easier debug
 	private final String _name;
 	private final SkillOpType _operateType;
@@ -312,6 +314,9 @@ public abstract class L2Skill
 		_level = set.getInteger("level");
 		
 		_displayId = set.getInteger("displayId", _id);
+		
+		_reuseHashCode = SkillTable.getSkillHashCode(_id, _level);
+
 		_name = set.getString("name");
 		_operateType = set.getEnum("operateType", SkillOpType.class);
 		_magic = set.getBool("isMagic", false);
@@ -632,6 +637,11 @@ public abstract class L2Skill
 	public void setDisplayId(int id)
 	{
 		_displayId = id;
+	}
+	
+	public final int getReuseHashCode()
+	{
+		return _reuseHashCode;
 	}
 	
 	public int getTriggeredId()

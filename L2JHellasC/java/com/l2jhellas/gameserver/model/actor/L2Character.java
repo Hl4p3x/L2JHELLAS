@@ -3,10 +3,10 @@ package com.l2jhellas.gameserver.model.actor;
 import static com.l2jhellas.gameserver.ai.CtrlIntention.AI_INTENTION_FOLLOW;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 import java.util.logging.Logger;
 
@@ -891,7 +891,7 @@ public abstract class L2Character extends L2Object
 		
 		if(!skill.isPotion())
 		{
-			if (isSkillDisabled(skill.getId()))
+			if (isSkillDisabled(skill))
 			{
 				if (isPlayer())
 					sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE).addSkillName(skill.getId(), skill.getLevel()));
@@ -1109,7 +1109,7 @@ public abstract class L2Character extends L2Object
 		
 		// Skill reuse check
 		if (reuseDelay > 30000 && !skillMastery)
-			addTimeStamp(skill.getId(), reuseDelay);
+			addTimeStamp(skill, reuseDelay);
 		
 		// Check if this skill consume mp on start casting
 		int initmpcons = getStat().getMpInitialConsume(skill);
@@ -1123,7 +1123,7 @@ public abstract class L2Character extends L2Object
 		
 		// Disable the skill during the re-use delay and create a task EnableSkill with Medium priority to enable it at the end of the re-use delay
 		if (reuseDelay > 10 && !skillMastery)
-			disableSkill(skill.getId(), reuseDelay);
+			disableSkill(skill, reuseDelay);
 		
 		// Make sure that char is facing selected target
 		if (target != this)
@@ -1178,12 +1178,12 @@ public abstract class L2Character extends L2Object
 			onMagicLaunchedTimer(targets, skill, coolTime, true);
 	}
 	
-	public void addTimeStamp(int s, int r)
+	public void addTimeStamp(L2Skill s, long r)
 	{
 		
 	}
 	
-	public void removeTimeStamp(int s)
+	public void removeTimeStamp(L2Skill s)
 	{
 		
 	}
@@ -1713,29 +1713,6 @@ public abstract class L2Character extends L2Object
 		_title = value;
 	}
 	
-	class EnableSkill implements Runnable
-	{
-		int _skillId;
-		
-		public EnableSkill(int skillId)
-		{
-			_skillId = skillId;
-		}
-		
-		@Override
-		public void run()
-		{
-			try
-			{
-				enableSkill(_skillId);
-			}
-			catch (Throwable e)
-			{
-				_log.severe(EnableSkill.class.getName() + ": Throwable: EnableSkill " +e);
-			}
-		}
-	}
-	
 	class HitTask implements Runnable
 	{
 		L2Character _hitTarget;
@@ -2236,7 +2213,8 @@ public abstract class L2Character extends L2Object
 		public int geoPathGty;
 	}
 			
-	protected List<Integer> _disabledSkills;
+	private final Map<Integer, Long> _disabledSkills = new ConcurrentHashMap<>();
+	
 	private boolean _allSkillsDisabled;
 	
 	// private int _flyingRunSpeed;
@@ -4153,42 +4131,49 @@ public abstract class L2Character extends L2Object
 	{
 	}
 
-	public void enableSkill(int skillId)
+	public void enableSkill(L2Skill skill)
 	{
-		if (_disabledSkills == null)
+		if (skill == null)
 			return;
 		
-		_disabledSkills.remove(new Integer(skillId));
+		_disabledSkills.remove(skill.getReuseHashCode());
 		
 		if (this instanceof L2PcInstance)
-			removeTimeStamp(skillId);
+			removeTimeStamp(skill);
 	}
 	
-	public void disableSkill(int skillId)
+	public void disableSkill(L2Skill skill, long delay)
 	{
+		if (skill == null)
+			return;
 		
-		if (_disabledSkills == null)
-			_disabledSkills = Collections.synchronizedList(new ArrayList<Integer>());
-		
-		_disabledSkills.add(skillId);
+		_disabledSkills.put(skill.getReuseHashCode(), (delay > 10) ? System.currentTimeMillis() + delay : Long.MAX_VALUE);		
 	}
 	
-	public void disableSkill(int skillId, long delay)
+	public boolean isSkillDisabled(L2Skill skill)
 	{
-		disableSkill(skillId);
-		if (delay > 10)
-			ThreadPoolManager.getInstance().scheduleAi(new EnableSkill(skillId), delay);
-	}
-	
-	public boolean isSkillDisabled(int skillId)
-	{
-		if (isAllSkillsDisabled())
-			return true;
-		
-		if (_disabledSkills == null)
+		if (_disabledSkills.isEmpty())
 			return false;
 		
-		return _disabledSkills.contains(skillId);
+		if (skill == null || isAllSkillsDisabled())
+			return true;
+
+		final Long timeStamp = _disabledSkills.get(skill.getReuseHashCode());
+		if (timeStamp == null)
+			return false;
+		
+		if (timeStamp < System.currentTimeMillis())
+		{
+			enableSkill(skill);
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public Map<Integer, Long> getDisabledSkills()
+	{
+		return _disabledSkills;
 	}
 	
 	public void disableAllSkills()

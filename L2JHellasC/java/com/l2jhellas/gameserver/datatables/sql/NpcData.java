@@ -258,8 +258,6 @@ public class NpcData
 				InputSource in1 = new InputSource(new InputStreamReader(new FileInputStream(f1), "UTF-8"));
 				in1.setEncoding("UTF-8");
 				Document doc1 = factory1.newDocumentBuilder().parse(in1);
-				L2MinionData minionDat = null;
-				L2NpcTemplate npcDat = null;
 				for (Node n1 = doc1.getFirstChild(); n1 != null; n1 = n1.getNextSibling())
 				{
 					if (n1.getNodeName().equalsIgnoreCase("list"))
@@ -273,15 +271,16 @@ public class NpcData
 								int mmin = Integer.valueOf(d1.getAttributes().getNamedItem("amount_min").getNodeValue());
 								int mmax = Integer.valueOf(d1.getAttributes().getNamedItem("amount_max").getNodeValue());
 								
-								npcDat = _npcs.get(raidId);
-								minionDat = new L2MinionData();
-								
-								minionDat.setMinionId(mid);
-								minionDat.setAmountMin(mmin);
-								minionDat.setAmountMax(mmax);
-								npcDat.addRaidData(minionDat);
-								cnt++;
-								minionDat = null;
+								L2NpcTemplate npcDat = _npcs.get(raidId);
+								if(npcDat != null)
+								{
+									L2MinionData minionDat = new L2MinionData();
+									minionDat.setMinionId(mid);
+									minionDat.setAmountMin(mmin);
+									minionDat.setAmountMax(mmax);
+									npcDat.addRaidData(minionDat);
+									cnt++;
+								}
 							}
 						}
 					}

@@ -157,7 +157,7 @@ public abstract class AbstractOlympiadGame
 		// Remove Clan Skills
 		if (player.getClan() != null)
 		{
-			for (L2Skill skill : player.getClan().getAllSkills())
+			for (L2Skill skill : player.getClan().getClanSkills().values())
 				player.removeSkill(skill, false);
 		}
 			

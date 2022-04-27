@@ -169,15 +169,15 @@
 
 		<!-- Finalizing -->
 		<zip destfile="${build}/L2J_Hellas_Core.zip" basedir="${build.dist}" level="9" />
-		<mkdir dir="D:/L2JHellas" />
-		<mkdir dir="D:/L2JHellas/Backup" />
+		<mkdir dir="C:/L2JHellas" />
+		<mkdir dir="C:/L2JHellas/Backup" />
 		<echo>Store L2jhellas.</echo>
-		<unzip src="${build}/L2J_Hellas_Core.zip" dest="D:/L2JHellas" />
+		<unzip src="${build}/L2J_Hellas_Core.zip" dest="C:/L2JHellas" />
 		<echo>Backup L2jhellas.</echo>
-		<copy file="${build}/L2J_Hellas_Core.zip" todir="D:/L2JHellas/Backup">
+		<copy file="${build}/L2J_Hellas_Core.zip" todir="C:/L2JHellas/Backup">
 		</copy>
 		<delete dir="${build}" />
-		<echo>L2J Hellas Server stored in D:/L2JHellas.</echo>
+		<echo>L2J Hellas Server stored in C:/L2JHellas.</echo>
 		<echo>Please visit our forum http://l2jhellas.com/</echo>
 		<echo>Owner: AbsolutePower</echo>
 	</target>

@@ -91,7 +91,6 @@ public class SkillTreeData implements DocumentParser
 
 	public List<ClanSkillNode> getClanSkillsFor(L2PcInstance player)
 	{
-		// Clan check integrity.
 		final L2Clan clan = player.getClan();
 		if (clan == null)
 			return Collections.emptyList();
@@ -100,11 +99,7 @@ public class SkillTreeData implements DocumentParser
 		
 		_clanSkills.stream().filter(s -> s.getMinLvl() <= clan.getLevel()).forEach(s ->
 		{
-			L2Skill clanSkill = null;
-			
-			if(!clan.getSkills().isEmpty() && clan.getSkills().get(s.getId()) != null)
-			   clanSkill = clan.getSkills().get(s.getId());
-			
+			final L2Skill clanSkill = clan.getClanSkills().get(s.getId());
 			if ((clanSkill == null && s.getValue() == 1) || (clanSkill != null && clanSkill.getLevel() == s.getValue() - 1))
 				result.add(s);
 		});
@@ -114,26 +109,18 @@ public class SkillTreeData implements DocumentParser
 
 	public ClanSkillNode getClanSkillFor(L2PcInstance player, int skillId, int skillLevel)
 	{
-		// Clan check integrity.
 		final L2Clan clan = player.getClan();
 		if (clan == null)
 			return null;
 		
-		// We first retrieve skill. If it doesn't exist for this id and level, return null.
 		final ClanSkillNode csn = _clanSkills.stream().filter(s -> s.getId() == skillId && s.getValue() == skillLevel).findFirst().orElse(null);
 		if (csn == null)
 			return null;
 		
-		// Integrity check ; we check if minimum template skill node is ok for clan level.
 		if (csn.getMinLvl() > clan.getLevel())
 			return null;
 		
-		L2Skill clanSkill = null;
-		
-		if(!clan.getSkills().isEmpty() && clan.getSkills().get(skillId) != null)
-		   clanSkill = clan.getSkills().get(skillId);
-		
-		// We find current known clan skill level, if any. If the level is respected, we return the skill.
+		final L2Skill clanSkill = clan.getClanSkills().get(skillId);
 		if ((clanSkill == null && csn.getValue() == 1) || (clanSkill != null && clanSkill.getLevel() == csn.getValue() - 1))
 			return csn;
 		

@@ -3,6 +3,7 @@ package com.l2jhellas.gameserver.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
@@ -83,7 +84,8 @@ public class L2ClanMember
 			
 			if (_clan.getReputationScore() >= 0)
 			{
-				L2Skill[] skills = _clan.getAllSkills();
+				Collection<L2Skill> skills = _clan.getClanSkills().values();
+
 				for (L2Skill sk : skills)
 				{
 					if (sk.getMinPledgeClass() <= player.getPledgeClass())

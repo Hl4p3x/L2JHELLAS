@@ -1915,7 +1915,7 @@ public class L2PcInstance extends L2Playable
 		// Add clan skills
 		if (getClan() != null && getClan().getReputationScore() >= 0)
 		{
-			L2Skill[] skills = getClan().getAllSkills();
+			Collection<L2Skill> skills = getClan().getClanSkills().values();
 			for (L2Skill sk : skills)
 			{
 				if (sk.getMinPledgeClass() <= getPledgeClass())
@@ -5506,12 +5506,12 @@ public class L2PcInstance extends L2Playable
 
 					final L2Skill skill = effect.getSkill();
 
-					if (savedskills.contains(SkillTable.getSkillHashCode(skill)))
+					if (savedskills.contains(skill.getReuseHashCode()))
 						continue;
 						
-					savedskills.add(SkillTable.getSkillHashCode(skill));
+					savedskills.add(skill.getReuseHashCode());
 
-					if (!effect.isHerbEffect() && effect.getInUse() && !skill.isToggle())
+					if (!effect.isHerbEffect() && !skill.isToggle())
 					{
 						ps.setInt(1, getObjectId());
 						ps.setInt(2, skill.getId());
@@ -5519,11 +5519,12 @@ public class L2PcInstance extends L2Playable
 						ps.setInt(4, effect.getCount());
 						ps.setInt(5, effect.getTime());
 
-						if (_reuseTimeStamps.containsKey(skill.getId()))
+						TimeStamp timestamp = _reuseTimeStamps.get(skill.getReuseHashCode());
+
+						if (timestamp != null && timestamp.hasNotPassed())
 						{
-							TimeStamp t = _reuseTimeStamps.remove(skill.getId());
-							ps.setLong(6, t.hasNotPassed() ? t.getReuse() : 0);
-							ps.setLong(7, t.hasNotPassed() ? t.getStamp() : 0);
+							ps.setLong(6, timestamp.getReuse());
+							ps.setLong(7, timestamp.getStamp());
 						}
 						else
 						{
@@ -5540,16 +5541,16 @@ public class L2PcInstance extends L2Playable
 								
 				for (TimeStamp t : _reuseTimeStamps.values())
 				{
-					final int skilli = t.getSkill();
+					final L2Skill skilli = t.getSkill();
 					
-					if (savedskills.contains(skilli))
+					if (savedskills.contains(skilli.getReuseHashCode()))
 						continue;
-										
+					
 					if (t != null && t.hasNotPassed())
-					{	
-						savedskills.add(skilli);
+					{		
+						savedskills.add(skilli.getReuseHashCode());
 						ps.setInt(1, getObjectId());
-						ps.setInt(2, t.getSkill());
+						ps.setInt(2, t.getSkill().getId());
 						ps.setInt(3, 1);
 						ps.setInt(4, -1);
 						ps.setInt(5, -1);
@@ -5764,7 +5765,7 @@ public class L2PcInstance extends L2Playable
 						final long remainingTime = systime - System.currentTimeMillis();
 						if (remainingTime > 10)
 						{
-							disableSkill(skill.getId(), remainingTime);
+							disableSkill(skill, remainingTime);
 							addTimeStamp(skill, reuseDelay, systime);
 						}
 
@@ -6301,7 +6302,7 @@ public class L2PcInstance extends L2Playable
 			return;
 		}
 		
-		if (isSkillDisabled(skill.getId()))
+		if (isSkillDisabled(skill))
 		{
 			sendPacket(SystemMessage.getSystemMessage(SystemMessageId.S1_PREPARED_FOR_REUSE).addSkillName(skill));
 			return;
@@ -9723,7 +9724,7 @@ public class L2PcInstance extends L2Playable
 			return stamp;
 		}
 		
-		public int getSkill()
+		public L2Skill getSkill()
 		{
 			return skill;
 		}
@@ -9735,7 +9736,7 @@ public class L2PcInstance extends L2Playable
 		
 		public long getRemaining()
 		{
-			return Math.max(stamp - System.currentTimeMillis(), 0L);
+			return Math.max(stamp - System.currentTimeMillis(), 0);
 		}
 		
 		public boolean hasNotPassed()
@@ -9743,18 +9744,18 @@ public class L2PcInstance extends L2Playable
 			return System.currentTimeMillis() < stamp;
 		}
 		
-		private final int skill;
+		private final L2Skill skill;
 		private final long reuse;
 		private final long stamp;
 		
-		protected TimeStamp(int _skill, long _reuse)
+		protected TimeStamp(L2Skill _skill, long _reuse)
 		{
 			skill = _skill;
 			reuse = _reuse;
 			stamp = System.currentTimeMillis() + reuse;
 		}
 		
-		protected TimeStamp(int _skill, long _reuse, long _systime)
+		protected TimeStamp(L2Skill _skill, long _reuse, long _systime)
 		{
 			skill = _skill;
 			reuse = _reuse;
@@ -9763,25 +9764,20 @@ public class L2PcInstance extends L2Playable
 	}
 	
 	@Override
-	public void addTimeStamp(int s, int r)
+	public void addTimeStamp(L2Skill skill, long r)
 	{
-		_reuseTimeStamps.put(s, new TimeStamp(s, r));
+		_reuseTimeStamps.put(skill.getReuseHashCode(), new TimeStamp(skill, r));
 	}
-	
-	public void addTimeStamp(L2Skill skill, long reuse)
-	{
-		_reuseTimeStamps.put(skill.getId(), new TimeStamp(skill.getId(), reuse));
-	}
-	
+
 	public void addTimeStamp(L2Skill skill, long reuse, long systime)
 	{
-		_reuseTimeStamps.put(skill.getId(), new TimeStamp(skill.getId(), reuse, systime));
+		_reuseTimeStamps.put(skill.getReuseHashCode(), new TimeStamp(skill, reuse, systime));
 	}
 	
 	@Override
-	public void removeTimeStamp(int s)
+	public void removeTimeStamp(L2Skill skill)
 	{
-		_reuseTimeStamps.remove(s);
+		_reuseTimeStamps.remove(skill.getReuseHashCode());
 	}
 	
 	public Collection<TimeStamp> getReuseTimeStamps()
@@ -9799,7 +9795,7 @@ public class L2PcInstance extends L2Playable
 		for(L2Skill skill : getAllSkills())
 		{
 			if (skill != null && skill.isActive() && skill.getId() != 1324)
-				enableSkill(skill.getId());		
+				enableSkill(skill);		
 		}
 		
 		if (sendSkiiList)

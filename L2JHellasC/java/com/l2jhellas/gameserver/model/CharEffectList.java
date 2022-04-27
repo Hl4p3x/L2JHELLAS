@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 
 import com.l2jhellas.Config;
 import com.l2jhellas.gameserver.enums.skills.L2SkillType;
+import com.l2jhellas.gameserver.model.L2Effect.EffectType;
 import com.l2jhellas.gameserver.model.actor.L2Character;
 import com.l2jhellas.gameserver.model.actor.L2Summon;
 import com.l2jhellas.gameserver.model.actor.group.party.L2Party;
@@ -114,7 +115,7 @@ public class CharEffectList
 		if (stackType == null || "none".equals(stackType))
 			return false;
 
-		return _buffs.stream().filter(Objects :: nonNull).filter(e -> !e.getStackType().isEmpty()).anyMatch(b -> b.getStackType().equals(stackType));
+		return _buffs.stream().filter(Objects :: nonNull).filter(e -> e.getStackType() != null && !e.getStackType().isEmpty() ).anyMatch(b -> b.getStackType().equals(stackType));
 	}
 	
 	public int getBuffCount()
@@ -634,7 +635,7 @@ public class CharEffectList
 					.filter(L2Effect::ShowIcon)
 					.forEach(info ->
 					{
-						if (info.getSkill().isPotion())
+						if (info.getSkill().isPotion() && info.getEffectType().equals(EffectType.HEAL_OVER_TIME))
 							shortBuffStatusUpdate(info);
 						else
 						{
@@ -653,7 +654,7 @@ public class CharEffectList
 					.filter(L2Effect::ShowIcon)
 					.forEach(info ->
 					{
-						if (info.getSkill().isPotion())
+						if (info.getSkill().isPotion() && info.getEffectType().equals(EffectType.HEAL_OVER_TIME))
 							shortBuffStatusUpdate(info);
 						else
 						{

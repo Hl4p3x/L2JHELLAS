@@ -56,29 +56,26 @@ public class L2Attackable extends L2Npc
 	{	
 		if (attacker == null || isDead())
 			return;
-		
-		final L2PcInstance targetPlayer = attacker.getActingPlayer();
-		
-		final AggroInfo ai = _aggroListPro.computeIfAbsent(attacker, AggroInfo::new);
+				
+		final AggroInfo ai = _aggroListPro.computeIfAbsent(attacker, AggroInfo::new);		
 		ai.addDamage(damage);
+		ai.addHate(aggro);
 
 		// If aggro is negative, its comming from SEE_SPELL, buffs use constant 150
-		if (targetPlayer != null && aggro == 0)
+		if (aggro == 0)
 		{
-			if (getTemplate().getEventQuests(QuestEventType.ON_AGGRO_RANGE_ENTER) != null)
-				for (Quest quest : getTemplate().getEventQuests(QuestEventType.ON_AGGRO_RANGE_ENTER))
-					quest.notifyAggroRangeEnter(this, targetPlayer, (attacker instanceof L2Summon));
-		}
-		else if (aggro < 0)
-		{
-			aggro = 1;
-			ai.addHate(1);
-		}
-		else
-			ai.addHate((aggro * 100) / (getLevel() + 7));
-		
-		// Set the intention to the L2Attackable to AI_INTENTION_ACTIVE
-		if (aggro > 0 && getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
+			final L2PcInstance targetPlayer = attacker.getActingPlayer();
+
+			if (targetPlayer != null)
+			{
+				if (getTemplate().getEventQuests(QuestEventType.ON_AGGRO_RANGE_ENTER) != null)
+					for (Quest quest : getTemplate().getEventQuests(QuestEventType.ON_AGGRO_RANGE_ENTER))
+						quest.notifyAggroRangeEnter(this, targetPlayer, (attacker instanceof L2Summon));
+			}
+			else
+				ai.addHate(1);
+		}	
+		else if (aggro > 0 && getAI().getIntention() == CtrlIntention.AI_INTENTION_IDLE)
 			getAI().setIntention(CtrlIntention.AI_INTENTION_ACTIVE);
 		
 		// Notify the L2Attackable AI with EVT_ATTACKED
@@ -89,15 +86,17 @@ public class L2Attackable extends L2Npc
 				try
 				{
 					if (attacker instanceof L2PcInstance || attacker instanceof L2Summon)
-					{
-						L2PcInstance player = attacker instanceof L2PcInstance ? (L2PcInstance) attacker : ((L2Summon) attacker).getOwner();
-						
+					{			
 						if (getTemplate().getEventQuests(QuestEventType.ON_ATTACK) != null)
+						{
+							L2PcInstance player = attacker instanceof L2PcInstance ? (L2PcInstance) attacker : ((L2Summon) attacker).getOwner();
+
 							for (Quest quest : getTemplate().getEventQuests(QuestEventType.ON_ATTACK))
 							{
 								if (quest != null)
 									quest.notifyAttack(this, player, damage, attacker instanceof L2Summon);
 							}
+						}
 					}
 				}
 				catch (Exception e)
@@ -514,7 +513,7 @@ public class L2Attackable extends L2Npc
 		if (isCastingNow())
 			return;
 		
-		if (isSkillDisabled(skill.getId()))
+		if (isSkillDisabled(skill))
 			return;
 		
 		if (getCurrentMp() < getStat().getMpConsume(skill) + getStat().getMpInitialConsume(skill))

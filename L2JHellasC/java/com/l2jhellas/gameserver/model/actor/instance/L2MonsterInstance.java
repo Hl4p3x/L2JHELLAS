@@ -1,7 +1,5 @@
 package com.l2jhellas.gameserver.model.actor.instance;
 
-import java.util.concurrent.ScheduledFuture;
-
 import com.l2jhellas.gameserver.ThreadPoolManager;
 import com.l2jhellas.gameserver.model.MinionList;
 import com.l2jhellas.gameserver.model.actor.L2Attackable;
@@ -12,9 +10,7 @@ public class L2MonsterInstance extends L2Attackable
 {
 	private L2MonsterInstance _master;
 	protected MinionList _minionList;
-	
-	protected ScheduledFuture<?> _minionMaintainTask = null;
-	
+		
 	private static final int MONSTER_MAINTENANCE_INTERVAL = 1000;
 	
 	public L2MonsterInstance(int objectId, L2NpcTemplate template)
@@ -83,14 +79,7 @@ public class L2MonsterInstance extends L2Attackable
 	
 	protected void manageMinions()
 	{
-		_minionMaintainTask = ThreadPoolManager.getInstance().scheduleGeneral(new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				getMinionList().spawnMinions();
-			}
-		}, getMaintenanceInterval());
+		ThreadPoolManager.getInstance().scheduleGeneral(() -> getMinionList().spawnMinions() , getMaintenanceInterval());
 	}
 	
 	protected int getMaintenanceInterval()

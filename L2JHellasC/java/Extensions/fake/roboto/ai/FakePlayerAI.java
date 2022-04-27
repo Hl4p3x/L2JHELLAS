@@ -247,7 +247,7 @@ public abstract class FakePlayerAI
 	
 	protected void castSelfSpell(L2Skill skill)
 	{
-		if (!_fakePlayer.isCastingNow() && !_fakePlayer.isSkillDisabled(skill.getId()))
+		if (!_fakePlayer.isCastingNow() && !_fakePlayer.isSkillDisabled(skill))
 		{
 			
 			if (skill.getHitTime() > 50)

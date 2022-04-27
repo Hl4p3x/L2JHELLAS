@@ -44,10 +44,9 @@ public class SpawnData implements DocumentParser
 	protected SpawnData()
 	{
 		if (!Config.ALT_DEV_NO_SPAWNS)
-		{
-			loadCustomSpawn();
 			load();
-		}
+	
+		loadCustomSpawn();
 	}
 	
 	@Override
@@ -331,9 +330,10 @@ public class SpawnData implements DocumentParser
 		{
 			getSpawns().clear();
 			CustomSpawnManager.getInstance().cleanUp();
-			loadCustomSpawn();
 			load();
 		}
+		
+		loadCustomSpawn();
 	}
 	
 	public static SpawnData getInstance()

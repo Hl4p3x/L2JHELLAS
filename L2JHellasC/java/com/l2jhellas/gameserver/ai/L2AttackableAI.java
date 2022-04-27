@@ -750,7 +750,7 @@ public class L2AttackableAI extends L2CharacterAI
 		if (caster == null)
 			return false;
 		
-		if (skill == null || caster.isSkillDisabled(skill.getId()))
+		if (skill == null || caster.isSkillDisabled(skill))
 			return false;
 
 		if (caster.isCastingNow())
@@ -813,7 +813,7 @@ public class L2AttackableAI extends L2CharacterAI
 	
 	public boolean checkCondition(L2Character caster, L2Skill skill)
 	{
-		if (caster == null || skill == null || caster.isSkillDisabled(skill.getId()) || caster.isCastingNow())
+		if (caster == null || skill == null || caster.isSkillDisabled(skill) || caster.isCastingNow())
 			return false;
 		
 		if (caster.getCurrentHp() <= skill.getHpConsume())
@@ -949,7 +949,7 @@ public class L2AttackableAI extends L2CharacterAI
 		{
 			if(canAskForHelp)
 			{			
-				if (me.getFactionId() != null)
+				if (me.getFactionId() != null && !me.getFactionId().isEmpty())
 				{
 					final int collision = (int) me.getTemplate().getCollisionRadius();
 					final int factionRange = me.getFactionRange() + collision;

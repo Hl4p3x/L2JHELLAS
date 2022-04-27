@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -83,9 +84,7 @@ public class L2Clan
 	private boolean _hasCrestLarge;
 	
 	private Forum _forum;
-	
-	private final List<L2Skill> _skillList = new ArrayList<>();
-	
+		
 	// Clan Privileges
 	
 	public static final int CP_NOTHING = 0;
@@ -366,7 +365,7 @@ public class L2Clan
 				player.setClanCreateExpiryTime(System.currentTimeMillis() + Config.ALT_CLAN_CREATE_DAYS * 86400000L); // 24*60*60*1000 = 86400000
 			}
 			// remove Clanskills from Player
-			for (L2Skill skill : player.getClan().getAllSkills())
+			for (L2Skill skill : player.getClan().getClanSkills().values())
 			{
 				player.removeSkill(skill, false);
 			}
@@ -591,9 +590,9 @@ public class L2Clan
 	
 	public void updateClanInDB()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("UPDATE clan_data SET leader_id=?,ally_id=?,ally_name=?,reputation_score=?,ally_penalty_expiry_time=?,ally_penalty_type=?,char_penalty_expiry_time=?,dissolving_expiry_time=? WHERE clan_id=?"))
 		{
-			PreparedStatement statement = con.prepareStatement("UPDATE clan_data SET leader_id=?,ally_id=?,ally_name=?,reputation_score=?,ally_penalty_expiry_time=?,ally_penalty_type=?,char_penalty_expiry_time=?,dissolving_expiry_time=? WHERE clan_id=?");
 			statement.setInt(1, getLeaderId());
 			statement.setInt(2, getAllyId());
 			statement.setString(3, getAllyName());
@@ -604,12 +603,6 @@ public class L2Clan
 			statement.setLong(8, getDissolvingExpiryTime());
 			statement.setInt(9, getClanId());
 			statement.execute();
-			statement.close();
-			
-			if (Config.DEBUG)
-			{
-				_log.config(L2Clan.class.getName() + ": New clan leader saved in db: " + getClanId());
-			}
 		}
 		catch (SQLException e)
 		{
@@ -621,9 +614,9 @@ public class L2Clan
 	
 	public void store()
 	{
-		try (Connection con = L2DatabaseFactory.getInstance().getConnection())
+		try (Connection con = L2DatabaseFactory.getInstance().getConnection();
+		PreparedStatement statement = con.prepareStatement("INSERT INTO clan_data (clan_id,clan_name,clan_level,hasCastle,ally_id,ally_name,leader_id,crest_id,crest_large_id,ally_crest_id) values (?,?,?,?,?,?,?,?,?,?)"))
 		{
-			PreparedStatement statement = con.prepareStatement("INSERT INTO clan_data (clan_id,clan_name,clan_level,hasCastle,ally_id,ally_name,leader_id,crest_id,crest_large_id,ally_crest_id) values (?,?,?,?,?,?,?,?,?,?)");
 			statement.setInt(1, getClanId());
 			statement.setString(2, getName());
 			statement.setInt(3, getLevel());
@@ -635,12 +628,6 @@ public class L2Clan
 			statement.setInt(9, getCrestLargeId());
 			statement.setInt(10, getAllyCrestId());
 			statement.execute();
-			statement.close();
-			
-			if (Config.DEBUG)
-			{
-				_log.config(L2Clan.class.getName() + ": New clan saved in db: " + getClanId());
-			}
 		}
 		catch (SQLException e)
 		{
@@ -799,7 +786,7 @@ public class L2Clan
 				// Create a L2Skill object for each record
 				L2Skill skill = SkillTable.getInstance().getInfo(id, level);
 				// Add the L2Skill object to the L2Clan _skills
-				_skills.put(skill.getId(), skill);
+				getClanSkills().put(skill.getId(), skill);
 			}
 			rset.close();
 			statement.close();
@@ -900,12 +887,9 @@ public class L2Clan
 		return _notice;
 	}
 	
-	public final L2Skill[] getAllSkills()
+	public final Map<Integer, L2Skill> getClanSkills()
 	{
-		if (_skills == null)
-			return new L2Skill[0];
-		
-		return _skills.values().toArray(new L2Skill[_skills.values().size()]);
+		return _skills;
 	}
 	
 	public L2Skill addSkill(L2Skill newSkill)
@@ -915,7 +899,7 @@ public class L2Clan
 		if (newSkill != null)
 		{
 			// Replace oldSkill by newSkill or Add the newSkill
-			oldSkill = _skills.put(newSkill.getId(), newSkill);
+			oldSkill = getClanSkills().put(newSkill.getId(), newSkill);
 		}
 		
 		return oldSkill;
@@ -929,7 +913,7 @@ public class L2Clan
 		{
 			
 			// Replace oldSkill by newSkill or Add the newSkill
-			oldSkill = _skills.put(newSkill.getId(), newSkill);
+			oldSkill = getClanSkills().put(newSkill.getId(), newSkill);
 			
 			try (Connection con = L2DatabaseFactory.getInstance().getConnection())
 			{
@@ -987,7 +971,7 @@ public class L2Clan
 	
 	public void addSkillEffects()
 	{
-		for (L2Skill skill : _skills.values())
+		for (L2Skill skill : getClanSkills().values())
 		{
 			for (L2ClanMember temp : _members.values())
 			{
@@ -1013,7 +997,7 @@ public class L2Clan
 		if (cm == null)
 			return;
 		
-		for (L2Skill skill : _skills.values())
+		for (L2Skill skill : getClanSkills().values())
 		{
 			// TODO add skills according to members class( in ex. don't add Clan Agillity skill's effect to lower class then Baron)
 			if (skill.getMinPledgeClass() <= cm.getPledgeClass())
@@ -1207,30 +1191,6 @@ public class L2Clan
 			
 			member.sendPacket(new UserInfo(member));
 		}
-	}
-	
-	public void removeSkill(int id)
-	{
-		L2Skill deleteSkill = null;
-		for (L2Skill sk : _skillList)
-		{
-			if (sk.getId() == id)
-			{
-				deleteSkill = sk;
-				return;
-			}
-		}
-		_skillList.remove(deleteSkill);
-	}
-	
-	public void removeSkill(L2Skill deleteSkill)
-	{
-		_skillList.remove(deleteSkill);
-	}
-	
-	public List<L2Skill> getSkills()
-	{
-		return _skillList;
 	}
 	
 	public class SubPledge
@@ -1622,7 +1582,7 @@ public class L2Clan
 		if (_reputationScore >= 0 && value < 0)
 		{
 			broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.REPUTATION_POINTS_0_OR_LOWER_CLAN_SKILLS_DEACTIVATED));
-			L2Skill[] skills = getAllSkills();
+			Collection<L2Skill> skills = getClanSkills().values();
 			for (L2ClanMember member : _members.values())
 			{
 				if (member.isOnline() && member.getPlayerInstance() != null)
@@ -1637,7 +1597,7 @@ public class L2Clan
 		else if (_reputationScore < 0 && value >= 0)
 		{
 			broadcastToOnlineMembers(SystemMessage.getSystemMessage(SystemMessageId.CLAN_SKILLS_WILL_BE_ACTIVATED_SINCE_REPUTATION_IS_0_OR_HIGHER));
-			L2Skill[] skills = getAllSkills();
+			Collection<L2Skill> skills = getClanSkills().values();
 			for (L2ClanMember member : _members.values())
 			{
 				if (member.isOnline() && member.getPlayerInstance() != null)
@@ -2303,7 +2263,7 @@ public class L2Clan
 		// Refresh clan windows of all clan members, and reward/remove skills.
 		if (needRefresh)
 		{
-			final L2Skill[] skills = getAllSkills();
+			Collection<L2Skill> skills = getClanSkills().values();
 			
 			if (_reputationScore <= 0)
 			{

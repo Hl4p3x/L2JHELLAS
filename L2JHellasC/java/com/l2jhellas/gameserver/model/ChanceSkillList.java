@@ -112,11 +112,11 @@ public class ChanceSkillList extends ConcurrentHashMap<L2Skill, ChanceCondition>
 						return;
 				}
 				
-				if (_owner.isSkillDisabled(skill.getId()))
+				if (_owner.isSkillDisabled(skill))
 					return;
 				
 				if (skill.getReuseDelay() > 0)
-					_owner.disableSkill(skill.getId());
+					_owner.disableSkill(skill ,skill.getReuseDelay());
 				
 				L2Object[] targets = skill.getTargetList(_owner, false);
 				
